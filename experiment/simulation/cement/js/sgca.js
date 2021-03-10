@@ -95,7 +95,30 @@ document.getElementById('arrow1').style.visibility="hidden";
 }
 
 //-------------------------------------function magic starts here----------------------------------------------------
+var arrowCount = 1;
+function animateNewarrow(){
+	// if(document.getElementById("arrow1").onclick()){
+	// 	break;
+	// }
+	console.log("Imhere amd count is: " , arrowCount);
+	new_arrow =  document.getElementById("new_arrow"+arrowCount);
+	// new_arrow2 =  document.getElementById("new_arrow2");
+	// new_arrow3 =  document.getElementById("new_arrow3");
+	// new_arrow4 =  document.getElementById("new_arrow4");
+	// new_arrow5 =  document.getElementById("new_arrow5");
+	// new_arrow6 =  document.getElementById("new_arrow6");
 
+	new_arrow.style.visibility = 'visible';
+	arrowCount = arrowCount+1;
+	if(arrowCount == 7){
+		for(i = 1; i<7; i++){
+			document.getElementById("new_arrow"+i).style.visibility = 'hidden';
+		}
+		arrowCount = 1;
+	}
+
+
+}
 function magic()
 {
 	
@@ -127,71 +150,79 @@ function magic()
 		document.getElementById("air07").style.visibility = 'hidden';
 		
 		//Prevent repetitive random numbers
-		while (p == lastp) 
-		{
-			p = Math.floor(Math.random() * 4);
-		}
-		if(repeat==0)
-		{
-			lastp = p;
-		}
-		refresh2();
-		refresh1();
-		repeat+=1;
-		if(flag==1)
-		{
-		 document.getElementById('r1').style.visibility="hidden";
-		 document.getElementById('w1').style.visibility="hidden";
-		 document.getElementById('p6-1').style.visibility="hidden";
-		 document.getElementById('canvas6').style.visibility="hidden";
-         document.getElementById('flask').style.visibility="visible";
-		 document.getElementById('nob').style.visibility="visible";
+	// 	while (p == lastp) 
+	// 	{
+	// 		p = Math.floor(Math.random() * 4);
+	// 	}
+	// 	if(repeat==0)
+	// 	{
+	// 		lastp = p;
+	// 	}
+	// 	refresh2();
+	// 	refresh1();
+	// 	repeat+=1;
+	// 	if(flag==1)
+	// 	{
+	// 	 document.getElementById('r1').style.visibility="hidden";
+	// 	 document.getElementById('w1').style.visibility="hidden";
+	// 	 document.getElementById('p6-1').style.visibility="hidden";
+	// 	 document.getElementById('canvas6').style.visibility="hidden";
+    //      document.getElementById('flask').style.visibility="visible";
+	// 	 document.getElementById('nob').style.visibility="visible";
 		           
-		 document.getElementById('trial').style="visibility:visible;left: 700px; top: 100px;position: absolute;font-weight: bold;text-transform: uppercase;";
-		 document.getElementById('trial').innerHTML="Trial : " + repeat;
+	// 	 document.getElementById('trial').style="visibility:visible;left: 700px; top: 100px;position: absolute;font-weight: bold;text-transform: uppercase;";
+	// 	 document.getElementById('trial').innerHTML="Trial : " + repeat;
 
-		 document.getElementById('nextButton').style.visibility="hidden";
+	// 	 document.getElementById('nextButton').style.visibility="hidden";
 
 		
-		myInt = setInterval(function(){ animatearrow(); }, 500);
-		document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
+	// 	myInt = setInterval(function(){ animatearrow(); }, 500);
+	// 	document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
 			
-		document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
-		// Code for IE9
-		document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
-		// Standard syntax
-		document.getElementById("arrow1").style.transform = "rotate(180deg)";
+	// 	document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
+	// 	// Code for IE9
+	// 	document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
+	// 	// Standard syntax
+	// 	document.getElementById("arrow1").style.transform = "rotate(180deg)";
 		
 		
-		document.getElementById('nob').onclick=function() { step2(); };
-	}
-	else
-				{
-		document.getElementById('a3').style.visibility="hidden";
-	document.getElementById('a4').style.visibility="hidden";
-			document.getElementById('nextButton').style.visibility="hidden";
+	// 	document.getElementById('nob').onclick=function() { step2(); };
+	// }
+	// else
+	// 			{
+	// 	document.getElementById('a3').style.visibility="hidden";
+	// document.getElementById('a4').style.visibility="hidden";
+	// 		document.getElementById('nextButton').style.visibility="hidden";
 
-		document.getElementById('trial').style="visibility:visible ;left: 700px; top: 100px;position: absolute;font-weight: bold;text-transform: uppercase;";
-		document.getElementById('trial').innerHTML="Trial : " + repeat;
+	// 	document.getElementById('trial').style="visibility:visible ;left: 700px; top: 100px;position: absolute;font-weight: bold;text-transform: uppercase;";
+	// 	document.getElementById('trial').innerHTML="Trial : " + repeat;
 		
 		
-		myInt = setInterval(function(){ animatearrow(); }, 500);
-		document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
+	// 	myInt = setInterval(function(){ animatearrow(); }, 500);
+	// 	document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
 			
-		document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
-		// Code for IE9
-		document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
-		// Standard syntax
-		document.getElementById("arrow1").style.transform = "rotate(180deg)";
+	// 	document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
+	// 	// Code for IE9
+	// 	document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
+	// 	// Standard syntax
+	// 	document.getElementById("arrow1").style.transform = "rotate(180deg)";
 		
 		
-		document.getElementById('nob').onclick=function() { step2(); };
+	// 	document.getElementById('nob').onclick=function() { step2(); };
+	// }
+		document.getElementById("nextButton").style.visibility = "visible";
+	myInt = setInterval(function(){ animateNewarrow(); }, 300);
+
 	}
-		
-		
-	}
+
 	else if (simsubscreennum==3)
 	{
+		clearInterval(myInt);
+		var i=1;
+		while(i<7){
+			document.getElementById("new_arrow"+i).style.visibility = 'hidden';
+			i++;
+		}
 				refresh1();
 
 		 document.getElementById('flask3').style.visibility="visible";
