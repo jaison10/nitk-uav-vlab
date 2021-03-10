@@ -123,6 +123,9 @@ function magic()
 	
 	else if (simsubscreennum==2)
 	{
+		//hiding the previous canvas airfoil image.
+		document.getElementById("air07").style.visibility = 'hidden';
+		
 		//Prevent repetitive random numbers
 		while (p == lastp) 
 		{
@@ -345,6 +348,7 @@ function magic()
 	document.getElementById('a3').style.visibility="visible";
 	var air =  document.getElementById("change-airfoil");
 	air.style.visibility = 'visible';
+	
 	// document.getElementById('a4').style.visibility="visible";
 	
 }
@@ -793,7 +797,7 @@ function refresh1()
 	document.getElementById("arrow1").style.animation = "";
 	
 	// document.getElementById('can1').innerHTML="Empty weight of flask with stopper (W<sub>1</sub>)	=";
-	document.getElementById('can2').innerHTML="Weight of flask + cement (W<sub>2</sub>) = ";
+	// document.getElementById('can2').innerHTML="Weight of flask + cement (W<sub>2</sub>) = ";
 	document.getElementById('can3').innerHTML="Weight of flask + cement + kerosene (W<sub>3</sub>) =";
 	
 	document.getElementById('can4').innerHTML="Weight of flask + kerosene (W<sub>4</sub>) = ";
@@ -959,16 +963,19 @@ function checkInference()
 
 
 // ADD
-var count = 1;
+var count = 0;
 //this count is to show the nomenclature of airfoil.
 function changeNomen(){
-	var a = document.getElementById("try");
-	count = count + 1;
-	a.innerHTML = count;
-	if(count == 5){
+	if(count == 6){
 		var nomen = document.getElementById("change-airfoil");
 		nomen.style.visibility = "hidden";
 		var button = document.getElementById("nextButton");
 		button.style.visibility = 'visible';
 	}
+	count = count + 1;
+	document.getElementById("a3").style.visibility = 'hidden';
+	for(i=1;i<=7;i++){
+		document.getElementById("air0"+i).style.visibility = 'hidden';
+	}
+	document.getElementById("air0"+count).style.visibility = 'visible';
 }

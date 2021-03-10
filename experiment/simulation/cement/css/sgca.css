@@ -234,3 +234,10 @@ background:#000
 
 /*-----------------------------------------blink----------------------- */
 
+
+
+/*ADDED  */
+.transitionAirfoil{
+    -webkit-transition:1s;
+}
+
