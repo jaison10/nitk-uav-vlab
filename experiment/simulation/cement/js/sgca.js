@@ -348,7 +348,8 @@ function magic()
 	document.getElementById('a3').style.visibility="visible";
 	var air =  document.getElementById("change-airfoil");
 	air.style.visibility = 'visible';
-	
+	var wing = document.getElementById("a2");
+	wing.classList.add = "transitionAirfoil";
 	// document.getElementById('a4').style.visibility="visible";
 	
 }
