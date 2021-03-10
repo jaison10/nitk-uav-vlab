@@ -97,22 +97,19 @@ document.getElementById('arrow1').style.visibility="hidden";
 //-------------------------------------function magic starts here----------------------------------------------------
 var arrowCount = 1;
 function animateNewarrow(){
-	// if(document.getElementById("arrow1").onclick()){
-	// 	break;
-	// }
-	console.log("Imhere amd count is: " , arrowCount);
+
+	console.log("Im here and count is: " , arrowCount);
 	new_arrow =  document.getElementById("new_arrow"+arrowCount);
-	// new_arrow2 =  document.getElementById("new_arrow2");
-	// new_arrow3 =  document.getElementById("new_arrow3");
-	// new_arrow4 =  document.getElementById("new_arrow4");
-	// new_arrow5 =  document.getElementById("new_arrow5");
-	// new_arrow6 =  document.getElementById("new_arrow6");
+	below_arrow =  document.getElementById("below_arrow"+arrowCount);
+
 
 	new_arrow.style.visibility = 'visible';
+	below_arrow.style.visibility = 'visible';
 	arrowCount = arrowCount+1;
-	if(arrowCount == 7){
-		for(i = 1; i<7; i++){
+	if(arrowCount == 14){
+		for(i = 1; i<14; i++){
 			document.getElementById("new_arrow"+i).style.visibility = 'hidden';
+			document.getElementById("below_arrow"+i).style.visibility = 'hidden';
 		}
 		arrowCount = 1;
 	}
@@ -211,16 +208,18 @@ function magic()
 	// 	document.getElementById('nob').onclick=function() { step2(); };
 	// }
 		document.getElementById("nextButton").style.visibility = "visible";
-	myInt = setInterval(function(){ animateNewarrow(); }, 300);
+		myInt = setInterval(function(){ animateNewarrow(); }, 300);
 
 	}
 
 	else if (simsubscreennum==3)
 	{
+		//clearing the timeout of arrow animation.
 		clearInterval(myInt);
 		var i=1;
-		while(i<7){
+		while(i<14){
 			document.getElementById("new_arrow"+i).style.visibility = 'hidden';
+			document.getElementById("below_arrow"+i).style.visibility = 'hidden';
 			i++;
 		}
 				refresh1();
