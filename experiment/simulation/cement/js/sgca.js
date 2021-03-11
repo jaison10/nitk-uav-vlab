@@ -1004,20 +1004,24 @@ function changeNomen(){
 	//removing zooming arrow of previous airfoil
 	document.getElementById("arr-air").style.visibility =  'hidden';
 
-	document.getElementById("change-airfoilButton").textContent = "Next";
+	document.getElementById("change-airfoilButton").style.visibility = "hidden";
 	// document.getElementById("change-airfoilButton").style = "width: 10%";
 	document.getElementById("a2").style.visibility = 'hidden';
-	if(count == 6){
-		var nomen = document.getElementById("change-airfoilButton");
-		nomen.style.visibility = "hidden";
-		var button = document.getElementById("nextButton");
-		button.style.visibility = 'visible';
-		
-	}
-	count = count + 1;
+	var button = document.getElementById("nextButton");
+	button.style.visibility = 'visible';
+
 	document.getElementById("a3").style.visibility = 'hidden';
-	for(i=1;i<=7;i++){
-		document.getElementById("air0"+i).style.visibility = 'hidden';
+	count = count + 1;
+	// for(i=1;i<=7;i++){
+	// 	document.getElementById("air0"+i).style.visibility = 'hidden';
+	// }
+	// document.getElementById("air0"+count).style.visibility = 'visible';
+	document.getElementById("nomen-list").style.visibility = 'visible';
+	document.getElementById("air01").style.visibility = 'visible';
+}
+function airfoilNomen(n){
+	for(var i=1;i<8;i++){
+		document.getElementById("air0"+i).style.visibility = 'hidden';	
 	}
-	document.getElementById("air0"+count).style.visibility = 'visible';
+	document.getElementById("air0"+n).style.visibility = 'visible';
 }

@@ -240,4 +240,17 @@ background:#000
 .transitionAirfoil{
     -webkit-transition:1s;
 }
+.air-items button{
+    border-radius: 3px;
 
+    background-color: #4CAF50; /* Green background */
+      border: 1px solid green; /* Green border */
+      color: white; /* White text */
+      padding: 10px 24px; /* Some padding */
+      cursor: pointer; /* Pointer/hand icon */
+      /* width: 50%; Set a width if needed */
+      /* display: block;  */
+}
+.air-items button:hover {
+    background-color: #3d4f3d;
+  }
