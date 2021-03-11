@@ -145,9 +145,15 @@ function magic()
 	
 	else if (simsubscreennum==2)
 	{
-		//hiding the previous canvas airfoil image.
-		document.getElementById("air07").style.visibility = 'hidden';
-		
+		//hiding the previous canvas airfoil images.
+		for(var i=1;i<8;i++){
+			document.getElementById("air0"+i).style.visibility = 'hidden';	
+		}
+		// hiding the nomenclature list of buttons
+		document.getElementById("nomen-list").style.visibility = 'hidden';
+
+
+
 		//Prevent repetitive random numbers
 	// 	while (p == lastp) 
 	// 	{
@@ -224,15 +230,18 @@ function magic()
 			document.getElementById("below_arrow"+i).style.visibility = 'hidden';
 			i++;
 		}
-				refresh1();
+		refresh1();
+		// enabling for my purpose. Disable it later.
+		document.getElementById("nextButton").style.visibility = "visible";
 
-		 document.getElementById('flask3').style.visibility="visible";
-		 document.getElementById('nob3-1').style.visibility="visible";
-	     document.getElementById('cem3-1').style.visibility="visible";
-	     document.getElementById('a5').style.visibility="hidden";
-	     document.getElementById('a6').style.visibility="hidden";
-	     document.getElementById('cem2-3').style.visibility="hidden";
-	     document.getElementById('nextButton').style.visibility="hidden";
+		//  document.getElementById('flask3').style.visibility="visible";
+		//  document.getElementById('nob3-1').style.visibility="visible";
+	    //  document.getElementById('cem3-1').style.visibility="visible";
+	    //  document.getElementById('a5').style.visibility="hidden";
+	    //  document.getElementById('a6').style.visibility="hidden";
+	    //  document.getElementById('cem2-3').style.visibility="hidden";
+	    //  document.getElementById('nextButton').style.visibility="hidden";
+		
      	 myInt = setInterval(function(){ animatearrow(); }, 500);
 		 document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
 			
