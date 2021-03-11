@@ -102,6 +102,18 @@ function animateNewarrow(){
 	new_arrow =  document.getElementById("new_arrow"+arrowCount);
 	below_arrow =  document.getElementById("below_arrow"+arrowCount);
 
+	//Blinking the lift direction part arrows.
+	for(var i=1;i<4;i++){
+		lift_arrows = document.querySelector(".up-arrow"+i);
+		console.log(lift_arrows);
+		if(lift_arrows.style.visibility == "hidden"){
+			lift_arrows.style.visibility = "visible";
+		}
+		else{
+			lift_arrows.style.visibility = "hidden";
+		}
+	}
+	
 
 	new_arrow.style.visibility = 'visible';
 	below_arrow.style.visibility = 'visible';
@@ -230,22 +242,17 @@ function magic()
 			document.getElementById("below_arrow"+i).style.visibility = 'hidden';
 			i++;
 		}
-		refresh1();
+		// refresh1();
+
 		// enabling for my purpose. Disable it later.
 		document.getElementById("nextButton").style.visibility = "visible";
 
-		//  document.getElementById('flask3').style.visibility="visible";
-		//  document.getElementById('nob3-1').style.visibility="visible";
-	    //  document.getElementById('cem3-1').style.visibility="visible";
-	    //  document.getElementById('a5').style.visibility="hidden";
-	    //  document.getElementById('a6').style.visibility="hidden";
-	    //  document.getElementById('cem2-3').style.visibility="hidden";
-	    //  document.getElementById('nextButton').style.visibility="hidden";
-		
-     	 myInt = setInterval(function(){ animatearrow(); }, 500);
-		 document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
+		myInt = setInterval(function(){ animateNewarrow(); }, 300);
+
+	
+		document.getElementById('arrow1').style="visibility:hidden ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
 			
-		 document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
+		document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
 		// Code for IE9
 		document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
 		// Standard syntax
@@ -256,17 +263,25 @@ function magic()
 	}
 	else if (simsubscreennum==4)
 	{
-				refresh1();
+		//stopping the blink.
+		clearInterval(myInt);
+		// hiding the 14 wind flow direction arrows.
+		var i=1;
+		while(i<14){
+			document.getElementById("new_arrow"+i).style.visibility = 'hidden';
+			document.getElementById("below_arrow"+(i++)).style.visibility = 'hidden';
+		}
+		// hiding the lift direction arrows.
+		var i=1;
+		while(i<4){
+			document.querySelector(".up-arrow"+(i++)).style.visibility = "hidden";
+		}		
+		
+		refresh1();
 
-		document.getElementById('flask4').style.visibility="visible";
-		document.getElementById('nob4-1').style.visibility="visible";
-        document.getElementById('a11').style.visibility="hidden";
-	    document.getElementById('a12').style.visibility="hidden";
-        document.getElementById('k1').style.visibility="hidden";
-	    document.getElementById('k2').style.visibility="hidden";	
-		document.getElementById('nextButton').style.visibility="hidden";
-		myInt = setInterval(function(){ animatearrow(); }, 500);
-		document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
+		
+		// myInt = setInterval(function(){ animatearrow(); }, 500);
+		document.getElementById('arrow1').style="visibility:hidden ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
 			
 		document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
 		// Code for IE9
