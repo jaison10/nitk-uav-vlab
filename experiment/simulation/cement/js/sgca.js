@@ -114,16 +114,27 @@ function animateNewarrow(){
 		}
 	}
 	
-
-	new_arrow.style.visibility = 'visible';
-	below_arrow.style.visibility = 'visible';
-	arrowCount = arrowCount+1;
-	if(arrowCount == 14){
+	// making the below arrows slower on passing by wing. 
+	if(arrowCount>4){
+		new_arrow.style.visibility = 'visible';
+		setTimeout(function(){
+			below_arrow.style.visibility = 'visible';
+		}, 200)
+	}
+	else{
+		new_arrow.style.visibility = 'visible';
+		below_arrow.style.visibility = 'visible';
+	}
+	if(arrowCount == 13){
+		document.getElementById("below_arrow"+arrowCount).style.visibility = 'hidden';
 		for(i = 1; i<14; i++){
 			document.getElementById("new_arrow"+i).style.visibility = 'hidden';
 			document.getElementById("below_arrow"+i).style.visibility = 'hidden';
 		}
 		arrowCount = 1;
+	}
+	else{
+		arrowCount = arrowCount+1;
 	}
 
 
@@ -235,19 +246,19 @@ function magic()
 	else if (simsubscreennum==3)
 	{
 		//clearing the timeout of arrow animation.
-		clearInterval(myInt);
-		var i=1;
-		while(i<14){
-			document.getElementById("new_arrow"+i).style.visibility = 'hidden';
-			document.getElementById("below_arrow"+i).style.visibility = 'hidden';
-			i++;
-		}
+		// clearInterval(myInt);
+		// var i=1;
+		// while(i<14){
+		// 	document.getElementById("new_arrow"+i).style.visibility = 'hidden';
+		// 	document.getElementById("below_arrow"+i).style.visibility = 'hidden';
+		// 	i++;
+		// }
 		// refresh1();
 
 		// enabling for my purpose. Disable it later.
 		document.getElementById("nextButton").style.visibility = "visible";
 
-		myInt = setInterval(function(){ animateNewarrow(); }, 300);
+		myInt = setInterval(function(){ animateNewarrow(); }, 1000);
 
 	
 		document.getElementById('arrow1').style="visibility:hidden ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
