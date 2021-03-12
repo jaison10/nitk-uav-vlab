@@ -99,34 +99,53 @@ var arrowCount = 1;
 function animateNewarrow(){
 
 	console.log("Im here and count is: " , arrowCount);
+	console.log("The image is: new_arrow"+arrowCount);
+
 	new_arrow =  document.getElementById("new_arrow"+arrowCount);
 	below_arrow =  document.getElementById("below_arrow"+arrowCount);
 
-	//Blinking the lift direction part arrows.
-	for(var i=1;i<4;i++){
-		lift_arrows = document.querySelector(".up-arrow"+i);
-		console.log(lift_arrows);
-		if(lift_arrows.style.visibility == "hidden"){
-			lift_arrows.style.visibility = "visible";
-		}
-		else{
-			lift_arrows.style.visibility = "hidden";
-		}
-	}
+	
 	
 	// making the below arrows slower on passing by wing. 
 	if(arrowCount>4){
+		// displaying the velocity-pressure info when the air crosses the wing.
+		document.getElementById("v-p-info").style.visibility = "visible";
+		// displaying the lift direction arrows when the air crosses the wing.
+		document.getElementById("up-arrow-div").style.visibility = "visible";
+		//Blinking the lift direction part arrowson crossing the wing. 
+		for(var i=1;i<4;i++){
+			lift_arrows = document.querySelector(".up-arrow"+i);
+			if(lift_arrows.style.visibility == "hidden"){
+				lift_arrows.style.visibility = "visible";
+			}
+			else{
+				lift_arrows.style.visibility = "hidden";
+			}
+		}
+		
+		// displaying above arrow without delay.
 		new_arrow.style.visibility = 'visible';
+		// making the below arrow visible with some timeout.
 		setTimeout(function(){
 			below_arrow.style.visibility = 'visible';
-		}, 200)
+		}, 500)
 	}
 	else{
 		new_arrow.style.visibility = 'visible';
 		below_arrow.style.visibility = 'visible';
 	}
+
 	if(arrowCount == 13){
-		document.getElementById("below_arrow"+arrowCount).style.visibility = 'hidden';
+		// hiding v-p-info.
+		document.getElementById("v-p-info").style.visibility = "hidden";
+		// hiding the lift arrow section.
+		document.getElementById("up-arrow-div").style.visibility = "hidden";
+		// hiding the lift arrows.
+		for(var i=1;i<4;i++){
+			lift_arrows = document.querySelector(".up-arrow"+i);
+			lift_arrows.style.visibility = "hidden";
+		}
+		// hiding all 13 arrows flowing 
 		for(i = 1; i<14; i++){
 			document.getElementById("new_arrow"+i).style.visibility = 'hidden';
 			document.getElementById("below_arrow"+i).style.visibility = 'hidden';
@@ -869,16 +888,16 @@ function refresh1()
 	
 	// document.getElementById('can1').innerHTML="Empty weight of flask with stopper (W<sub>1</sub>)	=";
 	// document.getElementById('can2').innerHTML="Weight of flask + cement (W<sub>2</sub>) = ";
-	document.getElementById('can3').innerHTML="Weight of flask + cement + kerosene (W<sub>3</sub>) =";
+	// document.getElementById('can3').innerHTML="Weight of flask + cement + kerosene (W<sub>3</sub>) =";
 	
-	document.getElementById('can4').innerHTML="Weight of flask + kerosene (W<sub>4</sub>) = ";
-	document.getElementById('can5').innerHTML="Weight of flask+water (W<sub>5</sub>) =";
-	document.getElementById('can6-1').innerHTML="Empty weight of flask with stopper (W<sub>1</sub>)=";
+	// document.getElementById('can4').innerHTML="Weight of flask + kerosene (W<sub>4</sub>) = ";
+	// document.getElementById('can5').innerHTML="Weight of flask+water (W<sub>5</sub>) =";
+	// document.getElementById('can6-1').innerHTML="Empty weight of flask with stopper (W<sub>1</sub>)=";
 	
-	document.getElementById('can6-2').innerHTML="Weight of flask + cement (W<sub>2</sub>) = ";
-		document.getElementById('can6-3').innerHTML="Weight of flask + cement + kerosene (W<sub>3</sub>) =";
-	document.getElementById('can6-4').innerHTML="Weight of flask + kerosene (W<sub>4</sub>) = ";
-	document.getElementById('can6-5').innerHTML="Weight of flask+water (W<sub>5</sub>) =";
+	// document.getElementById('can6-2').innerHTML="Weight of flask + cement (W<sub>2</sub>) = ";
+		// document.getElementById('can6-3').innerHTML="Weight of flask + cement + kerosene (W<sub>3</sub>) =";
+	// document.getElementById('can6-4').innerHTML="Weight of flask + kerosene (W<sub>4</sub>) = ";
+	// document.getElementById('can6-5').innerHTML="Weight of flask+water (W<sub>5</sub>) =";
 	 
 	 document.getElementById('v1').innerHTML="";
 	 document.getElementById('v2').innerHTML="";
@@ -1056,12 +1075,13 @@ function changeNomen(){
 	document.getElementById("air01").style.visibility = 'visible';
 }
 function airfoilNomen(n){
-	// var nomenDiv = document.getElementById("nomenImages");
+	
 	for(var i=1;i<8;i++){
 		document.getElementById("air0"+i).style.visibility = 'hidden';	
 	}
 	document.getElementById("air0"+n).style.visibility = 'visible';
-	// var imageNum = "/simulation/cement/Images/uav/airfoil/air0"+(n)+".png";
-	// nomenDiv.innerHTML = "<img style='position: absolute; visibility:visible; left: 170px; top: 145px; height: 180px; width: 380px; visibility:hidden;' src=\"+imageNum+\"/>";
-	// // nomenDiv.innerHTML = "<p>Hrlow</p>";
+	
+	//Displaying only names on fixed image.
+// 	var x = document.getElementById("content-"+n);
+// 	x.style.visibility = "visible";
 }

@@ -102,13 +102,6 @@ var n;
 
 <button id="change-airfoilButton" onclick="changeNomen();" style="position: absolute; top: 85%; left: 85%;  visibility: hidden;"></button>
 
-<!-- <div id="airfoil-button" class="btn-group">
-  <button>One</button>
-  <button>Two</button>
-  <button>Three</button>
-  <button>Four</button>
-  <button>Five</button>
-</div> -->
 
 <ul id="nomen-list" class="air-items" style="visibility: hidden; list-style-type: none; position: absolute; top: 120px;">
   <li><button onclick="airfoilNomen(1);">One</button></li>
@@ -166,7 +159,7 @@ var n;
 
 
 <!-- NEW VALUES FROM CANVAS 3 -->
-<div style="top:40%;">
+<p style="top:40%;">
 <img id="wg" style="position: absolute; left: 100px; top: 80px; width: 70%; height: 30%;" src="Images/uav/airfoil.jpeg"/>
 <!-- UPPER LAYER AIRFLOW -->
 <img id="new_arrow1" style="position: absolute; height: 7%; width: 5%; top:23%; left: 5%; visibility: hidden;" src="/simulation/cement/Images/uav/arrow.png">
@@ -181,7 +174,7 @@ var n;
 <img id="new_arrow10" style="position: absolute; height: 7%; width: 5%; top:20%; left: 68%; visibility:hidden;" src="/simulation/cement/Images/uav/arrow.png">
 <img id="new_arrow11" style="position: absolute; height: 7%; width: 5%; top:21%; left: 75%; visibility:hidden;" src="/simulation/cement/Images/uav/arrow.png">
 <img id="new_arrow12" style="position: absolute; height: 7%; width: 5%; top:21%; left: 82%; visibility:hidden;" src="/simulation/cement/Images/uav/arrow.png">
-<img id="new_arrow13" style="position: absolute; height: 7%; width: 5%; top:21%; left: 85%; visibility:hidden;" src="/simulation/cement/Images/uav/arrow.png">
+<p id="new_arrow13" style="position: absolute; height: 7%; width: 5%; top:21%; left: 83%; visibility:hidden;"> </p>
 <!-- BOTTOM LAYER AIRFLOW -->
 <img id="below_arrow1" style="position: absolute; height: 7%; width: 5%; top:32%; left: 5%; visibility: hidden;" src=" /simulation/cement/Images/uav/arrow.png">
 <img id="below_arrow2" style="position: absolute; height: 7%; width: 5%; top:32%; left: 12%; visibility: hidden;" src="/simulation/cement/Images/uav/arrow.png">
@@ -195,13 +188,19 @@ var n;
 <img id="below_arrow10" style="position: absolute; height: 7%; width: 5%; top:32%; left: 68%; visibility: hidden;" src="/simulation/cement/Images/uav/arrow.png">
 <img id="below_arrow11" style="position: absolute; height: 7%; width: 5%; top:32%; left: 75%; visibility: hidden;" src="/simulation/cement/Images/uav/arrow.png">
 <img id="below_arrow12" style="position: absolute; height: 7%; width: 5%; top:32%; left: 82%; visibility: hidden;" src="/simulation/cement/Images/uav/arrow.png">
-<img id="below_arrow13" style="position: absolute; height: 7%; width: 5%; top:32%; left: 85%; visibility: hidden;" src="/simulation/cement/Images/uav/arrow.png">
+<p id="below_arrow13" style="position: absolute; height: 7%; width: 5%; top:32%; left: 83%; visibility: hidden;" ></p>
 
 <!-- LIFT arrows -->
-<img class="up-arrow1" style="position: absolute; height: 7%; width: 3%; top:65%; left: 32%; visibility: hidden;" src="/simulation/cement/Images/uav/arrow-up.png">
-<img class="up-arrow2" style="position: absolute; height: 7%; width: 3%; top:66%; left: 41%; visibility: hidden;" src="/simulation/cement/Images/uav/arrow-up.png">
-<img class="up-arrow3" style="position: absolute; height: 7%; width: 3%; top:65%; left: 50%; visibility: hidden;" src="/simulation/cement/Images/uav/arrow-up.png">
-<p id="lift" style="position: absolute; visibility: block; height: 7%; width: 4%; top:75%; left: 40%;"><b>LIFT</b></p>
+<div id="up-arrow-div" style="visibility: hidden;">
+<img class="up-arrow1" style="position: absolute; height: 7%; width: 3%; top:43%; left: 32%; visibility: hidden;" src="/simulation/cement/Images/uav/arrow-up.png">
+<img class="up-arrow2" style="position: absolute; height: 7%; width: 3%; top:44%; left: 41%; visibility: hidden;" src="/simulation/cement/Images/uav/arrow-up.png">
+<img class="up-arrow3" style="position: absolute; height: 7%; width: 3%; top:43%; left: 50%; visibility: hidden;" src="/simulation/cement/Images/uav/arrow-up.png">
+<p id="lift" style="position: absolute; visibility: block; height: 7%; width: 4%; top:51%; left: 40%;"><b>LIFT</b></p>
+</div>
+
+<!-- VELOCIY - PRESSURE INFO -->
+<div id="v-p-info" style="position: absolute; top:35%; left: 70%; visibility: hidden;" >
+  <p> Decrease in Velocity(V) <br/> Increase in Pressure(P).</p>
 </div>
 
 <img id="hand3" style="position: absolute; left: 275px; top: 125px; visibility:hidden; cursor:pointer;" src="Images/hn.png"/>

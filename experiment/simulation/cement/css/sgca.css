@@ -248,6 +248,7 @@ background:#000
       color: white; /* White text */
       padding: 10px 24px; /* Some padding */
       cursor: pointer; /* Pointer/hand icon */
+      margin-top: 2px;
       /* width: 50%; Set a width if needed */
       /* display: block;  */
 }
