@@ -228,7 +228,7 @@ function magic()
 	// 	document.getElementById('nob').onclick=function() { step2(); };
 	// }
 		document.getElementById("nextButton").style.visibility = "visible";
-		myInt = setInterval(function(){ animateNewarrow(); }, 300);
+		// myInt = setInterval(function(){ animateNewarrow(); }, 300);
 
 	}
 
@@ -258,8 +258,9 @@ function magic()
 		// Standard syntax
 		document.getElementById("arrow1").style.transform = "rotate(180deg)";
 		
-		
-		document.getElementById('nob3-1').onclick=function() { step3(); };	
+		document.getElementById('can3').innerHTML="Something here for step3";
+
+		// document.getElementById('nob3-1').onclick=function() { step3(); };	
 	}
 	else if (simsubscreennum==4)
 	{
@@ -620,7 +621,7 @@ function step33()
 		//document.getElementById('nextButton').style.visibility="visible";
 
 
-		document.getElementById('can3').innerHTML="Weight of flask + cement + kerosene (W<sub>3</sub>) = "+values[p][2]  +"g";
+		// document.getElementById('can3').innerHTML="Weight of flask + cement + kerosene (W<sub>3</sub>) = "+values[p][2]  +"g";
         document.getElementById('v3').innerHTML=+values[p][2]+"g";
 		if(repeat==1)
 		{
@@ -1044,8 +1045,12 @@ function changeNomen(){
 	document.getElementById("air01").style.visibility = 'visible';
 }
 function airfoilNomen(n){
+	// var nomenDiv = document.getElementById("nomenImages");
 	for(var i=1;i<8;i++){
 		document.getElementById("air0"+i).style.visibility = 'hidden';	
 	}
 	document.getElementById("air0"+n).style.visibility = 'visible';
+	// var imageNum = "/simulation/cement/Images/uav/airfoil/air0"+(n)+".png";
+	// nomenDiv.innerHTML = "<img style='position: absolute; visibility:visible; left: 170px; top: 145px; height: 180px; width: 380px; visibility:hidden;' src=\"+imageNum+\"/>";
+	// // nomenDiv.innerHTML = "<p>Hrlow</p>";
 }

@@ -243,8 +243,8 @@ background:#000
 .air-items button{
     border-radius: 3px;
 
-    background-color: #4CAF50; /* Green background */
-      border: 1px solid green; /* Green border */
+    background-color: rgb(18, 19, 18); /* Green background */
+      border: 1px solid rgb(25, 26, 25); /* Green border */
       color: white; /* White text */
       padding: 10px 24px; /* Some padding */
       cursor: pointer; /* Pointer/hand icon */
