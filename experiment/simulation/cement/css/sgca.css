@@ -255,3 +255,27 @@ background:#000
 .air-items button:hover {
     background-color: #3d4f3d;
   }
+
+.verificationButton{
+    border-radius: 3px;
+
+    background-color: rgb(18, 19, 18); /* Green background */
+      border: 1px solid rgb(25, 26, 25); /* Green border */
+      color: white; /* White text */
+      padding: 6px 16px; /* Some padding */
+      cursor: pointer; /* Pointer/hand icon */
+      margin-top: 2px;
+}
+.lift-verify{
+    padding: 5px 15px;
+}
+
+.setColorNoInput{
+    color: rgb(13, 84, 160);;
+}
+.setColorCorrectInput{
+    color: rgb(8, 145, 8);
+}
+.setColorIncorrectInput{
+    color: rgb(194, 12, 12);
+}

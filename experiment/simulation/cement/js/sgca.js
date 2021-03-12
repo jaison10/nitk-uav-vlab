@@ -275,7 +275,7 @@ function magic()
 		// refresh1();
 
 		// enabling for my purpose. Disable it later.
-		document.getElementById("nextButton").style.visibility = "visible";
+		// document.getElementById("nextButton").style.visibility = "visible";
 
 		myInt = setInterval(function(){ animateNewarrow(); }, 1000);
 
@@ -288,7 +288,7 @@ function magic()
 		// Standard syntax
 		document.getElementById("arrow1").style.transform = "rotate(180deg)";
 		
-		document.getElementById('can3').innerHTML="Something here for step3";
+		// document.getElementById('can3').innerHTML="Something here for step3";
 
 		// document.getElementById('nob3-1').onclick=function() { step3(); };	
 	}
@@ -1084,4 +1084,38 @@ function airfoilNomen(n){
 	//Displaying only names on fixed image.
 // 	var x = document.getElementById("content-"+n);
 // 	x.style.visibility = "visible";
+}
+
+
+
+//------------------------------LIFT CALCULATION PART---------------------------------------//
+function calculateLift(){
+	document.getElementById("solve-equation").style.visibility = "visible";
+	document.getElementById("calc-lift-part").style.visibility = "hidden";
+}
+function showCompare(){
+	document.getElementById("show-eqn").style.visibility = "hidden";
+	document.getElementById("calculate-lift").style.visibility = "visible";
+}
+function verifyLift(){
+	var liftval = document.getElementById("lift-input").value;
+	if(!liftval && liftval==""){
+		document.getElementById("outputLift").textContent = "Enter some value!";
+		document.getElementById("outputLift").classList.add("setColorNoInput");
+		document.getElementById("outputLift").classList.remove("setColorCorrectInput");
+		document.getElementById("outputLift").classList.remove( "setColorIncorrectInput");
+	}
+	else if(liftval == 80){
+		document.getElementById("outputLift").textContent = "Correct answer!";
+		document.getElementById("outputLift").classList.add ("setColorCorrectInput");
+		document.getElementById("outputLift").classList.remove("setColorNoInput");
+		document.getElementById("outputLift").classList.remove( "setColorIncorrectInput");
+		document.getElementById("nextButton").style.visibility = "visible";
+	}
+	else{
+		document.getElementById("outputLift").textContent = "Incorrect answer!";
+		document.getElementById("outputLift").classList.add("setColorIncorrectInput");
+		document.getElementById("outputLift").classList.remove("setColorNoInput");
+		document.getElementById("outputLift").classList.remove( "setColorCorrectInput");
+	}
 }
