@@ -207,28 +207,28 @@ var n;
 </div>
 
 <!-- Lift calculation display -->
-<div id="calc-lift-part" style="visibility: block; position: absolute; top: 60%;">
-  <p> Let us calculate the lift now: <button class="verificationButton" onclick="calculateLift();">Calculate</button></p>
+<div id="calc-lift-part1" style="visibility: block; position: absolute; top: 60%;">
+  <p> Let us calculate the lift now: <button class="verificationButton" onclick="calculateLift(1);">Calculate</button></p>
 </div>
 
 
 <!-- explanation and comparison part. -->
-<div id="solve-equation" style="visibility: hidden;">
+<div id="solve-equation1" style="visibility: hidden;">
 <div id="" style="position: absolute; visibility: block; top:56%; left: 0%;">
   <h4>Let us find out the lift:</h4>
   <img src="/experiment/simulation/cement/Images/PhysicsEquation4-600x148.png"/>
 </div>
-<div id="show-eqn" style="position: absolute; visibility: block; top:60%; left: 50%;">
+<div id="show-eqn1" style="position: absolute; visibility: block; top:60%; left: 50%;">
   <p>Value 1</p>
   <p>Value 2</p>
   <p>Value 3</p>
-  <p>Ready for verification? <button class="verificationButton" onclick="showCompare();">Verify</button></p>
+  <p>Ready for verification? <button class="verificationButton" onclick="showCompare(1);">Verify</button></p>
 </div>
-<div id="calculate-lift" style="position: absolute; visibility: hidden; top:60%; left: 50%;">
+<div id="calculate-lift1" style="position: absolute; visibility: hidden; top:60%; left: 50%;">
   <p>Enter your answer and comapre with the actual value.</p>
-  <input class="lift-verify" type="text" id="lift-input"/>
-  <button class="verificationButton" onclick="verifyLift();">Verify</button>
-  <p id="outputLift" class=""></p>
+  <input class="lift-verify" type="text" id="lift-input1"/>
+  <button class="verificationButton" onclick="verifyLift(1);">Verify</button>
+  <p id="outputLift1" class=""></p>
 </div>
 </div>
 
@@ -238,6 +238,9 @@ var n;
 <p id="can3" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
 <p id="v3" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
 </div>
+
+
+
 
 <!--Step4	-->	
 <div class="simsubscreen" id="canvas4" style="visibility:hidden">
@@ -298,10 +301,38 @@ var n;
   <p> Decrease in Velocity(V) <br/> Increase in Pressure(P).</p>
 </div>
 
+
+<!-- Lift calculation display -->
+<div id="calc-lift-part2" style="visibility: block; position: absolute; top: 60%;">
+  <p> Let us calculate the lift now: <button class="verificationButton" onclick="calculateLift(2);">Calculate</button></p>
+</div>
+
+
+<!-- explanation and comparison part. -->
+<div id="solve-equation2" style="visibility: hidden;">
+<div id="" style="position: absolute; visibility: block; top:50%; left: 0%;">
+  <h4>Let us find out the lift:</h4>
+  <img src="/experiment/simulation/cement/Images/PhysicsEquation4-600x148.png"/>
+</div>
+<div id="show-eqn2" style="position: absolute; visibility: block; top:60%; left: 50%;">
+  <p>Value 1</p>
+  <p>Value 2</p>
+  <p>Value 3</p>
+  <p>Ready for verification? <button class="verificationButton" onclick="showCompare(2);">Verify</button></p>
+</div>
+<div id="calculate-lift2" style="position: absolute; visibility: hidden; top:60%; left: 50%;">
+  <p>Enter your answer and comapre with the actual value.</p>
+  <input class="lift-verify" type="text" id="lift-input2"/>
+  <button class="verificationButton" onclick="verifyLift(2);">Verify</button>
+  <p id="outputLift2" class=""></p>
+</div>
+</div>
+
+
 <img id="hand4" style="position: absolute; left: 275px; top: 125px; visibility:hidden;cursor:pointer;" src="Images/hn.png"/>
 
 
-<p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;">Weight of flask + kerosene (W<sub>4</sub>) = _____ g</p>
+<p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
 <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
 
 </div>

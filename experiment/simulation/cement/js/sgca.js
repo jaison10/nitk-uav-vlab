@@ -204,13 +204,13 @@ function animateNewAngleOfAttackarrow(){
 
 	if(arrCountAOT == 13){
 		// hiding v-p-info.
-		document.getElementById("V-P-info").style.animation = "fadeOut 2.5s forwards";
+		document.getElementById("V-P-info").style.animation = "fadeOut 1.5s forwards";
 		// document.getElementById("V-P-info").style.visibility = "hidden";
 
 		// hiding the lift arrow section.
-		document.getElementById("up-Arrow-div").style.animation = "fadeOut 2.5s forwards";
+		document.getElementById("up-Arrow-div").style.animation = "fadeOut 1.5s forwards";
 		// document.getElementById("up-Arrow-div").style.visibility = "hidden";
-		
+
 		// hiding the lift arrows.
 		for(var i=1;i<4;i++){
 			lift_arrows = document.querySelector(".up-Arrow"+i);
@@ -372,9 +372,9 @@ function magic()
 		// hiding the velocity pressure info
 		document.getElementById("v-p-info").style.visibility = "hidden";
 		// calculation part.
-		document.getElementById("calc-lift-part").style.visibility = "hidden";
-		document.getElementById("solve-equation").style.visibility = "hidden";
-		document.getElementById("calculate-lift").style.visibility = "hidden";
+		document.getElementById("calc-lift-part1").style.visibility = "hidden";
+		document.getElementById("solve-equation1").style.visibility = "hidden";
+		document.getElementById("calculate-lift1").style.visibility = "hidden";
 
 		// new angle image
 		document.getElementById('airfoil-zero').style.animation = "valveturn-5 1.5s forwards ";
@@ -393,7 +393,8 @@ function magic()
 		}, 1000);
 
 		setTimeout(() => {
-			document.getElementById("angle-of-attck-info").style.visibility = "hidden";
+			// document.getElementById("angle-of-attck-info").style.visibility = "hidden";
+			document.getElementById("angle-of-attck-info").style.animation = "fadeOut 1.5s forwards";
 			myInt = setInterval(function(){ animateNewAngleOfAttackarrow(); }, 1000);
 		}, 3500);
 
@@ -1183,33 +1184,69 @@ function airfoilNomen(n){
 
 
 //------------------------------LIFT CALCULATION PART---------------------------------------//
-function calculateLift(){
-	document.getElementById("solve-equation").style.visibility = "visible";
-	document.getElementById("calc-lift-part").style.visibility = "hidden";
-}
-function showCompare(){
-	document.getElementById("show-eqn").style.visibility = "hidden";
-	document.getElementById("calculate-lift").style.visibility = "visible";
-}
-function verifyLift(){
-	var liftval = document.getElementById("lift-input").value;
-	if(!liftval && liftval==""){
-		document.getElementById("outputLift").textContent = "Enter some value!";
-		document.getElementById("outputLift").classList.add("setColorNoInput");
-		document.getElementById("outputLift").classList.remove("setColorCorrectInput");
-		document.getElementById("outputLift").classList.remove( "setColorIncorrectInput");
+function calculateLift(l){
+	if(l==1){
+		document.getElementById("calc-lift-part1").style.visibility = "hidden";
+		document.getElementById("solve-equation1").style.visibility = "visible";
 	}
-	else if(liftval == 80){
-		document.getElementById("outputLift").textContent = "Correct answer!";
-		document.getElementById("outputLift").classList.add ("setColorCorrectInput");
-		document.getElementById("outputLift").classList.remove("setColorNoInput");
-		document.getElementById("outputLift").classList.remove( "setColorIncorrectInput");
-		document.getElementById("nextButton").style.visibility = "visible";
+	else if(l==2){
+		document.getElementById("calc-lift-part2").style.visibility = "hidden";
+		document.getElementById("solve-equation2").style.visibility = "visible";
 	}
-	else{
-		document.getElementById("outputLift").textContent = "Incorrect answer!";
-		document.getElementById("outputLift").classList.add("setColorIncorrectInput");
-		document.getElementById("outputLift").classList.remove("setColorNoInput");
-		document.getElementById("outputLift").classList.remove( "setColorCorrectInput");
+}
+function showCompare(l){
+	if(l==1){
+		document.getElementById("show-eqn1").style.visibility = "hidden";
+		document.getElementById("calculate-lift1").style.visibility = "visible";
+	}
+	else if(l==2){
+		document.getElementById("show-eqn2").style.visibility = "hidden";
+		document.getElementById("calculate-lift2").style.visibility = "visible";
+	}
+}
+function verifyLift(l){
+	if(l==1){
+		var liftval = document.getElementById("lift-input1").value;
+		if(!liftval && liftval==""){
+			document.getElementById("outputLift1").textContent = "Enter some value!";
+			document.getElementById("outputLift1").classList.add("setColorNoInput");
+			document.getElementById("outputLift1").classList.remove("setColorCorrectInput");
+			document.getElementById("outputLift1").classList.remove( "setColorIncorrectInput");
+		}
+		else if(liftval == 80){
+			document.getElementById("outputLift1").textContent = "Correct answer!";
+			document.getElementById("outputLift1").classList.add ("setColorCorrectInput");
+			document.getElementById("outputLift1").classList.remove("setColorNoInput");
+			document.getElementById("outputLift1").classList.remove( "setColorIncorrectInput");
+			document.getElementById("nextButton").style.visibility = "visible";
+		}
+		else{
+			document.getElementById("outputLift1").textContent = "Incorrect answer!";
+			document.getElementById("outputLift1").classList.add("setColorIncorrectInput");
+			document.getElementById("outputLift1").classList.remove("setColorNoInput");
+			document.getElementById("outputLift1").classList.remove( "setColorCorrectInput");
+		}
+	}
+	else if(l==2){
+		var liftval = document.getElementById("lift-input2").value;
+		if(!liftval && liftval==""){
+			document.getElementById("outputLift2").textContent = "Enter some value!";
+			document.getElementById("outputLift2").classList.add("setColorNoInput");
+			document.getElementById("outputLift2").classList.remove("setColorCorrectInput");
+			document.getElementById("outputLift2").classList.remove( "setColorIncorrectInput");
+		}
+		else if(liftval == 80){
+			document.getElementById("outputLift2").textContent = "Correct answer!";
+			document.getElementById("outputLift2").classList.add ("setColorCorrectInput");
+			document.getElementById("outputLift2").classList.remove("setColorNoInput");
+			document.getElementById("outputLift2").classList.remove( "setColorIncorrectInput");
+			document.getElementById("nextButton").style.visibility = "visible";
+		}
+		else{
+			document.getElementById("outputLift2").textContent = "Incorrect answer!";
+			document.getElementById("outputLift2").classList.add("setColorIncorrectInput");
+			document.getElementById("outputLift2").classList.remove("setColorNoInput");
+			document.getElementById("outputLift2").classList.remove( "setColorCorrectInput");
+		}
 	}
 }
