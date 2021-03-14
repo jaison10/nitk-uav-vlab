@@ -158,6 +158,71 @@ function animateNewarrow(){
 
 
 }
+
+var arrCountAOT =1;
+function animateNewAngleOfAttackarrow(){
+	console.log("Im here and count is: " , arrCountAOT);
+	console.log("The image is: new_Arrow"+arrCountAOT);
+
+	new_arrow =  document.getElementById("new_Arrow"+arrCountAOT);
+	below_arrow =  document.getElementById("below_Arrow"+arrCountAOT);
+
+	// making the below arrows slower on passing by wing. 
+	if(arrCountAOT>4){
+		// displaying the velocity-pressure info when the air crosses the wing.
+		// document.getElementById("v-p-info").style.visibility = "visible";
+		// displaying the lift direction arrows when the air crosses the wing.
+		// document.getElementById("up-arrow-div").style.visibility = "visible";
+		//Blinking the lift direction part arrowson crossing the wing. 
+		// for(var i=1;i<4;i++){
+		// 	lift_arrows = document.querySelector(".up-arrow"+i);
+		// 	if(lift_arrows.style.visibility == "hidden"){
+		// 		lift_arrows.style.visibility = "visible";
+		// 	}
+		// 	else{
+		// 		lift_arrows.style.visibility = "hidden";
+		// 	}
+		// }
+		
+		// displaying above arrow without delay.
+		new_arrow.style.visibility = 'visible';
+		new_arrow.style.zIndex  = 10;
+		// making the below arrow visible with some timeout.
+		setTimeout(function(){
+			below_arrow.style.visibility = 'visible';
+			below_arrow.style.zIndex  = 10;
+		}, 800)
+	}
+	else{
+		new_arrow.style.visibility = 'visible';
+		new_arrow.style.zIndex  = 10;
+		below_arrow.style.visibility = 'visible';
+		below_arrow.style.zIndex  = 10;
+	}
+
+	if(arrCountAOT == 13){
+		// hiding v-p-info.
+		document.getElementById("v-p-info").style.visibility = "hidden";
+		// hiding the lift arrow section.
+		document.getElementById("up-Arrow-div").style.visibility = "hidden";
+		// hiding the lift arrows.
+		for(var i=1;i<4;i++){
+			lift_arrows = document.querySelector(".up-Arrow"+i);
+			lift_arrows.style.visibility = "hidden";
+		}
+		// hiding all 13 arrows flowing 
+		for(i = 1; i<14; i++){
+			document.getElementById("new_Arrow"+i).style.visibility = 'hidden';
+			document.getElementById("below_Arrow"+i).style.visibility = 'hidden';
+		}
+		arrCountAOT = 1;
+	}
+	else{
+		arrCountAOT = arrCountAOT+1;
+	}
+
+}
+
 function magic()
 {
 	
@@ -264,19 +329,6 @@ function magic()
 
 	else if (simsubscreennum==3)
 	{
-		//clearing the timeout of arrow animation.
-		// clearInterval(myInt);
-		// var i=1;
-		// while(i<14){
-		// 	document.getElementById("new_arrow"+i).style.visibility = 'hidden';
-		// 	document.getElementById("below_arrow"+i).style.visibility = 'hidden';
-		// 	i++;
-		// }
-		// refresh1();
-
-		// enabling for my purpose. Disable it later.
-		// document.getElementById("nextButton").style.visibility = "visible";
-
 		myInt = setInterval(function(){ animateNewarrow(); }, 1000);
 
 	
@@ -296,18 +348,53 @@ function magic()
 	{
 		//stopping the blink.
 		clearInterval(myInt);
+		document.getElementById("below_arrow"+arrowCount).style.visibility = "hidden";
 		// hiding the 14 wind flow direction arrows.
-		var i=1;
-		while(i<14){
-			document.getElementById("new_arrow"+i).style.visibility = 'hidden';
-			document.getElementById("below_arrow"+(i++)).style.visibility = 'hidden';
+		var x=1;
+		while(x<14){
+			document.getElementById("new_arrow"+x).style.visibility = 'hidden';
+			document.getElementById("below_arrow"+x).style.visibility = 'hidden';
+			document.getElementById("below_arrow"+x).style.zIndex = -100;
+			x++;
 		}
 		// hiding the lift direction arrows.
 		var i=1;
 		while(i<4){
 			document.querySelector(".up-arrow"+(i++)).style.visibility = "hidden";
-		}		
-		
+		}	
+		document.getElementById("lift").style.visibility = "hidden";
+		// hiding the velocity pressure info
+		document.getElementById("v-p-info").style.visibility = "hidden";
+		// calculation part.
+		document.getElementById("calc-lift-part").style.visibility = "hidden";
+		document.getElementById("solve-equation").style.visibility = "hidden";
+		document.getElementById("calculate-lift").style.visibility = "hidden";
+
+		// new angle image
+		document.getElementById('airfoil-zero').style.animation = "valveturn-5 1.5s forwards ";
+		document.getElementById("line").style.visibility = "visible";
+		document.getElementById("line").style.animation = "fadeIn 2.5s forwards";
+
+		setTimeout( function (){
+			document.getElementById("angle-curve").style.visibility = "visible";
+			document.getElementById("angle-curve").style.transform = "rotate(-35deg)";
+			// document.getElementById("line").style.animation = "fadeIn 2.5s forwards";
+		}, 500)
+
+		setTimeout(() => {
+			document.getElementById("angle-of-attck-info").style.visibility = "visible";
+			document.getElementById("angle-of-attck-info").style.animation = "fadeIn 2.5s forwards";
+		}, 1000);
+
+		setTimeout(() => {
+			document.getElementById("angle-of-attck-info").style.visibility = "hidden";
+			myInt = setInterval(function(){ animateNewAngleOfAttackarrow(); }, 1000);
+		}, 3500);
+
+
+
+
+
 		refresh1();
 
 		
@@ -690,6 +777,7 @@ function step41()
 {
 	myStopFunction();
 	document.getElementById('hand4').style.transformOrigin = "100% 80%";
+	// document.getElementById('hand4').style.transform= rotate(90deg);
 	document.getElementById('hand4').style.animation = "valveturn-4 1.5s forwards ";
 	setTimeout(function()
 	{

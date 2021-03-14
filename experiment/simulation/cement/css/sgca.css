@@ -183,11 +183,13 @@ background:#000
     100% {transform: rotate(-20deg);}
 }
 
-
-/* Standard syntax */
-@keyframes water0 {
-    0% {transform: translate(0, 0);}
-    100% {transform: translate(0, -100px);}
+@-webkit-keyframes valveturn-5 {
+    0% {-webkit-transform: rotate(0deg);}    
+    100% {-webkit-transform: rotate(10deg);}
+}
+@keyframes valveturn-5 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(10deg);}
 }
 
 /* Standard syntax */
@@ -196,7 +198,18 @@ background:#000
     100% {transform: translate(0, -100px);}
 }
 
+/* Standard syntax */
+@keyframes water0 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, -100px);}
+}
 
+/* LINES : angle of attack */
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ } 
+ 
 /*-----------------------------------------hook gauge----------------------- */
 /* Chrome, Safari, Opera */
 @-webkit-keyframes myhook-1 {
