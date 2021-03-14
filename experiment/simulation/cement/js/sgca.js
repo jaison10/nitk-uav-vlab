@@ -1185,68 +1185,92 @@ function airfoilNomen(n){
 
 //------------------------------LIFT CALCULATION PART---------------------------------------//
 function calculateLift(l){
-	if(l==1){
-		document.getElementById("calc-lift-part1").style.visibility = "hidden";
-		document.getElementById("solve-equation1").style.visibility = "visible";
-	}
-	else if(l==2){
-		document.getElementById("calc-lift-part2").style.visibility = "hidden";
-		document.getElementById("solve-equation2").style.visibility = "visible";
-	}
+	// if(l==1){
+	// 	document.getElementById("calc-lift-part1").style.visibility = "hidden";
+	// 	document.getElementById("solve-equation1").style.visibility = "visible";
+	// }
+	// else if(l==2){
+	// 	document.getElementById("calc-lift-part2").style.visibility = "hidden";
+	// 	document.getElementById("solve-equation2").style.visibility = "visible";
+	// }
+	document.getElementById("calc-lift-part"+(l)).style.visibility = "hidden";
+	document.getElementById("solve-equation"+(l)).style.visibility = "visible";
 }
 function showCompare(l){
-	if(l==1){
-		document.getElementById("show-eqn1").style.visibility = "hidden";
-		document.getElementById("calculate-lift1").style.visibility = "visible";
-	}
-	else if(l==2){
-		document.getElementById("show-eqn2").style.visibility = "hidden";
-		document.getElementById("calculate-lift2").style.visibility = "visible";
-	}
+	// if(l==1){
+	// 	document.getElementById("show-eqn1").style.visibility = "hidden";
+	// 	document.getElementById("calculate-lift1").style.visibility = "visible";
+	// }
+	// else if(l==2){
+	// 	document.getElementById("show-eqn2").style.visibility = "hidden";
+	// 	document.getElementById("calculate-lift2").style.visibility = "visible";
+	// }
+	document.getElementById("show-eqn"+(l)).style.visibility = "hidden";
+	document.getElementById("calculate-lift"+(l)).style.visibility = "visible";
 }
 function verifyLift(l){
-	if(l==1){
-		var liftval = document.getElementById("lift-input1").value;
-		if(!liftval && liftval==""){
-			document.getElementById("outputLift1").textContent = "Enter some value!";
-			document.getElementById("outputLift1").classList.add("setColorNoInput");
-			document.getElementById("outputLift1").classList.remove("setColorCorrectInput");
-			document.getElementById("outputLift1").classList.remove( "setColorIncorrectInput");
-		}
-		else if(liftval == 80){
-			document.getElementById("outputLift1").textContent = "Correct answer!";
-			document.getElementById("outputLift1").classList.add ("setColorCorrectInput");
-			document.getElementById("outputLift1").classList.remove("setColorNoInput");
-			document.getElementById("outputLift1").classList.remove( "setColorIncorrectInput");
-			document.getElementById("nextButton").style.visibility = "visible";
-		}
-		else{
-			document.getElementById("outputLift1").textContent = "Incorrect answer!";
-			document.getElementById("outputLift1").classList.add("setColorIncorrectInput");
-			document.getElementById("outputLift1").classList.remove("setColorNoInput");
-			document.getElementById("outputLift1").classList.remove( "setColorCorrectInput");
-		}
+	// if(l==1){
+	// 	var liftval = document.getElementById("lift-input1").value;
+	// 	if(!liftval && liftval==""){
+	// 		document.getElementById("outputLift1").textContent = "Enter some value!";
+	// 		document.getElementById("outputLift1").classList.add("setColorNoInput");
+	// 		document.getElementById("outputLift1").classList.remove("setColorCorrectInput");
+	// 		document.getElementById("outputLift1").classList.remove( "setColorIncorrectInput");
+	// 	}
+	// 	else if(liftval == 80){
+	// 		document.getElementById("outputLift1").textContent = "Correct answer!";
+	// 		document.getElementById("outputLift1").classList.add ("setColorCorrectInput");
+	// 		document.getElementById("outputLift1").classList.remove("setColorNoInput");
+	// 		document.getElementById("outputLift1").classList.remove( "setColorIncorrectInput");
+	// 		document.getElementById("nextButton").style.visibility = "visible";
+	// 	}
+	// 	else{
+	// 		document.getElementById("outputLift1").textContent = "Incorrect answer!";
+	// 		document.getElementById("outputLift1").classList.add("setColorIncorrectInput");
+	// 		document.getElementById("outputLift1").classList.remove("setColorNoInput");
+	// 		document.getElementById("outputLift1").classList.remove( "setColorCorrectInput");
+	// 	}
+	// }
+	// else if(l==2){
+	// 	var liftval = document.getElementById("lift-input2").value;
+	// 	if(!liftval && liftval==""){
+	// 		document.getElementById("outputLift2").textContent = "Enter some value!";
+	// 		document.getElementById("outputLift2").classList.add("setColorNoInput");
+	// 		document.getElementById("outputLift2").classList.remove("setColorCorrectInput");
+	// 		document.getElementById("outputLift2").classList.remove( "setColorIncorrectInput");
+	// 	}
+	// 	else if(liftval == 80){
+	// 		document.getElementById("outputLift2").textContent = "Correct answer!";
+	// 		document.getElementById("outputLift2").classList.add ("setColorCorrectInput");
+	// 		document.getElementById("outputLift2").classList.remove("setColorNoInput");
+	// 		document.getElementById("outputLift2").classList.remove( "setColorIncorrectInput");
+	// 		document.getElementById("nextButton").style.visibility = "visible";
+	// 	}
+	// 	else{
+	// 		document.getElementById("outputLift2").textContent = "Incorrect answer!";
+	// 		document.getElementById("outputLift2").classList.add("setColorIncorrectInput");
+	// 		document.getElementById("outputLift2").classList.remove("setColorNoInput");
+	// 		document.getElementById("outputLift2").classList.remove( "setColorCorrectInput");
+	// 	}
+	// }
+	var liftval = document.getElementById("lift-input"+(l)).value;
+	if(!liftval && liftval==""){
+		document.getElementById("outputLift"+(l)).textContent = "Enter some value!";
+		document.getElementById("outputLift"+(l)).classList.add("setColorNoInput");
+		document.getElementById("outputLift"+(l)).classList.remove("setColorCorrectInput");
+		document.getElementById("outputLift"+(l)).classList.remove( "setColorIncorrectInput");
 	}
-	else if(l==2){
-		var liftval = document.getElementById("lift-input2").value;
-		if(!liftval && liftval==""){
-			document.getElementById("outputLift2").textContent = "Enter some value!";
-			document.getElementById("outputLift2").classList.add("setColorNoInput");
-			document.getElementById("outputLift2").classList.remove("setColorCorrectInput");
-			document.getElementById("outputLift2").classList.remove( "setColorIncorrectInput");
-		}
-		else if(liftval == 80){
-			document.getElementById("outputLift2").textContent = "Correct answer!";
-			document.getElementById("outputLift2").classList.add ("setColorCorrectInput");
-			document.getElementById("outputLift2").classList.remove("setColorNoInput");
-			document.getElementById("outputLift2").classList.remove( "setColorIncorrectInput");
-			document.getElementById("nextButton").style.visibility = "visible";
-		}
-		else{
-			document.getElementById("outputLift2").textContent = "Incorrect answer!";
-			document.getElementById("outputLift2").classList.add("setColorIncorrectInput");
-			document.getElementById("outputLift2").classList.remove("setColorNoInput");
-			document.getElementById("outputLift2").classList.remove( "setColorCorrectInput");
-		}
+	else if(liftval == 80){
+		document.getElementById("outputLift"+(l)).textContent = "Correct answer!";
+		document.getElementById("outputLift"+(l)).classList.add ("setColorCorrectInput");
+		document.getElementById("outputLift"+(l)).classList.remove("setColorNoInput");
+		document.getElementById("outputLift"+(l)).classList.remove( "setColorIncorrectInput");
+		document.getElementById("nextButton").style.visibility = "visible";
+	}
+	else{
+		document.getElementById("outputLift"+(l)).textContent = "Incorrect answer!";
+		document.getElementById("outputLift"+(l)).classList.add("setColorIncorrectInput");
+		document.getElementById("outputLift"+(l)).classList.remove("setColorNoInput");
+		document.getElementById("outputLift"+(l)).classList.remove( "setColorCorrectInput");
 	}
 }
