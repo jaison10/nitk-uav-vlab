@@ -170,41 +170,47 @@ function animateNewAngleOfAttackarrow(){
 	// making the below arrows slower on passing by wing. 
 	if(arrCountAOT>4){
 		// displaying the velocity-pressure info when the air crosses the wing.
-		// document.getElementById("v-p-info").style.visibility = "visible";
+		document.getElementById("V-P-info").style.visibility = "visible";
+		document.getElementById("V-P-info").style.animation = "fadeIn 2.5s forwards";
 		// displaying the lift direction arrows when the air crosses the wing.
-		// document.getElementById("up-arrow-div").style.visibility = "visible";
-		//Blinking the lift direction part arrowson crossing the wing. 
-		// for(var i=1;i<4;i++){
-		// 	lift_arrows = document.querySelector(".up-arrow"+i);
-		// 	if(lift_arrows.style.visibility == "hidden"){
-		// 		lift_arrows.style.visibility = "visible";
-		// 	}
-		// 	else{
-		// 		lift_arrows.style.visibility = "hidden";
-		// 	}
-		// }
+		document.getElementById("up-Arrow-div").style.visibility = "visible";
+		document.getElementById("up-Arrow-div").style.animation = "fadeIn 2.5s forwards";
+		// Blinking the lift direction part arrowson crossing the wing. 
+		for(var i=1;i<4;i++){
+			lift_arrows = document.querySelector(".up-Arrow"+i);
+			if(lift_arrows.style.visibility == "hidden"){
+				lift_arrows.style.visibility = "visible";
+			}
+			else{
+				lift_arrows.style.visibility = "hidden";
+			}
+		}
 		
 		// displaying above arrow without delay.
 		new_arrow.style.visibility = 'visible';
-		new_arrow.style.zIndex  = 10;
+		// new_arrow.style.zIndex  = 10;
 		// making the below arrow visible with some timeout.
 		setTimeout(function(){
 			below_arrow.style.visibility = 'visible';
-			below_arrow.style.zIndex  = 10;
-		}, 800)
+			// below_arrow.style.zIndex  = 10;
+		}, 300)
 	}
 	else{
 		new_arrow.style.visibility = 'visible';
-		new_arrow.style.zIndex  = 10;
+		// new_arrow.style.zIndex  = 10;
 		below_arrow.style.visibility = 'visible';
-		below_arrow.style.zIndex  = 10;
+		// below_arrow.style.zIndex  = 10;
 	}
 
 	if(arrCountAOT == 13){
 		// hiding v-p-info.
-		document.getElementById("v-p-info").style.visibility = "hidden";
+		document.getElementById("V-P-info").style.animation = "fadeOut 2.5s forwards";
+		// document.getElementById("V-P-info").style.visibility = "hidden";
+
 		// hiding the lift arrow section.
-		document.getElementById("up-Arrow-div").style.visibility = "hidden";
+		document.getElementById("up-Arrow-div").style.animation = "fadeOut 2.5s forwards";
+		// document.getElementById("up-Arrow-div").style.visibility = "hidden";
+		
 		// hiding the lift arrows.
 		for(var i=1;i<4;i++){
 			lift_arrows = document.querySelector(".up-Arrow"+i);
