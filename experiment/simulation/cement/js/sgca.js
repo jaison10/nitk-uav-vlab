@@ -265,69 +265,6 @@ function magic()
 		// hiding the nomenclature list of buttons
 		document.getElementById("nomen-list").style.visibility = 'hidden';
 
-
-
-		//Prevent repetitive random numbers
-	// 	while (p == lastp) 
-	// 	{
-	// 		p = Math.floor(Math.random() * 4);
-	// 	}
-	// 	if(repeat==0)
-	// 	{
-	// 		lastp = p;
-	// 	}
-	// 	refresh2();
-	// 	refresh1();
-	// 	repeat+=1;
-	// 	if(flag==1)
-	// 	{
-	// 	 document.getElementById('r1').style.visibility="hidden";
-	// 	 document.getElementById('w1').style.visibility="hidden";
-	// 	 document.getElementById('p6-1').style.visibility="hidden";
-	// 	 document.getElementById('canvas6').style.visibility="hidden";
-    //      document.getElementById('flask').style.visibility="visible";
-	// 	 document.getElementById('nob').style.visibility="visible";
-		           
-	// 	 document.getElementById('trial').style="visibility:visible;left: 700px; top: 100px;position: absolute;font-weight: bold;text-transform: uppercase;";
-	// 	 document.getElementById('trial').innerHTML="Trial : " + repeat;
-
-	// 	 document.getElementById('nextButton').style.visibility="hidden";
-
-		
-	// 	myInt = setInterval(function(){ animatearrow(); }, 500);
-	// 	document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
-			
-	// 	document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
-	// 	// Code for IE9
-	// 	document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
-	// 	// Standard syntax
-	// 	document.getElementById("arrow1").style.transform = "rotate(180deg)";
-		
-		
-	// 	document.getElementById('nob').onclick=function() { step2(); };
-	// }
-	// else
-	// 			{
-	// 	document.getElementById('a3').style.visibility="hidden";
-	// document.getElementById('a4').style.visibility="hidden";
-	// 		document.getElementById('nextButton').style.visibility="hidden";
-
-	// 	document.getElementById('trial').style="visibility:visible ;left: 700px; top: 100px;position: absolute;font-weight: bold;text-transform: uppercase;";
-	// 	document.getElementById('trial').innerHTML="Trial : " + repeat;
-		
-		
-	// 	myInt = setInterval(function(){ animatearrow(); }, 500);
-	// 	document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
-			
-	// 	document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
-	// 	// Code for IE9
-	// 	document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
-	// 	// Standard syntax
-	// 	document.getElementById("arrow1").style.transform = "rotate(180deg)";
-		
-		
-	// 	document.getElementById('nob').onclick=function() { step2(); };
-	// }
 		document.getElementById("nextButton").style.visibility = "visible";
 		// myInt = setInterval(function(){ animateNewarrow(); }, 300);
 
@@ -528,9 +465,11 @@ function magic()
 	
 	document.getElementById("air-info").style.visibility = 'hidden';
 	document.getElementById("arr-air").style.visibility =  'visible';
+	document.getElementById("arr-air").style.animation = "fadeIn 2.5s forwards";
 	document.getElementById("change-airfoilButton").textContent = "Learn more";
 	// document.getElementById("change-airfoilButton").style = "width: 15%";
 	document.getElementById('a3').style.cssText = "visibility=visible; position: absolute; left:80px; top: 320px; height: 170px; width: 470px;";
+	document.getElementById("a3").style.animation = "fadeIn 2.5s forwards";
 	var air =  document.getElementById("change-airfoilButton");
 	air.style.visibility = 'visible';
 	// document.getElementById('a4').style.visibility="visible";
@@ -1175,6 +1114,7 @@ function airfoilNomen(n){
 		document.getElementById("air0"+i).style.visibility = 'hidden';	
 	}
 	document.getElementById("air0"+n).style.visibility = 'visible';
+	document.getElementById("air0"+n).style.animation = "fadeIn 1.5s forwards";
 	
 	//Displaying only names on fixed image.
 // 	var x = document.getElementById("content-"+n);
