@@ -228,11 +228,11 @@ function magic() {
         refresh1();
         document.getElementById('nextButton').style.visibility = "hidden";
         // document.getElementById("arrow1").style = "position: absolute; top:230px;";
-        myInt = setInterval(function() {
-            animatearrow();
-        }, 500);
+        // myInt = setInterval(function() {
+        //     animatearrow();
+        // }, 500);
 
-        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 500px; top: 150px; height: 40px; z-index: 10;";
+        document.getElementById('arrow1').style = "visibility:hidden ;position:absolute; left: 500px; top: 150px; height: 40px; z-index: 10;";
 
         document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
         // Code for IE9
@@ -240,6 +240,7 @@ function magic() {
         // Standard syntax
         document.getElementById("arrow1").style.transform = "rotate(270deg)";
         document.getElementById('table_top').style.opacity = 0;
+
 
         // $(document).ready(function() {
         //     $("#table_iso").on('click', 'span', function() {
@@ -257,7 +258,7 @@ function magic() {
 
         //     });
         // });
-        document.getElementById('table_iso').onclick = function() { step1(); };
+        // document.getElementById('table_iso').onclick = function() { step1(); };
 
     } else if (simsubscreennum == 2) {
         //hiding the previous canvas airfoil images.
@@ -446,14 +447,20 @@ function step1() {
     var element = document.getElementById('table_top');
     element.style.visibility = 'visible';
     element.style.opacity = 1;
-    element.style.transition = "opacity 0.05s ease-in";
-    element.style.WebkitTransition = "opacity 1s ease-in-out";
-    element.style.msTransition = "opacity 1s ease-in-out";
+    element.style.transition = "opacity 5s ease-in";
+    element.style.WebkitTransition = "opacity 5s ease-in-out";
+    element.style.msTransition = "opacity 5s ease-in-out";
+
+
+    var table1 = document.getElementById('table_iso');
+    table1.style.opacity = 0;
+    table1.style.transition = "opacity 5s ease-out";
+
 
     document.getElementById("esc_iso").style.visibility = 'hidden';
     document.getElementById("power_iso").style.visibility = 'hidden';
     document.getElementById("knob_iso").style.visibility = 'hidden';
-    document.getElementById("table_iso").style.visibility = 'hidden';
+    document.getElementById("table_iso").style.visibility = 'visible';
     document.getElementById("thrust_iso").style.visibility = 'hidden';
 
 
@@ -1077,4 +1084,12 @@ function verifyLift(l) {
         document.getElementById("outputLift" + (l)).classList.remove("setColorNoInput");
         document.getElementById("outputLift" + (l)).classList.remove("setColorCorrectInput");
     }
+}
+
+function appear(id_name, top_px) {
+    var part = document.getElementById(id_name);
+    part.style.visibility = "visible";
+    part.style.opacity = 1;
+    part.style.top = top_px;
+    part.style.transition = "all 1s ease-in-out";
 }
