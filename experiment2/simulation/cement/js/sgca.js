@@ -219,6 +219,8 @@ function animateNewAngleOfAttackarrow() {
 
 }
 
+
+
 function magic() {
 
     if (simsubscreennum == 1) {
@@ -237,7 +239,25 @@ function magic() {
         document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
         // Standard syntax
         document.getElementById("arrow1").style.transform = "rotate(270deg)";
-        document.getElementById('a2').onclick = function() { step1(); };
+        document.getElementById('table_top').style.opacity = 0;
+
+        // $(document).ready(function() {
+        //     $("#table_iso").on('click', 'span', function() {
+        //         $(".image img").removeClass("opaque");
+
+        //         var newImage = $(this).index();
+
+        //         $(".image img").eq(newImage).addClass("opaque");
+        //         document.getElementById('table_top').style.visibility = 'visible';
+        //         // document.getElementById("esc_iso").style.visibility = 'hidden';
+        //         // document.getElementById("power_iso").style.visibility = 'hidden';
+        //         // document.getElementById("knob_iso").style.visibility = 'hidden';
+        //         // document.getElementById("table_iso").style.visibility = 'hidden';
+        //         document.getElementById("thrust_iso").style.visibility = 'hidden';
+
+        //     });
+        // });
+        document.getElementById('table_iso').onclick = function() { step1(); };
 
     } else if (simsubscreennum == 2) {
         //hiding the previous canvas airfoil images.
@@ -423,16 +443,31 @@ function step1() {
     myStopFunction();
     // document.getElementById('a1').style.visibility="hidden";
     // document.getElementById('a2').style.cssText ="visibility=visible; top:0px; position: absolute; left: 170px; cursor:default; height: 200px; width: 400px;";
+    var element = document.getElementById('table_top');
+    element.style.visibility = 'visible';
+    element.style.opacity = 1;
+    element.style.transition = "opacity 0.05s ease-in";
+    element.style.WebkitTransition = "opacity 1s ease-in-out";
+    element.style.msTransition = "opacity 1s ease-in-out";
 
-    document.getElementById("air-info").style.visibility = 'hidden';
-    document.getElementById("arr-air").style.visibility = 'visible';
-    document.getElementById("arr-air").style.animation = "fadeIn 2.5s forwards";
-    document.getElementById("change-airfoilButton").textContent = "Learn more";
+    document.getElementById("esc_iso").style.visibility = 'hidden';
+    document.getElementById("power_iso").style.visibility = 'hidden';
+    document.getElementById("knob_iso").style.visibility = 'hidden';
+    document.getElementById("table_iso").style.visibility = 'hidden';
+    document.getElementById("thrust_iso").style.visibility = 'hidden';
+
+
+
+
+    // document.getElementById("air-info").style.visibility = 'hidden';
+    // document.getElementById("arr-air").style.visibility = 'visible';
+    // document.getElementById("arr-air").style.animation = "fadeIn 2.5s forwards";
+    // document.getElementById("change-airfoilButton").textContent = "Learn more";
     // document.getElementById("change-airfoilButton").style = "width: 15%";
-    document.getElementById('a3').style.cssText = "visibility=visible; position: absolute; left:80px; top: 320px; height: 170px; width: 470px;";
-    document.getElementById("a3").style.animation = "fadeIn 2.5s forwards";
-    var air = document.getElementById("change-airfoilButton");
-    air.style.visibility = 'visible';
+    // document.getElementById('a3').style.cssText = "visibility=visible; position: absolute; left:80px; top: 320px; height: 170px; width: 470px;";
+    // document.getElementById("a3").style.animation = "fadeIn 2.5s forwards";
+    // var air = document.getElementById("change-airfoilButton");
+    // air.style.visibility = 'visible';
     // document.getElementById('a4').style.visibility="visible";
 
 }
