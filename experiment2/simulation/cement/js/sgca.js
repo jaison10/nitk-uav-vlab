@@ -1043,3 +1043,82 @@ function verifyLift(l) {
         document.getElementById("outputLift" + (l)).classList.remove("setColorCorrectInput");
     }
 }
+
+
+// EXPERIMENT 2
+var totalCount = 0;
+var clickOnEscWire1 = 0;
+function makeConnection1(){ 
+    totalCount += 1;
+    clickOnEscWire1 += 1;
+    if(clickOnEscWire1 == 1){
+        console.log("Initial click");
+        for(var i=1;i<4;i++){
+            document.getElementById("motorWire"+i).style.cursor = "pointer";
+        }
+        document.getElementById("escWire1").style.cursor = "none";
+        document.getElementById("escWire1").setAttribute('disabled', 'true');
+        blinkWires = setInterval(() => {
+            for(var i=1;i<4;i++){
+                if(document.getElementById("motorWire"+i).style.visibility == "hidden") 
+                    document.getElementById("motorWire"+i).style.visibility = "visible";
+                else
+                   document.getElementById("motorWire"+i).style.visibility = "hidden";
+            }
+        }, 1000);
+    }
+    else{
+        alert("You have already chosen this, move forward!");
+    }
+}
+var clickOnMotorWire1 = 0;
+function motorConnection1(){
+    if(totalCount == 1){
+        clickOnMotorWire1 +=1;
+        if(clickOnMotorWire1 == 1){
+            clearInterval(blinkWires);
+            document.getElementById("motorWire1").style.cursor = "none";
+            document.getElementById("motorWire2").style.cursor = "none";
+            document.getElementById("motorWire3").style.cursor = "none";
+            console.log("The first wire has been chosen");
+            document.getElementById("escWire2").style.cursor = "pointer";
+        }
+        else{
+            alert("You have already chosen this!");
+        }
+    }
+}
+var clickOnMotorWire2 = 0;
+function motorConnection2(){
+    if(totalCount == 1){
+        clickOnMotorWire1 +=1;
+        if(clickOnMotorWire1 == 1){
+            clearInterval(blinkWires);
+            document.getElementById("motorWire1").style.cursor = "none";
+            document.getElementById("motorWire2").style.cursor = "none";
+            document.getElementById("motorWire3").style.cursor = "none";
+            console.log("The second wire has been chosen");
+            document.getElementById("escWire2").style.cursor = "pointer";
+        }
+        else{
+            alert("You have already chosen this!");
+        }
+    }
+}
+var clickOnMotorWire3 = 0;
+function motorConnection3(){
+    if(totalCount == 1){
+        clickOnMotorWire1 +=1;
+        if(clickOnMotorWire1 == 1){
+            clearInterval(blinkWires);
+            document.getElementById("motorWire1").style.cursor = "none";
+            document.getElementById("motorWire2").style.cursor = "none";
+            document.getElementById("motorWire3").style.cursor = "none";
+            console.log("The third wire has been chosen");
+            document.getElementById("escWire2").style.cursor = "pointer";
+        }
+        else{
+            alert("You have already chosen this!");
+        }
+    }
+}
