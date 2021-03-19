@@ -1077,7 +1077,7 @@ function motorConnection1(){
         clickOnMotorWire1 +=1;
         if(clickOnMotorWire1 == 1){
             clearInterval(blinkWires);
-            document.getElementById("motorWire1").style.cursor = "none";
+            document.getElementById("motorWire1").style.cursor = "none"; // disable this forever. 
             document.getElementById("motorWire2").style.cursor = "none";
             document.getElementById("motorWire3").style.cursor = "none";
             console.log("The first wire has been chosen");
@@ -1095,7 +1095,7 @@ function motorConnection2(){
         if(clickOnMotorWire1 == 1){
             clearInterval(blinkWires);
             document.getElementById("motorWire1").style.cursor = "none";
-            document.getElementById("motorWire2").style.cursor = "none";
+            document.getElementById("motorWire2").style.cursor = "none"; //disable this forever
             document.getElementById("motorWire3").style.cursor = "none";
             console.log("The second wire has been chosen");
             document.getElementById("escWire2").style.cursor = "pointer";
@@ -1113,7 +1113,7 @@ function motorConnection3(){
             clearInterval(blinkWires);
             document.getElementById("motorWire1").style.cursor = "none";
             document.getElementById("motorWire2").style.cursor = "none";
-            document.getElementById("motorWire3").style.cursor = "none";
+            document.getElementById("motorWire3").style.cursor = "none";   // disable this forever
             console.log("The third wire has been chosen");
             document.getElementById("escWire2").style.cursor = "pointer";
         }
