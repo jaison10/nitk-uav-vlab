@@ -1142,6 +1142,7 @@ function select() {
     document.getElementById('equip').style.visibility = "visible";
     document.getElementById('select_motor').style.visibility = "visible";
     document.getElementById('select_mp').style.visibility = "hidden";
+    document.getElementById("nextButton").style.visibility = "visible";
 
 
     //     console.log("hello");
@@ -1151,14 +1152,17 @@ function motor(prop_name, m_img) {
 
     var m_name = document.getElementById('select_prop' + prop_name);
     m_name.style.visibility = "visible";
-    document.getElementById('p_' + prop_name).style.visibility = "visible";
+    var p_name = document.getElementById('p_' + prop_name)
+    p_name.style.visibility = "visible";
+    p_name.style.opacity = 1;
+
 
     console.log('hello');
     // document.getElementById('select_prop').style.visibility = "visible";
     var img_m = document.getElementById(m_img);
     img_m.style.visibility = "visible";
-    img_m.style.top = "250px";
-    img_m.style.transition = "top 5s ease-out;";
+    img_m.style.top = "220px";
+    img_m.style.transition = "all 3s ease-in-out;";
 
 
 }
