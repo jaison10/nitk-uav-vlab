@@ -1094,6 +1094,7 @@ function verifyLift(l) {
 
 
 // EXPERIMENT 2
+var arr = [];
 var totalCount = 0;
 var clickOnEscWire1 = 0;
 //    -----------------------  FIRST WIRE CHOSEN  ---------------------------------------------
