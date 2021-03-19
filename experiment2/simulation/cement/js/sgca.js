@@ -268,6 +268,8 @@ function magic() {
 
     } else if (simsubscreennum == 2) {
         //hiding the previous canvas airfoil images.
+        document.getElementById('equip').style.visibility = "hidden";
+        document.getElementById('select_motor').style.visibility = "hidden";
         for (var i = 1; i < 8; i++) {
             document.getElementById("air0" + i).style.visibility = 'hidden';
         }
@@ -1097,51 +1099,49 @@ function verifyLift(l) {
 var totalCount = 0;
 var clickOnEscWire1 = 0;
 //    -----------------------  FIRST WIRE CHOSEN  ---------------------------------------------
-function makeConnection1(){ 
+function makeConnection1() {
     totalCount += 1;
     clickOnEscWire1 += 1;
-    if(clickOnEscWire1 == 1){
+    if (clickOnEscWire1 == 1) {
         console.log("Initial click");
-        for(var i=1;i<4;i++){
-            document.getElementById("motorWire"+i).style.cursor = "pointer";
+        for (var i = 1; i < 4; i++) {
+            document.getElementById("motorWire" + i).style.cursor = "pointer";
         }
         document.getElementById("escWire1").style.cursor = "none";
         document.getElementById("escWire1").setAttribute('disabled', 'true');
         blinkWires = setInterval(() => {
-            for(var i=1;i<4;i++){
-                if(document.getElementById("motorWire"+i).style.visibility == "hidden") 
-                    document.getElementById("motorWire"+i).style.visibility = "visible";
+            for (var i = 1; i < 4; i++) {
+                if (document.getElementById("motorWire" + i).style.visibility == "hidden")
+                    document.getElementById("motorWire" + i).style.visibility = "visible";
                 else
-                   document.getElementById("motorWire"+i).style.visibility = "hidden";
+                    document.getElementById("motorWire" + i).style.visibility = "hidden";
             }
         }, 1000);
-    }
-    else{
+    } else {
         alert("You have already chosen this, move forward!");
     }
 }
 
 //  --------------------------- SECOND WIRE CHOSEN -----------------------------------
-function makeConnection2(){ 
+function makeConnection2() {
     totalCount += 1;
     clickOnEscWire1 += 1;
-    if(clickOnEscWire1 == 1){
+    if (clickOnEscWire1 == 1) {
         console.log("Second wire click");
-        for(var i=1;i<4;i++){
-            document.getElementById("motorWire"+i).style.cursor = "pointer";
+        for (var i = 1; i < 4; i++) {
+            document.getElementById("motorWire" + i).style.cursor = "pointer";
         }
         document.getElementById("escWire1").style.cursor = "none";
         document.getElementById("escWire1").setAttribute('disabled', 'true');
         blinkWires = setInterval(() => {
-            for(var i=1;i<4;i++){
-                if(document.getElementById("motorWire"+i).style.visibility == "hidden") 
-                    document.getElementById("motorWire"+i).style.visibility = "visible";
+            for (var i = 1; i < 4; i++) {
+                if (document.getElementById("motorWire" + i).style.visibility == "hidden")
+                    document.getElementById("motorWire" + i).style.visibility = "visible";
                 else
-                   document.getElementById("motorWire"+i).style.visibility = "hidden";
+                    document.getElementById("motorWire" + i).style.visibility = "hidden";
             }
         }, 1000);
-    }
-    else{
+    } else {
         alert("You have already chosen this, move forward!");
     }
 }
@@ -1150,52 +1150,52 @@ function makeConnection2(){
 
 
 var clickOnMotorWire1 = 0;
-function motorConnection1(){
-    if(totalCount == 1){
-        clickOnMotorWire1 +=1;
-        if(clickOnMotorWire1 == 1){
+
+function motorConnection1() {
+    if (totalCount == 1) {
+        clickOnMotorWire1 += 1;
+        if (clickOnMotorWire1 == 1) {
             clearInterval(blinkWires);
             document.getElementById("motorWire1").style.cursor = "none"; // disable this forever. 
             // document.getElementById("motorWire2").style.cursor = "none";
             // document.getElementById("motorWire3").style.cursor = "none";
             console.log("The first wire has been chosen");
             document.getElementById("escWire2").style.cursor = "pointer";
-        }
-        else{
+        } else {
             alert("You have already chosen this!");
         }
     }
 }
 var clickOnMotorWire2 = 0;
-function motorConnection2(){
-    if(totalCount == 1){
-        clickOnMotorWire1 +=1;
-        if(clickOnMotorWire1 == 1){
+
+function motorConnection2() {
+    if (totalCount == 1) {
+        clickOnMotorWire1 += 1;
+        if (clickOnMotorWire1 == 1) {
             clearInterval(blinkWires);
             // document.getElementById("motorWire1").style.cursor = "none";
-            document.getElementById("motorWire2").style.cursor = "none";      //disable this forever
+            document.getElementById("motorWire2").style.cursor = "none"; //disable this forever
             // document.getElementById("motorWire3").style.cursor = "none";
             console.log("The second wire has been chosen");
             document.getElementById("escWire2").style.cursor = "pointer";
-        }
-        else{
+        } else {
             alert("You have already chosen this!");
         }
     }
 }
 var clickOnMotorWire3 = 0;
-function motorConnection3(){
-    if(totalCount == 1){
-        clickOnMotorWire1 +=1;
-        if(clickOnMotorWire1 == 1){
+
+function motorConnection3() {
+    if (totalCount == 1) {
+        clickOnMotorWire1 += 1;
+        if (clickOnMotorWire1 == 1) {
             clearInterval(blinkWires);
             // document.getElementById("motorWire1").style.cursor = "none";
             // document.getElementById("motorWire2").style.cursor = "none";
-            document.getElementById("motorWire3").style.cursor = "none";   // disable this forever
+            document.getElementById("motorWire3").style.cursor = "none"; // disable this forever
             console.log("The third wire has been chosen");
             document.getElementById("escWire2").style.cursor = "pointer";
-        }
-        else{
+        } else {
             alert("You have already chosen this!");
         }
     }
