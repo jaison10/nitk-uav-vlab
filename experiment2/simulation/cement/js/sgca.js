@@ -231,6 +231,12 @@ function magic() {
         // myInt = setInterval(function() {
         //     animatearrow();
         // }, 500);
+        document.getElementById('table_iso').style.visibility = "visible";
+        document.getElementById('thrust').style.visibility = "visible";
+        document.getElementById('esc').style.visibility = "visible";
+        document.getElementById('dc').style.visibility = "visible";
+        document.getElementById('knob').style.visibility = "visible";
+        document.getElementById('motor').style.visibility = "visible";
 
         document.getElementById('arrow1').style = "visibility:hidden ;position:absolute; left: 500px; top: 150px; height: 40px; z-index: 10;";
 
@@ -441,7 +447,7 @@ function magic() {
 }
 
 function step1() {
-    myStopFunction();
+    // myStopFunction();
     // document.getElementById('a1').style.visibility="hidden";
     // document.getElementById('a2').style.cssText ="visibility=visible; top:0px; position: absolute; left: 170px; cursor:default; height: 200px; width: 400px;";
     var element = document.getElementById('table_top');
@@ -1088,8 +1094,75 @@ function verifyLift(l) {
 
 function appear(id_name, top_px) {
     var part = document.getElementById(id_name);
+    // if (id_name === 'motor_iso') {
+    //     document.getElementById('view_text').style = "visibility:visible;position:absolute;top:400px;left:440px;";
+
+
+    // }
     part.style.visibility = "visible";
-    part.style.opacity = 1;
+    // part.style.opacity = 1;
     part.style.top = top_px;
     part.style.transition = "all 1s ease-in-out";
+
+}
+
+function view_more() {
+    document.getElementById('equip').style = "visibility:visible;position:absolute;top:100px;left:100px;height:300px;width:400px;";
+    document.getElementById('thrust').style.visibility = "hidden";
+    document.getElementById('dc').style.visibility = "hidden";
+    document.getElementById('esc').style.visibility = "hidden";
+    document.getElementById('knob').style.visibility = "hidden";
+    document.getElementById('motor').style.visibility = "hidden";
+    document.getElementById("table_iso").style.visibility = "hidden";
+
+
+    document.getElementById("thrust_iso").style.visibility = "hidden";
+    document.getElementById("esc_iso").style.visibility = "hidden";
+    document.getElementById("power_iso").style.visibility = "hidden";
+    document.getElementById("knob_iso").style.visibility = "hidden";
+    document.getElementById("motor_iso").style.visibility = "hidden";
+    // console.log("hello");
+
+
+}
+
+function select() {
+
+    document.getElementById('thrust').style = "opacity:0;";
+    document.getElementById('dc').style = "opacity:0;";
+    document.getElementById('esc').style = "opacity:0;";
+    document.getElementById('knob').style = "opacity:0;";
+    document.getElementById('motor').style = "opacity:0;";
+    document.getElementById('table_iso').style = "opacity:0;";
+    document.getElementById('power_iso').style = "opacity:0;";
+    document.getElementById('knob_iso').style = "opacity:0;";
+    document.getElementById('thrust_iso').style = "opacity:0;";
+    document.getElementById('esc_iso').style = "opacity:0;";
+    document.getElementById("motor_iso").style = "opacity:0;";
+    document.getElementById('equip').style.visibility = "visible";
+    document.getElementById('select_motor').style.visibility = "visible";
+    document.getElementById('select_mp').style.visibility = "hidden";
+
+
+    //     console.log("hello");
+}
+
+function motor(prop_name, m_img) {
+
+    var m_name = document.getElementById('select_prop' + prop_name);
+    m_name.style.visibility = "visible";
+    document.getElementById('p_' + prop_name).style.visibility = "visible";
+
+    console.log('hello');
+    // document.getElementById('select_prop').style.visibility = "visible";
+    var img_m = document.getElementById(m_img);
+    img_m.style.visibility = "visible";
+    img_m.style.top = "250px";
+    img_m.style.transition = "top 5s ease-out;";
+
+
+}
+
+function prop(name) {
+
 }
