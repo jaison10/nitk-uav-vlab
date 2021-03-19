@@ -1124,16 +1124,17 @@ function makeConnection1() {
 }
 
 //  --------------------------- SECOND WIRE CHOSEN -----------------------------------
+clickOnEscWire2 = 0;
 function makeConnection2() {
     totalCount += 1;
-    clickOnEscWire1 += 1;
+    clickOnEscWire2 += 1;
     if (clickOnEscWire1 == 1) {
         console.log("Second wire click");
         for (var i = 1; i < 4; i++) {
             document.getElementById("motorWire" + i).style.cursor = "pointer";
         }
-        document.getElementById("escWire1").style.cursor = "none";
-        document.getElementById("escWire1").setAttribute('disabled', 'true');
+        document.getElementById("escWire2").style.cursor = "none";
+        document.getElementById("escWire2").setAttribute('disabled', 'true');
         blinkWires = setInterval(() => {
             for (var i = 1; i < 4; i++) {
                 if (document.getElementById("motorWire" + i).style.visibility == "hidden")
@@ -1158,8 +1159,8 @@ function motorConnection1() {
         if (clickOnMotorWire1 == 1) {
             clearInterval(blinkWires);
             document.getElementById("motorWire1").style.cursor = "none"; // disable this forever. 
-            // document.getElementById("motorWire2").style.cursor = "none";
-            // document.getElementById("motorWire3").style.cursor = "none";
+            document.getElementById("motorWire2").style.cursor = "not-allowed";
+            document.getElementById("motorWire3").style.cursor = "not-allowed";
             console.log("The first wire has been chosen");
             document.getElementById("escWire2").style.cursor = "pointer";
         } else {
@@ -1174,9 +1175,9 @@ function motorConnection2() {
         clickOnMotorWire1 += 1;
         if (clickOnMotorWire1 == 1) {
             clearInterval(blinkWires);
-            // document.getElementById("motorWire1").style.cursor = "none";
+            document.getElementById("motorWire1").style.cursor = "not-allowed";
             document.getElementById("motorWire2").style.cursor = "none"; //disable this forever
-            // document.getElementById("motorWire3").style.cursor = "none";
+            document.getElementById("motorWire3").style.cursor = "not-allowed";
             console.log("The second wire has been chosen");
             document.getElementById("escWire2").style.cursor = "pointer";
         } else {
@@ -1191,8 +1192,8 @@ function motorConnection3() {
         clickOnMotorWire1 += 1;
         if (clickOnMotorWire1 == 1) {
             clearInterval(blinkWires);
-            // document.getElementById("motorWire1").style.cursor = "none";
-            // document.getElementById("motorWire2").style.cursor = "none";
+            document.getElementById("motorWire1").style.cursor = "not-allowed";
+            document.getElementById("motorWire2").style.cursor = "not-allowed";
             document.getElementById("motorWire3").style.cursor = "none"; // disable this forever
             console.log("The third wire has been chosen");
             document.getElementById("escWire2").style.cursor = "pointer";
