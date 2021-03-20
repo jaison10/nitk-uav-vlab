@@ -269,11 +269,13 @@ function magic() {
     } else if (simsubscreennum == 2) {
         //hiding the previous canvas airfoil images.
         document.getElementById('equip').style.visibility = "hidden";
+
         document.getElementById('select_motor').style.visibility = "hidden";
         for (let i = 1; i <= 8; i++) {
             document.getElementById('select_prop' + i).style.visibility = "hidden";
         }
         document.getElementById('motor_with_prop').style.visibility = "hidden";
+        document.getElementById('new_motor').style.visibility = "hidden";
 
 
         for (var i = 1; i < 8; i++) {
@@ -1301,23 +1303,26 @@ function place_motor() {
     document.getElementById('equip').style.visibility = "visible";
     document.getElementById('motor_with_prop').style.visibility = "hidden";
     document.getElementById('new_motor').style.visibility = "visible";
+    document.getElementById('new_motor').style.opacity = 1;
+    document.getElementById('new_motor').style.transition = "opacity 1s ease-in-out";
     document.getElementById('select_motor').style.visibility = "hidden";
     for (let i = 1; i <= 8; i++) {
         document.getElementById('select_prop' + i).style.visibility = "hidden";
     }
-    document.getElementById('pumptext').innerHTML = "Click on the table to view it from top view";
-    document.getElementById('equip').onclick = function() { step1() };
 
-    myInt = setInterval(function() {
-        animatearrow();
-    }, 500);
-    document.getElementById('arrow1').style = "visibility:hidden ;position:absolute; left: 500px; top: 150px; height: 40px; z-index: 10;";
+    document.getElementById('pumptext').innerHTML = "The apparatus is thus ready to find the thrust of a propeller.";
+    // document.getElementById('equip').onclick = function() { step1() };
 
-    document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
-    // Code for IE9
-    document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
-    // Standard syntax
-    document.getElementById("arrow1").style.transform = "rotate(270deg)";
+    // myInt = setInterval(function() {
+    //     animatearrow();
+    // }, 500);
+    // document.getElementById('arrow1').style = "visibility:hidden ;position:absolute; left: 500px; top: 150px; height: 40px; z-index: 10;";
+
+    // document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+    // // Code for IE9
+    // document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+    // // Standard syntax
+    // document.getElementById("arrow1").style.transform = "rotate(270deg)";
 
 
 }
