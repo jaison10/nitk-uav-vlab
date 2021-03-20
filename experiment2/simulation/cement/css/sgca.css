@@ -295,3 +295,13 @@ background:#000
 .setColorIncorrectInput{
     color: rgb(194, 12, 12);
 }
+
+
+/* ADDITIONS */
+
+.dangerClockAnti{
+    color: red;
+}
+.successClockAnti{
+    color: rgb(8, 145, 8);
+}

@@ -1098,10 +1098,20 @@ function verifyLift(l) {
 // EXPERIMENT 2
 var arr = [];
 var totalCount = 0;
+var countOfEscAndMotor = 0;
 var clickOnEscWire1 = 0;
+
+// if(countOfEscAndMotor == 6){
+//     for(var xz = 1;xz<4;xz++){
+//         console.log("Im in a condition which is after 6th value!");
+//         document.getElementById("escWire"+xz).style.cursor = "none";
+//         document.getElementById("motorWire"+xz).style.cursor = "none";
+//     }
+// }
 //    -----------------------  FIRST WIRE CHOSEN  ---------------------------------------------
 function makeConnection1() {
     totalCount += 1;
+    countOfEscAndMotor += 1;
     clickOnEscWire1 += 1;
     if (clickOnEscWire1 == 1) {
         console.log("Initial click");
@@ -1126,25 +1136,87 @@ function makeConnection1() {
 //  --------------------------- SECOND WIRE CHOSEN -----------------------------------
 clickOnEscWire2 = 0;
 function makeConnection2() {
-    totalCount += 1;
-    clickOnEscWire2 += 1;
-    if (clickOnEscWire1 == 1) {
-        console.log("Second wire click");
-        for (var i = 1; i < 4; i++) {
-            document.getElementById("motorWire" + i).style.cursor = "pointer";
+    console.log("Count of Esc and motor together is: "+ countOfEscAndMotor);
+    if(countOfEscAndMotor == 1){
+        alert("You need to choose motor wire now!");
+    }
+    else if(countOfEscAndMotor == 0){
+        alert("You need to choose the first wire initially!")
+    }
+    else{
+        countOfEscAndMotor += 1;
+        totalCount += 1;
+        clickOnEscWire2 += 1;
+        if (clickOnEscWire2 == 1) {
+            console.log("Second wire click");
+            arr.forEach(elem=>{
+                for (var i = 1; i < 4; i++) {
+                    if(i!==elem){
+                        document.getElementById("motorWire" + i).style.cursor = "pointer";
+                    }
+                }
+            })
+            document.getElementById("escWire2").style.cursor = "none";
+            document.getElementById("escWire2").setAttribute('disabled', 'true');
+            blinkWires = setInterval(() => {
+                arr.forEach(element => {
+                    for(var i=1;i<4;i++) {
+                        if(i!==element){
+                            if (document.getElementById("motorWire" + i).style.visibility == "hidden")
+                                document.getElementById("motorWire" + i).style.visibility = "visible";
+                            else
+                                document.getElementById("motorWire" + i).style.visibility = "hidden";
+                        }
+                    }
+                });
+                
+            }, 1000);
+        } else {
+            alert("You have already chosen this, move forward!");
         }
-        document.getElementById("escWire2").style.cursor = "none";
-        document.getElementById("escWire2").setAttribute('disabled', 'true');
-        blinkWires = setInterval(() => {
-            for (var i = 1; i < 4; i++) {
-                if (document.getElementById("motorWire" + i).style.visibility == "hidden")
-                    document.getElementById("motorWire" + i).style.visibility = "visible";
-                else
-                    document.getElementById("motorWire" + i).style.visibility = "hidden";
-            }
-        }, 1000);
-    } else {
-        alert("You have already chosen this, move forward!");
+    }
+}
+
+
+clickOnEscWire3 = 0;
+function makeConnection3(){
+    var flagForEsc3 = 0;
+    if(countOfEscAndMotor == 1 || countOfEscAndMotor == 3 ){
+        alert("You need to choose motor wire now!");
+    }
+    else if(countOfEscAndMotor == 0){
+        alert("You need to choose the first wire initially!")
+    }
+    else if(countOfEscAndMotor == 2){
+        alert("You need to select the second wire now!")
+    }
+    else{
+        totalCount += 1;
+        countOfEscAndMotor += 1;
+        console.log("Count of Esc and motor together is: "+ countOfEscAndMotor);
+        clickOnEscWire3 += 1;
+        if (clickOnEscWire3 == 1) {
+            console.log("Third wire clicked");
+            var newArr = [1,2,3];
+
+            var absent = newArr.filter(e=>!arr.includes(e));
+            console.log("The missing element is: "+ absent);
+
+            document.getElementById("motorWire"+absent).style.cursor = "pointer";
+
+            document.getElementById("escWire3").style.cursor = "none";
+            console.log("Array on click of third: ", arr);
+            blinkWires = setInterval(() => {
+                if(document.getElementById("motorWire"+absent).style.visibility=="hidden"){
+                    document.getElementById("motorWire"+absent).style.visibility="visible";
+                }
+                else{
+                    document.getElementById("motorWire"+absent).style.visibility="hidden"
+                }
+            }, 1000);
+        } else {
+            alert("You have already chosen this, move forward!(STEP 3)");
+        }
     }
 }
 
@@ -1154,51 +1226,378 @@ function makeConnection2() {
 var clickOnMotorWire1 = 0;
 
 function motorConnection1() {
+    console.log("Total count is: "+totalCount);
     if (totalCount == 1) {
-        clickOnMotorWire1 += 1;
-        if (clickOnMotorWire1 == 1) {
-            clearInterval(blinkWires);
-            document.getElementById("motorWire1").style.cursor = "none"; // disable this forever. 
-            document.getElementById("motorWire2").style.cursor = "not-allowed";
-            document.getElementById("motorWire3").style.cursor = "not-allowed";
-            console.log("The first wire has been chosen");
-            document.getElementById("escWire2").style.cursor = "pointer";
-        } else {
-            alert("You have already chosen this!");
+        if(countOfEscAndMotor==2){
+            alert("You need to choose the esc wire first!")
         }
+        else{
+            countOfEscAndMotor += 1;
+            clickOnMotorWire1 += 1;
+            if (clickOnMotorWire1 == 1) {
+                clearInterval(blinkWires);
+                document.getElementById("motorWire1").style.cursor = "none"; // disable this forever. 
+                document.getElementById("motorWire2").style.cursor = "not-allowed";
+                document.getElementById("motorWire3").style.cursor = "not-allowed";
+                console.log("The first wire has been chosen");
+                // using total count for this sake. Need to make the second wire enable to click if this wire has been chosen in first step.
+                document.getElementById("escWire2").style.cursor = "pointer";
+                arr.push(1);
+                console.log(arr);
+                // VISIBLE THE IMAGE OF 1to1
+                document.getElementById("1to1").style.visibility = "visible";
+                console.log("The 1to1 image made visible!");
+            } else {
+                alert("You have already chosen this!");
+            }
+        }
+    }
+    var flag1 = 0;
+    if(totalCount == 2){
+        // checking if this wire was chosen in step 1 connection. 
+        arr.forEach(elem=>{
+            if(elem == 1){
+                alert("This wire has been connected already, please choose other!");
+                flag1 = 1;
+            }
+        });
+        if(flag1 == 0){
+                if(countOfEscAndMotor == 4){
+                    alert("YOu need to choose ESC first. (From 1st wire of motor after 2 selections of esc)")
+                }
+                else{
+                    countOfEscAndMotor += 1;
+                    clickOnMotorWire1 += 1;
+                    if (clickOnMotorWire1 == 1){
+                        clearInterval(blinkWires);
+                        document.getElementById("motorWire1").style.cursor = "none"; // disable this forever. 
+                        document.getElementById("motorWire2").style.cursor = "not-allowed";
+                        document.getElementById("motorWire3").style.cursor = "not-allowed";
+                        console.log("The first wire has been chosen in second step");
+                        document.getElementById("escWire3").style.cursor = "pointer";
+                        arr.push(1);
+                        console.log(arr);
+                        // VISIBLE THE IMAGE OF 2to1
+                        document.getElementById("2to1").style.visibility = "visible";
+                        console.log("The 2to1 image made visible!");
+                    }
+                    else{
+                        alert("You have already chosen(step 2)-wire 1");
+                    }
+                }
+        
+        }
+    }
+    if(totalCount == 3){
+        // checking if this wire was chosen in step 1 or step 2 connection. 
+        arr.forEach(elem=>{
+            if(elem == 1){
+                alert("This wire has been connected already, please choose other!");
+                flag1 = 1;
+            }
+            if(flag1 == 0){
+                    //  console.log("This is from 1st wire but at step3. Value of clickOnMotorWire1 before an update is: "+ clickOnMotorWire1);
+                    clickOnMotorWire1 += 1;
+                    countOfEscAndMotor += 1;
+                    // console.log("This is from 1st wire but at step3. Value of clickOnMotorWire1 is: "+ clickOnMotorWire1);
+                    if (clickOnMotorWire1 == 1){
+                        clearInterval(blinkWires);
+                        document.getElementById("motorWire1").style.cursor = "none"; // disable this forever. 
+                        document.getElementById("motorWire2").style.cursor = "not-allowed";
+                        document.getElementById("motorWire3").style.cursor = "not-allowed";
+                        console.log("The first wire has been chosen in third step");
+                        // document.getElementById("escWire2").style.cursor = "pointer";
+                        arr.push(1);
+                        console.log(arr);
+                        
+                        console.log("The final value of ALL Together at step3 of 1st wire is: "+ countOfEscAndMotor);
+                        // VISIBLE THE IMAGE OF 3to1
+                        document.getElementById("3to1").style.visibility = "visible";
+                        console.log("The 3to1 image made visible!");
+                        if(countOfEscAndMotor == 6){
+                            console.log("Im inside a condition for 6, inside third of 1st motor wire!");
+                            randomValue = Math.floor(Math.random() * 2);
+                            console.log("RANDOM VALUE FROM 1st wire is: "+ randomValue);
+                            if(randomValue == 0){
+                                document.getElementById("updateClockAnti").textContent = "It is rotating anti-clock wise. Need to change the direction of the connection.";
+                                document.getElementById("updateClockAnti").classList.add("dangerClockAnti");
+                                var firstVal = arr[1];
+                                var secondVal = arr[2];
+                                setTimeout(()=>{
+                                    // hide the anti clock wise ones.
+                                        document.getElementById(2+"to"+firstVal).style.visibility = "hidden";
+                                        document.getElementById(3+"to"+secondVal).style.visibility = "hidden";
+                                        // show the updated images.
+                                        document.getElementById(2+"to"+secondVal).style.visibility = "visible";
+                                        document.getElementById(3+"to"+firstVal).style.visibility = "visible";
+                                        // randomValue = 1;
+                                        document.getElementById("updateClockAnti").textContent = "It is now rotating in clock-wise direction.(Updated) ";
+                                        document.getElementById("updateClockAnti").classList.add("successClockAnti");
+                                }, 5000);
+                                
+                            }
+                            else{
+                                // randomValue =1 means it is success
+                                document.getElementById("updateClockAnti").textContent = "It is rotating clock wise. Success! ";
+                                document.getElementById("updateClockAnti").classList.add("successClockAnti");
+                            }
+                        }
+                    }
+                    else{
+                        alert("You have already chosen(step 3)-wire 1");
+                    }
+                
+            }
+        });
+
     }
 }
 var clickOnMotorWire2 = 0;
 
 function motorConnection2() {
-    if (totalCount == 1) {
-        clickOnMotorWire1 += 1;
-        if (clickOnMotorWire1 == 1) {
-            clearInterval(blinkWires);
-            document.getElementById("motorWire1").style.cursor = "not-allowed";
-            document.getElementById("motorWire2").style.cursor = "none"; //disable this forever
-            document.getElementById("motorWire3").style.cursor = "not-allowed";
-            console.log("The second wire has been chosen");
-            document.getElementById("escWire2").style.cursor = "pointer";
-        } else {
-            alert("You have already chosen this!");
+    console.log("Total count is: "+totalCount);
+
+    if(countOfEscAndMotor==2 || countOfEscAndMotor ==4 ){
+        alert("You need to choose esc wire initially!")
+    }
+    else{
+        if (totalCount == 1) {
+            if(countOfEscAndMotor==2){
+                alert("You need to choose the esc wire first!")
+            }
+            else{
+                countOfEscAndMotor += 1;
+                clickOnMotorWire2 += 1;
+                if (clickOnMotorWire2 == 1) {
+                    clearInterval(blinkWires);
+                    document.getElementById("motorWire1").style.cursor = "not-allowed";
+                    document.getElementById("motorWire2").style.cursor = "none"; //disable this forever
+                    document.getElementById("motorWire3").style.cursor = "not-allowed";
+                    console.log("The second wire has been chosen");
+                    document.getElementById("escWire2").style.cursor = "pointer";
+                    arr.push(2);
+                    console.log(arr);
+                    // VISIBLE THE IMAGE OF 1to2
+                    document.getElementById("1to2").style.visibility = "visible";
+                    console.log("The 1to2 image made visible!");
+                } else {
+                    alert("You have already chosen this!");
+                }
+            }
+        }
+        var flag2 = 0;
+        if(totalCount == 2){
+            arr.forEach(elem=>{
+                if(elem == 2){
+                    alert("This wire has been connected already, please choose other!")
+                    flag2 = 1;
+                }
+            });
+            if(flag2 == 0){
+
+                    countOfEscAndMotor += 1;
+                    clickOnMotorWire2 += 1;
+                    if (clickOnMotorWire2 == 1){
+                        clearInterval(blinkWires);
+                        document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
+                        document.getElementById("motorWire2").style.cursor = "none";
+                        document.getElementById("motorWire3").style.cursor = "not-allowed";
+                        console.log("The first wire has been chosen in second step");
+                        document.getElementById("escWire3").style.cursor = "pointer";
+                        arr.push(2);
+                        console.log(arr);
+                        // VISIBLE THE IMAGE OF 2to2
+                        document.getElementById("2to2").style.visibility = "visible";
+                        console.log("The 2to2 image made visible!");
+                    }
+                    else{
+                        alert("You have already chosen(step 2)-wire 2");
+                    }
+            
+            }
+        }
+        if(totalCount == 3){
+            arr.forEach(elem=>{
+                if(elem == 2){
+                    alert("This wire has been connected already, please choose other!");
+                    flag2 = 1;
+                }
+                
+            });
+            if(flag2 == 0){
+    
+                    countOfEscAndMotor += 1;
+                    clickOnMotorWire2 += 1;
+                    if (clickOnMotorWire2 == 1){
+                        clearInterval(blinkWires);
+                        document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
+                        document.getElementById("motorWire2").style.cursor = "none";
+                        document.getElementById("motorWire3").style.cursor = "not-allowed";
+                        console.log("The second wire has been chosen in second step");
+                        // document.getElementById("escWire3").style.cursor = "pointer";
+                        arr.push(2);
+                        console.log(arr);
+                        console.log("The final value of ALL Together at step3 of 2nd wire is: "+ countOfEscAndMotor);
+                        // VISIBLE THE IMAGE OF 3to2
+                        document.getElementById("3to2").style.visibility = "visible";
+                        console.log("The 3to2 image made visible!");
+                        if(countOfEscAndMotor == 6){
+                            console.log("Im inside a condition for 6, inside third of 2nd motor wire!");
+                            randomValue = Math.floor(Math.random() * 2);
+                            console.log("RANDOM VALUE FROM 2nd wire is: "+ randomValue);
+                            if(randomValue == 0){
+                                document.getElementById("updateClockAnti").textContent = "It is rotating anti-clock wise. Need to change the direction of the connection.";
+                                document.getElementById("updateClockAnti").classList.add("dangerClockAnti");
+                                var firstVal = arr[1];
+                                var secondVal = arr[2];
+                                setTimeout(()=>{
+                                    // hide the anti clock wise ones.
+                                        document.getElementById(2+"to"+firstVal).style.visibility = "hidden";
+                                        document.getElementById(3+"to"+secondVal).style.visibility = "hidden";
+                                        // show the updated images.
+                                        document.getElementById(2+"to"+secondVal).style.visibility = "visible";
+                                        document.getElementById(3+"to"+firstVal).style.visibility = "visible";
+                                        // randomValue = 1;
+                                        document.getElementById("updateClockAnti").textContent = "It is now rotating in clock-wise direction.(Updated) ";
+                                        document.getElementById("updateClockAnti").classList.add("successClockAnti");
+                                }, 5000);
+                                
+                            }
+                            else{
+                                // randomValue =1 means it is success
+                                document.getElementById("updateClockAnti").textContent = "It is rotating clock wise. Success! ";
+                                document.getElementById("updateClockAnti").classList.add("successClockAnti");
+                            }
+                        }
+                    }
+                    else{
+                        alert("You have already chosen(step 2)-wire 2");
+                    }
+            
+            }
+
         }
     }
 }
 var clickOnMotorWire3 = 0;
 
 function motorConnection3() {
-    if (totalCount == 1) {
-        clickOnMotorWire1 += 1;
-        if (clickOnMotorWire1 == 1) {
-            clearInterval(blinkWires);
-            document.getElementById("motorWire1").style.cursor = "not-allowed";
-            document.getElementById("motorWire2").style.cursor = "not-allowed";
-            document.getElementById("motorWire3").style.cursor = "none"; // disable this forever
-            console.log("The third wire has been chosen");
-            document.getElementById("escWire2").style.cursor = "pointer";
-        } else {
-            alert("You have already chosen this!");
+    console.log("Total count is: "+totalCount);
+    if(countOfEscAndMotor ==2 || countOfEscAndMotor == 4){
+        alert("You need to choose ESC wire initially!")
+    }
+    else{
+        if (totalCount == 1) {
+            if(countOfEscAndMotor==2){
+                alert("You need to choose the esc wire first!")
+            }
+            else{
+                countOfEscAndMotor += 1;
+                clickOnMotorWire3 += 1;
+                if (clickOnMotorWire3 == 1) {
+                    clearInterval(blinkWires);
+                    document.getElementById("motorWire1").style.cursor = "not-allowed";
+                    document.getElementById("motorWire2").style.cursor = "not-allowed";
+                    document.getElementById("motorWire3").style.cursor = "none"; // disable this forever
+                    console.log("The third wire has been chosen");
+                    document.getElementById("escWire2").style.cursor = "pointer";
+                    arr.push(3);
+                    console.log(arr);
+                    // VISIBLE THE IMAGE OF 1to3
+                    document.getElementById("1to3").style.visibility = "visible";
+                    console.log("The 1to3 image made visible!");
+                } else {
+                    alert("You have already chosen this!");
+                }
+            }
+        }
+        var flag3 = 0;
+        if(totalCount == 2){
+            arr.forEach(elem=>{
+                if(elem == 3){
+                    alert("This wire has been connected already, please choose other!");
+                    flag3 = 1;
+                }
+            });
+            if(flag3 == 0){
+                    console.log("The value of motor and esc together is: "+ countOfEscAndMotor);
+                    countOfEscAndMotor += 1;
+                    clickOnMotorWire3 += 1;
+                    if (clickOnMotorWire3 == 1){
+                        clearInterval(blinkWires);
+                        document.getElementById("motorWire1").style.cursor = "not-allowed"; 
+                        document.getElementById("motorWire2").style.cursor = "not-allowed";
+                        document.getElementById("motorWire3").style.cursor = "none";
+                        console.log("The first wire has been chosen in second step");
+                        document.getElementById("escWire3").style.cursor = "pointer";
+                        arr.push(3);
+                        console.log(arr);
+                        // VISIBLE THE IMAGE OF 2to3
+                        document.getElementById("2to3").style.visibility = "visible";
+                        console.log("The 2to3 image made visible!");
+                    }
+                    else{
+                        alert("You have already chosen(step 2)-wire 3");
+                    }
+                
+            }
+        }
+        if(totalCount == 3){
+            arr.forEach(elem=>{
+                if(elem == 3){
+                    alert("This wire has been connected already, please choose other!");
+                    flag3 = 1;
+                }
+            });
+            if(flag3 == 0){
+                    countOfEscAndMotor += 1;
+                    clickOnMotorWire3 += 1;
+                    if (clickOnMotorWire3 == 1){
+                        clearInterval(blinkWires);
+                        document.getElementById("motorWire1").style.cursor = "not-allowed"; 
+                        document.getElementById("motorWire2").style.cursor = "not-allowed";
+                        document.getElementById("motorWire3").style.cursor = "none";
+                        console.log("The first wire has been chosen in second step");
+                        // document.getElementById("escWire3").style.cursor = "pointer";
+                        arr.push(3);
+                        console.log(arr);
+                        console.log("The final value of ALL Together at step3 of 3rd wire is: "+ countOfEscAndMotor);
+                        // VISIBLE THE IMAGE OF 3to3
+                        document.getElementById("3to3").style.visibility = "visible";
+                        console.log("The 3to3 image made visible!");
+                        if(countOfEscAndMotor == 6){
+                            console.log("Im inside a condition for 6, inside third of 3rd motor wire!");
+                            randomValue = Math.floor(Math.random() * 2);
+                            console.log("RANDOM VALUE FROM 3rd wire is: "+ randomValue);
+                            if(randomValue == 0){
+                                document.getElementById("updateClockAnti").textContent = "It is rotating anti-clock wise. Need to change the direction of the connection.";
+                                document.getElementById("updateClockAnti").classList.add("dangerClockAnti");
+                                var firstVal = arr[1];
+                                var secondVal = arr[2];
+                                setTimeout(()=>{
+                                    // hide the anti clock wise ones.
+                                        document.getElementById(2+"to"+firstVal).style.visibility = "hidden";
+                                        document.getElementById(3+"to"+secondVal).style.visibility = "hidden";
+                                        // show the updated images.
+                                        document.getElementById(2+"to"+secondVal).style.visibility = "visible";
+                                        document.getElementById(3+"to"+firstVal).style.visibility = "visible";
+                                        // randomValue = 1;
+                                        document.getElementById("updateClockAnti").textContent = "It is now rotating in clock-wise direction.(Updated) ";
+                                        document.getElementById("updateClockAnti").classList.add("successClockAnti");
+                                }, 5000);
+                                
+                            }
+                            else{
+                                // randomValue =1 means it is success
+                                document.getElementById("updateClockAnti").textContent = "It is rotating clock wise. Success! ";
+                                document.getElementById("updateClockAnti").classList.add("successClockAnti");
+                            }
+                        }
+                    }
+                    else{
+                        alert("You have already chosen(step 2)-wire 2");
+                    }
+            }
         }
     }
 }
