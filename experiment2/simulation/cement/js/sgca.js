@@ -238,14 +238,14 @@ function magic() {
         document.getElementById('knob').style.visibility = "visible";
         document.getElementById('motor').style.visibility = "visible";
 
-        document.getElementById('arrow1').style = "visibility:hidden ;position:absolute; left: 500px; top: 150px; height: 40px; z-index: 10;";
+        // document.getElementById('arrow1').style = "visibility:hidden ;position:absolute; left: 500px; top: 150px; height: 40px; z-index: 10;";
 
-        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
-        // Code for IE9
-        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
-        // Standard syntax
-        document.getElementById("arrow1").style.transform = "rotate(270deg)";
-        document.getElementById('table_top').style.opacity = 0;
+        // document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+        // // Code for IE9
+        // document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+        // // Standard syntax
+        // document.getElementById("arrow1").style.transform = "rotate(270deg)";
+        // document.getElementById('table_top').style.opacity = 0;
 
 
         // $(document).ready(function() {
@@ -289,17 +289,12 @@ function magic() {
 
     } else if (simsubscreennum == 3) {
         // myInt = setInterval(function() { animateNewarrow(); }, 1000);
-        document.getElementById('pumptext-3').innerHTML = "Let us now find the thrust of the propeller using the thrustmeter.";
+        document.getElementById('pumptext-3').innerHTML = "Switch on the battery and set the throttle to find the thrust of the propeller using the thrustmeter.";
         document.getElementById('prop_fan').style.visibility = "visible";
         document.getElementById('all_comp').style.visibility = "visible";
+        document.getElementById('switch_battery').style.visibility = "visible";
 
-        // document.getElementById('arrow1').style = "visibility:hidden ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
 
-        // document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
-        // // Code for IE9
-        // document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
-        // // Standard syntax
-        // document.getElementById("arrow1").style.transform = "rotate(180deg)";
 
 
         // document.getElementById('nob3-1').onclick=function() { step3(); };	
@@ -1705,6 +1700,48 @@ function place_motor() {
     // document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
     // // Standard syntax
     // document.getElementById("arrow1").style.transform = "rotate(270deg)";
+
+
+}
+
+function switch_battery() {
+    document.getElementById('socket_plug').style.visibility = "visible";
+    document.getElementById('on_off_switch').style.visibility = "visible";
+    document.getElementById('close_button').style.visibility = "visible";
+
+    document.getElementById('socket_plug').onclick = function() {
+        document.getElementById('socket_plug').style.visibility = "hidden";
+        document.getElementById('socket_plugged_on').style.visibility = "visible";
+        document.getElementById('on_off_switch').innerHTML = "ON";
+        document.getElementById('socket_plugged_on').onclick = function() {
+            document.getElementById('socket_plug').style.visibility = "visible";
+            document.getElementById('socket_plugged_on').style.visibility = "hidden";
+            document.getElementById('on_off_switch').innerHTML = "OFF";
+        }
+    }
+}
+
+function close_plug() {
+    document.getElementById('close_button').style.visibility = "hidden";
+    document.getElementById('socket_plug').style.visibility = "hidden";
+    document.getElementById('on_off_switch').style.visibility = "hidden";
+    document.getElementById('socket_plugged_on').style.visibility = "hidden";
+    document.getElementById('switch_battery').style.visibility = "hidden";
+    myInt = setInterval(function() {
+        animatearrow();
+    }, 500);
+    document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 410px; top: 270px; height: 40px; z-index: 10;";
+
+    document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+    // Code for IE9
+    document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+    // Standard syntax
+    document.getElementById("arrow1").style.transform = "rotate(270deg)";
+    document.getElementById('all_comp').onclick = function() { set_throttle(); };
+}
+
+function set_throttle() {
+    myStopFunction();
 
 
 }
