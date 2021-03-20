@@ -1742,6 +1742,20 @@ function close_plug() {
 
 function set_throttle() {
     myStopFunction();
+    var throttle = document.getElementById('throttle0');
+    throttle.style.visibility = "visible";
+    throttle.style.transform = "scale(2)";
+    throttle.style.transition = "all 1s ease-in-out";
+    myInt = setInterval(function() {
+        animatearrow();
+    }, 500);
+    document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 560px; top: 250px; height: 40px; z-index: 10;";
 
+    document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+    // Code for IE9
+    document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+    // Standard syntax
+    document.getElementById("arrow1").style.transform = "rotate(270deg)";
+    throttle.onclick = function() {};
 
 }
