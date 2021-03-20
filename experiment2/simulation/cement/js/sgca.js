@@ -1746,16 +1746,20 @@ function set_throttle() {
     throttle.style.visibility = "visible";
     throttle.style.transform = "scale(2)";
     throttle.style.transition = "all 1s ease-in-out";
-    myInt = setInterval(function() {
-        animatearrow();
-    }, 500);
-    document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 560px; top: 250px; height: 40px; z-index: 10;";
+    document.getElementById('0%').style.visibility = "visible";
+    document.getElementById('40%').style.visibility = "visible";
+    document.getElementById('60%').style.visibility = "visible";
+    document.getElementById('80%').style.visibility = "visible";
+    document.getElementById('100%').style.visibility = "visible";
 
-    document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
-    // Code for IE9
-    document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
-    // Standard syntax
-    document.getElementById("arrow1").style.transform = "rotate(270deg)";
-    throttle.onclick = function() {};
+
+
+}
+
+function throttle_click(name) {
+
+
+    document.getElementById('throttle_message').innerHTML = "When throttle is set to 0%,the propeller does not move. Hence there is no thrust generated. "
+
 
 }
