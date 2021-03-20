@@ -190,117 +190,149 @@
             <img id="knob_iso" class="" style="visibility: hidden; position: absolute; left: 530px; top: 0px; height: 40px; width: 50px; z-index: 10;transform: rotate(15deg);" src="./Images/uav/isometric_view/throttle knob_v5.png" />
             <img id="motor_iso" class="" style="visibility: hidden; position: absolute; left: 250px; top: 0px; height: 100px; width: 100px; z-index: 10;" src="./Images/uav/isometric_view/motor.png" />
 
-            <img id="equip" style="visibility:hidden;position: absolute; left: 100px; top: 180px;cursor:pointer; height: 300px; width: 600px;" src="./Images/uav/isometric_view/all_without_motor.png" alt="table with all equipments">
+            <img id="equip" style="visibility:hidden;position: absolute; left: 100px; top: 180px;cursor:pointer; height: 300px; width: 600px;opacity: 1;" src="./Images/uav/isometric_view/all_without_motor.png" alt="table with all equipments">
 
             <button id="select_mp" onclick="select();" style="position: absolute;top: 450px;left: 600px;z-index: 30;">next</button>
 
             <div class="dropdown" id="select_motor" style="visibility: hidden; position: absolute;top: 50px;left: 10px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;" type="button" data-toggle="dropdown">Select Motor</button>
-                <div class="dropdown-content" style="height: 200px;overflow-y:scroll;">
-                    <a onclick="motor('1','m_1');">MN1005_KV90</a>
-                    <a onclick="motor('2','m_1');">MN3508_KV380</a>
-                    <a onclick="motor('3','m_1');">MN3508_KV580</a>
-                    <a onclick="motor('4','m_1');">MN3508_KV700</a>
-                    <a onclick="motor('5','m_1');">MT4114_340KV</a>
-                    <a onclick="motor('6','m_1');">RS2205S_2300KV</a>
-                    <a onclick="motor('7','m_1');">RS2205S_2600KV</a>
-                    <a onclick="motor('8','m_1');">RS2306_2400KV</a>
+                <div class="dropdown-content" style="height: 200px; overflow-y:scroll;width: 200px;">
+                    <a onclick="motor('1');">MN1005_KV90</a>
+                    <a onclick="motor('2');">MN3508_KV380</a>
+                    <a onclick="motor('3');">MN3508_KV580</a>
+                    <a onclick="motor('4');">MN3508_KV700</a>
+                    <a onclick="motor('5');">MT4114_340KV</a>
+                    <a onclick="motor('6');">RS2205S_2300KV</a>
+                    <a onclick="motor('7');">RS2205S_2600KV</a>
+                    <a onclick="motor('8');">RS2306_2400KV</a>
                 </div>
             </div>
 
             <div class="dropdown" id="select_prop1" style="visibility: hidden; position: absolute;top: 50px;left: 200px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;" type="button" data-toggle="dropdown">Select Propeller</button>
-                <div class="dropdown-content" id="p_1" style="visibility: hidden; opacity: 0;">
-                    <a onclick="prop('pr_1');" id="1_1">T-MOTOR G30*10.5</a>
-                    <a onclick="prop('pr_2');" id="1_2">T-MOTOR G32*11</a>
+                <div class="dropdown-content" id="p_1" style="visibility: hidden; opacity: 0; width: 530px;">
+                    <a onclick="prop();" style="height: 50px;" id="1_1">T-MOTOR G30*10.5 &nbsp;&nbsp;
+                    <img id="pr_1" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/MN3508KV700_G30105.png" alt="motor">
+                    </a>
+                    <a onclick="prop();" style="height: 50px;" id="1_2">T-MOTOR G32*11 &nbsp;&nbsp;
+                        <img id="pr_2" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/MN3508KV700_G3211.png" alt="motor">
+                    </a>
 
                 </div>
             </div>
             <div class="dropdown" id="select_prop2" style="visibility: hidden; position: absolute;top: 50px;left: 200px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;" type="button" data-toggle="dropdown">Select Propeller</button>
-                <div class="dropdown-content" id="p_2" style="visibility: hidden; height: 200px;overflow-y:scroll;opacity: 0;">
+                <div class="dropdown-content" id="p_2" style="visibility: hidden; height: 200px;width: 530px;overflow-y:scroll;opacity: 0;">
 
-                    <a onclick="prop('pr_6');" id="2_1">T-MOTOR 12*4CF</a>
-                    <a onclick="prop('pr_7');" id="2_2">T-MOTOR 13*4.4CF</a>
-                    <a onclick="prop('pr_3');" id="2_3">T-MOTOR 14*4.8CF</a>
-                    <a onclick="prop('pr_4');" id="2_4">T-MOTOR 15*5CF</a>
-                    <a onclick="prop('pr_5');" id="2_5">T-MOTOR 16*5.4CF</a>
-
-                    <img id="pr_1" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/MN3508KV700_G30105.png" alt="motor">
-                    <img id="pr_2" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/MN3508KV700_G3211.png" alt="motor">
-                    <img id="pr_3" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/MN3508KV700_14_48.png" alt="motor">
-                    <img id="pr_4" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/G155.png" alt="motor">
-                    <img id="pr_5" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
-                    <img id="pr_6" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/12_4CF.png" alt="motor">
-                    <img id="pr_7" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/13_44.png" alt="motor">
-                    <img id="pr_8" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/11_37.png" alt="motor">
-
-
-
+                    <a onclick="prop();" style="height: 50px;" id="2_1">T-MOTOR 12*4CF &nbsp;&nbsp;
+                        <img id="pr_6" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/12_4CF.png" alt="motor">
+                    </a>
+                    <a onclick="prop();" style="height: 50px;" id="2_2">T-MOTOR 13*4.4CF &nbsp;&nbsp;
+                        <img id="pr_7" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/13_44.png" alt="motor">
+                    </a>
+                    <a onclick="prop();" style="height: 50px;" id="2_3">T-MOTOR 14*4.8CF &nbsp;&nbsp;
+                        <img id="pr_3" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/MN3508KV700_14_48.png" alt="motor">
+                    </a>
+                    <a onclick="prop();" style="height: 50px;" id="2_4">T-MOTOR 15*5CF &nbsp;&nbsp;
+                        <img id="pr_4" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G155.png" alt="motor">
+                    </a>
+                    <a onclick="prop();" style="height: 50px;" id="2_5">T-MOTOR 16*5.4CF &nbsp;&nbsp;
+                        <img id="pr_5" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
+                    </a>
 
                 </div>
             </div>
 
             <div class="dropdown" id="select_prop3" style="visibility: hidden; position: absolute;top: 50px;left: 200px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;" type="button" data-toggle="dropdown">Select Propeller</button>
-                <div class="dropdown-content" id="p_3" style="visibility: hidden;opacity: 0;">
-                    <a onclick="prop('pr_6');" id="3_1">T-MOTOR 12*4CF</a>
-                    <a onclick="prop('pr_7');" id="3_2">T-MOTOR 13*4.4CF</a>
-                    <a onclick="prop('pr_3');" id="3_3">T-MOTOR 14*4.8CF</a>
+                <div class="dropdown-content" id="p_3" style="visibility: hidden;opacity: 0;width: 530px;">
+                    <a onclick="prop();" style="height: 50px;" id="3_1">T-MOTOR 12*4CF &nbsp;&nbsp;
+                        <img id="pr_6" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/12_4CF.png" alt="motor">
+                    </a>
+                    <a onclick="prop();" style="height: 50px;" id="3_2">T-MOTOR 13*4.4CF &nbsp;&nbsp;
+                        <img id="pr_7" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/13_44.png" alt="motor">
+                    </a>
+                    <a onclick="prop();" style="height: 50px;" id="3_3">T-MOTOR 14*4.8CF &nbsp;&nbsp;
+                        <img id="pr_3" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/MN3508KV700_14_48.png" alt="motor">
+                    </a>
                 </div>
             </div>
 
             <div class="dropdown" id="select_prop4" style="visibility: hidden; position: absolute;top: 50px;left: 200px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;" type="button" data-toggle="dropdown">Select Propeller</button>
-                <div class="dropdown-content" id="p_4" style="visibility: hidden; height: 200px;overflow-y:scroll;opacity: 0;">
-                    <a onclick="prop('pr_6');" id="4_1">T-MOTOR 12*4CF</a>
-                    <a onclick="prop('pr_7');" id="4_2">T-MOTOR 13*4.4CF</a>
-                    <a onclick="prop('pr_8');" id="4_3">T-MOTOR 11*3.7CF</a>
+                <div class="dropdown-content" id="p_4" style="visibility: hidden; opacity: 0;width: 530px;">
+                    <a onclick="prop();" style="height: 50px;" id="4_1">T-MOTOR 12*4CF &nbsp;&nbsp;
+                        <img id="pr_6" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/12_4CF.png" alt="motor">
+                    </a>
+                    <a onclick="prop();" style="height: 50px;" id="4_2">T-MOTOR 13*4.4CF &nbsp;&nbsp;
+                        <img id="pr_7" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/13_44.png" alt="motor">
+                    
+                    </a>
+                    <a onclick="prop();" style="height: 50px;" id="4_3">T-MOTOR 11*3.7CF &nbsp;&nbsp;
+                        <img id="pr_8" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/11_37.png" alt="motor">
+                    
+                    </a>
+
 
                 </div>
             </div>
 
             <div class="dropdown" id="select_prop5" style="visibility: hidden; position: absolute;top: 50px;left: 200px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;" type="button" data-toggle="dropdown">Select Propeller</button>
-                <div class="dropdown-content" id="p_5" style="visibility: hidden;opacity: 0;">
+                <div class="dropdown-content" id="p_5" style="visibility: hidden;opacity: 0;width: 530px;">
 
-                    <a onclick="prop('');" id="5_1">DJI15*5 Carbon fiber Propeller</a>
-                    <a onclick="prop('5_2');" id="5_2">DJI1655 Carbon fiber Propeller</a>
-                    <a onclick="prop('5_3');" id="5_3">DJI1555 Carbon fiber Propeller</a>
+                    <a onclick="prop();" style="height: 50px;" id="5_1">DJI15*5 Carbon fiber Propeller &nbsp;&nbsp;
+                        <img id="pr_4" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G155.png" alt="motor">
+                    </a>
+                    <a onclick="prop();" style="height: 50px;" id="5_2">DJI1655 Carbon fiber Propeller &nbsp;&nbsp;
+                    <img id="pr_5" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
+                    </a>
+                    <a onclick="prop();" style="height: 50px;" id="5_3">DJI1555 Carbon fiber Propeller &nbsp;&nbsp;
+                        <img id="pr_4" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G155.png" alt="motor">
+                    </a>
                 </div>
             </div>
             <div class="dropdown" id="select_prop6" style="visibility: hidden; position: absolute;top: 50px;left: 200px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;" type="button" data-toggle="dropdown">Select Propeller</button>
-                <div class="dropdown-content" id="p_6" style="visibility: hidden;opacity: 0; ">
+                <div class="dropdown-content" id="p_6" style="visibility: hidden;opacity: 0; width: 530px;">
 
-                    <a onclick="prop('6_1');" id="6_1">HQ5045BN</a>
+                    <a onclick="prop();" style="height: 50px;" id="6_1">HQ5045BN &nbsp;&nbsp;
+                        <img id="pr_5" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
+                    </a>
                 </div>
             </div>
             <div class="dropdown" id="select_prop7" style="visibility: hidden; position: absolute;top: 50px;left: 200px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;" type="button" data-toggle="dropdown">Select Propeller</button>
-                <div class="dropdown-content" id="p_7" style="visibility: hidden; opacity: 0;">
-                    <a onclick="prop('7_1');" id="7_1">EMAX4045</a>
+                <div class="dropdown-content" id="p_7" style="visibility: hidden; opacity: 0;width: 530px;">
+                    <a onclick="prop();" style="height: 50px;" id="7_1">EMAX4045 &nbsp;&nbsp;
+                        <img id="pr_4" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G155.png" alt="motor">
+                    </a>
                 </div>
             </div>
             <div class="dropdown" id="select_prop8" style="visibility: hidden; position: absolute;top: 50px;left: 200px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;" type="button" data-toggle="dropdown">Select Propeller</button>
-                <div class="dropdown-content" id="p_8" style="visibility: hidden; opacity: 0;">
-                    <a onclick="prop('8_1');" id="8_1">HQ5045 Propeller</a>
+                <div class="dropdown-content" id="p_8" style="visibility: hidden; opacity: 0;width: 530px;">
+                    <a onclick="prop();" style="height: 50px;" id="8_1">HQ5045 Propeller &nbsp;&nbsp;
+                        <img id="pr_5" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
+                    </a>
                 </div>
             </div>
 
-            <img id="m_1" style="visibility: hidden; position:absolute;top: 10px;left: 20px;height: 50px;width: 70px;" src="./Images/uav/isometric_view/MN1005_KV90_G30x10.5V05.png" alt="motor">
+            <img id="m_1" style="visibility: hidden; position:absolute;top: 340px;left: 30px;height: 50px;width: 50px;z-index: 1;" src="./Images/uav/isometric_view/MN1005_KV90_G30x10.5V05.png" alt="motor">
+            <img id="motor_with_prop" onclick="place_motor();" style="visibility: hidden; position:absolute;top: 300px;left: 0px;height: 100px;width: 150px;z-index: 10;cursor: pointer;" src="./Images/uav/isometric_view/motor_with_prop_NUT_2 (2).png" alt="motor">
+            <img id="new_motor" style="visibility: hidden; position:absolute;top: 310px;left: 280px;height: 70px;width: 70px;z-index: 200;" src="./Images/uav/isometric_view/motor_with_prop_NUT_1.png" alt="motor">
+            <img id="all_top" style="visibility:hidden;position: absolute;opacity: 0; left: 100px; top: 180px;cursor:pointer; height: 300px; width: 600px;transform: rotate(90deg);" src="./Images/uav/isometric_view/all_top.png" alt="top view of table">
 
 
-
-            <img id="pr_1" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/MN3508KV700_G30105.png" alt="motor">
-            <img id="pr_2" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/MN3508KV700_G3211.png" alt="motor">
-            <img id="pr_3" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/MN3508KV700_14_48.png" alt="motor">
-            <img id="pr_4" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/G155.png" alt="motor">
-            <img id="pr_5" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
-            <img id="pr_6" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/12_4CF.png" alt="motor">
-            <img id="pr_7" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/13_44.png" alt="motor">
-            <img id="pr_8" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/11_37.png" alt="motor">
+            <!-- 
+            <img id="pr_1" style="visibility: visible; position:absolute;top: 200px;left: 20px;height: 50px;width: 100px;" src="./Images/uav/isometric_view/MN3508KV700_G30105.png" alt="propeller">
+            <img id="pr_2" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/MN3508KV700_G3211.png" alt="propeller">
+            <img id="pr_3" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/MN3508KV700_14_48.png" alt="propeller">
+            <img id="pr_4" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/G155.png" alt="propeller">
+            <img id="pr_5" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/G1654.png" alt="propeller">
+            <img id="pr_6" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/12_4CF.png" alt="propeller">
+            <img id="pr_7" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/13_44.png" alt="propeller">
+            <img id="pr_8" style="visibility: hidden; position:absolute;top: 200px;left: 20px;" src="./Images/uav/isometric_view/11_37.png" alt="propeller"> -->
 
 
 
