@@ -397,7 +397,7 @@
         <!--Step3	-->
         <div class="simsubscreen" id="canvas3" style="visibility:hidden">
             <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span>
-            <p id="pumptext-3" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Airflow through airfoil in tunnel </p>
+            <p id="pumptext-3" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Switch on the battery and set the throttle to find the thrust of the propeller using the thrustmeter.</p>
             <img id="all_comp" style="visibility:hidden;position: absolute; left: 0px; top: 200px; height: 300px; width: 600px;opacity: 1;z-index: 30;cursor: pointer;" src="./Images/uav/isometric_view/all_connected.png" alt="table with all equipments">
             <img id="prop_fan" style="visibility: hidden; position:absolute;top: 327px;left: 153px;height: 70px;width: 100px;transform: rotate(90deg);" src="./Images/uav/isometric_view/prop_2.png" alt="table with all equipments">
             <button id="switch_battery" onclick="switch_battery();" style="visibility:hidden; position:absolute;top: 150px;left: 230px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px">Switch on the battery</button>
@@ -407,18 +407,18 @@
             <a id="close_button" onclick="close_plug();" style="cursor: pointer; visibility: hidden;position:absolute;top: 175px;left: 565px; border: 1px solid black;"><i class="fa fa-times" aria-hidden="true"></i></a>
 
             <img id="throttle0" style="visibility: hidden; position:absolute;top:280px;left: 480px;height: 70px;width: 100px;z-index: 100;" src="./Images/uav/top_view/throttle_0deg.png" alt="Throttle knob with 0%">
-            <img id="throttle40" style="visibility: hidden; position:absolute;top:280px;left: 480px;height: 70px;width: 100px;z-index: 100;" src="./Images/uav/top_view/throttle_40deg.png" alt="Throttle knob with 40%">
-            <img id="throttle60" style="visibility: hidden; position:absolute;top:280px;left: 480px;height: 70px;width: 100px;z-index: 100;" src="./Images/uav/top_view/throttle_60deg.png" alt="Throttle knob with 60%">
-            <img id="throttle80" style="visibility: hidden; position:absolute;top:280px;left: 480px;height: 70px;width: 100px;z-index: 100;" src="./Images/uav/top_view/throttle_80deg.png" alt="Throttle knob with 80%">
-            <img id="throttle100" style="visibility: hidden; position:absolute;top:280px;left: 480px;height: 70px;width: 100px;z-index: 100;" src="./Images/uav/top_view/throttle_100deg.png" alt="Throttle knob with 100%">
+            <img id="throttle1" style="visibility: hidden; position:absolute;top: 280px; left: 480px; height: 70px; width: 100px; z-index: 100; transform: scale(2);" src="./Images/uav/top_view/throttle_40deg.png" alt="Throttle knob with 40%">
+            <img id="throttle2" style="visibility: hidden; position:absolute;top: 280px; left: 480px; height: 70px; width: 100px; z-index: 100; transform: scale(2);" src="./Images/uav/top_view/throttle_60deg.png" alt="Throttle knob with 60%">
+            <img id="throttle3" style="visibility: hidden; position:absolute;top: 280px; left: 480px; height: 70px; width: 100px; z-index: 100; transform: scale(2);" src="./Images/uav/top_view/throttle_80deg.png" alt="Throttle knob with 80%">
+            <img id="throttle4" style="visibility: hidden; position:absolute;top: 280px; left: 480px; height: 70px; width: 100px; z-index: 100; transform: scale(2);" src="./Images/uav/top_view/throttle_100deg.png" alt="Throttle knob with 100%">
 
-            <a id="0%" style="visibility: hidden;position: absolute; height: 40px;width: 30px; cursor:pointer;top:320px ;left: 527px;z-index:150;" onclick="throttle_click('1');">0</a>
-            <a id="40%" style="visibility: hidden;position: absolute;height: 40px;width: 30px; cursor:pointer; top:304px ;left: 495px;z-index:150;" onclick="throttle_click('2');">40</a>
-            <a id="60%" style="visibility: hidden;position: absolute;height: 40px;width: 30px; cursor:pointer; top:255px ;left: 497px;z-index:150;" onclick="throttle_click('3');">60</a>
-            <a id="80%" style="visibility: hidden;position: absolute;height: 30px;width: 30px; cursor:pointer; top:251px ;left: 559px;z-index:150;" onclick="throttle_click('4');">80</a>
-            <a id="100%" style="visibility: hidden;position:absolute;height: 30px;width: 30px; cursor:pointer; top:284px ;left: 570px;z-index:150;" onclick="throttle_click('5');">100</a>
+            <a id="0%" style="visibility: hidden;position: absolute; height: 40px;width: 30px; cursor:pointer;top:320px ;left: 527px;z-index:150;" onclick="throttle_click('0');">0</a>
+            <a id="40%" style="visibility: hidden;position: absolute;height: 40px;width: 30px; cursor:pointer; top:304px ;left: 495px;z-index:150;" onclick="throttle_click('1');">40</a>
+            <a id="60%" style="visibility: hidden;position: absolute;height: 40px;width: 30px; cursor:pointer; top:255px ;left: 497px;z-index:150;" onclick="throttle_click('2');">60</a>
+            <a id="80%" style="visibility: hidden;position: absolute;height: 30px;width: 30px; cursor:pointer; top:251px ;left: 559px;z-index:150;" onclick="throttle_click('3');">80</a>
+            <a id="100%" style="visibility: hidden;position:absolute;height: 30px;width: 30px; cursor:pointer; top:284px ;left: 570px;z-index:150;" onclick="throttle_click('4');">100</a>
 
-            <p id="throttle_message" style="visibility: hidden;position:absolute;top: 400px;left:360px;height: 200px;width: 400px;"></p>
+            <p id="throttle_message" style="visibility: hidden;position:absolute;top: 400px;left:350px;height: 200px;width: 400px;"></p>
 
 
 

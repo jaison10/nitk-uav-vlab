@@ -289,7 +289,6 @@ function magic() {
 
     } else if (simsubscreennum == 3) {
         // myInt = setInterval(function() { animateNewarrow(); }, 1000);
-        document.getElementById('pumptext-3').innerHTML = "Switch on the battery and set the throttle to find the thrust of the propeller using the thrustmeter.";
         document.getElementById('prop_fan').style.visibility = "visible";
         document.getElementById('all_comp').style.visibility = "visible";
         document.getElementById('switch_battery').style.visibility = "visible";
@@ -1737,6 +1736,7 @@ function close_plug() {
     document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
     // Standard syntax
     document.getElementById("arrow1").style.transform = "rotate(270deg)";
+    document.getElementById('pumptext-3').innerHTML = "Click on the throttle value to observe the changes in the thrust of the propeller."
     document.getElementById('all_comp').onclick = function() { set_throttle(); };
 }
 
@@ -1745,7 +1745,8 @@ function set_throttle() {
     var throttle = document.getElementById('throttle0');
     throttle.style.visibility = "visible";
     throttle.style.transform = "scale(2)";
-    throttle.style.transition = "all 1s ease-in-out";
+    throttle.style.transition = "all 0.1s ease-in-out";
+
     document.getElementById('0%').style.visibility = "visible";
     document.getElementById('40%').style.visibility = "visible";
     document.getElementById('60%').style.visibility = "visible";
@@ -1757,9 +1758,44 @@ function set_throttle() {
 }
 
 function throttle_click(name) {
+    for (let i = 0; i <= 4; i++) {
+        document.getElementById('throttle' + i).style.visibility = "hidden";
+    }
+    document.getElementById('throttle' + name).style.visibility = "visible";
+    document.getElementById('throttle_message').style.visibility = "visible";
+    document.getElementById('prop_fan').style.visibility = "visible";
 
 
-    document.getElementById('throttle_message').innerHTML = "When throttle is set to 0%,the propeller does not move. Hence there is no thrust generated. "
+    if (name == '0') {
+
+        document.getElementById('throttle_message').innerHTML = "When throttle is set to 0%,the propeller does not move. Hence there is no thrust generated. "
+
+    }
+    if (name == '1') {
+        document.getElementById('prop_fan').style.transform = "rotate(360deg)";
+        document.getElementById('prop_fan').style.transition = "transform 5s ease-in-out";
+        document.getElementById('throttle_message').innerHTML = "The throttle is now set to 40%";
+
+    }
+    if (name == '2') {
+        document.getElementById('prop_fan').style.transform = "rotate(360deg)";
+        document.getElementById('prop_fan').style.transition = "transform 3s ease-in-out";
+        document.getElementById('throttle_message').innerHTML = "The throttle is now set to 60%";
+
+    }
+    if (name == '3') {
+        document.getElementById('prop_fan').style.transform = "rotate(360deg)";
+        document.getElementById('prop_fan').style.transition = "transform 1s ease-in-out";
+        document.getElementById('throttle_message').innerHTML = "The throttle is now set to 80%";
+
+    }
+    if (name == '4') {
+        document.getElementById('prop_fan').style.transform = "rotate(360deg)";
+        document.getElementById('prop_fan').style.transition = "transform 0.01s ease-in-out";
+        document.getElementById('throttle_message').innerHTML = "The throttle is now set to 100%";
+
+    }
+
 
 
 }
