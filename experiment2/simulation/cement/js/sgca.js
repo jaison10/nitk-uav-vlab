@@ -270,6 +270,12 @@ function magic() {
         //hiding the previous canvas airfoil images.
         document.getElementById('equip').style.visibility = "hidden";
         document.getElementById('select_motor').style.visibility = "hidden";
+        for (let i = 1; i <= 8; i++) {
+            document.getElementById('select_prop' + i).style.visibility = "hidden";
+        }
+        document.getElementById('motor_with_prop').style.visibility = "hidden";
+
+
         for (var i = 1; i < 8; i++) {
             document.getElementById("air0" + i).style.visibility = 'hidden';
         }
@@ -449,10 +455,10 @@ function magic() {
 }
 
 function step1() {
-    // myStopFunction();
+    myStopFunction();
     // document.getElementById('a1').style.visibility="hidden";
     // document.getElementById('a2').style.cssText ="visibility=visible; top:0px; position: absolute; left: 170px; cursor:default; height: 200px; width: 400px;";
-    var element = document.getElementById('table_top');
+    var element = document.getElementById('all_top');
     element.style.visibility = 'visible';
     element.style.opacity = 1;
     element.style.transition = "opacity 5s ease-in";
@@ -460,16 +466,16 @@ function step1() {
     element.style.msTransition = "opacity 5s ease-in-out";
 
 
-    var table1 = document.getElementById('table_iso');
+    var table1 = document.getElementById('equip');
     table1.style.opacity = 0;
     table1.style.transition = "opacity 5s ease-out";
+    // document.getElementById('new_motor').style.visibility = "hidden";
 
-
-    document.getElementById("esc_iso").style.visibility = 'hidden';
-    document.getElementById("power_iso").style.visibility = 'hidden';
-    document.getElementById("knob_iso").style.visibility = 'hidden';
-    document.getElementById("table_iso").style.visibility = 'visible';
-    document.getElementById("thrust_iso").style.visibility = 'hidden';
+    // document.getElementById("esc_iso").style.visibility = 'hidden';
+    // document.getElementById("power_iso").style.visibility = 'hidden';
+    // document.getElementById("knob_iso").style.visibility = 'hidden';
+    // document.getElementById("table_iso").style.visibility = 'visible';
+    // document.getElementById("thrust_iso").style.visibility = 'hidden';
 
 
 
@@ -1652,31 +1658,66 @@ function select() {
     document.getElementById('equip').style.visibility = "visible";
     document.getElementById('select_motor').style.visibility = "visible";
     document.getElementById('select_mp').style.visibility = "hidden";
+    document.getElementById('pumptext').innerHTML = "Select a motor and then a propeller to place on the thrustmeter.";
     document.getElementById("nextButton").style.visibility = "visible";
 
 
     //     console.log("hello");
 }
 
-function motor(prop_name, m_img) {
-
+function motor(prop_name) {
+    for (let i = 1; i <= 8; i++) {
+        document.getElementById('select_prop' + i).style.visibility = "hidden";
+    }
     var m_name = document.getElementById('select_prop' + prop_name);
     m_name.style.visibility = "visible";
     var p_name = document.getElementById('p_' + prop_name)
     p_name.style.visibility = "visible";
     p_name.style.opacity = 1;
 
+    document.getElementById('motor_with_prop').style.visibility = "hidden";
 
     console.log('hello');
     // document.getElementById('select_prop').style.visibility = "visible";
-    var img_m = document.getElementById(m_img);
+    var img_m = document.getElementById('m_1');
     img_m.style.visibility = "visible";
-    img_m.style.top = "220px";
-    img_m.style.transition = "all 3s ease-in-out;";
+
+
 
 
 }
 
 function prop(name) {
+
+    document.getElementById('motor_with_prop').style.visibility = "visible";
+    document.getElementById('m_1').style.visibility = "hidden";
+    document.getElementById('pumptext').innerHTML = "Click on the motor with the chosen propeller to place it on the thrustmeter.";
+
+
+
+}
+
+function place_motor() {
+    document.getElementById('equip').style.visibility = "visible";
+    document.getElementById('motor_with_prop').style.visibility = "hidden";
+    document.getElementById('new_motor').style.visibility = "visible";
+    document.getElementById('select_motor').style.visibility = "hidden";
+    for (let i = 1; i <= 8; i++) {
+        document.getElementById('select_prop' + i).style.visibility = "hidden";
+    }
+    document.getElementById('pumptext').innerHTML = "Click on the table to view it from top view";
+    document.getElementById('equip').onclick = function() { step1() };
+
+    myInt = setInterval(function() {
+        animatearrow();
+    }, 500);
+    document.getElementById('arrow1').style = "visibility:hidden ;position:absolute; left: 500px; top: 150px; height: 40px; z-index: 10;";
+
+    document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+    // Code for IE9
+    document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+    // Standard syntax
+    document.getElementById("arrow1").style.transform = "rotate(270deg)";
+
 
 }
