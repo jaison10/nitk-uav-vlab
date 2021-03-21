@@ -18,6 +18,12 @@
         var n;
     </script>
     <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+        
         .popup {
             border-radius: 5px;
             background-color: black;
@@ -206,9 +212,9 @@
 
             <img id="equip" style="visibility:hidden;position: absolute; left: 100px; top: 180px;cursor:pointer; height: 300px; width: 600px;opacity: 1;z-index: 30;" src="./Images/uav/isometric_view/all_without_motor.png" alt="table with all equipments">
 
-            <button id="select_mp" onclick="select();" style="position: absolute;top: 450px;left: 600px;z-index: 30;">next</button>
+            <button id="select_mp" onclick="select();" style="position: absolute;top: 450px;left: 600px;z-index: 30;color: #fff;background-color: black;cursor: pointer;">Next</button>
 
-            <div class="dropdown" id="select_motor" style="visibility: hidden; position: absolute;top: 50px;left: 10px;width: 90px;">
+            <div class="dropdown" id="select_motor" style="visibility: hidden; position: absolute;top: 50px;left: 10px;width: 90px; cursor: pointer;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;" type="button" data-toggle="dropdown">Select Motor</button>
                 <div class="dropdown-content" style="height: 200px; overflow-y:scroll;width: 200px;z-index: 40;">
                     <a onclick="motor('1');">MN1005_KV90</a>
@@ -225,10 +231,10 @@
             <div class="dropdown" id="select_prop1" style="visibility: hidden; position: absolute;top: 50px;left: 200px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px" type="button" data-toggle="dropdown">Select Propeller</button>
                 <div class="dropdown-content" id="p_1" style="visibility: hidden; opacity: 0; width: 530px;z-index: 40;">
-                    <a onclick="prop();" style="height: 50px;" id="1_1">T-MOTOR G30*10.5 &nbsp;&nbsp;
+                    <a onclick="prop('1','1');" style="height: 50px;" id="1_1">T-MOTOR G30*10.5 &nbsp;&nbsp;
                     <img id="pr_1" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/MN3508KV700_G30105.png" alt="motor">
                     </a>
-                    <a onclick="prop();" style="height: 50px;" id="1_2">T-MOTOR G32*11 &nbsp;&nbsp;
+                    <a onclick="prop('1','2');" style="height: 50px;" id="1_2">T-MOTOR G32*11 &nbsp;&nbsp;
                         <img id="pr_2" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/MN3508KV700_G3211.png" alt="motor">
                     </a>
 
@@ -238,19 +244,19 @@
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px" type="button" data-toggle="dropdown">Select Propeller</button>
                 <div class="dropdown-content" id="p_2" style="visibility: hidden; height: 200px;width: 530px;overflow-y:scroll;opacity: 0;z-index: 40;">
 
-                    <a onclick="prop();" style="height: 50px;" id="2_1">T-MOTOR 12*4CF &nbsp;&nbsp;
+                    <a onclick="prop('2','1');" style="height: 50px;" id="2_1">T-MOTOR 12*4CF &nbsp;&nbsp;
                         <img id="pr_6" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/12_4CF.png" alt="motor">
                     </a>
-                    <a onclick="prop();" style="height: 50px;" id="2_2">T-MOTOR 13*4.4CF &nbsp;&nbsp;
+                    <a onclick="prop('2','2');" style="height: 50px;" id="2_2">T-MOTOR 13*4.4CF &nbsp;&nbsp;
                         <img id="pr_7" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/13_44.png" alt="motor">
                     </a>
-                    <a onclick="prop();" style="height: 50px;" id="2_3">T-MOTOR 14*4.8CF &nbsp;&nbsp;
+                    <a onclick="prop('2','3');" style="height: 50px;" id="2_3">T-MOTOR 14*4.8CF &nbsp;&nbsp;
                         <img id="pr_3" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/MN3508KV700_14_48.png" alt="motor">
                     </a>
-                    <a onclick="prop();" style="height: 50px;" id="2_4">T-MOTOR 15*5CF &nbsp;&nbsp;
+                    <a onclick="prop('2','4');" style="height: 50px;" id="2_4">T-MOTOR 15*5CF &nbsp;&nbsp;
                         <img id="pr_4" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G155.png" alt="motor">
                     </a>
-                    <a onclick="prop();" style="height: 50px;" id="2_5">T-MOTOR 16*5.4CF &nbsp;&nbsp;
+                    <a onclick="prop('2','5');" style="height: 50px;" id="2_5">T-MOTOR 16*5.4CF &nbsp;&nbsp;
                         <img id="pr_5" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
                     </a>
 
@@ -260,13 +266,13 @@
             <div class="dropdown" id="select_prop3" style="visibility: hidden; position: absolute;top: 50px;left: 200px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px" type="button" data-toggle="dropdown">Select Propeller</button>
                 <div class="dropdown-content" id="p_3" style="visibility: hidden;opacity: 0;width: 530px;z-index: 40;">
-                    <a onclick="prop();" style="height: 50px;" id="3_1">T-MOTOR 12*4CF &nbsp;&nbsp;
+                    <a onclick="prop('3','1');" style="height: 50px;" id="3_1">T-MOTOR 12*4CF &nbsp;&nbsp;
                         <img id="pr_6" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/12_4CF.png" alt="motor">
                     </a>
-                    <a onclick="prop();" style="height: 50px;" id="3_2">T-MOTOR 13*4.4CF &nbsp;&nbsp;
+                    <a onclick="prop('3','2');" style="height: 50px;" id="3_2">T-MOTOR 13*4.4CF &nbsp;&nbsp;
                         <img id="pr_7" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/13_44.png" alt="motor">
                     </a>
-                    <a onclick="prop();" style="height: 50px;" id="3_3">T-MOTOR 14*4.8CF &nbsp;&nbsp;
+                    <a onclick="prop('3','3');" style="height: 50px;" id="3_3">T-MOTOR 14*4.8CF &nbsp;&nbsp;
                         <img id="pr_3" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/MN3508KV700_14_48.png" alt="motor">
                     </a>
                 </div>
@@ -275,14 +281,14 @@
             <div class="dropdown" id="select_prop4" style="visibility: hidden; position: absolute;top: 50px;left: 200px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px" type="button" data-toggle="dropdown">Select Propeller</button>
                 <div class="dropdown-content" id="p_4" style="visibility: hidden; opacity: 0;width: 530px;z-index: 40;">
-                    <a onclick="prop();" style="height: 50px;" id="4_1">T-MOTOR 12*4CF &nbsp;&nbsp;
+                    <a onclick="prop('4','1');" style="height: 50px;" id="4_1">T-MOTOR 12*4CF &nbsp;&nbsp;
                         <img id="pr_6" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/12_4CF.png" alt="motor">
                     </a>
-                    <a onclick="prop();" style="height: 50px;" id="4_2">T-MOTOR 13*4.4CF &nbsp;&nbsp;
+                    <a onclick="prop('4','2');" style="height: 50px;" id="4_2">T-MOTOR 13*4.4CF &nbsp;&nbsp;
                         <img id="pr_7" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/13_44.png" alt="motor">
                     
                     </a>
-                    <a onclick="prop();" style="height: 50px;" id="4_3">T-MOTOR 11*3.7CF &nbsp;&nbsp;
+                    <a onclick="prop('4','3');" style="height: 50px;" id="4_3">T-MOTOR 11*3.7CF &nbsp;&nbsp;
                         <img id="pr_8" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/11_37.png" alt="motor">
                     
                     </a>
@@ -295,13 +301,13 @@
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px" type="button" data-toggle="dropdown">Select Propeller</button>
                 <div class="dropdown-content" id="p_5" style="visibility: hidden;opacity: 0;width: 530px;z-index: 40;">
 
-                    <a onclick="prop();" style="height: 50px;" id="5_1">DJI15*5 Carbon fiber Propeller &nbsp;&nbsp;
+                    <a onclick="prop('5','1');" style="height: 50px;" id="5_1">DJI15*5 Carbon fiber Propeller &nbsp;&nbsp;
                         <img id="pr_4" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G155.png" alt="motor">
                     </a>
-                    <a onclick="prop();" style="height: 50px;" id="5_2">DJI1655 Carbon fiber Propeller &nbsp;&nbsp;
+                    <a onclick="prop('5','2');" style="height: 50px;" id="5_2">DJI1655 Carbon fiber Propeller &nbsp;&nbsp;
                     <img id="pr_5" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
                     </a>
-                    <a onclick="prop();" style="height: 50px;" id="5_3">DJI1555 Carbon fiber Propeller &nbsp;&nbsp;
+                    <a onclick="prop('5','3');" style="height: 50px;" id="5_3">DJI1555 Carbon fiber Propeller &nbsp;&nbsp;
                         <img id="pr_4" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G155.png" alt="motor">
                     </a>
                 </div>
@@ -310,7 +316,7 @@
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px" type="button" data-toggle="dropdown">Select Propeller</button>
                 <div class="dropdown-content" id="p_6" style="visibility: hidden;opacity: 0; width: 530px;z-index: 40;">
 
-                    <a onclick="prop();" style="height: 50px;" id="6_1">HQ5045BN &nbsp;&nbsp;
+                    <a onclick="prop('6','1');" style="height: 50px;" id="6_1">HQ5045BN &nbsp;&nbsp;
                         <img id="pr_5" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
                     </a>
                 </div>
@@ -318,7 +324,7 @@
             <div class="dropdown" id="select_prop7" style="visibility: hidden; position: absolute;top: 50px;left: 200px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px" type="button" data-toggle="dropdown">Select Propeller</button>
                 <div class="dropdown-content" id="p_7" style="visibility: hidden; opacity: 0;width: 530px;z-index: 40;">
-                    <a onclick="prop();" style="height: 50px;" id="7_1">EMAX4045 &nbsp;&nbsp;
+                    <a onclick="prop('7','1');" style="height: 50px;" id="7_1">EMAX4045 &nbsp;&nbsp;
                         <img id="pr_4" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G155.png" alt="motor">
                     </a>
                 </div>
@@ -326,7 +332,7 @@
             <div class="dropdown" id="select_prop8" style="visibility: hidden; position: absolute;top: 50px;left: 200px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px" type="button" data-toggle="dropdown">Select Propeller</button>
                 <div class="dropdown-content" id="p_8" style="visibility: hidden; opacity: 0;width: 530px;z-index: 40;">
-                    <a onclick="prop();" style="height: 50px;" id="8_1">HQ5045 Propeller &nbsp;&nbsp;
+                    <a onclick="prop('8','1');" style="height: 50px;" id="8_1">HQ5045 Propeller &nbsp;&nbsp;
                         <img id="pr_5" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
                     </a>
                 </div>
@@ -448,8 +454,27 @@
 
             <img id="dialog_box" style="visibility: hidden;position: absolute;top: 275px;left: 280px;height: 50px;width: 100px;opacity:0;z-index: 100;" src="./Images/uav/top_view/dialog.png" alt="dialog box">
             <p id="thrust_value" style="visibility: hidden;position:absolute;top: 275px;left:300px;z-index: 150;opacity:0;"></p>
+            <button id="generate_table" onclick="generate_table();" style="visibility:hidden; position:absolute;top: 100px;left: 50px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;z-index: 120;">Generate table</button>
+            <button id="choose_motor" onclick="select();" style="visibility:hidden; position:absolute;top: 100px;left: 280px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;z-index: 120;">Choose another motor</button>
 
 
+            <table id="thrust_table" style="width:100%;visibility: hidden;position: absolute; top: 100px;">
+                <tr>
+                    <th rowspan="2">Motor</th>
+                    <th rowspan="2">Propeller</th>
+                    <th colspan="5">Throttle (%)</th>
+
+                </tr>
+                <tr>
+                    <th>0%</th>
+                    <th>40%</th>
+                    <th>60%</th>
+                    <th>80%</th>
+                    <th>100%</th>
+
+                </tr>
+
+            </table>
 
 
             <img id="hand3" style="position: absolute; left: 275px; top: 125px; visibility:hidden; cursor:pointer;" src="Images/hn.png" />
@@ -465,21 +490,21 @@
             <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
             <p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Add kerosene to Le-Chatelier’s flask upto graduated mark and weigh it.</p>
 
-            <img id="airfoil-zero" src="./Images/uav/airfoil.jpeg" style="position: absolute; width: 50%; height: 30%; left: 15%; top: 13%; " />
+            <!-- <img id="airfoil-zero" src="./Images/uav/airfoil.jpeg" style="position: absolute; width: 50%; height: 30%; left: 15%; top: 13%; " /> -->
             <!-- Line  -->
-            <img id="line" src="./Images/uav/line2.png" style="position: absolute; top: 33%; left: 10%; width: 60%; height: auto; visibility: hidden;" />
+            <!-- <img id="line" src="./Images/uav/line2.png" style="position: absolute; top: 33%; left: 10%; width: 60%; height: auto; visibility: hidden;" /> -->
             <!-- Curve : angle of attack image -->
-            <img id="angle-curve" src="./Images/uav/curve.png" style="position: absolute; width: 4%; height: 5%; top: 28%; left: 28%; visibility: hidden;" />
+            <!-- <img id="angle-curve" src="./Images/uav/curve.png" style="position: absolute; width: 4%; height: 5%; top: 28%; left: 28%; visibility: hidden;" /> -->
 
             <!-- Angle of attck info -->
-            <div id="angle-of-attck-info" style="visibility: hidden;">
+            <!-- <div id="angle-of-attck-info" style="visibility: hidden;">
                 <img src="./Images/uav/arrow-up.png" style="position: absolute; width: 2%; height: 6%; left: 29%; top:35%;">
                 <p style="position: absolute; width: 20%; height: 10%; left: 33%; top:35%;">Angle of attack.</p>
-            </div>
+            </div> -->
 
             <!-- Arrows -->
             <!-- UPPER LAYER AIRFLOW -->
-            <img id="new_Arrow1" style="position: absolute; height: 4%; width: 5%; top:19%; left: 5%; visibility:  hidden;" src="./Images/uav/arrow.png">
+            <!-- <img id="new_Arrow1" style="position: absolute; height: 4%; width: 5%; top:19%; left: 5%; visibility:  hidden;" src="./Images/uav/arrow.png">
             <img id="new_Arrow2" style="position: absolute; height: 4%; width: 5%; top:19%; left: 12%; visibility: hidden;" src="./Images/uav/arrow.png">
             <img id="new_Arrow3" style="position: absolute; height: 4%; width: 5%; top:18%; left: 18%; visibility: hidden;" src="./Images/uav/arrow.png">
             <img id="new_Arrow4" style="position: absolute; height: 4%; width: 5%; top:14%; left: 24%; visibility: hidden;" src="./Images/uav/arrow.png">
@@ -491,9 +516,9 @@
             <img id="new_Arrow10" style="position: absolute; height:4%; width: 5%; top:23%; left: 68%; visibility:hidden;" src="./Images/uav/arrow.png">
             <img id="new_Arrow11" style="position: absolute; height:4%; width: 5%; top:23%; left: 75%; visibility:hidden;" src="./Images/uav/arrow.png">
             <img id="new_Arrow12" style="position: absolute; height:4%; width: 5%; top:23%; left: 82%; visibility:hidden;" src="./Images/uav/arrow.png">
-            <p id="new_Arrow13" style="position: absolute; height: 4%; width: 5%; top:23%; left: 83%; visibility:hidden;"> </p>
+            <p id="new_Arrow13" style="position: absolute; height: 4%; width: 5%; top:23%; left: 83%; visibility:hidden;"> </p> -->
             <!-- BOTTOM LAYER AIRFLOW -->
-            <img id="below_Arrow1" style="position: absolute; height: 4%; width: 5%; top:24%; left: 5%; visibility:  hidden;" src="./Images/uav/arrow.png">
+            <!-- <img id="below_Arrow1" style="position: absolute; height: 4%; width: 5%; top:24%; left: 5%; visibility:  hidden;" src="./Images/uav/arrow.png">
             <img id="below_Arrow2" style="position: absolute; height: 4%; width: 5%; top:24%; left: 12%; visibility: hidden;" src="./Images/uav/arrow.png">
             <img id="below_Arrow3" style="position: absolute; height: 4%; width: 5%; top:26%; left: 18%; visibility: hidden;" src="./Images/uav/arrow.png">
             <img id="below_Arrow4" style="position: absolute; height: 4%; width: 5%; top:30%; left: 24%; visibility: hidden;" src="./Images/uav/arrow.png">
@@ -505,29 +530,29 @@
             <img id="below_Arrow10" style="position: absolute; height: 4%; width: 5%; top:32%; left: 68%; visibility:hidden;" src="./Images/uav/arrow.png">
             <img id="below_Arrow11" style="position: absolute; height: 4%; width: 5%; top:32%; left: 75%; visibility:hidden;" src="./Images/uav/arrow.png">
             <img id="below_Arrow12" style="position: absolute; height: 4%; width: 5%; top:32%; left: 82%; visibility:hidden;" src="./Images/uav/arrow.png">
-            <p id="below_Arrow13" style="position: absolute; height: 4%; width: 5%; top:32%; left: 83%; visibility: hidden;"></p>
+            <p id="below_Arrow13" style="position: absolute; height: 4%; width: 5%; top:32%; left: 83%; visibility: hidden;"></p> -->
 
             <!-- LIFT arrows -->
-            <div id="up-Arrow-div" style="visibility: hidden;">
+            <!-- <div id="up-Arrow-div" style="visibility: hidden;">
                 <img class="up-Arrow1" style="position: absolute; height: 6%; width: 2%; top:38%; left: 24%; visibility: hidden;" src="./Images/uav/arrow-up.png">
                 <img class="up-Arrow2" style="position: absolute; height: 6%; width: 2%; top:39%; left: 29%; visibility: hidden;" src="./Images/uav/arrow-up.png">
                 <img class="up-Arrow3" style="position: absolute; height: 6%; width: 2%; top:38%; left: 34%; visibility: hidden;" src="./Images/uav/arrow-up.png">
                 <p id="lift" style="position: absolute; visibility: block; height: 7%; width: 4%; top:43%; left: 27%;"><b>LIFT</b></p>
-            </div>
+            </div> -->
             <!-- Velo - Pressure -->
-            <div id="V-P-info" style="position: absolute; top:35%; left: 70%; visibility: hidden;">
+            <!-- <div id="V-P-info" style="position: absolute; top:35%; left: 70%; visibility: hidden;">
                 <p> Decrease in Velocity(V) <br/> Increase in Pressure(P).</p>
-            </div>
+            </div> -->
 
 
             <!-- Lift calculation display -->
-            <div id="calc-lift-part2" style="visibility: block; position: absolute; top: 60%;">
+            <!-- <div id="calc-lift-part2" style="visibility: block; position: absolute; top: 60%;">
                 <p> Let us calculate the lift now: <button class="verificationButton" onclick="calculateLift(2);">Calculate</button></p>
-            </div>
+            </div> -->
 
 
             <!-- explanation and comparison part. -->
-            <div id="solve-equation2" style="visibility: hidden;">
+            <!-- <div id="solve-equation2" style="visibility: hidden;">
                 <div id="" style="position: absolute; visibility: block; top:50%; left: 0%;">
                     <h4>Let us find out the lift:</h4>
                     <img src="/experiment/simulation/cement/Images/PhysicsEquation4-600x148.png" />
@@ -544,7 +569,7 @@
                     <button class="verificationButton" onclick="verifyLift(2);">Verify</button>
                     <p id="outputLift2" class=""></p>
                 </div>
-            </div>
+            </div> -->
 
 
             <img id="hand4" style="position: absolute; left: 275px; top: 125px; visibility:hidden;cursor:pointer;" src="Images/hn.png" />
