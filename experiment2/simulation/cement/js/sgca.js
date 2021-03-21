@@ -1736,7 +1736,7 @@ function close_plug() {
     document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
     // Standard syntax
     document.getElementById("arrow1").style.transform = "rotate(270deg)";
-    document.getElementById('pumptext-3').innerHTML = "Click on the throttle value to observe the changes in the thrust of the propeller."
+    document.getElementById('pumptext-3').innerHTML = "Click on the throttle percent to observe the changes in the thrust of the propeller."
     document.getElementById('all_comp').onclick = function() { set_throttle(); };
 }
 
@@ -1745,13 +1745,28 @@ function set_throttle() {
     var throttle = document.getElementById('throttle0');
     throttle.style.visibility = "visible";
     throttle.style.transform = "scale(2)";
-    throttle.style.transition = "all 0.1s ease-in-out";
+    throttle.style.transition = "all 1s ease-in-out";
 
-    document.getElementById('0%').style.visibility = "visible";
-    document.getElementById('40%').style.visibility = "visible";
-    document.getElementById('60%').style.visibility = "visible";
-    document.getElementById('80%').style.visibility = "visible";
-    document.getElementById('100%').style.visibility = "visible";
+    var zero = document.getElementById('0%');
+    zero.style.visibility = "visible";
+    zero.style.opacity = 1;
+    zero.style.transition = "opacity 5s ease-in-out";
+    var forty = document.getElementById('40%')
+    forty.style.visibility = "visible";
+    forty.style.opacity = 1;
+    forty.style.transition = "opacity 5s ease-in-out";
+    var sixty = document.getElementById('60%')
+    sixty.style.visibility = "visible";
+    sixty.style.opacity = 1;
+    sixty.style.transition = "opacity 5s ease-in-out";
+    var eighty = document.getElementById('80%');
+    eighty.style.visibility = "visible";
+    eighty.style.opacity = 1;
+    eighty.style.transition = "opacity 5s ease-in-out";
+    var hundred = document.getElementById('100%');
+    hundred.style.visibility = "visible";
+    hundred.style.opacity = 1;
+    hundred.style.transition = "opacity 5s ease-in-out";
 
 
 
@@ -1763,35 +1778,59 @@ function throttle_click(name) {
     }
     document.getElementById('throttle' + name).style.visibility = "visible";
     document.getElementById('throttle_message').style.visibility = "visible";
-    document.getElementById('prop_fan').style.visibility = "visible";
+    // document.getElementById('find_thrust').style.visibility = "visible";
+    document.getElementById('dialog_box').style.visibility = "visible";
+    document.getElementById('dialog_box').style.opacity = 1;
+    document.getElementById('dialog_box').style.transition = "opacity 1s ease-in-out";
+    document.getElementById('thrust_value').style.visibility = "visible";
+    document.getElementById('thrust_value').style.opacity = 1;
+    document.getElementById('thrust_value').style.transition = "opacity 1s ease-in-out";
+
+
+
+    // myInt = setInterval(function() {
+    //     animatearrow();
+    // }, 500);
+    // document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 250px; top: 470px; height: 20px; z-index: 10;";
+
+    // document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+    // // Code for IE9
+    // document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+    // // Standard syntax
+    // document.getElementById("arrow1").style.transform = "rotate(270deg)";
+    var p = document.getElementById('prop_fan');
+    p.style.visibility = "visible";
+
 
 
     if (name == '0') {
+        // document.getElementById('find_thrust').onclick = function() {
+        //     myStopFunction();
+        //     document.getElementById('find_thrust').style.visibility = "hidden";
 
-        document.getElementById('throttle_message').innerHTML = "When throttle is set to 0%,the propeller does not move. Hence there is no thrust generated. "
+        // }
+        p.style.animation = "rotate 0s linear 1s infinite";
+        document.getElementById('throttle_message').innerHTML = "When throttle is set to 0%,the propeller does not move. Hence there is 0 thrust generated. "
 
     }
     if (name == '1') {
-        document.getElementById('prop_fan').style.transform = "rotate(360deg)";
-        document.getElementById('prop_fan').style.transition = "transform 5s ease-in-out";
+
+        p.style.animation = "rotate 4s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 40%";
 
     }
     if (name == '2') {
-        document.getElementById('prop_fan').style.transform = "rotate(360deg)";
-        document.getElementById('prop_fan').style.transition = "transform 3s ease-in-out";
+        p.style.animation = "rotate 2s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 60%";
 
     }
     if (name == '3') {
-        document.getElementById('prop_fan').style.transform = "rotate(360deg)";
-        document.getElementById('prop_fan').style.transition = "transform 1s ease-in-out";
+        p.style.animation = "rotate 1s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 80%";
 
     }
     if (name == '4') {
-        document.getElementById('prop_fan').style.transform = "rotate(360deg)";
-        document.getElementById('prop_fan').style.transition = "transform 0.01s ease-in-out";
+        p.style.animation = "rotate 0.001s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 100%";
 
     }
@@ -1799,3 +1838,7 @@ function throttle_click(name) {
 
 
 }
+
+// function find_thrust() {
+
+// }

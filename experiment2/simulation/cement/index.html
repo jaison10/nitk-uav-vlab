@@ -116,6 +116,19 @@
         .dropdown:hover .dropbtn {
             background-color: #f0f8f0;
         }
+        
+        #prop_fan {
+            animation: rotate 0s linear 2s infinite;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 
 </head>
@@ -135,7 +148,7 @@
             <p class="incanvas" style="font-family:verdana; font-size:15px;">To understand the principle of thrust and calculate the Thrust of a Propeller.</p>
             </br>
             <h4 class="incanvas" style="font-family:verdana; ">Apparatus used:</h4>
-            <p class="incanvas" style="font-family:verdana; font-size:14px;">Motor, Propeller fan, Electronic Speed Controller, Power Source, Throttle knob and Thrustmeter.</p>
+            <p class="incanvas" style="font-family:verdana; font-size:14px;">Motor, Propeller fan, Electronic Speed Controller, Power Source, Throttle Controller and Thrustmeter.</p>
             &nbsp;
             <span class="tooltip" id="desc_button" style="border-bottom:1px dotted ; color:red; position:absolute; top:130px;"><strong>Description</strong>
                 <span  class="tooltiptext" style="text-align:justify;"><strong style="color:red;">Aerofoil</strong> is the cross-sectional design of the wing, blade, or sail. 
@@ -174,7 +187,7 @@
                 </span>
             </span>
             <span class="tool" id="desc_button"><strong><button id="knob" onclick="appear('knob_iso','230px');" style="visibility: hidden; position: absolute;cursor: pointer;top: 140px;left:0px; border-radius:5px;width: 130px;color: #fff;background-color: black;">Speed Controller</button></strong>
-                <span  class="tooltext" style="text-align:justify;"><strong style="color:red;">Speed Controller</strong> is a device used for changing the throttle value of a motor. 
+                <span  class="tooltext" style="text-align:justify;"><strong style="color:red;">Throttle Controller</strong> is a device used for changing the throttle value of a motor. 
                 </span>
             </span>
             <span class="tool" id="desc_button"><strong> <button id="motor" onclick="appear('motor_iso','240px');" style="visibility: hidden; position: absolute;cursor: pointer;top: 170px;left:0px; border-radius:5px;width: 130px;color: #fff;background-color: black;">Motor</button></strong>
@@ -399,7 +412,7 @@
             <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span>
             <p id="pumptext-3" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Switch on the battery and set the throttle to find the thrust of the propeller using the thrustmeter.</p>
             <img id="all_comp" style="visibility:hidden;position: absolute; left: 0px; top: 200px; height: 300px; width: 600px;opacity: 1;z-index: 30;cursor: pointer;" src="./Images/uav/isometric_view/all_connected.png" alt="table with all equipments">
-            <img id="prop_fan" style="visibility: hidden; position:absolute;top: 327px;left: 153px;height: 70px;width: 100px;transform: rotate(90deg);" src="./Images/uav/isometric_view/prop_2.png" alt="table with all equipments">
+            <img id="prop_fan" style="visibility: hidden; position:absolute;top: 328px;left: 154px;height: 70px;width: 100px;transform: rotate(90deg);" src="./Images/uav/isometric_view/prop_2.png" alt="table with all equipments">
             <button id="switch_battery" onclick="switch_battery();" style="visibility:hidden; position:absolute;top: 150px;left: 230px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px">Switch on the battery</button>
             <img id="socket_plug" style="visibility: hidden; position:absolute;top: 50px;left: 400px;height: 150px;cursor:pointer;width: 200px;border-radius: 50px;border: 2px solid black;" src="./Images/uav/top_view/socket_plugged.png" alt="Socket plug">
             <img id="socket_plugged_on" style="visibility: hidden; position:absolute;top: 50px;left: 400px;height: 150px;cursor:pointer;width: 200px;border-radius: 50px;border: 2px solid black;" src="./Images/uav/top_view/socket_plugged_on.png" alt="Socket plug off">
@@ -412,18 +425,19 @@
             <img id="throttle3" style="visibility: hidden; position:absolute;top: 280px; left: 480px; height: 70px; width: 100px; z-index: 100; transform: scale(2);" src="./Images/uav/top_view/throttle_80deg.png" alt="Throttle knob with 80%">
             <img id="throttle4" style="visibility: hidden; position:absolute;top: 280px; left: 480px; height: 70px; width: 100px; z-index: 100; transform: scale(2);" src="./Images/uav/top_view/throttle_100deg.png" alt="Throttle knob with 100%">
 
-            <a id="0%" style="visibility: hidden;position: absolute; height: 40px;width: 30px; cursor:pointer;top:320px ;left: 527px;z-index:150;" onclick="throttle_click('0');">0</a>
-            <a id="40%" style="visibility: hidden;position: absolute;height: 40px;width: 30px; cursor:pointer; top:304px ;left: 495px;z-index:150;" onclick="throttle_click('1');">40</a>
-            <a id="60%" style="visibility: hidden;position: absolute;height: 40px;width: 30px; cursor:pointer; top:255px ;left: 497px;z-index:150;" onclick="throttle_click('2');">60</a>
-            <a id="80%" style="visibility: hidden;position: absolute;height: 30px;width: 30px; cursor:pointer; top:251px ;left: 559px;z-index:150;" onclick="throttle_click('3');">80</a>
-            <a id="100%" style="visibility: hidden;position:absolute;height: 30px;width: 30px; cursor:pointer; top:284px ;left: 570px;z-index:150;" onclick="throttle_click('4');">100</a>
+            <a id="0%" style="visibility: hidden;position: absolute; height: 40px;width: 30px; cursor:pointer;top:320px ;left: 527px;z-index:150;opacity: 0;" onclick="throttle_click('0');">0</a>
+            <a id="40%" style="visibility: hidden;position: absolute;height: 40px;width: 30px; cursor:pointer; top:304px ;left: 495px;z-index:150;opacity: 0;" onclick="throttle_click('1');">40</a>
+            <a id="60%" style="visibility: hidden;position: absolute;height: 40px;width: 30px; cursor:pointer; top:255px ;left: 497px;z-index:150;opacity: 0;" onclick="throttle_click('2');">60</a>
+            <a id="80%" style="visibility: hidden;position: absolute;height: 30px;width: 30px; cursor:pointer; top:251px ;left: 559px;z-index:150;opacity: 0;" onclick="throttle_click('3');">80</a>
+            <a id="100%" style="visibility: hidden;position:absolute;height: 30px;width: 30px; cursor:pointer; top:284px ;left: 570px;z-index:150;opacity: 0;" onclick="throttle_click('4');">100</a>
 
             <p id="throttle_message" style="visibility: hidden;position:absolute;top: 400px;left:350px;height: 200px;width: 400px;"></p>
+            <!-- <button id="find_thrust" style="visibility:hidden; position:absolute;top: 450px;left: 150px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px">Find the thrust</button> -->
+
+            <img id="dialog_box" style="visibility: hidden;position: absolute;top: 275px;left: 280px;height: 50px;width: 100px;opacity:0;z-index: 100;" src="./Images/uav/top_view/dialog.png" alt="dialog box">
+            <p id="thrust_value" style="visibility: hidden;position:absolute;top: 275px;left:300px;z-index: 150;opacity:0;"></p>
 
 
-
-
-            <!-- <img id="knob" style="visibility: hidden; position:absolute;top: 278px;left: 502px;height: 75px;cursor:pointer;width: 60px;z-index: 120;z-index: 200;" src="./Images/uav/top_view/0deg.png" alt="Socket plug off"> -->
 
 
             <img id="hand3" style="position: absolute; left: 275px; top: 125px; visibility:hidden; cursor:pointer;" src="Images/hn.png" />
