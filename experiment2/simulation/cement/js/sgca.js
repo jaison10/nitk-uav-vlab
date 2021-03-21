@@ -19,7 +19,10 @@ function navNext() {
     for (temp = 0; temp <= 7; temp++) {
         document.getElementById('canvas' + temp).style.visibility = "hidden";
     }
-
+    if (simsubscreennum == 3) {
+        document.getElementById('canvas1').style.visibility = "visible";
+        document.getElementById('canvas4').style.visibility = "hidden";
+    }
     simsubscreennum += 1;
     document.getElementById('canvas' + (simsubscreennum)).style.visibility = "visible";
     document.getElementById('nextButton').style.visibility = "hidden";
@@ -292,7 +295,8 @@ function magic() {
         document.getElementById('prop_fan').style.visibility = "visible";
         document.getElementById('all_comp').style.visibility = "visible";
         document.getElementById('switch_battery').style.visibility = "visible";
-
+        console.log(m_id);
+        console.log(p_id);
 
 
 
@@ -1621,6 +1625,22 @@ function view_more() {
 }
 
 function select() {
+    document.getElementById('all_comp').style.visibility = "hidden";
+    document.getElementById('prop_fan').style.visibility = "hidden";
+    document.getElementById('throttle_message').style.visibility = "hidden";
+    for (let i = 0; i <= 4; i++) {
+        document.getElementById('throttle' + i).style.visibility = "hidden";
+
+    }
+    document.getElementById('thrust_value').style.visibility = "hidden";
+    document.getElementById('generate_table').style.visibility = "hidden";
+    document.getElementById('choose_motor').style.visibility = "hidden";
+    document.getElementById('dialog_box').style.visibility = "hidden";
+    document.getElementById('0%').style.visibility = "hidden";
+    document.getElementById('40%').style.visibility = "hidden";
+    document.getElementById('60%').style.visibility = "hidden";
+    document.getElementById('80%').style.visibility = "hidden";
+    document.getElementById('100%').style.visibility = "hidden";
 
     document.getElementById('thrust').style = "opacity:0;";
     document.getElementById('dc').style = "opacity:0;";
@@ -1664,16 +1684,29 @@ function motor(prop_name) {
 
 
 }
+var m_id;
+var p_id;
 
-function prop(name) {
+function prop(motor_id, prop_id) {
 
     document.getElementById('motor_with_prop').style.visibility = "visible";
     document.getElementById('m_1').style.visibility = "hidden";
     document.getElementById('pumptext').innerHTML = "Click on the motor with the chosen propeller to place it on the thrustmeter.";
+    document.getElementById('select_motor').style.visibility = "hidden";
+    for (let i = 1; i <= 8; i++) {
+        document.getElementById('select_prop' + i).style.visibility = "hidden";
 
+    }
+    m_id = motor_id;
+    p_id = prop_id;
+
+    console.log(m_id);
+    console.log(p_id);
 
 
 }
+console.log(m_id);
+console.log(p_id);
 
 function place_motor() {
     document.getElementById('equip').style.visibility = "visible";
@@ -1771,6 +1804,30 @@ function set_throttle() {
 
 
 }
+var thrust_data = [
+    ['1', '1', '0', '2096', '4061', '6143', '8459'],
+    ['1', '2', '0', '2607', '4962', '7091', '9323'],
+    ['2', '1', '0', '430', '660 ', '1040', '1160'],
+    ['2', '2', '0', '550', '810 ', '1300', '1380'],
+    ['2', '3', '0', '710', '1100', '1580', '1730'],
+    ['2', '4', '0', '820', '1200', '1700', '1880'],
+    ['2', '5', '0', '440', '700 ', '1100', '1220'],
+    ['3', '1', '0', '360', '600 ', '910 ', '1050'],
+    ['3', '2', '0', '450', '710 ', '1120', '1230'],
+    ['3', '3', '0', '600', '930 ', '1350', '1520'],
+    ['4', '1', '0', '280', '460 ', '790 ', '860 '],
+    ['4', '2', '0', '330', '560 ', '880 ', '1020'],
+    ['4', '3', '0', '380', '630 ', '960 ', '1110'],
+    ['5', '2', '0', '440', '700 ', '1100', '1220'],
+    ['5', '3', '0', '440', '700 ', '1100', '1220'],
+    ['6', '1', '0', '440', '700 ', '1100', '1220'],
+    ['7', '1', '0', '440', '700 ', '1100', '1220'],
+    ['8', '1', '0', '440', '700 ', '1100', '1220'],
+
+
+
+
+];
 
 function throttle_click(name) {
     for (let i = 0; i <= 4; i++) {
@@ -1778,7 +1835,7 @@ function throttle_click(name) {
     }
     document.getElementById('throttle' + name).style.visibility = "visible";
     document.getElementById('throttle_message').style.visibility = "visible";
-    // document.getElementById('find_thrust').style.visibility = "visible";
+
     document.getElementById('dialog_box').style.visibility = "visible";
     document.getElementById('dialog_box').style.opacity = 1;
     document.getElementById('dialog_box').style.transition = "opacity 1s ease-in-out";
@@ -1786,51 +1843,333 @@ function throttle_click(name) {
     document.getElementById('thrust_value').style.opacity = 1;
     document.getElementById('thrust_value').style.transition = "opacity 1s ease-in-out";
 
-
-
-    // myInt = setInterval(function() {
-    //     animatearrow();
-    // }, 500);
-    // document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 250px; top: 470px; height: 20px; z-index: 10;";
-
-    // document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
-    // // Code for IE9
-    // document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
-    // // Standard syntax
-    // document.getElementById("arrow1").style.transform = "rotate(270deg)";
     var p = document.getElementById('prop_fan');
     p.style.visibility = "visible";
 
 
 
+    var sum = m_id + p_id;
     if (name == '0') {
         // document.getElementById('find_thrust').onclick = function() {
         //     myStopFunction();
         //     document.getElementById('find_thrust').style.visibility = "hidden";
 
         // }
+        if (m_id == '1' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[0][2] + "g";
+        }
+        if (m_id == '1' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[1][2] + "g";
+        }
+        if (m_id == '2' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[2][2] + "g";
+        }
+        if (m_id == '2' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[3][2] + "g";
+        }
+        if (m_id == '2' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[4][2] + "g";
+        }
+        if (m_id == '2' && p_id == '4') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[5][2] + "g";
+        }
+        if (m_id == '2' && p_id == '5') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[6][2] + "g";
+        }
+        if (m_id == '3' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[7][2] + "g";
+        }
+        if (m_id == '3' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[8][2] + "g";
+        }
+        if (m_id == '3' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[9][2] + "g";
+        }
+        if (m_id == '4' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[10][2] + "g";
+        }
+        if (m_id == '4' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[11][2] + "g";
+        }
+        if (m_id == '4' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[12][2] + "g";
+        }
+        if (m_id == '5' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[13][2] + "g";
+        }
+        if (m_id == '5' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[14][2] + "g";
+        }
+        if (m_id == '5' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[15][2] + "g";
+        }
+        if (m_id == '6' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[16][2] + "g";
+        }
+        if (m_id == '7' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[17][2] + "g";
+        }
+        if (m_id == '8' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = thrust_data[18][2] + "g";
+        }
+        // document.getElementById('thrust_value').innerHTML = "0g";
         p.style.animation = "rotate 0s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "When throttle is set to 0%,the propeller does not move. Hence there is 0 thrust generated. "
 
+
     }
     if (name == '1') {
+        if (m_id == '1' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "2096g";
+        }
+        if (m_id == '1' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "2607g";
+        }
+        if (m_id == '2' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "430g";
+        }
+        if (m_id == '2' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "550g";
+        }
+        if (m_id == '2' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "710g";
+        }
+        if (m_id == '2' && p_id == '4') {
+            document.getElementById('thrust_value').innerHTML = "820g";
+        }
+        if (m_id == '2' && p_id == '5') {
+            document.getElementById('thrust_value').innerHTML = "440g";
+        }
+        if (m_id == '3' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "360g";
+        }
+        if (m_id == '3' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "450g";
+        }
+        if (m_id == '3' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "600g";
+        }
+        if (m_id == '4' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "280g";
+        }
+        if (m_id == '4' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "330g";
+        }
+        if (m_id == '4' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "380g";
+        }
+        if (m_id == '5' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "440g";
+        }
+        if (m_id == '5' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "440g";
+        }
+        if (m_id == '5' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "405g";
+        }
+        if (m_id == '6' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "55g";
+        }
+        if (m_id == '7' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "46g";
+        }
+        if (m_id == '8' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "621g";
+        }
 
-        p.style.animation = "rotate 4s linear 1s infinite";
+        p.style.animation = "rotate 2s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 40%";
 
     }
     if (name == '2') {
-        p.style.animation = "rotate 2s linear 1s infinite";
+        if (m_id == '1' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "4061g";
+        }
+        if (m_id == '1' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "4962g";
+        }
+        if (m_id == '2' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "660g";
+        }
+        if (m_id == '2' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "810g";
+        }
+        if (m_id == '2' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "1100g";
+        }
+        if (m_id == '2' && p_id == '4') {
+            document.getElementById('thrust_value').innerHTML = "1200g";
+        }
+        if (m_id == '2' && p_id == '5') {
+            document.getElementById('thrust_value').innerHTML = "700g";
+        }
+        if (m_id == '3' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "600g";
+        }
+        if (m_id == '3' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "710g";
+        }
+        if (m_id == '3' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "930g";
+        }
+        if (m_id == '4' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "460g";
+        }
+        if (m_id == '4' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "560g";
+        }
+        if (m_id == '4' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "630g";
+        }
+        if (m_id == '5' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "700g";
+        }
+        if (m_id == '5' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "400g";
+        }
+        if (m_id == '5' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "405g";
+        }
+        if (m_id == '6' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "55g";
+        }
+        if (m_id == '7' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "46g";
+        }
+        if (m_id == '8' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "621g";
+        }
+
+        p.style.animation = "rotate 1s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 60%";
 
     }
     if (name == '3') {
-        p.style.animation = "rotate 1s linear 1s infinite";
+        if (m_id == '1' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "6143g";
+        }
+        if (m_id == '1' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "7091g";
+        }
+        if (m_id == '2' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "1040g";
+        }
+        if (m_id == '2' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "1300g";
+        }
+        if (m_id == '2' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "1580g";
+        }
+        if (m_id == '2' && p_id == '4') {
+            document.getElementById('thrust_value').innerHTML = "1700g";
+        }
+        if (m_id == '2' && p_id == '5') {
+            document.getElementById('thrust_value').innerHTML = "1100g";
+        }
+        if (m_id == '3' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "910g";
+        }
+        if (m_id == '3' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "1120g";
+        }
+        if (m_id == '3' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "1350g";
+        }
+        if (m_id == '4' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "790g";
+        }
+        if (m_id == '4' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "880g";
+        }
+        if (m_id == '4' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "960g";
+        }
+        if (m_id == '5' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "1100g";
+        }
+        if (m_id == '5' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "400g";
+        }
+        if (m_id == '5' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "405g";
+        }
+        if (m_id == '6' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "55g";
+        }
+        if (m_id == '7' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "46g";
+        }
+        if (m_id == '8' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "621g";
+        }
+
+        p.style.animation = "rotate 0.1s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 80%";
 
     }
     if (name == '4') {
+        if (m_id == '1' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "8459g";
+        }
+        if (m_id == '1' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "9323g";
+        }
+        if (m_id == '2' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "1160g";
+        }
+        if (m_id == '2' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "1380g";
+        }
+        if (m_id == '2' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "1730g";
+        }
+        if (m_id == '2' && p_id == '4') {
+            document.getElementById('thrust_value').innerHTML = "1880g";
+        }
+        if (m_id == '2' && p_id == '5') {
+            document.getElementById('thrust_value').innerHTML = "1220g";
+        }
+        if (m_id == '3' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "1050g";
+        }
+        if (m_id == '3' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "1230g";
+        }
+        if (m_id == '3' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "150g";
+        }
+        if (m_id == '4' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "860g";
+        }
+        if (m_id == '4' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "1020g";
+        }
+        if (m_id == '4' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "1110g";
+        }
+        if (m_id == '5' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "1100g";
+        }
+        if (m_id == '5' && p_id == '2') {
+            document.getElementById('thrust_value').innerHTML = "400g";
+        }
+        if (m_id == '5' && p_id == '3') {
+            document.getElementById('thrust_value').innerHTML = "405g";
+        }
+        if (m_id == '6' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "55g";
+        }
+        if (m_id == '7' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "46g";
+        }
+        if (m_id == '8' && p_id == '1') {
+            document.getElementById('thrust_value').innerHTML = "621g";
+        }
         p.style.animation = "rotate 0.001s linear 1s infinite";
+        document.getElementById('generate_table').style.visibility = "visible";
+        document.getElementById('choose_motor').style.visibility = "visible";
+
+        // document.getElementById('generate_table').onclick = function() { generate_table(); };
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 100%";
 
     }
@@ -1839,6 +2178,218 @@ function throttle_click(name) {
 
 }
 
-// function find_thrust() {
+function generate_table() {
+    var table = document.getElementById("thrust_table");
+    document.getElementById('all_comp').style.visibility = "hidden";
+    document.getElementById('prop_fan').style.visibility = "hidden";
+    document.getElementById('throttle_message').style.visibility = "hidden";
+    document.getElementById('thrust_value').style.visibility = "hidden";
+    document.getElementById('dialog_box').style.visibility = "hidden";
+    document.getElementById('prop_fan').style.visibility = "hidden";
+    document.getElementById('choose_motor').style.visibility = "hidden";
+    for (let i = 0; i <= 4; i++) {
+        document.getElementById('throttle' + i).style.visibility = "hidden";
 
-// }
+    }
+    document.getElementById('0%').style.visibility = "hidden";
+    document.getElementById('40%').style.visibility = "hidden";
+    document.getElementById('60%').style.visibility = "hidden";
+    document.getElementById('80%').style.visibility = "hidden";
+    document.getElementById('100%').style.visibility = "hidden";
+
+    document.getElementById('generate_table').style.visibility = "hidden";
+    document.getElementById('thrust_table').style.visibility = "visible";
+
+    var row = table.insertRow(2);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
+    var cell7 = row.insertCell(6);
+
+    if (m_id == '1' && p_id == '1') {
+        cell1.innerHTML = "MN1005_KV90";
+        cell2.innerHTML = "T-MOTOR G30*10.5";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+
+    }
+    if (m_id == '1' && p_id == '2') {
+        cell1.innerHTML = "MN1005_KV90";
+        cell2.innerHTML = "T-MOTOR G32*11 ";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '2' && p_id == '1') {
+        cell1.innerHTML = "MN3508_KV380";
+        cell2.innerHTML = "T-MOTOR 12*4CF";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '2' && p_id == '2') {
+        cell1.innerHTML = "MN3508_KV380";
+        cell2.innerHTML = "T-MOTOR 13*4.4CF";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '2' && p_id == '3') {
+        cell1.innerHTML = "MN3508_KV380";
+        cell2.innerHTML = "T-MOTOR 14*4.8CF";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '2' && p_id == '4') {
+        cell1.innerHTML = "MN3508_KV380";
+        cell2.innerHTML = "T-MOTOR 15*5CF";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '2' && p_id == '5') {
+        cell1.innerHTML = "MN3508_KV380";
+        cell2.innerHTML = "T-MOTOR 16*5.4CF ";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '3' && p_id == '1') {
+        cell1.innerHTML = "MN3508_KV580";
+        cell2.innerHTML = "T-MOTOR 12*4CF";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '3' && p_id == '2') {
+        cell1.innerHTML = "MN3508_KV580";
+        cell2.innerHTML = "T-MOTOR 13*4.4CF";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '3' && p_id == '3') {
+        cell1.innerHTML = "MN3508_KV580";
+        cell2.innerHTML = "T-MOTOR 14*4.8CF ";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '4' && p_id == '1') {
+        cell1.innerHTML = "MN3508_KV700";
+        cell2.innerHTML = "T-MOTOR 12*4CF";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '4' && p_id == '2') {
+        cell1.innerHTML = "MN3508_KV700";
+        cell2.innerHTML = "T-MOTOR 13*4.4CF";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '4' && p_id == '3') {
+        cell1.innerHTML = "MN3508_KV700";
+        cell2.innerHTML = "T-MOTOR 11*3.7CF ";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '5' && p_id == '1') {
+        cell1.innerHTML = "MT4114_340KV";
+        cell2.innerHTML = "DJI15*5 Carbon fiber Propeller";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '5' && p_id == '2') {
+        cell1.innerHTML = "MT4114_340KV";
+        cell2.innerHTML = "DJI1655 Carbon fiber Propeller ";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '5' && p_id == '3') {
+        cell1.innerHTML = "MT4114_340KV";
+        cell2.innerHTML = "DJI1555 Carbon fiber Propeller";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '6' && p_id == '1') {
+        cell1.innerHTML = "RS2205S_2300KV";
+        cell2.innerHTML = "HQ5045BN";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '7' && p_id == '1') {
+        cell1.innerHTML = "RS2205S_2600KV";
+        cell2.innerHTML = "EMAX4045";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    if (m_id == '8' && p_id == '1') {
+        cell1.innerHTML = "RS2306_2400KV";
+        cell2.innerHTML = "HQ5045 Propeller";
+        cell3.innerHTML = "0";
+        cell4.innerHTML = "2096";
+        cell5.innerHTML = "4061";
+        cell6.innerHTML = "6143";
+        cell7.innerHTML = "8459";
+    }
+    // cell1.innerHTML = "NEW CELL1";
+    // cell2.innerHTML = "NEW CELL2";
+    // cell3.innerHTML = "NEW CELL3";
+    // cell4.innerHTML = "NEW CELL4";
+    // cell5.innerHTML = "NEW CELL5";
+    // cell6.innerHTML = "NEW CELL6";
+    // cell7.innerHTML = "NEW CELL7";
+    // cell8.innerHTML = "NEW CELL8";
+
+
+
+}
