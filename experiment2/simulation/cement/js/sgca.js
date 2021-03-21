@@ -19,10 +19,10 @@ function navNext() {
     for (temp = 0; temp <= 7; temp++) {
         document.getElementById('canvas' + temp).style.visibility = "hidden";
     }
-    if (simsubscreennum == 3) {
-        document.getElementById('canvas1').style.visibility = "visible";
-        document.getElementById('canvas4').style.visibility = "hidden";
-    }
+    // if (simsubscreennum == 3) {
+    //     document.getElementById('canvas1').style.visibility = "visible";
+    //     document.getElementById('canvas4').style.visibility = "hidden";
+    // }
     simsubscreennum += 1;
     document.getElementById('canvas' + (simsubscreennum)).style.visibility = "visible";
     document.getElementById('nextButton').style.visibility = "hidden";
