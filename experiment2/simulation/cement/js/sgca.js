@@ -281,17 +281,21 @@ function magic() {
         document.getElementById('new_motor').style.visibility = "hidden";
 
 
-        // for (var i = 1; i < 8; i++) {
-        //     document.getElementById("air0" + i).style.visibility = 'hidden';
-        // }
-        // // hiding the nomenclature list of buttons
-        // document.getElementById("nomen-list").style.visibility = 'hidden';
 
         document.getElementById("nextButton").style.visibility = "visible";
         // myInt = setInterval(function(){ animateNewarrow(); }, 300);
 
     } else if (simsubscreennum == 3) {
-        // myInt = setInterval(function() { animateNewarrow(); }, 1000);
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 320px; top: 150px; height: 40px; z-index: 10;";
+
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(270deg)";
         document.getElementById('prop_fan').style.visibility = "visible";
         document.getElementById('all_comp').style.visibility = "visible";
         document.getElementById('switch_battery').style.visibility = "visible";
@@ -1657,7 +1661,7 @@ function select() {
     document.getElementById('select_motor').style.visibility = "visible";
     document.getElementById('select_mp').style.visibility = "hidden";
     document.getElementById('pumptext').innerHTML = "Select a motor and then a propeller to place on the thrustmeter.";
-    document.getElementById("nextButton").style.visibility = "visible";
+    document.getElementById("nextButton").style.visibility = "hidden";
 
 
     //     console.log("hello");
@@ -1679,7 +1683,7 @@ function motor(prop_name) {
     // document.getElementById('select_prop').style.visibility = "visible";
     var img_m = document.getElementById('m_1');
     img_m.style.visibility = "visible";
-
+    document.getElementById('nextButton').style.visibility = "hidden";
 
 
 
@@ -1693,6 +1697,15 @@ function prop(motor_id, prop_id) {
     document.getElementById('m_1').style.visibility = "hidden";
     document.getElementById('pumptext').innerHTML = "Click on the motor with the chosen propeller to place it on the thrustmeter.";
     document.getElementById('select_motor').style.visibility = "hidden";
+    document.getElementById('nextButton').style.visibility = "hidden";
+    myInt = setInterval(function() { animatearrow(); }, 500);
+    document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 100px; top: 350px; height: 40px; z-index: 10;";
+
+    document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+    // Code for IE9
+    document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+    // Standard syntax
+    document.getElementById("arrow1").style.transform = "rotate(270deg)";
     for (let i = 1; i <= 8; i++) {
         document.getElementById('select_prop' + i).style.visibility = "hidden";
 
@@ -1709,12 +1722,17 @@ console.log(m_id);
 console.log(p_id);
 
 function place_motor() {
+    myStopFunction();
     document.getElementById('equip').style.visibility = "visible";
     document.getElementById('motor_with_prop').style.visibility = "hidden";
     document.getElementById('new_motor').style.visibility = "visible";
     document.getElementById('new_motor').style.opacity = 1;
     document.getElementById('new_motor').style.transition = "opacity 1s ease-in-out";
     document.getElementById('select_motor').style.visibility = "hidden";
+    document.getElementById('nextButton').style.visibility = "visible";
+
+
+
     for (let i = 1; i <= 8; i++) {
         document.getElementById('select_prop' + i).style.visibility = "hidden";
     }
@@ -1737,23 +1755,29 @@ function place_motor() {
 }
 
 function switch_battery() {
+    myStopFunction();
     document.getElementById('socket_plug').style.visibility = "visible";
     document.getElementById('on_off_switch').style.visibility = "visible";
-    document.getElementById('close_button').style.visibility = "visible";
+    document.getElementById('close_button').style.visibility = "hidden";
 
     document.getElementById('socket_plug').onclick = function() {
         document.getElementById('socket_plug').style.visibility = "hidden";
         document.getElementById('socket_plugged_on').style.visibility = "visible";
         document.getElementById('on_off_switch').innerHTML = "ON";
+        document.getElementById('close_button').style.visibility = "visible";
+
         document.getElementById('socket_plugged_on').onclick = function() {
             document.getElementById('socket_plug').style.visibility = "visible";
             document.getElementById('socket_plugged_on').style.visibility = "hidden";
             document.getElementById('on_off_switch').innerHTML = "OFF";
+            document.getElementById('close_button').style.visibility = "visible";
+
         }
     }
 }
 
 function close_plug() {
+
     document.getElementById('close_button').style.visibility = "hidden";
     document.getElementById('socket_plug').style.visibility = "hidden";
     document.getElementById('on_off_switch').style.visibility = "hidden";
@@ -1779,6 +1803,17 @@ function set_throttle() {
     throttle.style.visibility = "visible";
     throttle.style.transform = "scale(2)";
     throttle.style.transition = "all 1s ease-in-out";
+
+    myInt = setInterval(function() {
+        animatearrow();
+    }, 500);
+    document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 570px; top: 400px; height: 40px; z-index: 150;";
+
+    document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)";
+    // Code for IE9
+    document.getElementById("arrow1").style.msTransform = "rotate(90deg)";
+    // Standard syntax
+    document.getElementById("arrow1").style.transform = "rotate(90deg)";
 
     var zero = document.getElementById('0%');
     zero.style.visibility = "visible";
@@ -1830,6 +1865,7 @@ var thrust_data = [
 ];
 
 function throttle_click(name) {
+    myStopFunction();
     for (let i = 0; i <= 4; i++) {
         document.getElementById('throttle' + i).style.visibility = "hidden";
     }
