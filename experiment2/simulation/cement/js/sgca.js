@@ -238,6 +238,9 @@ function magic() {
         document.getElementById("prop_fan").style.visibility = "hidden";
         document.getElementById("dialog_box").style.visibility = "hidden";
         document.getElementById("thrust_value").style.visibility = "hidden";
+        document.getElementById("arrow1").style.visibility = "hidden";
+
+
         for (let i = 0; i <= 4; i++) {
             document.getElementById("throttle" + i).style.visibility = "hidden";
         }
@@ -250,6 +253,8 @@ function magic() {
         document.getElementById('generate_table').style.visibility = "hidden";
         document.getElementById("choose_motor").style.visibility = "hidden";
         document.getElementById("throttle_message").style.visibility = "hidden";
+        document.getElementById("thrust_table").style.visibility = "hidden";
+
 
         if (new_select == 1) {
             select();
@@ -295,6 +300,7 @@ function magic() {
         // document.getElementById('table_iso').onclick = function() { step1(); };
 
     } else if (simsubscreennum == 2) {
+
         myInt = setInterval(function() {
             animatearrow();
         }, 500);
@@ -336,10 +342,10 @@ function magic() {
         document.getElementById("esc_dc_connected").style.visibility = "hidden";
         document.getElementById("esc_thr_knob").style.visibility = "hidden";
         document.getElementById("esc_thr_connected").style.visibility = "hidden";
-        document.getElementById("arrow1").style.visibility = "hidden";
 
 
-        myInt = setInterval(function() {
+
+        myIntForBattery = setInterval(function() {
             animatearrow();
         }, 500);
         document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 320px; top: 150px; height: 40px; z-index: 10;";
@@ -1719,25 +1725,25 @@ function appear(id_name, top_px) {
 
 }
 
-function view_more() {
-    document.getElementById('equip').style = "visibility:visible;position:absolute;top:100px;left:100px;height:300px;width:400px;";
-    document.getElementById('thrust').style.visibility = "hidden";
-    document.getElementById('dc').style.visibility = "hidden";
-    document.getElementById('esc').style.visibility = "hidden";
-    document.getElementById('knob').style.visibility = "hidden";
-    document.getElementById('motor').style.visibility = "hidden";
-    document.getElementById("table_iso").style.visibility = "hidden";
+// function view_more() {
+//     document.getElementById('equip').style = "visibility:visible;position:absolute;top:100px;left:100px;height:300px;width:400px;";
+//     document.getElementById('thrust').style.visibility = "hidden";
+//     document.getElementById('dc').style.visibility = "hidden";
+//     document.getElementById('esc').style.visibility = "hidden";
+//     document.getElementById('knob').style.visibility = "hidden";
+//     document.getElementById('motor').style.visibility = "hidden";
+//     document.getElementById("table_iso").style.visibility = "hidden";
 
 
-    document.getElementById("thrust_iso").style.visibility = "hidden";
-    document.getElementById("esc_iso").style.visibility = "hidden";
-    document.getElementById("power_iso").style.visibility = "hidden";
-    document.getElementById("knob_iso").style.visibility = "hidden";
-    document.getElementById("motor_iso").style.visibility = "hidden";
-    // console.log("hello");
+//     document.getElementById("thrust_iso").style.visibility = "hidden";
+//     document.getElementById("esc_iso").style.visibility = "hidden";
+//     document.getElementById("power_iso").style.visibility = "hidden";
+//     document.getElementById("knob_iso").style.visibility = "hidden";
+//     document.getElementById("motor_iso").style.visibility = "hidden";
+//     // console.log("hello");
 
 
-}
+// }
 
 function select() {
     document.getElementById('all_comp').style.visibility = "hidden";
@@ -1833,7 +1839,8 @@ console.log(m_id);
 console.log(p_id);
 
 function place_motor() {
-    myStopFunction();
+    clearInterval(myInt);
+    document.getElementById('arrow1').style.visibility = "hidden";
     document.getElementById('equip').style.visibility = "visible";
     document.getElementById('motor_with_prop').style.visibility = "hidden";
     document.getElementById('new_motor').style.visibility = "visible";
@@ -1866,9 +1873,11 @@ function place_motor() {
 }
 
 function switch_battery() {
-    myStopFunction();
-    document.getElementById('socket_plug').style.visibility = "visible";
+    clearInterval(myIntForBattery);
+    document.getElementById('arrow1').style.visibility = "hidden";
     document.getElementById('on_off_switch').style.visibility = "visible";
+    document.getElementById('on_off_switch').innerHTML = "OFF";
+    document.getElementById('socket_plug').style.visibility = "visible";
     document.getElementById('close_button').style.visibility = "hidden";
 
     document.getElementById('socket_plug').onclick = function() {
@@ -1881,14 +1890,14 @@ function switch_battery() {
             document.getElementById('socket_plug').style.visibility = "visible";
             document.getElementById('socket_plugged_on').style.visibility = "hidden";
             document.getElementById('on_off_switch').innerHTML = "OFF";
-            document.getElementById('close_button').style.visibility = "visible";
+            document.getElementById('close_button').style.visibility = "hidden";
 
         }
     }
 }
 
 function close_plug() {
-
+    myStopFunction();
     document.getElementById('close_button').style.visibility = "hidden";
     document.getElementById('socket_plug').style.visibility = "hidden";
     document.getElementById('on_off_switch').style.visibility = "hidden";
@@ -1910,6 +1919,7 @@ function close_plug() {
 
 function set_throttle() {
     myStopFunction();
+
     var throttle = document.getElementById('throttle0');
     throttle.style.visibility = "visible";
     throttle.style.transform = "scale(2)";
@@ -1980,6 +1990,8 @@ var thrust_data = [
 
 function throttle_click(name) {
     myStopFunction();
+    document.getElementById('arrow1').style.visibility = "hidden";
+
     for (let i = 0; i <= 4; i++) {
         document.getElementById('throttle' + i).style.visibility = "hidden";
     }
@@ -2140,7 +2152,7 @@ function throttle_click(name) {
             document.getElementById('thrust_value').innerHTML = "1979g";
         }
 
-        p.style.animation = "rotate 2s linear 1s infinite";
+        p.style.animation = "rotate 0.5s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 40%";
 
     }
@@ -2210,7 +2222,7 @@ function throttle_click(name) {
             document.getElementById('thrust_value').innerHTML = "3540g";
         }
 
-        p.style.animation = "rotate 1s linear 1s infinite";
+        p.style.animation = "rotate 0.1s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 60%";
 
     }
@@ -2280,7 +2292,7 @@ function throttle_click(name) {
             document.getElementById('thrust_value').innerHTML = "5067g";
         }
 
-        p.style.animation = "rotate 0.1s linear 1s infinite";
+        p.style.animation = "rotate 0.01s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 80%";
 
     }
@@ -2349,9 +2361,10 @@ function throttle_click(name) {
         if (m_id == '8' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "6536g";
         }
-        p.style.animation = "rotate 0.001s linear 1s infinite";
+        p.style.animation = "rotate 0.0001s linear 1s infinite";
         document.getElementById('generate_table').style.visibility = "visible";
         document.getElementById('choose_motor').style.visibility = "hidden";
+        document.getElementById('arrow1').style.visibility = "hidden";
 
         // document.getElementById('generate_table').onclick = function() { generate_table(); };
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 100%";
@@ -2372,6 +2385,7 @@ function generate_table() {
     document.getElementById('thrust_value').style.visibility = "hidden";
     document.getElementById('dialog_box').style.visibility = "hidden";
     document.getElementById('prop_fan').style.visibility = "hidden";
+    document.getElementById('prop_fan').style.animation = "rotate 0s linear 0s infinite";
     document.getElementById('choose_motor').style.visibility = "visible";
     for (let i = 0; i <= 4; i++) {
         document.getElementById('throttle' + i).style.visibility = "hidden";
@@ -2384,9 +2398,12 @@ function generate_table() {
     document.getElementById('100%').style.visibility = "hidden";
 
     document.getElementById('generate_table').style.visibility = "hidden";
+    document.getElementById('arrow1').style.visibility = "hidden";
+
     document.getElementById('thrust_table').style.visibility = "visible";
 
     new_motor_selected_thrust++;
+
     var row = table.insertRow(new_motor_selected_thrust);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
@@ -2397,7 +2414,7 @@ function generate_table() {
     var cell7 = row.insertCell(6);
 
     if (m_id == '1' && p_id == '1') {
-        cell1.innerHTML = "MN1005_KV90";
+        cell1.innerHTML = "MN1005_ KV90";
         cell2.innerHTML = "T-MOTOR G30*10.5";
         cell3.innerHTML = "0";
         cell4.innerHTML = "2096";
@@ -2407,7 +2424,7 @@ function generate_table() {
 
     }
     if (m_id == '1' && p_id == '2') {
-        cell1.innerHTML = "MN1005_KV90";
+        cell1.innerHTML = "MN1005_ KV90";
         cell2.innerHTML = "T-MOTOR G32*11 ";
         cell3.innerHTML = "0";
         cell4.innerHTML = "2607";
@@ -2416,7 +2433,7 @@ function generate_table() {
         cell7.innerHTML = "9323";
     }
     if (m_id == '2' && p_id == '1') {
-        cell1.innerHTML = "MN3508_KV380";
+        cell1.innerHTML = "MN3508_ KV380";
         cell2.innerHTML = "T-MOTOR 12*4CF";
         cell3.innerHTML = "0";
         cell4.innerHTML = "284";
@@ -2425,7 +2442,7 @@ function generate_table() {
         cell7.innerHTML = "1160";
     }
     if (m_id == '2' && p_id == '2') {
-        cell1.innerHTML = "MN3508_KV380";
+        cell1.innerHTML = "MN3508_ KV380";
         cell2.innerHTML = "T-MOTOR 13*4.4CF";
         cell3.innerHTML = "0";
         cell4.innerHTML = "384";
@@ -2434,7 +2451,7 @@ function generate_table() {
         cell7.innerHTML = "1380";
     }
     if (m_id == '2' && p_id == '3') {
-        cell1.innerHTML = "MN3508_KV380";
+        cell1.innerHTML = "MN3508_ KV380";
         cell2.innerHTML = "T-MOTOR 14*4.8CF";
         cell3.innerHTML = "0";
         cell4.innerHTML = "506";
@@ -2443,7 +2460,7 @@ function generate_table() {
         cell7.innerHTML = "1730";
     }
     if (m_id == '2' && p_id == '4') {
-        cell1.innerHTML = "MN3508_KV380";
+        cell1.innerHTML = "MN3508_ KV380";
         cell2.innerHTML = "T-MOTOR 15*5CF";
         cell3.innerHTML = "0";
         cell4.innerHTML = "608";
@@ -2453,7 +2470,7 @@ function generate_table() {
     }
 
     if (m_id == '3' && p_id == '1') {
-        cell1.innerHTML = "MN3508_KV580";
+        cell1.innerHTML = "MN3508_ KV580";
         cell2.innerHTML = "T-MOTOR 12*4CF";
         cell3.innerHTML = "0";
         cell4.innerHTML = "222";
@@ -2462,7 +2479,7 @@ function generate_table() {
         cell7.innerHTML = "1050";
     }
     if (m_id == '3' && p_id == '2') {
-        cell1.innerHTML = "MN3508_KV580";
+        cell1.innerHTML = "MN3508_ KV580";
         cell2.innerHTML = "T-MOTOR 13*4.4CF";
         cell3.innerHTML = "0";
         cell4.innerHTML = "294";
@@ -2471,7 +2488,7 @@ function generate_table() {
         cell7.innerHTML = "1230";
     }
     if (m_id == '3' && p_id == '3') {
-        cell1.innerHTML = "MN3508_KV580";
+        cell1.innerHTML = "MN3508_ KV580";
         cell2.innerHTML = "T-MOTOR 14*4.8CF ";
         cell3.innerHTML = "0";
         cell4.innerHTML = "416";
@@ -2480,7 +2497,7 @@ function generate_table() {
         cell7.innerHTML = "1520";
     }
     if (m_id == '4' && p_id == '1') {
-        cell1.innerHTML = "MN3508_KV700";
+        cell1.innerHTML = "MN3508_ KV700";
         cell2.innerHTML = "T-MOTOR 12*4CF";
         cell3.innerHTML = "0";
         cell4.innerHTML = "164";
@@ -2489,7 +2506,7 @@ function generate_table() {
         cell7.innerHTML = "860";
     }
     if (m_id == '4' && p_id == '2') {
-        cell1.innerHTML = "MN3508_KV700";
+        cell1.innerHTML = "MN3508_ KV700";
         cell2.innerHTML = "T-MOTOR 13*4.4CF";
         cell3.innerHTML = "0";
         cell4.innerHTML = "192";
@@ -2498,7 +2515,7 @@ function generate_table() {
         cell7.innerHTML = "1020";
     }
     if (m_id == '4' && p_id == '3') {
-        cell1.innerHTML = "MN3508_KV700";
+        cell1.innerHTML = "MN3508_ KV700";
         cell2.innerHTML = "T-MOTOR 11*3.7CF ";
         cell3.innerHTML = "0";
         cell4.innerHTML = "234";
@@ -2587,6 +2604,11 @@ function generate_table() {
         cell6.innerHTML = "5067";
         cell7.innerHTML = "6536";
     }
+    // if (new_motor_selected_thrust == 4) {
+    //     document.getElementById('table_wrap').style.visibility = "visible";
+
+    //     document.getElementById('table_wrap').style.overflow = "scroll";
+    // }
     // cell1.innerHTML = "NEW CELL1";
     // cell2.innerHTML = "NEW CELL2";
     // cell3.innerHTML = "NEW CELL3";
