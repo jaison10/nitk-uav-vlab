@@ -1288,18 +1288,13 @@ function makeConnection1() {
 
         // Blinking the wires
         blinkWires = setInterval(() => {
-            arr.forEach(element => {
                 for (var i = 1; i < 4; i++) {
-                    if (i !== element) {
                         if (document.getElementById("motorWire" + i).style.opacity == 100)
                             document.getElementById("motorWire" + i).style.opacity = 0;
                         else
                             document.getElementById("motorWire" + i).style.opacity = 100;
-                    }
                 }
-            });
-
-        }, 1000);
+        }, 500);
     } else {
         alert("You have already chosen this, move forward!");
     }
@@ -1345,7 +1340,7 @@ function makeConnection2() {
         // Blink wires
         blinkWires = setInterval(() => {
             arr.forEach(element => {
-                for (var i = 1; i < 4; i++) {
+                for (let i = 1; i < 4; i++) {
                     if (i !== element) {
                         if (document.getElementById("motorWire" + i).style.opacity == 100)
                             document.getElementById("motorWire" + i).style.opacity = 0;
@@ -1355,7 +1350,7 @@ function makeConnection2() {
                 }
             });
 
-        }, 1000);
+        }, 500);
         } else {
             alert("You have already chosen this, move forward!");
         }
@@ -1404,10 +1399,17 @@ function makeConnection3() {
         document.getElementById("arrow1").style.transform = "rotate(180deg)";
         //  Blink wires
             blinkWires = setInterval(() => {
-                if (document.getElementById("motorWire" + i).style.opacity == 100)
-                    document.getElementById("motorWire" + i).style.opacity = 0;
-                else
-                    document.getElementById("motorWire" + i).style.opacity = 100;
+                arr.forEach(eeee => {
+                    for (let i = 1; i < 4; i++) {
+                        if (i !== eeee) {
+                            if (document.getElementById("motorWire" +i).style.opacity == 100)
+                                document.getElementById("motorWire" +i).style.opacity = 0;
+                            else
+                                document.getElementById("motorWire" +i).style.opacity = 100;
+                        }
+                    }
+                });
+    
             }, 500);
         } else {
             alert("You have already chosen this, move forward!(STEP 3)");
