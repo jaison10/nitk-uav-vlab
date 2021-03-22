@@ -145,27 +145,27 @@
 
         <!--Title of Simulation		-->
         <div id="title">
-            <h3>Thrust of Propeller</h3>
+            <h3>Thrust of Motor</h3>
         </div>
 
         <!--SubScreen Home	-->
         <div class="simsubscreen" id="canvas0">
             <h4 class="incanvas" style="font-family:verdana; ">Aim:</h4>
-            <p class="incanvas" style="font-family:verdana; font-size:15px;">To understand the principle of thrust and calculate the Thrust of a Propeller.</p>
+            <p class="incanvas" style="font-family:verdana; font-size:15px;">To measure the thrust of a brushless motor with different propellers.</p>
             </br>
             <h4 class="incanvas" style="font-family:verdana; ">Apparatus used:</h4>
-            <p class="incanvas" style="font-family:verdana; font-size:14px;">Motor, Propeller fan, Electronic Speed Controller, Power Source, Throttle Controller and Thrustmeter.</p>
+            <p class="incanvas" style="font-family:verdana; font-size:14px;">Motor, Propeller, Electronic Speed Controller, Power Source, Throttle Controller and Thrustmeter.</p>
             &nbsp;
-            <span class="tooltip" id="desc_button" style="border-bottom:1px dotted ; color:red; position:absolute; top:130px;"><strong>Description</strong>
+            <!-- <span class="tooltip" id="desc_button" style="border-bottom:1px dotted ; color:red; position:absolute; top:130px;"><strong>Description</strong>
                 <span  class="tooltiptext" style="text-align:justify;"><strong style="color:red;">Aerofoil</strong> is the cross-sectional design of the wing, blade, or sail. 
                 Lift is the component such that the force in perpendicular to the direction of motion and drag is the component parallel to the direction of the motion.  
                 </span>
-            </span>
+            </span> -->
             <!-- <img id="" style="position: absolute; left: 259.5px; top: 355px; width:15px;" title="Le-Chatelier flask" src="Images/1.2.png"/> -->
-            <img id="all" style="position: absolute; left: 200px; top: 200px; width:400px; height:300px;" title="Plane wing" src="Images/uav/isometric_view/all.png" />
+            <img id="all" style="position: absolute; left: 200px; top: 200px; width:400px; height:300px;" src="Images/uav/isometric_view/all.png" />
 
             <!-- <img id="" style="position: absolute; left: 370px; top: 395px; width:150px;" title="Weighing scale" src="Images/ewm.png"/> -->
-            <img id="human" class="" style="position: absolute; left: 10px; top: 190px; height: 250px; width: 100px; " src="./Images/uav/isometric_view/human.png" />
+            <img id="human" class="" style="position: absolute; left: 10px; top: 190px; height: 300px; width: 100px; " src="./Images/uav/isometric_view/human.png" />
 
         </div>
 
@@ -181,7 +181,7 @@
             <img id="table_top" class="" style="visibility:hidden;position: absolute; left: 10px; top: 150px;height: 300px; width: 700px;z-index: 30; " src="./Images/uav/top_view/table_top.png" />
 
             <span class="tool" id="desc_button"><strong><button id="thrust" onclick="appear('thrust_iso','285px');" style="visibility: hidden; position: absolute;cursor: pointer;top: 50px;left:0px; border-radius:5px;width: 130px;color: #fff;background-color: black;">Thrustmeter</button></strong>
-                <span  class="tooltext" style="text-align:justify;"><strong style="color:red;">Thrustmeter</strong> is an instrument for measuring static thrust, especially of a jet engine or rocket. 
+                <span  class="tooltext" style="text-align:justify;"><strong style="color:red;">Thrustmeter</strong> is an instrument for measuring static thrust of a motor. 
                 </span>
             </span>
             <span class="tool" id="desc_button"><strong><button id="dc" onclick="appear('esc_iso','200px');" style="visibility: hidden; position: absolute;cursor: pointer;top: 80px;left:0px; border-radius:5px;width: 130px;color: #fff;background-color: black; ">ESC</button></strong>
@@ -192,7 +192,7 @@
                 <span  class="tooltext" style="text-align:justify;"><strong style="color:red;">DC Power Supply</strong> is one that supplies a constant DC voltage to its load. 
                 </span>
             </span>
-            <span class="tool" id="desc_button"><strong><button id="knob" onclick="appear('knob_iso','230px');" style="visibility: hidden; position: absolute;cursor: pointer;top: 140px;left:0px; border-radius:5px;width: 130px;color: #fff;background-color: black;">Speed Controller</button></strong>
+            <span class="tool" id="desc_button"><strong><button id="knob" onclick="appear('knob_iso','230px');" style="visibility: hidden; position: absolute;cursor: pointer;top: 140px;left:0px; border-radius:5px;width: 130px;color: #fff;background-color: black;">Throttle Controller</button></strong>
                 <span  class="tooltext" style="text-align:justify;"><strong style="color:red;">Throttle Controller</strong> is a device used for changing the throttle value of a motor. 
                 </span>
             </span>
@@ -221,10 +221,10 @@
                     <a onclick="motor('2');">MN3508_KV380</a>
                     <a onclick="motor('3');">MN3508_KV580</a>
                     <a onclick="motor('4');">MN3508_KV700</a>
-                    <a onclick="motor('5');">MT4114_340KV</a>
-                    <a onclick="motor('6');">RS2205S_2300KV</a>
-                    <a onclick="motor('7');">RS2205S_2600KV</a>
-                    <a onclick="motor('8');">RS2306_2400KV</a>
+                    <a onclick="motor('5');">T-MOTOR U11 II KV120</a>
+                    <a onclick="motor('6');">T-MOTOR U8 Lite KV85</a>
+                    <a onclick="motor('7');">T-MOTOR U8 Lite KV150</a>
+                    <a onclick="motor('8');">T-MOTOR U8 Lite KV190</a>
                 </div>
             </div>
 
@@ -256,9 +256,7 @@
                     <a onclick="prop('2','4');" style="height: 50px;" id="2_4">T-MOTOR 15*5CF &nbsp;&nbsp;
                         <img id="pr_4" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G155.png" alt="motor">
                     </a>
-                    <a onclick="prop('2','5');" style="height: 50px;" id="2_5">T-MOTOR 16*5.4CF &nbsp;&nbsp;
-                        <img id="pr_5" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
-                    </a>
+
 
                 </div>
             </div>
@@ -301,13 +299,13 @@
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px" type="button" data-toggle="dropdown">Select Propeller</button>
                 <div class="dropdown-content" id="p_5" style="visibility: hidden;opacity: 0;width: 530px;z-index: 40;">
 
-                    <a onclick="prop('5','1');" style="height: 50px;" id="5_1">DJI15*5 Carbon fiber Propeller &nbsp;&nbsp;
+                    <a onclick="prop('5','1');" style="height: 50px;" id="5_1">T-MOTOR 26*8.5"CF &nbsp;&nbsp;
                         <img id="pr_4" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G155.png" alt="motor">
                     </a>
-                    <a onclick="prop('5','2');" style="height: 50px;" id="5_2">DJI1655 Carbon fiber Propeller &nbsp;&nbsp;
+                    <a onclick="prop('5','2');" style="height: 50px;" id="5_2">T-MOTOR 27*8.8"CF &nbsp;&nbsp;
                     <img id="pr_5" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
                     </a>
-                    <a onclick="prop('5','3');" style="height: 50px;" id="5_3">DJI1555 Carbon fiber Propeller &nbsp;&nbsp;
+                    <a onclick="prop('5','3');" style="height: 50px;" id="5_3">T-MOTOR 28*9.2"CF &nbsp;&nbsp;
                         <img id="pr_4" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G155.png" alt="motor">
                     </a>
                 </div>
@@ -316,15 +314,22 @@
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px" type="button" data-toggle="dropdown">Select Propeller</button>
                 <div class="dropdown-content" id="p_6" style="visibility: hidden;opacity: 0; width: 530px;z-index: 40;">
 
-                    <a onclick="prop('6','1');" style="height: 50px;" id="6_1">HQ5045BN &nbsp;&nbsp;
+                    <a onclick="prop('6','1');" style="height: 50px;" id="6_1">T-MOTOR G28*9.2CF &nbsp;&nbsp;
                         <img id="pr_5" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
                     </a>
+                    <a onclick="prop('6','2');" style="height: 50px;" id="6_2">T-MOTOR G29*9.5CF &nbsp;&nbsp;
+                        <img id="pr_5" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
+                    </a>
+
                 </div>
             </div>
             <div class="dropdown" id="select_prop7" style="visibility: hidden; position: absolute;top: 50px;left: 200px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px" type="button" data-toggle="dropdown">Select Propeller</button>
                 <div class="dropdown-content" id="p_7" style="visibility: hidden; opacity: 0;width: 530px;z-index: 40;">
-                    <a onclick="prop('7','1');" style="height: 50px;" id="7_1">EMAX4045 &nbsp;&nbsp;
+                    <a onclick="prop('7','1');" style="height: 50px;" id="7_1">T-MOTOR G30*10.5CF &nbsp;&nbsp;
+                        <img id="pr_4" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G155.png" alt="motor">
+                    </a>
+                    <a onclick="prop('7','2');" style="height: 50px;" id="7_2">T-MOTOR G22*7.2CF &nbsp;&nbsp;
                         <img id="pr_4" style="  position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G155.png" alt="motor">
                     </a>
                 </div>
@@ -332,9 +337,13 @@
             <div class="dropdown" id="select_prop8" style="visibility: hidden; position: absolute;top: 50px;left: 200px;width: 90px;">
                 <button class="dropbtn" style="width: 120px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px" type="button" data-toggle="dropdown">Select Propeller</button>
                 <div class="dropdown-content" id="p_8" style="visibility: hidden; opacity: 0;width: 530px;z-index: 40;">
-                    <a onclick="prop('8','1');" style="height: 50px;" id="8_1">HQ5045 Propeller &nbsp;&nbsp;
+                    <a onclick="prop('8','1');" style="height: 50px;" id="8_1">T-MOTOR G28*9.2CF &nbsp;&nbsp;
                         <img id="pr_5" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
                     </a>
+                    <a onclick="prop('8','2');" style="height: 50px;" id="8_2">T-MOTOR G29*9.5CF &nbsp;&nbsp;
+                        <img id="pr_5" style=" position:absolute;height: 30px;width: 300px;" src="./Images/uav/isometric_view/G1654.png" alt="motor">
+                    </a>
+
                 </div>
             </div>
 
@@ -355,7 +364,7 @@
 
             <strong id="titlestep" class="incanvas">STEP &nbsp;</strong>
             <span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
-            <p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Let us see how the air flows through an airfoil, producing the lift.</p>
+            <p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Make the connections to proceed with the experiment.</p>
 
             <img src="./Images/uav/top_view/table_v4.png" style="position:absolute; width:45%; height:110%; left: 28%; top: -10%; transform: rotate(90deg)" />
             <img src="./Images/uav/top_view/dc_box.png" style="position:absolute; width:20%; height:30%; top: 7%; left: 53.7%; transform: rotate(90deg)" />
@@ -397,21 +406,21 @@
             <img id="motorWire2" onclick="motorConnection2();" src="./Images/uav/top_view/motor_wires/topWires.png" style="position:absolute; opacity:100; width: 1.6%; height:3.1%; top: 49%; left: 15.6%; transform: rotate(4deg);" />
             <img id="motorWire1" onclick="motorConnection1();" src="./Images/uav/top_view/motor_wires/topWires.png" style="position:absolute; opacity:100; width: 1.6%; height:3.1%; top: 49%; left: 12.6%; transform: rotate(4deg);" />
 
-            <!-- <img src="./Images/uav/top_view/motor_V05 (1).png" style="position:absolute; width:15%; height:18%; top: 50%; left: 3.5%; transform: rotate(90deg);"/>      width:4%;           --> 
+            <!-- <img src="./Images/uav/top_view/motor_V05 (1).png" style="position:absolute; width:15%; height:18%; top: 50%; left: 3.5%; transform: rotate(90deg);"/>      width:4%;           -->
 
             <img src="./Images/uav/top_view/throttle_with_Knob.png" style="position:absolute; width:10%; height:25%; top: 54.8%; left: 58%; transform: rotate(90deg);" />
 
             <!-- ESC to DC connection. -->
-            <img id="esc_dc_connector" onclick="doEscDcConnection();" src="./Images/uav/top_view/esc_dc/DC_connection.png" style="visibility: block; position: absolute; width:3%; height: 30%; left: 46.8%; top:9%; transform: rotate(90deg);"/>
-            <img id="esc_dc_connected" src="./Images/uav/top_view/esc_dc/DC_connected.png" style="visibility: hidden; position: absolute; width:3%; height: 30%; left: 46.8%; top:9%; transform: rotate(90deg);"/>
+            <img id="esc_dc_connector" onclick="doEscDcConnection();" src="./Images/uav/top_view/esc_dc/DC_connection.png" style="visibility: block; position: absolute; width:3%; height: 30%; left: 46.8%; top:9%; transform: rotate(90deg);" />
+            <img id="esc_dc_connected" src="./Images/uav/top_view/esc_dc/DC_connected.png" style="visibility: hidden; position: absolute; width:3%; height: 30%; left: 46.8%; top:9%; transform: rotate(90deg);" />
 
             <!-- ESC to Throttle controller part connection. -->
-            <img id="esc_thr_connector" onclick="doEscThrotConnection();" src="./Images/uav/top_view/esc_throttle/esc wire_01.png" style="visibility: block; position: absolute; width:27%; height: 20%; left: 31.2%; top:36.5%; transform: rotate(90deg);"/>
-            <img id="esc_thr_connected" src="./Images/uav/top_view/esc_throttle/esc wire_connected.png" style="visibility: hidden; position: absolute; width:27%; height: 26%; left: 33.2%; top:33.8%; transform: rotate(90deg);"/>
-            <img id="esc_thr_knob" src="./Images/uav/top_view/esc_throttle/esc wire_plug.png" style="visibility: hidden; position: absolute; width:4%; height: 4%; left: 52.5%; top:62.5%; transform: rotate(0deg);"/>
+            <img id="esc_thr_connector" onclick="doEscThrotConnection();" src="./Images/uav/top_view/esc_throttle/esc wire_01.png" style="visibility: block; position: absolute; width:27%; height: 20%; left: 31.2%; top:36.5%; transform: rotate(90deg);" />
+            <img id="esc_thr_connected" src="./Images/uav/top_view/esc_throttle/esc wire_connected.png" style="visibility: hidden; position: absolute; width:27%; height: 26%; left: 33.2%; top:33.8%; transform: rotate(90deg);" />
+            <img id="esc_thr_knob" src="./Images/uav/top_view/esc_throttle/esc wire_plug.png" style="visibility: hidden; position: absolute; width:4%; height: 4%; left: 52.5%; top:62.5%; transform: rotate(0deg);" />
 
-<!--Empty image for wires exchange part.  -->
-            <img id="empty_image" onclick="exchangeTheWires();" src="./Images/uav/top_view/empty_image.png" style="visibility: hidden; position: absolute; width:11%; height: 11%; left:11%; top:41.5%; transform: rotate(0deg);"/>
+            <!--Empty image for wires exchange part.  -->
+            <img id="empty_image" onclick="exchangeTheWires();" src="./Images/uav/top_view/empty_image.png" style="visibility: hidden; position: absolute; width:11%; height: 11%; left:11%; top:41.5%; transform: rotate(0deg);" />
 
 
             <p id="updateClockAnti" class="" style="position:absolute; top: 76%; left: 52%;"></p>
@@ -420,7 +429,7 @@
             <!-- Previous -->
             <img id="hand" style="position: absolute; left: 275px; top: 125px; visibility:hidden;cursor:pointer;" src="Images/hn.png" />
 
-            <p id="can2" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;">Here the lift is upwards.</p>
+            <p id="can2" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
             <p id="v2" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
 
         </div>
@@ -455,14 +464,14 @@
             <img id="dialog_box" style="visibility: hidden;position: absolute;top: 275px;left: 280px;height: 50px;width: 100px;opacity:0;z-index: 100;" src="./Images/uav/top_view/dialog.png" alt="dialog box">
             <p id="thrust_value" style="visibility: hidden;position:absolute;top: 275px;left:300px;z-index: 150;opacity:0;"></p>
             <button id="generate_table" onclick="generate_table();" style="visibility:hidden; position:absolute;top: 100px;left: 50px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;z-index: 120;">Generate table</button>
-            <button id="choose_motor" onclick="select();" style="visibility:hidden; position:absolute;top: 100px;left: 280px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;z-index: 120;">Choose another motor</button>
+            <button id="choose_motor" onclick="navNext();" style="visibility:hidden; position:absolute;top: 100px;left: 280px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;z-index: 120;">Choose another motor</button>
 
 
             <table id="thrust_table" style="width:100%;visibility: hidden;position: absolute; top: 100px;">
                 <tr>
                     <th rowspan="2">Motor</th>
                     <th rowspan="2">Propeller</th>
-                    <th colspan="5">Throttle (%)</th>
+                    <th colspan="5">Thrust (g)</th>
 
                 </tr>
                 <tr>
