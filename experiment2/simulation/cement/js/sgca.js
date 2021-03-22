@@ -1288,18 +1288,13 @@ function makeConnection1() {
 
         // Blinking the wires
         blinkWires = setInterval(() => {
-            arr.forEach(element => {
                 for (var i = 1; i < 4; i++) {
-                    if (i !== element) {
                         if (document.getElementById("motorWire" + i).style.opacity == 100)
                             document.getElementById("motorWire" + i).style.opacity = 0;
                         else
                             document.getElementById("motorWire" + i).style.opacity = 100;
-                    }
                 }
-            });
-
-        }, 1000);
+        }, 500);
     } else {
         alert("You have already chosen this, move forward!");
     }
@@ -1332,6 +1327,7 @@ function makeConnection2() {
             document.getElementById("escWire2").style.cursor = "none";
             document.getElementById("escWire2").setAttribute('disabled', 'true');
             // Arrow blinking showing where to click
+<<<<<<< HEAD
             myIntForMotorWires = setInterval(function() {
                 animatearrowForEscDcConnection();
             }, 500);
@@ -1352,10 +1348,35 @@ function makeConnection2() {
                             else
                                 document.getElementById("motorWire" + i).style.opacity = 100;
                         }
+=======
+        myIntForMotorWires = setInterval(function() {
+            animatearrowForEscDcConnection();
+        }, 500);
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 300px; height: 25px; z-index: 10;";
+
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(180deg)";
+        // Blink wires
+        blinkWires = setInterval(() => {
+            arr.forEach(element => {
+                for (let i = 1; i < 4; i++) {
+                    if (i !== element) {
+                        if (document.getElementById("motorWire" + i).style.opacity == 100)
+                            document.getElementById("motorWire" + i).style.opacity = 0;
+                        else
+                            document.getElementById("motorWire" + i).style.opacity = 100;
+>>>>>>> cfc3978a3ca6ce11e474458da05b2131b2178c8d
                     }
                 });
 
+<<<<<<< HEAD
             }, 1000);
+=======
+        }, 500);
+>>>>>>> cfc3978a3ca6ce11e474458da05b2131b2178c8d
         } else {
             alert("You have already chosen this, move forward!");
         }
@@ -1404,10 +1425,17 @@ function makeConnection3() {
             document.getElementById("arrow1").style.transform = "rotate(180deg)";
             //  Blink wires
             blinkWires = setInterval(() => {
-                if (document.getElementById("motorWire" + i).style.opacity == 100)
-                    document.getElementById("motorWire" + i).style.opacity = 0;
-                else
-                    document.getElementById("motorWire" + i).style.opacity = 100;
+                arr.forEach(eeee => {
+                    for (let i = 1; i < 4; i++) {
+                        if (i !== eeee) {
+                            if (document.getElementById("motorWire" +i).style.opacity == 100)
+                                document.getElementById("motorWire" +i).style.opacity = 0;
+                            else
+                                document.getElementById("motorWire" +i).style.opacity = 100;
+                        }
+                    }
+                });
+    
             }, 500);
         } else {
             alert("You have already chosen this, move forward!(STEP 3)");
