@@ -301,7 +301,7 @@ function magic() {
 
     } else if (simsubscreennum == 2) {
 
-        if(new_select == 1){
+        if (new_select == 1) {
             arr = [];
             totalCount = 0;
             countOfEscAndMotor = 0;
@@ -309,7 +309,7 @@ function magic() {
             clickOnEscWire2 = 0;
             clickOnEscWire3 = 0;
             clickOnMotorWire1 = 0;
-            clickOnMotorWire2 = 0; 
+            clickOnMotorWire2 = 0;
             clickOnMotorWire3 = 0;
             document.getElementById("motorWire1").style.visibility = "visible";
             document.getElementById("motorWire2").style.visibility = "visible";
@@ -1332,30 +1332,30 @@ function makeConnection2() {
             document.getElementById("escWire2").style.cursor = "none";
             document.getElementById("escWire2").setAttribute('disabled', 'true');
             // Arrow blinking showing where to click
-        myIntForMotorWires = setInterval(function() {
-            animatearrowForEscDcConnection();
-        }, 500);
-        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 300px; height: 25px; z-index: 10;";
+            myIntForMotorWires = setInterval(function() {
+                animatearrowForEscDcConnection();
+            }, 500);
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 300px; height: 25px; z-index: 10;";
 
-        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
-        // Code for IE9
-        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
-        // Standard syntax
-        document.getElementById("arrow1").style.transform = "rotate(180deg)";
-        // Blink wires
-        blinkWires = setInterval(() => {
-            arr.forEach(element => {
-                for (var i = 1; i < 4; i++) {
-                    if (i !== element) {
-                        if (document.getElementById("motorWire" + i).style.opacity == 100)
-                            document.getElementById("motorWire" + i).style.opacity = 0;
-                        else
-                            document.getElementById("motorWire" + i).style.opacity = 100;
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(180deg)";
+            // Blink wires
+            blinkWires = setInterval(() => {
+                arr.forEach(element => {
+                    for (var i = 1; i < 4; i++) {
+                        if (i !== element) {
+                            if (document.getElementById("motorWire" + i).style.opacity == 100)
+                                document.getElementById("motorWire" + i).style.opacity = 0;
+                            else
+                                document.getElementById("motorWire" + i).style.opacity = 100;
+                        }
                     }
-                }
-            });
+                });
 
-        }, 1000);
+            }, 1000);
         } else {
             alert("You have already chosen this, move forward!");
         }
@@ -1392,17 +1392,17 @@ function makeConnection3() {
             document.getElementById("escWire3").style.cursor = "none";
             console.log("Array on click of third: ", arr);
             // Arrow blinking showing where to click
-        myIntForMotorWires = setInterval(function() {
-            animatearrowForEscDcConnection();
-        }, 500);
-        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 300px; height: 25px; z-index: 10;";
+            myIntForMotorWires = setInterval(function() {
+                animatearrowForEscDcConnection();
+            }, 500);
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 300px; height: 25px; z-index: 10;";
 
-        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
-        // Code for IE9
-        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
-        // Standard syntax
-        document.getElementById("arrow1").style.transform = "rotate(180deg)";
-        //  Blink wires
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(180deg)";
+            //  Blink wires
             blinkWires = setInterval(() => {
                 if (document.getElementById("motorWire" + i).style.opacity == 100)
                     document.getElementById("motorWire" + i).style.opacity = 0;
@@ -1446,19 +1446,19 @@ function motorConnection1() {
                     animatearrow();
                 }, 500);
                 document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 260px; height: 25px; z-index: 10;";
-        
+
                 document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
                 // Code for IE9
                 document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
                 // Standard syntax
                 document.getElementById("arrow1").style.transform = "rotate(180deg)";
-                
+
                 document.getElementById("1to1").style.visibility = "visible";
                 console.log("The 1to1 image made visible!");
                 for (var i = 1; i < 4; i++) {
                     document.getElementById("motorWire" + i).style.opacity = 100;
                 }
-                
+
             } else {
                 alert("You have already chosen this!");
             }
@@ -1498,7 +1498,7 @@ function motorConnection1() {
                         animatearrow();
                     }, 500);
                     document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 260px; height: 25px; z-index: 10;";
-            
+
                     document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
                     // Code for IE9
                     document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
@@ -1609,7 +1609,7 @@ function motorConnection2() {
                         animatearrow();
                     }, 500);
                     document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 260px; height: 25px; z-index: 10;";
-            
+
                     document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
                     // Code for IE9
                     document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
@@ -1620,7 +1620,7 @@ function motorConnection2() {
                     document.getElementById("1to2").style.visibility = "visible";
                     console.log("The 1to2 image made visible!");
 
-                    
+
                     for (var i = 1; i < 4; i++) {
                         document.getElementById("motorWire" + i).style.opacity = 100;
                     }
@@ -1657,16 +1657,16 @@ function motorConnection2() {
                     console.log("The 2to2 image made visible!");
 
                     // Starting blinking for ESC wires when the motor wire has been chosen!
-                myIntForEscWires = setInterval(function() {
-                    animatearrow();
-                }, 500);
-                document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 260px; height: 25px; z-index: 10;";
-        
-                document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
-                // Code for IE9
-                document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
-                // Standard syntax
-                document.getElementById("arrow1").style.transform = "rotate(180deg)";
+                    myIntForEscWires = setInterval(function() {
+                        animatearrow();
+                    }, 500);
+                    document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 260px; height: 25px; z-index: 10;";
+
+                    document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+                    // Code for IE9
+                    document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+                    // Standard syntax
+                    document.getElementById("arrow1").style.transform = "rotate(180deg)";
 
                     for (var i = 1; i < 4; i++) {
                         document.getElementById("motorWire" + i).style.opacity = 100;
@@ -1774,7 +1774,7 @@ function motorConnection3() {
                         animatearrow();
                     }, 500);
                     document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 260px; height: 25px; z-index: 10;";
-            
+
                     document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
                     // Code for IE9
                     document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
@@ -1818,16 +1818,16 @@ function motorConnection3() {
                     console.log("The 2to3 image made visible!");
 
                     // Starting blinking for ESC wires when the motor wire has been chosen!
-                myIntForEscWires = setInterval(function() {
-                    animatearrow();
-                }, 500);
-                document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 260px; height: 25px; z-index: 10;";
-        
-                document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
-                // Code for IE9
-                document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
-                // Standard syntax
-                document.getElementById("arrow1").style.transform = "rotate(180deg)";
+                    myIntForEscWires = setInterval(function() {
+                        animatearrow();
+                    }, 500);
+                    document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 260px; height: 25px; z-index: 10;";
+
+                    document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+                    // Code for IE9
+                    document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+                    // Standard syntax
+                    document.getElementById("arrow1").style.transform = "rotate(180deg)";
 
 
                 } else {
@@ -2179,7 +2179,7 @@ var thrust_data = [
 
 function throttle_click(name) {
     myStopFunction();
-    document.getElementById('arrow1').style.visibility = "hidden";
+    // document.getElementById('arrow1').style.visibility = "hidden";
 
     for (let i = 0; i <= 4; i++) {
         document.getElementById('throttle' + i).style.visibility = "hidden";
@@ -2270,6 +2270,7 @@ function throttle_click(name) {
         if (m_id == '8' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = thrust_data[20][2] + "g";
         }
+        document.getElementById('arrow1').style.visibility = "hidden";
         // document.getElementById('thrust_value').innerHTML = "0g";
         p.style.animation = "rotate 0s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "When throttle is set to 0%,the propeller does not move. Hence there is 0 thrust generated. "
@@ -2340,6 +2341,7 @@ function throttle_click(name) {
         if (m_id == '8' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "1979g";
         }
+        document.getElementById('arrow1').style.visibility = "hidden";
 
         p.style.animation = "rotate 0.5s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 40%";
@@ -2410,6 +2412,7 @@ function throttle_click(name) {
         if (m_id == '8' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "3540g";
         }
+        document.getElementById('arrow1').style.visibility = "hidden";
 
         p.style.animation = "rotate 0.1s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 60%";
@@ -2480,6 +2483,7 @@ function throttle_click(name) {
         if (m_id == '8' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "5067g";
         }
+        document.getElementById('arrow1').style.visibility = "hidden";
 
         p.style.animation = "rotate 0.01s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 80%";
@@ -2587,6 +2591,7 @@ function generate_table() {
     document.getElementById('100%').style.visibility = "hidden";
 
     document.getElementById('generate_table').style.visibility = "hidden";
+    myStopFunction();
     document.getElementById('arrow1').style.visibility = "hidden";
 
     document.getElementById('thrust_table').style.visibility = "visible";

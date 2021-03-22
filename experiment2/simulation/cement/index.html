@@ -19,13 +19,12 @@
     </script>
     <style>
         .table-container {
-            height: 5em;
+            height: 10em;
         }
-        
-        tr,
+        /* tr,
         td {
             overflow: auto;
-        }
+        } */
         
         table {
             height: 330px;
@@ -40,7 +39,7 @@
         
         tbody {
             /* body takes all the remaining available space */
-            flex: 0 0 auto;
+            /* flex: 1 1 auto; */
             display: block;
             overflow-y: scroll;
             overflow-x: hidden;
@@ -522,9 +521,9 @@
                 <table id="thrust_table" style="visibility: hidden;position: absolute;top: 50px;left: 0px;width: 100%;">
                     <thead>
                         <tr>
-                            <th rowspan="2">Motor</th>
-                            <th rowspan="2">Propeller</th>
-                            <th colspan="5">Thrust (g)</th>
+                            <th rowspan="2" style="width:95px">Motor</th>
+                            <th rowspan="2" style="width:95px">Propeller</th>
+                            <th colspan="5" style="width:510px">Thrust (g)</th>
 
                         </tr>
                         <tr>
@@ -538,7 +537,9 @@
                     </thead>
 
                     <tbody>
-                        <tr></tr>
+                        <tr>
+
+                        </tr>
 
 
                     </tbody>
