@@ -18,11 +18,65 @@
         var n;
     </script>
     <style>
-        table,
-        th,
+        .table-container {
+            height: 5em;
+        }
+        
+        tr,
         td {
+            overflow: hidden;
+        }
+        
+        table {
+            display: flex;
+            flex-flow: column;
+            height: 330px;
+            width: 100%;
+        }
+        
+        table thead {
+            /* head takes the height it requires, 
+    and it's not scaled when table is resized */
+            flex: 0 0 auto;
+            width: calc(100% - 0.1em);
+        }
+        
+        tbody {
+            /* body takes all the remaining available space */
+            flex: 1 1 auto;
+            display: block;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        
+        table tbody tr {
+            width: 100%;
+        }
+        
+        td,
+        th,
+        thead,
+        tr {
             border: 1px solid black;
         }
+        
+        thead,
+        th,
+        tbody,
+        tr,
+        td {
+            width: 100%;
+        }
+        
+        table thead,
+        table tbody tr {
+            display: table;
+            table-layout: fixed;
+        }
+        /* tbody {
+            height: 150px;
+            overflow-y: scroll;
+        } */
         
         .popup {
             border-radius: 5px;
@@ -438,12 +492,12 @@
         <div class="simsubscreen" id="canvas3" style="visibility:hidden">
             <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span>
             <p id="pumptext-3" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Switch on the battery and set the throttle to find the thrust of the propeller using the thrustmeter.</p>
-            <img id="all_comp" style="visibility:hidden;position: absolute; left: 0px; top: 200px; height: 300px; width: 600px;opacity: 1;z-index: 30;cursor: pointer;" src="./Images/uav/isometric_view/all_connected.png" alt="table with all equipments">
+            <img id="all_comp" style="visibility:hidden;position: absolute; left: 0px; top: 200px; height: 300px; width: 600px;opacity: 1;z-index: 30;" src="./Images/uav/isometric_view/all_connected.png" alt="table with all equipments">
             <img id="prop_fan" style="visibility: hidden; position:absolute;top: 328px;left: 154px;height: 70px;width: 100px;transform: rotate(90deg);" src="./Images/uav/isometric_view/prop_2.png" alt="table with all equipments">
             <button id="switch_battery" onclick="switch_battery();" style="visibility:hidden; position:absolute;top: 150px;left: 230px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px">Switch on the battery</button>
             <img id="socket_plug" style="visibility: hidden; position:absolute;top: 50px;left: 400px;height: 150px;cursor:pointer;width: 200px;border-radius: 50px;border: 2px solid black;" src="./Images/uav/top_view/socket_plugged.png" alt="Socket plug">
             <img id="socket_plugged_on" style="visibility: hidden; position:absolute;top: 50px;left: 400px;height: 150px;cursor:pointer;width: 200px;border-radius: 50px;border: 2px solid black;" src="./Images/uav/top_view/socket_plugged_on.png" alt="Socket plug off">
-            <p id="on_off_switch" style="visibility: hidden;position:absolute;top: 100px;left: 430px;">OFF</p>
+            <p id="on_off_switch" style="visibility: hidden;position:absolute;top: 100px;left: 430px;"></p>
             <a id="close_button" onclick="close_plug();" style="cursor: pointer; visibility: hidden;position:absolute;top: 175px;left: 565px; border: 1px solid black;"><i class="fa fa-times" aria-hidden="true"></i></a>
 
             <img id="throttle0" style="visibility: hidden; position:absolute;top:280px;left: 480px;height: 70px;width: 100px;z-index: 100;" src="./Images/uav/top_view/throttle_0deg.png" alt="Throttle knob with 0%">
@@ -463,57 +517,68 @@
 
             <img id="dialog_box" style="visibility: hidden;position: absolute;top: 275px;left: 280px;height: 50px;width: 100px;opacity:0;z-index: 100;" src="./Images/uav/top_view/dialog.png" alt="dialog box">
             <p id="thrust_value" style="visibility: hidden;position:absolute;top: 275px;left:300px;z-index: 150;opacity:0;"></p>
-            <button id="generate_table" onclick="generate_table();" style="visibility:hidden; position:absolute;top: 100px;left: 50px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;z-index: 120;">Generate table</button>
-            <button id="choose_motor" onclick="navNext();" style="visibility:hidden; position:absolute;top: 100px;left: 280px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;z-index: 120;">Choose another motor</button>
+            <button id="generate_table" onclick="generate_table();" style="visibility:hidden; position:absolute;top: 450px;left: 450px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;z-index: 120;">Generate table</button>
+            <button id="choose_motor" onclick="navNext();" style="visibility:hidden; position:absolute;top: 400px;left: 500px; width: 150px;height: 30px;;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;z-index: 120;">Choose another motor</button>
 
+            <div class="table-container">
+                <table id="thrust_table" style="visibility: hidden;position: absolute;top: 50px;left: 0px;width: 100%;">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Motor</th>
+                            <th rowspan="2">Propeller</th>
+                            <th colspan="5">Thrust (g)</th>
 
-            <table id="thrust_table" style="width:100%;visibility: hidden;position: absolute; top: 100px;">
-                <tr>
-                    <th rowspan="2">Motor</th>
-                    <th rowspan="2">Propeller</th>
-                    <th colspan="5">Thrust (g)</th>
+                        </tr>
+                        <tr>
+                            <th>0%</th>
+                            <th>40%</th>
+                            <th>60%</th>
+                            <th>80%</th>
+                            <th>100%</th>
 
-                </tr>
-                <tr>
-                    <th>0%</th>
-                    <th>40%</th>
-                    <th>60%</th>
-                    <th>80%</th>
-                    <th>100%</th>
+                        </tr>
+                    </thead>
 
-                </tr>
+                    <tbody>
+                        <tr>
 
-            </table>
+                        </tr>
+                    </tbody>
 
+                </table>
+            </div>
 
-            <img id="hand3" style="position: absolute; left: 275px; top: 125px; visibility:hidden; cursor:pointer;" src="Images/hn.png" />
-            <p id="can3" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
-            <p id="v3" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
         </div>
 
 
+        <img id="hand3" style="position: absolute; left: 275px; top: 125px; visibility:hidden; cursor:pointer;" src="Images/hn.png" />
+        <p id="can3" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
+        <p id="v3" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
+    </div>
 
 
-        <!--Step4	-->
-        <div class="simsubscreen" id="canvas4" style="visibility:hidden">
-            <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
-            <p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Add kerosene to Le-Chatelier’s flask upto graduated mark and weigh it.</p>
 
-            <!-- <img id="airfoil-zero" src="./Images/uav/airfoil.jpeg" style="position: absolute; width: 50%; height: 30%; left: 15%; top: 13%; " /> -->
-            <!-- Line  -->
-            <!-- <img id="line" src="./Images/uav/line2.png" style="position: absolute; top: 33%; left: 10%; width: 60%; height: auto; visibility: hidden;" /> -->
-            <!-- Curve : angle of attack image -->
-            <!-- <img id="angle-curve" src="./Images/uav/curve.png" style="position: absolute; width: 4%; height: 5%; top: 28%; left: 28%; visibility: hidden;" /> -->
 
-            <!-- Angle of attck info -->
-            <!-- <div id="angle-of-attck-info" style="visibility: hidden;">
+    <!--Step4	-->
+    <div class="simsubscreen" id="canvas4" style="visibility:hidden">
+        <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
+        <p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Add kerosene to Le-Chatelier’s flask upto graduated mark and weigh it.</p>
+
+        <!-- <img id="airfoil-zero" src="./Images/uav/airfoil.jpeg" style="position: absolute; width: 50%; height: 30%; left: 15%; top: 13%; " /> -->
+        <!-- Line  -->
+        <!-- <img id="line" src="./Images/uav/line2.png" style="position: absolute; top: 33%; left: 10%; width: 60%; height: auto; visibility: hidden;" /> -->
+        <!-- Curve : angle of attack image -->
+        <!-- <img id="angle-curve" src="./Images/uav/curve.png" style="position: absolute; width: 4%; height: 5%; top: 28%; left: 28%; visibility: hidden;" /> -->
+
+        <!-- Angle of attck info -->
+        <!-- <div id="angle-of-attck-info" style="visibility: hidden;">
                 <img src="./Images/uav/arrow-up.png" style="position: absolute; width: 2%; height: 6%; left: 29%; top:35%;">
                 <p style="position: absolute; width: 20%; height: 10%; left: 33%; top:35%;">Angle of attack.</p>
             </div> -->
 
-            <!-- Arrows -->
-            <!-- UPPER LAYER AIRFLOW -->
-            <!-- <img id="new_Arrow1" style="position: absolute; height: 4%; width: 5%; top:19%; left: 5%; visibility:  hidden;" src="./Images/uav/arrow.png">
+        <!-- Arrows -->
+        <!-- UPPER LAYER AIRFLOW -->
+        <!-- <img id="new_Arrow1" style="position: absolute; height: 4%; width: 5%; top:19%; left: 5%; visibility:  hidden;" src="./Images/uav/arrow.png">
             <img id="new_Arrow2" style="position: absolute; height: 4%; width: 5%; top:19%; left: 12%; visibility: hidden;" src="./Images/uav/arrow.png">
             <img id="new_Arrow3" style="position: absolute; height: 4%; width: 5%; top:18%; left: 18%; visibility: hidden;" src="./Images/uav/arrow.png">
             <img id="new_Arrow4" style="position: absolute; height: 4%; width: 5%; top:14%; left: 24%; visibility: hidden;" src="./Images/uav/arrow.png">
@@ -526,8 +591,8 @@
             <img id="new_Arrow11" style="position: absolute; height:4%; width: 5%; top:23%; left: 75%; visibility:hidden;" src="./Images/uav/arrow.png">
             <img id="new_Arrow12" style="position: absolute; height:4%; width: 5%; top:23%; left: 82%; visibility:hidden;" src="./Images/uav/arrow.png">
             <p id="new_Arrow13" style="position: absolute; height: 4%; width: 5%; top:23%; left: 83%; visibility:hidden;"> </p> -->
-            <!-- BOTTOM LAYER AIRFLOW -->
-            <!-- <img id="below_Arrow1" style="position: absolute; height: 4%; width: 5%; top:24%; left: 5%; visibility:  hidden;" src="./Images/uav/arrow.png">
+        <!-- BOTTOM LAYER AIRFLOW -->
+        <!-- <img id="below_Arrow1" style="position: absolute; height: 4%; width: 5%; top:24%; left: 5%; visibility:  hidden;" src="./Images/uav/arrow.png">
             <img id="below_Arrow2" style="position: absolute; height: 4%; width: 5%; top:24%; left: 12%; visibility: hidden;" src="./Images/uav/arrow.png">
             <img id="below_Arrow3" style="position: absolute; height: 4%; width: 5%; top:26%; left: 18%; visibility: hidden;" src="./Images/uav/arrow.png">
             <img id="below_Arrow4" style="position: absolute; height: 4%; width: 5%; top:30%; left: 24%; visibility: hidden;" src="./Images/uav/arrow.png">
@@ -541,27 +606,27 @@
             <img id="below_Arrow12" style="position: absolute; height: 4%; width: 5%; top:32%; left: 82%; visibility:hidden;" src="./Images/uav/arrow.png">
             <p id="below_Arrow13" style="position: absolute; height: 4%; width: 5%; top:32%; left: 83%; visibility: hidden;"></p> -->
 
-            <!-- LIFT arrows -->
-            <!-- <div id="up-Arrow-div" style="visibility: hidden;">
+        <!-- LIFT arrows -->
+        <!-- <div id="up-Arrow-div" style="visibility: hidden;">
                 <img class="up-Arrow1" style="position: absolute; height: 6%; width: 2%; top:38%; left: 24%; visibility: hidden;" src="./Images/uav/arrow-up.png">
                 <img class="up-Arrow2" style="position: absolute; height: 6%; width: 2%; top:39%; left: 29%; visibility: hidden;" src="./Images/uav/arrow-up.png">
                 <img class="up-Arrow3" style="position: absolute; height: 6%; width: 2%; top:38%; left: 34%; visibility: hidden;" src="./Images/uav/arrow-up.png">
                 <p id="lift" style="position: absolute; visibility: block; height: 7%; width: 4%; top:43%; left: 27%;"><b>LIFT</b></p>
             </div> -->
-            <!-- Velo - Pressure -->
-            <!-- <div id="V-P-info" style="position: absolute; top:35%; left: 70%; visibility: hidden;">
+        <!-- Velo - Pressure -->
+        <!-- <div id="V-P-info" style="position: absolute; top:35%; left: 70%; visibility: hidden;">
                 <p> Decrease in Velocity(V) <br/> Increase in Pressure(P).</p>
             </div> -->
 
 
-            <!-- Lift calculation display -->
-            <!-- <div id="calc-lift-part2" style="visibility: block; position: absolute; top: 60%;">
+        <!-- Lift calculation display -->
+        <!-- <div id="calc-lift-part2" style="visibility: block; position: absolute; top: 60%;">
                 <p> Let us calculate the lift now: <button class="verificationButton" onclick="calculateLift(2);">Calculate</button></p>
             </div> -->
 
 
-            <!-- explanation and comparison part. -->
-            <!-- <div id="solve-equation2" style="visibility: hidden;">
+        <!-- explanation and comparison part. -->
+        <!-- <div id="solve-equation2" style="visibility: hidden;">
                 <div id="" style="position: absolute; visibility: block; top:50%; left: 0%;">
                     <h4>Let us find out the lift:</h4>
                     <img src="/experiment/simulation/cement/Images/PhysicsEquation4-600x148.png" />
@@ -581,148 +646,148 @@
             </div> -->
 
 
-            <img id="hand4" style="position: absolute; left: 275px; top: 125px; visibility:hidden;cursor:pointer;" src="Images/hn.png" />
+        <img id="hand4" style="position: absolute; left: 275px; top: 125px; visibility:hidden;cursor:pointer;" src="Images/hn.png" />
 
 
-            <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
-            <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
+        <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
+        <p id="v4" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"> </p>
 
-        </div>
+    </div>
 
-        <!--Step5	-->
-        <div class="simsubscreen" id="canvas5" style="visibility:hidden">
-            <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;5&nbsp;</span>
-            <p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Add water to Le-Chatelier’s flask upto graduated mark and weigh it. </p>
-            <img id="" style="position: absolute; left: 430px; top: 255px;" src="Images/ewm.png" />
+    <!--Step5	-->
+    <div class="simsubscreen" id="canvas5" style="visibility:hidden">
+        <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;5&nbsp;</span>
+        <p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Add water to Le-Chatelier’s flask upto graduated mark and weigh it. </p>
+        <img id="" style="position: absolute; left: 430px; top: 255px;" src="Images/ewm.png" />
 
-            <img id="k5" style="position: absolute; left: 522px; top: 100px; visibility:hidden; " src="Images/wtr.png" />
-            <img id="wtr2" style="position: absolute; left: 215px; top: 162px; visibility:hidden; " src="Images/wtr2.png" />
-            <img id="wtr3" style="position: absolute; left: 236px; top: 228px; visibility:hidden; " src="Images/wtr3.png" />
-            <img id="nob5-1" style="position: absolute; left: 232px; top: 145px;cursor:move;" src="Images/1.2.png" />
-            <img id="nob5-2" style="position: absolute; left: 155px; top: 145px;visibility:hidden; cursor:move;" src="Images/1.2.png" />
-            <img id="nob5-3" style="position: absolute; left: 232px; top: 145px;visibility:hidden;" src="Images/1.2.png" />
-            <img id="wtr" style="position: absolute; left: 202px; top: 265px; visibility:hidden; " src="Images/wtr.png" />
-            <img id="a9" style="position: absolute; left: 520px; top: 50px;visibility:hidden;" src="Images/1.27.png" />
-            <img id="a10" style="position: absolute; left: 551px; top: 27px;visibility:hidden;" src="Images/1.2.png" />
+        <img id="k5" style="position: absolute; left: 522px; top: 100px; visibility:hidden; " src="Images/wtr.png" />
+        <img id="wtr2" style="position: absolute; left: 215px; top: 162px; visibility:hidden; " src="Images/wtr2.png" />
+        <img id="wtr3" style="position: absolute; left: 236px; top: 228px; visibility:hidden; " src="Images/wtr3.png" />
+        <img id="nob5-1" style="position: absolute; left: 232px; top: 145px;cursor:move;" src="Images/1.2.png" />
+        <img id="nob5-2" style="position: absolute; left: 155px; top: 145px;visibility:hidden; cursor:move;" src="Images/1.2.png" />
+        <img id="nob5-3" style="position: absolute; left: 232px; top: 145px;visibility:hidden;" src="Images/1.2.png" />
+        <img id="wtr" style="position: absolute; left: 202px; top: 265px; visibility:hidden; " src="Images/wtr.png" />
+        <img id="a9" style="position: absolute; left: 520px; top: 50px;visibility:hidden;" src="Images/1.27.png" />
+        <img id="a10" style="position: absolute; left: 551px; top: 27px;visibility:hidden;" src="Images/1.2.png" />
 
-            <img id="flask5" style="position: absolute; left: 200px; top: 180px;" src="Images/1.13.png" />
-            <img id="cflask5" style="position: absolute; left: 200px; top: 180px;cursor:move;visibility:hidden;" src="Images/1.13.png" />
+        <img id="flask5" style="position: absolute; left: 200px; top: 180px;" src="Images/1.13.png" />
+        <img id="cflask5" style="position: absolute; left: 200px; top: 180px;cursor:move;visibility:hidden;" src="Images/1.13.png" />
 
-            <img id="hand5" style="position: absolute; left: 275px; top: 125px; visibility:hidden;cursor:pointer;" src="Images/hn.png" />
+        <img id="hand5" style="position: absolute; left: 275px; top: 125px; visibility:hidden;cursor:pointer;" src="Images/hn.png" />
 
-            <p id="can5" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;">Weight of flask+water (W<sub>5</sub>) = _____ g</p>
-            <p id="v5" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
+        <p id="can5" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;">Weight of flask+water (W<sub>5</sub>) = _____ g</p>
+        <p id="v5" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
 
-        </div>
+    </div>
 
 
 
-        <!--Step6	-->
-        <div class="simsubscreen" id="canvas6" style="visibility:hidden">
-            <!-- <p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Repeat the same procedure for further trials.</p> -->
-            <strong class="incanvas" style="position:absolute;top: 40px; left:50px; font-family:verdana;"><h3>Observation</h3></strong>
-            <p id="can6-1" style="position:absolute;top:100px; left:60px; font-family:verdana; font-size:14px;"> Empty weight of flask with stopper (W<sub>1<sub>)= _____ gm</p>
+    <!--Step6	-->
+    <div class="simsubscreen" id="canvas6" style="visibility:hidden">
+        <!-- <p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Repeat the same procedure for further trials.</p> -->
+        <strong class="incanvas" style="position:absolute;top: 40px; left:50px; font-family:verdana;"><h3>Observation</h3></strong>
+        <p id="can6-1" style="position:absolute;top:100px; left:60px; font-family:verdana; font-size:14px;"> Empty weight of flask with stopper (W<sub>1<sub>)= _____ gm</p>
     <p id="can6-2" style="position:absolute;top: 140px; left:60px; font-family:verdana; font-size:14px;">Weight of flask + cement (W<sub>2</sub>) = _____gm </p>
-            <p id="can6-3" style="position:absolute;top: 180px; left:60px; font-family:verdana; font-size:14px;">Weight of flask + cement + kerosene (W<sub>3</sub>) = _____ gm </p>
-            <p id="can6-4" style="position:absolute;top: 220px; left:60px; font-family:verdana; font-size:14px;">Weight of flask + kerosene (W<sub>4</sub>) = _____ gm</p>
-            <p id="can6-5" style="position:absolute;top: 260px; left:60px; font-family:verdana; font-size:14px;">Weight of flask+water (W<sub>5</sub>) = _____ gm</p>
-            <p id="can6-6" style="position:absolute;top: 300px; left:60px; font-family:verdana; font-size:14px;">Specific gravity of kerosene = _____ </p>
-            <!--last trial -->
+        <p id="can6-3" style="position:absolute;top: 180px; left:60px; font-family:verdana; font-size:14px;">Weight of flask + cement + kerosene (W<sub>3</sub>) = _____ gm </p>
+        <p id="can6-4" style="position:absolute;top: 220px; left:60px; font-family:verdana; font-size:14px;">Weight of flask + kerosene (W<sub>4</sub>) = _____ gm</p>
+        <p id="can6-5" style="position:absolute;top: 260px; left:60px; font-family:verdana; font-size:14px;">Weight of flask+water (W<sub>5</sub>) = _____ gm</p>
+        <p id="can6-6" style="position:absolute;top: 300px; left:60px; font-family:verdana; font-size:14px;">Specific gravity of kerosene = _____ </p>
+        <!--last trial -->
 
-            <div id="6-1" style="position:absolute; left:60px; top:350px; font-size:16px; font-family:verdana; font-size:14px;">
-                <label id="l6-1">Specific gravity of cement =</label> <input id="output" type="text" style=" border:none; border-bottom: 1px solid; width:55px;" required>&nbsp;&nbsp;&nbsp;&nbsp;<input id="form" type="button" name="Formula" value="Formula"
-                />&nbsp;&nbsp;
-                <input id="check" type="button" name="check" value="Check" style="position:absolute; left:350px;" />
-                <input id="result" type="button" name="Formula" value="Result" style="position:absolute; left:412.5px; visibility:hidden;" /></br>
-                </br>
-                </br>
+        <div id="6-1" style="position:absolute; left:60px; top:350px; font-size:16px; font-family:verdana; font-size:14px;">
+            <label id="l6-1">Specific gravity of cement =</label> <input id="output" type="text" style=" border:none; border-bottom: 1px solid; width:55px;" required>&nbsp;&nbsp;&nbsp;&nbsp;<input id="form" type="button" name="Formula" value="Formula"
+            />&nbsp;&nbsp;
+            <input id="check" type="button" name="check" value="Check" style="position:absolute; left:350px;" />
+            <input id="result" type="button" name="Formula" value="Result" style="position:absolute; left:412.5px; visibility:hidden;" /></br>
+            </br>
+            </br>
 
-                <p id="r1" style="position:absolute; left:260px; top:-25px; color:#32CD32; font-size:22px; visibility:hidden;">&#10004;</p>
-                <p id="w1" style="position:absolute; left:260px; top:-25px; color:red;  font-size:22px; visibility:hidden;">&#10008;</p>
+            <p id="r1" style="position:absolute; left:260px; top:-25px; color:#32CD32; font-size:22px; visibility:hidden;">&#10004;</p>
+            <p id="w1" style="position:absolute; left:260px; top:-25px; color:red;  font-size:22px; visibility:hidden;">&#10008;</p>
 
-                <span id="formula" style="font-family:verdana; font-style:normal; border:1px solid black; padding:15px; visibility:hidden;">Specific gravity of cement= <span class="frac"><sup>( W<sub>2</sub>-W<sub>1</sub> ) x Specific gravity of kerosene</sup><span>&frasl;</span><sub>( W<sub>4</sub>-W<sub>1</sub>                )-( W<sub>3</sub>-W<sub>2</sub> )</sub>
-                </span>
-            </div>
-            <p id="p6-1" style="position:absolute; left:60px; top:350px; font-size:16px; font-family:verdana; font-size:14px; visibility:hidden;">Specific gravity of cement =</p>
+            <span id="formula" style="font-family:verdana; font-style:normal; border:1px solid black; padding:15px; visibility:hidden;">Specific gravity of cement= <span class="frac"><sup>( W<sub>2</sub>-W<sub>1</sub> ) x Specific gravity of kerosene</sup><span>&frasl;</span><sub>( W<sub>4</sub>-W<sub>1</sub>            )-( W<sub>3</sub>-W<sub>2</sub> )</sub>
+            </span>
+        </div>
+        <p id="p6-1" style="position:absolute; left:60px; top:350px; font-size:16px; font-family:verdana; font-size:14px; visibility:hidden;">Specific gravity of cement =</p>
 
-            <div id="6-2" style="position:absolute; left:60px; top:350px; font-size:16px; font-family:verdana; font-size:14px; visibility:hidden;">
-                <label id="l6-2">Specific gravity of cement =</label> <input id="output2" type="text" style=" border:none; border-bottom: 1px solid; width:55px;" required>&nbsp;&nbsp;&nbsp;&nbsp;<input id="form2" type="button" name="Formula" value="Formula"
-                />&nbsp;&nbsp;
-                <input id="check2" type="button" name="check" value="Check" style="position:absolute; left:350px;" />
-                <input id="result2" type="button" name="Formula" value="Result" style="position:absolute; left:412.5px; visibility:hidden;" /></br>
-                </br>
-                </br>
+        <div id="6-2" style="position:absolute; left:60px; top:350px; font-size:16px; font-family:verdana; font-size:14px; visibility:hidden;">
+            <label id="l6-2">Specific gravity of cement =</label> <input id="output2" type="text" style=" border:none; border-bottom: 1px solid; width:55px;" required>&nbsp;&nbsp;&nbsp;&nbsp;<input id="form2" type="button" name="Formula" value="Formula"
+            />&nbsp;&nbsp;
+            <input id="check2" type="button" name="check" value="Check" style="position:absolute; left:350px;" />
+            <input id="result2" type="button" name="Formula" value="Result" style="position:absolute; left:412.5px; visibility:hidden;" /></br>
+            </br>
+            </br>
 
-                <span id="formula2" style="font-family:verdana; font-style:normal; border:1px solid black; padding:15px; visibility:hidden;">Specific gravity of cement= <span class="frac"><sup>( W<sub>2</sub>-W<sub>1</sub> ) x Specific gravity of kerosene</sup><span>&frasl;</span><sub>( W<sub>4</sub>-W<sub>1</sub>                )-( W<sub>3</sub>-W<sub>2</sub> )</sub>
-                </span>
-            </div>
-
-            <p id="r2" style="position:absolute; left:320px; top:325px; color:#32CD32; font-size:22px;  visibility:hidden;">&#10004;</p>
-            <p id="w2" style="position:absolute; left:320px; top:325px; color:red;  font-size:22px;  visibility:hidden;">&#10008;</p>
-
-            <p id="p6-2" style="position:absolute; left:60px; top:350px; font-size:16px; font-family:verdana; font-size:14px; visibility:hidden;">Specific gravity of cement =</p>
+            <span id="formula2" style="font-family:verdana; font-style:normal; border:1px solid black; padding:15px; visibility:hidden;">Specific gravity of cement= <span class="frac"><sup>( W<sub>2</sub>-W<sub>1</sub> ) x Specific gravity of kerosene</sup><span>&frasl;</span><sub>( W<sub>4</sub>-W<sub>1</sub>            )-( W<sub>3</sub>-W<sub>2</sub> )</sub>
+            </span>
         </div>
 
-        <div id="canvas7" class="simsubscreen" style="visibility:hidden;">
-            <strong class="incanvas" id="ob"><h3>Observations: </h3></strong>
-            <table id="table" style="text-align:center; width:600px;">
-                <tr>
-                    <td style="padding:10px;">Trial</td>
-                    <td style="padding:10px;">Specifc gravity of cement</td>
-                    <td style="padding:10px;">Average specific gravity</td>
-                </tr>
-                <tr>
-                    <td style="padding:10px;">1</td>
-                    <td id="7-1" style="padding:10px;"></td>
-                    <td id="7-2" style="padding:10px;" rowspan="2"><input id="avg" type="text" style="border:none; border-bottom: 1px solid; width:65px;" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding:10px;">2</td>
-                    <td id="7-3" style="padding:10px;"></td>
-                </tr>
-            </table>
-            <input id="check3" type="button" name="check" value="Check" style="position:absolute; left:630px; top:185px;" />
-            <p id="rw" style="color:#32CD32; font-size:22px; position:absolute; left:510px; top:118px; visibility:hidden;">&#10004;</p>
+        <p id="r2" style="position:absolute; left:320px; top:325px; color:#32CD32; font-size:22px;  visibility:hidden;">&#10004;</p>
+        <p id="w2" style="position:absolute; left:320px; top:325px; color:red;  font-size:22px;  visibility:hidden;">&#10008;</p>
 
-            <div id="inferenceDiv" style="visibility:hidden; position:absolute; left:10px; top:225px;">
-                <strong class="incanvas" id="ob"><h3>Inference: </h3></strong>
-                <div id="inference" style="background-color:grey; color:white; padding:7.5px; border-radius:5px;">
-                    <p>What is the suggested range of specific gravity of cement?</p>
-                    <input type="radio" name="inf" value="1">&nbsp;less than 2.8</br>
-                    <input type="radio" name="inf" value="2">&nbsp;2.8 - 3.15</br>
-                    <input type="radio" name="inf" value="3">&nbsp;greater than 3.15</br>
-                    </br>
-                    <input type="button" value="Submit" onclick="checkInference();" />
-                    <p id="ans" style="visibility:hidden;"></p>
-                </div>
+        <p id="p6-2" style="position:absolute; left:60px; top:350px; font-size:16px; font-family:verdana; font-size:14px; visibility:hidden;">Specific gravity of cement =</p>
+    </div>
+
+    <div id="canvas7" class="simsubscreen" style="visibility:hidden;">
+        <strong class="incanvas" id="ob"><h3>Observations: </h3></strong>
+        <table id="table" style="text-align:center; width:600px;">
+            <tr>
+                <td style="padding:10px;">Trial</td>
+                <td style="padding:10px;">Specifc gravity of cement</td>
+                <td style="padding:10px;">Average specific gravity</td>
+            </tr>
+            <tr>
+                <td style="padding:10px;">1</td>
+                <td id="7-1" style="padding:10px;"></td>
+                <td id="7-2" style="padding:10px;" rowspan="2"><input id="avg" type="text" style="border:none; border-bottom: 1px solid; width:65px;" required>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:10px;">2</td>
+                <td id="7-3" style="padding:10px;"></td>
+            </tr>
+        </table>
+        <input id="check3" type="button" name="check" value="Check" style="position:absolute; left:630px; top:185px;" />
+        <p id="rw" style="color:#32CD32; font-size:22px; position:absolute; left:510px; top:118px; visibility:hidden;">&#10004;</p>
+
+        <div id="inferenceDiv" style="visibility:hidden; position:absolute; left:10px; top:225px;">
+            <strong class="incanvas" id="ob"><h3>Inference: </h3></strong>
+            <div id="inference" style="background-color:grey; color:white; padding:7.5px; border-radius:5px;">
+                <p>What is the suggested range of specific gravity of cement?</p>
+                <input type="radio" name="inf" value="1">&nbsp;less than 2.8</br>
+                <input type="radio" name="inf" value="2">&nbsp;2.8 - 3.15</br>
+                <input type="radio" name="inf" value="3">&nbsp;greater than 3.15</br>
+                </br>
+                <input type="button" value="Submit" onclick="checkInference();" />
+                <p id="ans" style="visibility:hidden;"></p>
             </div>
-            <p id="infAns" style="display:none; font-weight:bold; position:absolute; left:10px; top:280px; text-align:justify; width:700px;"></p>
         </div>
+        <p id="infAns" style="display:none; font-weight:bold; position:absolute; left:10px; top:280px; text-align:justify; width:700px;"></p>
+    </div>
 
-        <div id="questDiv" style="position:absolute; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:hidden; text-align:justify;">
-            <p id="q"></p><select id="answer">	
+    <div id="questDiv" style="position:absolute; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:hidden; text-align:justify;">
+        <p id="q"></p><select id="answer">	
     </select>
-            <p id="a"></p>
-        </div>
+        <p id="a"></p>
+    </div>
 
 
-        <!--Trial text	-->
-        <div id="">
-            <p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;font-family:verdana; "><strong>Trial = </strong></p>
-        </div>
+    <!--Trial text	-->
+    <div id="">
+        <p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;font-family:verdana; "><strong>Trial = </strong></p>
+    </div>
 
 
 
-        <!--next  Arrow	-->
-        <div id="nav">
-            <img id="nextButton" onclick="navNext();" src="Images/Next.png" />
-        </div>
+    <!--next  Arrow	-->
+    <div id="nav">
+        <img id="nextButton" onclick="navNext();" src="Images/Next.png" />
+    </div>
 
-        <!--Blinking Arrow	-->
-        <img class="" id="arrow1" style="visibility:hidden" src="Images/arrow1.png" />
+    <!--Blinking Arrow	-->
+    <img class="" id="arrow1" style="visibility:hidden" src="Images/arrow1.png" />
 
-        <div id="copyright"> &copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
+    <div id="copyright"> &copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
 </body>
 
 </html>
