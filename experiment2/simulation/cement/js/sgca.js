@@ -1402,10 +1402,10 @@ function makeConnection3() {
                 arr.forEach(eeee => {
                     for (let i = 1; i < 4; i++) {
                         if (i !== eeee) {
-                            if (document.getElementById("motorWire" +i).style.opacity == 100)
-                                document.getElementById("motorWire" +i).style.opacity = 0;
+                            if (document.getElementById("motorWire"+i).style.opacity == 100)
+                                document.getElementById("motorWire"+i).style.opacity = 0;
                             else
-                                document.getElementById("motorWire" +i).style.opacity = 100;
+                                document.getElementById("motorWire"+i).style.opacity = 100;
                         }
                     }
                 });
