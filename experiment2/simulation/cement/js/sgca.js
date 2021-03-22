@@ -230,6 +230,7 @@ function magic() {
         // this is for STEP1
         refresh1();
         document.getElementById('nextButton').style.visibility = "hidden";
+        document.getElementById("select_mp").style.visibility = "hidden";
         // document.getElementById("arrow1").style = "position: absolute; top:230px;";
         // myInt = setInterval(function() {
         //     animatearrow();
@@ -270,7 +271,18 @@ function magic() {
         // document.getElementById('table_iso').onclick = function() { step1(); };
 
     } else if (simsubscreennum == 2) {
-        //hiding the previous canvas airfoil images.
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 260px; height: 25px; z-index: 10;";
+
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(180deg)";
+
+
         document.getElementById('equip').style.visibility = "hidden";
 
         document.getElementById('select_motor').style.visibility = "hidden";
@@ -1201,6 +1213,8 @@ function makeConnection1() {
     // ============================           THIS ARROW WAS FOR TESTING OF ARROW POSITIONING
     // document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 400px; top: 200px; height: 30px; z-index: 10;";
     // document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)";
+    clearInterval(myInt);
+    document.getElementById("arrow1").style.visibility = "hidden";
     totalCount += 1;
     countOfEscAndMotor += 1;
     clickOnEscWire1 += 1;
@@ -1349,7 +1363,7 @@ function motorConnection1() {
         });
         if (flag1 == 0) {
             if (countOfEscAndMotor == 4) {
-                alert("YOu need to choose ESC first. (From 1st wire of motor after 2 selections of esc)")
+                alert("You need to choose ESC first. (From 1st wire of motor after 2 selections of esc)")
             } else {
                 countOfEscAndMotor += 1;
                 clickOnMotorWire1 += 1;
@@ -1675,6 +1689,9 @@ function appear(id_name, top_px) {
     // part.style.opacity = 1;
     part.style.top = top_px;
     part.style.transition = "all 1s ease-in-out";
+    if(id_name == 'motor_iso'){
+        document.getElementById("select_mp").style.visibility = "visible";
+    }
 
 }
 
@@ -1715,7 +1732,8 @@ function select() {
     document.getElementById('60%').style.visibility = "hidden";
     document.getElementById('80%').style.visibility = "hidden";
     document.getElementById('100%').style.visibility = "hidden";
-
+// hiding next button of previousb table with all equipments.
+    document.getElementById('select_mp').style.visibility = "hidden";
     document.getElementById('thrust').style = "opacity:0;";
     document.getElementById('dc').style = "opacity:0;";
     document.getElementById('esc').style = "opacity:0;";
@@ -1729,7 +1747,6 @@ function select() {
     document.getElementById("motor_iso").style = "opacity:0;";
     document.getElementById('equip').style.visibility = "visible";
     document.getElementById('select_motor').style.visibility = "visible";
-    document.getElementById('select_mp').style.visibility = "hidden";
     document.getElementById('pumptext').innerHTML = "Select a motor and then a propeller to place on the thrustmeter.";
     document.getElementById("nextButton").style.visibility = "hidden";
 
