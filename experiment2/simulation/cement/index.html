@@ -145,27 +145,27 @@
 
         <!--Title of Simulation		-->
         <div id="title">
-            <h3>Thrust of Propeller</h3>
+            <h3>Thrust of Motor</h3>
         </div>
 
         <!--SubScreen Home	-->
         <div class="simsubscreen" id="canvas0">
             <h4 class="incanvas" style="font-family:verdana; ">Aim:</h4>
-            <p class="incanvas" style="font-family:verdana; font-size:15px;">To understand the principle of thrust and calculate the Thrust of a Propeller.</p>
+            <p class="incanvas" style="font-family:verdana; font-size:15px;">To measure the thrust of a brushless motor with different propellers.</p>
             </br>
             <h4 class="incanvas" style="font-family:verdana; ">Apparatus used:</h4>
-            <p class="incanvas" style="font-family:verdana; font-size:14px;">Motor, Propeller fan, Electronic Speed Controller, Power Source, Throttle Controller and Thrustmeter.</p>
+            <p class="incanvas" style="font-family:verdana; font-size:14px;">Motor, Propeller, Electronic Speed Controller, Power Source, Throttle Controller and Thrustmeter.</p>
             &nbsp;
-            <span class="tooltip" id="desc_button" style="border-bottom:1px dotted ; color:red; position:absolute; top:130px;"><strong>Description</strong>
+            <!-- <span class="tooltip" id="desc_button" style="border-bottom:1px dotted ; color:red; position:absolute; top:130px;"><strong>Description</strong>
                 <span  class="tooltiptext" style="text-align:justify;"><strong style="color:red;">Aerofoil</strong> is the cross-sectional design of the wing, blade, or sail. 
                 Lift is the component such that the force in perpendicular to the direction of motion and drag is the component parallel to the direction of the motion.  
                 </span>
-            </span>
+            </span> -->
             <!-- <img id="" style="position: absolute; left: 259.5px; top: 355px; width:15px;" title="Le-Chatelier flask" src="Images/1.2.png"/> -->
-            <img id="all" style="position: absolute; left: 200px; top: 200px; width:400px; height:300px;" title="Plane wing" src="Images/uav/isometric_view/all.png" />
+            <img id="all" style="position: absolute; left: 200px; top: 200px; width:400px; height:300px;" src="Images/uav/isometric_view/all.png" />
 
             <!-- <img id="" style="position: absolute; left: 370px; top: 395px; width:150px;" title="Weighing scale" src="Images/ewm.png"/> -->
-            <img id="human" class="" style="position: absolute; left: 10px; top: 190px; height: 250px; width: 100px; " src="./Images/uav/isometric_view/human.png" />
+            <img id="human" class="" style="position: absolute; left: 10px; top: 190px; height: 300px; width: 100px; " src="./Images/uav/isometric_view/human.png" />
 
         </div>
 
@@ -181,7 +181,7 @@
             <img id="table_top" class="" style="visibility:hidden;position: absolute; left: 10px; top: 150px;height: 300px; width: 700px;z-index: 30; " src="./Images/uav/top_view/table_top.png" />
 
             <span class="tool" id="desc_button"><strong><button id="thrust" onclick="appear('thrust_iso','285px');" style="visibility: hidden; position: absolute;cursor: pointer;top: 50px;left:0px; border-radius:5px;width: 130px;color: #fff;background-color: black;">Thrustmeter</button></strong>
-                <span  class="tooltext" style="text-align:justify;"><strong style="color:red;">Thrustmeter</strong> is an instrument for measuring static thrust, especially of a jet engine or rocket. 
+                <span  class="tooltext" style="text-align:justify;"><strong style="color:red;">Thrustmeter</strong> is an instrument for measuring static thrust of a motor. 
                 </span>
             </span>
             <span class="tool" id="desc_button"><strong><button id="dc" onclick="appear('esc_iso','200px');" style="visibility: hidden; position: absolute;cursor: pointer;top: 80px;left:0px; border-radius:5px;width: 130px;color: #fff;background-color: black; ">ESC</button></strong>
@@ -192,7 +192,7 @@
                 <span  class="tooltext" style="text-align:justify;"><strong style="color:red;">DC Power Supply</strong> is one that supplies a constant DC voltage to its load. 
                 </span>
             </span>
-            <span class="tool" id="desc_button"><strong><button id="knob" onclick="appear('knob_iso','230px');" style="visibility: hidden; position: absolute;cursor: pointer;top: 140px;left:0px; border-radius:5px;width: 130px;color: #fff;background-color: black;">Speed Controller</button></strong>
+            <span class="tool" id="desc_button"><strong><button id="knob" onclick="appear('knob_iso','230px');" style="visibility: hidden; position: absolute;cursor: pointer;top: 140px;left:0px; border-radius:5px;width: 130px;color: #fff;background-color: black;">Throttle Controller</button></strong>
                 <span  class="tooltext" style="text-align:justify;"><strong style="color:red;">Throttle Controller</strong> is a device used for changing the throttle value of a motor. 
                 </span>
             </span>
@@ -364,7 +364,7 @@
 
             <strong id="titlestep" class="incanvas">STEP &nbsp;</strong>
             <span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
-            <p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Let us see how the air flows through an airfoil, producing the lift.</p>
+            <p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Make the connections to proceed with the experiment.</p>
 
             <img src="./Images/uav/top_view/table_v4.png" style="position:absolute; width:45%; height:110%; left: 28%; top: -10%; transform: rotate(90deg)" />
             <img src="./Images/uav/top_view/dc_box.png" style="position:absolute; width:20%; height:30%; top: 7%; left: 53.7%; transform: rotate(90deg)" />
@@ -429,7 +429,7 @@
             <!-- Previous -->
             <img id="hand" style="position: absolute; left: 275px; top: 125px; visibility:hidden;cursor:pointer;" src="Images/hn.png" />
 
-            <p id="can2" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;">Here the lift is upwards.</p>
+            <p id="can2" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
             <p id="v2" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
 
         </div>
@@ -464,7 +464,7 @@
             <img id="dialog_box" style="visibility: hidden;position: absolute;top: 275px;left: 280px;height: 50px;width: 100px;opacity:0;z-index: 100;" src="./Images/uav/top_view/dialog.png" alt="dialog box">
             <p id="thrust_value" style="visibility: hidden;position:absolute;top: 275px;left:300px;z-index: 150;opacity:0;"></p>
             <button id="generate_table" onclick="generate_table();" style="visibility:hidden; position:absolute;top: 100px;left: 50px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;z-index: 120;">Generate table</button>
-            <button id="choose_motor" onclick="select();" style="visibility:hidden; position:absolute;top: 100px;left: 280px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;z-index: 120;">Choose another motor</button>
+            <button id="choose_motor" onclick="navNext();" style="visibility:hidden; position:absolute;top: 100px;left: 280px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;z-index: 120;">Choose another motor</button>
 
 
             <table id="thrust_table" style="width:100%;visibility: hidden;position: absolute; top: 100px;">

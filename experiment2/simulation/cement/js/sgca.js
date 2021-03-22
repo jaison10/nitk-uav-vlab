@@ -3,7 +3,7 @@ var mpointer = 0;
 var repeat = 0;
 var a, p, lastp, n, b, q, flag = 0,
     avg, average;
-
+var new_select = 0;
 var values = [
     [125.3, 188.3, 394.7, 347.7, 63.00, 407.5, 0.79, 3.111],
     [125.3, 188.9, 395.1, 347.7, 63.6, 407.5, 0.79, 3.101],
@@ -16,14 +16,17 @@ p = Math.floor(Math.random() * (4));
 
 
 function navNext() {
+
     for (temp = 0; temp <= 7; temp++) {
         document.getElementById('canvas' + temp).style.visibility = "hidden";
     }
-    // if (simsubscreennum == 3) {
-    //     document.getElementById('canvas1').style.visibility = "visible";
-    //     document.getElementById('canvas4').style.visibility = "hidden";
-    // }
+    if (simsubscreennum == 3) {
+        simsubscreennum = 0;
+        new_select = 1;
+        console.log("new motor select value:" + new_select);
+    }
     simsubscreennum += 1;
+    console.log("simsubcreen number:" + simsubscreennum);
     document.getElementById('canvas' + (simsubscreennum)).style.visibility = "visible";
     document.getElementById('nextButton').style.visibility = "hidden";
     magic();
@@ -231,6 +234,27 @@ function magic() {
         refresh1();
         document.getElementById('nextButton').style.visibility = "hidden";
         document.getElementById("select_mp").style.visibility = "hidden";
+        document.getElementById("all_comp").style.visibility = "hidden";
+        document.getElementById("prop_fan").style.visibility = "hidden";
+        document.getElementById("dialog_box").style.visibility = "hidden";
+        document.getElementById("thrust_value").style.visibility = "hidden";
+        for (let i = 0; i <= 4; i++) {
+            document.getElementById("throttle" + i).style.visibility = "hidden";
+        }
+        document.getElementById('0%').style.visibility = "hidden";
+        document.getElementById('40%').style.visibility = "hidden";
+        document.getElementById('60%').style.visibility = "hidden";
+        document.getElementById('80%').style.visibility = "hidden";
+        document.getElementById('100%').style.visibility = "hidden";
+
+        document.getElementById('generate_table').style.visibility = "hidden";
+        document.getElementById("choose_motor").style.visibility = "hidden";
+        document.getElementById("throttle_message").style.visibility = "hidden";
+
+        if (new_select == 1) {
+            select();
+        }
+
         // document.getElementById("arrow1").style = "position: absolute; top:230px;";
         // myInt = setInterval(function() {
         //     animatearrow();
@@ -294,7 +318,7 @@ function magic() {
 
 
 
-        document.getElementById("nextButton").style.visibility = "hidden";
+        document.getElementById("nextButton").style.visibility = "visible";
         // myInt = setInterval(function(){ animateNewarrow(); }, 300);
 
     } else if (simsubscreennum == 3) {
@@ -1689,7 +1713,7 @@ function appear(id_name, top_px) {
     // part.style.opacity = 1;
     part.style.top = top_px;
     part.style.transition = "all 1s ease-in-out";
-    if(id_name == 'motor_iso'){
+    if (id_name == 'motor_iso') {
         document.getElementById("select_mp").style.visibility = "visible";
     }
 
@@ -1732,7 +1756,7 @@ function select() {
     document.getElementById('60%').style.visibility = "hidden";
     document.getElementById('80%').style.visibility = "hidden";
     document.getElementById('100%').style.visibility = "hidden";
-// hiding next button of previousb table with all equipments.
+    // hiding next button of previousb table with all equipments.
     document.getElementById('select_mp').style.visibility = "hidden";
     document.getElementById('thrust').style = "opacity:0;";
     document.getElementById('dc').style = "opacity:0;";
@@ -2327,7 +2351,7 @@ function throttle_click(name) {
         }
         p.style.animation = "rotate 0.001s linear 1s infinite";
         document.getElementById('generate_table').style.visibility = "visible";
-        document.getElementById('choose_motor').style.visibility = "visible";
+        document.getElementById('choose_motor').style.visibility = "hidden";
 
         // document.getElementById('generate_table').onclick = function() { generate_table(); };
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 100%";
@@ -2337,8 +2361,10 @@ function throttle_click(name) {
 
 
 }
+var new_motor_selected_thrust = 1;
 
 function generate_table() {
+    document.getElementById('pumptext-3').innerHTML = "The table shows the value of the thrust of the motor for each throttle value. ";
     var table = document.getElementById("thrust_table");
     document.getElementById('all_comp').style.visibility = "hidden";
     document.getElementById('prop_fan').style.visibility = "hidden";
@@ -2346,7 +2372,7 @@ function generate_table() {
     document.getElementById('thrust_value').style.visibility = "hidden";
     document.getElementById('dialog_box').style.visibility = "hidden";
     document.getElementById('prop_fan').style.visibility = "hidden";
-    document.getElementById('choose_motor').style.visibility = "hidden";
+    document.getElementById('choose_motor').style.visibility = "visible";
     for (let i = 0; i <= 4; i++) {
         document.getElementById('throttle' + i).style.visibility = "hidden";
 
@@ -2360,7 +2386,8 @@ function generate_table() {
     document.getElementById('generate_table').style.visibility = "hidden";
     document.getElementById('thrust_table').style.visibility = "visible";
 
-    var row = table.insertRow(2);
+    new_motor_selected_thrust++;
+    var row = table.insertRow(new_motor_selected_thrust);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
