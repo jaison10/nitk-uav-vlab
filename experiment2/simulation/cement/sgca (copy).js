@@ -1197,13 +1197,7 @@ var clickOnEscWire1 = 0;
 
 var firstVal;
 var secondVal;
-// if(countOfEscAndMotor == 6){
-//     for(var xz = 1;xz<4;xz++){
-//         console.log("Im in a condition which is after 6th value!");
-//         document.getElementById("escWire"+xz).style.cursor = "none";
-//         document.getElementById("motorWire"+xz).style.cursor = "none";
-//     }
-// }
+
 //    -----------------------  FIRST WIRE CHOSEN  ---------------------------------------------
 function makeConnection1() {
     // ============================           THIS ARROW WAS FOR TESTING OF ARROW POSITIONING
@@ -1223,12 +1217,12 @@ function makeConnection1() {
         document.getElementById("escWire1").setAttribute('disabled', 'true');
         blinkWires = setInterval(() => {
             for (var i = 1; i < 4; i++) {
-                if (document.getElementById("motorWire" + i).style.visibility == "hidden")
-                    document.getElementById("motorWire" + i).style.visibility = "visible";
+                if (document.getElementById("motorWire" + i).style.opacity == 100)
+                    document.getElementById("motorWire" + i).style.opacity = 0;
                 else
-                    document.getElementById("motorWire" + i).style.visibility = "hidden";
+                    document.getElementById("motorWire" + i).style.opacity = 100;
             }
-        }, 1000);
+        }, 500);
     } else {
         alert("You have already chosen this, move forward!");
     }
@@ -1261,16 +1255,14 @@ function makeConnection2() {
             blinkWires = setInterval(() => {
                 arr.forEach(element => {
                     for (var i = 1; i < 4; i++) {
-                        if (i !== element) {
-                            if (document.getElementById("motorWire" + i).style.visibility == "hidden")
-                                document.getElementById("motorWire" + i).style.visibility = "visible";
-                            else
-                                document.getElementById("motorWire" + i).style.visibility = "hidden";
-                        }
+                        if (document.getElementById("motorWire" + i).style.opacity == 100)
+                            document.getElementById("motorWire" + i).style.opacity = 0;
+                        else
+                            document.getElementById("motorWire" + i).style.opacity = 100;
                     }
                 });
 
-            }, 1000);
+            }, 500);
         } else {
             alert("You have already chosen this, move forward!");
         }
@@ -1305,12 +1297,11 @@ function makeConnection3() {
             document.getElementById("escWire3").style.cursor = "none";
             console.log("Array on click of third: ", arr);
             blinkWires = setInterval(() => {
-                if (document.getElementById("motorWire" + absent).style.visibility == "hidden") {
-                    document.getElementById("motorWire" + absent).style.visibility = "visible";
-                } else {
-                    document.getElementById("motorWire" + absent).style.visibility = "hidden"
-                }
-            }, 1000);
+                if (document.getElementById("motorWire" + i).style.opacity == 100)
+                    document.getElementById("motorWire" + i).style.opacity = 0;
+                else
+                    document.getElementById("motorWire" + i).style.opacity = 100;
+            }, 500);
         } else {
             alert("You have already chosen this, move forward!(STEP 3)");
         }
@@ -1332,7 +1323,7 @@ function motorConnection1() {
             clickOnMotorWire1 += 1;
             if (clickOnMotorWire1 == 1) {
                 clearInterval(blinkWires);
-                document.getElementById("motorWire1").style.cursor = "none"; // disable this forever. 
+                document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
                 document.getElementById("motorWire2").style.cursor = "not-allowed";
                 document.getElementById("motorWire3").style.cursor = "not-allowed";
                 console.log("The first wire has been chosen");
@@ -1343,6 +1334,10 @@ function motorConnection1() {
                 // VISIBLE THE IMAGE OF 1to1
                 document.getElementById("1to1").style.visibility = "visible";
                 console.log("The 1to1 image made visible!");
+                for (var i = 1; i < 4; i++) {
+                    document.getElementById("motorWire" + i).style.opacity = 100;
+                }
+                
             } else {
                 alert("You have already chosen this!");
             }
@@ -1365,7 +1360,7 @@ function motorConnection1() {
                 clickOnMotorWire1 += 1;
                 if (clickOnMotorWire1 == 1) {
                     clearInterval(blinkWires);
-                    document.getElementById("motorWire1").style.cursor = "none"; // disable this forever. 
+                    document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
                     document.getElementById("motorWire3").style.cursor = "not-allowed";
                     console.log("The first wire has been chosen in second step");
@@ -1375,6 +1370,9 @@ function motorConnection1() {
                     // VISIBLE THE IMAGE OF 2to1
                     document.getElementById("2to1").style.visibility = "visible";
                     console.log("The 2to1 image made visible!");
+                    for (var i = 1; i < 4; i++) {
+                        document.getElementById("motorWire" + i).style.opacity = 100;
+                    }
                 } else {
                     alert("You have already chosen(step 2)-wire 1");
                 }
@@ -1396,13 +1394,16 @@ function motorConnection1() {
                 // console.log("This is from 1st wire but at step3. Value of clickOnMotorWire1 is: "+ clickOnMotorWire1);
                 if (clickOnMotorWire1 == 1) {
                     clearInterval(blinkWires);
-                    document.getElementById("motorWire1").style.cursor = "none"; // disable this forever. 
+                    document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
                     document.getElementById("motorWire3").style.cursor = "not-allowed";
                     console.log("The first wire has been chosen in third step");
                     // document.getElementById("escWire2").style.cursor = "pointer";
                     arr.push(1);
                     console.log(arr);
+                    for (var i = 1; i < 4; i++) {
+                        document.getElementById("motorWire" + i).style.opacity = 100;
+                    }
 
                     console.log("The final value of ALL Together at step3 of 1st wire is: " + countOfEscAndMotor);
                     // VISIBLE THE IMAGE OF 3to1
@@ -1457,7 +1458,7 @@ function motorConnection2() {
                 if (clickOnMotorWire2 == 1) {
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed";
-                    document.getElementById("motorWire2").style.cursor = "none"; //disable this forever
+                    document.getElementById("motorWire2").style.cursor = "not-allowed"; //disable this forever
                     document.getElementById("motorWire3").style.cursor = "not-allowed";
                     console.log("The second wire has been chosen");
                     document.getElementById("escWire2").style.cursor = "pointer";
@@ -1466,6 +1467,9 @@ function motorConnection2() {
                     // VISIBLE THE IMAGE OF 1to2
                     document.getElementById("1to2").style.visibility = "visible";
                     console.log("The 1to2 image made visible!");
+                    for (var i = 1; i < 4; i++) {
+                        document.getElementById("motorWire" + i).style.opacity = 100;
+                    }
                 } else {
                     alert("You have already chosen this!");
                 }
@@ -1486,7 +1490,7 @@ function motorConnection2() {
                 if (clickOnMotorWire2 == 1) {
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
-                    document.getElementById("motorWire2").style.cursor = "none";
+                    document.getElementById("motorWire2").style.cursor = "not-allowed";
                     document.getElementById("motorWire3").style.cursor = "not-allowed";
                     console.log("The first wire has been chosen in second step");
                     document.getElementById("escWire3").style.cursor = "pointer";
@@ -1495,6 +1499,9 @@ function motorConnection2() {
                     // VISIBLE THE IMAGE OF 2to2
                     document.getElementById("2to2").style.visibility = "visible";
                     console.log("The 2to2 image made visible!");
+                    for (var i = 1; i < 4; i++) {
+                        document.getElementById("motorWire" + i).style.opacity = 100;
+                    }
                 } else {
                     alert("You have already chosen(step 2)-wire 2");
                 }
@@ -1516,11 +1523,14 @@ function motorConnection2() {
                 if (clickOnMotorWire2 == 1) {
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
-                    document.getElementById("motorWire2").style.cursor = "none";
+                    document.getElementById("motorWire2").style.cursor = "not-allowed";
                     document.getElementById("motorWire3").style.cursor = "not-allowed";
                     console.log("The second wire has been chosen in second step");
                     // document.getElementById("escWire3").style.cursor = "pointer";
                     arr.push(2);
+                    for (var i = 1; i < 4; i++) {
+                        document.getElementById("motorWire" + i).style.opacity = 100;
+                    }
                     console.log(arr);
                     console.log("The final value of ALL Together at step3 of 2nd wire is: " + countOfEscAndMotor);
                     // VISIBLE THE IMAGE OF 3to2
@@ -1574,11 +1584,14 @@ function motorConnection3() {
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed";
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
-                    document.getElementById("motorWire3").style.cursor = "none"; // disable this forever
+                    document.getElementById("motorWire3").style.cursor = "not-allowed"; // disable this forever
                     console.log("The third wire has been chosen");
                     document.getElementById("escWire2").style.cursor = "pointer";
                     arr.push(3);
                     console.log(arr);
+                    for (var i = 1; i < 4; i++) {
+                        document.getElementById("motorWire" + i).style.opacity = 100;
+                    }
                     // VISIBLE THE IMAGE OF 1to3
                     document.getElementById("1to3").style.visibility = "visible";
                     console.log("The 1to3 image made visible!");
@@ -1603,11 +1616,14 @@ function motorConnection3() {
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed";
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
-                    document.getElementById("motorWire3").style.cursor = "none";
+                    document.getElementById("motorWire3").style.cursor = "not-allowed";
                     console.log("The first wire has been chosen in second step");
                     document.getElementById("escWire3").style.cursor = "pointer";
                     arr.push(3);
                     console.log(arr);
+                    for (var i = 1; i < 4; i++) {
+                        document.getElementById("motorWire" + i).style.opacity = 100;
+                    }
                     // VISIBLE THE IMAGE OF 2to3
                     document.getElementById("2to3").style.visibility = "visible";
                     console.log("The 2to3 image made visible!");
@@ -1631,11 +1647,14 @@ function motorConnection3() {
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed";
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
-                    document.getElementById("motorWire3").style.cursor = "none";
+                    document.getElementById("motorWire3").style.cursor = "not-allowed";
                     console.log("The first wire has been chosen in second step");
                     // document.getElementById("escWire3").style.cursor = "pointer";
                     arr.push(3);
                     console.log(arr);
+                    for (var i = 1; i < 4; i++) {
+                        document.getElementById("motorWire" + i).style.opacity = 100;
+                    }
                     console.log("The final value of ALL Together at step3 of 3rd wire is: " + countOfEscAndMotor);
                     // VISIBLE THE IMAGE OF 3to3
                     document.getElementById("3to3").style.visibility = "visible";
