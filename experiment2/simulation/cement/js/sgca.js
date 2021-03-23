@@ -322,8 +322,11 @@ function magic() {
             document.getElementById("escWire3").style.cursor = "default";
             document.getElementById("esc_dc_connector").style.visibility = "visible";
             document.getElementById("esc_thr_connector").style.visibility = "visible";
+            document.getElementById("updateClockAnti").innerText = "";
+            document.getElementById("updateClockAnti").classList.remove("dangerClockAnti","successClockAnti");
         }
 
+        document.getElementById("v1").innerText = "Click on the first ESC wire to make conections."
         myIntForEscWires = setInterval(function() {
             animatearrow();
         }, 500);
@@ -1426,6 +1429,7 @@ function motorConnection1() {
     console.log("Total count is: " + totalCount);
     if (totalCount == 1) {
         if (countOfEscAndMotor == 2) {
+            console.log("Value of Esc and motor tog is: "+ countOfEscAndMotor);
             alert("You need to choose the esc wire first!")
         } else {
             countOfEscAndMotor += 1;
