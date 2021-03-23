@@ -13,6 +13,8 @@ var values = [
 ];
 
 p = Math.floor(Math.random() * (4));
+var m_id;
+var p_id;
 
 
 function navNext() {
@@ -365,7 +367,8 @@ function magic() {
         document.getElementById("esc_dc_connected").style.visibility = "hidden";
         document.getElementById("esc_thr_knob").style.visibility = "hidden";
         document.getElementById("esc_thr_connected").style.visibility = "hidden";
-
+        document.getElementById("esc_dc_connector").style.visibility = "hidden";
+        document.getElementById("esc_thr_connector").style.visibility = "hidden";
 
 
         myIntForBattery = setInterval(function() {
@@ -389,6 +392,9 @@ function magic() {
         // document.getElementById('nob3-1').onclick=function() { step3(); };	
     } else if (simsubscreennum == 4) {
         //stopping the blink.
+        clearInterval(myIntForBattery);
+        document.getElementById('arrow1').style.visibility = "hidden";
+
         clearInterval(myInt);
         document.getElementById("below_arrow" + arrowCount).style.visibility = "hidden";
         // hiding the 14 wind flow direction arrows.
@@ -1288,12 +1294,12 @@ function makeConnection1() {
 
         // Blinking the wires
         blinkWires = setInterval(() => {
-                for (var i = 1; i < 4; i++) {
-                        if (document.getElementById("motorWire" + i).style.opacity == 100)
-                            document.getElementById("motorWire" + i).style.opacity = 0;
-                        else
-                            document.getElementById("motorWire" + i).style.opacity = 100;
-                }
+            for (var i = 1; i < 4; i++) {
+                if (document.getElementById("motorWire" + i).style.opacity == 100)
+                    document.getElementById("motorWire" + i).style.opacity = 0;
+                else
+                    document.getElementById("motorWire" + i).style.opacity = 100;
+            }
         }, 500);
     } else {
         alert("You have already chosen this, move forward!");
@@ -1327,7 +1333,6 @@ function makeConnection2() {
             document.getElementById("escWire2").style.cursor = "none";
             document.getElementById("escWire2").setAttribute('disabled', 'true');
             // Arrow blinking showing where to click
-<<<<<<< HEAD
             myIntForMotorWires = setInterval(function() {
                 animatearrowForEscDcConnection();
             }, 500);
@@ -1341,42 +1346,17 @@ function makeConnection2() {
             // Blink wires
             blinkWires = setInterval(() => {
                 arr.forEach(element => {
-                    for (var i = 1; i < 4; i++) {
+                    for (let i = 1; i < 4; i++) {
                         if (i !== element) {
                             if (document.getElementById("motorWire" + i).style.opacity == 100)
                                 document.getElementById("motorWire" + i).style.opacity = 0;
                             else
                                 document.getElementById("motorWire" + i).style.opacity = 100;
                         }
-=======
-        myIntForMotorWires = setInterval(function() {
-            animatearrowForEscDcConnection();
-        }, 500);
-        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 300px; height: 25px; z-index: 10;";
-
-        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
-        // Code for IE9
-        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
-        // Standard syntax
-        document.getElementById("arrow1").style.transform = "rotate(180deg)";
-        // Blink wires
-        blinkWires = setInterval(() => {
-            arr.forEach(element => {
-                for (let i = 1; i < 4; i++) {
-                    if (i !== element) {
-                        if (document.getElementById("motorWire" + i).style.opacity == 100)
-                            document.getElementById("motorWire" + i).style.opacity = 0;
-                        else
-                            document.getElementById("motorWire" + i).style.opacity = 100;
->>>>>>> cfc3978a3ca6ce11e474458da05b2131b2178c8d
                     }
                 });
 
-<<<<<<< HEAD
-            }, 1000);
-=======
-        }, 500);
->>>>>>> cfc3978a3ca6ce11e474458da05b2131b2178c8d
+            }, 500);
         } else {
             alert("You have already chosen this, move forward!");
         }
@@ -1428,14 +1408,14 @@ function makeConnection3() {
                 arr.forEach(eeee => {
                     for (let i = 1; i < 4; i++) {
                         if (i !== eeee) {
-                            if (document.getElementById("motorWire" +i).style.opacity == 100)
-                                document.getElementById("motorWire" +i).style.opacity = 0;
+                            if (document.getElementById("motorWire" + i).style.opacity == 100)
+                                document.getElementById("motorWire" + i).style.opacity = 0;
                             else
-                                document.getElementById("motorWire" +i).style.opacity = 100;
+                                document.getElementById("motorWire" + i).style.opacity = 100;
                         }
                     }
                 });
-    
+
             }, 500);
         } else {
             alert("You have already chosen this, move forward!(STEP 3)");
@@ -1737,7 +1717,8 @@ function motorConnection2() {
                     console.log("The 3to2 image made visible!");
                     if (countOfEscAndMotor == 6) {
                         console.log("Im inside a condition for 6, inside third of 2nd motor wire!");
-                        randomValue = Math.floor(Math.random() * 2);
+                        // randomValue = Math.floor(Math.random() * 2);
+                        randomValue = 0;
                         console.log("RANDOM VALUE FROM 2nd wire is: " + randomValue);
                         if (randomValue == 0) {
                             document.getElementById("updateClockAnti").textContent = "It is rotating anti-clock wise. Need to change the direction of the connection.";
@@ -1924,16 +1905,10 @@ function motorConnection3() {
         }
     }
 }
-
+//-------------- SHOW THE APPARATUS----------
 function appear(id_name, top_px) {
     var part = document.getElementById(id_name);
-    // if (id_name === 'motor_iso') {
-    //     document.getElementById('view_text').style = "visibility:visible;position:absolute;top:400px;left:440px;";
-
-
-    // }
     part.style.visibility = "visible";
-    // part.style.opacity = 1;
     part.style.top = top_px;
     part.style.transition = "all 1s ease-in-out";
     if (id_name == 'motor_iso') {
@@ -1942,26 +1917,8 @@ function appear(id_name, top_px) {
 
 }
 
-// function view_more() {
-//     document.getElementById('equip').style = "visibility:visible;position:absolute;top:100px;left:100px;height:300px;width:400px;";
-//     document.getElementById('thrust').style.visibility = "hidden";
-//     document.getElementById('dc').style.visibility = "hidden";
-//     document.getElementById('esc').style.visibility = "hidden";
-//     document.getElementById('knob').style.visibility = "hidden";
-//     document.getElementById('motor').style.visibility = "hidden";
-//     document.getElementById("table_iso").style.visibility = "hidden";
 
-
-//     document.getElementById("thrust_iso").style.visibility = "hidden";
-//     document.getElementById("esc_iso").style.visibility = "hidden";
-//     document.getElementById("power_iso").style.visibility = "hidden";
-//     document.getElementById("knob_iso").style.visibility = "hidden";
-//     document.getElementById("motor_iso").style.visibility = "hidden";
-//     // console.log("hello");
-
-
-// }
-
+//---------SELECT MOTOR AND PROPELLER PAGE--------
 function select() {
     document.getElementById('all_comp').style.visibility = "hidden";
     document.getElementById('prop_fan').style.visibility = "hidden";
@@ -1979,7 +1936,7 @@ function select() {
     document.getElementById('60%').style.visibility = "hidden";
     document.getElementById('80%').style.visibility = "hidden";
     document.getElementById('100%').style.visibility = "hidden";
-    // hiding next button of previousb table with all equipments.
+
     document.getElementById('select_mp').style.visibility = "hidden";
     document.getElementById('thrust').style = "opacity:0;";
     document.getElementById('dc').style = "opacity:0;";
@@ -1996,10 +1953,8 @@ function select() {
     document.getElementById('select_motor').style.visibility = "visible";
     document.getElementById('pumptext').innerHTML = "Select a motor and then a propeller to place on the thrustmeter.";
     document.getElementById("nextButton").style.visibility = "hidden";
-
-
-    //     console.log("hello");
 }
+
 
 function motor(prop_name) {
     for (let i = 1; i <= 8; i++) {
@@ -2018,12 +1973,12 @@ function motor(prop_name) {
     var img_m = document.getElementById('m_1');
     img_m.style.visibility = "visible";
     document.getElementById('nextButton').style.visibility = "hidden";
-
+    // if (new_select = 1) {
+    //     document.getElementById('motor' + m_id).style.visibility = "hidden";
+    // }
 
 
 }
-var m_id;
-var p_id;
 
 function prop(motor_id, prop_id) {
 
@@ -2052,11 +2007,17 @@ function prop(motor_id, prop_id) {
 
 
 }
+
+
+
 console.log(m_id);
 console.log(p_id);
 
 function place_motor() {
     clearInterval(myInt);
+    if (new_select = 1) {
+        document.getElementById(m_id + '_' + p_id).style.visibility = "hidden";
+    }
     document.getElementById('arrow1').style.visibility = "hidden";
     document.getElementById('equip').style.visibility = "visible";
     document.getElementById('motor_with_prop').style.visibility = "hidden";
@@ -2098,12 +2059,16 @@ function switch_battery() {
     document.getElementById('close_button').style.visibility = "hidden";
 
     document.getElementById('socket_plug').onclick = function() {
+        clearInterval(myIntForBattery);
+        document.getElementById('arrow1').style.visibility = "hidden";
         document.getElementById('socket_plug').style.visibility = "hidden";
         document.getElementById('socket_plugged_on').style.visibility = "visible";
         document.getElementById('on_off_switch').innerHTML = "ON";
         document.getElementById('close_button').style.visibility = "visible";
 
         document.getElementById('socket_plugged_on').onclick = function() {
+            clearInterval(myIntForBattery);
+            document.getElementById('arrow1').style.visibility = "hidden";
             document.getElementById('socket_plug').style.visibility = "visible";
             document.getElementById('socket_plugged_on').style.visibility = "hidden";
             document.getElementById('on_off_switch').innerHTML = "OFF";
@@ -2115,6 +2080,8 @@ function switch_battery() {
 
 function close_plug() {
     myStopFunction();
+    clearInterval(myIntForBattery);
+
     document.getElementById('close_button').style.visibility = "hidden";
     document.getElementById('socket_plug').style.visibility = "hidden";
     document.getElementById('on_off_switch').style.visibility = "hidden";
@@ -2298,6 +2265,7 @@ function throttle_click(name) {
         if (m_id == '8' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = thrust_data[20][2] + "g";
         }
+        myStopFunction();
         document.getElementById('arrow1').style.visibility = "hidden";
         // document.getElementById('thrust_value').innerHTML = "0g";
         p.style.animation = "rotate 0s linear 1s infinite";
@@ -2598,6 +2566,8 @@ function throttle_click(name) {
 var new_motor_selected_thrust = 1;
 
 function generate_table() {
+    myStopFunction();
+    document.getElementById('arrow1').style.visibility = "hidden";
     document.getElementById('pumptext-3').innerHTML = "The table shows the value of the thrust of the motor for each throttle value. ";
     var table = document.getElementById("thrust_table");
     document.getElementById('all_comp').style.visibility = "hidden";
@@ -2619,8 +2589,7 @@ function generate_table() {
     document.getElementById('100%').style.visibility = "hidden";
 
     document.getElementById('generate_table').style.visibility = "hidden";
-    myStopFunction();
-    document.getElementById('arrow1').style.visibility = "hidden";
+
 
     document.getElementById('thrust_table').style.visibility = "visible";
 
