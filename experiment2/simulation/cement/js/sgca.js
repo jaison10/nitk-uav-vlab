@@ -353,6 +353,7 @@ function magic() {
         // myInt = setInterval(function(){ animateNewarrow(); }, 300);
 
     } else if (simsubscreennum == 3) {
+        myStopFunction();
         // ===========================================================  HIDING THE PREVIOUS CANVAS 
         for (let hide = 1; hide < 4; hide++) {
             document.getElementById("motorWire" + hide).style.visibility = "hidden";
@@ -392,6 +393,7 @@ function magic() {
         // document.getElementById('nob3-1').onclick=function() { step3(); };	
     } else if (simsubscreennum == 4) {
         //stopping the blink.
+        myStopFunction();
         clearInterval(myIntForBattery);
         document.getElementById('arrow1').style.visibility = "hidden";
 
@@ -2034,7 +2036,7 @@ function place_motor() {
         document.getElementById('select_prop' + i).style.visibility = "hidden";
     }
 
-    document.getElementById('pumptext').innerHTML = "The apparatus is thus ready to find the thrust of a propeller.";
+    document.getElementById('pumptext').innerHTML = "The motor is then clamped to the thrustmeter.";
     // document.getElementById('equip').onclick = function() { step1() };
 
     // myInt = setInterval(function() {
@@ -2098,7 +2100,7 @@ function close_plug() {
     document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
     // Standard syntax
     document.getElementById("arrow1").style.transform = "rotate(270deg)";
-    document.getElementById('pumptext-3').innerHTML = "Click on the throttle percent to observe the changes in the thrust of the propeller."
+    document.getElementById('pumptext-3').innerHTML = "Click on the throttle percentage to observe the changes in the thrust of the motor."
     document.getElementById('all_comp').onclick = function() { set_throttle(); };
 }
 
