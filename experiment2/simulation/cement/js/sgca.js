@@ -1353,6 +1353,7 @@ function makeConnection2() {
                             else
                                 document.getElementById("motorWire" + i).style.opacity = 100;
                         }
+
                     }
                 });
 
