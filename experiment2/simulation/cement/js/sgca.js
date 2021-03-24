@@ -303,6 +303,7 @@ function magic() {
         // document.getElementById('table_iso').onclick = function() { step1(); };
 
     } else if (simsubscreennum == 2) {
+        document.getElementById("connection_explanation").innerText = "Click on first ESC wire to start the connection.";
 
         if (new_select == 1) {
             arr = [];
@@ -325,6 +326,8 @@ function magic() {
             document.getElementById("escWire3").style.cursor = "default";
             document.getElementById("esc_dc_connector").style.visibility = "visible";
             document.getElementById("esc_thr_connector").style.visibility = "visible";
+            document.getElementById("updateClockAnti").innerText = "";
+            document.getElementById("updateClockAnti").classList.remove("dangerClockAnti","successClockAnti");
         }
 
         myIntForEscWires = setInterval(function() {
@@ -1003,7 +1006,7 @@ function refresh1() {
     // document.getElementById('can6-4').innerHTML="Weight of flask + kerosene (W<sub>4</sub>) = ";
     // document.getElementById('can6-5').innerHTML="Weight of flask+water (W<sub>5</sub>) =";
 
-    document.getElementById('v1').innerHTML = "";
+    // document.getElementById('v1').innerHTML = "";
     document.getElementById('v2').innerHTML = "";
     document.getElementById('v3').innerHTML = "";
     document.getElementById('v4').innerHTML = "";
@@ -1271,13 +1274,15 @@ function makeConnection1() {
     // ============================           THIS ARROW WAS FOR TESTING OF ARROW POSITIONING
     // document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 400px; top: 200px; height: 30px; z-index: 10;";
     // document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)";
+    document.getElementById("connection_explanation").innerText = "Choose any of the motor wire to make connection.";
     clearInterval(myIntForEscWires);
     document.getElementById("arrow1").style.visibility = "hidden";
-    totalCount += 1;
-    countOfEscAndMotor += 1;
     clickOnEscWire1 += 1;
     if (clickOnEscWire1 == 1) {
+        totalCount += 1;
+        countOfEscAndMotor += 1;
         console.log("Initial click");
+        console.log("Count of Esc and motor together in esc wire 1 is: (afterupdate) " + countOfEscAndMotor);
         for (var i = 1; i < 4; i++) {
             document.getElementById("motorWire" + i).style.cursor = "pointer";
         }
@@ -1314,14 +1319,19 @@ function makeConnection1() {
 clickOnEscWire2 = 0;
 
 function makeConnection2() {
+    document.getElementById("connection_explanation").innerText = "Click on any one of the available motor wire to do the second connection.";
     clearInterval(myIntForEscWires);
     document.getElementById("arrow1").style.visibility = "hidden";
-    console.log("Count of Esc and motor together is: " + countOfEscAndMotor);
-    if (countOfEscAndMotor == 1) {
+    console.log("Count of Esc and motor together in esc wire 2 is: (beforeupdate) " + countOfEscAndMotor);
+    if (countOfEscAndMotor == 1 || countOfEscAndMotor == 3) {
         alert("You need to choose motor wire now!");
     } else if (countOfEscAndMotor == 0) {
         alert("You need to choose the first wire initially!")
-    } else {
+    } 
+    else if (countOfEscAndMotor == 4) {
+        alert("You need to choose next esc wire!")
+    }
+    else {
         countOfEscAndMotor += 1;
         totalCount += 1;
         clickOnEscWire2 += 1;
@@ -1372,10 +1382,11 @@ function makeConnection2() {
 clickOnEscWire3 = 0;
 
 function makeConnection3() {
+    document.getElementById("connection_explanation").innerText = "Click on the last available motor wire to complete the connection.";
     clearInterval(myIntForEscWires);
     document.getElementById("arrow1").style.visibility = "hidden";
     var flagForEsc3 = 0;
-    if (countOfEscAndMotor == 1 || countOfEscAndMotor == 3) {
+    if (countOfEscAndMotor == 1 || countOfEscAndMotor == 3 || countOfEscAndMotor == 5) {
         alert("You need to choose motor wire now!");
     } else if (countOfEscAndMotor == 0) {
         alert("You need to choose the first wire initially!")
@@ -1437,11 +1448,13 @@ function motorConnection1() {
     console.log("Total count is: " + totalCount);
     if (totalCount == 1) {
         if (countOfEscAndMotor == 2) {
+            console.log("Value of Esc and motor tog is: "+ countOfEscAndMotor);
             alert("You need to choose the esc wire first!")
         } else {
             countOfEscAndMotor += 1;
             clickOnMotorWire1 += 1;
             if (clickOnMotorWire1 == 1) {
+                document.getElementById("connection_explanation").innerText = "Choose the second ESC wire to start with next connection.";
                 clearInterval(blinkWires);
                 document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
                 document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1490,9 +1503,13 @@ function motorConnection1() {
             if (countOfEscAndMotor == 4) {
                 alert("You need to choose ESC first. (From 1st wire of motor after 2 selections of esc)")
             } else {
+                console.log("Count of Esc and motor together in motor wire 1 is: (beforeupdate) " + countOfEscAndMotor);
                 countOfEscAndMotor += 1;
                 clickOnMotorWire1 += 1;
+                console.log("Count of Esc and motor together in motor wire 1 is: (afterupdate) " + countOfEscAndMotor);
+                console.log("ESC and motor tog is: "+ countOfEscAndMotor);
                 if (clickOnMotorWire1 == 1) {
+                    document.getElementById("connection_explanation").innerText = "Click on the third ESC wire to do the last connection.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1539,9 +1556,11 @@ function motorConnection1() {
             if (flag1 == 0) {
                 //  console.log("This is from 1st wire but at step3. Value of clickOnMotorWire1 before an update is: "+ clickOnMotorWire1);
                 clickOnMotorWire1 += 1;
-                countOfEscAndMotor += 1;
+                
                 // console.log("This is from 1st wire but at step3. Value of clickOnMotorWire1 is: "+ clickOnMotorWire1);
                 if (clickOnMotorWire1 == 1) {
+                    countOfEscAndMotor += 1;
+                    document.getElementById("connection_explanation").innerText = "Well, you have completed the circuit.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1597,16 +1616,20 @@ var clickOnMotorWire2 = 0;
 function motorConnection2() {
     console.log("Total count is: " + totalCount);
 
-    if (countOfEscAndMotor == 2 || countOfEscAndMotor == 4) {
+    if (countOfEscAndMotor == 2 || countOfEscAndMotor == 4 || countOfEscAndMotor == 0) {
         alert("You need to choose esc wire initially!")
     } else {
         if (totalCount == 1) {
             if (countOfEscAndMotor == 2) {
                 alert("You need to choose the esc wire first!")
             } else {
-                countOfEscAndMotor += 1;
+                console.log("Count of Esc and motor together in motor wire 2 is: (beforeupdate) " + countOfEscAndMotor);
+                
                 clickOnMotorWire2 += 1;
+                console.log("Count of Esc and motor together in motor wire 2 is: (afterUpdate) " + countOfEscAndMotor);
                 if (clickOnMotorWire2 == 1) {
+                    countOfEscAndMotor += 1;
+                    document.getElementById("connection_explanation").innerText = "Click on the second ESC wire to do the next connection.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed";
                     document.getElementById("motorWire2").style.cursor = "not-allowed"; //disable this forever
@@ -1652,9 +1675,10 @@ function motorConnection2() {
             });
             if (flag2 == 0) {
 
-                countOfEscAndMotor += 1;
                 clickOnMotorWire2 += 1;
                 if (clickOnMotorWire2 == 1) {
+                    countOfEscAndMotor += 1;
+                    document.getElementById("connection_explanation").innerText = "Click on the third ESC wire to do the last connection.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1700,9 +1724,10 @@ function motorConnection2() {
             });
             if (flag2 == 0) {
 
-                countOfEscAndMotor += 1;
                 clickOnMotorWire2 += 1;
                 if (clickOnMotorWire2 == 1) {
+                    countOfEscAndMotor += 1;
+                    document.getElementById("connection_explanation").innerText = "Well, you have completed the circuit.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1764,9 +1789,10 @@ function motorConnection3() {
             if (countOfEscAndMotor == 2) {
                 alert("You need to choose the esc wire first!")
             } else {
-                countOfEscAndMotor += 1;
                 clickOnMotorWire3 += 1;
                 if (clickOnMotorWire3 == 1) {
+                    countOfEscAndMotor += 1;
+                    document.getElementById("connection_explanation").innerText = "Click on the second ESC wire to do the next connection.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed";
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1811,9 +1837,10 @@ function motorConnection3() {
             });
             if (flag3 == 0) {
                 console.log("The value of motor and esc together is: " + countOfEscAndMotor);
-                countOfEscAndMotor += 1;
                 clickOnMotorWire3 += 1;
                 if (clickOnMotorWire3 == 1) {
+                    countOfEscAndMotor += 1;
+                    document.getElementById("connection_explanation").innerText = "Click on the third ESC wire to do the last connection.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed";
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1858,9 +1885,10 @@ function motorConnection3() {
                 }
             });
             if (flag3 == 0) {
-                countOfEscAndMotor += 1;
                 clickOnMotorWire3 += 1;
                 if (clickOnMotorWire3 == 1) {
+                    countOfEscAndMotor += 1;
+                    document.getElementById("connection_explanation").innerText = "Well, you have completed the circuit.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed";
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
