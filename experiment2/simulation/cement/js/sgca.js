@@ -308,6 +308,7 @@ function magic() {
         // document.getElementById('table_iso').onclick = function() { step1(); };
 
     } else if (simsubscreennum == 2) {
+        document.getElementById("placement_info").innerText = "";
         document.getElementById("connection_explanation").innerText = "Click on first ESC wire to start the connection.";
 
         if (new_select == 1) {
@@ -1324,7 +1325,6 @@ function makeConnection1() {
 clickOnEscWire2 = 0;
 
 function makeConnection2() {
-    document.getElementById("connection_explanation").innerText = "Click on any one of the available motor wire to do the second connection.";
     clearInterval(myIntForEscWires);
     document.getElementById("arrow1").style.visibility = "hidden";
     console.log("Count of Esc and motor together in esc wire 2 is: (beforeupdate) " + countOfEscAndMotor);
@@ -1334,7 +1334,9 @@ function makeConnection2() {
         alert("You need to choose the first wire initially!")
     } else if (countOfEscAndMotor == 4) {
         alert("You need to choose next esc wire!")
-    } else {
+    }
+    else {
+        document.getElementById("connection_explanation").innerText = "Click on any one of the available motor wire to do the second connection.";
         countOfEscAndMotor += 1;
         totalCount += 1;
         clickOnEscWire2 += 1;
@@ -1385,7 +1387,6 @@ function makeConnection2() {
 clickOnEscWire3 = 0;
 
 function makeConnection3() {
-    document.getElementById("connection_explanation").innerText = "Click on the last available motor wire to complete the connection.";
     clearInterval(myIntForEscWires);
     document.getElementById("arrow1").style.visibility = "hidden";
     var flagForEsc3 = 0;
@@ -1396,6 +1397,7 @@ function makeConnection3() {
     } else if (countOfEscAndMotor == 2) {
         alert("You need to select the second wire now!")
     } else {
+        document.getElementById("connection_explanation").innerText = "Click on the last available motor wire to complete the connection.";
         totalCount += 1;
         countOfEscAndMotor += 1;
         console.log("Count of Esc and motor together is: " + countOfEscAndMotor);
@@ -1935,7 +1937,7 @@ function motorConnection3() {
                         }
                     }
                 } else {
-                    alert("You have already chosen(step 2)-wire 2");
+                    alert("You have already chosen(step 3)-wire 2");
                 }
             }
         }
@@ -2172,10 +2174,10 @@ console.log(p_id);
 
 function place_motor() {
     clearInterval(myInt);
-    // if (new_select = 1) {
-    //     var prop_list = document.getElementsById("p_" + p_id);
-    //     prop_list.remove(prop_list.selectedIndex);
-    // }
+    if (new_select = 1) {
+        document.getElementById(m_id + '_' + p_id).style.visibility = "hidden";
+    }
+    document.getElementById("placement_info").innerText = "The motor is attached to the thrustmeter by clamping.";
     document.getElementById('arrow1').style.visibility = "hidden";
     document.getElementById('equip').style.visibility = "visible";
     document.getElementById('motor_with_prop').style.visibility = "hidden";
@@ -2204,7 +2206,7 @@ function place_motor() {
         document.getElementById('select_prop' + i).style.visibility = "hidden";
     }
 
-    document.getElementById('pumptext').innerHTML = "The motor is then clamped to the thrustmeter.";
+    document.getElementById('pumptext').innerHTML = "The apparatus thus ready for the connection.";
     // document.getElementById('equip').onclick = function() { step1() };
 
     // myInt = setInterval(function() {
