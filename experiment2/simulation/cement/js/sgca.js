@@ -13,6 +13,8 @@ var values = [
 ];
 
 p = Math.floor(Math.random() * (4));
+var m_id;
+var p_id;
 
 
 function navNext() {
@@ -300,6 +302,7 @@ function magic() {
         // document.getElementById('table_iso').onclick = function() { step1(); };
 
     } else if (simsubscreennum == 2) {
+        document.getElementById("connection_explanation").innerText = "Click on first ESC wire to start the connection.";
 
         if (new_select == 1) {
             arr = [];
@@ -326,7 +329,6 @@ function magic() {
             document.getElementById("updateClockAnti").classList.remove("dangerClockAnti","successClockAnti");
         }
 
-        document.getElementById("v1").innerText = "Click on the first ESC wire to make conections."
         myIntForEscWires = setInterval(function() {
             animatearrow();
         }, 500);
@@ -368,7 +370,8 @@ function magic() {
         document.getElementById("esc_dc_connected").style.visibility = "hidden";
         document.getElementById("esc_thr_knob").style.visibility = "hidden";
         document.getElementById("esc_thr_connected").style.visibility = "hidden";
-
+        document.getElementById("esc_dc_connector").style.visibility = "hidden";
+        document.getElementById("esc_thr_connector").style.visibility = "hidden";
 
 
         myIntForBattery = setInterval(function() {
@@ -392,6 +395,9 @@ function magic() {
         // document.getElementById('nob3-1').onclick=function() { step3(); };	
     } else if (simsubscreennum == 4) {
         //stopping the blink.
+        clearInterval(myIntForBattery);
+        document.getElementById('arrow1').style.visibility = "hidden";
+
         clearInterval(myInt);
         document.getElementById("below_arrow" + arrowCount).style.visibility = "hidden";
         // hiding the 14 wind flow direction arrows.
@@ -996,7 +1002,7 @@ function refresh1() {
     // document.getElementById('can6-4').innerHTML="Weight of flask + kerosene (W<sub>4</sub>) = ";
     // document.getElementById('can6-5').innerHTML="Weight of flask+water (W<sub>5</sub>) =";
 
-    document.getElementById('v1').innerHTML = "";
+    // document.getElementById('v1').innerHTML = "";
     document.getElementById('v2').innerHTML = "";
     document.getElementById('v3').innerHTML = "";
     document.getElementById('v4').innerHTML = "";
@@ -1264,13 +1270,15 @@ function makeConnection1() {
     // ============================           THIS ARROW WAS FOR TESTING OF ARROW POSITIONING
     // document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 400px; top: 200px; height: 30px; z-index: 10;";
     // document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)";
+    document.getElementById("connection_explanation").innerText = "Choose any of the motor wire to make connection.";
     clearInterval(myIntForEscWires);
     document.getElementById("arrow1").style.visibility = "hidden";
-    totalCount += 1;
-    countOfEscAndMotor += 1;
     clickOnEscWire1 += 1;
     if (clickOnEscWire1 == 1) {
+        totalCount += 1;
+        countOfEscAndMotor += 1;
         console.log("Initial click");
+        console.log("Count of Esc and motor together in esc wire 1 is: (afterupdate) " + countOfEscAndMotor);
         for (var i = 1; i < 4; i++) {
             document.getElementById("motorWire" + i).style.cursor = "pointer";
         }
@@ -1291,12 +1299,12 @@ function makeConnection1() {
 
         // Blinking the wires
         blinkWires = setInterval(() => {
-                for (var i = 1; i < 4; i++) {
-                        if (document.getElementById("motorWire" + i).style.opacity == 100)
-                            document.getElementById("motorWire" + i).style.opacity = 0;
-                        else
-                            document.getElementById("motorWire" + i).style.opacity = 100;
-                }
+            for (var i = 1; i < 4; i++) {
+                if (document.getElementById("motorWire" + i).style.opacity == 100)
+                    document.getElementById("motorWire" + i).style.opacity = 0;
+                else
+                    document.getElementById("motorWire" + i).style.opacity = 100;
+            }
         }, 500);
     } else {
         alert("You have already chosen this, move forward!");
@@ -1307,14 +1315,19 @@ function makeConnection1() {
 clickOnEscWire2 = 0;
 
 function makeConnection2() {
+    document.getElementById("connection_explanation").innerText = "Click on any one of the available motor wire to do the second connection.";
     clearInterval(myIntForEscWires);
     document.getElementById("arrow1").style.visibility = "hidden";
-    console.log("Count of Esc and motor together is: " + countOfEscAndMotor);
-    if (countOfEscAndMotor == 1) {
+    console.log("Count of Esc and motor together in esc wire 2 is: (beforeupdate) " + countOfEscAndMotor);
+    if (countOfEscAndMotor == 1 || countOfEscAndMotor == 3) {
         alert("You need to choose motor wire now!");
     } else if (countOfEscAndMotor == 0) {
         alert("You need to choose the first wire initially!")
-    } else {
+    } 
+    else if (countOfEscAndMotor == 4) {
+        alert("You need to choose next esc wire!")
+    }
+    else {
         countOfEscAndMotor += 1;
         totalCount += 1;
         clickOnEscWire2 += 1;
@@ -1330,30 +1343,31 @@ function makeConnection2() {
             document.getElementById("escWire2").style.cursor = "none";
             document.getElementById("escWire2").setAttribute('disabled', 'true');
             // Arrow blinking showing where to click
-        myIntForMotorWires = setInterval(function() {
-            animatearrowForEscDcConnection();
-        }, 500);
-        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 300px; height: 25px; z-index: 10;";
+            myIntForMotorWires = setInterval(function() {
+                animatearrowForEscDcConnection();
+            }, 500);
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 115px; top: 300px; height: 25px; z-index: 10;";
 
-        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
-        // Code for IE9
-        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
-        // Standard syntax
-        document.getElementById("arrow1").style.transform = "rotate(180deg)";
-        // Blink wires
-        blinkWires = setInterval(() => {
-            arr.forEach(element => {
-                for (let i = 1; i < 4; i++) {
-                    if (i !== element) {
-                        if (document.getElementById("motorWire" + i).style.opacity == 100)
-                            document.getElementById("motorWire" + i).style.opacity = 0;
-                        else
-                            document.getElementById("motorWire" + i).style.opacity = 100;
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(180deg)";
+            // Blink wires
+            blinkWires = setInterval(() => {
+                arr.forEach(element => {
+                    for (let i = 1; i < 4; i++) {
+                        if (i !== element) {
+                            if (document.getElementById("motorWire" + i).style.opacity == 100)
+                                document.getElementById("motorWire" + i).style.opacity = 0;
+                            else
+                                document.getElementById("motorWire" + i).style.opacity = 100;
+                        }
+
                     }
-                }
                 });
 
-        }, 500);
+            }, 500);
         } else {
             alert("You have already chosen this, move forward!");
         }
@@ -1364,10 +1378,11 @@ function makeConnection2() {
 clickOnEscWire3 = 0;
 
 function makeConnection3() {
+    document.getElementById("connection_explanation").innerText = "Click on the last available motor wire to complete the connection.";
     clearInterval(myIntForEscWires);
     document.getElementById("arrow1").style.visibility = "hidden";
     var flagForEsc3 = 0;
-    if (countOfEscAndMotor == 1 || countOfEscAndMotor == 3) {
+    if (countOfEscAndMotor == 1 || countOfEscAndMotor == 3 || countOfEscAndMotor == 5) {
         alert("You need to choose motor wire now!");
     } else if (countOfEscAndMotor == 0) {
         alert("You need to choose the first wire initially!")
@@ -1405,14 +1420,14 @@ function makeConnection3() {
                 arr.forEach(eeee => {
                     for (let i = 1; i < 4; i++) {
                         if (i !== eeee) {
-                            if (document.getElementById("motorWire"+i).style.opacity == 100)
-                                document.getElementById("motorWire"+i).style.opacity = 0;
+                            if (document.getElementById("motorWire" + i).style.opacity == 100)
+                                document.getElementById("motorWire" + i).style.opacity = 0;
                             else
-                                document.getElementById("motorWire"+i).style.opacity = 100;
+                                document.getElementById("motorWire" + i).style.opacity = 100;
                         }
                     }
                 });
-    
+
             }, 500);
         } else {
             alert("You have already chosen this, move forward!(STEP 3)");
@@ -1435,6 +1450,7 @@ function motorConnection1() {
             countOfEscAndMotor += 1;
             clickOnMotorWire1 += 1;
             if (clickOnMotorWire1 == 1) {
+                document.getElementById("connection_explanation").innerText = "Choose the second ESC wire to start with next connection.";
                 clearInterval(blinkWires);
                 document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
                 document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1483,9 +1499,13 @@ function motorConnection1() {
             if (countOfEscAndMotor == 4) {
                 alert("You need to choose ESC first. (From 1st wire of motor after 2 selections of esc)")
             } else {
+                console.log("Count of Esc and motor together in motor wire 1 is: (beforeupdate) " + countOfEscAndMotor);
                 countOfEscAndMotor += 1;
                 clickOnMotorWire1 += 1;
+                console.log("Count of Esc and motor together in motor wire 1 is: (afterupdate) " + countOfEscAndMotor);
+                console.log("ESC and motor tog is: "+ countOfEscAndMotor);
                 if (clickOnMotorWire1 == 1) {
+                    document.getElementById("connection_explanation").innerText = "Click on the third ESC wire to do the last connection.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1532,9 +1552,11 @@ function motorConnection1() {
             if (flag1 == 0) {
                 //  console.log("This is from 1st wire but at step3. Value of clickOnMotorWire1 before an update is: "+ clickOnMotorWire1);
                 clickOnMotorWire1 += 1;
-                countOfEscAndMotor += 1;
+                
                 // console.log("This is from 1st wire but at step3. Value of clickOnMotorWire1 is: "+ clickOnMotorWire1);
                 if (clickOnMotorWire1 == 1) {
+                    countOfEscAndMotor += 1;
+                    document.getElementById("connection_explanation").innerText = "Well, you have completed the circuit.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1590,16 +1612,20 @@ var clickOnMotorWire2 = 0;
 function motorConnection2() {
     console.log("Total count is: " + totalCount);
 
-    if (countOfEscAndMotor == 2 || countOfEscAndMotor == 4) {
+    if (countOfEscAndMotor == 2 || countOfEscAndMotor == 4 || countOfEscAndMotor == 0) {
         alert("You need to choose esc wire initially!")
     } else {
         if (totalCount == 1) {
             if (countOfEscAndMotor == 2) {
                 alert("You need to choose the esc wire first!")
             } else {
-                countOfEscAndMotor += 1;
+                console.log("Count of Esc and motor together in motor wire 2 is: (beforeupdate) " + countOfEscAndMotor);
+                
                 clickOnMotorWire2 += 1;
+                console.log("Count of Esc and motor together in motor wire 2 is: (afterUpdate) " + countOfEscAndMotor);
                 if (clickOnMotorWire2 == 1) {
+                    countOfEscAndMotor += 1;
+                    document.getElementById("connection_explanation").innerText = "Click on the second ESC wire to do the next connection.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed";
                     document.getElementById("motorWire2").style.cursor = "not-allowed"; //disable this forever
@@ -1645,9 +1671,10 @@ function motorConnection2() {
             });
             if (flag2 == 0) {
 
-                countOfEscAndMotor += 1;
                 clickOnMotorWire2 += 1;
                 if (clickOnMotorWire2 == 1) {
+                    countOfEscAndMotor += 1;
+                    document.getElementById("connection_explanation").innerText = "Click on the third ESC wire to do the last connection.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1693,9 +1720,10 @@ function motorConnection2() {
             });
             if (flag2 == 0) {
 
-                countOfEscAndMotor += 1;
                 clickOnMotorWire2 += 1;
                 if (clickOnMotorWire2 == 1) {
+                    countOfEscAndMotor += 1;
+                    document.getElementById("connection_explanation").innerText = "Well, you have completed the circuit.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1715,7 +1743,8 @@ function motorConnection2() {
                     console.log("The 3to2 image made visible!");
                     if (countOfEscAndMotor == 6) {
                         console.log("Im inside a condition for 6, inside third of 2nd motor wire!");
-                        randomValue = Math.floor(Math.random() * 2);
+                        // randomValue = Math.floor(Math.random() * 2);
+                        randomValue = 0;
                         console.log("RANDOM VALUE FROM 2nd wire is: " + randomValue);
                         if (randomValue == 0) {
                             document.getElementById("updateClockAnti").textContent = "It is rotating anti-clock wise. Need to change the direction of the connection.";
@@ -1756,9 +1785,10 @@ function motorConnection3() {
             if (countOfEscAndMotor == 2) {
                 alert("You need to choose the esc wire first!")
             } else {
-                countOfEscAndMotor += 1;
                 clickOnMotorWire3 += 1;
                 if (clickOnMotorWire3 == 1) {
+                    countOfEscAndMotor += 1;
+                    document.getElementById("connection_explanation").innerText = "Click on the second ESC wire to do the next connection.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed";
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1803,9 +1833,10 @@ function motorConnection3() {
             });
             if (flag3 == 0) {
                 console.log("The value of motor and esc together is: " + countOfEscAndMotor);
-                countOfEscAndMotor += 1;
                 clickOnMotorWire3 += 1;
                 if (clickOnMotorWire3 == 1) {
+                    countOfEscAndMotor += 1;
+                    document.getElementById("connection_explanation").innerText = "Click on the third ESC wire to do the last connection.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed";
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1850,9 +1881,10 @@ function motorConnection3() {
                 }
             });
             if (flag3 == 0) {
-                countOfEscAndMotor += 1;
                 clickOnMotorWire3 += 1;
                 if (clickOnMotorWire3 == 1) {
+                    countOfEscAndMotor += 1;
+                    document.getElementById("connection_explanation").innerText = "Well, you have completed the circuit.";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed";
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1902,16 +1934,10 @@ function motorConnection3() {
         }
     }
 }
-
+//-------------- SHOW THE APPARATUS----------
 function appear(id_name, top_px) {
     var part = document.getElementById(id_name);
-    // if (id_name === 'motor_iso') {
-    //     document.getElementById('view_text').style = "visibility:visible;position:absolute;top:400px;left:440px;";
-
-
-    // }
     part.style.visibility = "visible";
-    // part.style.opacity = 1;
     part.style.top = top_px;
     part.style.transition = "all 1s ease-in-out";
     if (id_name == 'motor_iso') {
@@ -1920,26 +1946,8 @@ function appear(id_name, top_px) {
 
 }
 
-// function view_more() {
-//     document.getElementById('equip').style = "visibility:visible;position:absolute;top:100px;left:100px;height:300px;width:400px;";
-//     document.getElementById('thrust').style.visibility = "hidden";
-//     document.getElementById('dc').style.visibility = "hidden";
-//     document.getElementById('esc').style.visibility = "hidden";
-//     document.getElementById('knob').style.visibility = "hidden";
-//     document.getElementById('motor').style.visibility = "hidden";
-//     document.getElementById("table_iso").style.visibility = "hidden";
 
-
-//     document.getElementById("thrust_iso").style.visibility = "hidden";
-//     document.getElementById("esc_iso").style.visibility = "hidden";
-//     document.getElementById("power_iso").style.visibility = "hidden";
-//     document.getElementById("knob_iso").style.visibility = "hidden";
-//     document.getElementById("motor_iso").style.visibility = "hidden";
-//     // console.log("hello");
-
-
-// }
-
+//---------SELECT MOTOR AND PROPELLER PAGE--------
 function select() {
     document.getElementById('all_comp').style.visibility = "hidden";
     document.getElementById('prop_fan').style.visibility = "hidden";
@@ -1957,7 +1965,7 @@ function select() {
     document.getElementById('60%').style.visibility = "hidden";
     document.getElementById('80%').style.visibility = "hidden";
     document.getElementById('100%').style.visibility = "hidden";
-    // hiding next button of previousb table with all equipments.
+
     document.getElementById('select_mp').style.visibility = "hidden";
     document.getElementById('thrust').style = "opacity:0;";
     document.getElementById('dc').style = "opacity:0;";
@@ -1974,10 +1982,8 @@ function select() {
     document.getElementById('select_motor').style.visibility = "visible";
     document.getElementById('pumptext').innerHTML = "Select a motor and then a propeller to place on the thrustmeter.";
     document.getElementById("nextButton").style.visibility = "hidden";
-
-
-    //     console.log("hello");
 }
+
 
 function motor(prop_name) {
     for (let i = 1; i <= 8; i++) {
@@ -1996,12 +2002,12 @@ function motor(prop_name) {
     var img_m = document.getElementById('m_1');
     img_m.style.visibility = "visible";
     document.getElementById('nextButton').style.visibility = "hidden";
-
+    // if (new_select = 1) {
+    //     document.getElementById('motor' + m_id).style.visibility = "hidden";
+    // }
 
 
 }
-var m_id;
-var p_id;
 
 function prop(motor_id, prop_id) {
 
@@ -2030,11 +2036,17 @@ function prop(motor_id, prop_id) {
 
 
 }
+
+
+
 console.log(m_id);
 console.log(p_id);
 
 function place_motor() {
     clearInterval(myInt);
+    if (new_select = 1) {
+        document.getElementById(m_id + '_' + p_id).style.visibility = "hidden";
+    }
     document.getElementById('arrow1').style.visibility = "hidden";
     document.getElementById('equip').style.visibility = "visible";
     document.getElementById('motor_with_prop').style.visibility = "hidden";
@@ -2076,12 +2088,16 @@ function switch_battery() {
     document.getElementById('close_button').style.visibility = "hidden";
 
     document.getElementById('socket_plug').onclick = function() {
+        clearInterval(myIntForBattery);
+        document.getElementById('arrow1').style.visibility = "hidden";
         document.getElementById('socket_plug').style.visibility = "hidden";
         document.getElementById('socket_plugged_on').style.visibility = "visible";
         document.getElementById('on_off_switch').innerHTML = "ON";
         document.getElementById('close_button').style.visibility = "visible";
 
         document.getElementById('socket_plugged_on').onclick = function() {
+            clearInterval(myIntForBattery);
+            document.getElementById('arrow1').style.visibility = "hidden";
             document.getElementById('socket_plug').style.visibility = "visible";
             document.getElementById('socket_plugged_on').style.visibility = "hidden";
             document.getElementById('on_off_switch').innerHTML = "OFF";
@@ -2093,6 +2109,8 @@ function switch_battery() {
 
 function close_plug() {
     myStopFunction();
+    clearInterval(myIntForBattery);
+
     document.getElementById('close_button').style.visibility = "hidden";
     document.getElementById('socket_plug').style.visibility = "hidden";
     document.getElementById('on_off_switch').style.visibility = "hidden";
@@ -2276,6 +2294,7 @@ function throttle_click(name) {
         if (m_id == '8' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = thrust_data[20][2] + "g";
         }
+        myStopFunction();
         document.getElementById('arrow1').style.visibility = "hidden";
         // document.getElementById('thrust_value').innerHTML = "0g";
         p.style.animation = "rotate 0s linear 1s infinite";
@@ -2576,6 +2595,8 @@ function throttle_click(name) {
 var new_motor_selected_thrust = 1;
 
 function generate_table() {
+    myStopFunction();
+    document.getElementById('arrow1').style.visibility = "hidden";
     document.getElementById('pumptext-3').innerHTML = "The table shows the value of the thrust of the motor for each throttle value. ";
     var table = document.getElementById("thrust_table");
     document.getElementById('all_comp').style.visibility = "hidden";
@@ -2597,8 +2618,7 @@ function generate_table() {
     document.getElementById('100%').style.visibility = "hidden";
 
     document.getElementById('generate_table').style.visibility = "hidden";
-    myStopFunction();
-    document.getElementById('arrow1').style.visibility = "hidden";
+
 
     document.getElementById('thrust_table').style.visibility = "visible";
 
