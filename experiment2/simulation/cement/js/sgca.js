@@ -327,7 +327,7 @@ function magic() {
             document.getElementById("esc_dc_connector").style.visibility = "visible";
             document.getElementById("esc_thr_connector").style.visibility = "visible";
             document.getElementById("updateClockAnti").innerText = "";
-            document.getElementById("updateClockAnti").classList.remove("dangerClockAnti","successClockAnti");
+            document.getElementById("updateClockAnti").classList.remove("dangerClockAnti", "successClockAnti");
         }
 
         myIntForEscWires = setInterval(function() {
@@ -1327,11 +1327,9 @@ function makeConnection2() {
         alert("You need to choose motor wire now!");
     } else if (countOfEscAndMotor == 0) {
         alert("You need to choose the first wire initially!")
-    } 
-    else if (countOfEscAndMotor == 4) {
+    } else if (countOfEscAndMotor == 4) {
         alert("You need to choose next esc wire!")
-    }
-    else {
+    } else {
         countOfEscAndMotor += 1;
         totalCount += 1;
         clickOnEscWire2 += 1;
@@ -1448,7 +1446,7 @@ function motorConnection1() {
     console.log("Total count is: " + totalCount);
     if (totalCount == 1) {
         if (countOfEscAndMotor == 2) {
-            console.log("Value of Esc and motor tog is: "+ countOfEscAndMotor);
+            console.log("Value of Esc and motor tog is: " + countOfEscAndMotor);
             alert("You need to choose the esc wire first!")
         } else {
             countOfEscAndMotor += 1;
@@ -1507,7 +1505,7 @@ function motorConnection1() {
                 countOfEscAndMotor += 1;
                 clickOnMotorWire1 += 1;
                 console.log("Count of Esc and motor together in motor wire 1 is: (afterupdate) " + countOfEscAndMotor);
-                console.log("ESC and motor tog is: "+ countOfEscAndMotor);
+                console.log("ESC and motor tog is: " + countOfEscAndMotor);
                 if (clickOnMotorWire1 == 1) {
                     document.getElementById("connection_explanation").innerText = "Click on the third ESC wire to do the last connection.";
                     clearInterval(blinkWires);
@@ -1556,7 +1554,7 @@ function motorConnection1() {
             if (flag1 == 0) {
                 //  console.log("This is from 1st wire but at step3. Value of clickOnMotorWire1 before an update is: "+ clickOnMotorWire1);
                 clickOnMotorWire1 += 1;
-                
+
                 // console.log("This is from 1st wire but at step3. Value of clickOnMotorWire1 is: "+ clickOnMotorWire1);
                 if (clickOnMotorWire1 == 1) {
                     countOfEscAndMotor += 1;
@@ -1624,7 +1622,7 @@ function motorConnection2() {
                 alert("You need to choose the esc wire first!")
             } else {
                 console.log("Count of Esc and motor together in motor wire 2 is: (beforeupdate) " + countOfEscAndMotor);
-                
+
                 clickOnMotorWire2 += 1;
                 console.log("Count of Esc and motor together in motor wire 2 is: (afterUpdate) " + countOfEscAndMotor);
                 if (clickOnMotorWire2 == 1) {
@@ -1972,17 +1970,30 @@ function select() {
     document.getElementById('100%').style.visibility = "hidden";
 
     document.getElementById('select_mp').style.visibility = "hidden";
-    document.getElementById('thrust').style = "opacity:0;";
-    document.getElementById('dc').style = "opacity:0;";
-    document.getElementById('esc').style = "opacity:0;";
-    document.getElementById('knob').style = "opacity:0;";
-    document.getElementById('motor').style = "opacity:0;";
+    // document.getElementById('thrust').style = "opacity:0;";
+    // document.getElementById('dc').style = "opacity:0;";
+    // document.getElementById('esc').style = "opacity:0;";
+    // document.getElementById('knob').style = "opacity:0;";
+    // document.getElementById('motor').style = "opacity:0;";
     document.getElementById('table_iso').style = "opacity:0;";
-    document.getElementById('power_iso').style = "opacity:0;";
-    document.getElementById('knob_iso').style = "opacity:0;";
-    document.getElementById('thrust_iso').style = "opacity:0;";
-    document.getElementById('esc_iso').style = "opacity:0;";
-    document.getElementById("motor_iso").style = "opacity:0;";
+    // document.getElementById('power_iso').style = "opacity:0;";
+    // document.getElementById('knob_iso').style = "opacity:0;";
+    // document.getElementById('thrust_iso').style = "opacity:0;";
+    // document.getElementById('esc_iso').style = "opacity:0;";
+    // document.getElementById('motor_iso').style = "opacity:0;";
+    document.getElementById('thrust').style.visibility = "hidden";
+    document.getElementById('dc').style.visibility = "hidden";
+    document.getElementById('esc').style.visibility = "hidden";
+    document.getElementById('knob').style.visibility = "hidden";
+    document.getElementById('motor').style.visibility = "hidden";
+    document.getElementById('table_iso').style.visibility = "hidden";
+    document.getElementById('power_iso').style.visibility = "hidden";
+    document.getElementById('knob_iso').style.visibility = "hidden";
+    document.getElementById('thrust_iso').style.visibility = "hidden";
+    document.getElementById('esc_iso').style.visibility = "hidden";
+    document.getElementById('desc_button').style.visibility = "hidden";
+
+    document.getElementById("motor_iso").style.visibility = "hidden";
     document.getElementById('equip').style.visibility = "visible";
     document.getElementById('equip').style.top = "220px";
     document.getElementById('select_motor').style.visibility = "visible";
@@ -2002,9 +2013,20 @@ function motor(prop_name) {
     var p_name = document.getElementById('p_' + prop_name)
     p_name.style.visibility = "visible";
     p_name.style.opacity = 1;
-
+    document.getElementById('thrust').style.visibility = "hidden";
+    document.getElementById('dc').style.visibility = "hidden";
+    document.getElementById('esc').style.visibility = "hidden";
+    document.getElementById('knob').style.visibility = "hidden";
+    document.getElementById('motor').style.visibility = "hidden";
+    document.getElementById('table_iso').style.visibility = "hidden";
+    document.getElementById('power_iso').style.visibility = "hidden";
+    document.getElementById('knob_iso').style.visibility = "hidden";
+    document.getElementById('thrust_iso').style.visibility = "hidden";
+    document.getElementById('esc_iso').style.visibility = "hidden";
+    document.getElementById("motor_iso").style.visibility = "hidden";
     document.getElementById('motor_with_prop').style.visibility = "hidden";
     document.getElementById('motor_prop_desc').style.visibility = "visible";
+    document.getElementById('desc_button').style.visibility = "hidden";
 
     console.log('hello');
     // document.getElementById('select_prop').style.visibility = "visible";
@@ -2018,21 +2040,21 @@ function motor(prop_name) {
     // }
 
     if (prop_name == '1')
-        document.getElementById('motor_prop_desc').innerHTML = "MN indicates the motor's Model number and 1005 is the series number. 90 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN1005_KV90</strong><br>MN indicates the motor's Model number and 1005 is the series number. 90 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
     if (prop_name == '2')
-        document.getElementById('motor_prop_desc').innerHTML = "MN indicates the motor's Model number and 3508 is the series number. 380 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN3508_KV380</strong><br>MN indicates the motor's Model number and 3508 is the series number. 380 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
     if (prop_name == '3')
-        document.getElementById('motor_prop_desc').innerHTML = "MN indicates the motor's Model number and 3508 is the series number. 580 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN3508_KV580</strong><br>MN indicates the motor's Model number and 3508 is the series number. 580 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
     if (prop_name == '4')
-        document.getElementById('motor_prop_desc').innerHTML = "MN indicates the motor's Model number and 3508 is the series number. 700 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN3508_KV700</strong><br>MN indicates the motor's Model number and 3508 is the series number. 700 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
     if (prop_name == '5')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U11 II indicates the motor's Model number. 120 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: T-MOTOR U11 II KV120</strong><br>T-MOTOR is the Company name, U11 II indicates the motor's Model number. 120 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
     if (prop_name == '6')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 85 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: T-MOTOR U8 Lite KV85</strong><br>T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 85 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
     if (prop_name == '7')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 150 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: T-MOTOR U8 Lite KV150</strong><br>T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 150 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
     if (prop_name == '8')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: T-MOTOR U8 Lite KV190</strong><br>T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
 
 
 }
@@ -2045,6 +2067,18 @@ function prop(motor_id, prop_id) {
     document.getElementById('select_motor').style.visibility = "hidden";
     document.getElementById('rpm_indicator').style.visibility = "hidden";
     document.getElementById('nextButton').style.visibility = "hidden";
+    document.getElementById('thrust').style.visibility = "hidden";
+    document.getElementById('dc').style.visibility = "hidden";
+    document.getElementById('esc').style.visibility = "hidden";
+    document.getElementById('knob').style.visibility = "hidden";
+    document.getElementById('motor').style.visibility = "hidden";
+    document.getElementById('table_iso').style.visibility = "hidden";
+    document.getElementById('power_iso').style.visibility = "hidden";
+    document.getElementById('knob_iso').style.visibility = "hidden";
+    document.getElementById('thrust_iso').style.visibility = "hidden";
+    document.getElementById('esc_iso').style.visibility = "hidden";
+    document.getElementById("motor_iso").style.visibility = "hidden";
+    document.getElementById('desc_button').style.visibility = "hidden";
 
     myInt = setInterval(function() { animatearrow(); }, 500);
     document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 105px; top: 380px; height: 40px; z-index: 10;";
@@ -2065,47 +2099,47 @@ function prop(motor_id, prop_id) {
     console.log(p_id);
 
     if (motor_id == '1' && prop_id == '1')
-        document.getElementById('motor_prop_desc').innerHTML = "MN indicates the motor's Model number and 1005 is the series number. 90 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN1005_KV90</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR G30*10.5</strong><br>MN indicates the motor's Model number and 1005 is the series number. 90 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 30 inches and pitch 10.5 . T-MOTOR is the Company name and G refers to the series. ";
     if (motor_id == '1' && prop_id == '2')
-        document.getElementById('motor_prop_desc').innerHTML = "MN indicates the motor's Model number and 3508 is the series number. 380 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN1005_KV90</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR G32*11</strong><br>MN indicates the motor's Model number and 1005 is the series number. 90 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 32 inches and pitch 11 . T-MOTOR is the Company name and G refers to the series.";
     if (motor_id == '2' && prop_id == '1')
-        document.getElementById('motor_prop_desc').innerHTML = "MN indicates the motor's Model number and 3508 is the series number. 580 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN3508_KV380</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR 12*4CF</strong><br>MN indicates the motor's Model number and 3508 is the series number. 380 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 12 inches and pitch 4 . T-MOTOR is the Company name and CF means that the material used is Carbon fibre.";
     if (motor_id == '2' && prop_id == '2')
-        document.getElementById('motor_prop_desc').innerHTML = "MN indicates the motor's Model number and 3508 is the series number. 700 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN3508_KV380</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR 13*4.4CF</strong><br>MN indicates the motor's Model number and 3508 is the series number. 380 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 13 inches and pitch 4.4 . T-MOTOR is the Company name and CF means that the material used is Carbon fibre.";
     if (motor_id == '2' && prop_id == '3')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U11 II indicates the motor's Model number. 120 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN3508_KV380</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR 14*4.8CF</strong><br>MN indicates the motor's Model number and 3508 is the series number. 380 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 14 inches and pitch 4.8 . CF means that the material used is Carbon fibre.";
     if (motor_id == '2' && prop_id == '4')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 85 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN3508_KV380</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR 15*5CF</strong><br>MN indicates the motor's Model number and 3508 is the series number. 380 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 15 and pitch 5 . T-MOTOR is the Company name and CF means that the material used is Carbon fibre.";
     if (motor_id == '3' && prop_id == '1')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 150 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN3508_KV580</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR 12*4CF</strong><br>MN indicates the motor's Model number and 3508 is the series number. 580 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 12 and pitch 4 . T-MOTOR is the Company name and CF means that the material used is Carbon fibre.";
     if (motor_id == '3' && prop_id == '2')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN3508_KV580</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR 13*4.4CF</strong><br>MN indicates the motor's Model number and 3508 is the series number. 580 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 13 and pitch 4.4 . T-MOTOR is the Company name and CF means that the material used is Carbon fibre.";
     if (motor_id == '3' && prop_id == '3')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN3508_KV580</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR 14*4.8CF</strong><br>MN indicates the motor's Model number and 3508 is the series number. 580 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 14 and pitch 4.8 . T-MOTOR is the Company name and CF means that the material used is Carbon fibre.";
     if (motor_id == '4' && prop_id == '1')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN3508_KV700</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR 12*4CF</strong><br>MN indicates the motor's Model number and 3508 is the series number. 700 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 12 and pitch 4 . T-MOTOR is the Company name and CF means that the material used is Carbon fibre.";
     if (motor_id == '4' && prop_id == '2')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN3508_KV700</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR 13*4.4CF</strong><br>MN indicates the motor's Model number and 3508 is the series number. 700 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 13 and pitch 4.4 . T-MOTOR is the Company name and CF means that the material used is Carbon fibre.";
     if (motor_id == '4' && prop_id == '3')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN3508_KV700</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR 11*3.7CF</strong><br>MN indicates the motor's Model number and 3508 is the series number. 700 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 11 and pitch 3.7 . T-MOTOR is the Company name and CF means that the material used is Carbon fibre.";
     if (motor_id == '5' && prop_id == '1')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: T-MOTOR U11 II KV120</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR 26*8.5CF</strong><br>T-MOTOR is the Company name, U11 II indicates the motor's Model number. 120 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 26 and pitch 8.5 . CF means that the material used is Carbon fibre.";
     if (motor_id == '5' && prop_id == '2')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: T-MOTOR U11 II KV120</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR 27*8.8CF</strong><br>T-MOTOR is the Company name, U11 II indicates the motor's Model number. 120 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 27 and pitch 8.8 . CF means that the material used is Carbon fibre.";
     if (motor_id == '5' && prop_id == '3')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: T-MOTOR U11 II KV120</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR 28*9.2CF</strong><br>T-MOTOR is the Company name, U11 II indicates the motor's Model number. 120 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 28 and pitch 9.2 . CF means that the material used is Carbon fibre.";
     if (motor_id == '6' && prop_id == '1')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: T-MOTOR U8 Lite KV85</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR G28*9.2CF</strong><br>T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 85 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 28 and pitch 9.2 . G is the series and CF means that the material used is Carbon fibre.";
     if (motor_id == '6' && prop_id == '2')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: T-MOTOR U8 Lite KV85</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR G29*9.5CF</strong><br>T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 85 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 29 and pitch 9.5 . G is the series and CF means that the material used is Carbon fibre.";
     if (motor_id == '7' && prop_id == '1')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: T-MOTOR U8 Lite KV150</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR G30*10.5CF</strong><br>T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 150 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 30 and pitch 10.5 . G is the series and CF means that the material used is Carbon fibre.";
     if (motor_id == '7' && prop_id == '2')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: T-MOTOR U8 Lite KV150</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR G22*7.2CF</strong><br>T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 150 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 22 and pitch 7.2 . G is the series and CF means that the material used is Carbon fibre.";
     if (motor_id == '8' && prop_id == '1')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: T-MOTOR U8 Lite KV190</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR G28*9.2CF</strong><br>T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 28 and pitch 9.2 . G is the series and CF means that the material used is Carbon fibre.";
     if (motor_id == '8' && prop_id == '2')
-        document.getElementById('motor_prop_desc').innerHTML = "T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
+        document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: T-MOTOR U8 Lite KV190</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR G29*9.5CF</strong><br>T-MOTOR is the Company name, U8 Lite indicates the motor's Model number. 190 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 29 and pitch 9.5 . G is the series and CF means that the material used is Carbon fibre.";
 
 
 }
@@ -2132,7 +2166,18 @@ function place_motor() {
     document.getElementById('rpm_indicator').style.visibility = "hidden";
     document.getElementById('motor_prop_desc').style.visibility = "hidden";
 
-
+    document.getElementById('thrust').style.visibility = "hidden";
+    document.getElementById('dc').style.visibility = "hidden";
+    document.getElementById('esc').style.visibility = "hidden";
+    document.getElementById('knob').style.visibility = "hidden";
+    document.getElementById('motor').style.visibility = "hidden";
+    document.getElementById('table_iso').style.visibility = "hidden";
+    document.getElementById('power_iso').style.visibility = "hidden";
+    document.getElementById('knob_iso').style.visibility = "hidden";
+    document.getElementById('thrust_iso').style.visibility = "hidden";
+    document.getElementById('esc_iso').style.visibility = "hidden";
+    document.getElementById("motor_iso").style.visibility = "hidden";
+    document.getElementById('desc_button').style.visibility = "hidden";
 
     for (let i = 1; i <= 8; i++) {
         document.getElementById('select_prop' + i).style.visibility = "hidden";
