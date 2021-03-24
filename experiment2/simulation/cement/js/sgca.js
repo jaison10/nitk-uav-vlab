@@ -233,6 +233,7 @@ function magic() {
 
     if (simsubscreennum == 1) {
         // this is for STEP1
+        document.getElementById('select_motor').style.visibility = "hidden";
         refresh1();
         document.getElementById('nextButton').style.visibility = "hidden";
         document.getElementById("select_mp").style.visibility = "hidden";
@@ -242,6 +243,10 @@ function magic() {
         document.getElementById("thrust_value").style.visibility = "hidden";
         document.getElementById("arrow1").style.visibility = "hidden";
         document.getElementById('rpm_indicator').style.visibility = "hidden";
+        if (new_select == 1) {
+            document.getElementById('select_motor').style.visibility = "hidden";
+
+        }
 
 
         for (let i = 0; i <= 4; i++) {
@@ -354,7 +359,7 @@ function magic() {
         document.getElementById('rpm_indicator').style.visibility = "hidden";
 
 
-        document.getElementById("nextButton").style.visibility = "visible";
+        // document.getElementById("nextButton").style.visibility = "visible";
         // myInt = setInterval(function(){ animateNewarrow(); }, 300);
 
     } else if (simsubscreennum == 3) {
@@ -1970,17 +1975,33 @@ function select() {
     document.getElementById('100%').style.visibility = "hidden";
 
     document.getElementById('select_mp').style.visibility = "hidden";
-    // document.getElementById('thrust').style = "opacity:0;";
-    // document.getElementById('dc').style = "opacity:0;";
-    // document.getElementById('esc').style = "opacity:0;";
-    // document.getElementById('knob').style = "opacity:0;";
-    // document.getElementById('motor').style = "opacity:0;";
-    document.getElementById('table_iso').style = "opacity:0;";
-    // document.getElementById('power_iso').style = "opacity:0;";
-    // document.getElementById('knob_iso').style = "opacity:0;";
-    // document.getElementById('thrust_iso').style = "opacity:0;";
-    // document.getElementById('esc_iso').style = "opacity:0;";
-    // document.getElementById('motor_iso').style = "opacity:0;";
+
+    document.getElementById('thrust').style.opacity = 0;
+    document.getElementById('dc').style.opacity = 0;
+    document.getElementById('esc').style.opacity = 0;
+    document.getElementById('knob').style.opacity = 0;
+    document.getElementById('motor').style.opacity = 0;
+    document.getElementById('power_iso').style.opacity = 0;
+    document.getElementById('knob_iso').style.opacity = 0;
+    document.getElementById('thrust_iso').style.opacity = 0;
+    document.getElementById('esc_iso').style.opacity = 0;
+    document.getElementById('motor_iso').style.opacity = 0;
+    document.getElementById('table_iso').style.opacity = 0;
+
+    document.getElementById('table_iso').style.visibility = "hidden";
+
+
+    document.getElementById('thrust').style.opacity = 0;
+    document.getElementById('dc').style.opacity = 0;
+    document.getElementById('esc').style.opacity = 0;
+    document.getElementById('knob').style.opacity = 0;
+    document.getElementById('motor').style.opacity = 0;
+    document.getElementById('power_iso').style.opacity = 0;
+    document.getElementById('knob_iso').style.opacity = 0;
+    document.getElementById('thrust_iso').style.opacity = 0;
+    document.getElementById('esc_iso').style.opacity = 0;
+    document.getElementById('motor_iso').style.opacity = 0;
+
     document.getElementById('thrust').style.visibility = "hidden";
     document.getElementById('dc').style.visibility = "hidden";
     document.getElementById('esc').style.visibility = "hidden";
@@ -1992,8 +2013,7 @@ function select() {
     document.getElementById('thrust_iso').style.visibility = "hidden";
     document.getElementById('esc_iso').style.visibility = "hidden";
     document.getElementById('desc_button').style.visibility = "hidden";
-
-    document.getElementById("motor_iso").style.visibility = "hidden";
+    document.getElementById('motor_iso').style.visibility = "hidden";
     document.getElementById('equip').style.visibility = "visible";
     document.getElementById('equip').style.top = "220px";
     document.getElementById('select_motor').style.visibility = "visible";
@@ -2013,6 +2033,7 @@ function motor(prop_name) {
     var p_name = document.getElementById('p_' + prop_name)
     p_name.style.visibility = "visible";
     p_name.style.opacity = 1;
+    document.getElementById('select_motor').style.visibility = "visible";
     document.getElementById('thrust').style.visibility = "hidden";
     document.getElementById('dc').style.visibility = "hidden";
     document.getElementById('esc').style.visibility = "hidden";
@@ -2077,7 +2098,7 @@ function prop(motor_id, prop_id) {
     document.getElementById('knob_iso').style.visibility = "hidden";
     document.getElementById('thrust_iso').style.visibility = "hidden";
     document.getElementById('esc_iso').style.visibility = "hidden";
-    document.getElementById("motor_iso").style.visibility = "hidden";
+    document.getElementById('motor_iso').style.visibility = "hidden";
     document.getElementById('desc_button').style.visibility = "hidden";
 
     myInt = setInterval(function() { animatearrow(); }, 500);
@@ -2176,7 +2197,7 @@ function place_motor() {
     document.getElementById('knob_iso').style.visibility = "hidden";
     document.getElementById('thrust_iso').style.visibility = "hidden";
     document.getElementById('esc_iso').style.visibility = "hidden";
-    document.getElementById("motor_iso").style.visibility = "hidden";
+    document.getElementById('motor_iso').style.visibility = "hidden";
     document.getElementById('desc_button').style.visibility = "hidden";
 
     for (let i = 1; i <= 8; i++) {
