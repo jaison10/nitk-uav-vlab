@@ -1334,8 +1334,7 @@ function makeConnection2() {
         alert("You need to choose the first wire initially!")
     } else if (countOfEscAndMotor == 4) {
         alert("You need to choose next esc wire!")
-    }
-    else {
+    } else {
         document.getElementById("connection_explanation").innerText = "Click on any one of the available motor wire to do the second connection.";
         countOfEscAndMotor += 1;
         totalCount += 1;
@@ -1948,7 +1947,7 @@ function appear(id_name, top_px) {
     var part = document.getElementById(id_name);
     part.style.visibility = "visible";
     part.style.top = top_px;
-    part.style.transition = "all 1s ease-in-out";
+    part.style.transition = "top 1s ease-in-out";
     if (id_name == 'motor_iso') {
         document.getElementById("select_mp").style.visibility = "visible";
     }
@@ -1983,11 +1982,11 @@ function select() {
     document.getElementById('esc').style.opacity = 0;
     document.getElementById('knob').style.opacity = 0;
     document.getElementById('motor').style.opacity = 0;
-    document.getElementById('power_iso').style.opacity = 0;
-    document.getElementById('knob_iso').style.opacity = 0;
-    document.getElementById('thrust_iso').style.opacity = 0;
-    document.getElementById('esc_iso').style.opacity = 0;
-    document.getElementById('motor_iso').style.opacity = 0;
+    // document.getElementById('power_iso').style.opacity = 0;
+    // document.getElementById('knob_iso').style.opacity = 0;
+    // document.getElementById('thrust_iso').style.opacity = 0;
+    // document.getElementById('esc_iso').style.opacity = 0;
+    // document.getElementById('motor_iso').style.opacity = 0;
     document.getElementById('table_iso').style.opacity = 0;
 
     document.getElementById('table_iso').style.visibility = "hidden";
@@ -1998,11 +1997,11 @@ function select() {
     document.getElementById('esc').style.opacity = 0;
     document.getElementById('knob').style.opacity = 0;
     document.getElementById('motor').style.opacity = 0;
-    document.getElementById('power_iso').style.opacity = 0;
-    document.getElementById('knob_iso').style.opacity = 0;
-    document.getElementById('thrust_iso').style.opacity = 0;
-    document.getElementById('esc_iso').style.opacity = 0;
-    document.getElementById('motor_iso').style.opacity = 0;
+    // document.getElementById('power_iso').style.opacity = 0;
+    // document.getElementById('knob_iso').style.opacity = 0;
+    // document.getElementById('thrust_iso').style.opacity = 0;
+    // document.getElementById('esc_iso').style.opacity = 0;
+    // document.getElementById('motor_iso').style.opacity = 0;
 
     document.getElementById('thrust').style.visibility = "hidden";
     document.getElementById('dc').style.visibility = "hidden";
@@ -2206,7 +2205,7 @@ function place_motor() {
         document.getElementById('select_prop' + i).style.visibility = "hidden";
     }
 
-    document.getElementById('pumptext').innerHTML = "The apparatus thus ready for the connection.";
+    document.getElementById('pumptext').innerHTML = "The apparatus is thus ready for the connection.";
     // document.getElementById('equip').onclick = function() { step1() };
 
     // myInt = setInterval(function() {
