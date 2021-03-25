@@ -1978,32 +1978,6 @@ function select() {
 
     document.getElementById('select_mp').style.visibility = "hidden";
 
-    document.getElementById('thrust').style.opacity = 0;
-    document.getElementById('dc').style.opacity = 0;
-    document.getElementById('esc').style.opacity = 0;
-    document.getElementById('knob').style.opacity = 0;
-    document.getElementById('motor').style.opacity = 0;
-    // document.getElementById('power_iso').style.opacity = 0;
-    // document.getElementById('knob_iso').style.opacity = 0;
-    // document.getElementById('thrust_iso').style.opacity = 0;
-    // document.getElementById('esc_iso').style.opacity = 0;
-    // document.getElementById('motor_iso').style.opacity = 0;
-    document.getElementById('table_iso').style.opacity = 0;
-
-    document.getElementById('table_iso').style.visibility = "hidden";
-
-
-    document.getElementById('thrust').style.opacity = 0;
-    document.getElementById('dc').style.opacity = 0;
-    document.getElementById('esc').style.opacity = 0;
-    document.getElementById('knob').style.opacity = 0;
-    document.getElementById('motor').style.opacity = 0;
-    // document.getElementById('power_iso').style.opacity = 0;
-    // document.getElementById('knob_iso').style.opacity = 0;
-    // document.getElementById('thrust_iso').style.opacity = 0;
-    // document.getElementById('esc_iso').style.opacity = 0;
-    // document.getElementById('motor_iso').style.opacity = 0;
-
     document.getElementById('thrust').style.visibility = "hidden";
     document.getElementById('dc').style.visibility = "hidden";
     document.getElementById('esc').style.visibility = "hidden";
@@ -2016,6 +1990,19 @@ function select() {
     document.getElementById('esc_iso').style.visibility = "hidden";
     document.getElementById('desc_button').style.visibility = "hidden";
     document.getElementById('motor_iso').style.visibility = "hidden";
+    document.getElementById('thrust').style.opacity = 0;
+    document.getElementById('dc').style.opacity = 0;
+    document.getElementById('esc').style.opacity = 0;
+    document.getElementById('knob').style.opacity = 0;
+    document.getElementById('motor').style.opacity = 0;
+
+    document.getElementById('table_iso').style.opacity = 0;
+
+    document.getElementById('table_iso').style.visibility = "hidden";
+
+
+
+
     document.getElementById('equip').style.visibility = "visible";
     document.getElementById('equip').style.top = "220px";
     document.getElementById('select_motor').style.visibility = "visible";
