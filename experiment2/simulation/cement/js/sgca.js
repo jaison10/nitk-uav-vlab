@@ -1974,6 +1974,7 @@ function select() {
     document.getElementById('60%').style.visibility = "hidden";
     document.getElementById('80%').style.visibility = "hidden";
     document.getElementById('100%').style.visibility = "hidden";
+    document.getElementById('motor_prop_desc').style.visibility = "hidden";
 
     document.getElementById('select_mp').style.visibility = "hidden";
 
@@ -2048,6 +2049,7 @@ function motor(prop_name) {
     document.getElementById("motor_iso").style.visibility = "hidden";
     document.getElementById('motor_with_prop').style.visibility = "hidden";
     document.getElementById('motor_prop_desc').style.visibility = "visible";
+    document.getElementById('motor_prop_desc').style.top = "80px";
 
 
     document.getElementById('desc_button').style.visibility = "hidden";
@@ -2103,6 +2105,10 @@ function prop(motor_id, prop_id) {
     document.getElementById('esc_iso').style.visibility = "hidden";
     document.getElementById('motor_iso').style.visibility = "hidden";
     document.getElementById('desc_button').style.visibility = "hidden";
+    if (new_select == 1) {
+        document.getElementById('motor_prop_desc').style.top = "50px";
+
+    }
     document.getElementById('motor_prop_desc').style.top = "50px";
     myInt = setInterval(function() { animatearrow(); }, 500);
     document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 105px; top: 380px; height: 40px; z-index: 10;";
@@ -2176,7 +2182,9 @@ console.log(p_id);
 function place_motor() {
     clearInterval(myInt);
     if (new_select = 1) {
-        document.getElementById(m_id + '_' + p_id).style.visibility = "hidden";
+
+        document.getElementById(m_id + '_' + p_id).remove();
+
     }
     document.getElementById("placement_info").innerText = "The motor is attached to the thrustmeter by clamping.";
     document.getElementById('arrow1').style.visibility = "hidden";
