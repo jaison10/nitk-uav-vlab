@@ -2942,7 +2942,7 @@ function throttle_click(name) {
             document.getElementById('rpm_value').innerHTML = "RPM:2569";
 
         }
-        p.style.animation = "rotate 0.0001s linear 1s infinite";
+        p.style.animation = "rotate 0.001s linear 1s infinite";
         document.getElementById('generate_table').style.visibility = "visible";
         document.getElementById('choose_motor').style.visibility = "hidden";
         document.getElementById('arrow1').style.visibility = "hidden";
