@@ -2377,108 +2377,108 @@ function throttle_click(name) {
 
         if (m_id == '1' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '1' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '2' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '2' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '2' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '2' && p_id == '4') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
 
         if (m_id == '3' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '3' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '3' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '4' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '4' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '4' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '5' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '5' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '5' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '6' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '6' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '7' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '7' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '8' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         if (m_id == '8' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "0g";
-            document.getElementById('rpm_value').innerHTML = "0";
+            document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
         myStopFunction();
@@ -2494,107 +2494,107 @@ function throttle_click(name) {
     if (name == '1') {
         if (m_id == '1' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "2096g";
-            document.getElementById('rpm_value').innerHTML = "1599";
+            document.getElementById('rpm_value').innerHTML = "RPM:1599";
 
         }
         if (m_id == '1' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "2607g";
-            document.getElementById('rpm_value').innerHTML = "1559";
+            document.getElementById('rpm_value').innerHTML = "RPM:1559";
 
         }
         if (m_id == '2' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "284g";
-            document.getElementById('rpm_value').innerHTML = "3820";
+            document.getElementById('rpm_value').innerHTML = "RPM:3820";
 
         }
         if (m_id == '2' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "384g";
-            document.getElementById('rpm_value').innerHTML = "3752";
+            document.getElementById('rpm_value').innerHTML = "RPM:3752";
 
         }
         if (m_id == '2' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "506g";
-            document.getElementById('rpm_value').innerHTML = "3860";
+            document.getElementById('rpm_value').innerHTML = "RPM:3860";
 
         }
         if (m_id == '2' && p_id == '4') {
             document.getElementById('thrust_value').innerHTML = "644g";
-            document.getElementById('rpm_value').innerHTML = "3540";
+            document.getElementById('rpm_value').innerHTML = "RPM:3540";
 
         }
         if (m_id == '3' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "222g";
-            document.getElementById('rpm_value').innerHTML = "3400";
+            document.getElementById('rpm_value').innerHTML = "RPM:3400";
 
         }
         if (m_id == '3' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "294g";
-            document.getElementById('rpm_value').innerHTML = "3480";
+            document.getElementById('rpm_value').innerHTML = "RPM:3480";
 
         }
         if (m_id == '3' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "414g";
-            document.getElementById('rpm_value').innerHTML = "3340";
+            document.getElementById('rpm_value').innerHTML = "RPM:3340";
 
         }
         if (m_id == '4' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "164g";
-            document.getElementById('rpm_value').innerHTML = "3280";
+            document.getElementById('rpm_value').innerHTML = "RPM:3280";
 
         }
         if (m_id == '4' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "192g";
-            document.getElementById('rpm_value').innerHTML = "3080";
+            document.getElementById('rpm_value').innerHTML = "RPM:3080";
 
         }
         if (m_id == '4' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "234g";
-            document.getElementById('rpm_value').innerHTML = "4660";
+            document.getElementById('rpm_value').innerHTML = "RPM:4660";
 
         }
         if (m_id == '5' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "2357g";
-            document.getElementById('rpm_value').innerHTML = "1978";
+            document.getElementById('rpm_value').innerHTML = "RPM:1978";
 
         }
         if (m_id == '5' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "2561g";
-            document.getElementById('rpm_value').innerHTML = "1963";
+            document.getElementById('rpm_value').innerHTML = "RPM:1963";
 
         }
         if (m_id == '5' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "2950g";
-            document.getElementById('rpm_value').innerHTML = "1934";
+            document.getElementById('rpm_value').innerHTML = "RPM:1934";
 
         }
         if (m_id == '6' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "1154g";
-            document.getElementById('rpm_value').innerHTML = "743";
+            document.getElementById('rpm_value').innerHTML = "RPM:743";
 
         }
         if (m_id == '6' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "1411g";
-            document.getElementById('rpm_value').innerHTML = "733";
+            document.getElementById('rpm_value').innerHTML = "RPM:733";
 
         }
         if (m_id == '7' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "1494g";
-            document.getElementById('rpm_value').innerHTML = "696";
+            document.getElementById('rpm_value').innerHTML = "RPM:696";
 
         }
         if (m_id == '7' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "1666g";
-            document.getElementById('rpm_value').innerHTML = "2589";
+            document.getElementById('rpm_value').innerHTML = "RPM:2589";
 
         }
         if (m_id == '8' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "1712g";
-            document.getElementById('rpm_value').innerHTML = "1095";
+            document.getElementById('rpm_value').innerHTML = "RPM:1095";
 
         }
         if (m_id == '8' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "1979g";
-            document.getElementById('rpm_value').innerHTML = "1051";
+            document.getElementById('rpm_value').innerHTML = "RPM:1051";
 
         }
         document.getElementById('arrow1').style.visibility = "hidden";
@@ -2608,108 +2608,108 @@ function throttle_click(name) {
     if (name == '2') {
         if (m_id == '1' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "4061g";
-            document.getElementById('rpm_value').innerHTML = "2187";
+            document.getElementById('rpm_value').innerHTML = "RPM:2187";
 
         }
         if (m_id == '1' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "4962g";
-            document.getElementById('rpm_value').innerHTML = "2105";
+            document.getElementById('rpm_value').innerHTML = "RPM:2105";
 
         }
         if (m_id == '2' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "576g";
-            document.getElementById('rpm_value').innerHTML = "4980";
+            document.getElementById('rpm_value').innerHTML = "RPM:4980";
 
         }
         if (m_id == '2' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "716g";
-            document.getElementById('rpm_value').innerHTML = "4848";
+            document.getElementById('rpm_value').innerHTML = "RPM:4848";
 
         }
         if (m_id == '2' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "914g";
-            document.getElementById('rpm_value').innerHTML = "4740";
+            document.getElementById('rpm_value').innerHTML = "RPM:4740";
 
         }
         if (m_id == '2' && p_id == '4') {
             document.getElementById('thrust_value').innerHTML = "996g";
-            document.getElementById('rpm_value').innerHTML = "4260";
+            document.getElementById('rpm_value').innerHTML = "RPM:4260";
 
         }
 
         if (m_id == '3' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "498g";
-            document.getElementById('rpm_value').innerHTML = "4600";
+            document.getElementById('rpm_value').innerHTML = "RPM:4600";
 
         }
         if (m_id == '3' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "606g";
-            document.getElementById('rpm_value').innerHTML = "4520";
+            document.getElementById('rpm_value').innerHTML = "RPM:4520";
 
         }
         if (m_id == '3' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "786g";
-            document.getElementById('rpm_value').innerHTML = "4260";
+            document.getElementById('rpm_value').innerHTML = "RPM:4260";
 
         }
         if (m_id == '4' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "396g";
-            document.getElementById('rpm_value').innerHTML = "4320";
+            document.getElementById('rpm_value').innerHTML = "RPM:4320";
 
         }
         if (m_id == '4' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "468g";
-            document.getElementById('rpm_value').innerHTML = "4120";
+            document.getElementById('rpm_value').innerHTML = "RPM:4120";
 
         }
         if (m_id == '4' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "526g";
-            document.getElementById('rpm_value').innerHTML = "5940";
+            document.getElementById('rpm_value').innerHTML = "RPM:5940";
 
         }
         if (m_id == '5' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "4931g";
-            document.getElementById('rpm_value').innerHTML = "3023";
+            document.getElementById('rpm_value').innerHTML = "RPM:3023";
 
         }
         if (m_id == '5' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "5240g";
-            document.getElementById('rpm_value').innerHTML = "2974";
+            document.getElementById('rpm_value').innerHTML = "RPM:2974";
 
         }
         if (m_id == '5' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "6195g";
-            document.getElementById('rpm_value').innerHTML = "2910";
+            document.getElementById('rpm_value').innerHTML = "RPM:2910";
 
         }
         if (m_id == '6' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "2743g";
-            document.getElementById('rpm_value').innerHTML = "1536";
+            document.getElementById('rpm_value').innerHTML = "RPM:1536";
 
         }
         if (m_id == '6' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "3044g";
-            document.getElementById('rpm_value').innerHTML = "1488";
+            document.getElementById('rpm_value').innerHTML = "RPM:1488";
 
         }
         if (m_id == '7' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "2671g";
-            document.getElementById('rpm_value').innerHTML = "1207";
+            document.getElementById('rpm_value').innerHTML = "RPM:1207";
 
         }
         if (m_id == '7' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "3040g";
-            document.getElementById('rpm_value').innerHTML = "3784";
+            document.getElementById('rpm_value').innerHTML = "RPM:3784";
 
         }
         if (m_id == '8' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "3142g";
-            document.getElementById('rpm_value').innerHTML = "1736";
+            document.getElementById('rpm_value').innerHTML = "RPM:1736";
 
         }
         if (m_id == '8' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "3540g";
-            document.getElementById('rpm_value').innerHTML = "1663";
+            document.getElementById('rpm_value').innerHTML = "RPM:1663";
 
         }
         document.getElementById('arrow1').style.visibility = "hidden";
@@ -2723,108 +2723,108 @@ function throttle_click(name) {
     if (name == '3') {
         if (m_id == '1' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "6143g";
-            document.getElementById('rpm_value').innerHTML = "2658";
+            document.getElementById('rpm_value').innerHTML = "RPM:2658";
 
         }
         if (m_id == '1' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "7091g";
-            document.getElementById('rpm_value').innerHTML = "2514";
+            document.getElementById('rpm_value').innerHTML = "RPM:2514";
 
         }
         if (m_id == '2' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "868g";
-            document.getElementById('rpm_value').innerHTML = "6140";
+            document.getElementById('rpm_value').innerHTML = "RPM:6140";
 
         }
         if (m_id == '2' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "1048g";
-            document.getElementById('rpm_value').innerHTML = "5944";
+            document.getElementById('rpm_value').innerHTML = "RPM:5944";
 
         }
         if (m_id == '2' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "1322g";
-            document.getElementById('rpm_value').innerHTML = "5620";
+            document.getElementById('rpm_value').innerHTML = "RPM:5620";
 
         }
         if (m_id == '2' && p_id == '4') {
             document.getElementById('thrust_value').innerHTML = "1348g";
-            document.getElementById('rpm_value').innerHTML = "4980";
+            document.getElementById('rpm_value').innerHTML = "RPM:4980";
 
         }
 
         if (m_id == '3' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "774g";
-            document.getElementById('rpm_value').innerHTML = "5800";
+            document.getElementById('rpm_value').innerHTML = "RPM:5800";
 
         }
         if (m_id == '3' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "918g";
-            document.getElementById('rpm_value').innerHTML = "5560";
+            document.getElementById('rpm_value').innerHTML = "RPM:5560";
 
         }
         if (m_id == '3' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "1158g";
-            document.getElementById('rpm_value').innerHTML = "5180";
+            document.getElementById('rpm_value').innerHTML = "RPM:5180";
 
         }
         if (m_id == '4' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "628g";
-            document.getElementById('rpm_value').innerHTML = "5360";
+            document.getElementById('rpm_value').innerHTML = "RPM:5360";
 
         }
         if (m_id == '4' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "744g";
-            document.getElementById('rpm_value').innerHTML = "5160";
+            document.getElementById('rpm_value').innerHTML = "RPM:5160";
 
         }
         if (m_id == '4' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "818g";
-            document.getElementById('rpm_value').innerHTML = "7220";
+            document.getElementById('rpm_value').innerHTML = "RPM:7220";
 
         }
         if (m_id == '5' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "8475g";
-            document.getElementById('rpm_value').innerHTML = "3988";
+            document.getElementById('rpm_value').innerHTML = "RPM:3988";
 
         }
         if (m_id == '5' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "8948g";
-            document.getElementById('rpm_value').innerHTML = "3927";
+            document.getElementById('rpm_value').innerHTML = "RPM:3927";
 
         }
         if (m_id == '5' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "10137g";
-            document.getElementById('rpm_value').innerHTML = "3819";
+            document.getElementById('rpm_value').innerHTML = "RPM:3819";
 
         }
         if (m_id == '6' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "4699g";
-            document.getElementById('rpm_value').innerHTML = "2284";
+            document.getElementById('rpm_value').innerHTML = "RPM:2284";
 
         }
         if (m_id == '6' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "5216g";
-            document.getElementById('rpm_value').innerHTML = "2187";
+            document.getElementById('rpm_value').innerHTML = "RPM:2187";
 
         }
         if (m_id == '7' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "4001g";
-            document.getElementById('rpm_value').innerHTML = "1654";
+            document.getElementById('rpm_value').innerHTML = "RPM:1654";
 
         }
         if (m_id == '7' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "4710g";
-            document.getElementById('rpm_value').innerHTML = "4868";
+            document.getElementById('rpm_value').innerHTML = "RPM:4868";
 
         }
         if (m_id == '8' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "4605g";
-            document.getElementById('rpm_value').innerHTML = "2251";
+            document.getElementById('rpm_value').innerHTML = "RPM:2251";
 
         }
         if (m_id == '8' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "5067g";
-            document.getElementById('rpm_value').innerHTML = "2147";
+            document.getElementById('rpm_value').innerHTML = "RPM:2147";
 
         }
         document.getElementById('arrow1').style.visibility = "hidden";
@@ -2838,108 +2838,108 @@ function throttle_click(name) {
     if (name == '4') {
         if (m_id == '1' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "8459g";
-            document.getElementById('rpm_value').innerHTML = "3116";
+            document.getElementById('rpm_value').innerHTML = "RPM:3116";
 
         }
         if (m_id == '1' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "9323g";
-            document.getElementById('rpm_value').innerHTML = "2882";
+            document.getElementById('rpm_value').innerHTML = "RPM:2882";
 
         }
         if (m_id == '2' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "1160g";
-            document.getElementById('rpm_value').innerHTML = "7300";
+            document.getElementById('rpm_value').innerHTML = "RPM:7300";
 
         }
         if (m_id == '2' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "1380g";
-            document.getElementById('rpm_value').innerHTML = "7040";
+            document.getElementById('rpm_value').innerHTML = "RPM:7040";
 
         }
         if (m_id == '2' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "1730g";
-            document.getElementById('rpm_value').innerHTML = "6500";
+            document.getElementById('rpm_value').innerHTML = "RPM:6500";
 
         }
         if (m_id == '2' && p_id == '4') {
             document.getElementById('thrust_value').innerHTML = "1700g";
-            document.getElementById('rpm_value').innerHTML = "5700";
+            document.getElementById('rpm_value').innerHTML = "RPM:5700";
 
         }
 
         if (m_id == '3' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "1050g";
-            document.getElementById('rpm_value').innerHTML = "7000";
+            document.getElementById('rpm_value').innerHTML = "RPM:7000";
 
         }
         if (m_id == '3' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "1230g";
-            document.getElementById('rpm_value').innerHTML = "6600";
+            document.getElementById('rpm_value').innerHTML = "RPM:6600";
 
         }
         if (m_id == '3' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "1530g";
-            document.getElementById('rpm_value').innerHTML = "6100";
+            document.getElementById('rpm_value').innerHTML = "RPM:6100";
 
         }
         if (m_id == '4' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "860g";
-            document.getElementById('rpm_value').innerHTML = "6400";
+            document.getElementById('rpm_value').innerHTML = "RPM:6400";
 
         }
         if (m_id == '4' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "1020g";
-            document.getElementById('rpm_value').innerHTML = "6200";
+            document.getElementById('rpm_value').innerHTML = "RPM:6200";
 
         }
         if (m_id == '4' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "1110g";
-            document.getElementById('rpm_value').innerHTML = "8500";
+            document.getElementById('rpm_value').innerHTML = "RPM:8500";
 
         }
         if (m_id == '5' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "12114g";
-            document.getElementById('rpm_value').innerHTML = "4818";
+            document.getElementById('rpm_value').innerHTML = "RPM:4818";
 
         }
         if (m_id == '5' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "12617g";
-            document.getElementById('rpm_value').innerHTML = "4723";
+            document.getElementById('rpm_value').innerHTML = "RPM:4723";
 
         }
         if (m_id == '5' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "14159g";
-            document.getElementById('rpm_value').innerHTML = "4583";
+            document.getElementById('rpm_value').innerHTML = "RPM:4583";
 
         }
         if (m_id == '6' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "6529g";
-            document.getElementById('rpm_value').innerHTML = "2835";
+            document.getElementById('rpm_value').innerHTML = "RPM:2835";
 
         }
         if (m_id == '6' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "7030g";
-            document.getElementById('rpm_value').innerHTML = "2698";
+            document.getElementById('rpm_value').innerHTML = "RPM:2698";
 
         }
         if (m_id == '7' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "5274g";
-            document.getElementById('rpm_value').innerHTML = "1998";
+            document.getElementById('rpm_value').innerHTML = "RPM:1998";
 
         }
         if (m_id == '7' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "6657g";
-            document.getElementById('rpm_value').innerHTML = "5908";
+            document.getElementById('rpm_value').innerHTML = "RPM:5908";
 
         }
         if (m_id == '8' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "6078g";
-            document.getElementById('rpm_value').innerHTML = "2712";
+            document.getElementById('rpm_value').innerHTML = "RPM:2712";
 
         }
         if (m_id == '8' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "6536g";
-            document.getElementById('rpm_value').innerHTML = "2569";
+            document.getElementById('rpm_value').innerHTML = "RPM:2569";
 
         }
         p.style.animation = "rotate 0.0001s linear 1s infinite";
