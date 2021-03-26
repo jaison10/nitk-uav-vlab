@@ -19,7 +19,7 @@ var p_id;
 
 function navNext() {
 
-    for (temp = 0; temp <= 7; temp++) {
+    for (temp = 0; temp <= 3; temp++) {
         document.getElementById('canvas' + temp).style.visibility = "hidden";
     }
     if (simsubscreennum == 3) {
@@ -243,10 +243,7 @@ function magic() {
         document.getElementById("thrust_value").style.visibility = "hidden";
         document.getElementById("arrow1").style.visibility = "hidden";
         document.getElementById('rpm_indicator').style.visibility = "hidden";
-        if (new_select == 1) {
-            document.getElementById('select_motor').style.visibility = "hidden";
 
-        }
 
 
         for (let i = 0; i <= 4; i++) {
@@ -265,13 +262,20 @@ function magic() {
 
 
         if (new_select == 1) {
-            select();
-        }
 
-        // document.getElementById("arrow1").style = "position: absolute; top:230px;";
-        // myInt = setInterval(function() {
-        //     animatearrow();
-        // }, 500);
+            select();
+            document.getElementById('select_mp').style.visibility = "hidden";
+            document.getElementById('table_iso').style.visibility = "hidden";
+            document.getElementById('thrust').style.visibility = "hidden";
+            document.getElementById('esc').style.visibility = "hidden";
+            document.getElementById('dc').style.visibility = "hidden";
+            document.getElementById('knob').style.visibility = "hidden";
+            document.getElementById('motor').style.visibility = "hidden";
+            document.getElementById('desc_button').style.visibility = "hidden";
+            document.getElementById('desc_message').style.visibility = "hidden";
+
+
+        }
         document.getElementById('table_iso').style.visibility = "visible";
         document.getElementById('thrust').style.visibility = "visible";
         document.getElementById('esc').style.visibility = "visible";
@@ -279,33 +283,7 @@ function magic() {
         document.getElementById('knob').style.visibility = "visible";
         document.getElementById('motor').style.visibility = "visible";
 
-        // document.getElementById('arrow1').style = "visibility:hidden ;position:absolute; left: 500px; top: 150px; height: 40px; z-index: 10;";
 
-        // document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
-        // // Code for IE9
-        // document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
-        // // Standard syntax
-        // document.getElementById("arrow1").style.transform = "rotate(270deg)";
-        // document.getElementById('table_top').style.opacity = 0;
-
-
-        // $(document).ready(function() {
-        //     $("#table_iso").on('click', 'span', function() {
-        //         $(".image img").removeClass("opaque");
-
-        //         var newImage = $(this).index();
-
-        //         $(".image img").eq(newImage).addClass("opaque");
-        //         document.getElementById('table_top').style.visibility = 'visible';
-        //         // document.getElementById("esc_iso").style.visibility = 'hidden';
-        //         // document.getElementById("power_iso").style.visibility = 'hidden';
-        //         // document.getElementById("knob_iso").style.visibility = 'hidden';
-        //         // document.getElementById("table_iso").style.visibility = 'hidden';
-        //         document.getElementById("thrust_iso").style.visibility = 'hidden';
-
-        //     });
-        // });
-        // document.getElementById('table_iso').onclick = function() { step1(); };
 
     } else if (simsubscreennum == 2) {
         document.getElementById("placement_info").innerText = "";
@@ -1956,7 +1934,7 @@ function appear(id_name, top_px) {
 }
 
 
-//---------SELECT MOTOR AND PROPELLER PAGE--------
+//---------SELECT MOTOR AND PROPELLER function--------
 function select() {
     document.getElementById('all_comp').style.visibility = "hidden";
     document.getElementById('prop_fan').style.visibility = "hidden";
@@ -1976,8 +1954,6 @@ function select() {
     document.getElementById('100%').style.visibility = "hidden";
     document.getElementById('motor_prop_desc').style.visibility = "hidden";
 
-    document.getElementById('select_mp').style.visibility = "hidden";
-
     document.getElementById('thrust').style.visibility = "hidden";
     document.getElementById('dc').style.visibility = "hidden";
     document.getElementById('esc').style.visibility = "hidden";
@@ -1990,18 +1966,53 @@ function select() {
     document.getElementById('esc_iso').style.visibility = "hidden";
     document.getElementById('desc_button').style.visibility = "hidden";
     document.getElementById('motor_iso').style.visibility = "hidden";
-    document.getElementById('thrust').style.opacity = 0;
-    document.getElementById('dc').style.opacity = 0;
-    document.getElementById('esc').style.opacity = 0;
-    document.getElementById('knob').style.opacity = 0;
-    document.getElementById('motor').style.opacity = 0;
+    document.getElementById('select_mp').style.visibility = "hidden";
+    if (new_select == 1) {
+        document.getElementById('thrust').style.visibility = "hidden";
+        document.getElementById('dc').style.visibility = "hidden";
+        document.getElementById('esc').style.visibility = "hidden";
+        document.getElementById('knob').style.visibility = "hidden";
+        document.getElementById('motor').style.visibility = "hidden";
+        document.getElementById('thrust').style.pointerEvents = "none";
+        document.getElementById('dc').style.pointerEvents = "none";
+        document.getElementById('desc_button').style.pointerEvents = "none";
+        document.getElementById('esc').style.pointerEvents = "none";
+        document.getElementById('knob').style.pointerEvents = "none";
+        document.getElementById('motor').style.pointerEvents = "none";
+        document.getElementById('table_iso').style.visibility = "hidden";
+        document.getElementById('power_iso').style.visibility = "hidden";
+        document.getElementById('knob_iso').style.visibility = "hidden";
+        document.getElementById('thrust_iso').style.visibility = "hidden";
+        document.getElementById('esc_iso').style.visibility = "hidden";
+        document.getElementById('desc_button').style.visibility = "hidden";
+        document.getElementById('motor_iso').style.visibility = "hidden";
 
-    document.getElementById('table_iso').style.opacity = 0;
+        document.getElementById('thrust').style.opacity = 0;
+        document.getElementById('dc').style.opacity = 0;
+        document.getElementById('esc').style.opacity = 0;
+        document.getElementById('knob').style.opacity = 0;
+        document.getElementById('motor').style.opacity = 0;
 
-    document.getElementById('table_iso').style.visibility = "hidden";
+        document.getElementById('thrust').onclick = "";
+        document.getElementById('dc').onclick = "";
+        document.getElementById('esc').onclick = "";
+        document.getElementById('knob').onclick = "";
+        document.getElementById('motor').onclick = "";
+
+        document.getElementById('thrust').style.cursor = "none";
+        document.getElementById('dc').style.cursor = "none";
+        document.getElementById('esc').style.cursor = "none";
+        document.getElementById('knob').style.cursor = "none";
+        document.getElementById('motor').style.cursor = "none";
+        document.getElementById('table_iso').style.cursor = "none";
+        document.getElementById('table_iso').style.opacity = 0;
+        document.getElementById('table_iso').style.visibility = "hidden";
+        document.getElementById('desc_message').style.visibility = "hidden";
+        document.getElementById('select_mp').style.visibility = "hidden";
 
 
 
+    }
 
     document.getElementById('equip').style.visibility = "visible";
     document.getElementById('equip').style.top = "220px";
@@ -2012,7 +2023,7 @@ function select() {
     document.getElementById("nextButton").style.visibility = "hidden";
 }
 
-
+// -------------------------------SELECT THE MOTOR BUTTON-------------
 function motor(prop_name) {
     for (let i = 1; i <= 8; i++) {
         document.getElementById('select_prop' + i).style.visibility = "hidden";
@@ -2037,21 +2048,42 @@ function motor(prop_name) {
     document.getElementById('motor_with_prop').style.visibility = "hidden";
     document.getElementById('motor_prop_desc').style.visibility = "visible";
     document.getElementById('motor_prop_desc').style.top = "80px";
+    //FOR THE CHOOSE MOTOR AGAIN PART
+    if (new_select == 1) {
+        document.getElementById('select_mp').style.visibility = "hidden";
+        document.getElementById('desc_button').style.opacity = 0;
+        document.getElementById('thrust').style.visibility = "hidden";
+        document.getElementById('dc').style.visibility = "hidden";
+        document.getElementById('esc').style.visibility = "hidden";
+        document.getElementById('knob').style.visibility = "hidden";
+        document.getElementById('motor').style.visibility = "hidden";
+        document.getElementById('table_iso').style.visibility = "hidden";
+        document.getElementById('power_iso').style.visibility = "hidden";
+        document.getElementById('knob_iso').style.visibility = "hidden";
+        document.getElementById('thrust_iso').style.visibility = "hidden";
+        document.getElementById('esc_iso').style.visibility = "hidden";
+        document.getElementById("motor_iso").style.visibility = "hidden";
+        document.getElementById('motor_with_prop').style.visibility = "hidden";
+        document.getElementById('desc_message').style.visibility = "hidden";
+        document.getElementById('desc_button').style.visibility = "hidden";
 
+    }
+    document.getElementById('desc_button').style.opacity = 0;
+    document.getElementById('desc_message').style.visibility = "hidden";
+
+    document.getElementById('desc_button').onclick = "";
+    document.getElementById('desc_button').onmouseover = "";
 
     document.getElementById('desc_button').style.visibility = "hidden";
 
     console.log('hello');
-    // document.getElementById('select_prop').style.visibility = "visible";
+
     var img_m = document.getElementById('m_1');
     img_m.style.visibility = "visible";
     document.getElementById('nextButton').style.visibility = "hidden";
     document.getElementById('rpm_indicator').style.visibility = "hidden";
 
-    // if (new_select = 1) {
-    //     document.getElementById('motor' + m_id).style.visibility = "hidden";
-    // }
-
+    //MOTOR DESCRIPTION FOR DIFFERENT MOTORS
     if (prop_name == '1')
         document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN1005_KV90</strong><br>MN indicates the motor's Model number and 1005 is the series number. 90 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.";
     if (prop_name == '2')
@@ -2072,6 +2104,7 @@ function motor(prop_name) {
 
 }
 
+// -------------------ON SELECT PROPELLER BUTTON-----------
 function prop(motor_id, prop_id) {
     document.getElementById('motor_prop_desc').style.visibility = "visible";
     document.getElementById('motor_with_prop').style.visibility = "visible";
@@ -2092,6 +2125,9 @@ function prop(motor_id, prop_id) {
     document.getElementById('esc_iso').style.visibility = "hidden";
     document.getElementById('motor_iso').style.visibility = "hidden";
     document.getElementById('desc_button').style.visibility = "hidden";
+    document.getElementById('desc_button').onclick = "";
+    document.getElementById('desc_message').style.visibility = "hidden";
+    //While choosing next motors, show the description a bit upper to prevent overlap
     if (new_select == 1) {
         document.getElementById('motor_prop_desc').style.top = "50px";
 
@@ -2115,6 +2151,7 @@ function prop(motor_id, prop_id) {
     console.log(m_id);
     console.log(p_id);
 
+    //MOTOR DESCRIPTION FOR DIFFERENT MOTORS AND RESPECTIVE PROPELLERS
     if (motor_id == '1' && prop_id == '1')
         document.getElementById('motor_prop_desc').innerHTML = "<strong>Motor: MN1005_KV90</strong>&nbsp;&nbsp;<strong>Propeller: T-MOTOR G30*10.5</strong><br>MN indicates the motor's Model number and 1005 is the series number. 90 refers to the number of revolutions per minute (rpm) that a motor turns when 1V (one volt) is applied with no load attached to that motor.<br>The Propeller has a diameter of 30 inches and pitch 10.5 . T-MOTOR is the Company name and G refers to the series. ";
     if (motor_id == '1' && prop_id == '2')
@@ -2168,6 +2205,8 @@ console.log(p_id);
 
 function place_motor() {
     clearInterval(myInt);
+
+    //REMOVE THE PREVIOUSLY CHOSEN PROPELLER 
     if (new_select = 1) {
 
         document.getElementById(m_id + '_' + p_id).remove();
@@ -2203,19 +2242,6 @@ function place_motor() {
     }
 
     document.getElementById('pumptext').innerHTML = "The apparatus is thus ready for the connection.";
-    // document.getElementById('equip').onclick = function() { step1() };
-
-    // myInt = setInterval(function() {
-    //     animatearrow();
-    // }, 500);
-    // document.getElementById('arrow1').style = "visibility:hidden ;position:absolute; left: 500px; top: 150px; height: 40px; z-index: 10;";
-
-    // document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
-    // // Code for IE9
-    // document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
-    // // Standard syntax
-    // document.getElementById("arrow1").style.transform = "rotate(270deg)";
-
 
 }
 
@@ -2316,33 +2342,6 @@ function set_throttle() {
 
 
 }
-var thrust_data = [
-    ['1', '1', '0', '2096', '4061', '6143', '8459'],
-    ['1', '2', '0', '2607', '4962', '7091', '9323'],
-    ['2', '1', '0', '430', '660 ', '1040', '1160'],
-    ['2', '2', '0', '550', '810 ', '1300', '1380'],
-    ['2', '3', '0', '710', '1100', '1580', '1730'],
-    ['2', '4', '0', '820', '1200', '1700', '1880'],
-    ['3', '1', '0', '360', '600 ', '910 ', '1050'],
-    ['3', '2', '0', '450', '710 ', '1120', '1230'],
-    ['3', '3', '0', '600', '930 ', '1350', '1520'],
-    ['4', '1', '0', '280', '460 ', '790 ', '860 '],
-    ['4', '2', '0', '330', '560 ', '880 ', '1020'],
-    ['4', '3', '0', '380', '630 ', '960 ', '1110'],
-    ['5', '1', '0', '440', '700 ', '1100', '1220'],
-    ['5', '2', '0', '440', '700 ', '1100', '1220'],
-    ['5', '3', '0', '440', '700 ', '1100', '1220'],
-    ['6', '1', '0', '440', '700 ', '1100', '1220'],
-    ['6', '2', '0', '440', '700 ', '1100', '1220'],
-    ['7', '1', '0', '440', '700 ', '1100', '1220'],
-    ['7', '2', '0', '440', '700 ', '1100', '1220'],
-    ['8', '1', '0', '440', '700 ', '1100', '1220'],
-    ['8', '2', '0', '440', '700 ', '1100', '1220'],
-
-
-
-
-];
 
 function throttle_click(name) {
     myStopFunction();
@@ -2373,12 +2372,9 @@ function throttle_click(name) {
 
 
     var sum = m_id + p_id;
+    //FOR 0%,SHOW THE THRUST AND RPM
     if (name == '0') {
-        // document.getElementById('find_thrust').onclick = function() {
-        //     myStopFunction();
-        //     document.getElementById('find_thrust').style.visibility = "hidden";
 
-        // }
         if (m_id == '1' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "0g";
             document.getElementById('rpm_value').innerHTML = "0";
@@ -2487,13 +2483,14 @@ function throttle_click(name) {
         }
         myStopFunction();
         document.getElementById('arrow1').style.visibility = "hidden";
-        // document.getElementById('thrust_value').innerHTML = "0g";
         p.style.animation = "rotate 0s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "When throttle is set to 0%,the propeller does not move. Hence there is 0 thrust generated. "
         document.getElementById('rpm_indicator').style.visibility = "visible";
 
 
     }
+
+    //FOR 40%,SHOW THE THRUST AND RPM
     if (name == '1') {
         if (m_id == '1' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "2096g";
@@ -2606,6 +2603,8 @@ function throttle_click(name) {
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 40%";
 
     }
+
+    //FOR 60%,SHOW THE THRUST AND RPM
     if (name == '2') {
         if (m_id == '1' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "4061g";
@@ -2719,6 +2718,8 @@ function throttle_click(name) {
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 60%";
 
     }
+
+    //FOR 80%,SHOW THE THRUST AND RPM
     if (name == '3') {
         if (m_id == '1' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "6143g";
@@ -2832,6 +2833,8 @@ function throttle_click(name) {
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 80%";
 
     }
+
+    //FOR 100%,SHOW THE THRUST AND RPM
     if (name == '4') {
         if (m_id == '1' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "8459g";
@@ -2989,9 +2992,9 @@ function generate_table() {
 
 
     document.getElementById('thrust_table').style.visibility = "visible";
-
+    // to add new rows for new motors and propellers chosen
     new_motor_selected_thrust++;
-
+    //creating row for the table
     var row = table.insertRow(new_motor_selected_thrust);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
@@ -3000,7 +3003,7 @@ function generate_table() {
     var cell5 = row.insertCell(4);
     var cell6 = row.insertCell(5);
     var cell7 = row.insertCell(6);
-
+    //values for each column
     if (m_id == '1' && p_id == '1') {
         cell1.innerHTML = "MN1005_ KV90";
         cell2.innerHTML = "T-MOTOR G30*10.5";
@@ -3192,19 +3195,7 @@ function generate_table() {
         cell6.innerHTML = "5067";
         cell7.innerHTML = "6536";
     }
-    // if (new_motor_selected_thrust == 4) {
-    //     document.getElementById('table_wrap').style.visibility = "visible";
 
-    //     document.getElementById('table_wrap').style.overflow = "scroll";
-    // }
-    // cell1.innerHTML = "NEW CELL1";
-    // cell2.innerHTML = "NEW CELL2";
-    // cell3.innerHTML = "NEW CELL3";
-    // cell4.innerHTML = "NEW CELL4";
-    // cell5.innerHTML = "NEW CELL5";
-    // cell6.innerHTML = "NEW CELL6";
-    // cell7.innerHTML = "NEW CELL7";
-    // cell8.innerHTML = "NEW CELL8";
 
 
 
