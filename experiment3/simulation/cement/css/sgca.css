@@ -313,3 +313,15 @@ background:#000
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {left:272px; top:200px; transform:rotate(4deg)}
 }
+
+.rotate {
+    animation: rotation 2s infinite linear;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(30deg);
+    }
+  }
