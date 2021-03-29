@@ -2236,6 +2236,7 @@ function place_motor() {
     document.getElementById('esc_iso').style.visibility = "hidden";
     document.getElementById('motor_iso').style.visibility = "hidden";
     document.getElementById('desc_button').style.visibility = "hidden";
+    document.getElementById('equip').style.top = "150px";
 
     for (let i = 1; i <= 8; i++) {
         document.getElementById('select_prop' + i).style.visibility = "hidden";
@@ -2295,7 +2296,7 @@ function close_plug() {
     document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
     // Standard syntax
     document.getElementById("arrow1").style.transform = "rotate(270deg)";
-    document.getElementById('pumptext-3').innerHTML = "Click on the throttle percentage to observe the changes in the thrust of the motor."
+
     document.getElementById('all_comp').onclick = function() { set_throttle(); };
 }
 
@@ -2306,7 +2307,7 @@ function set_throttle() {
     throttle.style.visibility = "visible";
     throttle.style.transform = "scale(2)";
     throttle.style.transition = "all 1s ease-in-out";
-
+    document.getElementById('pumptext-3').innerHTML = "Click on the throttle percentage to observe the changes in the thrust of the motor."
     myInt = setInterval(function() {
         animatearrow();
     }, 500);
@@ -2343,6 +2344,15 @@ function set_throttle() {
 
 }
 
+function mouseover() {
+    document.getElementById('dialog_box2').style.visibility = "visible";
+    document.getElementById('dialog_box2').style.opacity = 1;
+    document.getElementById('dialog_box2').style.transition = "opacity 1s ease-in-out";
+    document.getElementById('rpm_value').style.visibility = "visible";
+    document.getElementById('rpm_value').style.opacity = 1;
+    document.getElementById('rpm_value').style.transition = "opacity 1s ease-in-out";
+}
+
 function throttle_click(name) {
     myStopFunction();
     // document.getElementById('arrow1').style.visibility = "hidden";
@@ -2352,23 +2362,28 @@ function throttle_click(name) {
     }
     document.getElementById('throttle' + name).style.visibility = "visible";
     document.getElementById('throttle_message').style.visibility = "visible";
-
+    document.getElementById('all_comp').onclick = "";
     document.getElementById('dialog_box').style.visibility = "visible";
     document.getElementById('dialog_box').style.opacity = 1;
     document.getElementById('dialog_box').style.transition = "opacity 1s ease-in-out";
     document.getElementById('thrust_value').style.visibility = "visible";
     document.getElementById('thrust_value').style.opacity = 1;
     document.getElementById('thrust_value').style.transition = "opacity 1s ease-in-out";
+    document.getElementById('instruct_info').style.visibility = "visible";
+    document.getElementById('instruct_info').innerHTML = "Move over the RPM Indicator to check the RPM of the motor for the respective Throttle Percentage."
+
 
     var p = document.getElementById('prop_fan');
     p.style.visibility = "visible";
     document.getElementById('rpm_indicator').style.visibility = "visible";
-    document.getElementById('dialog_box2').style.visibility = "visible";
-    document.getElementById('dialog_box2').style.opacity = 1;
-    document.getElementById('dialog_box2').style.transition = "opacity 1s ease-in-out";
-    document.getElementById('rpm_value').style.visibility = "visible";
-    document.getElementById('rpm_value').style.opacity = 1;
-    document.getElementById('rpm_value').style.transition = "opacity 1s ease-in-out";
+
+    document.getElementById('rpm_indicator').onmouseout = function() {
+        document.getElementById('dialog_box2').style.visibility = "hidden";
+        document.getElementById('rpm_value').style.visibility = "hidden";
+    };
+
+    document.getElementById('rpm_mini_value').style.visibility = "visible";
+
 
 
     var sum = m_id + p_id;
@@ -2376,6 +2391,7 @@ function throttle_click(name) {
     if (name == '0') {
 
         if (m_id == '1' && p_id == '1') {
+
             document.getElementById('thrust_value').innerHTML = "0g";
             document.getElementById('rpm_value').innerHTML = "RPM:0";
 
@@ -2481,11 +2497,12 @@ function throttle_click(name) {
             document.getElementById('rpm_value').innerHTML = "RPM:0";
 
         }
+        document.getElementById('rpm_mini_value').innerText = "0";
         myStopFunction();
+        document.getElementById('pumptext-3').innerHTML = "Set the Throttle value to 100% inorder to generate the table."
         document.getElementById('arrow1').style.visibility = "hidden";
         p.style.animation = "rotate 0s linear 1s infinite";
         document.getElementById('throttle_message').innerHTML = "When throttle is set to 0%,the propeller does not move. Hence there is 0 thrust generated. "
-        document.getElementById('rpm_indicator').style.visibility = "visible";
 
 
     }
@@ -2495,67 +2512,68 @@ function throttle_click(name) {
         if (m_id == '1' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "2096g";
             document.getElementById('rpm_value').innerHTML = "RPM:1599";
+            document.getElementById('rpm_mini_value').innerText = "1599";
 
         }
         if (m_id == '1' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "2607g";
             document.getElementById('rpm_value').innerHTML = "RPM:1559";
-
+            document.getElementById('rpm_mini_value').innerText = "1559";
         }
         if (m_id == '2' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "284g";
             document.getElementById('rpm_value').innerHTML = "RPM:3820";
-
+            document.getElementById('rpm_mini_value').innerText = "3820";
         }
         if (m_id == '2' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "384g";
             document.getElementById('rpm_value').innerHTML = "RPM:3752";
-
+            document.getElementById('rpm_mini_value').innerText = "3752";
         }
         if (m_id == '2' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "506g";
             document.getElementById('rpm_value').innerHTML = "RPM:3860";
-
+            document.getElementById('rpm_mini_value').innerText = "3860";
         }
         if (m_id == '2' && p_id == '4') {
             document.getElementById('thrust_value').innerHTML = "644g";
             document.getElementById('rpm_value').innerHTML = "RPM:3540";
-
+            document.getElementById('rpm_mini_value').innerText = "3540";
         }
         if (m_id == '3' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "222g";
             document.getElementById('rpm_value').innerHTML = "RPM:3400";
-
+            document.getElementById('rpm_mini_value').innerText = "3400";
         }
         if (m_id == '3' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "294g";
             document.getElementById('rpm_value').innerHTML = "RPM:3480";
-
+            document.getElementById('rpm_mini_value').innerText = "3480";
         }
         if (m_id == '3' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "414g";
             document.getElementById('rpm_value').innerHTML = "RPM:3340";
-
+            document.getElementById('rpm_mini_value').innerText = "3340";
         }
         if (m_id == '4' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "164g";
             document.getElementById('rpm_value').innerHTML = "RPM:3280";
-
+            document.getElementById('rpm_mini_value').innerText = "3280";
         }
         if (m_id == '4' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "192g";
             document.getElementById('rpm_value').innerHTML = "RPM:3080";
-
+            document.getElementById('rpm_mini_value').innerText = "3080";
         }
         if (m_id == '4' && p_id == '3') {
             document.getElementById('thrust_value').innerHTML = "234g";
             document.getElementById('rpm_value').innerHTML = "RPM:4660";
-
+            document.getElementById('rpm_mini_value').innerText = "4660";
         }
         if (m_id == '5' && p_id == '1') {
             document.getElementById('thrust_value').innerHTML = "2357g";
             document.getElementById('rpm_value').innerHTML = "RPM:1978";
-
+            document.getElementById('rpm_mini_value').innerText = "1978";
         }
         if (m_id == '5' && p_id == '2') {
             document.getElementById('thrust_value').innerHTML = "2561g";
@@ -2947,7 +2965,7 @@ function throttle_click(name) {
         document.getElementById('choose_motor').style.visibility = "hidden";
         document.getElementById('arrow1').style.visibility = "hidden";
 
-        // document.getElementById('generate_table').onclick = function() { generate_table(); };
+
         document.getElementById('throttle_message').innerHTML = "The throttle is now set to 100%";
 
     }
@@ -2963,6 +2981,7 @@ function generate_table() {
         clearInterval(myInt);
         document.getElementById('arrow1').style.visibility = "hidden";
     }
+    document.getElementById('instruct_info').style.visibility = "hidden";
 
     document.getElementById('pumptext-3').innerHTML = "The table shows the value of the thrust of the motor for each throttle value. ";
     var table = document.getElementById("thrust_table");

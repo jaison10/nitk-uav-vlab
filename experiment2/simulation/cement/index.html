@@ -228,7 +228,7 @@
             <strong id="titlestep" class="incanvas">STEP </strong>
             <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
             <p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">Click on the Apparatus to place them on the table.</p>
-            <img id="table_iso" class="" style="visibility: hidden; position: absolute; left: 100px; top: 130px;cursor:pointer; height: 400px; width: 600px;z-index: 20; " src="./Images/uav/isometric_view/table.png" />
+            <img id="table_iso" class="" style="visibility: hidden; position: absolute; left: 100px; top: 130px; height: 400px; width: 600px; " src="./Images/uav/isometric_view/table.png" />
 
             <!------------------------------------------- APPARATUS BUTTONS -->
             <span class="tool" id="desc_button"><strong><button id="thrust" onclick="appear('thrust_iso','285px');" style="visibility: hidden; position: absolute;cursor: pointer;top: 50px;left:0px; border-radius:5px;width: 130px;color: #fff;background-color: black;">Thrustmeter</button></strong>
@@ -255,13 +255,15 @@
 
 
             <!----------------------------------------------- APPARATUS IMAGES -->
-            <img id="thrust_iso" class="" style="visibility: hidden; position: absolute; left: 310px; top: 0px; height: 100px; width: 150px; z-index: 10;" title="Thrustmeter" src="./Images/uav/isometric_view/thrust_meter (2).png" />
-            <img id="esc_iso" class="" style="visibility: hidden; position: absolute; left: 190px; top:0px; height: 100px; width: 100px; z-index: 10;transform: rotate(30deg);" title="Electronic Speed Controller" src="./Images/uav/isometric_view/esc1.png" />
-            <img id="power_iso" class="" style="visibility: hidden; position: absolute; left: 370px; top: 0px; height: 100px; width: 150px; z-index: 10;" title="DC Power Supply" src="./Images/uav/isometric_view/all/dc_v09.png" />
-            <img id="knob_iso" class="" style="visibility: hidden; position: absolute; left: 530px; top: 0px; height: 40px; width: 50px; z-index: 10;transform: rotate(15deg);" title="Throttle Controller" src="./Images/uav/isometric_view/throttle knob_v5.png" />
-            <img id="motor_iso" class="" style="visibility: hidden; position: absolute; left: 250px; top: 0px; height: 100px; width: 100px; z-index: 10;" title="Motor" src="./Images/uav/isometric_view/motor.png" />
+            <img id="thrust_iso" class="" style="visibility: hidden; position: absolute; left: 310px; top: 0px; height: 100px; width: 150px; z-index: 10;" alt="Thrustmeter" title="Thrustmeter" src="./Images/uav/isometric_view/thrust_meter (2).png" />
+            <img id="esc_iso" class="" style="visibility: hidden; position: absolute; left: 190px; top:0px; height: 100px; width: 100px; z-index: 10;transform: rotate(30deg);" alt="Electronic Speed Controller" title="Electronic Speed Controller" src="./Images/uav/isometric_view/esc1.png"
+            />
+            <img id="power_iso" class="" style="visibility: hidden; position: absolute; left: 370px; top: 0px; height: 100px; width: 150px; z-index: 10;" title="DC Power Supply" alt="DC Power Supply" src="./Images/uav/isometric_view/all/dc_v09.png" />
+            <img id="knob_iso" class="" style="visibility: hidden; position: absolute; left: 530px; top: 0px; height: 40px; width: 50px; z-index: 10;transform: rotate(15deg);" alt="Throttle Controller" title="Throttle Controller" src="./Images/uav/isometric_view/throttle knob_v5.png"
+            />
+            <img id="motor_iso" class="" style="visibility: hidden; position: absolute; left: 250px; top: 0px; height: 100px; width: 100px; z-index: 10;" title="Motor" alt="Motor" src="./Images/uav/isometric_view/motor.png" />
 
-            <img id="equip" style="visibility:hidden;position: absolute; left: 100px; top: 180px;cursor:pointer; height: 300px; width: 600px;opacity: 1;z-index: 30;" src="./Images/uav/isometric_view/all/all_unconnected(1).png" alt="table with all equipments">
+            <img id="equip" style="visibility:hidden;position: absolute; left: 100px; top: 220px;cursor:pointer; height: 300px; width: 600px;opacity: 1;z-index: 30;" src="./Images/uav/isometric_view/all/all_unconnected(1).png" alt="table with all equipments">
             <button id="select_mp" onclick="select();" style="position: absolute;top: 450px;left: 600px;z-index: 30;color: #fff;background-color: black;cursor: pointer;">Next</button>
             <!------------------------------------------------AFTER NEXT BUTTON -->
             <div class="dropdown" id="select_motor" style="visibility: hidden; position: absolute;top: 50px;left: 10px;width: 90px; cursor: pointer;">
@@ -397,9 +399,9 @@
 
             <img id="m_1" style="visibility: hidden; position:absolute;top: 360px;left: 30px;height: 50px;width: 50px;z-index: 1;" src="./Images/uav/isometric_view/MN1005_KV90_G30x10.5V05.png" alt="motor">
             <img id="motor_with_prop" onclick="place_motor();" style="visibility: hidden; position:absolute;top: 340px;left: 0px;height: 100px;width: 150px;z-index: 10;cursor: pointer;" src="./Images/uav/isometric_view/motor_with_prop_NUT_2 (2).png" alt="motor">
-            <img id="new_motor" style="visibility: hidden; position:absolute;top: 345px;left: 290px;height: 50px;width: 70px;opacity: 0;z-index: 60;" src="./Images/uav/isometric_view/motor_with_prop_NUT_1.png" alt="motor">
+            <img id="new_motor" style="visibility: hidden; position:absolute;top: 275px;left: 290px;height: 50px;width: 70px;opacity: 0;z-index: 60;" src="./Images/uav/isometric_view/motor_with_prop_NUT_1.png" alt="motor">
             <img id="all_top" style="visibility:hidden;position: absolute;opacity: 0; left: 100px; top: 180px;cursor:pointer; height: 300px; width: 600px;transform: rotate(90deg);" src="./Images/uav/isometric_view/all_top.png" alt="top view of table">
-            <p id="placement_info" style="position:absolute; top: 30%; left: 9%;"></p>
+            <p id="placement_info" style="position:absolute; top: 80px; left: 9%;"></p>
 
         </div>
 
@@ -413,11 +415,11 @@
             <p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Make the connections to proceed with the experiment.</p>
 
             <img src="./Images/uav/top_view/table_v4.png" style="position:absolute; width:45%; height:110%; left: 28%; top: -10%; transform: rotate(90deg)" />
-            <img src="./Images/uav/top_view/dc_box_new.png" style="position:absolute; width:20%; height:30%; top: 13.1%; left: 59%; transform: rotate(90deg)" />
+            <img src="./Images/uav/top_view/dc_box_new.png" title="DC Power Supply" style="position:absolute; width:20%; height:30%; top: 13.1%; left: 59%; transform: rotate(90deg)" />
 
-            <img src="./Images/uav/top_view/esc_alone.png" style="position:absolute; width:10%; height:25%; top: 15%; left: 25.5%; transform: rotate(90deg);" />
+            <img src="./Images/uav/top_view/esc_alone.png" title="Electronic Speed Controller" style="position:absolute; width:10%; height:25%; top: 15%; left: 25.5%; transform: rotate(90deg);" />
 
-            <img src="./Images/uav/top_view/motor_with_prop_NUT_7.png" style="position:absolute; width:18%; height:14%; top: 58.6%; left: -2.5%; transform: rotate(270deg);" />
+            <img src="./Images/uav/top_view/motor_with_prop_NUT_7.png" title="Motor with Propeller" style="position:absolute; width:18%; height:14%; top: 58.6%; left: -2.5%; transform: rotate(270deg);" />
 
 
             <!-- Connecting wire parts -->
@@ -442,7 +444,7 @@
             <img id="escWire2" onclick="makeConnection2();" src="./Images/uav/top_view/esc_wires/esc_wire.png" style="position:absolute;  width:13%; height:10%; top: 30%; left: 13%; transform: rotate(90deg);" />
             <img id="escWire3" onclick="makeConnection3();" src="./Images/uav/top_view/esc_wires/esc_wire_2_extended.png" style="position:absolute; width:12%; height:6%; top: 33%; left: 15.2%; transform: rotate(90deg);" />
 
-            <img src="./Images/uav/top_view/thrustmeter_top_v2.png" style="position:absolute; width:15%; height:30%; top: 50%; left: 13.3%; transform: rotate(90deg);" />
+            <img src="./Images/uav/top_view/thrustmeter_top_v2.png" title="Thrustmeter" style="position:absolute; width:15%; height:30%; top: 50%; left: 13.3%; transform: rotate(90deg);" />
 
             <!-- Demo -->
             <img id="" onclick="" src="./Images/uav/top_view/motor_wires/motoewire01.png" style="position:absolute; width: 4.5%; height:11%; top: 52.6%; left: 9%; " />
@@ -454,7 +456,7 @@
 
             <!-- <img src="./Images/uav/top_view/motor_V05 (1).png" style="position:absolute; width:15%; height:18%; top: 50%; left: 3.5%; transform: rotate(90deg);"/>      width:4%;           -->
 
-            <img src="./Images/uav/top_view/throttle_with_Knob.png" style="position:absolute; width:10%; height:25%; top: 54.8%; left: 58%; transform: rotate(90deg);" />
+            <img src="./Images/uav/top_view/throttle_with_Knob.png" title="Throttle Controller" style="position:absolute; width:10%; height:25%; top: 54.8%; left: 58%; transform: rotate(90deg);" />
 
             <!-- ESC to DC connection. -->
             <img id="esc_dc_connector" onclick="doEscDcConnection();" src="./Images/uav/top_view/esc_dc/DC_connection.png" style="visibility: block; position: absolute; width:3%; height: 30%; left: 46.8%; top:9%; transform: rotate(90deg);" />
@@ -510,10 +512,16 @@
             <img id="dialog_box" style="visibility: hidden;position: absolute;top: 275px;left: 280px;height: 50px;width: 100px;opacity:0;z-index: 100;" src="./Images/uav/top_view/dialog.png" alt="dialog box">
             <p id="thrust_value" style="visibility: hidden;position:absolute;top: 275px;left:300px;z-index: 150;opacity:0;"></p>
             <!------------------------------------------ SHOWS RPM VALUE ON RPM INDICATOR -->
-            <img id="rpm_indicator" style="visibility: hidden; position: absolute; top: 385px; left: 120px;height:100px;width:70px;" src="./Images/uav/isometric_view/laser_with_HAND.png" alt="RPM Indicator">
+            <img id="rpm_indicator" title="RPM Indicator" onmouseover="mouseover();" style="visibility: hidden; position: absolute;cursor: pointer; top: 385px; left: 120px;height:100px;width:70px;z-index: 40;" src="./Images/uav/isometric_view/laser_with_HAND.png"
+                alt="RPM Indicator">
             <img id="dialog_box2" style="visibility: hidden; position: absolute; z-index:100;top: 337px; left: 100px; height: 50px; width: 80px; opacity: 0;" src="./Images/uav/top_view/dialog.png" alt="dialog box">
             <p id="rpm_value" style="visibility: hidden; position: absolute; top: 330px; left: 105px; z-index: 150; opacity: 1; transition: opacity 1s ease-in-out 0s;"></p>
+            <p id="rpm_mini_value" style="visibility: hidden; position: absolute; top: 397px; left: 143px; z-index: 50; font-size: 5px;transform:rotate(8deg);">0</p>
 
+            <!------------------------------------------ INSTRUCTION TO HOVER ON RPM INDICATOR -->
+            <p id="instruct_info" style="visibility: hidden; position: absolute; top: 150px; left: 10px; z-index: 150; "></p>
+
+            <!--=----------------------------------------GENERATE TABLE BUTTON-->
             <button id="generate_table" onclick="generate_table();" style="visibility:hidden; position:absolute;top: 470px;left: 450px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;z-index: 120;">Generate table</button>
             <!-- ---------------------------------------GOES TO THE FIRST STEP TO CHOOSE MOTOR AND PROPELLER AGAIN -->
             <button id="choose_motor" onclick="navNext();" style="visibility:hidden; position:absolute;top: 400px;left: 500px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;z-index: 120;">Choose another motor</button>
@@ -593,7 +601,10 @@
     <!--Blinking Arrow	-->
     <img class="" id="arrow1" style="visibility:hidden" src="Images/arrow1.png" />
 
-    <div id="copyright"> &copy;2021 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
+    <div id="copyright"> &copy;
+        <script>
+            document.write(new Date().getFullYear())
+        </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
 </body>
 
 </html>

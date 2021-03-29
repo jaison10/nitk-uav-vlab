@@ -225,6 +225,7 @@ function magic() {
         // this is for STEP1
         refresh1();
         document.getElementById('nextButton').style.visibility = "hidden";
+        document.getElementById('frame-info').style.visibility = "hidden";
         // document.getElementById("arrow1").style = "position: absolute; top:230px;";
         // myInt = setInterval(function()	{
         // 	 animatearrow(); 
