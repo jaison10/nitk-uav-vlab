@@ -304,24 +304,92 @@ background:#000
 /*  EXPERIMENT 3 */
 .moveTopCover{
     /* transform: translate(0,350px); */
-    animation:myfirst 2s;
+    animation:moveCover 2s;
     /* transition: all 10s ease-in-out; */
 }
-@keyframes myfirst
+@keyframes moveCover
 {
     0%   { left:272px; top:50px;transform:rotate(4deg)}
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {left:272px; top:200px; transform:rotate(4deg)}
 }
 
-.rotate {
-    animation: rotation 2s infinite linear;
+.moveSingleScrew{
+    /* transform: translate(0,350px); */
+    animation:moveSingleScr 2s;
+    /* transition: all 10s ease-in-out; */
+}
+@keyframes moveSingleScr
+{
+    0%   { left: 450px; top: 40px; transform:rotate(0deg);}
+    /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
+    100% {left: 367px; top: 193px; height: 20px; width:10px; transform:rotate(0deg);}
+}
+
+
+.rotateHand {
+    animation: rotation 0.5s 2 linear;
 }
 @keyframes rotation {
     from {
       transform: rotate(0deg);
+      top: 101px;
     }
     to {
-      transform: rotate(30deg);
+        transform: rotateY(-0.2turn);
+        /* top: 110px; */
     }
-  }
+}
+
+.rotateHand2 {
+    animation: rotation 0.5s 2 linear;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+      /* top: 101px; */
+    }
+    to {
+        transform: rotateY(-0.2turn);
+        /* top: 110px; */
+    }
+}
+
+.moveSingleScrewInside{
+    /* transform: translate(0,350px); */
+    animation:moveSingleScrIn 2s;
+    /* transition: all 10s ease-in-out; */
+}
+@keyframes moveSingleScrIn
+{
+    0%   { left: 367px; top: 193px; height: 20px; width:10px; transform:rotate(0deg);}
+    /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
+    100% {left: 367px; top: 200px; height: 20px; width:10px; transform:rotate(0deg);}
+}
+.moveHandInside{
+    /* transform: translate(0,350px); */
+    animation:moveSingleHandIn 1.5s;
+    /* transition: all 10s ease-in-out; */
+}
+@keyframes moveSingleHandIn
+{
+    0%   { top: 101px;}
+    /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
+    100% { top: 120px;}
+}
+
+
+
+
+.moveHandInside2{
+    /* transform: translate(0,350px); */
+    animation:moveSingleHandIn2 1.5s;
+    /* transition: all 10s ease-in-out; */
+}
+@keyframes moveSingleHandIn2
+{
+    0%   { top: 120px;}
+    /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
+    100% { top: 140px;}
+}
+

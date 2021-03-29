@@ -361,6 +361,21 @@ function step1() {
     myStopFunction();
     
     document.getElementById("a2").classList.add("moveTopCover");
+    // setTimeout(function(){
+    //     document.getElementById("a2").style.visibility = "hidden";
+    //     document.getElementById("arms").style.visibility = "hidden";
+    //     document.getElementById("armsAndTop").style.visibility = "visible";
+    // },1800);
+    // setTimeout(function(){
+    //     document.getElementById("placeMotorInfo").style.visibility = "visible";
+    // },2500);
+
+    // setTimeout(function(){
+    //     document.getElementById("placeMotorInfo").style.visibility = "hidden";
+    //     for(let i = 1; i<5; i++){
+    //         document.getElementById("motor"+i).style.visibility = "visible";
+    //     }
+    // },4500);
     setTimeout(function(){
         document.getElementById("a2").style.visibility = "hidden";
         document.getElementById("arms").style.visibility = "hidden";
@@ -368,14 +383,44 @@ function step1() {
     },1800);
     setTimeout(function(){
         document.getElementById("placeMotorInfo").style.visibility = "visible";
-    },2500);
+        document.getElementById("placeMotorInfo").innerText = "Pick screws and screw them as shown.";
+        document.getElementById("singleScrew").style.visibility = "visible";
+        // Positioning the arrow
+        document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 580px; top: 110px; height: 30px; z-index: 10;";
 
-    setTimeout(function(){
-        document.getElementById("placeMotorInfo").style.visibility = "hidden";
-        for(let i = 1; i<5; i++){
-            document.getElementById("motor"+i).style.visibility = "visible";
-        }
-    },4500);
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)"; 
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(0deg)"; 
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(0deg)";
+        myInt = setInterval(function(){
+            animatearrow();
+        },500);
+    },2500);
+}
+function placeSingleScrew(){
+    myStopFunction();
+    document.getElementById("singleScrew").classList.add("moveSingleScrew");
+    setTimeout(() => {
+        document.getElementById("singleScrew").style.visibility = "hidden";
+        document.getElementById("singleScrewFinal").style.visibility = "visible";
+        document.getElementById("screwHand").style.visibility = "visible";
+        // setTimeout(() => {
+        //     document.getElementById("screwHand").classList.add("rotateHand");
+        //     setTimeout(() => {
+        //         document.getElementById("screwHand").classList.add("moveHandInside");
+        //         setTimeout(() => {
+        //             document.getElementById("screwHand").classList.add("rotateHand2");
+        //             setTimeout(() => {
+        //                 document.getElementById("screwHand").classList.add("moveHandInside2");
+        //             }, 900);
+        //         }, 1500);
+        //     }, 900);
+        //     document.getElementById("singleScrewFinal").classList.add("moveSingleScrewInside");
+        // }, 1000);
+        
+    }, 1900);
+
 }
 var motorPlacementCount = 0;
 function placeMotor(n){
