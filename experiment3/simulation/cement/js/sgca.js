@@ -411,14 +411,17 @@ function placeSingleScrew(){
         //         document.getElementById("screwHand").classList.add("moveHandInside");
         //         setTimeout(() => {
         //             document.getElementById("screwHand").classList.add("rotateHand2");
+        // document.getElementById("screwHand").classList.remove("moveHandInside");
         //             setTimeout(() => {
         //                 document.getElementById("screwHand").classList.add("moveHandInside2");
+        //             document.getElementById("screwHand").classList.remove("rotateHand2");
+
         //             }, 900);
         //         }, 1500);
         //     }, 900);
         //     document.getElementById("singleScrewFinal").classList.add("moveSingleScrewInside");
         // }, 1000);
-        
+
     }, 1900);
 
 }

@@ -342,9 +342,9 @@ background:#000
 }
 
 .rotateHand2 {
-    animation: rotation 0.5s 2 linear;
+    animation: rotation2 0.5s 2 linear;
 }
-@keyframes rotation {
+@keyframes rotation2 {
     from {
       transform: rotate(0deg);
       /* top: 101px; */
