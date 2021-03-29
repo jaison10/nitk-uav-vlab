@@ -360,24 +360,43 @@ function magic() {
 function step1() {
     myStopFunction();
     
-    // document.getElementById("air-info").style.visibility = 'hidden';
-    // document.getElementById("arr-air").style.visibility = 'visible';
-    // document.getElementById("arr-air").style.animation = "fadeIn 2.5s forwards";
-    // document.getElementById("change-airfoilButton").textContent = "Learn more";
-    // document.getElementById("change-airfoilButton").style = "width: 15%";
     document.getElementById("a2").classList.add("moveTopCover");
     setTimeout(function(){
         document.getElementById("a2").style.visibility = "hidden";
         document.getElementById("arms").style.visibility = "hidden";
         document.getElementById("armsAndTop").style.visibility = "visible";
-    },2000);
-    // document.getElementById('a3').style.cssText = "visibility=visible; position: absolute; left:80px; top: 320px; height: 170px; width: 470px;";
-    // document.getElementById("a3").style.animation = "fadeIn 2.5s forwards";
-    // var air = document.getElementById("change-airfoilButton");
-    // air.style.visibility = 'visible';
-    // document.getElementById('a4').style.visibility="visible";
+    },1800);
+    setTimeout(function(){
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+    },2500);
 
+    setTimeout(function(){
+        document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        for(let i = 1; i<5; i++){
+            document.getElementById("motor"+i).style.visibility = "visible";
+        }
+    },4500);
 }
+var motorPlacementCount = 0;
+function placeMotor(n){
+    document.getElementById("placedMotor"+n).style.visibility = "visible";
+    document.getElementById("motor"+n).style.visibility = "hidden";
+    motorPlacementCount += 1;
+    if(motorPlacementCount == 4){
+        document.getElementById("placeMotorInfo").innerText = "Let us place the GPS now.";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        setTimeout(function(){
+            document.getElementById("placeMotorInfo").style.visibility = "hidden"; 
+            document.getElementById("gps").style.visibility = "visible";
+            document.getElementById("gpsWire").style.visibility = "visible";
+        },1500)
+    }
+}
+
+
+
+
+
 
 
 function refresh1() {
