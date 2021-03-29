@@ -234,13 +234,16 @@ function magic() {
         document.getElementById('trial').style = "visibility:visible ;left: 700px; top: 100px;position: absolute;font-weight: bold;text-transform: uppercase;";
         document.getElementById('trial').innerHTML = "";
         // Positioning the arrow
-        // document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 180px; top: 200px; height: 40px; z-index: 10;";
+        document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 280px; top: 110px; height: 30px; z-index: 10;";
 
-        // document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
-        // // Code for IE9
-        // document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
-        // // Standard syntax
-        // document.getElementById("arrow1").style.transform = "rotate(180deg)";
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(180deg)";
+        myInt = setInterval(function(){
+            animatearrow();
+        },500);
         document.getElementById('a2').onclick = function() { step1(); };
 
     } else if (simsubscreennum == 2) {
@@ -356,18 +359,22 @@ function magic() {
 
 function step1() {
     myStopFunction();
-    // document.getElementById('a1').style.visibility="hidden";
-    // document.getElementById('a2').style.cssText ="visibility=visible; top:0px; position: absolute; left: 170px; cursor:default; height: 200px; width: 400px;";
-
-    document.getElementById("air-info").style.visibility = 'hidden';
-    document.getElementById("arr-air").style.visibility = 'visible';
-    document.getElementById("arr-air").style.animation = "fadeIn 2.5s forwards";
-    document.getElementById("change-airfoilButton").textContent = "Learn more";
+    
+    // document.getElementById("air-info").style.visibility = 'hidden';
+    // document.getElementById("arr-air").style.visibility = 'visible';
+    // document.getElementById("arr-air").style.animation = "fadeIn 2.5s forwards";
+    // document.getElementById("change-airfoilButton").textContent = "Learn more";
     // document.getElementById("change-airfoilButton").style = "width: 15%";
-    document.getElementById('a3').style.cssText = "visibility=visible; position: absolute; left:80px; top: 320px; height: 170px; width: 470px;";
-    document.getElementById("a3").style.animation = "fadeIn 2.5s forwards";
-    var air = document.getElementById("change-airfoilButton");
-    air.style.visibility = 'visible';
+    document.getElementById("a2").classList.add("moveTopCover");
+    setTimeout(function(){
+        document.getElementById("a2").style.visibility = "hidden";
+        document.getElementById("arms").style.visibility = "hidden";
+        document.getElementById("armsAndTop").style.visibility = "visible";
+    },2000);
+    // document.getElementById('a3').style.cssText = "visibility=visible; position: absolute; left:80px; top: 320px; height: 170px; width: 470px;";
+    // document.getElementById("a3").style.animation = "fadeIn 2.5s forwards";
+    // var air = document.getElementById("change-airfoilButton");
+    // air.style.visibility = 'visible';
     // document.getElementById('a4').style.visibility="visible";
 
 }

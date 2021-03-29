@@ -295,3 +295,21 @@ background:#000
 .setColorIncorrectInput{
     color: rgb(194, 12, 12);
 }
+
+
+
+
+
+
+/*  EXPERIMENT 3 */
+.moveTopCover{
+    /* transform: translate(0,350px); */
+    animation:myfirst 2s;
+    /* transition: all 10s ease-in-out; */
+}
+@keyframes myfirst
+{
+    0%   { left:272px; top:50px;transform:rotate(3deg)}
+    /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
+    100% {left:272px; top:200px; transform:rotate(3deg)}
+}
