@@ -393,6 +393,10 @@ function placeMotor(n){
     }
 }
 
+function placeGPS(){
+    document.getElementById("gps").style.cssText = "visibility: visible; cursor: pointer; position: absolute; left: 280px; top: 150px; height: 75px; width: 45px; transform: rotate(0deg); z-index: 100;";
+    document.getElementById("gpsWire").style.cssText = "visibility: visible; cursor: pointer; position: absolute; left: 280px; top: 154px; height: 75px; width: 40px; transform: rotate(0deg); z-index: 100;";
+}
 
 
 
