@@ -372,7 +372,7 @@ function step1() {
         document.getElementById("placeMotorInfo").innerText = "Pick screws and screw them as shown.";
         document.getElementById("singleScrew").style.visibility = "visible";
         // Positioning the arrow
-        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 620px; top: 110px; height: 30px; z-index: 10;";
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 650px; top: 110px; height: 30px; z-index: 10;";
 
         document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
         // Code for IE9
@@ -510,6 +510,10 @@ function all_screws() {
         // document.getElementById("singleScrew" + i).style.zIndex = -1;
 
     }
+    document.getElementById("all_screws_on").style.visibility = "visible";
+    document.getElementById("all_screws_on").style.opacity = 1;
+    document.getElementById("all_screws_on").style.transition = "opacity 5.5s ease-in-out";
+    
     // Author: Jaison
     document.getElementById("screwHand").style.visibility = "hidden";
     document.getElementById("all_screws").style.visibility = "hidden";
@@ -517,16 +521,7 @@ function all_screws() {
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         document.getElementById("placeMotorInfo").innerText = "Select and place the motors."
     },2500);
-    //  Jaison end
-
-
-    document.getElementById("screwHand").style.visibility = "hidden";
-    document.getElementById("all_screws_on").style.visibility = "visible";
-    document.getElementById("all_screws_on").style.opacity = 1;
-    document.getElementById("all_screws_on").style.transition = "opacity 5.5s ease-in-out";
-
-
-
+    
 
     setTimeout(function(){
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
@@ -534,6 +529,7 @@ function all_screws() {
             document.getElementById("motor"+i).style.visibility = "visible";
         }
     },4500);
+    //  Jaison end
 }
 
 

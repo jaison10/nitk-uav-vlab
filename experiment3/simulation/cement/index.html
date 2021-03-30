@@ -64,7 +64,7 @@
             <p class="incanvas" style="font-family:verdana; font-size:15px;">To understand and learn to assemble a quadcopter.</p>
             </br>
             <h4 class="incanvas" style="font-family:verdana; ">Apparatus used:</h4>
-            <p class="incanvas" style="font-family:verdana; font-size:14px;">Frame, Motors, Propellers, Electronic Speed Controllers, Flight Controller, LiPO Battery, Power Module, Receiver, Wires, Transmitter and GPS.</p>
+            <p class="incanvas" style="font-family:verdana; font-size:14px;">Frame, Motors, Propellers, Electronic Speed Controllers, Flight Controller, LiPO Battery, Receiver, Wires and Transmitter.</p>
             &nbsp;
             <span class="tooltip" id="desc_button" style="border-bottom:1px dotted ; color:red; position:absolute; top:130px;"><strong>Description</strong>
   
@@ -85,6 +85,19 @@
             <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
             <p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">Let us start the assembly of a Quadcopter by first building the frame of the copter.</p>
 
+            <button id="all_screws" onclick="all_screws();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;">Top layer Frame</button>
+            <button id="all_screws" onclick="all_screws();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;">Arms</button>
+            <button id="all_screws" onclick="all_screws();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;">Motors</button>
+            <button id="all_screws" onclick="all_screws();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;">Flight Controller</button>
+            <button id="all_screws" onclick="all_screws();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;">Electronic Speed Controllers</button>
+            <button id="all_screws" onclick="all_screws();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;">LiPO Battery</button>
+            <button id="all_screws" onclick="all_screws();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;">Receiver</button>
+            <button id="all_screws" onclick="all_screws();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;">Transmitter</button>
+            <button id="all_screws" onclick="all_screws();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;">Wires</button>
+
+
+
+
             <img id="a2" class="" style="cursor: pointer; position: absolute; left: 272px; top: 50px; height: 87px; width:140px; visibility: block; transform:rotate(4deg); z-index: 1000;" src="./Images/frame_parts/Upper_layer_mounted.png">
             <img id="arms" class="" style="visibility: block; position: absolute; left: 100px; top: 150px; height: 300px; width: 500px; visibility: block; transform:rotate(4deg);" src="./Images/assembled/all_frame.png">
             <img id="armsAndTop" class="" style="visibility: hidden; position: absolute; left: 100px; top: 150px; height: 300px; width: 500px; visibility: hidden; transform:rotate(4deg);z-index: 100;" src="./Images/assembled/frame_mounted.png">
@@ -98,11 +111,11 @@
             <img id="motor4" onclick="placeMotor(4);" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 480px; top: 52px; height: 70px; width:65px; visibility: block; transform:rotate(3deg); z-index: 100;" src="./Images/assembly_parts/Motor_3.png">
 
             <!-- Hand -->
-            <img id="screwHand" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 353px; top: 101px; height: 95px; width:45px; visibility: block; z-index: 100;" src="./Images/assembly_parts/Screwing.png">
+            <img id="screwHand" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 351px; top: 101px; height: 95px; width:45px; visibility: block; z-index: 100;" src="./Images/assembly_parts/Screwing.png">
             <!-- <img id="screwHand2" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 353px; top: 101px; height: 95px; width:45px; visibility: block; z-index: 100;" src="./Images/assembly_parts/Screwing.png"> -->
 
             <!-- Single screw -->
-            <img id="singleScrew" onclick="placeSingleScrew();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 450px; top: 40px; height: 80px; width:100px; visibility: hidden; transform:rotate(0deg); z-index: 1500;" src="./Images/frame_parts/hand_screw.png">
+            <img id="singleScrew" onclick="placeSingleScrew();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 450px; top: 40px; height: 80px; width:150px; visibility: hidden; transform:rotate(0deg); z-index: 1500;" src="./Images/frame_parts/hand_screw__1_-removebg-preview (1).png">
             <img id="singleScrewFinal" onclick="placeSingleScrew();" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 367px; top: 193px; height: 20px; width:10px; visibility: block; transform:rotate(0deg); z-index: 100;" src="./Images/assembly_parts/single_screw.png">
             <button id="all_screws" onclick="all_screws();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;">Place all other screws</button>
 
