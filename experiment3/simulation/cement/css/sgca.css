@@ -493,7 +493,7 @@ html {
 }
 
 .rotateHand {
-    animation: rotation 1s 3 linear;
+    animation: rotation 1s 2 linear;
 }
 
 @keyframes rotation {

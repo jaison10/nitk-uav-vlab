@@ -409,12 +409,18 @@ function placeSingleScrew() {
         document.getElementById("screwHand").style.visibility = "visible";
         document.getElementById("screwHand").classList.add("rotateHand");
         document.getElementById("singleScrewFinal").style.top = "201px";
-        document.getElementById("singleScrewFinal").style.zIndex = -1;
+        // document.getElementById("singleScrewFinal").style.zIndex = -1;
         document.getElementById("screwHand").classList.add("rotateHand");
         document.getElementById("screwHand").style.top = (101 + additionalTop) + "px";
         // additionalTop += 2;
         document.getElementById("screwHand").style.transition = "top 5s ease-in-out";
-        document.getElementById("singleScrewFinal").style.transition = "top 3s ease-in-out";
+        document.getElementById("singleScrewFinal").style.opacity = 0;
+        document.getElementById("singleScrewFinal").style.transition = "all 3s ease-in-out";
+
+
+        setTimeout(() => {
+            document.getElementById("screw_head").style.visibility = "visible";
+        }, 1950);
         // document.getElementById("screwHand").style.top = (101 + additionalTop) + "px";
 
         // document.getElementById("screwHand").style.transition = "top 5s ease-in-out";
@@ -462,28 +468,39 @@ function placeMotor(n) {
 }
 
 function all_screws() {
-    document.getElementById("singleScrew2").style.top = "206px";
-    document.getElementById("singleScrew3").style.top = "207px";
-    document.getElementById("singleScrew4").style.top = "213px";
-    document.getElementById("singleScrew5").style.top = "197px";
-    document.getElementById("singleScrew6").style.top = "204px";
-    document.getElementById("singleScrew7").style.top = "205px";
-    document.getElementById("singleScrew8").style.top = "211px";
-    document.getElementById("singleScrew9").style.top = "258px";
-    document.getElementById("singleScrew10").style.top = "268px";
-    document.getElementById("singleScrew11").style.top = "254px";
-    document.getElementById("singleScrew12").style.top = "261px";
-    document.getElementById("singleScrew13").style.top = "269px";
-    document.getElementById("singleScrew14").style.top = "260px";
-    document.getElementById("singleScrew15").style.top = "260px";
-    document.getElementById("singleScrew16").style.top = "254px";
+    document.getElementById("singleScrew2").style.top = "208px";
+    document.getElementById("singleScrew3").style.top = "209px";
+    document.getElementById("singleScrew4").style.top = "215px";
+    document.getElementById("singleScrew5").style.top = "199px";
+    document.getElementById("singleScrew6").style.top = "206px";
+    document.getElementById("singleScrew7").style.top = "207px";
+    document.getElementById("singleScrew8").style.top = "213px";
+    document.getElementById("singleScrew9").style.top = "260px";
+    document.getElementById("singleScrew10").style.top = "270px";
+    document.getElementById("singleScrew11").style.top = "256px";
+    document.getElementById("singleScrew12").style.top = "263px";
+    document.getElementById("singleScrew13").style.top = "271px";
+    document.getElementById("singleScrew14").style.top = "262px";
+    document.getElementById("singleScrew15").style.top = "262px";
+    document.getElementById("singleScrew16").style.top = "256px";
+    // document.getElementById("singleScrewFinal").style.visibility = "visible";
+
+
 
     for (let i = 2; i <= 16; i++) {
         document.getElementById("singleScrew" + i).style.visibility = "visible";
-        document.getElementById("singleScrew" + i).style.transition = "top 1s ease-in-out";
+        document.getElementById("singleScrew" + i).style.transition = "all 3s ease-in-out";
+        document.getElementById("singleScrew" + i).style.opacity = 0;
+        // document.getElementById("singleScrew" + i).style.transition = "opacity 5s ease-in-out";
         // document.getElementById("singleScrew" + i).style.zIndex = -1;
 
     }
+    document.getElementById("screwHand").style.visibility = "hidden";
+    document.getElementById("all_screws_on").style.visibility = "visible";
+    document.getElementById("all_screws_on").style.opacity = 1;
+    document.getElementById("all_screws_on").style.transition = "opacity 5.5s ease-in-out";
+
+
 }
 
 function placeGPS() {
