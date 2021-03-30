@@ -361,21 +361,7 @@ function step1() {
     myStopFunction();
 
     document.getElementById("a2").classList.add("moveTopCover");
-    // setTimeout(function(){
-    //     document.getElementById("a2").style.visibility = "hidden";
-    //     document.getElementById("arms").style.visibility = "hidden";
-    //     document.getElementById("armsAndTop").style.visibility = "visible";
-    // },1800);
-    // setTimeout(function(){
-    //     document.getElementById("placeMotorInfo").style.visibility = "visible";
-    // },2500);
 
-    // setTimeout(function(){
-    //     document.getElementById("placeMotorInfo").style.visibility = "hidden";
-    //     for(let i = 1; i<5; i++){
-    //         document.getElementById("motor"+i).style.visibility = "visible";
-    //     }
-    // },4500);
     setTimeout(function() {
         document.getElementById("a2").style.visibility = "hidden";
         document.getElementById("arms").style.visibility = "hidden";
@@ -386,7 +372,7 @@ function step1() {
         document.getElementById("placeMotorInfo").innerText = "Pick screws and screw them as shown.";
         document.getElementById("singleScrew").style.visibility = "visible";
         // Positioning the arrow
-        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 580px; top: 110px; height: 30px; z-index: 10;";
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 620px; top: 110px; height: 30px; z-index: 10;";
 
         document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
         // Code for IE9
@@ -398,6 +384,7 @@ function step1() {
         }, 500);
     }, 2500);
 }
+var additionalTop = 7;
 
 function placeSingleScrew() {
     myStopFunction();
@@ -409,11 +396,15 @@ function placeSingleScrew() {
         document.getElementById("screwHand").classList.add("rotateHand");
         document.getElementById("singleScrewFinal").style.top = "201px";
         document.getElementById("singleScrewFinal").style.zIndex = -1;
-
-        document.getElementById("singleScrewFinal").style.transition = "top 3s ease-in-out";
-        document.getElementById("screwHand").style.top = "110px";
+        document.getElementById("screwHand").classList.add("rotateHand");
+        document.getElementById("screwHand").style.top = (101 + additionalTop) + "px";
+        // additionalTop += 2;
         document.getElementById("screwHand").style.transition = "top 5s ease-in-out";
-        // setTimeout(() => {
+        document.getElementById("singleScrewFinal").style.transition = "top 3s ease-in-out";
+        // document.getElementById("screwHand").style.top = (101 + additionalTop) + "px";
+
+        // document.getElementById("screwHand").style.transition = "top 5s ease-in-out";
+        // // setTimeout(() => {
         //     document.getElementById("screwHand").classList.add("rotateHand");
         //     setTimeout(() => {
         //         document.getElementById("screwHand").classList.add("moveHandInside");
@@ -436,6 +427,8 @@ function placeSingleScrew() {
 
     }, 1900);
 
+
+
 }
 var motorPlacementCount = 0;
 
@@ -444,24 +437,77 @@ function placeMotor(n) {
     document.getElementById("motor" + n).style.visibility = "hidden";
     motorPlacementCount += 1;
     if (motorPlacementCount == 4) {
-        document.getElementById("placeMotorInfo").innerText = "Let us place the GPS now.";
+        document.getElementById("placeMotorInfo").innerText = "Let us place the FC (Flight Controller) now.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         setTimeout(function() {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
-            document.getElementById("gps").style.visibility = "visible";
-            document.getElementById("gpsWire").style.visibility = "visible";
-        }, 1500)
+            // document.getElementById("gps").style.visibility = "visible";
+            // document.getElementById("gpsWire").style.visibility = "visible";
+            document.getElementById("fc").style.visibility = "visible";
+        }, 2000)
     }
 }
 
+function placeFC(){
+    document.getElementById("fc").classList.add("moveFc");
+    setTimeout(() => {
+        document.getElementById("fc").style.visibility = "hidden";
+        document.getElementById("placedFc").style.visibility = "visible";
+        document.getElementById("placeMotorInfo").innerText = "Let us place the receiver now.";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        setTimeout(() => {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+            document.getElementById("receiver").style.visibility = "visible";            
+        }, 2000);
+    }, 1950);
+}
+// ------------------------------------Use this if placing GPS. ----------------------------
+// function placeGPS() {
+//     document.getElementById("gps").style.cssText = "visibility: visible; cursor: pointer; position: absolute; left: 280px; top: 150px; height: 75px; width: 45px; transform: rotate(0deg); z-index: 100;";
+//     document.getElementById("gpsWire").style.cssText = "visibility: visible; cursor: pointer; position: absolute; left: 280px; top: 154px; height: 75px; width: 40px; transform: rotate(0deg); z-index: 100;";
+// }
+
+
 function all_screws() {
+    document.getElementById("singleScrew2").style.top = "206px";
+    document.getElementById("singleScrew3").style.top = "207px";
+    document.getElementById("singleScrew4").style.top = "213px";
+    document.getElementById("singleScrew5").style.top = "197px";
+    document.getElementById("singleScrew6").style.top = "204px";
+    document.getElementById("singleScrew7").style.top = "205px";
+    document.getElementById("singleScrew8").style.top = "211px";
+    document.getElementById("singleScrew9").style.top = "258px";
+    document.getElementById("singleScrew10").style.top = "268px";
+    document.getElementById("singleScrew11").style.top = "254px";
+    document.getElementById("singleScrew12").style.top = "261px";
+    document.getElementById("singleScrew13").style.top = "269px";
+    document.getElementById("singleScrew14").style.top = "260px";
+    document.getElementById("singleScrew15").style.top = "260px";
+    document.getElementById("singleScrew16").style.top = "254px";
 
+    for (let i = 2; i <= 16; i++) {
+        document.getElementById("singleScrew" + i).style.visibility = "visible";
+        document.getElementById("singleScrew" + i).style.transition = "top 1s ease-in-out";
+        // document.getElementById("singleScrew" + i).style.zIndex = -1;
+
+    }
+    // Author: Jaison
+    document.getElementById("screwHand").style.visibility = "hidden";
+    document.getElementById("all_screws").style.visibility = "hidden";
+    setTimeout(function(){
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        document.getElementById("placeMotorInfo").innerText = "Select and place the motors."
+    },2500);
+
+    setTimeout(function(){
+        document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        for(let i = 1; i<5; i++){
+            document.getElementById("motor"+i).style.visibility = "visible";
+        }
+    },4500);
 }
 
-function placeGPS() {
-    document.getElementById("gps").style.cssText = "visibility: visible; cursor: pointer; position: absolute; left: 280px; top: 150px; height: 75px; width: 45px; transform: rotate(0deg); z-index: 100;";
-    document.getElementById("gpsWire").style.cssText = "visibility: visible; cursor: pointer; position: absolute; left: 280px; top: 154px; height: 75px; width: 40px; transform: rotate(0deg); z-index: 100;";
-}
+
 
 
 

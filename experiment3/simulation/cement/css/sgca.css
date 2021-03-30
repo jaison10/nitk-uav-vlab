@@ -484,10 +484,10 @@ html {
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        left: 367px;
-        top: 193px;
-        height: 20px;
-        width: 10px;
+        left: 363px;
+        top: 175px;
+        /* height: 20px;
+        width: 10px; */
         transform: rotate(0deg);
     }
 }
@@ -503,21 +503,7 @@ html {
     }
     to {
         transform: rotateY(-0.2turn);
-        /* top: 110px; */
-    }
-}
-
-.rotateHand2 {
-    animation: rotation2 0.5s 2 linear;
-}
-
-@keyframes rotation2 {
-    from {
-        transform: rotate(0deg);
-        /* top: 101px; */
-    }
-    to {
-        transform: rotateY(-0.2turn);
+        left: 353px;
         /* top: 110px; */
     }
 }
@@ -562,18 +548,22 @@ html {
     }
 }
 
-.moveHandInside2 {
+
+.moveFc {
     /* transform: translate(0,350px); */
-    animation: moveSingleHandIn2 1.5s;
+    animation: movefc 2s;
     /* transition: all 10s ease-in-out; */
 }
 
-@keyframes moveSingleHandIn2 {
+@keyframes movefc {
     0% {
-        top: 120px;
+        left: 305px; top: 80px; height: 40px; width:70px;
+    }
+    50% {
+        height: 38px; width:65px;
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        top: 140px;
+        left: 307px; top: 220px; height: 35px; width:60px;
     }
 }
