@@ -1537,10 +1537,8 @@ function motorConnection1() {
             }
         });
             if (flag1 == 0) {
-                //  console.log("This is from 1st wire but at step3. Value of clickOnMotorWire1 before an update is: "+ clickOnMotorWire1);
                 clickOnMotorWire1 += 1;
                 console.log("New added: clickOnWire1 value after incrementing is: "+ clickOnMotorWire1);
-                // console.log("This is from 1st wire but at step3. Value of clickOnMotorWire1 is: "+ clickOnMotorWire1);
                 if (clickOnMotorWire1 == 1) {
                     countOfEscAndMotor += 1;
                     document.getElementById("connection_explanation").innerText = "Well, you have completed the circuit(3).";
