@@ -234,16 +234,16 @@ function magic() {
         document.getElementById('trial').style = "visibility:visible ;left: 700px; top: 100px;position: absolute;font-weight: bold;text-transform: uppercase;";
         document.getElementById('trial').innerHTML = "";
         // Positioning the arrow
-        document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 280px; top: 110px; height: 30px; z-index: 10;";
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 280px; top: 110px; height: 30px; z-index: 10;";
 
-        document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
         // Code for IE9
-        document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
+        document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
         // Standard syntax
         document.getElementById("arrow1").style.transform = "rotate(180deg)";
-        myInt = setInterval(function(){
+        myInt = setInterval(function() {
             animatearrow();
-        },500);
+        }, 500);
         document.getElementById('a2').onclick = function() { step1(); };
 
     } else if (simsubscreennum == 2) {
@@ -359,7 +359,7 @@ function magic() {
 
 function step1() {
     myStopFunction();
-    
+
     document.getElementById("a2").classList.add("moveTopCover");
     // setTimeout(function(){
     //     document.getElementById("a2").style.visibility = "hidden";
@@ -376,35 +376,43 @@ function step1() {
     //         document.getElementById("motor"+i).style.visibility = "visible";
     //     }
     // },4500);
-    setTimeout(function(){
+    setTimeout(function() {
         document.getElementById("a2").style.visibility = "hidden";
         document.getElementById("arms").style.visibility = "hidden";
         document.getElementById("armsAndTop").style.visibility = "visible";
-    },1800);
-    setTimeout(function(){
+    }, 1800);
+    setTimeout(function() {
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         document.getElementById("placeMotorInfo").innerText = "Pick screws and screw them as shown.";
         document.getElementById("singleScrew").style.visibility = "visible";
         // Positioning the arrow
-        document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 580px; top: 110px; height: 30px; z-index: 10;";
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 580px; top: 110px; height: 30px; z-index: 10;";
 
-        document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)"; 
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
         // Code for IE9
-        document.getElementById("arrow1").style.msTransform = "rotate(0deg)"; 
+        document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
         // Standard syntax
         document.getElementById("arrow1").style.transform = "rotate(0deg)";
-        myInt = setInterval(function(){
+        myInt = setInterval(function() {
             animatearrow();
-        },500);
-    },2500);
+        }, 500);
+    }, 2500);
 }
-function placeSingleScrew(){
+
+function placeSingleScrew() {
     myStopFunction();
     document.getElementById("singleScrew").classList.add("moveSingleScrew");
     setTimeout(() => {
         document.getElementById("singleScrew").style.visibility = "hidden";
         document.getElementById("singleScrewFinal").style.visibility = "visible";
         document.getElementById("screwHand").style.visibility = "visible";
+        document.getElementById("screwHand").classList.add("rotateHand");
+        document.getElementById("singleScrewFinal").style.top = "201px";
+        document.getElementById("singleScrewFinal").style.zIndex = -1;
+
+        document.getElementById("singleScrewFinal").style.transition = "top 3s ease-in-out";
+        document.getElementById("screwHand").style.top = "110px";
+        document.getElementById("screwHand").style.transition = "top 5s ease-in-out";
         // setTimeout(() => {
         //     document.getElementById("screwHand").classList.add("rotateHand");
         //     setTimeout(() => {
@@ -421,27 +429,32 @@ function placeSingleScrew(){
         //     }, 900);
         //     document.getElementById("singleScrewFinal").classList.add("moveSingleScrewInside");
         // }, 1000);
+        setTimeout(() => {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+            document.getElementById("all_screws").style.visibility = "visible";
+        }, 2000);
 
     }, 1900);
 
 }
 var motorPlacementCount = 0;
-function placeMotor(n){
-    document.getElementById("placedMotor"+n).style.visibility = "visible";
-    document.getElementById("motor"+n).style.visibility = "hidden";
+
+function placeMotor(n) {
+    document.getElementById("placedMotor" + n).style.visibility = "visible";
+    document.getElementById("motor" + n).style.visibility = "hidden";
     motorPlacementCount += 1;
-    if(motorPlacementCount == 4){
+    if (motorPlacementCount == 4) {
         document.getElementById("placeMotorInfo").innerText = "Let us place the GPS now.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
-        setTimeout(function(){
-            document.getElementById("placeMotorInfo").style.visibility = "hidden"; 
+        setTimeout(function() {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
             document.getElementById("gps").style.visibility = "visible";
             document.getElementById("gpsWire").style.visibility = "visible";
-        },1500)
+        }, 1500)
     }
 }
 
-function placeGPS(){
+function placeGPS() {
     document.getElementById("gps").style.cssText = "visibility: visible; cursor: pointer; position: absolute; left: 280px; top: 150px; height: 75px; width: 45px; transform: rotate(0deg); z-index: 100;";
     document.getElementById("gpsWire").style.cssText = "visibility: visible; cursor: pointer; position: absolute; left: 280px; top: 154px; height: 75px; width: 40px; transform: rotate(0deg); z-index: 100;";
 }

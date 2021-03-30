@@ -3167,6 +3167,8 @@ function generate_table() {
     document.getElementById('rpm_indicator').style.visibility = "hidden";
     document.getElementById('dialog_box2').style.visibility = "hidden";
     document.getElementById('rpm_value').style.visibility = "hidden";
+    document.getElementById('rpm_mini_value').style.visibility = "hidden";
+    document.getElementById('thrust_mini_value').style.visibility = "hidden";
 
     document.getElementById('prop_fan').style.animation = "rotate 0s linear 0s infinite";
     document.getElementById('choose_motor').style.visibility = "visible";
