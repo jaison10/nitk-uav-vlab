@@ -1535,14 +1535,15 @@ function motorConnection1() {
                 alert("This wire has been connected already, please choose other!");
                 flag1 = 1;
             }
+        });
             if (flag1 == 0) {
                 //  console.log("This is from 1st wire but at step3. Value of clickOnMotorWire1 before an update is: "+ clickOnMotorWire1);
                 clickOnMotorWire1 += 1;
-
+                console.log("New added: clickOnWire1 value after incrementing is: "+ clickOnMotorWire1);
                 // console.log("This is from 1st wire but at step3. Value of clickOnMotorWire1 is: "+ clickOnMotorWire1);
                 if (clickOnMotorWire1 == 1) {
                     countOfEscAndMotor += 1;
-                    document.getElementById("connection_explanation").innerText = "Well, you have completed the circuit.";
+                    document.getElementById("connection_explanation").innerText = "Well, you have completed the circuit(3).";
                     clearInterval(blinkWires);
                     document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
                     document.getElementById("motorWire2").style.cursor = "not-allowed";
@@ -1589,7 +1590,7 @@ function motorConnection1() {
                 }
 
             }
-        });
+        
 
     }
 }
