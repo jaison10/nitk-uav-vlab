@@ -386,7 +386,7 @@ function step1() {
         document.getElementById("placeMotorInfo").innerText = "Pick screws and screw them as shown.";
         document.getElementById("singleScrew").style.visibility = "visible";
         // Positioning the arrow
-        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 620px; top: 110px; height: 30px; z-index: 10;";
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 650px; top: 110px; height: 30px; z-index: 10;";
 
         document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
         // Code for IE9
