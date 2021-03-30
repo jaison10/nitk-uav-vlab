@@ -85,7 +85,7 @@
             <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
             <p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">Let us start the assembly of a Quadcopter by first building the frame of the copter.</p>
 
-            <img id="a2" class="" style="cursor: pointer; position: absolute; left: 272px; top: 50px; height: 87px; width:140px; visibility: block; transform:rotate(4deg); z-index: 100;" src="./Images/frame_parts/Upper_layer_mounted.png">
+            <img id="a2" class="" style="cursor: pointer; position: absolute; left: 272px; top: 50px; height: 87px; width:140px; visibility: block; transform:rotate(4deg); z-index: 1000;" src="./Images/frame_parts/Upper_layer_mounted.png">
             <img id="arms" class="" style="visibility: block; position: absolute; left: 100px; top: 150px; height: 300px; width: 500px; visibility: block; transform:rotate(4deg);" src="./Images/assembled/all_frame.png">
             <img id="armsAndTop" class="" style="visibility: hidden; position: absolute; left: 100px; top: 150px; height: 300px; width: 500px; visibility: hidden; transform:rotate(4deg);z-index: 100;" src="./Images/assembled/frame_mounted.png">
             <!-- ALL MOTORS ARE PLACED -->
@@ -106,6 +106,9 @@
             <img id="singleScrewFinal" onclick="placeSingleScrew();" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 367px; top: 193px; height: 20px; width:10px; visibility: block; transform:rotate(0deg); z-index: 100;" src="./Images/assembly_parts/single_screw.png">
             <button id="all_screws" onclick="all_screws();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;">Place all other screws</button>
 
+            <!-- SCREW HEAD -->
+            <img id="screw_head" class="" style="visibility: hidden;  position: absolute;left: 369px; top: 208px;height:3px;width:5px; z-index: 120;" src="./Images/frame_parts/Screw_head.png">
+
             <!-- OTHER SCREWS TO BE ATTACHED -->
             <!-- <img id="singleScrew1" onclick="placeSingleScrew();" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 367px; top: 193px; height: 20px; width:10px; visibility: block; z-index: 100;" src="./Images/assembly_parts/single_screw.png"> -->
             <img id="singleScrew2" onclick="placeSingleScrew();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 385px; top: 201px; height: 20px; width: 10px; z-index: 100;" src="./Images/assembly_parts/single_screw.png">
@@ -124,7 +127,8 @@
             <img id="singleScrew15" onclick="placeSingleScrew();" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 371px; top: 255px; height: 20px; width:10px; z-index: 100;" src="./Images/assembly_parts/single_screw.png">
             <img id="singleScrew16" onclick="placeSingleScrew();" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 380px; top: 249px; height: 20px; width:10px; z-index: 100;" src="./Images/assembly_parts/single_screw.png">
 
-
+            <!-- FRAME WITH SCREWS ON -->
+            <img id="all_screws_on" class="" style="visibility: hidden; position: absolute; left: 100px; top: 150px; height: 300px; width: 500px; visibility: hidden; transform:rotate(4deg);z-index: 100;opacity: 0;" src="./Images/frame_parts/Frame_screwed1.png">
 
 
 
@@ -146,7 +150,7 @@
 
             <!-- RECEIVER -->
             <img id="receiver" onclick="placeReceiver();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 280px; top: 80px; height: 30px; width: 100px; transform: rotate(3deg); z-index: 100;" src="./Images/assembly_parts/Receiver.png">
-            <img id="placedReceiver" onclick="" class="" style="visibility: visible; cursor: pointer; position: absolute; left: 312px; top: 255px; height: 20px; width: 50px; transform: rotate(3deg); z-index: 100;" src="./Images/assembly_parts/Receiver.png">
+            <img id="placedReceiver" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 312px; top: 255px; height: 20px; width: 50px; transform: rotate(3deg); z-index: 100;" src="./Images/assembly_parts/Receiver.png">
             
             <!-- EACH ARMS -->
             <!-- <img id="arm1" class="" style="position: absolute; left:10px; top: 50px; height: 150px; width: 200px; visibility: block;transform: rotate(30deg);" src="./Images/assembly_parts/Frame_1.png" />

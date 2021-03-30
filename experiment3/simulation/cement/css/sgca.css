@@ -493,7 +493,7 @@ html {
 }
 
 .rotateHand {
-    animation: rotation 1s 3 linear;
+    animation: rotation 1s 2 linear;
 }
 
 @keyframes rotation {
@@ -565,5 +565,21 @@ html {
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
         left: 307px; top: 220px; height: 35px; width:60px;
+    }
+}
+
+.moveRec {
+    /* transform: translate(0,350px); */
+    animation: moveRcv 2s;
+    /* transition: all 10s ease-in-out; */
+}
+
+@keyframes moveRcv {
+    0% {
+        left: 280px; top: 80px; height: 30px; width: 100px;
+    }
+    /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
+    100% {
+        left: 312px; top: 255px; height: 20px; width: 50px;
     }
 }
