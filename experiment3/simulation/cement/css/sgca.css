@@ -484,10 +484,10 @@ html {
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        left: 367px;
-        top: 193px;
-        height: 20px;
-        width: 10px;
+        left: 363px;
+        top: 175px;
+        /* height: 20px;
+        width: 10px; */
         transform: rotate(0deg);
     }
 }
@@ -503,6 +503,7 @@ html {
     }
     to {
         transform: rotateY(-0.2turn);
+        left: 353px;
         /* top: 110px; */
     }
 }

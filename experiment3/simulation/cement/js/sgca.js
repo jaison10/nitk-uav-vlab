@@ -386,7 +386,7 @@ function step1() {
         document.getElementById("placeMotorInfo").innerText = "Pick screws and screw them as shown.";
         document.getElementById("singleScrew").style.visibility = "visible";
         // Positioning the arrow
-        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 580px; top: 110px; height: 30px; z-index: 10;";
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 620px; top: 110px; height: 30px; z-index: 10;";
 
         document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
         // Code for IE9
@@ -398,6 +398,7 @@ function step1() {
         }, 500);
     }, 2500);
 }
+var additionalTop = 7;
 
 function placeSingleScrew() {
     myStopFunction();
@@ -409,11 +410,15 @@ function placeSingleScrew() {
         document.getElementById("screwHand").classList.add("rotateHand");
         document.getElementById("singleScrewFinal").style.top = "201px";
         document.getElementById("singleScrewFinal").style.zIndex = -1;
-
-        document.getElementById("singleScrewFinal").style.transition = "top 3s ease-in-out";
-        document.getElementById("screwHand").style.top = "110px";
+        document.getElementById("screwHand").classList.add("rotateHand");
+        document.getElementById("screwHand").style.top = (101 + additionalTop) + "px";
+        // additionalTop += 2;
         document.getElementById("screwHand").style.transition = "top 5s ease-in-out";
-        // setTimeout(() => {
+        document.getElementById("singleScrewFinal").style.transition = "top 3s ease-in-out";
+        // document.getElementById("screwHand").style.top = (101 + additionalTop) + "px";
+
+        // document.getElementById("screwHand").style.transition = "top 5s ease-in-out";
+        // // setTimeout(() => {
         //     document.getElementById("screwHand").classList.add("rotateHand");
         //     setTimeout(() => {
         //         document.getElementById("screwHand").classList.add("moveHandInside");
@@ -436,6 +441,8 @@ function placeSingleScrew() {
 
     }, 1900);
 
+
+
 }
 var motorPlacementCount = 0;
 
@@ -455,6 +462,12 @@ function placeMotor(n) {
 }
 
 function all_screws() {
+    // document.getElementById("singleScrew1").style.visibility = "visible";
+    document.getElementById("singleScrew2").style.visibility = "visible";
+    document.getElementById("singleScrew3").style.visibility = "visible";
+    document.getElementById("singleScrew4").style.visibility = "visible";
+    // document.getElementById("singleScrew4").style.visibility = "visible";
+    // document.getElementById("singleScrew4").style.visibility = "visible";
 
 }
 
