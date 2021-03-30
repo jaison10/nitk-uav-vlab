@@ -462,13 +462,28 @@ function placeMotor(n) {
 }
 
 function all_screws() {
-    // document.getElementById("singleScrew1").style.visibility = "visible";
-    document.getElementById("singleScrew2").style.visibility = "visible";
-    document.getElementById("singleScrew3").style.visibility = "visible";
-    document.getElementById("singleScrew4").style.visibility = "visible";
-    // document.getElementById("singleScrew4").style.visibility = "visible";
-    // document.getElementById("singleScrew4").style.visibility = "visible";
+    document.getElementById("singleScrew2").style.top = "206px";
+    document.getElementById("singleScrew3").style.top = "207px";
+    document.getElementById("singleScrew4").style.top = "213px";
+    document.getElementById("singleScrew5").style.top = "197px";
+    document.getElementById("singleScrew6").style.top = "204px";
+    document.getElementById("singleScrew7").style.top = "205px";
+    document.getElementById("singleScrew8").style.top = "211px";
+    document.getElementById("singleScrew9").style.top = "258px";
+    document.getElementById("singleScrew10").style.top = "268px";
+    document.getElementById("singleScrew11").style.top = "254px";
+    document.getElementById("singleScrew12").style.top = "261px";
+    document.getElementById("singleScrew13").style.top = "269px";
+    document.getElementById("singleScrew14").style.top = "260px";
+    document.getElementById("singleScrew15").style.top = "260px";
+    document.getElementById("singleScrew16").style.top = "254px";
 
+    for (let i = 2; i <= 16; i++) {
+        document.getElementById("singleScrew" + i).style.visibility = "visible";
+        document.getElementById("singleScrew" + i).style.transition = "top 1s ease-in-out";
+        // document.getElementById("singleScrew" + i).style.zIndex = -1;
+
+    }
 }
 
 function placeGPS() {
