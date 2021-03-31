@@ -230,21 +230,22 @@ function magic() {
         // myInt = setInterval(function()	{
         // 	 animatearrow(); 
         // }, 500);
+        document.getElementById('motor1').style.visibility = "hidden";
+        document.getElementById('motor2').style.visibility = "hidden";
+        document.getElementById('motor3').style.visibility = "hidden";
+        document.getElementById('motor4').style.visibility = "hidden";
 
-        document.getElementById('trial').style = "visibility:visible ;left: 700px; top: 100px;position: absolute;font-weight: bold;text-transform: uppercase;";
-        document.getElementById('trial').innerHTML = "";
-        // Positioning the arrow
-        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 280px; top: 110px; height: 30px; z-index: 10;";
+        document.getElementById('quad').style.visibility = "visible";
+        document.getElementById('motors').style.visibility = "visible";
+        document.getElementById('tran_rec').style.visibility = "visible";
 
-        document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
-        // Code for IE9
-        document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
-        // Standard syntax
-        document.getElementById("arrow1").style.transform = "rotate(180deg)";
-        myInt = setInterval(function() {
-            animatearrow();
-        }, 500);
-        document.getElementById('a2').onclick = function() { step1(); };
+
+        document.getElementById('flight_c').style.visibility = "visible";
+        document.getElementById('esc').style.visibility = "visible";
+        document.getElementById('lipo').style.visibility = "visible";
+
+
+        // document.getElementById('a2').onclick = function() { step1(); };
 
     } else if (simsubscreennum == 2) {
         //hiding the previous canvas airfoil images.
@@ -357,10 +358,54 @@ function magic() {
     }
 }
 
+function place_apparatus(apparatus_id, top_px) {
+
+    if (apparatus_id == "quad") {
+        document.getElementById('top').style.visibility = "visible";
+        document.getElementById('top').style.top = "50px";
+        document.getElementById('top').style.transition = "top 1s ease-in-out";
+        document.getElementById('base').style.visibility = "visible";
+        document.getElementById('base').style.top = "50px";
+        document.getElementById('base').style.transition = "top 1s ease-in-out";
+        for (let i = 1; i <= 4; i++) {
+            document.getElementById('arm' + i).style.visibility = "visible";
+            document.getElementById('arm' + i).style.top = "140px";
+            document.getElementById('arm' + i).style.transition = "top 1s ease-in-out";
+
+        }
+
+
+    }
+    if (apparatus_id == "tran_rec") {
+        document.getElementById('transmitter1').style.visibility = "visible";
+        document.getElementById('transmitter1').style.top = "350px";
+        document.getElementById('transmitter1').style.transition = "top 1s ease-in-out";
+
+        document.getElementById('receiver1').style.visibility = "visible";
+        document.getElementById('receiver1').style.top = "360px";
+        document.getElementById('receiver1').style.transition = "top 1s ease-in-out";
+
+        document.getElementById('next').style.visibility = "visible";
+
+    } else {
+        var apparatus = document.getElementById(apparatus_id);
+        apparatus.style.visibility = "visible";
+        apparatus.style.top = top_px;
+        apparatus.style.transition = "top 1s ease-in-out";
+
+    }
+
+
+}
+
+
+
+
 function step1() {
     myStopFunction();
 
     document.getElementById("a2").classList.add("moveTopCover");
+    document.getElementById("pumptext").innerText = "Let us start the assembly of a Quadcopter by first building the frame of the copter.";
 
     setTimeout(function() {
         document.getElementById("a2").style.visibility = "hidden";
@@ -429,6 +474,8 @@ function placeSingleScrew() {
         setTimeout(() => {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
             document.getElementById("all_screws").style.visibility = "visible";
+
+
         }, 2000);
 
     }, 1900);
@@ -438,9 +485,16 @@ function placeSingleScrew() {
 }
 var motorPlacementCount = 0;
 
-function placeMotor(n) {
+function placeMotor(n, t) {
+    myStopFunction();
+    document.getElementById("motor" + n).style.visibility = "visible";
+    document.getElementById("motor" + n).style.top = t;
+    document.getElementById("motor" + n).style.opacity = 0;
+    document.getElementById("motor" + n).style.transition = "all 0.1s ease-in-out";
     document.getElementById("placedMotor" + n).style.visibility = "visible";
-    document.getElementById("motor" + n).style.visibility = "hidden";
+    document.getElementById("placedMotor" + n).style.opacity = 1;
+    document.getElementById("placedMotor" + n).style.transition = "opacity 0.1s ease-in-out";
+
     motorPlacementCount += 1;
     if (motorPlacementCount == 4) {
         document.getElementById("placeMotorInfo").innerText = "Let us place the FC (Flight Controller) now.";
@@ -449,12 +503,23 @@ function placeMotor(n) {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
             // document.getElementById("gps").style.visibility = "visible";
             // document.getElementById("gpsWire").style.visibility = "visible";
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 450px; top: 130px; height: 30px; z-index: 10;";
+
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(0deg)";
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
             document.getElementById("fc").style.visibility = "visible";
-        }, 2000)
+        }, 3500)
     }
 }
 
-function placeFC(){
+function placeFC() {
+    myStopFunction();
     document.getElementById("fc").classList.add("moveFc");
     setTimeout(() => {
         document.getElementById("fc").style.visibility = "hidden";
@@ -462,18 +527,29 @@ function placeFC(){
         document.getElementById("placeMotorInfo").innerText = "Let us place the receiver now.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         setTimeout(() => {
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 450px; top: 130px; height: 30px; z-index: 10;";
+
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(0deg)";
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
-            document.getElementById("receiver").style.visibility = "visible";            
-        }, 2000);
-    }, 1950);
+            document.getElementById("receiver").style.visibility = "visible";
+        }, 2500);
+    }, 2000);
 }
 
-function placeReceiver(){   
+function placeReceiver() {
+    myStopFunction();
     document.getElementById("receiver").classList.add("moveRec");
     setTimeout(() => {
-        document.getElementById("receiver").style.visibility = "hidden";            
-        document.getElementById("placedReceiver").style.visibility = "visible";            
-    }, 1950);            
+        document.getElementById("receiver").style.visibility = "hidden";
+        document.getElementById("placedReceiver").style.visibility = "visible";
+    }, 1950);
 }
 // ------------------------------------Use this if placing GPS. ----------------------------
 // function placeGPS() {
@@ -513,22 +589,33 @@ function all_screws() {
     document.getElementById("all_screws_on").style.visibility = "visible";
     document.getElementById("all_screws_on").style.opacity = 1;
     document.getElementById("all_screws_on").style.transition = "opacity 5.5s ease-in-out";
-    
+
     // Author: Jaison
     document.getElementById("screwHand").style.visibility = "hidden";
     document.getElementById("all_screws").style.visibility = "hidden";
-    setTimeout(function(){
-        document.getElementById("placeMotorInfo").style.visibility = "visible";
-        document.getElementById("placeMotorInfo").innerText = "Select and place the motors."
-    },2500);
-    
 
-    setTimeout(function(){
+    setTimeout(function() {
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        document.getElementById("placeMotorInfo").innerText = "Select and screw the motors to the arm of the frame."
+    }, 3000);
+
+
+    setTimeout(function() {
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
-        for(let i = 1; i<5; i++){
-            document.getElementById("motor"+i).style.visibility = "visible";
+        for (let i = 1; i < 5; i++) {
+            document.getElementById("motor" + i).style.visibility = "visible";
         }
-    },4500);
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 100px; top: 320px; height: 30px; z-index: 10;";
+
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(180deg)";
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
+    }, 5000);
     //  Jaison end
 }
 
@@ -630,4 +717,47 @@ function verifyLift(l) {
         document.getElementById("outputLift" + (l)).classList.remove("setColorNoInput");
         document.getElementById("outputLift" + (l)).classList.remove("setColorCorrectInput");
     }
+}
+
+function mount_frame() {
+    //remove apparatus images
+    document.getElementById('top').style.visibility = "hidden";
+    document.getElementById('base').style.visibility = "hidden";
+    document.getElementById('arm1').style.visibility = "hidden";
+    document.getElementById('arm2').style.visibility = "hidden";
+    document.getElementById('arm3').style.visibility = "hidden";
+    document.getElementById('arm4').style.visibility = "hidden";
+    document.getElementById('motor').style.visibility = "hidden";
+    document.getElementById('flight_controller').style.visibility = "hidden";
+    document.getElementById('electronic_sc').style.visibility = "hidden";
+    document.getElementById('lipo_battery').style.visibility = "hidden";
+    document.getElementById('receiver1').style.visibility = "hidden";
+    document.getElementById('transmitter1').style.visibility = "hidden";
+
+    //remove apparatus buttons
+    document.getElementById('quad').style.visibility = "hidden";
+    document.getElementById('motors').style.visibility = "hidden";
+    document.getElementById('flight_c').style.visibility = "hidden";
+    document.getElementById('esc').style.visibility = "hidden";
+    document.getElementById('lipo').style.visibility = "hidden";
+    document.getElementById('tran_rec').style.visibility = "hidden";
+
+
+    // document.getElementById('trial').style = "visibility:visible ;left: 700px; top: 100px;position: absolute;font-weight: bold;text-transform: uppercase;";
+    document.getElementById('trial').innerHTML = "";
+    // Positioning the arrow
+    document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 280px; top: 110px; height: 30px; z-index: 10;";
+
+    document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
+    // Code for IE9
+    document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
+    // Standard syntax
+    document.getElementById("arrow1").style.transform = "rotate(180deg)";
+    myInt = setInterval(function() {
+        animatearrow();
+    }, 500);
+    document.getElementById('a2').style.visibility = "visible";
+    document.getElementById('arms').style.visibility = "visible";
+    document.getElementById('next').style.visibility = "hidden";
+    document.getElementById('a2').onclick = function() { step1(); };
 }
