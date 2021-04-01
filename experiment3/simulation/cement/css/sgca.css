@@ -556,7 +556,7 @@ html {
 
 @keyframes movefc {
     0% {
-        left: 250px; top: 60px; height: 60px; width: 120px;
+        left: 260px; top: 60px; height: 60px; width: 120px;
     }
     50% {
         height: 55px;
@@ -579,17 +579,14 @@ html {
 
 @keyframes moveRcv {
     0% {
-        left: 280px;
-        top: 80px;
-        height: 30px;
-        width: 100px;
+        left: 250px; top: 60px; height: 55px; width: 130px;
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
         left: 312px;
         top: 255px;
-        height: 20px;
-        width: 50px;
+        height: 40px;
+        width: 100px;
     }
 }
 
