@@ -82,6 +82,16 @@ function animatearrow() {
         document.getElementById('arrow1').style.visibility = "hidden";
 }
 
+function animatecurvearrow() {
+    document.getElementById('curve_arrow').style.left = "360px";
+    if (document.getElementById('curve_arrow').style.visibility == "hidden")
+        document.getElementById('curve_arrow').style.visibility = "visible";
+    else
+        document.getElementById('curve_arrow').style.visibility = "hidden";
+
+}
+
+
 //stop blinking arrow
 function myStopFunction() {
     clearInterval(myInt);
@@ -447,10 +457,17 @@ function placeSingleScrew() {
         document.getElementById("screwHand").style.transition = "top 5s ease-in-out";
         document.getElementById("singleScrewFinal").style.opacity = 0;
         document.getElementById("singleScrewFinal").style.transition = "all 3s ease-in-out";
-
+        document.getElementById("curve_arrow").style.visibility = "visible";
+        // document.getElementById("curve_arrow").classList.add("rotate_curve_arrow");
+        myInt = setInterval(function() {
+            animatecurvearrow();
+        }, 500);
 
         setTimeout(() => {
             document.getElementById("screw_head").style.visibility = "visible";
+            clearInterval(myInt);
+            document.getElementById('curve_arrow').style.visibility = "hidden";
+
         }, 1950);
         // document.getElementById("screwHand").style.top = (101 + additionalTop) + "px";
 
@@ -490,10 +507,10 @@ function placeMotor(n, t) {
     document.getElementById("motor" + n).style.visibility = "visible";
     document.getElementById("motor" + n).style.top = t;
     document.getElementById("motor" + n).style.opacity = 0;
-    document.getElementById("motor" + n).style.transition = "all 0.1s ease-in-out";
+    document.getElementById("motor" + n).style.transition = "all 1s ease-in-out";
     document.getElementById("placedMotor" + n).style.visibility = "visible";
     document.getElementById("placedMotor" + n).style.opacity = 1;
-    document.getElementById("placedMotor" + n).style.transition = "opacity 0.1s ease-in-out";
+    document.getElementById("placedMotor" + n).style.transition = "opacity 1s ease-in-out";
 
     motorPlacementCount += 1;
     if (motorPlacementCount == 4) {

@@ -106,30 +106,30 @@
 
             <!-- APPARATUS BUTTONS -->
             <span class="tool" id="desc_button"><strong><button id="quad" onclick="place_apparatus('quad','50px');" style="visibility: hidden; position: absolute; top: 50px; left: 0px; border-radius: 5px; color: rgb(255, 255, 255);width:185px ; background-color: black;">Quadcopter Frame</button></strong>
-                <span  class="tooltext" id="desc_message"><strong style="color:red;">Thrustmeter</strong> is an instrument for measuring static thrust of a motor. 
+                <span  class="tooltext" id="desc_message"><strong style="color:red;">Frame</strong> is the structure that holds all the components together. It supports motors and other electronics and prevents them from vibrations. They need to be designed to be strong but also lightweight.
                 </span>
             </span>
 
             <!--<button id="base_layer" onclick="place_apparatus('base','50px');" style="visibility: hidden; position: absolute; top: 90px; left: 0px; border-radius: 5px; color: rgb(255, 255, 255);width:185px ; background-color: black;">Base layer Frame</button>
             <button id="4arms" onclick="place_apparatus('arm','140px');" style="visibility:hidden;position:absolute;top:130px;left:0px;border-radius: 5px;color: #fff;width:185px ;background-color: black;">Arms</button> -->
             <span class="tool" id="desc_button"><strong></strong><button id="motors" onclick="place_apparatus('motor','140px');" style="visibility:hidden;position:absolute;top:90px;left:0px;border-radius: 5px;color: #fff;width:185px ;background-color: black;">Brushless Motors</button></strong>
-                <span  class="tooltext" id="desc_message"><strong style="color:red;">Thrustmeter</strong> is an instrument for measuring static thrust of a motor. 
+                <span  class="tooltext" id="desc_message"><strong style="color:red;">Motor</strong> A motor converts supplied electrical energy into mechanical energy. Among these, brushless DC motors (BLDC) feature high efficiency and excellent controllability. 
                 </span>
             </span>
             <span class="tool" id="desc_button"><strong><button id="flight_c" onclick="place_apparatus('flight_controller','240px');" style="visibility:hidden;position:absolute;top:130px;left:0px;border-radius: 5px;color: #fff;width:185px ;background-color: black;">Flight Controller</button></strong>
-                <span  class="tooltext" id="desc_message" ><strong style="color:red;">Thrustmeter</strong> is an instrument for measuring static thrust of a motor. 
+                <span  class="tooltext" id="desc_message" ><strong style="color:red;">Flight Controller</strong> is the brains of a UAV. The flight controller reads all of the sensor data and calculates the best commands to send to your drone in order for it to fly. This is the central unit that runs the autopilot firmware and performs all the calculations.
                 </span>
             </span>
             <span class="tool" id="desc_button"><strong><button id="esc" onclick="place_apparatus('electronic_sc','140px');" style="visibility:hidden;width:185px ;position:absolute;top:170px;left:0px;border-radius: 5px;color: #fff;background-color: black;">Electronic Speed Controllers</button></strong>
-                <span  class="tooltext" id="desc_message"><strong style="color:red;">Thrustmeter</strong> is an instrument for measuring static thrust of a motor. 
+                <span  class="tooltext" id="desc_message"><strong style="color:red;">Electronic speed control (ESC)</strong>  is an electronic circuit that controls and regulates the speed of an electric motor. It may also provide reversing of the motor and dynamic braking. 
                 </span>
             </span>
-            <span class="tool" id="desc_button"><strong><button id="lipo" onclick="place_apparatus('lipo_battery','250px');" style="visibility:hidden;position:absolute;top:210px;left:0px;border-radius: 5px;color: #fff;width:185px ;background-color: black;">LiPO Battery</button></strong>
-                <span  class="tooltext" id="desc_message" ><strong style="color:red;">Thrustmeter</strong> is an instrument for measuring static thrust of a motor. 
+            <span class="tool" id="desc_button"><strong><button id="lipo" onclick="place_apparatus('lipo_battery','220px');" style="visibility:hidden;position:absolute;top:210px;left:0px;border-radius: 5px;color: #fff;width:185px ;background-color: black;">LiPo Battery</button></strong>
+                <span  class="tooltext" id="desc_message" ><strong style="color:red;">Lithium polymer battery</strong>  or more correctly lithium-ion polymer battery is a rechargeable battery of lithium-ion technology using a polymer electrolyte instead of a liquid electrolyte.
                 </span>
             </span>
             <span class="tool" id="desc_button"><strong><button id="tran_rec" onclick="place_apparatus('tran_rec','360px');" style="visibility:hidden;position:absolute;top:250px;left:0px;border-radius: 5px;color: #fff;width:185px ;background-color: black;">Transmitter and Receiver</button></strong>
-                <span  class="tooltext" id="desc_message"><strong style="color:red;">Thrustmeter</strong> is an instrument for measuring static thrust of a motor. 
+                <span  class="tooltext" id="desc_message"><strong style="color:red;">Transmitter and Receiver</strong>  The device used to transmit signal from one place to the other is known as transmitter. The device which decodes the transmitted information from the received signal is known as receiver.
                 </span>
             </span>
             <!-- <button id="tran" onclick="place_apparatus('transmitter1','350px');" style="visibility:hidden;position:absolute;top:370px;left:0px;border-radius: 5px;color: #fff;width:185px ;background-color: black;">Transmitter</button>
@@ -137,15 +137,15 @@
 
             <!-- APPARATUS IMAGES -->
             <img id="top" src="./Images/frame_parts/Upper_layer_mounted.png" alt="Top layer Frame" style="visibility: hidden;position: absolute;top: 0px;left: 200px;height: 70px;width: 150px;cursor: pointer;" title="Top layer frame">
-            <img id="base" src="./Images/frame_parts/Base_layer.png" alt="Base Layer Frame" style="visibility: hidden;position: absolute;top: 0px;left: 450px;height: 70px;width: 150px;cursor: pointer;" title="Base layer frame">
+            <img id="base" src="./Images/frame_parts/Base_layer.png" alt="Base Layer Frame" style="visibility: hidden;position: absolute;top: 0px;left: 450px;height: 70px;width: 150px;cursor: pointer;transform:rotate(4deg);" title="Base layer frame">
             <img id="arm1" src="./Images/assembly_parts/Frame_1.png" alt="Arm" style="visibility: hidden;position: absolute;top: 0px;left: 200px;height: 50px;width: 100px;cursor: pointer;" title="Arm 1">
             <img id="arm2" src="./Images/assembly_parts/Frame_1.png" alt="Arm" style="visibility: hidden;position: absolute;top: 0px;left: 250px;height: 50px;width: 100px;cursor: pointer;" title="Arm 2">
             <img id="arm3" src="./Images/assembly_parts/Frame_1.png" alt="Arm" style="visibility: hidden;position: absolute;top: 0px;left: 300px;height: 50px;width: 100px;cursor: pointer;" title="Arm 3">
             <img id="arm4" src="./Images/assembly_parts/Frame_1.png" alt="Arm" style="visibility: hidden;position: absolute;top: 0px;left: 350px;height: 50px;width: 100px;cursor: pointer;" title="Arm 4">
             <img id="motor" src="./Images/assembly_parts/Motor_1.png" alt="Motors" style="visibility: hidden; position: absolute; top: 0px; left: 457px; height: 50px; width: 80px; cursor: pointer; transition: top 1s ease-in-out 0s;" title="Motor">
-            <img id="flight_controller" src="./Images/assembly_parts/cc3d.png" alt="Flight Controller" style="visibility: hidden; position: absolute; top: 0px; left: 200px; height: 70px; width: 150px;cursor: pointer;" title="Flight Controller">
-            <img id="electronic_sc" src="./Images/assembly_parts/esc_1.png" alt="Electronic Speed Controllers" style="visibility: hidden; position: absolute; top: 0px; left: 550px; height: 80px; width: 150px;cursor: pointer; " title="Electronic Speed Controller">
-            <img id="lipo_battery" src="./Images/assembly_parts/Battery.png" alt="LiPO Battery" style="visibility: hidden; position: absolute; top: 0px; left: 450px; height: 70px; width: 150px;cursor: pointer;" title="LiPO Battery">
+            <img id="flight_controller" src="./Images/assembly_parts/cc3d.png" alt="Flight Controller" style="visibility: hidden; position: absolute; top: 0px; left: 230px; height: 40px; width: 90px;cursor: pointer;" title="Flight Controller">
+            <img id="electronic_sc" src="./Images/assembly_parts/esc_1.png" alt="Electronic Speed Controllers" style="visibility: hidden; position: absolute; top: 0px; left: 550px; height: 50px; width: 140px;cursor: pointer; " title="Electronic Speed Controller">
+            <img id="lipo_battery" src="./Images/assembly_parts/Battery.png" alt="LiPO Battery" style="visibility: hidden; position: absolute; top:0px; left: 450px; height: 70px; width: 180px;cursor: pointer;" title="LiPo Battery">
             <img id="receiver1" src="./Images/assembly_parts/Receiver.png" alt="Receiver" style="visibility: hidden; position: absolute; top: 0px; left: 450px; height: 50px; width: 150px;cursor: pointer;" title="Receiver">
             <img id="transmitter1" src="./Images/assembly_parts/rEMOTE.png" alt="Transmitter" style="visibility: hidden;position: absolute;top: 0px;left: 200px;height: 100px;width: 200px;cursor: pointer;" title="Transmitter">
             <!-- <img id="wire" src="./Images/assembly_parts/Esc_Flight_controller_wire_1.png" alt="Wires" style="visibility: hidden; position: absolute; top: 0px; left: 200px; height: 70px; width: 150px;"> -->
@@ -157,7 +157,6 @@
             <img id="armsAndTop" class="" style="visibility: hidden; position: absolute; left: 100px; top: 150px; height: 300px; width: 500px; visibility: hidden; transform:rotate(4deg);z-index: 100;" src="./Images/assembled/frame_mounted.png">
             <!-- ALL MOTORS ARE PLACED -->
             <!-- <img id="allMotors" class="" style="cursor: pointer; position: absolute; left: 107px; top: 123px; height: 250px; width:490px; visibility: block; transform:rotate(3deg); z-index: 100;" src="./Images/assembly_parts/Motor_all.png"> -->
-
             <p id="placeMotorInfo" style="visibility: hidden; cursor: pointer; position: absolute; left: 120px; top: 50px;">Let us place the motors now!</p>
             <img id="motor1" onclick="placeMotor(1,'255px');" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 100px; top: 250px; height: 50px; width:80px; visibility: block; transform:rotate(3deg); z-index: 250;opacity: 1;" src="./Images/assembly_parts/Motor_1.png">
             <img id="motor2" onclick="placeMotor(2,'265px');" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 510px; top: 260px; height: 50px; width:80px; visibility: block; transform:rotate(3deg); z-index: 250;opacity: 1;" src="./Images/assembly_parts/Motor_2.png">
@@ -167,6 +166,9 @@
             <!-- Hand -->
             <img id="screwHand" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 351px; top: 101px; height: 95px; width:45px; visibility: block; z-index: 100;" src="./Images/assembly_parts/Screwing.png">
             <!-- <img id="screwHand2" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 353px; top: 101px; height: 95px; width:45px; visibility: block; z-index: 100;" src="./Images/assembly_parts/Screwing.png"> -->
+
+            <!-- curve arrow -->
+            <img id="curve_arrow" class="" src="./Images/curve_arrow.png" alt="Curved arrow" style="visibility: hidden; position: absolute; top: 180px; left: 350px; height: 30px; width: 30px;z-index:90;">
 
             <!-- Single screw -->
             <img id="singleScrew" onclick="placeSingleScrew();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 450px; top: 40px; height: 80px; width:150px; visibility: hidden; transform:rotate(0deg); z-index: 1500;" src="./Images/frame_parts/hand_screw__1_-removebg-preview (1).png">
@@ -582,7 +584,10 @@
         <!--Blinking Arrow	-->
         <img class="" id="arrow1" style="visibility:hidden" src="Images/arrow1.png" />
 
-        <div id="copyright"> &copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
+        <div id="copyright">
+            <script>
+                document.write(new Date().getFullYear())
+            </script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
 </body>
 
 </html>
