@@ -1536,59 +1536,59 @@ function motorConnection1() {
                 flag1 = 1;
             }
         });
-            if (flag1 == 0) {
-                clickOnMotorWire1 += 1;
-                console.log("New added: clickOnWire1 value after incrementing is: "+ clickOnMotorWire1);
-                if (clickOnMotorWire1 == 1) {
-                    countOfEscAndMotor += 1;
-                    document.getElementById("connection_explanation").innerText = "Well, you have completed the circuit(3).";
-                    clearInterval(blinkWires);
-                    document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
-                    document.getElementById("motorWire2").style.cursor = "not-allowed";
-                    document.getElementById("motorWire3").style.cursor = "not-allowed";
-                    console.log("The first wire has been chosen in third step");
-                    // document.getElementById("escWire2").style.cursor = "pointer";
-                    arr.push(1);
-                    console.log(arr);
-                    clearInterval(myIntForMotorWires);
-                    document.getElementById("arrow1").style.visibility = "hidden";
-                    for (var i = 1; i < 4; i++) {
-                        document.getElementById("motorWire" + i).style.opacity = 100;
-                    }
-
-                    console.log("The final value of ALL Together at step3 of 1st wire is: " + countOfEscAndMotor);
-                    // VISIBLE THE IMAGE OF 3to1
-                    document.getElementById("3to1").style.visibility = "visible";
-                    console.log("The 3to1 image made visible!");
-                    if (countOfEscAndMotor == 6) {
-                        console.log("Im inside a condition for 6, inside third of 1st motor wire!");
-                        randomValue = Math.floor(Math.random() * 2);
-                        console.log("RANDOM VALUE FROM 1st wire is: " + randomValue);
-                        if (randomValue == 0) {
-                            document.getElementById("updateClockAnti").textContent = "It is rotating anti-clock wise. Need to change the direction of the connection.";
-                            document.getElementById("updateClockAnti").classList.add("dangerClockAnti");
-                            firstVal = arr[1];
-                            secondVal = arr[2];
-                            document.getElementById("empty_image").style.visibility = "visible";
-                            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 220px; top: 280px; height: 30px; z-index: 10;";
-                            document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
-                            myIntForWireEx = setInterval(function() {
-                                animatearrowForEscDcConnection();
-                            }, 500);
-
-                        } else {
-                            // randomValue =1 means it is success
-                            document.getElementById("updateClockAnti").textContent = "It is rotating clock wise. Success! ";
-                            document.getElementById("updateClockAnti").classList.add("successClockAnti");
-                            startEscThrotConnection();
-                        }
-                    }
-                } else {
-                    alert("You have already chosen(step 3)-wire 1");
+        if (flag1 == 0) {
+            clickOnMotorWire1 += 1;
+            console.log("New added: clickOnWire1 value after incrementing is: " + clickOnMotorWire1);
+            if (clickOnMotorWire1 == 1) {
+                countOfEscAndMotor += 1;
+                document.getElementById("connection_explanation").innerText = "Well, you have completed the circuit(3).";
+                clearInterval(blinkWires);
+                document.getElementById("motorWire1").style.cursor = "not-allowed"; // disable this forever. 
+                document.getElementById("motorWire2").style.cursor = "not-allowed";
+                document.getElementById("motorWire3").style.cursor = "not-allowed";
+                console.log("The first wire has been chosen in third step");
+                // document.getElementById("escWire2").style.cursor = "pointer";
+                arr.push(1);
+                console.log(arr);
+                clearInterval(myIntForMotorWires);
+                document.getElementById("arrow1").style.visibility = "hidden";
+                for (var i = 1; i < 4; i++) {
+                    document.getElementById("motorWire" + i).style.opacity = 100;
                 }
 
+                console.log("The final value of ALL Together at step3 of 1st wire is: " + countOfEscAndMotor);
+                // VISIBLE THE IMAGE OF 3to1
+                document.getElementById("3to1").style.visibility = "visible";
+                console.log("The 3to1 image made visible!");
+                if (countOfEscAndMotor == 6) {
+                    console.log("Im inside a condition for 6, inside third of 1st motor wire!");
+                    randomValue = Math.floor(Math.random() * 2);
+                    console.log("RANDOM VALUE FROM 1st wire is: " + randomValue);
+                    if (randomValue == 0) {
+                        document.getElementById("updateClockAnti").textContent = "It is rotating anti-clock wise. Need to change the direction of the connection.";
+                        document.getElementById("updateClockAnti").classList.add("dangerClockAnti");
+                        firstVal = arr[1];
+                        secondVal = arr[2];
+                        document.getElementById("empty_image").style.visibility = "visible";
+                        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 220px; top: 280px; height: 30px; z-index: 10;";
+                        document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+                        myIntForWireEx = setInterval(function() {
+                            animatearrowForEscDcConnection();
+                        }, 500);
+
+                    } else {
+                        // randomValue =1 means it is success
+                        document.getElementById("updateClockAnti").textContent = "It is rotating clock wise. Success! ";
+                        document.getElementById("updateClockAnti").classList.add("successClockAnti");
+                        startEscThrotConnection();
+                    }
+                }
+            } else {
+                alert("You have already chosen(step 3)-wire 1");
             }
-        
+
+        }
+
 
     }
 }
@@ -3155,7 +3155,7 @@ function generate_table() {
     }
     document.getElementById('instruct_info').style.visibility = "hidden";
 
-    document.getElementById('pumptext-3').innerHTML = "The table shows the value of the thrust of the motor for each throttle value. ";
+    document.getElementById('pumptext-3').innerHTML = "The table shows the value of the thrust and the RPM of the motor for each throttle value. ";
     var table = document.getElementById("thrust_table");
     document.getElementById('all_comp').style.visibility = "hidden";
     document.getElementById('prop_fan').style.visibility = "hidden";
@@ -3196,197 +3196,323 @@ function generate_table() {
     var cell5 = row.insertCell(4);
     var cell6 = row.insertCell(5);
     var cell7 = row.insertCell(6);
+    var cell8 = row.insertCell(7);
+    var cell9 = row.insertCell(8);
+    var cell10 = row.insertCell(9);
+    var cell11 = row.insertCell(10);
+    var cell12 = row.insertCell(11);
+
+    cell1.style.width = "95px";
+    cell2.style.width = "100px";
+    cell3.style.width = "45px";
+    cell4.style.width = "47px";
+    cell5.style.width = "48px";
+    cell6.style.width = "48px";
+    cell7.style.width = "48px";
+    cell8.style.width = "48px";
+    cell9.style.width = "48px";
+    cell10.style.width = "48px";
+    cell11.style.width = "45px";
+    cell12.style.width = "35px";
+
+
     //values for each column
     if (m_id == '1' && p_id == '1') {
         cell1.innerHTML = "MN1005_ KV90";
         cell2.innerHTML = "T-MOTOR G30*10.5";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "2096";
-        cell5.innerHTML = "4061";
-        cell6.innerHTML = "6143";
-        cell7.innerHTML = "8459";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "2096g";
+        cell6.innerHTML = "1599";
+        cell7.innerHTML = "4061g";
+        cell8.innerHTML = "2187";
+        cell9.innerHTML = "6143g";
+        cell10.innerHTML = "2658";
+        cell11.innerHTML = "8459g";
+        cell12.innerHTML = "3116";
 
     }
     if (m_id == '1' && p_id == '2') {
         cell1.innerHTML = "MN1005_ KV90";
         cell2.innerHTML = "T-MOTOR G32*11 ";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "2607";
-        cell5.innerHTML = "4962";
-        cell6.innerHTML = "7091";
-        cell7.innerHTML = "9323";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "2607g";
+        cell6.innerHTML = "1559";
+        cell7.innerHTML = "4962g";
+        cell8.innerHTML = "2105";
+        cell9.innerHTML = "7091g";
+        cell10.innerHTML = "2514";
+        cell11.innerHTML = "9323g";
+        cell12.innerHTML = "2882";
+
     }
     if (m_id == '2' && p_id == '1') {
         cell1.innerHTML = "MN3508_ KV380";
         cell2.innerHTML = "T-MOTOR 12*4CF";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "284";
-        cell5.innerHTML = "596";
-        cell6.innerHTML = "868";
-        cell7.innerHTML = "1160";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "284g";
+        cell6.innerHTML = "3820";
+        cell7.innerHTML = "596g";
+        cell8.innerHTML = "4980";
+        cell9.innerHTML = "868g";
+        cell10.innerHTML = "6140";
+        cell11.innerHTML = "1160g";
+        cell12.innerHTML = "7300";
     }
     if (m_id == '2' && p_id == '2') {
         cell1.innerHTML = "MN3508_ KV380";
         cell2.innerHTML = "T-MOTOR 13*4.4CF";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "384";
-        cell5.innerHTML = "716";
-        cell6.innerHTML = "1048";
-        cell7.innerHTML = "1380";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "384g";
+        cell6.innerHTML = "3752";
+        cell7.innerHTML = "716g";
+        cell8.innerHTML = "4848";
+        cell9.innerHTML = "1048g";
+        cell10.innerHTML = "5944";
+        cell11.innerHTML = "1380g";
+        cell12.innerHTML = "7040";
     }
     if (m_id == '2' && p_id == '3') {
         cell1.innerHTML = "MN3508_ KV380";
         cell2.innerHTML = "T-MOTOR 14*4.8CF";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "506";
-        cell5.innerHTML = "914";
-        cell6.innerHTML = "1322";
-        cell7.innerHTML = "1730";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "506g";
+        cell6.innerHTML = "3860";
+        cell7.innerHTML = "914g";
+        cell8.innerHTML = "4740";
+        cell9.innerHTML = "1322g";
+        cell10.innerHTML = "5620";
+        cell11.innerHTML = "1730g";
+        cell12.innerHTML = "6500";
     }
     if (m_id == '2' && p_id == '4') {
         cell1.innerHTML = "MN3508_ KV380";
         cell2.innerHTML = "T-MOTOR 15*5CF";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "608";
-        cell5.innerHTML = "1032";
-        cell6.innerHTML = "1456";
-        cell7.innerHTML = "1880";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "608g";
+        cell6.innerHTML = "3540";
+        cell7.innerHTML = "1032g";
+        cell8.innerHTML = "4260";
+        cell9.innerHTML = "1456g";
+        cell10.innerHTML = "4980";
+        cell11.innerHTML = "1880g";
+        cell12.innerHTML = "5700";
     }
 
     if (m_id == '3' && p_id == '1') {
         cell1.innerHTML = "MN3508_ KV580";
         cell2.innerHTML = "T-MOTOR 12*4CF";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "222";
-        cell5.innerHTML = "498";
-        cell6.innerHTML = "774";
-        cell7.innerHTML = "1050";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "222g";
+        cell6.innerHTML = "3400";
+        cell7.innerHTML = "498g";
+        cell8.innerHTML = "4600";
+        cell9.innerHTML = "774g";
+        cell10.innerHTML = "5800";
+        cell11.innerHTML = "1050g";
+        cell12.innerHTML = "7000";
     }
     if (m_id == '3' && p_id == '2') {
         cell1.innerHTML = "MN3508_ KV580";
         cell2.innerHTML = "T-MOTOR 13*4.4CF";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "294";
-        cell5.innerHTML = "606";
-        cell6.innerHTML = "918";
-        cell7.innerHTML = "1230";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "294g";
+        cell6.innerHTML = "3480";
+        cell7.innerHTML = "606g";
+        cell8.innerHTML = "4520";
+        cell9.innerHTML = "918g";
+        cell10.innerHTML = "5560";
+        cell11.innerHTML = "1230g";
+        cell12.innerHTML = "6600";
     }
     if (m_id == '3' && p_id == '3') {
         cell1.innerHTML = "MN3508_ KV580";
         cell2.innerHTML = "T-MOTOR 14*4.8CF ";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "416";
-        cell5.innerHTML = "784";
-        cell6.innerHTML = "1152";
-        cell7.innerHTML = "1520";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "416g";
+        cell6.innerHTML = "3340";
+        cell7.innerHTML = "784g";
+        cell8.innerHTML = "4260";
+        cell9.innerHTML = "1152g";
+        cell10.innerHTML = "5180";
+        cell11.innerHTML = "1520g";
+        cell12.innerHTML = "6100";
     }
     if (m_id == '4' && p_id == '1') {
         cell1.innerHTML = "MN3508_ KV700";
         cell2.innerHTML = "T-MOTOR 12*4CF";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "164";
-        cell5.innerHTML = "396";
-        cell6.innerHTML = "628";
-        cell7.innerHTML = "860";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "164g";
+        cell6.innerHTML = "3280";
+        cell7.innerHTML = "396g";
+        cell8.innerHTML = "4320";
+        cell9.innerHTML = "628g";
+        cell10.innerHTML = "5360";
+        cell11.innerHTML = "860g";
+        cell12.innerHTML = "6400";
     }
     if (m_id == '4' && p_id == '2') {
         cell1.innerHTML = "MN3508_ KV700";
         cell2.innerHTML = "T-MOTOR 13*4.4CF";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "192";
-        cell5.innerHTML = "468";
-        cell6.innerHTML = "744";
-        cell7.innerHTML = "1020";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "192g";
+        cell6.innerHTML = "3080";
+        cell7.innerHTML = "468g";
+        cell8.innerHTML = "4120";
+        cell9.innerHTML = "744g";
+        cell10.innerHTML = "5160";
+        cell11.innerHTML = "1020g";
+        cell12.innerHTML = "6200";
     }
     if (m_id == '4' && p_id == '3') {
         cell1.innerHTML = "MN3508_ KV700";
         cell2.innerHTML = "T-MOTOR 11*3.7CF ";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "234";
-        cell5.innerHTML = "526";
-        cell6.innerHTML = "818";
-        cell7.innerHTML = "1110";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "234g";
+        cell6.innerHTML = "4660";
+        cell7.innerHTML = "526g";
+        cell8.innerHTML = "5940";
+        cell9.innerHTML = "818g";
+        cell10.innerHTML = "7220";
+        cell11.innerHTML = "1110g";
+        cell12.innerHTML = "8500";
     }
     if (m_id == '5' && p_id == '1') {
         cell1.innerHTML = "T-MOTOR U11 II KV120";
         cell2.innerHTML = 'T-MOTOR 26*8.5"CF';
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "2357";
-        cell5.innerHTML = "4931";
-        cell6.innerHTML = "8475";
-        cell7.innerHTML = "12114";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "2357g";
+        cell6.innerHTML = "1978";
+        cell7.innerHTML = "4931g";
+        cell8.innerHTML = "3023";
+        cell9.innerHTML = "8475g";
+        cell10.innerHTML = "3988";
+        cell11.innerHTML = "12114g";
+        cell12.innerHTML = "4818";
     }
     if (m_id == '5' && p_id == '2') {
         cell1.innerHTML = "T-MOTOR U11 II KV120";
         cell2.innerHTML = 'T-MOTOR 27*8.8"CF';
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "2561";
-        cell5.innerHTML = "5240";
-        cell6.innerHTML = "8948";
-        cell7.innerHTML = "12617";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "2561g";
+        cell6.innerHTML = "1963";
+        cell7.innerHTML = "5240g";
+        cell8.innerHTML = "2974";
+        cell9.innerHTML = "8948g";
+        cell10.innerHTML = "3927";
+        cell11.innerHTML = "12617g";
+        cell12.innerHTML = "4723";
     }
     if (m_id == '5' && p_id == '3') {
         cell1.innerHTML = "T-MOTOR U11 II KV120";
         cell2.innerHTML = 'T-MOTOR 28*9.2"CF';
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "2950";
-        cell5.innerHTML = "6195";
-        cell6.innerHTML = "10137";
-        cell7.innerHTML = "14159";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "2950g";
+        cell6.innerHTML = "1934";
+        cell7.innerHTML = "6195g";
+        cell8.innerHTML = "2910";
+        cell9.innerHTML = "10137g";
+        cell10.innerHTML = "3819";
+        cell11.innerHTML = "14159g";
+        cell12.innerHTML = "4583";
     }
     if (m_id == '6' && p_id == '1') {
         cell1.innerHTML = "T-MOTOR U8 Lite KV85";
         cell2.innerHTML = "T-MOTOR G28*9.2CF";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "1154";
-        cell5.innerHTML = "2743";
-        cell6.innerHTML = "4699";
-        cell7.innerHTML = "6529";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "1154g";
+        cell6.innerHTML = "743";
+        cell7.innerHTML = "2743g";
+        cell8.innerHTML = "1536";
+        cell9.innerHTML = "4699g";
+        cell10.innerHTML = "2284";
+        cell11.innerHTML = "6529g";
+        cell12.innerHTML = "2835";
     }
     if (m_id == '6' && p_id == '2') {
         cell1.innerHTML = "T-MOTOR U8 Lite KV85";
         cell2.innerHTML = "T-MOTOR G29*9.5CF";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "1411";
-        cell5.innerHTML = "3044";
-        cell6.innerHTML = "5216";
-        cell7.innerHTML = "7030";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "1411g";
+        cell6.innerHTML = "733";
+        cell7.innerHTML = "3044g";
+        cell8.innerHTML = "1488";
+        cell9.innerHTML = "5216g";
+        cell10.innerHTML = "2187";
+        cell11.innerHTML = "7030g";
+        cell12.innerHTML = "2698";
     }
     if (m_id == '7' && p_id == '1') {
         cell1.innerHTML = "T-MOTOR U8 Lite KV150";
         cell2.innerHTML = "T-MOTOR G30*10.5CF";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "1494";
-        cell5.innerHTML = "2671";
-        cell6.innerHTML = "4001";
-        cell7.innerHTML = "5274";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "1494g";
+        cell6.innerHTML = "696";
+        cell7.innerHTML = "2671g";
+        cell8.innerHTML = "1207";
+        cell9.innerHTML = "4001g";
+        cell10.innerHTML = "1654";
+        cell11.innerHTML = "5274g";
+        cell12.innerHTML = "1998";
     }
     if (m_id == '7' && p_id == '2') {
         cell1.innerHTML = "T-MOTOR U8 Lite KV150";
         cell2.innerHTML = "T-MOTOR G22*7.2CF";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "1666";
-        cell5.innerHTML = "3040";
-        cell6.innerHTML = "4710";
-        cell7.innerHTML = "6657";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "1666g";
+        cell6.innerHTML = "2589";
+        cell7.innerHTML = "3040g";
+        cell8.innerHTML = "3784";
+        cell9.innerHTML = "4710g";
+        cell10.innerHTML = "4868";
+        cell11.innerHTML = "6657g";
+        cell12.innerHTML = "5908";
     }
     if (m_id == '8' && p_id == '1') {
         cell1.innerHTML = "T-MOTOR U8 Lite KV190";
         cell2.innerHTML = "T-MOTOR G28*9.2CF";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "1712";
-        cell5.innerHTML = "3142";
-        cell6.innerHTML = "4605";
-        cell7.innerHTML = "6078";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "1712g";
+        cell6.innerHTML = "1095";
+        cell7.innerHTML = "3142g";
+        cell8.innerHTML = "1736";
+        cell9.innerHTML = "4605g";
+        cell10.innerHTML = "2251";
+        cell11.innerHTML = "6078g";
+        cell12.innerHTML = "2712";
     }
     if (m_id == '8' && p_id == '2') {
         cell1.innerHTML = "T-MOTOR U8 Lite KV190";
         cell2.innerHTML = "T-MOTOR G29*9.5CF";
-        cell3.innerHTML = "0";
-        cell4.innerHTML = "1979";
-        cell5.innerHTML = "3540";
-        cell6.innerHTML = "5067";
-        cell7.innerHTML = "6536";
+        cell3.innerHTML = "0g";
+        cell4.innerHTML = "0";
+        cell5.innerHTML = "1979g";
+        cell6.innerHTML = "1051";
+        cell7.innerHTML = "3540g";
+        cell8.innerHTML = "1663";
+        cell9.innerHTML = "5067g";
+        cell10.innerHTML = "2147";
+        cell11.innerHTML = "6536g";
+        cell12.innerHTML = "2569";
     }
 
 

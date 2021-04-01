@@ -21,8 +21,7 @@
         .table-container {
             height: 5em;
         }
-        /* tr,
-        td {
+        /* td {
             overflow: auto;
         } */
         
@@ -528,24 +527,37 @@
             <button id="choose_motor" onclick="navNext();" style="visibility:hidden; position:absolute;top: 400px;left: 500px; width: 150px;color: #fff;background-color: black;cursor: pointer;border-radius: 5px;z-index: 120;">Choose another motor</button>
             <!-- ---------------------------------------THRUST TABLE  -->
             <div class="table-container">
-                <table id="thrust_table" style="visibility: hidden;position: absolute;top: 50px;left: 0px;width: 100%;">
+                <table id="thrust_table" style="visibility: hidden;position: absolute;top: 50px;left: 0px;width: 100%;font-size: 0.8em;">
                     <thead>
                         <tr>
-                            <th rowspan="2" style="width:95px">Motor</th>
-                            <th rowspan="2" style="width:95px">Propeller</th>
-                            <th colspan="5" style="width:510px">Thrust (g)</th>
+                            <th rowspan="2" style="padding:2.5px;width:95px">Motor</th>
+                            <th rowspan="2" style="padding:2.5px;width:95px">Propeller</th>
+                            <th style="padding:2.5px;" colspan="2">0%</th>
+                            <th style="padding:2.5px;" colspan="2">40%</th>
+                            <th style="padding:2.5px;" colspan="2">60%</th>
+                            <th style="padding:2.5px;" colspan="2">80%</th>
+                            <th style="padding:2.5px;" colspan="2">100%</th>
+
                         </tr>
+
                         <tr>
-                            <th>0%</th>
-                            <th>40%</th>
-                            <th>60%</th>
-                            <th>80%</th>
-                            <th>100%</th>
+                            <th>Thrust</th>
+                            <th>RPM</th>
+                            <th>Thrust</th>
+                            <th>RPM</th>
+                            <th>Thrust</th>
+                            <th>RPM</th>
+                            <th>Thrust</th>
+                            <th>RPM</th>
+                            <th>Thrust</th>
+                            <th>RPM</th>
+
                         </tr>
+
+
                     </thead>
                     <tbody>
-                        <tr>
-                        </tr>
+                        <tr></tr>
                     </tbody>
                 </table>
             </div>
