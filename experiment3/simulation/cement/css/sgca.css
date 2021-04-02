@@ -390,9 +390,10 @@ html {
 
 /*ADDED  */
 
-.transitionAirfoil {
+
+/* .transitionAirfoil {
     -webkit-transition: 1s;
-}
+} */
 
 .air-items button {
     border-radius: 3px;
@@ -498,12 +499,28 @@ html {
 
 @keyframes rotation {
     from {
-        transform: rotate(0deg);
-        top: 101px;
+        transform: rotateY(0deg);
+    }
+    to {
+        /* transform: rotate(40deg); */
+        transform: rotateY(-60deg);
+        transform-origin: 60% 40%;
+        /* top: 110px; */
+    }
+}
+
+.rotateHand2 {
+    animation: rotation2 1s 2 linear;
+}
+
+@keyframes rotation2 {
+    from {
+        transform: rotateY(0deg);
+        transform-origin: 50% 50%;
     }
     to {
         transform: rotateY(-0.2turn);
-        left: 351px;
+        transform-origin: 60% 40%;
         /* top: 110px; */
     }
 }
@@ -556,7 +573,10 @@ html {
 
 @keyframes movefc {
     0% {
-        left: 260px; top: 60px; height: 60px; width: 120px;
+        left: 260px;
+        top: 60px;
+        height: 60px;
+        width: 120px;
     }
     50% {
         height: 55px;
@@ -579,7 +599,10 @@ html {
 
 @keyframes moveRcv {
     0% {
-        left: 250px; top: 60px; height: 55px; width: 130px;
+        left: 250px;
+        top: 60px;
+        height: 55px;
+        width: 130px;
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {

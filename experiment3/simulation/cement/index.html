@@ -164,11 +164,11 @@
             <img id="motor4" onclick="placeMotor(4,'75px');" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 420px; top: 70px; height: 70px; width:65px; visibility: block; transform:rotate(3deg); z-index: 250; opacity: 1;" src="./Images/assembly_parts/Motor_3.png">
 
             <!-- Hand -->
-            <img id="screwHand" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 351px; top: 101px; height: 95px; width:45px; visibility: block; z-index: 100;" src="./Images/assembly_parts/Screwing.png">
+            <img id="screwHand" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 351px; top: 101px; height: 95px; width:45px; visibility: block; z-index: 100;" src="./Images/Screwing1.png">
             <!-- <img id="screwHand2" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 353px; top: 101px; height: 95px; width:45px; visibility: block; z-index: 100;" src="./Images/assembly_parts/Screwing.png"> -->
 
             <!-- curve arrow -->
-            <img id="curve_arrow" class="" src="./Images/curve_arrow.png" alt="Curved arrow" style="visibility: hidden; position: absolute; top: 180px; left: 350px; height: 30px; width: 30px;z-index:90;">
+            <img id="curve_arrow" class="" src="./Images/curve_arrow_3d-removebg-preview.png" alt="Curved arrow" style="visibility: hidden; position: absolute; top: 160px; left: 350px; height: 30px; width: 30px;z-index:90;">
 
             <!-- Single screw -->
             <img id="singleScrew" onclick="placeSingleScrew();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 450px; top: 40px; height: 80px; width:150px; visibility: hidden; transform:rotate(0deg); z-index: 1500;" src="./Images/frame_parts/hand_screw__1_-removebg-preview (1).png">
@@ -208,10 +208,23 @@
             <img id="placedMotor3" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 161px; top: 134px; height: 45px; width:60px; visibility: block; transform:rotate(3deg); z-index: 100;opacity: 0;" src="./Images/assembly_parts/Motor_4.png">
             <img id="placedMotor4" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 435px; top: 137px; height: 45px; width:40px; visibility: block; transform:rotate(3deg); z-index: 100;opacity: 0;" src="./Images/assembly_parts/Motor_3.png">
 
-            <!--  G P S  -->
-            <img id="gps" onclick="placeGPS();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 285px; top: 57px; height: 75px; width:40px; visibility: block; transform:rotate(0deg); z-index: 100;" src="./Images/assembly_parts/GPS.png">
-            <img id="gpsWire" onclick="placeGPS();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 284px; top: 61px; height: 75px; width:40px; visibility: block; transform:rotate(0deg); z-index: 100;" src="./Images/assembly_parts/GPS_Wires.png">
+            <!-- SCREW HAND TO SCREW THE MOTORS TO FRAME -->
+            <img id="screwHand2" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 563px; height: 95px; width: 45px; z-index: 200; top: 390px; " src="./Images/screwing_180ddeg.png">
+            <!-- SCREW FOR THE MOTOR -->
+            <img id="singleScrew1" onclick="placeSingleScrew_motor();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 450px; top: 40px; height: 80px; width:150px; visibility: hidden; transform:rotate(0deg); z-index: 1500;" src="./Images/frame_parts/hand_screw__1_-removebg-preview (1).png">
+            <!-- SMALLER SCREW NEAR THE MOTOR POSITION -->
+            <img id="singleScrewFinal1" onclick="placeSingleScrew_motor();" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 580px; top: 375px; height: 20px; width:10px; visibility: block; transform:rotate(180deg); z-index: 100;" src="./Images/assembly_parts/single_screw.png">
 
+            <!-- SCREW HEAD FOR THE MOTOR -->
+            <img id="screw_head1" class="" style="visibility: hidden; position: absolute; left: 581px; top: 365px; height: 3px; width: 4px; z-index: 120; opacity: 0;" src="./Images/frame_parts/Screw_head.png">
+
+
+            <!--  G P S  -->
+            <!-- <img id="gps" onclick="placeGPS();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 285px; top: 57px; height: 75px; width:40px; visibility: block; transform:rotate(0deg); z-index: 100;" src="./Images/assembly_parts/GPS.png">
+            <img id="gpsWire" onclick="placeGPS();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 284px; top: 61px; height: 75px; width:40px; visibility: block; transform:rotate(0deg); z-index: 100;" src="./Images/assembly_parts/GPS_Wires.png"> -->
+
+            <!-- Placing Double sided Tape -->
+            <img id="tape" onclick="placeTape();" src="./Images/Tape.png" style="visibility: hidden;cursor: pointer; position: absolute; left: 260px; top: 60px; height: 60px; width: 120px; transform: rotate(3deg); z-index: 100;" alt="Placing Double sided Tape">
 
             <!-- FC -->
             <img id="fc" onclick="placeFC();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 260px; top: 60px; height: 60px; width: 120px; transform: rotate(3deg); z-index: 100;" src="./Images/hand_screw_FC.png">
