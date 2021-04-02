@@ -493,6 +493,28 @@ html {
     }
 }
 
+.moveSingleScrew2 {
+    /* transform: translate(0,350px); */
+    animation: moveSingleScr1 2s;
+    /* transition: all 10s ease-in-out; */
+}
+
+@keyframes moveSingleScr1 {
+    0% {
+        left: 450px;
+        top: 40px;
+        transform: rotate(180deg);
+    }
+    /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
+    100% {
+        left: 450px;
+        top: 360px;
+        /* height: 20px;
+        width: 10px; */
+        transform: rotate(180deg);
+    }
+}
+
 .rotateHand {
     animation: rotation 1s 2 linear;
 }

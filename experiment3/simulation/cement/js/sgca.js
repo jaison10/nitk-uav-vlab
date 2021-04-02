@@ -514,22 +514,30 @@ function placeMotor(n, t) {
 
     motorPlacementCount += 1;
     if (motorPlacementCount == 4) {
-        // document.getElementById("screwHand2").style.visibility = "visible";
-        // document.getElementById("screwHand2").classList.add("rotateHand2");
-        // document.getElementById("screwHand2").style.top = (400 - additionalTop) + "px";
-        // document.getElementById("screwHand2").style.transition = "top 3s ease-in-out";
-        // document.getElementById("screw_head1").style.visibility = "visible";
-        document.getElementById("singleScrew1").style.visibility = "visible";
-        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 660px; top: 120px; height: 30px; z-index: 10;";
 
-        document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
-        // Code for IE9
-        document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
-        // Standard syntax
-        document.getElementById("arrow1").style.transform = "rotate(0deg)";
-        myInt = setInterval(function() {
-            animatearrow();
+        setTimeout(function() {
+            document.getElementById("placeMotorInfo").innerText = "Pick screws and screw them to the frame to attach the motor.";
+            document.getElementById("placeMotorInfo").style.visibility = "visible";
         }, 500);
+
+        setTimeout(function() {
+
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+
+
+            document.getElementById("singleScrew1").style.visibility = "visible";
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 660px; top: 120px; height: 30px; z-index: 10;";
+
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(0deg)";
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
+        }, 2500);
+
         // document.getElementById("placeMotorInfo").innerText = "Let us place a double sided tape on the frame to place the Flight Controller.";
         // document.getElementById("placeMotorInfo").style.visibility = "visible";
         // setTimeout(function() {
@@ -546,42 +554,32 @@ function placeMotor(n, t) {
         //     }, 500);
         //     document.getElementById("tape").style.visibility = "visible";
         // }, 1000);
-        // document.getElementById("placeMotorInfo").innerText = "Let us place the FC (Flight Controller) now.";
-        // document.getElementById("placeMotorInfo").style.visibility = "visible";
-        // setTimeout(function() {
 
-        //     document.getElementById("placeMotorInfo").style.visibility = "hidden";
-        //     // document.getElementById("gps").style.visibility = "visible";
-        //     // document.getElementById("gpsWire").style.visibility = "visible";
-        //     document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 450px; top: 130px; height: 30px; z-index: 10;";
-
-        //     document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
-        //     // Code for IE9
-        //     document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
-        //     // Standard syntax
-        //     document.getElementById("arrow1").style.transform = "rotate(0deg)";
-        //     myInt = setInterval(function() {
-        //         animatearrow();
-        //     }, 500);
-        //     document.getElementById("fc").style.visibility = "visible";
-        // }, 3500)
     }
 }
 
 function placeSingleScrew_motor() {
     myStopFunction();
-    document.getElementById("singleScrew1").style.visibility = "hidden";
-    document.getElementById("screwHand2").style.visibility = "visible";
-    document.getElementById("screwHand2").classList.add("rotateHand2");
-    document.getElementById("screwHand2").style.top = "375px";
-    document.getElementById("screwHand2").style.transition = "top 3s ease-in-out";
-    document.getElementById("singleScrewFinal1").style.visibility = "visible";
-    document.getElementById("singleScrewFinal1").style.top = "360px";
-    document.getElementById("singleScrewFinal1").style.opacity = 0;
-    document.getElementById("singleScrewFinal1").style.transition = "all 4s ease-in-out";
-    document.getElementById("screw_head1").style.visibility = "visible";
-    document.getElementById("screw_head1").style.opacity = 1;
-    document.getElementById("screw_head1").style.transition = "opacity 4s ease-in-out";
+    document.getElementById("singleScrew1").classList.add("moveSingleScrew2");
+
+    setTimeout(function() {
+        document.getElementById("singleScrew1").style.visibility = "hidden";
+        document.getElementById("screwHand2").style.visibility = "visible";
+        document.getElementById("screwHand2").classList.add("rotateHand2");
+        document.getElementById("screwHand2").style.top = "375px";
+        document.getElementById("screwHand2").style.transition = "top 3s ease-in-out";
+
+        document.getElementById("singleScrewFinal1").style.visibility = "visible";
+        document.getElementById("singleScrewFinal1").style.top = "360px";
+        document.getElementById("singleScrewFinal1").style.opacity = 0;
+        document.getElementById("singleScrewFinal1").style.transition = "all 4s ease-in-out";
+        document.getElementById("screw_head1").style.visibility = "visible";
+        document.getElementById("screw_head1").style.opacity = 1;
+        document.getElementById("screw_head1").style.transition = "opacity 4s ease-in-out";
+        document.getElementById("all_screws_motor").style.visibility = "visible";
+
+    }, 1900)
+
 
 
 }
@@ -694,6 +692,54 @@ function all_screws() {
     //  Jaison end
 }
 
+function all_screws1() {
+    document.getElementById('all_screws_motor').style.visibility = "hidden";
+    document.getElementById('screwHand2').style.visibility = "hidden";
+    document.getElementById("singleScrew_motor2").style.top = "370px";
+    document.getElementById("singleScrew_motor3").style.top = "370px";
+    document.getElementById("singleScrew_motor4").style.top = "365px";
+    document.getElementById("singleScrew_motor5").style.top = "170px";
+    document.getElementById("singleScrew_motor6").style.top = "175px";
+    document.getElementById("singleScrew_motor7").style.top = "165px";
+    document.getElementById("singleScrew_motor8").style.top = "170px";
+
+    for (let i = 2; i <= 8; i++) {
+        document.getElementById("singleScrew_motor" + i).style.visibility = "visible";
+        document.getElementById("singleScrew_motor" + i).style.opacity = 0;
+        document.getElementById("singleScrew_motor" + i).style.transition = "all 3s ease-in-out";
+        // document.getElementById("singleScrew" + i).style.transition = "opacity 5s ease-in-out";
+        // document.getElementById("singleScrew" + i).style.zIndex = -1;
+
+    }
+    document.getElementById("all_screws_on").style.visibility = "visible";
+    document.getElementById("all_screws_on").style.opacity = 1;
+    document.getElementById("all_screws_on").style.transition = "opacity 5.5s ease-in-out";
+    setTimeout(function() {
+        document.getElementById("placeMotorInfo").innerText = "Let us place the FC (Flight Controller) now.";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+    }, 4500);
+
+
+    setTimeout(function() {
+
+        document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        // document.getElementById("gps").style.visibility = "visible";
+        // document.getElementById("gpsWire").style.visibility = "visible";
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 450px; top: 130px; height: 30px; z-index: 10;";
+
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+        //Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(0deg)";
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
+        document.getElementById("fc").style.visibility = "visible";
+    }, 8000);
+
+
+}
 
 
 
