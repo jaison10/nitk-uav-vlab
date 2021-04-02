@@ -514,6 +514,7 @@ function placeMotor(n, t) {
 
     motorPlacementCount += 1;
     if (motorPlacementCount == 4) {
+
         document.getElementById("placeMotorInfo").innerText = "Let us place the FC (Flight Controller) now.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         setTimeout(function() {
