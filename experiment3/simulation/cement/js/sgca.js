@@ -458,7 +458,7 @@ function placeSingleScrew() {
         document.getElementById("singleScrewFinal").style.opacity = 0;
         document.getElementById("singleScrewFinal").style.transition = "all 3s ease-in-out";
         document.getElementById("curve_arrow").style.visibility = "visible";
-        // document.getElementById("curve_arrow").classList.add("rotate_curve_arrow");
+
         myInt = setInterval(function() {
             animatecurvearrow();
         }, 500);
@@ -568,7 +568,16 @@ function placeSingleScrew_motor() {
         document.getElementById("screwHand2").classList.add("rotateHand2");
         document.getElementById("screwHand2").style.top = "375px";
         document.getElementById("screwHand2").style.transition = "top 3s ease-in-out";
+        document.getElementById("curve_arrow").style = "visibility:visible;position:absolute;top:390px;left:561px;height: 30px; width: 30px;z-index:120;";
 
+        myInt = setInterval(function() {
+            animatecurvearrow();
+        }, 500);
+        setTimeout(() => {
+            clearInterval(myInt);
+            document.getElementById('curve_arrow').style.visibility = "hidden";
+
+        }, 2000);
         document.getElementById("singleScrewFinal1").style.visibility = "visible";
         document.getElementById("singleScrewFinal1").style.top = "360px";
         document.getElementById("singleScrewFinal1").style.opacity = 0;
@@ -611,7 +620,7 @@ function placeFC() {
     }, 2000);
 }
 
-function placeDSTRec(){
+function placeDSTRec() {
     myStopFunction();
     document.getElementById("doubleSTRec").classList.add("moveDSTRec");
     setTimeout(() => {
@@ -761,7 +770,7 @@ function all_screws1() {
 
 }
 
-function placeDST(){
+function placeDST() {
     myStopFunction();
     document.getElementById("doubleST").classList.add("moveDST");
     setTimeout(() => {
