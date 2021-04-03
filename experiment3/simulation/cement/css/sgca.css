@@ -595,10 +595,7 @@ html {
 
 @keyframes movefc {
     0% {
-        left: 260px;
-        top: 60px;
-        height: 60px;
-        width: 120px;
+        left: 240px; top: 40px; height: 80px; width: 150px;
     }
     50% {
         height: 55px;
@@ -608,8 +605,8 @@ html {
     100% {
         left: 307px;
         top: 220px;
-        height: 50px;
-        width: 100px;
+        /* height: 50px;
+        width: 100px; */
     }
 }
 
@@ -635,6 +632,43 @@ html {
     }
 }
 
+.moveDST {
+    /* transform: translate(0,350px); */
+    animation: moveDst 2s;
+    /* transition: all 10s ease-in-out; */
+}
+
+@keyframes moveDst {
+    0% {
+        left: 240px; top: 55px; height: 70px; width: 180px;
+    }
+    /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
+    100% {
+        left: 240px;
+        top: 215px;
+        /* height: 40px;
+        width: 120px; */
+    }
+}
+
+.moveDSTRec {
+    /* transform: translate(0,350px); */
+    animation: moveDstRec 2s;
+    /* transition: all 10s ease-in-out; */
+}
+
+@keyframes moveDstRec {
+    0% {
+        left: 240px; top: 55px; height: 70px; width: 180px;
+    }
+    /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
+    100% {
+        left: 280px;
+        top: 235px;
+        height: 40px;
+        width: 120px;
+    }
+}
 
 /* 
 .rotate_curve_arrow {

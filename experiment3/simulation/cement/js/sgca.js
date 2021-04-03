@@ -584,12 +584,7 @@ function placeSingleScrew_motor() {
 
 }
 
-function placeTape() {
-    myStopFunction();
-    document.getElementById("tape").classList.add("moveTape");
-    document.getElementById("placedTape").style.visibility = "visible";
 
-}
 
 function placeFC() {
     myStopFunction();
@@ -597,6 +592,31 @@ function placeFC() {
     setTimeout(() => {
         document.getElementById("fc").style.visibility = "hidden";
         document.getElementById("placedFc").style.visibility = "visible";
+        document.getElementById("placeMotorInfo").innerText = "Let us place the receiver now.";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        setTimeout(() => {
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 450px; top: 130px; height: 30px; z-index: 10;";
+
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(0deg)";
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+            document.getElementById("receiver").style.visibility = "visible";
+        }, 2500);
+    }, 2000);
+}
+
+function placeDSTRec(){
+    myStopFunction();
+    document.getElementById("doubleSTRec").classList.add("moveDSTRec");
+    setTimeout(() => {
+        document.getElementById("doubleSTRec").style.visibility = "hidden";
+        document.getElementById("placedDSTRec").style.visibility = "visible";
         document.getElementById("placeMotorInfo").innerText = "Let us place the receiver now.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         setTimeout(() => {
@@ -715,7 +735,7 @@ function all_screws1() {
     document.getElementById("all_screws_on").style.opacity = 1;
     document.getElementById("all_screws_on").style.transition = "opacity 5.5s ease-in-out";
     setTimeout(function() {
-        document.getElementById("placeMotorInfo").innerText = "Let us place the FC (Flight Controller) now.";
+        document.getElementById("placeMotorInfo").innerText = "Let us stick double sided tap to place FC.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
     }, 4500);
 
@@ -725,7 +745,7 @@ function all_screws1() {
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
         // document.getElementById("gps").style.visibility = "visible";
         // document.getElementById("gpsWire").style.visibility = "visible";
-        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 450px; top: 130px; height: 30px; z-index: 10;";
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 470px; top: 130px; height: 30px; z-index: 10;";
 
         document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
         //Code for IE9
@@ -735,13 +755,36 @@ function all_screws1() {
         myInt = setInterval(function() {
             animatearrow();
         }, 500);
-        document.getElementById("fc").style.visibility = "visible";
+        document.getElementById("doubleST").style.visibility = "visible";
     }, 8000);
 
 
 }
 
+function placeDST(){
+    myStopFunction();
+    document.getElementById("doubleST").classList.add("moveDST");
+    setTimeout(() => {
+        document.getElementById("doubleST").style.visibility = "hidden";
+        document.getElementById("placedDST").style.visibility = "visible";
+        document.getElementById("placeMotorInfo").innerText = "Let us place the FC (Flight Controller) now.";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        setTimeout(() => {
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 450px; top: 130px; height: 30px; z-index: 10;";
 
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(0deg)";
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+            document.getElementById("fc").style.visibility = "visible";
+        }, 2500);
+    }, 2000);
+}
 
 
 
