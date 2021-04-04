@@ -651,13 +651,51 @@ function placeReceiver() {
     setTimeout(() => {
         document.getElementById("receiver").style.visibility = "hidden";
         document.getElementById("placedReceiver").style.visibility = "visible";
+        setTimeout(function() {
+            document.getElementById("placeMotorInfo").innerText = "Let us now place the Electronic Speed Controllers (ESC) on the arms of the frame.";
+            document.getElementById("placeMotorInfo").style.visibility = "visible";
+            setTimeout(function() {
+                for (let i = 1; i <= 4; i++) {
+                    document.getElementById("esc_arm" + i).style.visibility = "visible";
+                }
+
+                document.getElementById("placeMotorInfo").style.visibility = "hidden";
+                document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 150px; top: 280px; height: 30px; z-index: 10;";
+
+                document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
+                // Code for IE9
+                document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
+                // Standard syntax
+                document.getElementById("arrow1").style.transform = "rotate(180deg)";
+
+                myInt = setInterval(function() {
+                    animatearrow();
+                }, 500);
+            }, 5000);
+        }, 3000);
     }, 1950);
+
 }
 // ------------------------------------Use this if placing GPS. ----------------------------
 // function placeGPS() {
 //     document.getElementById("gps").style.cssText = "visibility: visible; cursor: pointer; position: absolute; left: 280px; top: 150px; height: 75px; width: 45px; transform: rotate(0deg); z-index: 100;";
 //     document.getElementById("gpsWire").style.cssText = "visibility: visible; cursor: pointer; position: absolute; left: 280px; top: 154px; height: 75px; width: 40px; transform: rotate(0deg); z-index: 100;";
 // }
+
+// -----------------------------------Placing ESC  on arms------------------------------------
+function placeEsc(id, top_px, left_px, height_px, width_px) {
+    myStopFunction();
+    document.getElementById("esc_arm" + id).style.visibility = "visible";
+    document.getElementById("esc_arm" + id).style.top = top_px;
+    document.getElementById("esc_arm" + id).style.left = left_px;
+    document.getElementById("esc_arm" + id).style.height = height_px;
+    document.getElementById("esc_arm" + id).style.width = width_px;
+    document.getElementById("esc_arm" + id).style.transition = "all 2s ease";
+
+    // document.getElementById("esc_arm" + id).classList.add("moveEsc" + id);
+}
+
+
 
 
 function all_screws() {
@@ -765,7 +803,7 @@ function all_screws1() {
             animatearrow();
         }, 500);
         document.getElementById("doubleST").style.visibility = "visible";
-    }, 8000);
+    }, 7000);
 
 
 }

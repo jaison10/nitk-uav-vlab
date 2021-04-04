@@ -699,3 +699,81 @@ html {
 
 /* }
 } */
+
+
+/* 
+.moveEsc1 {
+    animation: move_esc1 2s;
+}
+
+@keyframes move_esc1 {
+    from {
+        top: 220px;
+        left: 150px;
+        height: 60px;
+        width: 100px;
+    }
+    to {
+        top: 265px;
+        left: 185px;
+        height: 60px;
+        width: 100px;
+    }
+}
+
+.moveEsc2 {
+    animation: move_esc2 2s;
+}
+
+@keyframes move_esc2 {
+    from {
+        top: 220px;
+        left: 450px;
+        height: 60px;
+        width: 100px;
+    }
+    to {
+        top: 270px;
+        left: 410px;
+        height: 60px;
+        width: 100px;
+    }
+}
+
+.moveEsc3 {
+    animation: move_esc3 2s;
+}
+
+@keyframes move_esc3 {
+    from {
+        top: 100px;
+        left: 350px;
+        height: 60px;
+        width: 100px;
+    }
+    to {
+        top: 180px;
+        left: 375px;
+        height: 30px;
+        width: 70px;
+    }
+}
+
+.moveEsc4 {
+    animation: move_esc4 2s;
+}
+
+@keyframes move_esc4 {
+    from {
+        top: 100px;
+        left: 215px;
+        height: 60px;
+        width: 100px;
+    }
+    to {
+        top: 170px;
+        left: 215px;
+        height: 40px;
+        width: 80px;
+    }
+} */
