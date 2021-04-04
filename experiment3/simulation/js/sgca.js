@@ -601,10 +601,10 @@ function placeFC() {
     setTimeout(() => {
         document.getElementById("fc").style.visibility = "hidden";
         document.getElementById("placedFc").style.visibility = "visible";
-        document.getElementById("placeMotorInfo").innerText = "Let us place the receiver now.";
+        document.getElementById("placeMotorInfo").innerText = "Let us stick double sided tape to place Receiver.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         setTimeout(() => {
-            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 450px; top: 130px; height: 30px; z-index: 10;";
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 490px; top: 130px; height: 30px; z-index: 10;";
 
             document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
             // Code for IE9
@@ -615,7 +615,7 @@ function placeFC() {
                 animatearrow();
             }, 500);
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
-            document.getElementById("receiver").style.visibility = "visible";
+            document.getElementById("doubleSTRec").style.visibility = "visible";
         }, 2500);
     }, 2000);
 }
@@ -725,8 +725,8 @@ function all_screws1() {
     document.getElementById('all_screws_motor').style.visibility = "hidden";
     document.getElementById('screwHand2').style.visibility = "hidden";
     document.getElementById("singleScrew_motor2").style.top = "370px";
-    document.getElementById("singleScrew_motor3").style.top = "370px";
-    document.getElementById("singleScrew_motor4").style.top = "365px";
+    document.getElementById("singleScrew_motor3").style.top = "368px";
+    document.getElementById("singleScrew_motor4").style.top = "363px";
     document.getElementById("singleScrew_motor5").style.top = "170px";
     document.getElementById("singleScrew_motor6").style.top = "175px";
     document.getElementById("singleScrew_motor7").style.top = "165px";
@@ -744,9 +744,9 @@ function all_screws1() {
     document.getElementById("all_screws_on").style.opacity = 1;
     document.getElementById("all_screws_on").style.transition = "opacity 5.5s ease-in-out";
     setTimeout(function() {
-        document.getElementById("placeMotorInfo").innerText = "Let us stick double sided tap to place FC.";
+        document.getElementById("placeMotorInfo").innerText = "Let us stick double sided tape to place FC.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
-    }, 4500);
+    }, 4000);
 
 
     setTimeout(function() {
