@@ -690,10 +690,10 @@ html {
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        left: 235px;
-        top: 240px;
-        /* height: 40px;
-        width: 120px; */
+        left: 265px;
+        top: 250px;
+        height: 60px;
+        width: 140px;
     }
 }
 
