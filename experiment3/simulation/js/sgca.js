@@ -684,7 +684,7 @@ function placeReceiver() {
 
 
 // -----------------------------------Placing ESC  on arms------------------------------------
-var escSelected = 1;
+var escSelected = 0;
 
 function placeEsc(id, top_px, left_px, height_px, width_px) {
     myStopFunction();
@@ -696,47 +696,14 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
     document.getElementById("esc_arm" + id).style.transition = "all 2s ease-in-out";
     escSelected++;
     console.log(escSelected);
-    if (escSelected == 4) {
-        setTimeout(function() {
-            document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame in order to place the Battery.";
-            document.getElementById("placeMotorInfo").style.visibility = "visible";
-            setTimeout(function() {
-                document.getElementById("placeMotorInfo").style.visibility = "hidden";
-                document.getElementById('base_layer').style.visibility = "visible";
+    if (escSelected >= 4) {
 
-                document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 150px; height: 30px; z-index: 10;";
 
-                document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
-                // Code for IE9
-                document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
-                // Standard syntax
-                document.getElementById("arrow1").style.transform = "rotate(0deg)";
-
-                myInt = setInterval(function() {
-                    animatearrow();
-                }, 500);
-
-            }, 4500);
-
-        }, 2000);
-    }
-
-}
-
-function placeBase() {
-    myStopFunction();
-    document.getElementById('base_layer').style.visibility = "visible";
-    document.getElementById('base_layer').style.top = "250px";
-    document.getElementById('base_layer').style.left = "200px";
-    document.getElementById('base_layer').style.height = "100px";
-    document.getElementById('base_layer').style.width = "280px";
-    document.getElementById('base_layer').style.transition = "all 2s ease-in-out";
-    setTimeout(function() {
-        document.getElementById("placeMotorInfo").innerText = "Let us now place the Battery on the Base Layer.";
+        document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame in order to place the Battery.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         setTimeout(function() {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
-            document.getElementById('battery_base').style.visibility = "visible";
+            document.getElementById('base_layer').style.visibility = "visible";
 
             document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 150px; height: 30px; z-index: 10;";
 
@@ -750,9 +717,133 @@ function placeBase() {
                 animatearrow();
             }, 500);
 
+        }, 1500);
 
-        }, 4500);
-    }, 3000);
+
+
+    }
+}
+
+function placeSingleScrew_base() {
+    myStopFunction();
+    document.getElementById("singleScrew_2").classList.add("moveSingleScrew3");
+
+    setTimeout(function() {
+        document.getElementById("singleScrew_2").style.visibility = "hidden";
+        document.getElementById("screwHand3").style.visibility = "visible";
+        document.getElementById("screwHand3").classList.add("rotateHand2");
+        document.getElementById("screwHand3").style.top = "375px";
+        document.getElementById("screwHand3").style.transition = "top 3s ease-in-out";
+        document.getElementById("curve_arrow").style = "visibility:visible;position:absolute;top:390px;left:561px;height: 30px; width: 30px;z-index:120;";
+
+        myInt = setInterval(function() {
+            animatecurvearrow();
+        }, 500);
+        setTimeout(() => {
+            clearInterval(myInt);
+            document.getElementById('curve_arrow').style.visibility = "hidden";
+
+        }, 3000);
+        document.getElementById("singleScrewFinal2").style.visibility = "visible";
+        document.getElementById("singleScrewFinal2").style.top = "360px";
+        document.getElementById("singleScrewFinal2").style.opacity = 0;
+        document.getElementById("singleScrewFinal2").style.transition = "all 4s ease-in-out";
+        document.getElementById("screw_head2").style.visibility = "visible";
+        document.getElementById("screw_head2").style.opacity = 1;
+        document.getElementById("screw_head2").style.transition = "opacity 4s ease-in-out";
+        document.getElementById("all_screws_base").style.visibility = "visible";
+
+    }, 1900)
+}
+
+function all_screws2() {
+    document.getElementById('all_screws_base').style.visibility = "hidden";
+    document.getElementById('screwHand3').style.visibility = "hidden";
+    document.getElementById("singleScrew_base2").style.top = "370px";
+    document.getElementById("singleScrew_base3").style.top = "368px";
+    document.getElementById("singleScrew_base4").style.top = "363px";
+
+
+    for (let i = 2; i <= 4; i++) {
+        document.getElementById("singleScrew_base" + i).style.visibility = "visible";
+        document.getElementById("singleScrew_base" + i).style.opacity = 0;
+        document.getElementById("singleScrew_base" + i).style.transition = "all 3s ease-in-out";
+        // document.getElementById("singleScrew" + i).style.transition = "opacity 5s ease-in-out";
+        // document.getElementById("singleScrew" + i).style.zIndex = -1;
+
+    }
+    // document.getElementById("all_screws_on").style.visibility = "visible";
+    // document.getElementById("all_screws_on").style.opacity = 1;
+    // document.getElementById("all_screws_on").style.transition = "opacity 5.5s ease-in-out";
+    setTimeout(function() {
+        document.getElementById("placeMotorInfo").innerText = "Let us now place the Battery on the Base Layer.";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+    }, 4000);
+
+
+    setTimeout(function() {
+
+        document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        // document.getElementById("gps").style.visibility = "visible";
+        // document.getElementById("gpsWire").style.visibility = "visible";
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 120px; height: 30px; z-index: 10;";
+
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+        //Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(0deg)";
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
+        document.getElementById("battery_base").style.visibility = "visible";
+    }, 7000);
+
+}
+
+function placeBase() {
+    myStopFunction();
+    document.getElementById('base_layer').style.visibility = "visible";
+    document.getElementById('base_layer').style.top = "249px";
+    document.getElementById('base_layer').style.left = "205px";
+    document.getElementById('base_layer').style.height = "100px";
+    document.getElementById('base_layer').style.width = "260px";
+    document.getElementById('base_layer').style.transition = "all 2s ease-in-out";
+    setTimeout(function() {
+        document.getElementById("placeMotorInfo").innerText = "Select the screw and screw the base layer as shown to the end of the arm stand.";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        setTimeout(function() {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+            document.getElementById("singleScrew_2").style.visibility = "visible";
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 660px; top: 120px; height: 30px; z-index: 10;";
+
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(0deg)";
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
+        }, 3500);
+        // document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        // document.getElementById('battery_base').style.visibility = "visible";
+
+        // document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 110px; height: 30px; z-index: 10;";
+
+        // document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+        // // Code for IE9
+        // document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+        // // Standard syntax
+        // document.getElementById("arrow1").style.transform = "rotate(0deg)";
+
+        // myInt = setInterval(function() {
+        //     animatearrow();
+        // }, 500);
+
+
+    }, 4500);
+
 
 }
 
@@ -848,9 +939,9 @@ function all_screws1() {
         // document.getElementById("singleScrew" + i).style.zIndex = -1;
 
     }
-    document.getElementById("all_screws_on").style.visibility = "visible";
-    document.getElementById("all_screws_on").style.opacity = 1;
-    document.getElementById("all_screws_on").style.transition = "opacity 5.5s ease-in-out";
+    // document.getElementById("all_screws_on").style.visibility = "visible";
+    // document.getElementById("all_screws_on").style.opacity = 1;
+    // document.getElementById("all_screws_on").style.transition = "opacity 5.5s ease-in-out";
     setTimeout(function() {
         document.getElementById("placeMotorInfo").innerText = "Let us stick double sided tape to place FC.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";

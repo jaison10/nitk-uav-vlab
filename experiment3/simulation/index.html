@@ -161,7 +161,7 @@
             <img id="motor1" onclick="placeMotor(1,'255px');" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 100px; top: 250px; height: 50px; width:80px; visibility: block; transform:rotate(3deg); z-index: 250;opacity: 1;" src="./Images/assembly_parts/Motor_1.png">
             <img id="motor2" onclick="placeMotor(2,'265px');" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 510px; top: 260px; height: 50px; width:80px; visibility: block; transform:rotate(3deg); z-index: 250;opacity: 1;" src="./Images/assembly_parts/Motor_2.png">
             <img id="motor3" onclick="placeMotor(3,'75px');" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 150px; top: 70px; height: 65px; width:100px; visibility: block; transform:rotate(3deg); z-index: 250;opacity: 1;" src="./Images/assembly_parts/Motor_4.png">
-            <img id="motor4" onclick="placeMotor(4,'75px');" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 420px; top: 70px; height: 70px; width:65px; visibility: block; transform:rotate(3deg); z-index: 250; opacity: 1;" src="./Images/assembly_parts/Motor_3.png">
+            <img id="motor4" onclick="placeMotor(4,'75px');" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 420px; top: 70px; height: 70px; width:65px; visibility: block; transform:rotate(3deg); z-index: 120; opacity: 1;" src="./Images/assembly_parts/Motor_3.png">
 
             <!-- Hand -->
             <img id="screwHand" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 351px; top: 101px; height: 95px; width:45px; visibility: block; z-index: 100;" src="./Images/Screwing1.png">
@@ -210,10 +210,10 @@
 
             <!-- SCREW HAND TO SCREW THE MOTORS TO FRAME -->
             <img id="screwHand2" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 563px; height: 95px; width: 45px; z-index: 200; top: 390px;" src="./Images/screwing_180ddeg.png">
-            <!-- SCREW FOR THE MOTOR -->
+            <!-- HAND HOLDING THE SCREW FOR THE MOTOR -->
             <img id="singleScrew1" onclick="placeSingleScrew_motor();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 450px; top: 40px; height: 80px; width:150px; visibility: hidden; transform:rotate(180deg); z-index: 1500;" src="./Images/frame_parts/hand_screw__1_-removebg-preview (1).png">
             <!-- SMALLER SCREW NEAR THE MOTOR POSITION -->
-            <img id="singleScrewFinal1" onclick="placeSingleScrew_motor();" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 580px; top: 375px; height: 20px; width:10px; visibility: block; transform:rotate(180deg); z-index: 100;" src="./Images/assembly_parts/single_screw.png">
+            <img id="singleScrewFinal1" onclick="placeSingleScrew_motor();" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 580px; top: 375px; height: 20px; width:10px; visibility: block; transform:rotate(180deg); z-index: 50;" src="./Images/assembly_parts/single_screw.png">
 
             <!-- SCREW HEAD FOR THE MOTOR -->
             <img id="screw_head1" class="" style="visibility: hidden; position: absolute; left: 581px; top: 365px; height: 3px; width: 4px; z-index: 120; opacity: 0;" src="./Images/frame_parts/Screw_head.png">
@@ -257,16 +257,35 @@
             <img id="placedReceiver" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 312px; top: 255px; height: 20px; width: 50px; transform: rotate(3deg); z-index: 100;" src="./Images/assembly_parts/Receiver.png">
 
             <!-- ESC  -->
-            <img id="esc_arm1" onclick="placeEsc('1','265px','185px','60px','100px');" class="" style="visibility: hidden; position: absolute; top: 220px; left: 150px; z-index: 100;height:60px;width:100px;cursor: pointer;" src="./Images/esc_1.png" alt="ESC1">
-            <img id="esc_arm2" onclick="placeEsc('2','270px','410px','60px','100px');" class="" style="visibility: hidden; position: absolute; top: 220px; left: 450px; z-index: 100;height:60px;width:100px;cursor: pointer;" src="./Images/esc_2.png" alt="ESC2">
-            <img id="esc_arm3" onclick="placeEsc('3','180px','375px','30px','70px');" class="" style="visibility: hidden; position: absolute; top: 100px; left: 350px; z-index: 100;height:60px;width:100px;transform:rotate(-4deg);cursor: pointer;" src="./Images/esc_3.png"
+            <img id="esc_arm1" onclick="placeEsc('1','265px','180px','70px','100px');" class="" style="visibility: hidden; position: absolute; top: 220px; left: 150px; z-index: 100;height:60px;width:100px;cursor: pointer;" src="./Images/ESC1.png" alt="ESC1">
+            <img id="esc_arm2" onclick="placeEsc('2','270px','410px','70px','100px');" class="" style="visibility: hidden; position: absolute; top: 220px; left: 450px; z-index: 100;height:60px;width:100px;cursor: pointer;" src="./Images/ESC2.png" alt="ESC2">
+            <img id="esc_arm3" onclick="placeEsc('3','175px','355px','50px','80px');" class="" style="visibility: hidden; position: absolute; top: 100px; left: 350px; z-index: 150;height:60px;width:100px;transform:rotate(-4deg);cursor: pointer;" src="./Images/ESC3.png"
                 alt="ESC3">
-            <img id="esc_arm4" onclick="placeEsc('4','170px','215px','40px','80px');" class="" style="visibility: hidden; position: absolute; top: 100px; left: 215px; z-index: 100;height:60px;width:100px;cursor: pointer;" src="./Images/esc_4.png" alt="ESC4">
+            <img id="esc_arm4" onclick="placeEsc('4','170px','215px','50px','90px');" class="" style="visibility: hidden; position: absolute; top: 100px; left: 215px; z-index: 200;height:60px;width:100px;cursor: pointer;" src="./Images/ESC4.png" alt="ESC4">
 
             <!-- Base Layer -->
-            <img id="base_layer" onclick="placeBase();" style="visibility: hidden;position:absolute;top: 80px; left: 240px; height: 80px; width: 180px;z-index:80;cursor: pointer;transform: rotate(4deg);" src="./Images/Base_layer.png" alt="Base layer of the frame">
+            <img id="base_layer" onclick="placeBase();" style="visibility: hidden;position:absolute;top: 80px; left: 240px; height: 80px; width: 180px;z-index:80;cursor: pointer;transform: rotate(4deg);" src="./Images/Base alayer_v02.png" alt="Base layer of the frame">
             <!-- Battery -->
-            <img id="battery_base" onclick="placeBattery();" style="visibility: hidden;position: absolute;top: 50px;left: 270px;height: 70px; width: 150px;cursor: pointer;z-index: 90;" src="./Images/Battery.png" alt="Battery">
+            <img id="battery_base" onclick="placeBattery();" style="visibility: hidden;position: absolute;top: 50px;left: 200px;height: 70px; width: 200px;cursor: pointer;z-index: 90;" src="./Images/Battery.png" alt="Battery">
+
+            <!-- Screw hand to screw the base layer to end of arm stand -->
+            <img id="screwHand3" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 370px; height: 95px; width: 45px; z-index: 90; top: 360px;" src="./Images/screwing_180ddeg.png">
+            <!-- Hand holding the screw for base layer -->
+            <img id="singleScrew_2" onclick="placeSingleScrew_base();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 450px; top: 40px; height: 80px; width:150px; transform:rotate(180deg); z-index: 1500;" src="./Images/frame_parts/hand_screw__1_-removebg-preview (1).png">
+            <!-- Smaller screw for the Base position -->
+            <img id="singleScrewFinal2" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 380px; top: 350px; height: 20px; width: 10px;transform:rotate(180deg); z-index: 50;" src="./Images/assembly_parts/single_screw.png">
+
+            <!-- SCREW HEAD FOR THE Base layer -->
+            <img id="screw_head2" class="" style="visibility: hidden; position: absolute; left: 581px; top: 365px; height: 3px; width: 4px; z-index: 120; opacity: 0;" src="./Images/frame_parts/Screw_head.png">
+
+            <!-- BUTTON TO PLACE ALL OTHER SCREWS TO HOLD BASE Layer -->
+            <button id="all_screws_base" onclick="all_screws2();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;cursor: pointer;">Place all other screws</button>
+
+            <!-- REST OF THE SCREWS FOR THE BASE -->
+            <img id="singleScrew_base2" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 550px; top: 378px; height: 20px;width: 10px;z-index: 50;transform: rotate(180deg);" src="./Images/assembly_parts/single_screw.png">
+            <img id="singleScrew_base3" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 130px; top: 378px; height: 20px; width:10px; z-index:50;transform: rotate(180deg);" src="./Images/assembly_parts/single_screw.png">
+            <img id="singleScrew_base4" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 100px; top: 373px;height: 20px; width:10px; z-index: 50;transform: rotate(180deg);" src="./Images/assembly_parts/single_screw.png">
+
 
             <p id="frame-info" style="position: absolute; top: 450px; visibility: hidden; "> The upper layer of the frame is attached to four arms which are used to hold the motors.</p>
             <img id="arr-air" style="visibility: hidden; top: 40%; right: 70%; height: 20%; width:5%; position: absolute;" src="./Images/uav/arrow-aerofoil.png">
