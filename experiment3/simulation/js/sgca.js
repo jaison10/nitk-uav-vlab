@@ -682,7 +682,10 @@ function placeReceiver() {
 //     document.getElementById("gpsWire").style.cssText = "visibility: visible; cursor: pointer; position: absolute; left: 280px; top: 154px; height: 75px; width: 40px; transform: rotate(0deg); z-index: 100;";
 // }
 
+
 // -----------------------------------Placing ESC  on arms------------------------------------
+var escSelected = 1;
+
 function placeEsc(id, top_px, left_px, height_px, width_px) {
     myStopFunction();
     document.getElementById("esc_arm" + id).style.visibility = "visible";
@@ -690,12 +693,79 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
     document.getElementById("esc_arm" + id).style.left = left_px;
     document.getElementById("esc_arm" + id).style.height = height_px;
     document.getElementById("esc_arm" + id).style.width = width_px;
-    document.getElementById("esc_arm" + id).style.transition = "all 2s ease";
+    document.getElementById("esc_arm" + id).style.transition = "all 2s ease-in-out";
+    escSelected++;
+    console.log(escSelected);
+    if (escSelected == 4) {
+        setTimeout(function() {
+            document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame in order to place the Battery.";
+            document.getElementById("placeMotorInfo").style.visibility = "visible";
+            setTimeout(function() {
+                document.getElementById("placeMotorInfo").style.visibility = "hidden";
+                document.getElementById('base_layer').style.visibility = "visible";
 
-    // document.getElementById("esc_arm" + id).classList.add("moveEsc" + id);
+                document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 150px; height: 30px; z-index: 10;";
+
+                document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+                // Code for IE9
+                document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+                // Standard syntax
+                document.getElementById("arrow1").style.transform = "rotate(0deg)";
+
+                myInt = setInterval(function() {
+                    animatearrow();
+                }, 500);
+
+            }, 4500);
+
+        }, 2000);
+    }
+
 }
 
+function placeBase() {
+    myStopFunction();
+    document.getElementById('base_layer').style.visibility = "visible";
+    document.getElementById('base_layer').style.top = "250px";
+    document.getElementById('base_layer').style.left = "200px";
+    document.getElementById('base_layer').style.height = "100px";
+    document.getElementById('base_layer').style.width = "280px";
+    document.getElementById('base_layer').style.transition = "all 2s ease-in-out";
+    setTimeout(function() {
+        document.getElementById("placeMotorInfo").innerText = "Let us now place the Battery on the Base Layer.";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        setTimeout(function() {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+            document.getElementById('battery_base').style.visibility = "visible";
 
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 150px; height: 30px; z-index: 10;";
+
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(0deg)";
+
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
+
+
+        }, 4500);
+    }, 3000);
+
+}
+
+function placeBattery() {
+    myStopFunction();
+    document.getElementById('battery_base').style.visibility = "visible";
+    document.getElementById('battery_base').style.top = "250px";
+    document.getElementById('battery_base').style.left = "200px";
+    document.getElementById('battery_base').style.height = "70px";
+    document.getElementById('battery_base').style.width = "200px";
+    document.getElementById('battery_base').style.transition = "top 3s ease-in-out";
+
+}
 
 
 function all_screws() {
