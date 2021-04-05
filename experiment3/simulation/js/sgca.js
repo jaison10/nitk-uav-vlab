@@ -604,7 +604,7 @@ function placeFC() {
         document.getElementById("placeMotorInfo").innerText = "Let us stick double sided tape to place Receiver.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         setTimeout(() => {
-            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 490px; top: 130px; height: 30px; z-index: 10;";
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 500px; top: 130px; height: 30px; z-index: 10;";
 
             document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
             // Code for IE9
@@ -862,7 +862,7 @@ function all_screws1() {
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
         // document.getElementById("gps").style.visibility = "visible";
         // document.getElementById("gpsWire").style.visibility = "visible";
-        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 470px; top: 130px; height: 30px; z-index: 10;";
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 500px; top: 120px; height: 30px; z-index: 10;";
 
         document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
         //Code for IE9

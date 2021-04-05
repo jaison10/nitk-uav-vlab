@@ -508,7 +508,7 @@ html {
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
         left: 450px;
-        top: 360px;
+        top: 340px;
         /* height: 20px;
         width: 10px; */
         transform: rotate(180deg);
@@ -600,10 +600,10 @@ html {
         height: 80px;
         width: 150px;
     }
-    50% {
+    /* 50% {
         height: 55px;
         width: 110px;
-    }
+    } */
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
         left: 307px;
@@ -646,7 +646,7 @@ html {
         left: 240px;
         top: 55px;
         height: 70px;
-        width: 180px;
+        width: 200px;
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
@@ -668,14 +668,14 @@ html {
         left: 240px;
         top: 55px;
         height: 70px;
-        width: 180px;
+        width: 200px;
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        left: 280px;
+        left: 240px;
         top: 245px;
-        height: 40px;
-        width: 120px;
+        /* height: 40px;
+        width: 120px; */
     }
 }
 
