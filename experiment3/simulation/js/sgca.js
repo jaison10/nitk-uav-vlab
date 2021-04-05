@@ -726,10 +726,10 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
 function placeBase() {
     myStopFunction();
     document.getElementById('base_layer').style.visibility = "visible";
-    document.getElementById('base_layer').style.top = "250px";
-    document.getElementById('base_layer').style.left = "200px";
+    document.getElementById('base_layer').style.top = "249px";
+    document.getElementById('base_layer').style.left = "205px";
     document.getElementById('base_layer').style.height = "100px";
-    document.getElementById('base_layer').style.width = "280px";
+    document.getElementById('base_layer').style.width = "260px";
     document.getElementById('base_layer').style.transition = "all 2s ease-in-out";
     setTimeout(function() {
         document.getElementById("placeMotorInfo").innerText = "Let us now place the Battery on the Base Layer.";
@@ -738,7 +738,7 @@ function placeBase() {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
             document.getElementById('battery_base').style.visibility = "visible";
 
-            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 150px; height: 30px; z-index: 10;";
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 110px; height: 30px; z-index: 10;";
 
             document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
             // Code for IE9
