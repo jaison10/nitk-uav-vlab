@@ -629,7 +629,7 @@ function placeDSTRec() {
         document.getElementById("placeMotorInfo").innerText = "Let us place the receiver now.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         setTimeout(() => {
-            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 450px; top: 130px; height: 30px; z-index: 10;";
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 470px; top: 130px; height: 30px; z-index: 10;";
 
             document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
             // Code for IE9
