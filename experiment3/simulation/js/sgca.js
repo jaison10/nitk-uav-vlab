@@ -604,7 +604,7 @@ function placeFC() {
         document.getElementById("placeMotorInfo").innerText = "Let us stick double sided tape to place Receiver.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         setTimeout(() => {
-            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 490px; top: 130px; height: 30px; z-index: 10;";
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 500px; top: 130px; height: 30px; z-index: 10;";
 
             document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
             // Code for IE9
@@ -629,7 +629,7 @@ function placeDSTRec() {
         document.getElementById("placeMotorInfo").innerText = "Let us place the receiver now.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         setTimeout(() => {
-            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 450px; top: 130px; height: 30px; z-index: 10;";
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 470px; top: 130px; height: 30px; z-index: 10;";
 
             document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
             // Code for IE9
@@ -694,6 +694,10 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
     document.getElementById("esc_arm" + id).style.height = height_px;
     document.getElementById("esc_arm" + id).style.width = width_px;
     document.getElementById("esc_arm" + id).style.transition = "all 2s ease-in-out";
+    setTimeout(() => {
+        document.getElementById("esc_arm" + id).style.visibility = "hidden";
+        document.getElementById("esc_arm_placed" + id).style.visibility = "visible";
+    }, 1950);
     escSelected++;
     console.log(escSelected);
     if (escSelected >= 4) {
@@ -955,7 +959,7 @@ function all_screws1() {
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
         // document.getElementById("gps").style.visibility = "visible";
         // document.getElementById("gpsWire").style.visibility = "visible";
-        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 470px; top: 130px; height: 30px; z-index: 10;";
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 500px; top: 120px; height: 30px; z-index: 10;";
 
         document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
         //Code for IE9
