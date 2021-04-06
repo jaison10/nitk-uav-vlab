@@ -694,6 +694,10 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
     document.getElementById("esc_arm" + id).style.height = height_px;
     document.getElementById("esc_arm" + id).style.width = width_px;
     document.getElementById("esc_arm" + id).style.transition = "all 2s ease-in-out";
+    setTimeout(() => {
+        document.getElementById("esc_arm" + id).style.visibility = "hidden";
+        document.getElementById("esc_arm_placed" + id).style.visibility = "visible";
+    }, 1950);
     escSelected++;
     console.log(escSelected);
     if (escSelected >= 4) {
