@@ -697,9 +697,10 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
     document.getElementById("esc_arm" + id).style.width = width_px;
     document.getElementById("esc_arm" + id).style.transition = "all 2s ease-in-out";
     setTimeout(() => {
+        console.log("hiding the hovering esc")
         document.getElementById("esc_arm" + id).style.visibility = "hidden";
         document.getElementById("esc_arm_placed" + id).style.visibility = "visible";
-    }, 1950);
+    }, 2000);
     escSelected++;
     console.log(escSelected);
     if (escSelected >= 4) {
@@ -728,6 +729,17 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
 
 
 
+
+    }
+}
+
+function connectEscMotor(n){
+    if(n==1){
+        document.getElementById("placedMotor1").style.visibility = "hidden";
+        
+        document.getElementById("esc_arm_placed1").style.visibility = "hidden";
+        
+        document.getElementById("esc_motor_connected").style.visibility = "visible";
 
     }
 }
