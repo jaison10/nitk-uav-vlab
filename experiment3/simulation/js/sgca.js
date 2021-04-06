@@ -695,11 +695,13 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
     document.getElementById("esc_arm" + id).style.left = left_px;
     document.getElementById("esc_arm" + id).style.height = height_px;
     document.getElementById("esc_arm" + id).style.width = width_px;
-    document.getElementById("esc_arm" + id).style.transition = "all 2s ease-in-out";
+    document.getElementById("esc_arm" + id).style.transition = "all 1.5s ease-in-out";
     setTimeout(() => {
         console.log("hiding the hovering esc")
         document.getElementById("esc_arm" + id).style.visibility = "hidden";
         document.getElementById("esc_arm_placed" + id).style.visibility = "visible";
+        document.getElementById("esc_wire" + id).style.visibility = "visible";
+        document.getElementById("esc_signal" + id).style.visibility = "visible";
     }, 2000);
     escSelected++;
     console.log(escSelected);
