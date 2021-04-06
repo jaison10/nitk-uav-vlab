@@ -754,9 +754,9 @@ function placeSingleScrew_base() {
         document.getElementById("singleScrewFinal2").style.top = "340px";
         document.getElementById("singleScrewFinal2").style.opacity = 0;
         document.getElementById("singleScrewFinal2").style.transition = "all 3s ease-in-out";
-        document.getElementById("screw_head2").style.visibility = "visible";
-        document.getElementById("screw_head2").style.opacity = 1;
-        document.getElementById("screw_head2").style.transition = "opacity 4s ease-in-out";
+        // document.getElementById("screw_head2").style.visibility = "visible";
+        // document.getElementById("screw_head2").style.opacity = 1;
+        // document.getElementById("screw_head2").style.transition = "opacity 4s ease-in-out";
         document.getElementById("all_screws_base").style.visibility = "visible";
 
     }, 1900)
@@ -766,13 +766,13 @@ function all_screws2() {
     document.getElementById('all_screws_base').style.visibility = "hidden";
     document.getElementById('screwHand3').style.visibility = "hidden";
     document.getElementById("singleScrew_base2").style.top = "320px";
-    document.getElementById("singleScrew_base3").style.top = "330px";
-    document.getElementById("singleScrew_base4").style.top = "320px";
+    document.getElementById("singleScrew_base3").style.top = "300px";
+    document.getElementById("singleScrew_base4").style.top = "308px";
 
 
     for (let i = 2; i <= 4; i++) {
         document.getElementById("singleScrew_base" + i).style.visibility = "visible";
-        document.getElementById("singleScrew_base" + i).style.opacity = 0;
+        // document.getElementById("singleScrew_base" + i).style.opacity = 0;
         document.getElementById("singleScrew_base" + i).style.transition = "all 3s ease-in-out";
         // document.getElementById("singleScrew" + i).style.transition = "opacity 5s ease-in-out";
         // document.getElementById("singleScrew" + i).style.zIndex = -1;
@@ -782,6 +782,10 @@ function all_screws2() {
     // document.getElementById("all_screws_on").style.opacity = 1;
     // document.getElementById("all_screws_on").style.transition = "opacity 5.5s ease-in-out";
     setTimeout(function() {
+        for (let i = 2; i <= 4; i++) {
+            document.getElementById("singleScrew_base" + i).style.visibility = "hidden";
+
+        }
         document.getElementById("placeMotorInfo").innerText = "Let us now place the Battery on the Base Layer.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
     }, 4000);
