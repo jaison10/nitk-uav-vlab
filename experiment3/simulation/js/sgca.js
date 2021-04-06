@@ -738,7 +738,7 @@ function placeSingleScrew_base() {
         document.getElementById("singleScrew_2").style.visibility = "hidden";
         document.getElementById("screwHand3").style.visibility = "visible";
         document.getElementById("screwHand3").classList.add("rotateHand2");
-        document.getElementById("screwHand3").style.top = "358px";
+        document.getElementById("screwHand3").style.top = "350px";
         document.getElementById("screwHand3").style.transition = "top 3s ease-in-out";
         document.getElementById("curve_arrow").style = "visibility:visible;position:absolute;top:360px;left:360px;height: 30px; width: 30px;z-index:120;";
 
@@ -810,8 +810,8 @@ function all_screws2() {
 function placeBase() {
     myStopFunction();
     document.getElementById('base_layer').style.visibility = "visible";
-    document.getElementById('base_layer').style.top = "247px";
-    document.getElementById('base_layer').style.left = "205px";
+    document.getElementById('base_layer').style.top = "248px";
+    document.getElementById('base_layer').style.left = "210px";
     document.getElementById('base_layer').style.height = "100px";
     document.getElementById('base_layer').style.width = "260px";
     document.getElementById('base_layer').style.transition = "all 2s ease-in-out";
