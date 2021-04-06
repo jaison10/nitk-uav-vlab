@@ -651,6 +651,8 @@ function placeReceiver() {
     setTimeout(() => {
         document.getElementById("receiver").style.visibility = "hidden";
         document.getElementById("placedReceiver").style.visibility = "visible";
+        document.getElementById("rec_wire_uc").style.visibility = "visible";
+
         setTimeout(function() {
             document.getElementById("placeMotorInfo").innerText = "Let us now place the Electronic Speed Controllers (ESC) on the arms of the frame.";
             document.getElementById("placeMotorInfo").style.visibility = "visible";
