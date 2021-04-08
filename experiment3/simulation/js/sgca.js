@@ -706,6 +706,7 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
         document.getElementById("esc_arm_placed" + id).style.transition = "opacity 0.01s ease-in-out";
         document.getElementById("esc_wire" + id).style.visibility = "visible";
         document.getElementById("esc_signal" + id).style.visibility = "visible";
+
     }, 2000);
     escSelected++;
     console.log(escSelected);
@@ -713,15 +714,15 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
 
 
         setTimeout(function() {
-            document.getElementById("placeMotorInfo").innerText = "Click on the Motor wires to connect the motors to the ESCs.";
+            document.getElementById("placeMotorInfo").innerText = "Click on the ESC wires to connect the ESCs to the Motors.";
             document.getElementById("placeMotorInfo").style.visibility = "visible";
 
-            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 200px; top: 350px; height: 30px;width:20px; z-index: 100;";
-            document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left:215px; top: 330px; height: 30px;width:30px; z-index: 100;";
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
             // Code for IE9
-            document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
+            document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
             // Standard syntax
-            document.getElementById("arrow1").style.transform = "rotate(180deg)";
+            document.getElementById("arrow1").style.transform = "rotate(270deg)";
 
             myInt = setInterval(function() {
                 animatearrow();
@@ -758,49 +759,59 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
 }
 
 function connectEscMotor(n) {
-    // if (n == 1) {
+
     myStopFunction();
-    // document.getElementById("placeMotorInfo").style.visibility = "visible";
+    document.getElementById("esc_arm_placed" + n).onclick = "";
+    document.getElementById("esc_arm" + n).onclick = "";
+
     if (n == 1) {
         document.getElementById("placedMotor" + n).style.visibility = "hidden";
         document.getElementById("esc_arm_placed" + n).style.visibility = "hidden";
+        document.getElementById("esc_arm" + n).style.visibility = "hidden";
+
         document.getElementById("esc_motor_connected" + n).style.visibility = "visible";
-        document.getElementById("esc_motor_connected" + n).style.opacity = 1;
-        document.getElementById("esc_motor_connected" + n).style.transition = "opacity 1s ease-in-out";
+        // document.getElementById("esc_motor_connected" + n).style.opacity = 1;
+        // document.getElementById("esc_motor_connected" + n).style.transition = "opacity 1s ease-in-out";
         document.getElementById('esc_wire1').style.left = "250px";
         document.getElementById('esc_signal1').style.left = "255px";
-
     }
     if (n == 2) {
         document.getElementById("placedMotor" + n).style.visibility = "hidden";
         document.getElementById("esc_arm_placed" + n).style.visibility = "hidden";
+        document.getElementById("esc_arm" + n).style.visibility = "hidden";
+
         document.getElementById("esc_motor_connected" + n).style.visibility = "visible";
-        document.getElementById("esc_motor_connected" + n).style.opacity = 1;
-        document.getElementById("esc_motor_connected" + n).style.transition = "opacity 1s ease-in-out";
-
+        // document.getElementById("esc_motor_connected" + n).style.opacity = 1;
+        // document.getElementById("esc_motor_connected" + n).style.transition = "opacity 1s ease-in-out";
     }
-
     if (n == 3) {
-        document.getElementById("placedMotor3").style.visibility = "hidden";
-        document.getElementById("esc_arm_placed4").style.visibility = "hidden";
-        document.getElementById("esc_motor_connected3").style.visibility = "visible";
-        document.getElementById("esc_motor_connected3").style.opacity = 1;
-        document.getElementById("esc_motor_connected3").style.transition = "opacity 1s ease-in-out";
-        document.getElementById('esc_wire4').style.left = "260px";
-        document.getElementById('esc_signal4').style.left = "265px";
-        document.getElementById('esc_wire4').style.top = "197px";
-        document.getElementById('esc_signal4').style.top = "195px";
-    }
-    if (n == 4) {
         document.getElementById("placedMotor4").style.visibility = "hidden";
         document.getElementById("esc_arm_placed3").style.visibility = "hidden";
+        document.getElementById("esc_arm3").style.visibility = "hidden";
+
+        document.getElementById("esc_motor_connected3").style.visibility = "visible";
+        // document.getElementById("esc_motor_connected3").style.opacity = 1;
+        // document.getElementById("esc_motor_connected3").style.transition = "opacity 1s ease-in-out";
+        document.getElementById('esc_wire3').style.left = "380px";
+        document.getElementById('esc_signal3').style.left = "350px";
+        document.getElementById('esc_wire3').style.top = "197px";
+        document.getElementById('esc_signal3').style.top = "192px";
+
+    }
+    if (n == 4) {
+        document.getElementById("placedMotor3").style.visibility = "hidden";
+        document.getElementById("esc_arm_placed4").style.visibility = "hidden";
+        document.getElementById("esc_arm4").style.visibility = "hidden";
+
+
         document.getElementById("esc_motor_connected4").style.visibility = "visible";
-        document.getElementById("esc_motor_connected4").style.opacity = 1;
-        document.getElementById("esc_motor_connected4").style.transition = "opacity 1s ease-in-out";
-        document.getElementById('esc_wire3').style.left = "360px";
-        document.getElementById('esc_signal3').style.left = "327px";
-        document.getElementById('esc_wire3').style.top = "206px";
-        document.getElementById('esc_signal3').style.top = "205px";
+        // document.getElementById("esc_motor_connected4").style.opacity = 1;
+        // document.getElementById("esc_motor_connected4").style.transition = "opacity 1s ease-in-out";
+        // document.getElementById('esc_wire4').style.left = "360px";
+        // document.getElementById('esc_signal4').style.left = "327px";
+        // document.getElementById('esc_wire4').style.top = "206px";
+        // document.getElementById('esc_signal4').style.top = "205px";
+
     }
     // }
 }
