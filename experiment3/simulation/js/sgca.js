@@ -759,7 +759,6 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
 }
 
 function connectEscMotor(n) {
-
     myStopFunction();
     document.getElementById("esc_arm_placed" + n).onclick = "";
     document.getElementById("esc_arm" + n).onclick = "";
@@ -813,7 +812,44 @@ function connectEscMotor(n) {
         // document.getElementById('esc_signal4').style.top = "205px";
 
     }
+
+    setTimeout(function() {
+        myStopFunction();
+        document.getElementById("placeMotorInfo").innerText = "Click on the signal wire of the ESC to connect the ESCs to the Flight Controller.";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        setTimeout(function() {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+            // document.getElementById('base_layer').style.visibility = "visible";
+
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 350px; top: 450px; height: 30px;width:30px; z-index: 10;";
+
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(180deg)";
+
+            document.getElementById('esc_signal1').onclick = function() { connectEscFc(1); };
+            document.getElementById('esc_signal2').onclick = function() { connectEscFc(2); };
+            document.getElementById('esc_signal3').onclick = function() { connectEscFc(3); };
+            document.getElementById('esc_signal4').onclick = function() { connectEscFc(4); };
+
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
+
+        }, 3500);
+
+
+    }, 2500);
     // }
+}
+
+function connectEscFc(id) {
+    myStopFunction();
+    document.getElementById('esc_fc_connected' + id).style.visibility = "visible";
+    document.getElementById('esc_signal' + id).style.visibility = "visible";
+
 }
 
 function placeSingleScrew_base() {
