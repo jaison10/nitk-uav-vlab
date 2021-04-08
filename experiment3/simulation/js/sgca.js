@@ -801,8 +801,6 @@ function connectEscMotor(n) {
         document.getElementById("placedMotor3").style.visibility = "hidden";
         document.getElementById("esc_arm_placed4").style.visibility = "hidden";
         document.getElementById("esc_arm4").style.visibility = "hidden";
-
-
         document.getElementById("esc_motor_connected4").style.visibility = "visible";
         // document.getElementById("esc_motor_connected4").style.opacity = 1;
         // document.getElementById("esc_motor_connected4").style.transition = "opacity 1s ease-in-out";
