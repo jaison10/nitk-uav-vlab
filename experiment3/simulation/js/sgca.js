@@ -732,27 +732,7 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
 
         }, 1500);
 
-        // setTimeout(function() {
-        //     document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame in order to place the Battery.";
-        //     document.getElementById("placeMotorInfo").style.visibility = "visible";
-        //     setTimeout(function() {
-        //         document.getElementById("placeMotorInfo").style.visibility = "hidden";
-        //         document.getElementById('base_layer').style.visibility = "visible";
 
-        //         document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 150px; height: 30px; z-index: 10;";
-
-        //         document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
-        //         // Code for IE9
-        //         document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
-        //         // Standard syntax
-        //         document.getElementById("arrow1").style.transform = "rotate(0deg)";
-
-        //         myInt = setInterval(function() {
-        //             animatearrow();
-        //         }, 500);
-
-        //     }, 2500);
-        // }, 1500);
 
 
 
@@ -851,18 +831,44 @@ function connectEscMotor(n) {
 
     // }
 }
+var fcConnected = 0;
 
 function connectEscFc(id) {
     myStopFunction();
+
     if (id == 3) {
         document.getElementById('esc_fc_connected3_1').style.visibility = "visible";
         document.getElementById('esc_fc_connected3_2').style.visibility = "visible";
-
+        fcConnected++;
     } else {
         document.getElementById('esc_fc_connected' + id).style.visibility = "visible";
-
+        fcConnected++;
     }
     document.getElementById('esc_signal' + id).style.visibility = "hidden";
+    document.getElementById("placeMotorInfo").style.visibility = "hidden";
+    if (fcConnected >= 4) {
+        setTimeout(function() {
+            document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame in order to place the Battery.";
+            document.getElementById("placeMotorInfo").style.visibility = "visible";
+            setTimeout(function() {
+                document.getElementById("placeMotorInfo").style.visibility = "hidden";
+                document.getElementById('base_layer').style.visibility = "visible";
+
+                document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 150px; height: 30px; z-index: 10;";
+
+                document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+                // Code for IE9
+                document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+                // Standard syntax
+                document.getElementById("arrow1").style.transform = "rotate(0deg)";
+
+                myInt = setInterval(function() {
+                    animatearrow();
+                }, 500);
+
+            }, 4500);
+        }, 2000);
+    }
 
 
 }
