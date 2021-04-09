@@ -854,8 +854,16 @@ function connectEscMotor(n) {
 
 function connectEscFc(id) {
     myStopFunction();
-    document.getElementById('esc_fc_connected' + id).style.visibility = "visible";
+    if (id == 3) {
+        document.getElementById('esc_fc_connected3_1').style.visibility = "visible";
+        document.getElementById('esc_fc_connected3_2').style.visibility = "visible";
+
+    } else {
+        document.getElementById('esc_fc_connected' + id).style.visibility = "visible";
+
+    }
     document.getElementById('esc_signal' + id).style.visibility = "hidden";
+
 
 }
 
