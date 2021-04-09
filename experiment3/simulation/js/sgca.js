@@ -785,7 +785,8 @@ function connectEscMotor(n) {
         document.getElementById("esc_arm_placed4").style.visibility = "hidden";
         document.getElementById("esc_arm4").style.visibility = "hidden";
         document.getElementById("esc_motor_connected4").style.visibility = "visible";
-        connectionsDone++
+        connectionsDone++;
+
         // document.getElementById("esc_motor_connected4").style.opacity = 1;
         // document.getElementById("esc_motor_connected4").style.transition = "opacity 1s ease-in-out";
         // document.getElementById('esc_wire4').style.left = "360px";
@@ -794,6 +795,7 @@ function connectEscMotor(n) {
         // document.getElementById('esc_signal4').style.top = "205px";
     }
     if (connectionsDone >= 4) {
+        document.getElementById("placeMotorInfo").style.visibility = "hidden";
 
         setTimeout(function() {
             myStopFunction();
@@ -845,8 +847,9 @@ function connectEscFc(id) {
         fcConnected++;
     }
     document.getElementById('esc_signal' + id).style.visibility = "hidden";
-    document.getElementById("placeMotorInfo").style.visibility = "hidden";
     if (fcConnected >= 4) {
+        document.getElementById("placeMotorInfo").style.visibility = "hidden";
+
         setTimeout(function() {
             document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame in order to place the Battery.";
             document.getElementById("placeMotorInfo").style.visibility = "visible";
@@ -866,7 +869,7 @@ function connectEscFc(id) {
                     animatearrow();
                 }, 500);
 
-            }, 4500);
+            }, 5000);
         }, 2000);
     }
 
