@@ -689,27 +689,86 @@ function placeReceiver() {
 var escSelected = 0;
 
 function placeEsc(id, top_px, left_px, height_px, width_px) {
-    myStopFunction();
-    document.getElementById("esc_arm" + id).style.visibility = "visible";
-    document.getElementById("esc_arm" + id).style.top = top_px;
-    document.getElementById("esc_arm" + id).style.left = left_px;
-    document.getElementById("esc_arm" + id).style.height = height_px;
-    document.getElementById("esc_arm" + id).style.width = width_px;
-    document.getElementById("esc_arm" + id).style.transition = "all 1.5s ease-in-out";
-    // Author: Jaison
-    setTimeout(() => {
-        console.log("hiding the hovering esc")
-            // document.getElementById("esc_arm" + id).style.visibility = "hidden";
-        document.getElementById("esc_arm" + id).style.opacity = 0;
-        document.getElementById("esc_arm" + id).style.transition = "all 0.01s ease-in-out";
-        document.getElementById("esc_arm_placed" + id).style.visibility = "visible";
-        document.getElementById("esc_arm_placed" + id).style.opacity = 1;
-        document.getElementById("esc_arm_placed" + id).style.transition = "opacity 0.01s ease-in-out";
-        document.getElementById("esc_wire" + id).style.visibility = "visible";
-        document.getElementById("esc_signal" + id).style.visibility = "visible";
-
-    }, 2000);
+    // myStopFunction();
+    // // document.getElementById("esc_arm" + id).style.visibility = "visible";
+    // // document.getElementById("esc_arm" + id).style.top = top_px;
+    // // document.getElementById("esc_arm" + id).style.left = left_px;
+    // // document.getElementById("esc_arm" + id).style.height = height_px;
+    // // document.getElementById("esc_arm" + id).style.width = width_px;
+    // // document.getElementById("esc_arm" + id).style.transition = "all 1.5s ease-in-out";
+    // document.getElementById("esc_arm" + id).classList.add("moveHoverEsc"+id);
+    // // Author: Jaison
+    // setTimeout(() => {
+    //     console.log("hiding the hovering esc")
+    //         // document.getElementById("esc_arm" + id).style.visibility = "hidden";
+    //     // document.getElementById("esc_arm" + id).style.opacity = 0;
+    //     // document.getElementById("esc_arm" + id).style.transition = "all 0.01s ease-in-out";
+    //     // document.getElementById("esc_arm_placed" + id).style.visibility = "visible";
+    //     // document.getElementById("esc_arm_placed" + id).style.opacity = 1;
+    //     // document.getElementById("esc_arm_placed" + id).style.transition = "opacity 0.01s ease-in-out";
+    //     document.getElementById("esc_arm" + id).style.visibility = "hidden";
+    //     document.getElementById("esc_arm_placed" + id).style.visibility = "visible";
+        
+    //     document.getElementById("esc_wire" + id).style.visibility = "visible";
+    //     document.getElementById("esc_signal" + id).style.visibility = "visible";
+    // }, 1900);
     // Jaison End
+    if(id==1){
+        myStopFunction();
+        document.getElementById("esc_arm1").classList.add("moveHoverEsc1");
+        // Author: Jaison
+        setTimeout(() => {
+            console.log("hiding the hovering esc")
+
+            document.getElementById("esc_arm1").style.visibility = "hidden";
+            document.getElementById("esc_arm_placed1").style.visibility = "visible";
+            
+            document.getElementById("esc_wire1").style.visibility = "visible";
+            document.getElementById("esc_signal1").style.visibility = "visible";
+        }, 1900);
+    }
+    if(id==2){
+        myStopFunction();
+        document.getElementById("esc_arm2").classList.add("moveHoverEsc2");
+        // Author: Jaison
+        setTimeout(() => {
+            console.log("hiding the hovering esc")
+
+            document.getElementById("esc_arm2").style.visibility = "hidden";
+            document.getElementById("esc_arm_placed2").style.visibility = "visible";
+            
+            document.getElementById("esc_wire2").style.visibility = "visible";
+            document.getElementById("esc_signal2").style.visibility = "visible";
+        }, 1900);
+    }
+    if(id==3){
+        myStopFunction();
+        document.getElementById("esc_arm3").classList.add("moveHoverEsc3");
+        // Author: Jaison
+        setTimeout(() => {
+            console.log("hiding the hovering esc")
+
+            document.getElementById("esc_arm3").style.visibility = "hidden";
+            document.getElementById("esc_arm_placed3").style.visibility = "visible";
+            
+            document.getElementById("esc_wire3").style.visibility = "visible";
+            document.getElementById("esc_signal3").style.visibility = "visible";
+        }, 1900);
+    }
+    if(id==4){
+        myStopFunction();
+        document.getElementById("esc_arm4").classList.add("moveHoverEsc4");
+        // Author: Jaison
+        setTimeout(() => {
+            console.log("hiding the hovering esc")
+
+            document.getElementById("esc_arm4").style.visibility = "hidden";
+            document.getElementById("esc_arm_placed4").style.visibility = "visible";
+            
+            document.getElementById("esc_wire4").style.visibility = "visible";
+            document.getElementById("esc_signal4").style.visibility = "visible";
+        }, 1900);
+    }
     escSelected++;
     console.log(escSelected);
     if (escSelected >= 4) {
