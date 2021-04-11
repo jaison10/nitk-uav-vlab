@@ -689,6 +689,7 @@ function placeReceiver() {
 var escSelected = 0;
 
 function placeEsc(id, top_px, left_px, height_px, width_px) {
+<<<<<<< HEAD
     // myStopFunction();
     // // document.getElementById("esc_arm" + id).style.visibility = "visible";
     // // document.getElementById("esc_arm" + id).style.top = top_px;
@@ -714,6 +715,10 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
     // }, 1900);
     // Jaison End
     if (id == 1) {
+=======
+
+    if(id==1){
+>>>>>>> c3b00f1703532e13ed9ca61914db98f2ea2b692f
         myStopFunction();
         document.getElementById("esc_arm1").classList.add("moveHoverEsc1");
         // Author: Jaison
@@ -808,15 +813,32 @@ function connectEscMotor(n) {
     if (n == 1) {
         document.getElementById("placedMotor" + n).style.visibility = "hidden";
         document.getElementById("esc_arm_placed" + n).style.visibility = "hidden";
-        document.getElementById("esc_arm" + n).style.visibility = "hidden";
         connectionsDone++;
         document.getElementById("esc_motor_connected" + n).style.visibility = "visible";
+<<<<<<< HEAD
         // document.getElementById("esc_motor_connected" + n).style.opacity = 1;
         // document.getElementById("esc_motor_connected" + n).style.transition = "opacity 1s ease-in-out";
         document.getElementById('esc_wire1').style.top = "267px;"
         document.getElementById('esc_wire1').style.left = "229px";
         document.getElementById('esc_signal1').style.top = "269px";
         document.getElementById('esc_signal1').style.left = "230px";
+=======
+
+        document.getElementById('esc_wire1').style.top= "263px;";
+        document.getElementById('esc_wire1').style.left= "237px";
+        document.getElementById('esc_signal1').style.top = "265px";
+        document.getElementById('esc_signal1').style.left = "240px";
+
+        // Checking if all are placed
+        if (connectionsDone >= 4) {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+    
+            setTimeout(function() {
+                document.getElementById('arrow-fc-signal').style.visibility = "visible";
+                document.getElementById('info-about-signal').style.visibility = "visible";
+            }, 1000);
+        }
+>>>>>>> c3b00f1703532e13ed9ca61914db98f2ea2b692f
     }
     if (n == 2) {
         document.getElementById("placedMotor" + n).style.visibility = "hidden";
@@ -824,8 +846,16 @@ function connectEscMotor(n) {
         document.getElementById("esc_arm" + n).style.visibility = "hidden";
         connectionsDone++;
         document.getElementById("esc_motor_connected" + n).style.visibility = "visible";
-        // document.getElementById("esc_motor_connected" + n).style.opacity = 1;
-        // document.getElementById("esc_motor_connected" + n).style.transition = "opacity 1s ease-in-out";
+
+        // Checking if all are placed
+        if (connectionsDone >= 4) {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+    
+            setTimeout(function() {
+                document.getElementById('arrow-fc-signal').style.visibility = "visible";
+                document.getElementById('info-about-signal').style.visibility = "visible";
+            }, 1000);
+        }
     }
     if (n == 3) {
         document.getElementById("placedMotor4").style.visibility = "hidden";
@@ -839,6 +869,16 @@ function connectEscMotor(n) {
         document.getElementById('esc_signal3').style.left = "350px";
         document.getElementById('esc_wire3').style.top = "197px";
         document.getElementById('esc_signal3').style.top = "192px";
+
+        // Checking if all are placed
+        if (connectionsDone >= 4) {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+    
+            setTimeout(function() {
+                document.getElementById('arrow-fc-signal').style.visibility = "visible";
+                document.getElementById('info-about-signal').style.visibility = "visible";
+            }, 1000);
+        }
 
     }
     if (n == 4) {
@@ -859,19 +899,38 @@ function connectEscMotor(n) {
         // document.getElementById('esc_signal4').style.left = "327px";
         // document.getElementById('esc_wire4').style.top = "206px";
         // document.getElementById('esc_signal4').style.top = "205px";
-    }
-    if (connectionsDone >= 4) {
-        document.getElementById("placeMotorInfo").style.visibility = "hidden";
 
+        // Checking if all are placed
+        if (connectionsDone >= 4) {
+            console.log("Inside the signal info function.");
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+    
+            setTimeout(function() {
+                document.getElementById('arrow-fc-signal').style.visibility = "visible";
+                document.getElementById('info-about-signal').style.visibility = "visible";
+            }, 1000);
+        }
+    }    
+
+}
+
+function fcSignalInfoShown(){
+    console.log("Button has been clicked");
+    document.getElementById('arrow-fc-signal').style.visibility = "hidden";
+    document.getElementById('info-about-signal').style.visibility = "hidden";
         setTimeout(function() {
             myStopFunction();
             document.getElementById("placeMotorInfo").innerText = "Click on the signal wire of the ESC to connect the ESCs to the Flight Controller.";
             document.getElementById("placeMotorInfo").style.visibility = "visible";
 
+<<<<<<< HEAD
             // document.getElementById("placeMotorInfo").style.visibility = "hidden";
             // document.getElementById('base_layer').style.visibility = "visible";
 
             document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 330px; top: 340px; height: 30px; width: 30px; z-index: 150; ";
+=======
+            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 350px; top: 340px; height: 30px; width: 30px; z-index: 150; ";
+>>>>>>> c3b00f1703532e13ed9ca61914db98f2ea2b692f
 
             document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)";
             // Code for IE9
@@ -887,18 +946,9 @@ function connectEscMotor(n) {
             myInt = setInterval(function() {
                 animatearrow();
             }, 500);
-
-
-
-
-        }, 2500);
-    }
-
-
-
-
-    // }
+        }, 500);
 }
+
 var fcConnected = 0;
 
 function connectEscFc(id) {
