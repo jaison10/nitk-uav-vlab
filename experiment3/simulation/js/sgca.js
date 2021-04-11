@@ -708,12 +708,12 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
     //     // document.getElementById("esc_arm_placed" + id).style.transition = "opacity 0.01s ease-in-out";
     //     document.getElementById("esc_arm" + id).style.visibility = "hidden";
     //     document.getElementById("esc_arm_placed" + id).style.visibility = "visible";
-        
+
     //     document.getElementById("esc_wire" + id).style.visibility = "visible";
     //     document.getElementById("esc_signal" + id).style.visibility = "visible";
     // }, 1900);
     // Jaison End
-    if(id==1){
+    if (id == 1) {
         myStopFunction();
         document.getElementById("esc_arm1").classList.add("moveHoverEsc1");
         // Author: Jaison
@@ -722,12 +722,12 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
 
             document.getElementById("esc_arm1").style.visibility = "hidden";
             document.getElementById("esc_arm_placed1").style.visibility = "visible";
-            
+
             document.getElementById("esc_wire1").style.visibility = "visible";
             document.getElementById("esc_signal1").style.visibility = "visible";
         }, 1900);
     }
-    if(id==2){
+    if (id == 2) {
         myStopFunction();
         document.getElementById("esc_arm2").classList.add("moveHoverEsc2");
         // Author: Jaison
@@ -736,12 +736,12 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
 
             document.getElementById("esc_arm2").style.visibility = "hidden";
             document.getElementById("esc_arm_placed2").style.visibility = "visible";
-            
+
             document.getElementById("esc_wire2").style.visibility = "visible";
             document.getElementById("esc_signal2").style.visibility = "visible";
         }, 1900);
     }
-    if(id==3){
+    if (id == 3) {
         myStopFunction();
         document.getElementById("esc_arm3").classList.add("moveHoverEsc3");
         // Author: Jaison
@@ -750,12 +750,12 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
 
             document.getElementById("esc_arm3").style.visibility = "hidden";
             document.getElementById("esc_arm_placed3").style.visibility = "visible";
-            
+
             document.getElementById("esc_wire3").style.visibility = "visible";
             document.getElementById("esc_signal3").style.visibility = "visible";
         }, 1900);
     }
-    if(id==4){
+    if (id == 4) {
         myStopFunction();
         document.getElementById("esc_arm4").classList.add("moveHoverEsc4");
         // Author: Jaison
@@ -764,7 +764,7 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
 
             document.getElementById("esc_arm4").style.visibility = "hidden";
             document.getElementById("esc_arm_placed4").style.visibility = "visible";
-            
+
             document.getElementById("esc_wire4").style.visibility = "visible";
             document.getElementById("esc_signal4").style.visibility = "visible";
         }, 1900);
@@ -813,10 +813,10 @@ function connectEscMotor(n) {
         document.getElementById("esc_motor_connected" + n).style.visibility = "visible";
         // document.getElementById("esc_motor_connected" + n).style.opacity = 1;
         // document.getElementById("esc_motor_connected" + n).style.transition = "opacity 1s ease-in-out";
-        document.getElementById('esc_wire1').style.top= "262px;"
-        document.getElementById('esc_wire1').style.left= "255px";
-        document.getElementById('esc_signal1').style.top = "263px";
-        document.getElementById('esc_signal1').style.left = "240px";
+        document.getElementById('esc_wire1').style.top = "267px;"
+        document.getElementById('esc_wire1').style.left = "229px";
+        document.getElementById('esc_signal1').style.top = "269px";
+        document.getElementById('esc_signal1').style.left = "230px";
     }
     if (n == 2) {
         document.getElementById("placedMotor" + n).style.visibility = "hidden";
@@ -846,6 +846,11 @@ function connectEscMotor(n) {
         document.getElementById("esc_arm_placed4").style.visibility = "hidden";
         document.getElementById("esc_arm4").style.visibility = "hidden";
         document.getElementById("esc_motor_connected4").style.visibility = "visible";
+        document.getElementById('esc_wire4').style.top = "202px";
+        document.getElementById('esc_wire4').style.left = "276px";
+        document.getElementById('esc_signal4').style.top = "205px";
+        document.getElementById('esc_signal4').style.left = "272px";
+
         connectionsDone++;
 
         // document.getElementById("esc_motor_connected4").style.opacity = 1;
@@ -866,7 +871,7 @@ function connectEscMotor(n) {
             // document.getElementById("placeMotorInfo").style.visibility = "hidden";
             // document.getElementById('base_layer').style.visibility = "visible";
 
-            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 350px; top: 340px; height: 30px; width: 30px; z-index: 150; ";
+            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 330px; top: 340px; height: 30px; width: 30px; z-index: 150; ";
 
             document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)";
             // Code for IE9
