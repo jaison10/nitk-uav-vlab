@@ -269,6 +269,10 @@
             <img id="placedReceiver" onclick="" class="" style="visibility: hidden; position: absolute; left: 308px; top: 255px; height: 20px; width: 55px; transform: rotate(3deg); z-index: 120;" src="./Images/assembly_parts/Receiver.png">
             <!-- RECEIVER WIRE UNCONNECTED -->
             <img id="rec_wire_uc" src="./Images/receiver wire unconnected.png" style="visibility: hidden; position: absolute; left: 360px; top: 263px; height: 50px; width: 30px; z-index: 100;" alt="Receiver wire unconnected">
+
+            <!-- RECEIVER WIRE CONNECTED -->
+            <img id="rec_wire" src="./Images/Receiver_Flight_controller_wires_ connected.png" style="visibility: hidden; position: absolute; left: 360px; top: 230px; height: 40px; width: 30px; z-index: 100;transform:rotate(0deg);" alt="Receiver wire connected">
+
             <!-- ESC  on air-->
             <img id="esc_arm1" onclick="placeEsc(1,'253px','180px','79px','135px');" class="" style="visibility: hidden; position: absolute;top: 200px; left: 129px; z-index: 100; height: 80px; width: 138px; cursor: pointer; transform:rotate(2deg);" src="./Images/ESC1.png"
                 alt="ESC1">
@@ -312,82 +316,82 @@
             <img id="esc_fc_connected4" style="visibility: hidden; position: absolute; top: 201px; left: 268px; height: 27px; width: 41px; z-index: 140;transform:rotate(4deg);" src="./Images/wire_4.png" alt="Esc to fc connection">
 
             <!-- Information about the FC signal wire from ESC.  -->
-            <<<<<<< HEAD <img id="esc_fc_connected4" style="visibility:hidden ;position: absolute;top: 100px;left: 100px;height: 50px;width: 70px; transform: rotate(120deg);" src="./Images/arrow_slim.png" alt="Info">
-                <!-- <span class="tool" id="desc_button"><strong></strong>
+            <img id="esc_fc_connected4" style="visibility:hidden ;position: absolute;top: 100px;left: 100px;height: 50px;width: 70px; transform: rotate(120deg);" src="./Images/arrow_slim.png" alt="Info">
+            <!-- <span class="tool" id="desc_button"><strong></strong>
                 <span  class="tooltext" id="fcSignal_message"><strong style="color:red;">FC Signal:</strong> A motor converts supplied electrical energy into mechanical energy. Among these, brushless DC motors (BLDC) feature high efficiency and excellent controllability. 
                 </span>
             </span> -->
-                <span id="note1" class="tooltip" style="font-family:verdana; font-size:18px;border-bottom:1px dotted ; color:red; position:absolute; visibility: visible;">
+            <span id="note1" class="tooltip" style="font-family:verdana; font-size:18px;border-bottom:1px dotted ; color:red; position:absolute; visibility: visible;">
                 <span id="10" class="tooltiptext" style="font-family:verdana; font-size:14px;color:white;width:600px;left:-650px;top:250px;text-align: justify;">Note:<br><br>Move to the next finer paper (2/0 and 3/0) once the scratches on the specimen are uniform. While changing from one paper to another, the specimen and your hands should be cleaned free from the abrasive of the previous paper, and the specimen turned through 90°, so that the scratches from the previous paper are at right angles to the scratches from the next paper. </br></br>
                 <input id="ok" type="button" name="ok" value="Ok" />&nbsp;&nbsp;&nbsp;</span>
-                </span>
+            </span>
 
-                =======
-                <img id="arrow-fc-signal" style="visibility:hidden ;position: absolute;top: 300px;left: 230px;height: 70px;width: 70px; transform: rotate(160deg);z-index:200;" src="./Images/arrow_slim.png" alt="Info">
-                <div id="info-about-signal" style="position: absolute; visibility: hidden; border-style: solid; border-width: thin; width: 360px; height: 100px; top: 380px; left:160px; border-radius: 6px;">
-                    <img src="./Images/Esc_Flight_controller_wire_1.png" style="position: absolute; width: 100px; height: 50px; top: 20px; left: 3px; border-radius: 6px; border-style: solid; border-width: thin; ">
-                    <span style="position: absolute; width: 250px; height: 50px; top: 10px; left: 115px;"> This is ESC to FC signal line through which the information 
+
+            <img id="arrow-fc-signal" style="visibility:hidden ;position: absolute;top: 300px;left: 230px;height: 70px;width: 70px; transform: rotate(160deg);z-index:200;" src="./Images/arrow_slim.png" alt="Info">
+            <div id="info-about-signal" style="position: absolute; visibility: hidden; border-style: solid; border-width: thin; width: 360px; height: 100px; top: 380px; left:160px; border-radius: 6px;">
+                <img src="./Images/Esc_Flight_controller_wire_1.png" style="position: absolute; width: 100px; height: 50px; top: 20px; left: 3px; border-radius: 6px; border-style: solid; border-width: thin; ">
+                <span style="position: absolute; width: 250px; height: 50px; top: 10px; left: 115px;"> This is ESC to FC signal line through which the information 
                     from  FC will be transferred to the ESC.</span>
-                    <button style="position: absolute;  top: 70px; left: 320px; color: rgb(255, 255, 255); background-color: black; border-radius: 5px; cursor: pointer;" onclick="fcSignalInfoShown();">Ok</button>
-                </div>
-                >>>>>>> c3b00f1703532e13ed9ca61914db98f2ea2b692f
+                <button style="position: absolute;  top: 70px; left: 320px; color: rgb(255, 255, 255); background-color: black; border-radius: 5px; cursor: pointer;" onclick="fcSignalInfoShown();">Ok</button>
+            </div>
 
 
-                <!-- Base Layer -->
-                <img id="base_layer" onclick="placeBase();" style="visibility: hidden;position:absolute;top: 80px; left: 240px; height: 80px; width: 180px;z-index:80;cursor: pointer;transform: rotate(4deg);" src="./Images/Base alayer_v02.png" alt="Base layer of the frame">
-                <!-- Battery -->
-                <img id="battery_base" onclick="placeBattery();" style="visibility: hidden;position: absolute;top: 50px;left: 200px;height: 70px; width: 200px;cursor: pointer;z-index: 90;" src="./Images/Battery.png" alt="Battery">
 
-                <!-- Screw hand to screw the base layer to end of arm stand -->
-                <img id="screwHand3" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 363px; height: 95px; width: 45px; z-index: 90; top: 363px;" src="./Images/screwing_180ddeg.png">
-                <!-- Hand holding the screw for base layer -->
-                <img id="singleScrew_2" onclick="placeSingleScrew_base();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 450px; top: 40px; height: 80px; width:150px; transform:rotate(180deg); z-index: 1500;" src="./Images/frame_parts/hand_screw__1_-removebg-preview (1).png">
-                <!-- Smaller screw for the Base position -->
-                <img id="singleScrewFinal2" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 380px; top: 350px; height: 20px; width: 10px;transform:rotate(180deg); z-index: 50;" src="./Images/assembly_parts/single_screw.png">
+            <!-- Base Layer -->
+            <img id="base_layer" onclick="placeBase();" style="visibility: hidden;position:absolute;top: 80px; left: 240px; height: 80px; width: 180px;z-index:80;cursor: pointer;transform: rotate(4deg);" src="./Images/Base alayer_v02.png" alt="Base layer of the frame">
+            <!-- Battery -->
+            <img id="battery_base" onclick="placeBattery();" style="visibility: hidden;position: absolute;top: 50px;left: 200px;height: 70px; width: 200px;cursor: pointer;z-index: 90;" src="./Images/Battery.png" alt="Battery">
 
-                <!-- SCREW HEAD FOR THE Base layer -->
-                <img id="screw_head2" class="" style="visibility: hidden; position: absolute; left: 581px; top: 365px; height: 3px; width: 4px; z-index: 120; opacity: 0;" src="./Images/frame_parts/Screw_head.png">
+            <!-- Screw hand to screw the base layer to end of arm stand -->
+            <img id="screwHand3" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 363px; height: 95px; width: 45px; z-index: 90; top: 363px;" src="./Images/screwing_180ddeg.png">
+            <!-- Hand holding the screw for base layer -->
+            <img id="singleScrew_2" onclick="placeSingleScrew_base();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 450px; top: 40px; height: 80px; width:150px; transform:rotate(180deg); z-index: 1500;" src="./Images/frame_parts/hand_screw__1_-removebg-preview (1).png">
+            <!-- Smaller screw for the Base position -->
+            <img id="singleScrewFinal2" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 380px; top: 350px; height: 20px; width: 10px;transform:rotate(180deg); z-index: 50;" src="./Images/assembly_parts/single_screw.png">
 
-                <!-- BUTTON TO PLACE ALL OTHER SCREWS TO HOLD BASE Layer -->
-                <button id="all_screws_base" onclick="all_screws2();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;cursor: pointer;">Place all other screws</button>
+            <!-- SCREW HEAD FOR THE Base layer -->
+            <img id="screw_head2" class="" style="visibility: hidden; position: absolute; left: 581px; top: 365px; height: 3px; width: 4px; z-index: 120; opacity: 0;" src="./Images/frame_parts/Screw_head.png">
 
-                <!-- REST OF THE SCREWS FOR THE BASE -->
-                <img id="singleScrew_base2" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 395px; top: 340px; height: 20px;width: 10px;z-index: 50;transform: rotate(180deg);" src="./Images/assembly_parts/single_screw.png">
-                <img id="singleScrew_base3" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 280px; top: 350px; height: 20px; width:10px; z-index:50;transform: rotate(180deg);" src="./Images/assembly_parts/single_screw.png">
-                <img id="singleScrew_base4" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 260px; top: 340px;height: 20px; width:10px; z-index: 50;transform: rotate(180deg);" src="./Images/assembly_parts/single_screw.png">
+            <!-- BUTTON TO PLACE ALL OTHER SCREWS TO HOLD BASE Layer -->
+            <button id="all_screws_base" onclick="all_screws2();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;cursor: pointer;">Place all other screws</button>
 
-
-                <p id="frame-info" style="position: absolute; top: 450px; visibility: hidden; "> The upper layer of the frame is attached to four arms which are used to hold the motors.</p>
-                <img id="arr-air" style="visibility: hidden; top: 40%; right: 70%; height: 20%; width:5%; position: absolute;" src="./Images/uav/arrow-aerofoil.png">
-                <img id="a3" style=" visibility:hidden;" src="Images/uav/airfoil-new2.png" />
-                <!-- Nomenclature images of airfoil. -->
-                <div id="nomenImages">
-                    <img id="air01" style="position: absolute; left: 170px; top: 145px; height: 180px; width: 380px; visibility:hidden;" src="Images/uav/airfoil/air01.png" />
-                    <img id="air02" style="position: absolute; left: 170px; top: 140px; height: 200px; width: 400px; visibility:hidden;" src="Images/uav/airfoil/air02.png" />
-                    <img id="air03" style="position: absolute; left: 170px; top: 145px; height: 170px; width: 380px; visibility:hidden;" src="Images/uav/airfoil/air03.png" />
-                    <img id="air04" style="position: absolute; left: 170px; top: 145px; height: 200px; width: 400px; visibility:hidden;" src="Images/uav/airfoil/air04.png" />
-                    <img id="air05" style="position: absolute; left: 170px; top: 145px; height: 200px; width: 400px; visibility:hidden;" src="Images/uav/airfoil/air05.png" />
-                    <img id="air06" style="position: absolute; left: 170px; top: 145px; height: 200px; width: 400px; visibility:hidden;" src="Images/uav/airfoil/air06.png" />
-                    <img id="air07" style="position: absolute; left: 170px; top: 145px; height: 200px; width: 400px; visibility:hidden;" src="Images/uav/airfoil/air07.png" />
-                </div>
-
-                <button id="change-airfoilButton" onclick="changeNomen();" style="position: absolute; top: 85%; left: 85%;  visibility: hidden;"></button>
+            <!-- REST OF THE SCREWS FOR THE BASE -->
+            <img id="singleScrew_base2" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 395px; top: 340px; height: 20px;width: 10px;z-index: 50;transform: rotate(180deg);" src="./Images/assembly_parts/single_screw.png">
+            <img id="singleScrew_base3" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 280px; top: 350px; height: 20px; width:10px; z-index:50;transform: rotate(180deg);" src="./Images/assembly_parts/single_screw.png">
+            <img id="singleScrew_base4" class="" style="visibility: hidden; cursor: pointer; position: absolute;left: 260px; top: 340px;height: 20px; width:10px; z-index: 50;transform: rotate(180deg);" src="./Images/assembly_parts/single_screw.png">
 
 
-                <ul id="nomen-list" class="air-items" style="visibility: hidden; list-style-type: none; position: absolute; top: 120px;">
-                    <li><button onclick="airfoilNomen(1);">One</button></li>
-                    <li><button onclick="airfoilNomen(2);">One</button></li>
-                    <li><button onclick="airfoilNomen(3);">One</button></li>
-                    <li><button onclick="airfoilNomen(4);">One</button></li>
-                    <li><button onclick="airfoilNomen(5);">One</button></li>
-                    <li><button onclick="airfoilNomen(6);">One</button></li>
-                    <li><button onclick="airfoilNomen(7);">One</button></li>
-                </ul>
+            <p id="frame-info" style="position: absolute; top: 450px; visibility: hidden; "> The upper layer of the frame is attached to four arms which are used to hold the motors.</p>
+            <img id="arr-air" style="visibility: hidden; top: 40%; right: 70%; height: 20%; width:5%; position: absolute;" src="./Images/uav/arrow-aerofoil.png">
+            <img id="a3" style=" visibility:hidden;" src="Images/uav/airfoil-new2.png" />
+            <!-- Nomenclature images of airfoil. -->
+            <div id="nomenImages">
+                <img id="air01" style="position: absolute; left: 170px; top: 145px; height: 180px; width: 380px; visibility:hidden;" src="Images/uav/airfoil/air01.png" />
+                <img id="air02" style="position: absolute; left: 170px; top: 140px; height: 200px; width: 400px; visibility:hidden;" src="Images/uav/airfoil/air02.png" />
+                <img id="air03" style="position: absolute; left: 170px; top: 145px; height: 170px; width: 380px; visibility:hidden;" src="Images/uav/airfoil/air03.png" />
+                <img id="air04" style="position: absolute; left: 170px; top: 145px; height: 200px; width: 400px; visibility:hidden;" src="Images/uav/airfoil/air04.png" />
+                <img id="air05" style="position: absolute; left: 170px; top: 145px; height: 200px; width: 400px; visibility:hidden;" src="Images/uav/airfoil/air05.png" />
+                <img id="air06" style="position: absolute; left: 170px; top: 145px; height: 200px; width: 400px; visibility:hidden;" src="Images/uav/airfoil/air06.png" />
+                <img id="air07" style="position: absolute; left: 170px; top: 145px; height: 200px; width: 400px; visibility:hidden;" src="Images/uav/airfoil/air07.png" />
+            </div>
 
-                <!-- <img id="" style="position: absolute; left: 430px; top: 255px;" src="Images/ewm.png"/> -->
-                <!-- <img id="a4" style="position: absolute; left: 520px; top: 50px;visibility:hidden;" src="Images/1.12.png"/> -->
-                <!-- <p id="can1" style="position:absolute;top: 450px; left:28px; font-family:verdana; font-size:14px;"></p> -->
-                <p id="v1" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
+            <button id="change-airfoilButton" onclick="changeNomen();" style="position: absolute; top: 85%; left: 85%;  visibility: hidden;"></button>
+
+
+            <ul id="nomen-list" class="air-items" style="visibility: hidden; list-style-type: none; position: absolute; top: 120px;">
+                <li><button onclick="airfoilNomen(1);">One</button></li>
+                <li><button onclick="airfoilNomen(2);">One</button></li>
+                <li><button onclick="airfoilNomen(3);">One</button></li>
+                <li><button onclick="airfoilNomen(4);">One</button></li>
+                <li><button onclick="airfoilNomen(5);">One</button></li>
+                <li><button onclick="airfoilNomen(6);">One</button></li>
+                <li><button onclick="airfoilNomen(7);">One</button></li>
+            </ul>
+
+            <!-- <img id="" style="position: absolute; left: 430px; top: 255px;" src="Images/ewm.png"/> -->
+            <!-- <img id="a4" style="position: absolute; left: 520px; top: 50px;visibility:hidden;" src="Images/1.12.png"/> -->
+            <!-- <p id="can1" style="position:absolute;top: 450px; left:28px; font-family:verdana; font-size:14px;"></p> -->
+            <p id="v1" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
 
         </div>
 

@@ -689,36 +689,8 @@ function placeReceiver() {
 var escSelected = 0;
 
 function placeEsc(id, top_px, left_px, height_px, width_px) {
-<<<<<<< HEAD
-    // myStopFunction();
-    // // document.getElementById("esc_arm" + id).style.visibility = "visible";
-    // // document.getElementById("esc_arm" + id).style.top = top_px;
-    // // document.getElementById("esc_arm" + id).style.left = left_px;
-    // // document.getElementById("esc_arm" + id).style.height = height_px;
-    // // document.getElementById("esc_arm" + id).style.width = width_px;
-    // // document.getElementById("esc_arm" + id).style.transition = "all 1.5s ease-in-out";
-    // document.getElementById("esc_arm" + id).classList.add("moveHoverEsc"+id);
-    // // Author: Jaison
-    // setTimeout(() => {
-    //     console.log("hiding the hovering esc")
-    //         // document.getElementById("esc_arm" + id).style.visibility = "hidden";
-    //     // document.getElementById("esc_arm" + id).style.opacity = 0;
-    //     // document.getElementById("esc_arm" + id).style.transition = "all 0.01s ease-in-out";
-    //     // document.getElementById("esc_arm_placed" + id).style.visibility = "visible";
-    //     // document.getElementById("esc_arm_placed" + id).style.opacity = 1;
-    //     // document.getElementById("esc_arm_placed" + id).style.transition = "opacity 0.01s ease-in-out";
-    //     document.getElementById("esc_arm" + id).style.visibility = "hidden";
-    //     document.getElementById("esc_arm_placed" + id).style.visibility = "visible";
 
-    //     document.getElementById("esc_wire" + id).style.visibility = "visible";
-    //     document.getElementById("esc_signal" + id).style.visibility = "visible";
-    // }, 1900);
-    // Jaison End
     if (id == 1) {
-=======
-
-    if(id==1){
->>>>>>> c3b00f1703532e13ed9ca61914db98f2ea2b692f
         myStopFunction();
         document.getElementById("esc_arm1").classList.add("moveHoverEsc1");
         // Author: Jaison
@@ -815,30 +787,27 @@ function connectEscMotor(n) {
         document.getElementById("esc_arm_placed" + n).style.visibility = "hidden";
         connectionsDone++;
         document.getElementById("esc_motor_connected" + n).style.visibility = "visible";
-<<<<<<< HEAD
         // document.getElementById("esc_motor_connected" + n).style.opacity = 1;
         // document.getElementById("esc_motor_connected" + n).style.transition = "opacity 1s ease-in-out";
         document.getElementById('esc_wire1').style.top = "267px;"
         document.getElementById('esc_wire1').style.left = "229px";
         document.getElementById('esc_signal1').style.top = "269px";
         document.getElementById('esc_signal1').style.left = "230px";
-=======
 
-        document.getElementById('esc_wire1').style.top= "263px;";
-        document.getElementById('esc_wire1').style.left= "237px";
-        document.getElementById('esc_signal1').style.top = "265px";
-        document.getElementById('esc_signal1').style.left = "240px";
+        // document.getElementById('esc_wire1').style.top= "263px;";
+        // document.getElementById('esc_wire1').style.left= "237px";
+        // document.getElementById('esc_signal1').style.top = "265px";
+        // document.getElementById('esc_signal1').style.left = "240px";
 
         // Checking if all are placed
         if (connectionsDone >= 4) {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
-    
+
             setTimeout(function() {
                 document.getElementById('arrow-fc-signal').style.visibility = "visible";
                 document.getElementById('info-about-signal').style.visibility = "visible";
             }, 1000);
         }
->>>>>>> c3b00f1703532e13ed9ca61914db98f2ea2b692f
     }
     if (n == 2) {
         document.getElementById("placedMotor" + n).style.visibility = "hidden";
@@ -850,7 +819,7 @@ function connectEscMotor(n) {
         // Checking if all are placed
         if (connectionsDone >= 4) {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
-    
+
             setTimeout(function() {
                 document.getElementById('arrow-fc-signal').style.visibility = "visible";
                 document.getElementById('info-about-signal').style.visibility = "visible";
@@ -873,7 +842,7 @@ function connectEscMotor(n) {
         // Checking if all are placed
         if (connectionsDone >= 4) {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
-    
+
             setTimeout(function() {
                 document.getElementById('arrow-fc-signal').style.visibility = "visible";
                 document.getElementById('info-about-signal').style.visibility = "visible";
@@ -904,49 +873,45 @@ function connectEscMotor(n) {
         if (connectionsDone >= 4) {
             console.log("Inside the signal info function.");
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
-    
+
             setTimeout(function() {
                 document.getElementById('arrow-fc-signal').style.visibility = "visible";
                 document.getElementById('info-about-signal').style.visibility = "visible";
             }, 1000);
         }
-    }    
+    }
 
 }
 
-function fcSignalInfoShown(){
+function fcSignalInfoShown() {
     console.log("Button has been clicked");
     document.getElementById('arrow-fc-signal').style.visibility = "hidden";
     document.getElementById('info-about-signal').style.visibility = "hidden";
-        setTimeout(function() {
-            myStopFunction();
-            document.getElementById("placeMotorInfo").innerText = "Click on the signal wire of the ESC to connect the ESCs to the Flight Controller.";
-            document.getElementById("placeMotorInfo").style.visibility = "visible";
+    setTimeout(function() {
+        myStopFunction();
+        document.getElementById("placeMotorInfo").innerText = "Click on the signal wire of the ESC to connect the ESCs to the Flight Controller.";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
 
-<<<<<<< HEAD
-            // document.getElementById("placeMotorInfo").style.visibility = "hidden";
-            // document.getElementById('base_layer').style.visibility = "visible";
+        // document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        // document.getElementById('base_layer').style.visibility = "visible";
 
-            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 330px; top: 340px; height: 30px; width: 30px; z-index: 150; ";
-=======
-            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 350px; top: 340px; height: 30px; width: 30px; z-index: 150; ";
->>>>>>> c3b00f1703532e13ed9ca61914db98f2ea2b692f
+        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 330px; top: 340px; height: 30px; width: 30px; z-index: 150; ";
 
-            document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)";
-            // Code for IE9
-            document.getElementById("arrow1").style.msTransform = "rotate(90deg)";
-            // Standard syntax
-            document.getElementById("arrow1").style.transform = "rotate(90deg)";
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(90deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(90deg)";
 
-            document.getElementById('esc_signal1').onclick = function() { connectEscFc(1); };
-            document.getElementById('esc_signal2').onclick = function() { connectEscFc(2); };
-            document.getElementById('esc_signal3').onclick = function() { connectEscFc(3); };
-            document.getElementById('esc_signal4').onclick = function() { connectEscFc(4); };
+        document.getElementById('esc_signal1').onclick = function() { connectEscFc(1); };
+        document.getElementById('esc_signal2').onclick = function() { connectEscFc(2); };
+        document.getElementById('esc_signal3').onclick = function() { connectEscFc(3); };
+        document.getElementById('esc_signal4').onclick = function() { connectEscFc(4); };
 
-            myInt = setInterval(function() {
-                animatearrow();
-            }, 500);
+        myInt = setInterval(function() {
+            animatearrow();
         }, 500);
+    }, 500);
 }
 
 var fcConnected = 0;
@@ -965,31 +930,53 @@ function connectEscFc(id) {
     document.getElementById('esc_signal' + id).style.visibility = "hidden";
     if (fcConnected >= 4) {
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
-
         setTimeout(function() {
-            document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame in order to place the Battery.";
+            document.getElementById("placeMotorInfo").innerText = "Click on the receiver wire to connect the Receiver to the Flight Controller.";
             document.getElementById("placeMotorInfo").style.visibility = "visible";
-            setTimeout(function() {
-                document.getElementById("placeMotorInfo").style.visibility = "hidden";
-                document.getElementById('base_layer').style.visibility = "visible";
+            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 390px; top: 332px; height: 30px; z-index: 10;;";
+            document.getElementById('rec_wire_uc').onclick = function() { RecToFc(); };
+            document.getElementById('rec_wire_uc').style.cursor = "pointer";
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
+            //         // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
+            //         // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(180deg)";
 
-                document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 150px; height: 30px; z-index: 10;";
-
-                document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
-                // Code for IE9
-                document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
-                // Standard syntax
-                document.getElementById("arrow1").style.transform = "rotate(0deg)";
-
-                myInt = setInterval(function() {
-                    animatearrow();
-                }, 500);
-
-            }, 5000);
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
         }, 2000);
+
     }
 
 
+}
+
+function RecToFc() {
+    myStopFunction();
+    document.getElementById('rec_wire_uc').style.visibility = "hidden";
+    document.getElementById('rec_wire').style.visibility = "visible";
+    setTimeout(function() {
+        document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame in order to place the Battery.";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        setTimeout(function() {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+            document.getElementById('base_layer').style.visibility = "visible";
+
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 150px; height: 30px; z-index: 10;";
+
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(0deg)";
+
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
+
+        }, 5000);
+    }, 2000);
 }
 
 function placeSingleScrew_base() {
