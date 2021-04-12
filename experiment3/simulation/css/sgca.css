@@ -643,13 +643,17 @@ html {
 
 @keyframes moveRcv {
     0% {
-        left: 245px; top: 60px; height: 60px; width: 160px;
+        left: 245px;
+        top: 60px;
+        height: 60px;
+        width: 160px;
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        left: 280px;
-        top: 245px;
-        height: 55px; width: 150px;
+        left: 290px;
+        top: 250px;
+        height: 55px;
+        width: 150px;
     }
 }
 
@@ -683,15 +687,15 @@ html {
 
 @keyframes moveDstRec {
     0% {
-        left: 240px;
+        left: 260px;
         top: 55px;
         height: 70px;
         width: 200px;
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        left: 265px;
-        top: 250px;
+        left: 280px;
+        top: 245px;
         height: 60px;
         width: 140px;
     }
@@ -705,12 +709,19 @@ html {
 
 @keyframes movehoveresc1 {
     0% {
-        top: 200px; left: 129px; z-index: 100; height: 80px; width: 138px;
-        
+        top: 200px;
+        left: 129px;
+        z-index: 100;
+        height: 80px;
+        width: 138px;
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        top: 253px; left: 180px; z-index: 100; height: 79px; width: 135px;
+        top: 253px;
+        left: 180px;
+        z-index: 100;
+        height: 79px;
+        width: 135px;
     }
 }
 
@@ -722,13 +733,22 @@ html {
 
 @keyframes movehoveresc2 {
     0% {
-        top: 220px; left: 450px; z-index: 100;  height: 50px; width: 145px;
+        top: 220px;
+        left: 450px;
+        z-index: 100;
+        height: 50px;
+        width: 145px;
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        top: 273px; left: 374px; z-index: 100;  height: 50px; width: 145px;
+        top: 273px;
+        left: 374px;
+        z-index: 100;
+        height: 50px;
+        width: 145px;
     }
 }
+
 .moveHoverEsc3 {
     /* transform: translate(0,350px); */
     animation: movehoveresc3 2s;
@@ -737,13 +757,22 @@ html {
 
 @keyframes movehoveresc3 {
     0% {
-        top: 100px; left: 350px; z-index: 150;height:60px;width:100px;
+        top: 100px;
+        left: 350px;
+        z-index: 150;
+        height: 60px;
+        width: 100px;
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        top: 175px; left: 337px; z-index: 100;  height: 50px; width: 97px;
+        top: 175px;
+        left: 337px;
+        z-index: 100;
+        height: 50px;
+        width: 97px;
     }
 }
+
 .moveHoverEsc4 {
     /* transform: translate(0,350px); */
     animation: movehoveresc4 2s;
@@ -752,13 +781,23 @@ html {
 
 @keyframes movehoveresc4 {
     0% {
-        top: 100px; left: 215px; z-index: 200;height:60px;width:100px;
+        top: 100px;
+        left: 215px;
+        z-index: 200;
+        height: 60px;
+        width: 100px;
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        top: 183px; left: 212px; z-index: 100;  height: 52px; width: 133px;
+        top: 183px;
+        left: 212px;
+        z-index: 100;
+        height: 52px;
+        width: 133px;
     }
 }
+
+
 /* 
 .rotate_curve_arrow {
     animation: rotate_arrow 2s 3 linear;
