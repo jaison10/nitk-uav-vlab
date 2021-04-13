@@ -809,6 +809,10 @@ function connectEscMotor(n) {
         document.getElementById("esc_arm" + n).style.visibility = "hidden";
         connectionsDone++;
         document.getElementById("esc_motor_connected" + n).style.visibility = "visible";
+        document.getElementById('esc_wire2').style.top= "263px;";
+        document.getElementById('esc_wire2').style.left= "397px";
+        document.getElementById('esc_signal2').style.top = "266px";
+        document.getElementById('esc_signal2').style.left = "353px";
 
         // Checking if all are placed
         if (connectionsDone >= 4) {
@@ -828,10 +832,10 @@ function connectEscMotor(n) {
         document.getElementById("esc_motor_connected3").style.visibility = "visible";
         // document.getElementById("esc_motor_connected3").style.opacity = 1;
         // document.getElementById("esc_motor_connected3").style.transition = "opacity 1s ease-in-out";
-        document.getElementById('esc_wire3').style.left = "380px";
-        document.getElementById('esc_signal3').style.left = "350px";
-        document.getElementById('esc_wire3').style.top = "197px";
-        document.getElementById('esc_signal3').style.top = "192px";
+        document.getElementById('esc_wire3').style.left = "377px";
+        document.getElementById('esc_signal3').style.left = "341px";
+        document.getElementById('esc_wire3').style.top = "201px";
+        document.getElementById('esc_signal3').style.top = "199px";
 
         // Checking if all are placed
         if (connectionsDone >= 4) {
