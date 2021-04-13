@@ -64,6 +64,7 @@
         .tooltip:hover .tooltiptext {
             visibility: visible;
         }
+        
         .tooltiptext {
             visibility: visible;
             width: 500px;
@@ -256,8 +257,8 @@
             <img id="placedDST" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 305px; top: 230px; height: 20px; width: 60px; transform: rotate(6deg); z-index: 100;;" src="./Images/tape4.png">
 
             <!-- Double sided tape for Receiver-->
-            <img id="doubleSTRec" onclick="placeDSTRec();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 240px; top: 55px; height: 70px; width: 200px; transform: rotate(3deg); z-index: 150;" src="./Images/Tape.png">
-            <img id="placedDSTRec" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 330px; top: 260px; height: 15px; width: 30px; transform: rotate(4deg); z-index: 100;" src="./Images/tape4.png">
+            <img id="doubleSTRec" onclick="placeDSTRec();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 260px; top: 55px; height: 70px; width: 200px; transform: rotate(3deg); z-index: 150;" src="./Images/Tape.png">
+            <img id="placedDSTRec" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 340px; top: 260px; height: 15px; width: 30px; transform: rotate(4deg); z-index: 100;" src="./Images/tape4.png">
 
             <!-- FC -->
             <img id="fc" onclick="placeFC();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 240px; top: 40px; height: 75px; width: 150px; transform: rotate(15deg); z-index: 100;" src="./Images/hand_screw_FC.png">
@@ -265,31 +266,35 @@
 
             <!-- RECEIVER -->
             <img id="receiver" onclick="placeReceiver();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 245px; top: 60px; height: 60px; width: 160px; transform: rotate(3deg); z-index: 100;" src="./Images/hand_screw_Reci.png">
-            <img id="placedReceiver" onclick="" class="" style="visibility: hidden; position: absolute; left: 308px; top: 255px; height: 20px; width: 55px; transform: rotate(3deg); z-index: 100;" src="./Images/assembly_parts/Receiver.png">
+            <img id="placedReceiver" onclick="" class="" style="visibility: hidden; position: absolute; left: 315px; top: 255px; height: 20px; width: 55px; transform: rotate(3deg); z-index: 120;" src="./Images/assembly_parts/Receiver.png">
             <!-- RECEIVER WIRE UNCONNECTED -->
-            <img id="rec_wire_uc" src="./Images/receiver wire unconnected.png" style="visibility: hidden;position: absolute;left: 363px; top: 263px; height: 50px; width: 30px; z-index: 100;" alt="Receiver wire unconnected">
+            <img id="rec_wire_uc" src="./Images/receiver wire unconnected.png" style="visibility: hidden; position: absolute; left: 360px; top: 263px; height: 50px; width: 30px; z-index: 100;" alt="Receiver wire unconnected">
+
+            <!-- RECEIVER WIRE CONNECTED -->
+            <img id="rec_wire" src="./Images/Receiver_Flight_controller_wires_ connected.png" style="visibility: hidden; position: absolute; left: 360px; top: 230px; height: 40px; width: 30px; z-index: 100;transform:rotate(0deg);" alt="Receiver wire connected">
+
             <!-- ESC  on air-->
-            <img id="esc_arm1" onclick="placeEsc(1,'253px','180px','79px','135px');" class="" style="visibility: hidden; position: absolute;top: 200px; left: 129px; z-index: 100; height: 80px; width: 138px; cursor: pointer; transform:rotate(2deg);" src="./Images/ESC1.png" alt="ESC1">
-            <img id="esc_arm2" onclick="placeEsc(2,'273px','374px','50px','145px');" class="" style="visibility: hidden; position: absolute; top: 220px; left: 450px; z-index: 100;  height: 50px; width: 145px; cursor: pointer; transform: rotate(12deg);" src="./Images/ESC2.png" alt="ESC2">
+            <img id="esc_arm1" onclick="placeEsc(1,'253px','180px','79px','135px');" class="" style="visibility: hidden; position: absolute;top: 200px; left: 129px; z-index: 100; height: 80px; width: 138px; cursor: pointer; transform:rotate(2deg);" src="./Images/ESC1.png"
+                alt="ESC1">
+            <img id="esc_arm2" onclick="placeEsc(2,'273px','374px','50px','145px');" class="" style="visibility: hidden; position: absolute; top: 220px; left: 450px; z-index: 100;  height: 50px; width: 145px; cursor: pointer; transform: rotate(12deg);" src="./Images/ESC2.png"
+                alt="ESC2">
             <img id="esc_arm3" onclick="placeEsc(3,'175px','337px','50px','97px');" class="" style="visibility: hidden; position: absolute; top: 100px; left: 350px; z-index: 150;height:60px;width:100px;transform:rotate(2deg);cursor: pointer;" src="./Images/ESC3.png"
                 alt="ESC3">
-            <img id="esc_arm4" onclick="placeEsc(4,'183px','212px','52px','133px');" class="" style="visibility: hidden; position: absolute; top: 100px; left: 215px; z-index: 200;height:60px;width:100px;cursor: pointer;transform: rotate(7deg);" src="./Images/ESC4.png" alt="ESC4">
-
-            <!-- ESC  placed-->
-            <img id="esc_arm_placed1" onclick="connectEscMotor(1);" class="" style="visibility: hidden; position: absolute; top: 290px; left: 180px; z-index: 100;height:40px;width:70px;cursor: pointer;" src="./Images/esc_1.png" alt="ESC1">
-            <img id="esc_arm_placed2" onclick="connectEscMotor(2);" class="" style="visibility: hidden; position: absolute; top: 300px; left: 435px; z-index: 100;height:30px;width:80px;cursor: pointer; transform:rotate(12deg);" src="./Images/esc_2.png"
-                alt="ESC2">
-            <img id="esc_arm_placed3" onclick="connectEscMotor(3);" class="" style="visibility: hidden; position: absolute; top: 175px; left: 394px; z-index: 150; height: 30px; width: 40px; transform: rotate(2deg); cursor: pointer; " src="./Images/esc_3.png"
-                alt="ESC3">
-            <img id="esc_arm_placed4" onclick="connectEscMotor(4);" class="" style="visibility: hidden; position: absolute; top: 178px; left: 213px; z-index: 200;height:30px;width:70px;cursor: pointer; transform: rotate(6deg);" src="./Images/esc_4.png"
+            <img id="esc_arm4" onclick="placeEsc(4,'183px','212px','52px','133px');" class="" style="visibility: hidden; position: absolute; top: 100px; left: 215px; z-index: 200;height:60px;width:100px;cursor: pointer;transform: rotate(7deg);" src="./Images/ESC4.png"
                 alt="ESC4">
 
-            <!-- Esc to fc signal and esc to power wires of placed FC -->
-            <img id="esc_wire1" onclick="" class="" style="visibility: hidden; position: absolute; top: 263px; left: 240px; z-index: 100; height: 33px; width: 40px; cursor: pointer; transform: rotate(0deg);" src="./Images/Esc_Power_1.png" alt="ESC1">
-            <img id="esc_signal1" onclick="" class="" style="visibility: hidden; position: absolute; top: 265px; left: 245px; z-index: 100; height: 33px; width: 80px; cursor: pointer; transform: rotate(0deg);" src="./Images/Esc_Flight_controller_wire_1.png" alt="ESC1">
+            <!-- ESC  placed-->
+            <img id="esc_arm_placed1" onclick="connectEscMotor(1);" class="" style="visibility: hidden; position: absolute; top: 290px; left: 180px; z-index: 120;height:40px;width:70px;cursor: pointer;" src="./Images/esc_1.png" alt="ESC1">
+            <img id="esc_arm_placed2" onclick="connectEscMotor(2);" class="" style="visibility: hidden; position: absolute; top: 300px; left: 435px; z-index: 120;height:30px;width:80px;cursor: pointer; transform:rotate(12deg);" src="./Images/esc_2.png" alt="ESC2">
+            <img id="esc_arm_placed3" onclick="connectEscMotor(3);" class="" style="visibility: hidden; position: absolute; top: 175px; left: 394px; z-index: 150; height: 30px; width: 40px; transform: rotate(2deg); cursor: pointer; " src="./Images/esc_3.png" alt="ESC3">
+            <img id="esc_arm_placed4" onclick="connectEscMotor(4);" class="" style="visibility: hidden; position: absolute; top: 178px; left: 213px; z-index: 200;height:30px;width:70px;cursor: pointer; transform: rotate(6deg);" src="./Images/esc_4.png" alt="ESC4">
 
-            <img id="esc_wire2" onclick="" class="" style="visibility: hidden; position: absolute; top: 265px; left: 405px; z-index: 100; height: 33px; width: 40px; cursor: pointer; transform: rotate(2deg);" src="./Images/Esc_Power_2.png" alt="ESC1">
-            <img id="esc_signal2" onclick="" class="" style="visibility: hidden; position: absolute; top: 268px; left: 360px; z-index: 100; height: 33px; width: 80px; cursor: pointer; transform: rotate(0deg);" src="./Images/Esc_Flight_controller_wire_2.png" alt="ESC1">
+            <!-- Esc to fc signal and esc to power wires of placed FC -->
+            <img id="esc_wire1" onclick="" class="" style="visibility: hidden; position: absolute; top: 265px; left: 235px; z-index: 100; height: 33px; width: 40px; cursor: pointer; transform: rotate(0deg);" src="./Images/Esc_Power_1.png" alt="ESC1">
+            <img id="esc_signal1" onclick="" class="" style="visibility: hidden; position: absolute; top: 267px; left: 240px; z-index: 100; height: 33px; width: 80px; cursor: pointer; transform: rotate(0deg);" src="./Images/Esc_Flight_controller_wire_1.png" alt="ESC1">
+
+            <img id="esc_wire2" onclick="" class="" style="visibility: hidden; position: absolute; top: 270px; left: 405px; z-index: 100; height: 33px; width: 40px; cursor: pointer; transform: rotate(2deg);" src="./Images/Esc_Power_2.png" alt="ESC1">
+            <img id="esc_signal2" onclick="" class="" style="visibility: hidden; position: absolute; top: 265px; left: 367px; z-index: 100; height: 33px; width: 80px; cursor: pointer; transform: rotate(0deg);" src="./Images/Esc_Flight_controller_wire_2.png" alt="ESC1">
 
             <img id="esc_wire3" onclick="" class="" style="visibility: hidden; position: absolute; top: 200px; left: 375px; z-index: 150; height: 23px; width: 25px; cursor: pointer; transform: rotate(2deg);" src="./Images/Esc_Power_3.png" alt="ESC1">
             <img id="esc_signal3" onclick="" class="" style="visibility: hidden; position: absolute; top: 195px; left: 345px; z-index: 100; height: 28px; width: 60px; cursor: pointer; transform: rotate(0deg);" src="./Images/Esc_Flight_controller_wire_3.png" alt="ESC1">
@@ -306,13 +311,24 @@
             <img id="esc_motor_connected4" onclick="" class="" style="visibility: hidden; position: absolute; top: 136px; left: 160px; z-index: 450; height: 69px; width: 120px; cursor: pointer; transform: rotate(3deg);" src="./Images/motor_4.2.png" alt="ESC4">
 
             <!-- ESC+FC WIRE  -->
-            <img id="esc_fc_connected1" style="visibility: hidden; position: absolute; top: 228px; left: 249px; height: 71px; width: 60px; z-index: 150;" src="./Images/wire_1.png" alt="Esc to fc connection">
+            <img id="esc_fc_connected1" style="visibility: hidden; position: absolute; top: 227px; left: 240px; height: 71px; width: 68px; z-index: 150;" src="./Images/wire_1.png" alt="Esc to fc connection">
             <img id="esc_fc_connected2" style="visibility: hidden; position: absolute; top: 229px; left: 291px; height: 70px; width: 145px;z-index:180;" src="./Images/wire_2.png" alt="Esc to fc connection">
-            <img id="esc_fc_connected3_1" style="visibility: hidden; position: absolute; top: 195px; left: 358px; height: 33px; width: 40px; z-index: 100;" src="./Images/wire_3.1.png" alt="Esc to fc connection">
+            <img id="esc_fc_connected3_1" style="visibility: hidden; position: absolute; top: 196px; left: 358px; height: 33px; width: 40px; z-index: 100;" src="./Images/wire_3.1.png" alt="Esc to fc connection">
             <img id="esc_fc_connected3_2" style="visibility: hidden; position: absolute; top: 222px; left: 299px; height: 5px; width: 10px; z-index: 140;" src="./Images/wire_3.2.png" alt="Esc to fc connection">
-            <img id="esc_fc_connected4" style="visibility: hidden; position: absolute; top: 205px; left: 268px; height: 25px; width: 40px; z-index: 140;" src="./Images/wire_4.png" alt="Esc to fc connection">
+            <img id="esc_fc_connected4" style="visibility: hidden; position: absolute; top: 201px; left: 268px; height: 27px; width: 41px; z-index: 140;transform:rotate(4deg);" src="./Images/wire_4.png" alt="Esc to fc connection">
 
             <!-- Information about the FC signal wire from ESC.  -->
+            <img id="esc_fc_connected4" style="visibility:hidden ;position: absolute;top: 100px;left: 100px;height: 50px;width: 70px; transform: rotate(120deg);" src="./Images/arrow_slim.png" alt="Info">
+            <!-- <span class="tool" id="desc_button"><strong></strong>
+                <span  class="tooltext" id="fcSignal_message"><strong style="color:red;">FC Signal:</strong> A motor converts supplied electrical energy into mechanical energy. Among these, brushless DC motors (BLDC) feature high efficiency and excellent controllability. 
+                </span>
+            </span> -->
+            <span id="note1" class="tooltip" style="font-family:verdana; font-size:18px;border-bottom:1px dotted ; color:red; position:absolute; visibility: visible;">
+                <span id="10" class="tooltiptext" style="font-family:verdana; font-size:14px;color:white;width:600px;left:-650px;top:250px;text-align: justify;">Note:<br><br>Move to the next finer paper (2/0 and 3/0) once the scratches on the specimen are uniform. While changing from one paper to another, the specimen and your hands should be cleaned free from the abrasive of the previous paper, and the specimen turned through 90°, so that the scratches from the previous paper are at right angles to the scratches from the next paper. </br></br>
+                <input id="ok" type="button" name="ok" value="Ok" />&nbsp;&nbsp;&nbsp;</span>
+            </span>
+
+
             <img id="arrow-fc-signal" style="visibility:hidden ;position: absolute;top: 300px;left: 230px;height: 70px;width: 70px; transform: rotate(160deg);z-index:200;" src="./Images/arrow_slim.png" alt="Info">
             <div id="info-about-signal" style="position: absolute; visibility: hidden; border-style: solid; border-width: thin; width: 360px; height: 100px; top: 380px; left:160px; border-radius: 6px;">
                 <img src="./Images/Esc_Flight_controller_wire_1.png" style="position: absolute; width: 100px; height: 50px; top: 20px; left: 3px; border-radius: 6px; border-style: solid; border-width: thin; ">
@@ -320,6 +336,7 @@
                     from  FC will be transferred to the ESC.</span>
                 <button style="position: absolute;  top: 70px; left: 320px; color: rgb(255, 255, 255); background-color: black; border-radius: 5px; cursor: pointer;" onclick="fcSignalInfoShown();">Ok</button>
             </div>
+
 
 
             <!-- Base Layer -->
