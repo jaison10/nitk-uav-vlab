@@ -1114,9 +1114,49 @@ function placeBattery() {
     document.getElementById('battery_base').style.height = "70px";
     document.getElementById('battery_base').style.width = "200px";
     document.getElementById('battery_base').style.transition = "top 3s ease-in-out";
+    setTimeout(function() {
+        document.getElementById("placeMotorInfo").innerText = "Let us now solder the ESC Power wires to the PCB Board.";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        setTimeout(function() {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+            document.getElementById('move_top').style.visibility = "visible";
 
+            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 370px; top: 85px; height: 30px; z-index: 10; ";
+
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(270deg)";
+
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
+
+        }, 5000);
+    }, 2000);
 }
 
+function moveTopView() {
+    myStopFunction();
+    document.getElementById('base_layer').style.top = "100px";
+    document.getElementById('base_layer').style.left = "210px";
+    document.getElementById('base_layer').style.zIndex = "550";
+    document.getElementById('base_layer').style.transition = "all 1s ease-in-out";
+    document.getElementById('all_screws_on').style.top = "200px";
+    document.getElementById('all_screws_on').style.opacity = 0;
+    document.getElementById('all_screws_on').style.transition = "all 1s ease-in-out";
+    setTimeout(() => {
+        document.getElementById('all_screws_on').style.visibility = "hidden";
+        document.getElementById('armsAndTop').style.visibility = "hidden";
+
+
+    }, 6000);
+
+
+
+
+}
 
 function all_screws() {
     document.getElementById("singleScrew2").style.top = "208px";
