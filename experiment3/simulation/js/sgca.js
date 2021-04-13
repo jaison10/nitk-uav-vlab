@@ -820,8 +820,8 @@ function connectEscMotor(n) {
         document.getElementById("esc_motor_connected" + n).style.visibility = "visible";
         document.getElementById('esc_wire2').style.top = "263px;";
         document.getElementById('esc_wire2').style.left = "397px";
-        document.getElementById('esc_signal2').style.top = "266px";
-        document.getElementById('esc_signal2').style.left = "353px";
+        document.getElementById('esc_signal2').style.top = "263px";
+        document.getElementById('esc_signal2').style.left = "355px";
 
         // Checking if all are placed
         if (connectionsDone >= 4) {
@@ -1149,12 +1149,12 @@ function placeBattery() {
 
 function moveTopView() {
     myStopFunction();
-    document.getElementById('base_layer').style.top = "160px";
-    document.getElementById('base_layer').style.left = "120px";
+    document.getElementById('base_layer').style.top = "240px";
+    document.getElementById('base_layer').style.left = "143px";
     document.getElementById('base_layer').src = "./Images/base_layera_v4.png";
-    document.getElementById('base_layer').style.height = "180px";
-    document.getElementById('base_layer').style.width = "430px";
-    document.getElementById('base_layer').style.transform = "rotate(6deg)";
+    document.getElementById('base_layer').style.height = "130px";
+    document.getElementById('base_layer').style.width = "380px";
+    document.getElementById('base_layer').style.transform = "rotate(5deg)";
     document.getElementById('base_layer').style.zIndex = "550";
     document.getElementById('base_layer').style.transition = "all 1s ease-in-out";
 
@@ -1167,7 +1167,6 @@ function moveTopView() {
         for (let i = 1; i <= 4; i++) {
             document.getElementById('esc_motor_connected' + i).style.visibility = "hidden";
             if (i == 3) {
-                +i
                 document.getElementById('esc_fc_connected3_1').style.visibility = "hidden";
                 document.getElementById('esc_fc_connected3_2').style.visibility = "hidden";
 
@@ -1178,6 +1177,9 @@ function moveTopView() {
             document.getElementById('esc_wire' + i).style.visibility = "hidden";
             document.getElementById('half_esc' + i).style.visibility = "visible";
             document.getElementById('half_esc_signal' + i).style.visibility = "visible";
+            document.getElementById('half_escWire' + i).style.visibility = "visible";
+
+
             // document.getElementById('half_esc_wire' + i).style.visibility = "visible";
 
         }
