@@ -650,8 +650,8 @@ html {
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        left: 290px;
-        top: 250px;
+        left: 245px;
+        top: 245px;
         height: 55px;
         width: 150px;
     }
