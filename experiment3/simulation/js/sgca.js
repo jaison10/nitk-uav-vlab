@@ -815,8 +815,8 @@ function connectEscMotor(n) {
         document.getElementById("esc_arm" + n).style.visibility = "hidden";
         connectionsDone++;
         document.getElementById("esc_motor_connected" + n).style.visibility = "visible";
-        document.getElementById('esc_wire2').style.top= "263px;";
-        document.getElementById('esc_wire2').style.left= "397px";
+        document.getElementById('esc_wire2').style.top = "263px;";
+        document.getElementById('esc_wire2').style.left = "397px";
         document.getElementById('esc_signal2').style.top = "266px";
         document.getElementById('esc_signal2').style.left = "353px";
 
@@ -1174,6 +1174,8 @@ function moveTopView() {
             }
             document.getElementById('esc_wire' + i).style.visibility = "hidden";
             document.getElementById('half_esc' + i).style.visibility = "visible";
+            document.getElementById('half_esc_signal' + i).style.visibility = "visible";
+            // document.getElementById('half_esc_wire' + i).style.visibility = "visible";
 
         }
         document.getElementById('battery_base').style.visibility = "hidden";
@@ -1197,6 +1199,10 @@ function moveTopView() {
 }
 
 function all_screws() {
+    // To hide the initial motors
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById("motor" + i).style.visibility = "hidden";
+    }
     document.getElementById("singleScrew2").style.top = "208px";
     document.getElementById("singleScrew3").style.top = "209px";
     document.getElementById("singleScrew4").style.top = "215px";
