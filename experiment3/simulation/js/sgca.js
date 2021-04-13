@@ -1146,11 +1146,11 @@ function placeBattery() {
 
 function moveTopView() {
     myStopFunction();
-    document.getElementById('base_layer').style.top = "190px";
+    document.getElementById('base_layer').style.top = "240px";
     document.getElementById('base_layer').style.left = "143px";
     document.getElementById('base_layer').src = "./Images/base_layera_v4.png";
-    document.getElementById('base_layer').style.height = "170px";
-    document.getElementById('base_layer').style.width = "400px";
+    document.getElementById('base_layer').style.height = "130px";
+    document.getElementById('base_layer').style.width = "380px";
     document.getElementById('base_layer').style.transform = "rotate(5deg)";
     document.getElementById('base_layer').style.zIndex = "550";
     document.getElementById('base_layer').style.transition = "all 1s ease-in-out";
