@@ -514,7 +514,10 @@ function placeMotor(n, t) {
 
     motorPlacementCount += 1;
     if (motorPlacementCount == 4) {
-
+        // To hide the initial motors
+        for (let i = 1; i <= 4; i++) {
+            document.getElementById("motor" + i).style.visibility = "hidden";
+        }
         setTimeout(function() {
             document.getElementById("placeMotorInfo").innerText = "Pick screws and screw them to the frame to attach the motor.";
             document.getElementById("placeMotorInfo").style.visibility = "visible";
@@ -1199,10 +1202,7 @@ function moveTopView() {
 }
 
 function all_screws() {
-    // To hide the initial motors
-    for (let i = 1; i <= 4; i++) {
-        document.getElementById("motor" + i).style.visibility = "hidden";
-    }
+
     document.getElementById("singleScrew2").style.top = "208px";
     document.getElementById("singleScrew3").style.top = "209px";
     document.getElementById("singleScrew4").style.top = "215px";
