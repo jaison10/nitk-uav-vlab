@@ -982,6 +982,7 @@ function RecToFc() {
 function placeSingleScrew_base() {
     myStopFunction();
     document.getElementById("singleScrew_2").classList.add("moveSingleScrew3");
+    document.getElementById('placedMotor4').style.visibility = "hidden";
 
     setTimeout(function() {
         document.getElementById("singleScrew_2").style.visibility = "hidden";
@@ -1013,6 +1014,8 @@ function placeSingleScrew_base() {
 
 function all_screws2() {
     document.getElementById('all_screws_base').style.visibility = "hidden";
+    document.getElementById('placedMotor4').style.visibility = "hidden";
+
     document.getElementById('screwHand3').style.visibility = "hidden";
     document.getElementById("singleScrew_base2").style.top = "320px";
     document.getElementById("singleScrew_base3").style.top = "300px";
@@ -1056,7 +1059,7 @@ function all_screws2() {
             animatearrow();
         }, 500);
         document.getElementById("battery_base").style.visibility = "visible";
-    }, 7000);
+    }, 5500);
 
 }
 
@@ -1139,19 +1142,50 @@ function placeBattery() {
 
 function moveTopView() {
     myStopFunction();
-    document.getElementById('base_layer').style.top = "100px";
-    document.getElementById('base_layer').style.left = "210px";
+    document.getElementById('base_layer').style.top = "160px";
+    document.getElementById('base_layer').style.left = "120px";
+    document.getElementById('base_layer').src = "./Images/base_layera_v4.png";
+    document.getElementById('base_layer').style.height = "180px";
+    document.getElementById('base_layer').style.width = "430px";
+    document.getElementById('base_layer').style.transform = "rotate(6deg)";
     document.getElementById('base_layer').style.zIndex = "550";
     document.getElementById('base_layer').style.transition = "all 1s ease-in-out";
-    document.getElementById('all_screws_on').style.top = "200px";
+
+    // document.getElementById('all_screws_on').style.top = "200px";
     document.getElementById('all_screws_on').style.opacity = 0;
     document.getElementById('all_screws_on').style.transition = "all 1s ease-in-out";
     setTimeout(() => {
         document.getElementById('all_screws_on').style.visibility = "hidden";
         document.getElementById('armsAndTop').style.visibility = "hidden";
+        for (let i = 1; i <= 4; i++) {
+            document.getElementById('esc_motor_connected' + i).style.visibility = "hidden";
+            if (i == 3) {
+                +i
+                document.getElementById('esc_fc_connected3_1').style.visibility = "hidden";
+                document.getElementById('esc_fc_connected3_2').style.visibility = "hidden";
+
+            } else {
+                document.getElementById('esc_fc_connected' + i).style.visibility = "hidden";
+
+            }
+            document.getElementById('esc_wire' + i).style.visibility = "hidden";
+            document.getElementById('half_esc' + i).style.visibility = "visible";
+
+        }
+        document.getElementById('battery_base').style.visibility = "hidden";
+        document.getElementById('placedFc').style.visibility = "hidden";
+        document.getElementById('rec_wire').style.visibility = "hidden";
+        document.getElementById('placedReceiver').style.visibility = "hidden";
+        document.getElementById('placedDST').style.visibility = "hidden";
+        document.getElementById('placedDSTRec').style.visibility = "hidden";
+        document.getElementById('screw_head').style.visibility = "hidden";
+        document.getElementById('screw_head1').style.visibility = "hidden";
+        document.getElementById('move_top').style.visibility = "hidden";
+        document.getElementById('border_box').style.visibility = "visible";
 
 
-    }, 6000);
+
+    }, 500);
 
 
 
