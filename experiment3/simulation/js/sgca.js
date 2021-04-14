@@ -964,7 +964,7 @@ function RecToFc() {
     document.getElementById('rec_wire_uc').style.visibility = "hidden";
     document.getElementById('rec_wire').style.visibility = "visible";
     setTimeout(function() {
-        document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame in order to place the Battery.";
+        document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         setTimeout(function() {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
@@ -1079,7 +1079,7 @@ function placeBase() {
     document.getElementById('base_layer').style.width = "260px";
     document.getElementById('base_layer').style.transition = "all 2s ease-in-out";
     setTimeout(function() {
-        document.getElementById("placeMotorInfo").innerText = "Select the screw and screw the base layer as shown to the end of the arm stand.";
+        document.getElementById("placeMotorInfo").innerText = "Pick the screw and screw the base layer as shown to the end of the arm stand.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         setTimeout(function() {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
@@ -1234,18 +1234,47 @@ function placeWireSolder(id) {
     myStopFunction();
     document.getElementById("half_escWireConnected" + id).style.visibility = "visible";
     document.getElementById('half_escWire' + id).style.visibility = "hidden";
+    document.getElementById("placeMotorInfo").style.visibility = "visible";
+    document.getElementById("placeMotorInfo").innerText = "Solder all the ESC Power Wires as shown."
+    setTimeout(function() {
+        document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 150px; height: 30px; z-index: 10;";
+        document.getElementById("solder").style.visibility = "visible";
+
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(0deg)";
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
+
+    }, 3000);
     powerConnected++;
     if (powerConnected >= 4) {
         console.log("All esc wires are placed to solder");
     }
 
 
-    half_escWireConnected1
+
 }
 
 function solder() {
     myStopFunction();
-    // document.getElementById("solder").style.visibility = "hidden";
+    document.getElementById("solder").style.visibility = "hidden";
+    document.getElementById("solder_hand").style.visibility = "visible";
+    document.getElementById("solder_hand").style.top = "250px";
+    document.getElementById("solder_hand").style.left = "150px";
+    document.getElementById("solder_hand").style.height = "150px";
+    document.getElementById("solder_hand").style.width = "250px";
+    document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
+
+
+
+    //  document.getElementById("solder_lead").style.visibility = "visible";
+    //  document.getElementById("lead_wire").style.visibility = "visible";
+
 
 
 }
