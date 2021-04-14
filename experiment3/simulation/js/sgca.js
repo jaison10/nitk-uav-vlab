@@ -821,7 +821,7 @@ function connectEscMotor(n) {
         document.getElementById('esc_wire2').style.top = "263px;";
         document.getElementById('esc_wire2').style.left = "397px";
         document.getElementById('esc_signal2').style.top = "263px";
-        document.getElementById('esc_signal2').style.left = "355px";
+        document.getElementById('esc_signal2').style.left = "357px";
 
         // Checking if all are placed
         if (connectionsDone >= 4) {
@@ -841,9 +841,9 @@ function connectEscMotor(n) {
         document.getElementById("esc_motor_connected3").style.visibility = "visible";
         // document.getElementById("esc_motor_connected3").style.opacity = 1;
         // document.getElementById("esc_motor_connected3").style.transition = "opacity 1s ease-in-out";
-        document.getElementById('esc_wire3').style.left = "377px";
+        document.getElementById('esc_wire3').style.left = "379px";
         document.getElementById('esc_signal3').style.left = "341px";
-        document.getElementById('esc_wire3').style.top = "201px";
+        document.getElementById('esc_wire3').style.top = "199px";
         document.getElementById('esc_signal3').style.top = "199px";
 
         // Checking if all are placed
@@ -1031,7 +1031,7 @@ function all_screws2() {
 
     for (let i = 2; i <= 4; i++) {
         document.getElementById("singleScrew_base" + i).style.visibility = "visible";
-        // document.getElementById("singleScrew_base" + i).style.opacity = 0;
+        document.getElementById("singleScrew_base" + i).style.opacity = 0;
         document.getElementById("singleScrew_base" + i).style.transition = "all 3s ease-in-out";
         // document.getElementById("singleScrew" + i).style.transition = "opacity 5s ease-in-out";
         // document.getElementById("singleScrew" + i).style.zIndex = -1;
@@ -1154,9 +1154,11 @@ function moveTopView() {
     document.getElementById('base_layer').src = "./Images/base_layera_v4.png";
     document.getElementById('base_layer').style.height = "130px";
     document.getElementById('base_layer').style.width = "380px";
+    document.getElementById('base_layer').onclick = "";
+
     document.getElementById('base_layer').style.transform = "rotate(5deg)";
     document.getElementById('base_layer').style.zIndex = "550";
-    document.getElementById('base_layer').style.transition = "all 1s ease-in-out";
+    document.getElementById('base_layer').style.transition = "all 2s ease-in-out";
 
     // document.getElementById('all_screws_on').style.top = "200px";
     document.getElementById('all_screws_on').style.opacity = 0;
@@ -1193,12 +1195,57 @@ function moveTopView() {
         document.getElementById('screw_head1').style.visibility = "hidden";
         document.getElementById('move_top').style.visibility = "hidden";
         document.getElementById('border_box').style.visibility = "visible";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        document.getElementById("placeMotorInfo").innerText = "Place the ESC Power Wires on the PCB Board and solder them."
+        setTimeout(function() {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+            // document.getElementById("solder").style.visibility = "visible";
+            document.getElementById('half_escWire1').onclick = function() { placeWireSolder(1); };
+            document.getElementById('half_escWire2').onclick = function() { placeWireSolder(2); };
+            document.getElementById('half_escWire3').onclick = function() { placeWireSolder(3); };
+            document.getElementById('half_escWire4').onclick = function() { placeWireSolder(4); };
+            // document.getElementById('half_escWire1').style.zIndex = 560;
+            // document.getElementById('half_escWire2').style.zIndex = 560;
+            // document.getElementById('half_escWire3').style.zIndex = 560;
+            // document.getElementById('half_escWire4').style.zIndex = 560;
+
+            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 250px; top: 345px; height: 30px; z-index: 10;";
+
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(270deg)";
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
+
+        }, 3000);
+
+    }, 200);
 
 
 
-    }, 500);
+
+}
+var powerConnected = 0;
+
+function placeWireSolder(id) {
+    myStopFunction();
+    document.getElementById("half_escWireConnected" + id).style.visibility = "visible";
+    document.getElementById('half_escWire' + id).style.visibility = "hidden";
+    powerConnected++;
+    if (powerConnected >= 4) {
+        console.log("All esc wires are placed to solder");
+    }
 
 
+    half_escWireConnected1
+}
+
+function solder() {
+    myStopFunction();
+    // document.getElementById("solder").style.visibility = "hidden";
 
 
 }
