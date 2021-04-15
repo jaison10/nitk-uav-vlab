@@ -797,7 +797,40 @@ html {
     }
 }
 
+.solderHide {
+    /* transform: translate(0,350px); */
+    animation: solder1 2s;
+    /* transition: all 10s ease-in-out; */
+}
 
+@keyframes solder1 {
+    0% {
+        opacity: 1;
+    }
+    50%  {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.solderShow {
+    /* transform: translate(0,350px); */
+    animation: solder2 2s;
+    /* transition: all 10s ease-in-out; */
+}
+
+@keyframes solder2 {
+    0% {
+        opacity: 0;
+    }
+    50%  {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 /* 
 .rotate_curve_arrow {
     animation: rotate_arrow 2s 3 linear;
