@@ -1222,7 +1222,7 @@ function moveTopView() {
 
         }, 3000);
 
-    }, 200);
+    }, 0);
 
 
 
@@ -1264,12 +1264,29 @@ function solder() {
     myStopFunction();
     document.getElementById("solder").style.visibility = "hidden";
     document.getElementById("solder_hand").style.visibility = "visible";
-    document.getElementById("solder_hand").style.top = "250px";
-    document.getElementById("solder_hand").style.left = "150px";
-    document.getElementById("solder_hand").style.height = "150px";
-    document.getElementById("solder_hand").style.width = "250px";
+    document.getElementById("solder_hand").style.top = "205px";
+    document.getElementById("solder_hand").style.left = "140px";
+    document.getElementById("solder_hand").style.height = "130px";
+    document.getElementById("solder_hand").style.width = "150px";
     document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
+    setTimeout(function() {
+        document.getElementById("solder_lead").style.visibility = "visible";
+    }, 4000);
+    setTimeout(function() {
+        document.getElementById("solder_lead").style.top = "255px";
+        document.getElementById("solder_lead").style.left = "300px";
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+        document.getElementById("lead_wire").style.visibility = "visible";
+        document.getElementById("lead_wire").style.transition = "visibility 2s ease-in-out";
 
+    }, 5000);
+    setTimeout(function() {
+        document.getElementById("solder_hand").style.top = "210px";
+        document.getElementById("move_isometric").style.visibility = "visible";
+
+
+
+    }, 6000);
 
 
     //  document.getElementById("solder_lead").style.visibility = "visible";
@@ -1277,6 +1294,66 @@ function solder() {
 
 
 
+}
+
+function moveIsometricView() {
+    myStopFunction();
+    document.getElementById('base_layer').style.top = "80px";
+    document.getElementById('base_layer').style.left = "240px";
+    document.getElementById('base_layer').src = "./Images/base_layera_v4.png";
+    document.getElementById('base_layer').style.height = "80px";
+    document.getElementById('base_layer').style.width = "180px";
+    document.getElementById('base_layer').onclick = "";
+
+    document.getElementById('base_layer').style.transform = "rotate(4deg)";
+    document.getElementById('base_layer').style.zIndex = "90";
+    document.getElementById('base_layer').style.opacity = 0;
+    document.getElementById('base_layer').style.transition = "all 1s ease-in-out";
+
+    // document.getElementById('all_screws_on').style.top = "200px";
+    document.getElementById('all_screws_on').style.opacity = 1;
+    document.getElementById('all_screws_on').style.transition = "all 1s ease-in-out";
+    setTimeout(() => {
+        document.getElementById('all_screws_on').style.visibility = "visible";
+        document.getElementById('armsAndTop').style.visibility = "visible";
+        for (let i = 1; i <= 4; i++) {
+            document.getElementById('esc_motor_connected' + i).style.visibility = "visible";
+            if (i == 3) {
+                document.getElementById('esc_fc_connected3_1').style.visibility = "visible";
+                document.getElementById('esc_fc_connected3_2').style.visibility = "visible";
+
+            } else {
+                document.getElementById('esc_fc_connected' + i).style.visibility = "visible";
+
+            }
+            document.getElementById('esc_wire' + i).style.visibility = "visible";
+            document.getElementById('half_esc' + i).style.visibility = "hidden";
+            document.getElementById('half_esc_signal' + i).style.visibility = "hidden";
+            document.getElementById('half_escWire' + i).style.visibility = "hidden";
+            document.getElementById('half_escWireConnected' + i).style.visibility = "hidden";
+
+
+
+            // document.getElementById('half_esc_wire' + i).style.visibility = "visible";
+
+        }
+        document.getElementById('battery_base').style.visibility = "visible";
+        document.getElementById('placedFc').style.visibility = "visible";
+        document.getElementById('rec_wire').style.visibility = "visible";
+        document.getElementById('placedReceiver').style.visibility = "visible";
+        document.getElementById('placedDST').style.visibility = "visible";
+        document.getElementById('placedDSTRec').style.visibility = "visible";
+        document.getElementById('screw_head').style.visibility = "visible";
+        document.getElementById('screw_head1').style.visibility = "visible";
+        document.getElementById('move_top').style.visibility = "visible";
+        document.getElementById('border_box').style.visibility = "hidden";
+        document.getElementById('solder_hand').style.visibility = "hidden";
+        document.getElementById('solder_lead').style.visibility = "hidden";
+        document.getElementById('lead_wire').style.visibility = "hidden";
+
+
+
+    }, 100);
 }
 
 function all_screws() {
