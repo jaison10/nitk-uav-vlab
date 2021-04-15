@@ -1262,9 +1262,6 @@ function placeWireSolder(id) {
     if (powerConnected >= 4) {
         console.log("All esc wires are placed to solder");
     }
-
-
-
 }
 
 function solder() {
@@ -1275,7 +1272,7 @@ function solder() {
     document.getElementById("solder_hand").style.left = "145px";
     document.getElementById("solder_hand").style.height = "80px";
     document.getElementById("solder_hand").style.width = "120px";
-    document.getElementById("solder_hand").style.zIndex = "650";
+    document.getElementById("solder_hand").style.zIndex = "750";
     document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
 
     document.getElementById("solder_lead").style.visibility = "visible";
@@ -1286,23 +1283,30 @@ function solder() {
     document.getElementById("solder_lead").style.zIndex = "650";
     document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
 
-    // setTimeout(() => {  
-    //     document.getElementById("solder_lead").classList.add("solderHide");
-    //     document.getElementById("solder_lead2").classList.add("solderShow");
-    // }, 2000);
-    // setTimeout(() => {  
-    //     document.getElementById("solder_lead").style.visibility = "hidden";
-    // }, 4000);
     setTimeout(() => {
-        // document.getElementById("solder_lead").style.visibility = "hidden";
-        // document.getElementById("solder_lead2").style.visibility = "visible";
+        // soldering the first wire
         document.getElementById("solder_lead").style.top = "250px";
-        document.getElementById("solder_lead").style.left = "266px";
+        document.getElementById("solder_lead").style.left = "264px";
         document.getElementById("leadAfter3").style.visibility = "visible";
         document.getElementById("leadAfter3").classList.add("solderAfterShow");
-        // document.getElementById("solder_lead2").style.opacity = 1;
         document.getElementById("solder_lead2").style.transition = "all 2s ease-in-out";
     }, 2000);
+    setTimeout(() => {
+        // Moves from first wire to the second
+        document.getElementById("solder_lead").style.top = "260px";
+        document.getElementById("solder_lead").style.left = "293px";
+        document.getElementById("solder_hand").style.left = "174px";
+        document.getElementById("solder_hand").style.top = "252px";
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+    }, 4000);
+    setTimeout(() => {
+        // soldering the second wire
+        document.getElementById("leadAfter4").style.visibility = "visible";
+        document.getElementById("leadAfter4").classList.add("solderAfterShow");
+        document.getElementById("solder_lead").style.top = "263px";
+        document.getElementById("solder_lead").style.left = "289px";
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+    }, 6000);
 }
 
 function placeBatteryToPcb(){
@@ -1310,7 +1314,6 @@ function placeBatteryToPcb(){
     document.getElementById("batteryToPcb").style.left = "165px";
     document.getElementById("batteryToPcb").style.transition = "all 2s ease-in-out";
     setTimeout(() => {
-        // document.getElementById("solder").style.visibility = "hidden";
     document.getElementById("solder_hand").style.visibility = "visible";
     document.getElementById("solder_hand").style.top = "255px";
     document.getElementById("solder_hand").style.left = "205px";
@@ -1341,7 +1344,6 @@ function placeBatteryToPcb(){
         // Moves from first wire to the second
         document.getElementById("leadAfter").style.visibility = "visible";
         document.getElementById("leadAfter").classList.add("solderAfterShow");
-        document.getElementById("solder_lead").style.visibility = "visible";
         document.getElementById("solder_lead").style.top = "264px";
         document.getElementById("solder_lead").style.left = "344px";
         document.getElementById("solder_hand").style.left = "225px";
