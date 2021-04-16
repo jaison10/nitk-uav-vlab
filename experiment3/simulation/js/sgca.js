@@ -1633,7 +1633,9 @@ function solderAllWires() {
         document.getElementById('lead_smoke7').style.transition = "all 2s ease-in-out";
         setTimeout(function() {
             document.getElementById('lead_smoke7').style.visibility = "hidden";
-
+            document.getElementById("batteryToPcb").style.visibility = "visible";
+            document.getElementById("placeMotorInfo").style.visibility = "visible";
+            document.getElementById("placeMotorInfo").innerText = "Click on the Battery to PCB connector to place it.";
         }, 1000);
     }, 27000);
 
@@ -1710,7 +1712,7 @@ function placeBatteryToPcb() {
         document.getElementById("solder_hand").style.left = "205px";
         document.getElementById("solder_hand").style.height = "80px";
         document.getElementById("solder_hand").style.width = "120px";
-        document.getElementById("solder_hand").style.zIndex = "650";
+        document.getElementById("solder_hand").style.zIndex = "750";
         document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
 
         document.getElementById("solder_lead").style.visibility = "visible";
@@ -1718,7 +1720,7 @@ function placeBatteryToPcb() {
         document.getElementById("solder_lead").style.left = "327px";
         document.getElementById("solder_lead").style.height = "90px";
         document.getElementById("solder_lead").style.width = "104px";
-        document.getElementById("solder_lead").style.zIndex = "650";
+        document.getElementById("solder_lead").style.zIndex = "750";
         document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
 
         setTimeout(() => {
