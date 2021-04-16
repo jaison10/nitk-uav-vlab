@@ -384,25 +384,21 @@
 
 
             <!-- ESC AND SIGNAL WIRES FOR THE HALF ESCS -->
-
             <img id="half_esc_signal1" onclick="" class="" style="visibility: hidden; position: absolute; top: 362px; left: 157px; z-index: 50; height: 125px; width: 125px; cursor: pointer; transform: rotate(4deg);" src="./Images/signal_wire_1.png" alt="Esc Signal wire">
             <img id="half_esc_signal2" onclick="" class="" style="visibility: hidden; position: absolute; top: 328px; left: 490px; z-index: 100; height: 55px; width: 150px; cursor: pointer; transform: rotate(4deg);" src="./Images/signal_wire_2.png" alt="Esc Signal wire">
             <img id="half_esc_signal3" onclick="" class="" style="visibility: hidden; position: absolute; top: 143px; left: 334px; z-index: 100; height: 80px; width: 155px; cursor: pointer; transform: rotate(-6deg);" src="./Images/signal_wire_3.png" alt="Esc Signal wire">
             <img id="half_esc_signal4" onclick="" class="" style="visibility: hidden; position: absolute; top: 213px; left: 16px; z-index: 180; height: 65px; width: 237px; cursor: pointer; transform: rotate(-8deg);" src="./Images/signal_wire_4.png" alt="Esc Signal wire">
 
             <!-- SOLDERING -->
-            <img id="solder" onclick="solder(1,'196px','90px','230px','300px','242px','241px','200px','210px','121px','253px','293px','253px','270px','215px');" style="visibility: hidden; position: absolute; top: 28px; left: 250px; height: 110px; width: 160px;" src="./Images/soldering.png"
-                alt="Soldering">
-
-
-            <img id="solder_hand" src="./Images/soldering2.png" class="" style="visibility: hidden; position: absolute; top: 28px; left: 250px; height: 110px; width: 160px;z-index: 650;" alt="Hand holding solder gun">
-            <img id="solder_lead" src="./Images/soldering1.png" style="visibility: hidden; position: absolute; top: 240px; left: 350px; height: 110px; width: 160px;z-index: 650;" alt="Hand holding lead wire">
-            <img id="solder_lead2" src="./Images/soldering1.1.png" style="visibility: hidden; position: absolute; top: 230px; left: 300px; height: 110px; width: 160px;z-index: 650;" alt="Hand holding lead wire">
+            <img id="solder" onclick="solder();" style="visibility: hidden; position: absolute; top: 28px; left: 250px; height: 110px; width: 160px;" src="./Images/soldering.png" alt="Soldering">
+            <img id="solder_hand" src="./Images/soldering2.png" class="" style="visibility: hidden; position: absolute; top: 28px; left: 250px; height: 110px; width: 160px;" alt="Hand holding solder gun">
+            <img id="solder_lead" src="./Images/soldering1.png" style="visibility: hidden; position: absolute; top: 28px; left: 250px; height: 110px; width: 160px;" alt="Hand holding lead wire">
+            <img id="solder_lead2" src="./Images/soldering1.1.png" style="visibility: hidden; position: absolute; top: 240px; left: 276px;height: 90px; width: 104px; z-index: 650;" alt="Hand holding lead wire">
             <img id="lead_wire" src="./Images/wire2.png" style="visibility: hidden; position: absolute; top: 28px; left: 250px; height: 110px; width: 160px;" alt="Lead wire">
-            <img id="lead_smoke" src="./Images/lead_smoke.png" style="visibility: hidden; position: absolute; top: 242px; left: 241px; height: 70px; width: 40px; z-index: 650; transform: rotate(-4deg);" alt="Lead smoke">
 
             <!-- <button id="move_isometric" onclick="moveTopView();" style="visibility:hidden;position:absolute;top:70px;left:270px;border-radius: 5px;color: #fff;background-color: black;cursor: pointer;">Move to the top view</button> -->
 
+            <button id="solder_wires" onclick="solderAllWires();" style="visibility: hidden; position: absolute; top: 60px; left: 510px; border-radius: 5px; color: rgb(255, 255, 255); background-color: black; cursor: pointer;">Solder all ESC Wires</button>
 
             <p id="frame-info" style="position: absolute; top: 450px; visibility: hidden; "> The upper layer of the frame is attached to four arms which are used to hold the motors.</p>
             <img id="arr-air" style="visibility: hidden; top: 40%; right: 70%; height: 20%; width:5%; position: absolute;" src="./Images/uav/arrow-aerofoil.png">
