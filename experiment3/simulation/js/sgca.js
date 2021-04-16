@@ -1750,6 +1750,9 @@ function placeBatteryToPcb() {
             document.getElementById("solder_lead").style.top = "268px";
             document.getElementById("solder_lead").style.left = "341px";
             document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+
+            document.getElementById("solder_lead").style.visibility = "hidden";
+            document.getElementById("solder_hand").style.visibility = "hidden";
         }, 6000);
     }, 2000);
 }
