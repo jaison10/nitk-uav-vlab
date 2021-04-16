@@ -395,6 +395,10 @@ function place_apparatus(apparatus_id, top_px) {
         document.getElementById('receiver1').style.top = "360px";
         document.getElementById('receiver1').style.transition = "top 1s ease-in-out";
 
+        document.getElementById('receiverWire').style.visibility = "visible";
+        document.getElementById('receiverWire').style.top = "380px";
+        document.getElementById('receiverWire').style.transition = "top 1s ease-in-out";
+
         document.getElementById('next').style.visibility = "visible";
 
     } else {
@@ -803,6 +807,9 @@ function connectEscMotor(n) {
         // document.getElementById('esc_signal1').style.left = "240px";
 
         // Checking if all are placed
+        if(connectionsDone == 1){
+            document.getElementById("placeMotorInfo").innerText = "Click on the rest of the ESCs to connect to the Motor."
+        }
         if (connectionsDone >= 4) {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
 
@@ -823,6 +830,9 @@ function connectEscMotor(n) {
         document.getElementById('esc_signal2').style.top = "263px";
         document.getElementById('esc_signal2').style.left = "357px";
 
+        if(connectionsDone == 1){
+            document.getElementById("placeMotorInfo").innerText = "Click on the rest of the ESCs to connect to the Motor."
+        }
         // Checking if all are placed
         if (connectionsDone >= 4) {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
@@ -845,6 +855,10 @@ function connectEscMotor(n) {
         document.getElementById('esc_signal3').style.left = "341px";
         document.getElementById('esc_wire3').style.top = "199px";
         document.getElementById('esc_signal3').style.top = "199px";
+
+        if(connectionsDone == 1){
+            document.getElementById("placeMotorInfo").innerText = "Click on the rest of the ESCs to connect to the Motor."
+        }
 
         // Checking if all are placed
         if (connectionsDone >= 4) {
@@ -875,6 +889,10 @@ function connectEscMotor(n) {
         // document.getElementById('esc_signal4').style.left = "327px";
         // document.getElementById('esc_wire4').style.top = "206px";
         // document.getElementById('esc_signal4').style.top = "205px";
+
+        if(connectionsDone == 1){
+            document.getElementById("placeMotorInfo").innerText = "Click on the rest of the ESCs to connect to the Motor."
+        }
 
         // Checking if all are placed
         if (connectionsDone >= 4) {
@@ -1980,6 +1998,7 @@ function mount_frame() {
     document.getElementById('electronic_sc').style.visibility = "hidden";
     document.getElementById('lipo_battery').style.visibility = "hidden";
     document.getElementById('receiver1').style.visibility = "hidden";
+    document.getElementById('receiverWire').style.visibility = "hidden";
     document.getElementById('transmitter1').style.visibility = "hidden";
 
     //remove apparatus buttons
