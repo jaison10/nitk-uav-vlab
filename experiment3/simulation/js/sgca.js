@@ -1260,9 +1260,6 @@ function placeWireSolder(id) {
     if (powerConnected >= 4) {
         console.log("All esc wires are placed to solder");
     }
-
-
-
 }
 
 
@@ -1275,7 +1272,7 @@ function solder() {
     document.getElementById("solder_hand").style.left = "145px";
     document.getElementById("solder_hand").style.height = "80px";
     document.getElementById("solder_hand").style.width = "120px";
-    document.getElementById("solder_hand").style.zIndex = "650";
+    document.getElementById("solder_hand").style.zIndex = "750";
     document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
 
     document.getElementById("solder_lead").style.visibility = "visible";
@@ -1286,25 +1283,65 @@ function solder() {
     document.getElementById("solder_lead").style.zIndex = "650";
     document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
 
-    // setTimeout(() => {  
-    //     document.getElementById("solder_lead").classList.add("solderHide");
-    //     document.getElementById("solder_lead2").classList.add("solderShow");
-    // }, 2000);
-    // setTimeout(() => {  
-    //     document.getElementById("solder_lead").style.visibility = "hidden";
-    // }, 4000);
     setTimeout(() => {
-        document.getElementById("solder_lead").style.visibility = "hidden";
-        document.getElementById("solder_lead2").style.visibility = "visible";
-        document.getElementById("solder_lead2").style.top = "250px";
-        document.getElementById("solder_lead2").style.left = "266px";
-        // document.getElementById("solder_lead2").style.opacity = 1;
+        //         document.getElementById("solder_lead").style.visibility = "hidden";
+        //         document.getElementById("solder_lead2").style.visibility = "visible";
+        //         document.getElementById("solder_lead2").style.top = "250px";
+        //         document.getElementById("solder_lead2").style.left = "266px";
+        //         // document.getElementById("solder_lead2").style.opacity = 1;
+        //         document.getElementById("solder_lead2").style.transition = "all 2s ease-in-out";
+        //     }, 2000);
+        //     setTimeout(function() {
+        //         document.getElementById("solder_hand").style.visibility = "hidden";
+        //         document.getElementById("solder_lead").style.visibility = "hidden";
+        //         document.getElementById("solder_lead2").style.visibility = "hidden";
+        //         document.getElementById("placeMotorInfo").style.visibility = "visible";
+        //         document.getElementById("placeMotorInfo").innerText = "Similarly, Solder all other Esc wires to the PCB Board."
+        //         setTimeout(function() {
+        //             document.getElementById('arrow1').style = "visibility: hidden; position: absolute; left: 710px; top: 105px; height: 30px; z-index: 10; ";
+        //             document.getElementById("solder_wires").style.visibility = "visible";
+
+        //             document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+        //             // Code for IE9
+        //             document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+        //             // Standard syntax
+        //             document.getElementById("arrow1").style.transform = "rotate(0deg)";
+        //             myInt = setInterval(function() {
+        //                 animatearrow();
+        //             }, 500);
+        //         }, 2000);
+        //     }, 4000);
+        // }
+
+
+
+        // soldering the first wire
+        document.getElementById("solder_lead").style.top = "250px";
+        document.getElementById("solder_lead").style.left = "264px";
+        document.getElementById("leadAfter3").style.visibility = "visible";
+        document.getElementById("leadAfter3").classList.add("solderAfterShow");
         document.getElementById("solder_lead2").style.transition = "all 2s ease-in-out";
     }, 2000);
+    setTimeout(() => {
+        // Moves from first wire to the second
+        document.getElementById("solder_lead").style.top = "260px";
+        document.getElementById("solder_lead").style.left = "293px";
+        document.getElementById("solder_hand").style.left = "174px";
+        document.getElementById("solder_hand").style.top = "252px";
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+    }, 4000);
+    setTimeout(() => {
+        // soldering the second wire
+        document.getElementById("leadAfter4").style.visibility = "visible";
+        document.getElementById("leadAfter4").classList.add("solderAfterShow");
+        document.getElementById("solder_lead").style.top = "263px";
+        document.getElementById("solder_lead").style.left = "289px";
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+    }, 6000);
     setTimeout(function() {
-        document.getElementById("solder_hand").style.visibility = "hidden";
-        document.getElementById("solder_lead").style.visibility = "hidden";
-        document.getElementById("solder_lead2").style.visibility = "hidden";
+        // document.getElementById("solder_hand").style.visibility = "hidden";
+        // document.getElementById("solder_lead").style.visibility = "hidden";
+        // document.getElementById("solder_lead2").style.visibility = "hidden";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         document.getElementById("placeMotorInfo").innerText = "Similarly, Solder all other Esc wires to the PCB Board."
         setTimeout(function() {
@@ -1320,43 +1357,212 @@ function solder() {
                 animatearrow();
             }, 500);
         }, 2000);
-    }, 4000);
+    }, 8000);
 }
 
+// ----------------------------------Function to solder all the other esc wires together---------------------------
 function solderAllWires() {
     myStopFunction();
 
+    document.getElementById("placeMotorInfo").style.visibility = "hidden";
+    document.getElementById("solder_wires").style.visibility = "hidden";
+
+    //placing the second esc wire
     setTimeout(function() {
-        document.getElementById("placeMotorInfo").style.visibility = "hidden";
-        document.getElementById("solder_wires").style.visibility = "hidden";
+        document.getElementById("half_escWireConnected2").style.visibility = "visible";
+        document.getElementById("half_escWire2").style.visibility = "hidden";
+    }, 500);
+
+    //moving to third esc wire
+    setTimeout(function() {
         document.getElementById("solder_hand").style.visibility = "visible";
-        document.getElementById("solder_hand").style.top = "250px";
-        document.getElementById("solder_hand").style.left = "175px";
+        document.getElementById("solder_hand").style.top = "256px";
+        document.getElementById("solder_hand").style.left = "248px";
         document.getElementById("solder_hand").style.height = "80px";
         document.getElementById("solder_hand").style.width = "120px";
-        document.getElementById("solder_hand").style.zIndex = "650";
+        document.getElementById("solder_hand").style.zIndex = "660";
         document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
 
         document.getElementById("solder_lead").style.visibility = "visible";
+        document.getElementById("solder_lead").style.top = "258px";
+        document.getElementById("solder_lead").style.left = "373px";
+        document.getElementById("solder_lead").style.height = "90px";
+        document.getElementById("solder_lead").style.width = "104px";
+        document.getElementById("solder_lead").style.zIndex = "650";
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+
+    }, 1000);
+
+    setTimeout(() => {
+
+        document.getElementById("solder_lead").style.top = "265px";
+        document.getElementById("solder_lead").style.left = "363px";
+        document.getElementById("leadAfter5").style.visibility = "visible";
+        document.getElementById("leadAfter5").classList.add("solderAfterShow");
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+
+    }, 3000);
+
+    //moving to fourth esc wire
+    setTimeout(function() {
+        document.getElementById("solder_hand").style.visibility = "visible";
+        document.getElementById("solder_hand").style.top = "244px";
+        document.getElementById("solder_hand").style.left = "270px";
+        document.getElementById("solder_hand").style.height = "80px";
+        document.getElementById("solder_hand").style.width = "120px";
+        document.getElementById("solder_hand").style.zIndex = "660";
+        document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
+
+
+        document.getElementById("solder_lead").style.visibility = "visible";
+        document.getElementById("solder_lead").style.top = "245px";
+        document.getElementById("solder_lead").style.left = "394px";
+        document.getElementById("solder_lead").style.height = "90px";
+        document.getElementById("solder_lead").style.width = "104px";
+        document.getElementById("solder_lead").style.zIndex = "650";
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+    }, 5000);
+
+    setTimeout(() => {
+
         document.getElementById("solder_lead").style.top = "255px";
+        document.getElementById("solder_lead").style.left = "389px";
+        document.getElementById("leadAfter6").style.visibility = "visible";
+        document.getElementById("leadAfter6").classList.add("solderAfterShow");
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+    }, 7000);
+
+
+    //placing the third esc wire
+    setTimeout(function() {
+        document.getElementById("half_escWireConnected3").style.visibility = "visible";
+        document.getElementById("half_escWire3").style.visibility = "hidden";
+
+    }, 9000);
+    //moving to fifth esc wire
+    setTimeout(function() {
+        document.getElementById("solder_hand").style.visibility = "visible";
+        document.getElementById("solder_hand").style.top = "198px";
+        document.getElementById("solder_hand").style.left = "265px";
+        document.getElementById("solder_hand").style.height = "80px";
+        document.getElementById("solder_hand").style.width = "120px";
+        document.getElementById("solder_hand").style.zIndex = "660";
+        document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
+
+        document.getElementById("solder_lead").style.visibility = "visible";
+        document.getElementById("solder_lead").style.top = "203px";
+        document.getElementById("solder_lead").style.left = "389px";
+        document.getElementById("solder_lead").style.height = "90px";
+        document.getElementById("solder_lead").style.width = "104px";
+        document.getElementById("solder_lead").style.zIndex = "650";
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+    }, 11000);
+
+    setTimeout(() => {
+
+        document.getElementById("solder_lead").style.top = "207px";
+        document.getElementById("solder_lead").style.left = "382px";
+        document.getElementById("leadAfter7").style.visibility = "visible";
+        document.getElementById("leadAfter7").classList.add("solderAfterShow");
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+    }, 13000);
+
+    //moving to sixth esc wire
+    setTimeout(function() {
+        document.getElementById("solder_hand").style.visibility = "visible";
+        document.getElementById("solder_hand").style.top = "188px";
+        document.getElementById("solder_hand").style.left = "240px";
+        document.getElementById("solder_hand").style.height = "80px";
+        document.getElementById("solder_hand").style.width = "120px";
+        document.getElementById("solder_hand").style.zIndex = "660";
+        document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
+
+
+        document.getElementById("solder_lead").style.visibility = "visible";
+        document.getElementById("solder_lead").style.top = "198px";
+        document.getElementById("solder_lead").style.left = "365px";
+        document.getElementById("solder_lead").style.height = "90px";
+        document.getElementById("solder_lead").style.width = "104px";
+        document.getElementById("solder_lead").style.zIndex = "650";
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+    }, 15000);
+
+    setTimeout(() => {
+
+        document.getElementById("solder_lead").style.top = "200px";
+        document.getElementById("solder_lead").style.left = "358px";
+        document.getElementById("leadAfter8").style.visibility = "visible";
+        document.getElementById("leadAfter8").classList.add("solderAfterShow");
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+    }, 17000);
+
+    //placing the fourth esc wire
+    setTimeout(function() {
+        document.getElementById("half_escWireConnected4").style.visibility = "visible";
+        document.getElementById("half_escWire4").style.visibility = "hidden";
+
+    }, 19000);
+    //moving to seventh esc wire
+    setTimeout(function() {
+        document.getElementById("solder_hand").style.visibility = "visible";
+        document.getElementById("solder_hand").style.top = "196px";
+        document.getElementById("solder_hand").style.left = "153px";
+        document.getElementById("solder_hand").style.height = "80px";
+        document.getElementById("solder_hand").style.width = "120px";
+        document.getElementById("solder_hand").style.zIndex = "660";
+        document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
+
+        document.getElementById("solder_lead").style.visibility = "visible";
+        document.getElementById("solder_lead").style.top = "199px";
+        document.getElementById("solder_lead").style.left = "275px";
+        document.getElementById("solder_lead").style.height = "90px";
+        document.getElementById("solder_lead").style.width = "104px";
+        document.getElementById("solder_lead").style.zIndex = "650";
+        document.getElementById("leadAfter7").style.zIndex = "640";
+        document.getElementById("leadAfter8").style.zIndex = "640";
+
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+    }, 21000);
+
+    setTimeout(() => {
+
+        document.getElementById("solder_lead").style.top = "205px";
+        document.getElementById("solder_lead").style.left = "270px";
+        document.getElementById("leadAfter10").style.visibility = "visible";
+        document.getElementById("leadAfter10").classList.add("solderAfterShow");
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+    }, 23000);
+
+    //moving to eighth esc wire
+    setTimeout(function() {
+        document.getElementById("solder_hand").style.visibility = "visible";
+        document.getElementById("solder_hand").style.top = "187px";
+        document.getElementById("solder_hand").style.left = "173px";
+        document.getElementById("solder_hand").style.height = "80px";
+        document.getElementById("solder_hand").style.width = "120px";
+        document.getElementById("solder_hand").style.zIndex = "660";
+        document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
+
+        document.getElementById("solder_lead").style.visibility = "visible";
+        document.getElementById("solder_lead").style.top = "195px";
         document.getElementById("solder_lead").style.left = "295px";
         document.getElementById("solder_lead").style.height = "90px";
         document.getElementById("solder_lead").style.width = "104px";
         document.getElementById("solder_lead").style.zIndex = "650";
         document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
-    }, 1000);
+    }, 25000);
 
     setTimeout(() => {
-        document.getElementById("solder_lead").style.visibility = "hidden";
-        document.getElementById("solder_lead2").style.visibility = "visible";
-        document.getElementById("solder_lead2").style.top = "265px";
-        document.getElementById("solder_lead2").style.left = "295px";
 
-        // document.getElementById("solder_lead2").style.opacity = 1;
-        document.getElementById("solder_lead2").style.transition = "all 1s ease-in-out";
-    }, 3000);
+        document.getElementById("solder_lead").style.top = "198px";
+        document.getElementById("solder_lead").style.left = "290px";
+        document.getElementById("leadAfter9").style.visibility = "visible";
+        document.getElementById("leadAfter9").classList.add("solderAfterShow");
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+    }, 27000);
 
 }
+
 
 function moveIsometricView() {
     myStopFunction();
@@ -1416,6 +1622,58 @@ function moveIsometricView() {
 
 
     }, 100);
+}
+
+function placeBatteryToPcb() {
+    document.getElementById("batteryToPcb").style.top = "250px";
+    document.getElementById("batteryToPcb").style.left = "165px";
+    document.getElementById("batteryToPcb").style.transition = "all 2s ease-in-out";
+    setTimeout(() => {
+        document.getElementById("solder_hand").style.visibility = "visible";
+        document.getElementById("solder_hand").style.top = "255px";
+        document.getElementById("solder_hand").style.left = "205px";
+        document.getElementById("solder_hand").style.height = "80px";
+        document.getElementById("solder_hand").style.width = "120px";
+        document.getElementById("solder_hand").style.zIndex = "650";
+        document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
+
+        document.getElementById("solder_lead").style.visibility = "visible";
+        document.getElementById("solder_lead").style.top = "264px";
+        document.getElementById("solder_lead").style.left = "327px";
+        document.getElementById("solder_lead").style.height = "90px";
+        document.getElementById("solder_lead").style.width = "104px";
+        document.getElementById("solder_lead").style.zIndex = "650";
+        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+
+        setTimeout(() => {
+            // soldering the first wire
+            document.getElementById("leadAfter").style.visibility = "visible";
+            document.getElementById("leadAfter").classList.add("solderAfterShow");
+            document.getElementById("solder_lead").style.visibility = "visible";
+            document.getElementById("solder_lead").style.top = "266px";
+            document.getElementById("solder_lead").style.left = "324px";
+            document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+
+        }, 2000);
+        setTimeout(() => {
+            // Moves from first wire to the second
+            document.getElementById("leadAfter").style.visibility = "visible";
+            document.getElementById("leadAfter").classList.add("solderAfterShow");
+            document.getElementById("solder_lead").style.top = "264px";
+            document.getElementById("solder_lead").style.left = "344px";
+            document.getElementById("solder_hand").style.left = "225px";
+            document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+
+        }, 4000);
+        setTimeout(() => {
+            // soldering the second wire
+            document.getElementById("leadAfter2").style.visibility = "visible";
+            document.getElementById("leadAfter2").classList.add("solderAfterShow");
+            document.getElementById("solder_lead").style.top = "268px";
+            document.getElementById("solder_lead").style.left = "341px";
+            document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+        }, 6000);
+    }, 2000);
 }
 
 function all_screws() {
