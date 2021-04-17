@@ -807,7 +807,7 @@ function connectEscMotor(n) {
         // document.getElementById('esc_signal1').style.left = "240px";
 
         // Checking if all are placed
-        if(connectionsDone == 1){
+        if (connectionsDone == 1) {
             document.getElementById("placeMotorInfo").innerText = "Click on the rest of the ESCs to connect to the Motor."
         }
         if (connectionsDone >= 4) {
@@ -830,7 +830,7 @@ function connectEscMotor(n) {
         document.getElementById('esc_signal2').style.top = "263px";
         document.getElementById('esc_signal2').style.left = "357px";
 
-        if(connectionsDone == 1){
+        if (connectionsDone == 1) {
             document.getElementById("placeMotorInfo").innerText = "Click on the rest of the ESCs to connect to the Motor."
         }
         // Checking if all are placed
@@ -856,7 +856,7 @@ function connectEscMotor(n) {
         document.getElementById('esc_wire3').style.top = "199px";
         document.getElementById('esc_signal3').style.top = "199px";
 
-        if(connectionsDone == 1){
+        if (connectionsDone == 1) {
             document.getElementById("placeMotorInfo").innerText = "Click on the rest of the ESCs to connect to the Motor."
         }
 
@@ -890,7 +890,7 @@ function connectEscMotor(n) {
         // document.getElementById('esc_wire4').style.top = "206px";
         // document.getElementById('esc_signal4').style.top = "205px";
 
-        if(connectionsDone == 1){
+        if (connectionsDone == 1) {
             document.getElementById("placeMotorInfo").innerText = "Click on the rest of the ESCs to connect to the Motor."
         }
 
@@ -1196,9 +1196,15 @@ function moveTopView() {
             }
             document.getElementById('esc_wire' + i).style.visibility = "hidden";
             document.getElementById('half_esc' + i).style.visibility = "visible";
+            document.getElementById('half_esc' + i).style.opacity = 1;
+            document.getElementById('half_esc' + i).style.transition = "all 5s ease-in-out";
             document.getElementById('half_esc_signal' + i).style.visibility = "visible";
-            document.getElementById('half_escWire' + i).style.visibility = "visible";
+            document.getElementById('half_esc_signal' + i).style.opacity = 1;
+            document.getElementById('half_esc_signal' + i).style.transition = "all 5s ease-in-out";
 
+            document.getElementById('half_escWire' + i).style.visibility = "visible";
+            document.getElementById('half_escWire' + i).style.opacity = 1;
+            document.getElementById('half_escWire' + i).style.transition = "all 5s ease-in-out";
 
             // document.getElementById('half_esc_wire' + i).style.visibility = "visible";
 
@@ -1254,9 +1260,14 @@ var powerConnected = 0;
 
 function placeWireSolder(id) {
     myStopFunction();
+    document.getElementById('half_escWire' + id).style.visibility = "visible";
+    document.getElementById('half_escWire' + id).style.opacity = 0;
+    document.getElementById('half_escWire' + id).style.transition = "all 0.1s ease-in-out";
     // document.getElementById("solder_lead2").style.visibility = "visible";
     document.getElementById("half_escWireConnected" + id).style.visibility = "visible";
-    document.getElementById('half_escWire' + id).style.visibility = "hidden";
+    document.getElementById('half_escWireConnected' + id).style.opacity = 1;
+    document.getElementById('half_escWireConnected' + id).style.transition = "all 0.1s ease-in-out";
+
     document.getElementById("placeMotorInfo").style.visibility = "visible";
     document.getElementById("placeMotorInfo").innerText = "Solder the ESC Power Wire as shown."
     setTimeout(function() {
@@ -1405,7 +1416,12 @@ function solderAllWires() {
     //placing the second esc wire
     setTimeout(function() {
         document.getElementById("half_escWireConnected2").style.visibility = "visible";
-        document.getElementById("half_escWire2").style.visibility = "hidden";
+        // document.getElementById("solder_lead2").style.visibility = "visible";
+        document.getElementById('half_escWireConnected2').style.opacity = 1;
+        document.getElementById('half_escWireConnected2').style.transition = "all 0.1s ease-in-out";
+        document.getElementById("half_escWire2").style.visibility = "visible";
+        document.getElementById('half_escWire2').style.opacity = 0;
+        document.getElementById('half_escWire2').style.transition = "all 0.1s ease-in-out";
     }, 500);
 
     //moving to third esc wire
@@ -1484,7 +1500,11 @@ function solderAllWires() {
     //placing the third esc wire
     setTimeout(function() {
         document.getElementById("half_escWireConnected3").style.visibility = "visible";
-        document.getElementById("half_escWire3").style.visibility = "hidden";
+        document.getElementById("half_escWire3").style.visibility = "visible";
+        document.getElementById('half_escWireConnected3').style.opacity = 1;
+        document.getElementById('half_escWireConnected3').style.transition = "all 0.1s ease-in-out";
+        document.getElementById('half_escWire3').style.opacity = 0;
+        document.getElementById('half_escWire3').style.transition = "all 0.1s ease-in-out";
 
     }, 9000);
     //moving to fifth esc wire
@@ -1561,7 +1581,11 @@ function solderAllWires() {
     //placing the fourth esc wire
     setTimeout(function() {
         document.getElementById("half_escWireConnected4").style.visibility = "visible";
-        document.getElementById("half_escWire4").style.visibility = "hidden";
+        document.getElementById('half_escWireConnected4').style.opacity = 1;
+        document.getElementById('half_escWireConnected4').style.transition = "all 0.1s ease-in-out";
+        document.getElementById("half_escWire4").style.visibility = "visible";
+        document.getElementById('half_escWire4').style.opacity = 0;
+        document.getElementById('half_escWire4').style.transition = "all 0.1s ease-in-out";
 
     }, 19000);
     //moving to seventh esc wire
