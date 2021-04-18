@@ -1668,62 +1668,150 @@ function solderAllWires() {
 
 function moveIsometricView() {
     myStopFunction();
-    document.getElementById('base_layer').style.top = "80px";
-    document.getElementById('base_layer').style.left = "240px";
-    document.getElementById('base_layer').src = "./Images/base_layera_v4.png";
-    document.getElementById('base_layer').style.height = "80px";
-    document.getElementById('base_layer').style.width = "180px";
+    // document.getElementById('base_layer').style.top = "80px";
+    // document.getElementById('base_layer').style.left = "240px";
+    // document.getElementById('base_layer').src = "./Images/base_layera_v4.png";
+    // document.getElementById('base_layer').style.height = "80px";
+    // document.getElementById('base_layer').style.width = "180px";
     document.getElementById('base_layer').onclick = "";
-
+    document.getElementById('base_layer').style.top = "248px";
+    document.getElementById('base_layer').style.left = "210px";
+    document.getElementById('base_layer').style.height = "100px";
+    document.getElementById('base_layer').style.width = "260px";
     document.getElementById('base_layer').style.transform = "rotate(4deg)";
-    document.getElementById('base_layer').style.zIndex = "90";
-    document.getElementById('base_layer').style.opacity = 0;
-    document.getElementById('base_layer').style.transition = "all 1s ease-in-out";
+    document.getElementById('base_layer').style.zIndex = "95";
+    document.getElementById('base_layer').style.opacity = 1;
+    document.getElementById('base_layer').style.transition = "all 5s ease-in-out";
 
     // document.getElementById('all_screws_on').style.top = "200px";
+    document.getElementById('all_screws_on').style.visibility = "visible";
     document.getElementById('all_screws_on').style.opacity = 1;
-    document.getElementById('all_screws_on').style.transition = "all 1s ease-in-out";
-    setTimeout(() => {
-        document.getElementById('all_screws_on').style.visibility = "visible";
-        document.getElementById('armsAndTop').style.visibility = "visible";
-        for (let i = 1; i <= 4; i++) {
-            document.getElementById('esc_motor_connected' + i).style.visibility = "visible";
-            if (i == 3) {
-                document.getElementById('esc_fc_connected3_1').style.visibility = "visible";
-                document.getElementById('esc_fc_connected3_2').style.visibility = "visible";
+    document.getElementById('all_screws_on').style.transition = "all 5s ease-in-out";
 
-            } else {
-                document.getElementById('esc_fc_connected' + i).style.visibility = "visible";
-
-            }
-            document.getElementById('esc_wire' + i).style.visibility = "visible";
-            document.getElementById('half_esc' + i).style.visibility = "hidden";
-            document.getElementById('half_esc_signal' + i).style.visibility = "hidden";
-            document.getElementById('half_escWire' + i).style.visibility = "hidden";
-            document.getElementById('half_escWireConnected' + i).style.visibility = "hidden";
+    document.getElementById('armsAndTop').style.visibility = "visible";
+    document.getElementById('armsAndTop').style.opacity = 1;
+    document.getElementById('armsAndTop').style.transition = "all 5s ease-in-out";
 
 
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById('esc_motor_connected' + i).style.visibility = "visible";
+        document.getElementById('esc_motor_connected' + i).style.opacity = 1;
+        document.getElementById('esc_motor_connected' + i).style.transition = "all 5s ease-in-out";
+        if (i == 3) {
+            document.getElementById('esc_fc_connected3_1').style.visibility = "visible";
+            document.getElementById('esc_fc_connected3_1').style.opacity = 1;
+            document.getElementById('esc_fc_connected3_1').style.transition = "all 5s ease-in-out";
+            document.getElementById('esc_fc_connected3_2').style.visibility = "visible";
+            document.getElementById('esc_fc_connected3_2').style.opacity = 1;
+            document.getElementById('esc_fc_connected3_2').style.transition = "all 5s ease-in-out";
 
-            // document.getElementById('half_esc_wire' + i).style.visibility = "visible";
+        } else {
+            document.getElementById('esc_fc_connected' + i).style.visibility = "visible";
+            document.getElementById('esc_fc_connected' + i).style.opacity = 1;
+            document.getElementById('esc_fc_connected' + i).style.transition = "all 5s ease-in-out";
 
         }
-        document.getElementById('battery_base').style.visibility = "visible";
-        document.getElementById('placedFc').style.visibility = "visible";
-        document.getElementById('rec_wire').style.visibility = "visible";
-        document.getElementById('placedReceiver').style.visibility = "visible";
-        document.getElementById('placedDST').style.visibility = "visible";
-        document.getElementById('placedDSTRec').style.visibility = "visible";
-        document.getElementById('screw_head').style.visibility = "visible";
-        document.getElementById('screw_head1').style.visibility = "visible";
-        document.getElementById('move_top').style.visibility = "visible";
-        document.getElementById('border_box').style.visibility = "hidden";
-        document.getElementById('solder_hand').style.visibility = "hidden";
-        document.getElementById('solder_lead').style.visibility = "hidden";
-        document.getElementById('lead_wire').style.visibility = "hidden";
+        document.getElementById('esc_wire' + i).style.visibility = "visible";
+        document.getElementById('esc_wire' + i).style.opacity = 1;
+        document.getElementById('esc_wire' + i).style.transition = "all 5s ease-in-out";
+
+        document.getElementById('half_esc' + i).style.visibility = "visible";
+        document.getElementById('half_esc' + i).style.opacity = 0;
+        document.getElementById('half_esc' + i).style.transition = "all 1s ease-in-out";
+
+
+        document.getElementById('half_esc_signal' + i).style.visibility = "visible";
+        document.getElementById('half_esc_signal' + i).style.opacity = 0;
+        document.getElementById('half_esc_signal' + i).style.transition = "all 1s ease-in-out";
+
+        document.getElementById('half_escWire' + i).style.visibility = "visible";
+        document.getElementById('half_escWire' + i).style.opacity = 0;
+        document.getElementById('half_escWire' + i).style.transition = "all 1s ease-in-out";
+
+        document.getElementById('half_escWireConnected' + i).style.visibility = "visible";
+        document.getElementById('half_escWireConnected' + i).style.opacity = 0;
+        document.getElementById('half_escWireConnected' + i).style.transition = "all 1s ease-in-out";
 
 
 
-    }, 100);
+
+        // document.getElementById('half_esc_wire' + i).style.visibility = "visible";
+
+    }
+    document.getElementById('battery_base').style.visibility = "visible";
+    document.getElementById('battery_base').style.opacity = 1;
+    document.getElementById('battery_base').style.zIndex = 95;
+    document.getElementById('battery_base').style.transition = "opacity 5s ease-in-out";
+
+    document.getElementById('placedFc').style.visibility = "visible";
+    document.getElementById('placedFc').style.opacity = 1;
+    document.getElementById('placedFc').style.transition = "all 5s ease-in-out";
+
+    document.getElementById('rec_wire').style.visibility = "visible";
+    document.getElementById('rec_wire').style.opacity = 1;
+    document.getElementById('rec_wire').style.transition = "all 5s ease-in-out";
+
+    document.getElementById('placedReceiver').style.visibility = "visible";
+    document.getElementById('placedReceiver').style.opacity = 1;
+    document.getElementById('placedReceiver').style.transition = "all 5s ease-in-out";
+
+    document.getElementById('placedDST').style.visibility = "visible";
+    document.getElementById('placedDST').style.opacity = 1;
+    document.getElementById('placedDST').style.transition = "all 5s ease-in-out";
+
+    document.getElementById('placedDSTRec').style.visibility = "visible";
+    document.getElementById('placedDSTRec').style.opacity = 1;
+    document.getElementById('placedDSTRec').style.transition = "all 5s ease-in-out";
+
+    document.getElementById('screw_head').style.visibility = "visible";
+    document.getElementById('screw_head').style.opacity = 1;
+    document.getElementById('screw_head').style.transition = "all 5s ease-in-out";
+
+    document.getElementById('screw_head1').style.visibility = "visible";
+    document.getElementById('screw_head1').style.opacity = 1;
+    document.getElementById('screw_head1').style.transition = "all 5s ease-in-out";
+
+    document.getElementById('move_isometric').style.visibility = "hidden";
+
+
+    document.getElementById('border_box').style.visibility = "visible";
+    document.getElementById('border_box').style.opacity = 0;
+    document.getElementById('border_box').style.transition = "all 1s ease-in-out";
+
+    document.getElementById('solder_hand').style.visibility = "visible";
+    document.getElementById('solder_hand').style.opacity = 0;
+    document.getElementById('solder_hand').style.transition = "all 1s ease-in-out";
+
+    document.getElementById('solder_lead').style.visibility = "visible";
+    document.getElementById('solder_lead').style.opacity = 0;
+    document.getElementById('solder_lead').style.transition = "all 1s ease-in-out";
+
+
+
+    document.getElementById('leadAfter').style.visibility = "visible";
+    document.getElementById('leadAfter').style.opacity = 0;
+    document.getElementById('leadAfter').style.transition = "all 1s ease-in-out";
+
+    for (let i = 2; i <= 10; i++) {
+        document.getElementById('leadAfter' + i).style.visibility = "visible";
+        document.getElementById('leadAfter' + i).style.opacity = 0;
+        document.getElementById('leadAfter' + i).style.transition = "all 1 ease-in-out";
+
+
+    }
+    document.getElementById('batteryToPcb').style.visibility = "visible";
+    document.getElementById('batteryToPcb').style.opacity = 0;
+    document.getElementById('batteryToPcb').style.transition = "all 1s ease-in-out";
+
+
+
+
+
+
+
+
+
+
 }
 
 function placeBatteryToPcb() {
@@ -1779,6 +1867,23 @@ function placeBatteryToPcb() {
             document.getElementById("solder_hand").style.visibility = "hidden";
         }, 6000);
     }, 2000);
+    setTimeout(function() {
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        document.getElementById("placeMotorInfo").innerText = "The connections are complete. Move back to isometric view.";
+        setTimeout(function() {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+
+            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 370px; top: 85px; height: 30px; z-index: 10; ";
+
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(270deg)";
+            document.getElementById("move_isometric").style.visibility = "visible";
+
+        }, 3000);
+    }, 9000);
 }
 
 function all_screws() {
