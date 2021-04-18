@@ -1679,9 +1679,9 @@ function moveIsometricView() {
     document.getElementById('base_layer').style.height = "100px";
     document.getElementById('base_layer').style.width = "260px";
     document.getElementById('base_layer').style.transform = "rotate(4deg)";
-    document.getElementById('base_layer').style.zIndex = "95";
+    document.getElementById('base_layer').style.zIndex = "90";
     document.getElementById('base_layer').style.opacity = 1;
-    document.getElementById('base_layer').style.transition = "all 5s ease-in-out";
+    document.getElementById('base_layer').style.transition = "all 1s ease-in-out";
 
     // document.getElementById('all_screws_on').style.top = "200px";
     document.getElementById('all_screws_on').style.visibility = "visible";
