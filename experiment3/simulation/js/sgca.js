@@ -1737,34 +1737,34 @@ function moveIsometricView() {
         // document.getElementById('all_screws_on').style.top = "200px";
         document.getElementById('all_screws_on').style.visibility = "visible";
         document.getElementById('all_screws_on').style.opacity = 1;
-        document.getElementById('all_screws_on').style.transition = "all 5s ease-in-out";
+        document.getElementById('all_screws_on').style.transition = "all 8s ease-in-out";
 
         document.getElementById('armsAndTop').style.visibility = "visible";
         document.getElementById('armsAndTop').style.opacity = 1;
-        document.getElementById('armsAndTop').style.transition = "all 5s ease-in-out";
+        document.getElementById('armsAndTop').style.transition = "all 8s ease-in-out";
 
 
         for (let i = 1; i <= 4; i++) {
             document.getElementById('esc_motor_connected' + i).style.visibility = "visible";
             document.getElementById('esc_motor_connected' + i).style.opacity = 1;
-            document.getElementById('esc_motor_connected' + i).style.transition = "all 5s ease-in-out";
+            document.getElementById('esc_motor_connected' + i).style.transition = "all 8s ease-in-out";
             if (i == 3) {
                 document.getElementById('esc_fc_connected3_1').style.visibility = "visible";
                 document.getElementById('esc_fc_connected3_1').style.opacity = 1;
-                document.getElementById('esc_fc_connected3_1').style.transition = "all 5s ease-in-out";
+                document.getElementById('esc_fc_connected3_1').style.transition = "all 8s ease-in-out";
                 document.getElementById('esc_fc_connected3_2').style.visibility = "visible";
                 document.getElementById('esc_fc_connected3_2').style.opacity = 1;
-                document.getElementById('esc_fc_connected3_2').style.transition = "all 5s ease-in-out";
+                document.getElementById('esc_fc_connected3_2').style.transition = "all 8s ease-in-out";
 
             } else {
                 document.getElementById('esc_fc_connected' + i).style.visibility = "visible";
                 document.getElementById('esc_fc_connected' + i).style.opacity = 1;
-                document.getElementById('esc_fc_connected' + i).style.transition = "all 5s ease-in-out";
+                document.getElementById('esc_fc_connected' + i).style.transition = "all 8s ease-in-out";
 
             }
             document.getElementById('esc_wire' + i).style.visibility = "visible";
             document.getElementById('esc_wire' + i).style.opacity = 1;
-            document.getElementById('esc_wire' + i).style.transition = "all 5s ease-in-out";
+            document.getElementById('esc_wire' + i).style.transition = "all 8s ease-in-out";
 
 
 
@@ -1777,35 +1777,35 @@ function moveIsometricView() {
         document.getElementById('battery_base').style.visibility = "visible";
         document.getElementById('battery_base').style.opacity = 1;
         document.getElementById('battery_base').style.zIndex = 95;
-        document.getElementById('battery_base').style.transition = "all 5s ease-in-out";
+        document.getElementById('battery_base').style.transition = "all 8s ease-in-out";
 
         document.getElementById('placedFc').style.visibility = "visible";
         document.getElementById('placedFc').style.opacity = 1;
-        document.getElementById('placedFc').style.transition = "all 5s ease-in-out";
+        document.getElementById('placedFc').style.transition = "all 8s ease-in-out";
 
         document.getElementById('rec_wire').style.visibility = "visible";
         document.getElementById('rec_wire').style.opacity = 1;
-        document.getElementById('rec_wire').style.transition = "all 5s ease-in-out";
+        document.getElementById('rec_wire').style.transition = "all 8s ease-in-out";
 
         document.getElementById('placedReceiver').style.visibility = "visible";
         document.getElementById('placedReceiver').style.opacity = 1;
-        document.getElementById('placedReceiver').style.transition = "all 5s ease-in-out";
+        document.getElementById('placedReceiver').style.transition = "all 8s ease-in-out";
 
         document.getElementById('placedDST').style.visibility = "visible";
         document.getElementById('placedDST').style.opacity = 1;
-        document.getElementById('placedDST').style.transition = "all 5s ease-in-out";
+        document.getElementById('placedDST').style.transition = "all 8s ease-in-out";
 
         document.getElementById('placedDSTRec').style.visibility = "visible";
         document.getElementById('placedDSTRec').style.opacity = 1;
-        document.getElementById('placedDSTRec').style.transition = "all 5s ease-in-out";
+        document.getElementById('placedDSTRec').style.transition = "all 8s ease-in-out";
 
         document.getElementById('screw_head').style.visibility = "visible";
         document.getElementById('screw_head').style.opacity = 1;
-        document.getElementById('screw_head').style.transition = "all 5s ease-in-out";
+        document.getElementById('screw_head').style.transition = "all 8s ease-in-out";
 
         document.getElementById('screw_head1').style.visibility = "visible";
         document.getElementById('screw_head1').style.opacity = 1;
-        document.getElementById('screw_head1').style.transition = "all 5s ease-in-out";
+        document.getElementById('screw_head1').style.transition = "all 8s ease-in-out";
 
 
 
