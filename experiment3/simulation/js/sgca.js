@@ -91,6 +91,14 @@ function animatecurvearrow() {
 
 }
 
+function animatecurve1arrow() {
+
+    if (document.getElementById('curve_arrow1').style.visibility == "hidden")
+        document.getElementById('curve_arrow1').style.visibility = "visible";
+    else
+        document.getElementById('curve_arrow1').style.visibility = "hidden";
+
+}
 
 //stop blinking arrow
 function myStopFunction() {
@@ -1166,21 +1174,32 @@ function placeBattery() {
     setTimeout(function() {
         document.getElementById("placeMotorInfo").innerText = "Let us now fix the Propellers on the motor.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
-        document.getElementById("prop_note").style.visibility = "visible";
-        document.getElementById("curve_arrow").style = "visibility: visible; position: absolute; top: 345px; left: 325px; height: 30px; width: 30px; z-index: 150;";
+        setTimeout(function() {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+            document.getElementById("prop_note").style.visibility = "visible";
+            document.getElementById("curve_arrow").style = "visibility: visible; position: absolute;  top: 355px; left: 220px; height: 30px; width: 30px;z-index:570;";
+            document.getElementById("curve_arrow1").style.visibility = "visible";
+            myInt2 = setInterval(function() {
+                animatecurvearrow();
+            }, 500);
+            myInt1 = setInterval(function() {
+                animatecurve1arrow();
+            }, 500);
+        }, 4000);
 
-        myInt = setInterval(function() {
-            animatecurvearrow();
-        }, 500);
 
 
     }, 2000);
 }
 
 function propInfo() {
-    clearInterval(myInt);
+    clearInterval(myInt2);
     document.getElementById('curve_arrow').style.visibility = "hidden";
+    clearInterval(myInt1);
+    document.getElementById("curve_arrow1").style.visibility = "hidden";
+
     document.getElementById("prop_note").style.visibility = "hidden";
+
     setTimeout(function() {
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
         document.getElementById('prop1').style.visibility = "visible";
@@ -1205,7 +1224,7 @@ function propInfo() {
         myInt = setInterval(function() {
             animatearrow();
         }, 500);
-
+        document.getElementById('move_isometric').style.visibility = "hidden";
     }, 2000);
 }
 
@@ -1730,6 +1749,9 @@ function solderAllWires() {
 
 
 function moveIsometricView() {
+    document.getElementById('move_isometric').style.visibility = "hidden";
+    document.getElementById('batteryToPcb').onclick = "";
+
     myStopFunction();
     // document.getElementById('base_layer').style.top = "80px";
     // document.getElementById('base_layer').style.left = "240px";
@@ -1783,7 +1805,7 @@ function moveIsometricView() {
         document.getElementById('batteryToPcb').style.visibility = "visible";
         document.getElementById('batteryToPcb').style.opacity = 0;
         document.getElementById('batteryToPcb').style.transition = "all 0.1s ease-in-out";
-        document.getElementById('move_isometric').style.visibility = "hidden";
+
 
     }, 500);
     setTimeout(function() {
@@ -1907,6 +1929,8 @@ function moveIsometricView() {
 }
 
 function placeBatteryToPcb() {
+    document.getElementById("move_isometric").style.visibility = "hidden";
+    document.getElementById('batteryToPcb').onclick = "";
     document.getElementById("batteryToPcb").style.top = "250px";
     document.getElementById("batteryToPcb").style.left = "165px";
     document.getElementById("batteryToPcb").style.transition = "all 2s ease-in-out";
