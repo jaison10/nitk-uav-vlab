@@ -1156,46 +1156,63 @@ function placeBase() {
 
 function placeBattery() {
     myStopFunction();
+    document.getElementById('move_isometric').style.visibility = "hidden";
     document.getElementById('battery_base').style.visibility = "visible";
     document.getElementById('battery_base').style.top = "250px";
     document.getElementById('battery_base').style.left = "200px";
     document.getElementById('battery_base').style.height = "70px";
     document.getElementById('battery_base').style.width = "200px";
-    document.getElementById('battery_base').style.transition = "top 3s ease-in-out";
+    document.getElementById('battery_base').style.transition = "top 2s ease-in-out";
     setTimeout(function() {
         document.getElementById("placeMotorInfo").innerText = "Let us now fix the Propellers on the motor.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
-        setTimeout(function() {
-            document.getElementById("placeMotorInfo").style.visibility = "hidden";
-            document.getElementById('prop1').style.visibility = "visible";
-            document.getElementById('prop2').style.visibility = "visible";
-            document.getElementById('prop3').style.visibility = "visible";
-            document.getElementById('prop4').style.visibility = "visible";
+        document.getElementById("prop_note").style.visibility = "visible";
+        document.getElementById("curve_arrow").style = "visibility: visible; position: absolute; top: 345px; left: 325px; height: 30px; width: 30px; z-index: 150;";
 
-            document.getElementById('prop1').onclick = function() { placeProp(1) };
-            document.getElementById('prop2').onclick = function() { placeProp(2) };
-            document.getElementById('prop3').onclick = function() { placeProp(3) };
-            document.getElementById('prop4').onclick = function() { placeProp(4) };
+        myInt = setInterval(function() {
+            animatecurvearrow();
+        }, 500);
 
 
-            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 500px; top: 85px; height: 30px; z-index: 10;";
+    }, 2000);
+}
 
-            document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
-            // Code for IE9
-            document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
-            // Standard syntax
-            document.getElementById("arrow1").style.transform = "rotate(270deg)";
+function propInfo() {
+    clearInterval(myInt);
+    document.getElementById('curve_arrow').style.visibility = "hidden";
+    document.getElementById("prop_note").style.visibility = "hidden";
+    setTimeout(function() {
+        document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        document.getElementById('prop1').style.visibility = "visible";
+        document.getElementById('prop2').style.visibility = "visible";
+        document.getElementById('prop3').style.visibility = "visible";
+        document.getElementById('prop4').style.visibility = "visible";
 
-            myInt = setInterval(function() {
-                animatearrow();
-            }, 500);
+        document.getElementById('prop1').onclick = function() { placeProp(1) };
+        document.getElementById('prop2').onclick = function() { placeProp(2) };
+        document.getElementById('prop3').onclick = function() { placeProp(3) };
+        document.getElementById('prop4').onclick = function() { placeProp(4) };
 
-        }, 5000);
+
+        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 500px; top: 85px; height: 30px; z-index: 10;";
+
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(270deg)";
+
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
+
     }, 2000);
 }
 
 function placeProp(id) {
     myStopFunction();
+    document.getElementById('move_isometric').style.visibility = "hidden";
+
     document.getElementById('prop' + id).style.visibility = "visible";
     if (id == 1) {
         document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 267px; left: 41px; height: 80px; width: 180px; z-index: 570;transition:all 1s ease-in-out;";
@@ -1749,7 +1766,7 @@ function moveIsometricView() {
         document.getElementById('solder_lead').style.visibility = "visible";
         document.getElementById('solder_lead').style.opacity = 0;
         document.getElementById('solder_lead').style.transition = "all 0.1s ease-in-out";
-
+        document.getElementById('move_isometric').style.visibility = "hidden";
 
 
         document.getElementById('leadAfter').style.visibility = "visible";
