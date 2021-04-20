@@ -606,25 +606,42 @@ function placeFC() {
     myStopFunction();
     document.getElementById("fc").classList.add("moveFc");
     setTimeout(() => {
-        document.getElementById("fc").style.visibility = "hidden";
         document.getElementById("placedFc").style.visibility = "visible";
-        document.getElementById("placeMotorInfo").innerText = "Let us stick double sided tape to place Receiver.";
-        document.getElementById("placeMotorInfo").style.visibility = "visible";
-        setTimeout(() => {
-            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 530px; top: 130px; height: 30px; z-index: 10;";
-
-            document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
-            // Code for IE9
-            document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
-            // Standard syntax
-            document.getElementById("arrow1").style.transform = "rotate(0deg)";
-            myInt = setInterval(function() {
-                animatearrow();
-            }, 500);
-            document.getElementById("placeMotorInfo").style.visibility = "hidden";
-            document.getElementById("doubleSTRec").style.visibility = "visible";
-        }, 2500);
+        document.getElementById("fc_note").style.visibility = "visible";
+        document.getElementById("fcZoom").style.visibility = "visible";
+        document.getElementById("fc").style.visibility = "hidden";
     }, 2000);
+    setTimeout(() => {
+        // Show motor numbers.
+        for(let i=1;i<5;i++){
+            document.getElementById("motorNumber"+i).style.visibility = "visible";
+            document.getElementById("motorNumber"+i).classList.add("showMotorNumbers");
+        }
+    }, 3000);
+
+}
+function fcInfoDone(){
+    document.getElementById("fc_note").style.visibility = "hidden";
+    document.getElementById("fcZoom").style.visibility = "hidden";
+    for(let i=1;i<5;i++){
+        document.getElementById("motorNumber"+i).style.visibility = "hidden";
+    }
+    document.getElementById("placeMotorInfo").innerText = "Let us stick double sided tape to place Receiver.";
+    document.getElementById("placeMotorInfo").style.visibility = "visible";
+    setTimeout(() => {
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 530px; top: 130px; height: 30px; z-index: 10;";
+
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(0deg)";
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
+        document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        document.getElementById("doubleSTRec").style.visibility = "visible";
+    }, 2500);
 }
 
 function placeDSTRec() {
@@ -912,21 +929,19 @@ function fcSignalInfoShown() {
     console.log("Button has been clicked");
     document.getElementById('arrow-fc-signal').style.visibility = "hidden";
     document.getElementById('info-about-signal').style.visibility = "hidden";
-    setTimeout(function() {
-        myStopFunction();
-        document.getElementById("placeMotorInfo").innerText = "Click on the signal wire of the ESC to connect the ESCs to the Flight Controller.";
-        document.getElementById("placeMotorInfo").style.visibility = "visible";
+    document.getElementById('fc_top_connection').style.visibility = "visible";
+    document.getElementById('fcZoomSignalCon').style.visibility = "visible";
+    document.getElementById('signal_note').style.visibility = "visible";
+    document.getElementById("placeMotorInfo").innerText = "Click on the signal wire of the ESC to connect the ESCs to the Flight Controller.";
+    document.getElementById("placeMotorInfo").style.visibility = "visible";
+        
+        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 420px; top: 210px; height: 30px; width: 30px; z-index: 150; ";
 
-        // document.getElementById("placeMotorInfo").style.visibility = "hidden";
-        // document.getElementById('base_layer').style.visibility = "visible";
-
-        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 330px; top: 340px; height: 30px; width: 30px; z-index: 150; ";
-
-        document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)";
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
         // Code for IE9
-        document.getElementById("arrow1").style.msTransform = "rotate(90deg)";
+        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
         // Standard syntax
-        document.getElementById("arrow1").style.transform = "rotate(90deg)";
+        document.getElementById("arrow1").style.transform = "rotate(270deg)";
 
         document.getElementById('esc_signal1').onclick = function() { connectEscFc(1); };
         document.getElementById('esc_signal2').onclick = function() { connectEscFc(2); };
@@ -936,14 +951,12 @@ function fcSignalInfoShown() {
         myInt = setInterval(function() {
             animatearrow();
         }, 500);
-    }, 500);
 }
 
 var fcConnected = 0;
 
 function connectEscFc(id) {
     myStopFunction();
-
     if (id == 3) {
         document.getElementById('esc_fc_connected3_1').style.visibility = "visible";
         document.getElementById('esc_fc_connected3_2').style.visibility = "visible";
@@ -953,8 +966,21 @@ function connectEscFc(id) {
         fcConnected++;
     }
     document.getElementById('esc_signal' + id).style.visibility = "hidden";
+    if(fcConnected == 1){
+        document.getElementById('signal_note').innerText = "Now follow the order and connect to the curresponding pins."
+        for(let i=2;i<5;i++){
+            document.getElementById("motorNumber"+i).style.visibility = "visible";
+            document.getElementById("motorNumber"+i).classList.add("showMotorNumbers");
+        }
+    }
     if (fcConnected >= 4) {
+        for(let i=2;i<5;i++){
+            document.getElementById("motorNumber"+i).style.visibility = "hidden";
+        }
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        document.getElementById('fc_top_connection').style.visibility = "hidden";
+        document.getElementById('fcZoomSignalCon').style.visibility = "hidden";
+        document.getElementById('signal_note').style.visibility = "hidden";
         setTimeout(function() {
             document.getElementById("placeMotorInfo").innerText = "Click on the receiver wire to connect the Receiver to the Flight Controller.";
             document.getElementById("placeMotorInfo").style.visibility = "visible";
@@ -1156,46 +1182,63 @@ function placeBase() {
 
 function placeBattery() {
     myStopFunction();
+    document.getElementById('move_isometric').style.visibility = "hidden";
     document.getElementById('battery_base').style.visibility = "visible";
     document.getElementById('battery_base').style.top = "250px";
     document.getElementById('battery_base').style.left = "200px";
     document.getElementById('battery_base').style.height = "70px";
     document.getElementById('battery_base').style.width = "200px";
-    document.getElementById('battery_base').style.transition = "top 3s ease-in-out";
+    document.getElementById('battery_base').style.transition = "top 2s ease-in-out";
     setTimeout(function() {
         document.getElementById("placeMotorInfo").innerText = "Let us now fix the Propellers on the motor.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
-        setTimeout(function() {
-            document.getElementById("placeMotorInfo").style.visibility = "hidden";
-            document.getElementById('prop1').style.visibility = "visible";
-            document.getElementById('prop2').style.visibility = "visible";
-            document.getElementById('prop3').style.visibility = "visible";
-            document.getElementById('prop4').style.visibility = "visible";
+        document.getElementById("prop_note").style.visibility = "visible";
+        document.getElementById("curve_arrow").style = "visibility: visible; position: absolute; top: 345px; left: 325px; height: 30px; width: 30px; z-index: 150;";
 
-            document.getElementById('prop1').onclick = function() { placeProp(1) };
-            document.getElementById('prop2').onclick = function() { placeProp(2) };
-            document.getElementById('prop3').onclick = function() { placeProp(3) };
-            document.getElementById('prop4').onclick = function() { placeProp(4) };
+        myInt = setInterval(function() {
+            animatecurvearrow();
+        }, 500);
 
 
-            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 500px; top: 85px; height: 30px; z-index: 10;";
+    }, 2000);
+}
 
-            document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
-            // Code for IE9
-            document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
-            // Standard syntax
-            document.getElementById("arrow1").style.transform = "rotate(270deg)";
+function propInfo() {
+    clearInterval(myInt);
+    document.getElementById('curve_arrow').style.visibility = "hidden";
+    document.getElementById("prop_note").style.visibility = "hidden";
+    setTimeout(function() {
+        document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        document.getElementById('prop1').style.visibility = "visible";
+        document.getElementById('prop2').style.visibility = "visible";
+        document.getElementById('prop3').style.visibility = "visible";
+        document.getElementById('prop4').style.visibility = "visible";
 
-            myInt = setInterval(function() {
-                animatearrow();
-            }, 500);
+        document.getElementById('prop1').onclick = function() { placeProp(1) };
+        document.getElementById('prop2').onclick = function() { placeProp(2) };
+        document.getElementById('prop3').onclick = function() { placeProp(3) };
+        document.getElementById('prop4').onclick = function() { placeProp(4) };
 
-        }, 5000);
+
+        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 500px; top: 85px; height: 30px; z-index: 10;";
+
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(270deg)";
+
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
+
     }, 2000);
 }
 
 function placeProp(id) {
     myStopFunction();
+    document.getElementById('move_isometric').style.visibility = "hidden";
+
     document.getElementById('prop' + id).style.visibility = "visible";
     if (id == 1) {
         document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 267px; left: 41px; height: 80px; width: 180px; z-index: 570;transition:all 1s ease-in-out;";
@@ -1749,7 +1792,7 @@ function moveIsometricView() {
         document.getElementById('solder_lead').style.visibility = "visible";
         document.getElementById('solder_lead').style.opacity = 0;
         document.getElementById('solder_lead').style.transition = "all 0.1s ease-in-out";
-
+        document.getElementById('move_isometric').style.visibility = "hidden";
 
 
         document.getElementById('leadAfter').style.visibility = "visible";
