@@ -1342,23 +1342,42 @@ function rotationInfoDone() {
     document.getElementById("knob2").style.visibility = "visible";
     document.getElementById("knob3").style.visibility = "visible";
     document.getElementById("knob4").style.visibility = "visible";
+    document.getElementById("knob1").style.top = "286px";
+    document.getElementById("knob2").style.top = "298.5px";
+    document.getElementById("knob3").style.top = "131px";
+    document.getElementById("knob4").style.top = "128px";
+    document.getElementById("knob1").style.transition = "top 2s ease-in-out";
+    document.getElementById("knob2").style.transition = "top 2s ease-in-out";
+    document.getElementById("knob3").style.transition = "top 2s ease-in-out";
+    document.getElementById("knob4").style.transition = "top 2s ease-in-out";
+
     document.getElementById("curve_arrow1_1").style.visibility = "visible";
     document.getElementById("curve_arrow1_2").style.visibility = "visible";
     document.getElementById("curve_arrow1_3").style.visibility = "visible";
     document.getElementById("curve_arrow1_4").style.visibility = "visible";
-    myIntv = setInterval(function() {
+    myIntv1 = setInterval(function() {
         animatecurve2arrow(1);
     }, 500);
-    myIntv = setInterval(function() {
+    myIntv2 = setInterval(function() {
         animatecurve2arrow(2);
     }, 500);
-    myIntv = setInterval(function() {
+    myIntv3 = setInterval(function() {
         animatecurve2arrow(3);
     }, 500);
-    myIntv = setInterval(function() {
+    myIntv4 = setInterval(function() {
         animatecurve2arrow(4);
     }, 500);
+    setTimeout(function() {
+        clearInterval(myIntv1);
+        clearInterval(myIntv2);
+        clearInterval(myIntv3);
+        clearInterval(myIntv4);
 
+        document.getElementById("curve_arrow1_1").style.visibility = "hidden";
+        document.getElementById("curve_arrow1_2").style.visibility = "hidden";
+        document.getElementById("curve_arrow1_3").style.visibility = "hidden";
+        document.getElementById("curve_arrow1_4").style.visibility = "hidden";
+    }, 500);
 }
 
 function moveTopView() {
