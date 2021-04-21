@@ -529,8 +529,8 @@ html {
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        left: 260px;
-        top: 300px;
+        left: 248px;
+        top: 310px;
         /* height: 20px;
         width: 10px; */
         transform: rotate(180deg);
@@ -807,13 +807,14 @@ html {
     0% {
         opacity: 1;
     }
-    50%  {
+    50% {
         opacity: 0.5;
     }
     100% {
         opacity: 0;
     }
 }
+
 .solderShow {
     /* transform: translate(0,350px); */
     animation: solder2 2s;
@@ -824,13 +825,14 @@ html {
     0% {
         opacity: 0;
     }
-    50%  {
+    50% {
         opacity: 0.5;
     }
     100% {
         opacity: 1;
     }
 }
+
 .solderAfterShow {
     /* transform: translate(0,350px); */
     animation: solderafter 2s;
@@ -841,13 +843,14 @@ html {
     0% {
         opacity: 0;
     }
-    50%  {
+    50% {
         opacity: 0.5;
     }
     100% {
         opacity: 1;
     }
 }
+
 .showMotorNumbers {
     /* transform: translate(0,350px); */
     animation: motorN 2s;
@@ -858,13 +861,15 @@ html {
     0% {
         opacity: 0;
     }
-    50%  {
+    50% {
         opacity: 0.5;
     }
     100% {
         opacity: 1;
     }
 }
+
+
 /* 
 .rotate_curve_arrow {
     animation: rotate_arrow 2s 3 linear;
