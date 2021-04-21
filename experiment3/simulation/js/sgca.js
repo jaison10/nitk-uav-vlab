@@ -1242,13 +1242,13 @@ function propInfo() {
     setTimeout(function() {
         setTimeout(function() {
             document.getElementById("placeMotorInfo").innerText = "Based on what we have learnt so far, choose the appropriate Propeller for the first motor.";
-
+            document.getElementById('prop3').style.visibility = "visible";
+            document.getElementById('prop3_1').style.visibility = "visible";
         }, 1000);
         // document.getElementById("placeMotorInfo").style.visibility = "hidden";
         // document.getElementById('prop1').style.visibility = "visible";
         // document.getElementById('prop2').style.visibility = "visible";
-        document.getElementById('prop3').style.visibility = "visible";
-        document.getElementById('prop3_1').style.visibility = "visible";
+
         document.getElementById('prop3').onclick = function() {
             placeProp(3);
             document.getElementById('prop3_1').style.visibility = "hidden";
@@ -1320,7 +1320,7 @@ function placeProp(id) {
                 document.getElementById('prop2').onclick = function() { placeProp(2) };
                 document.getElementById('prop3').onclick = function() { placeProp(3) };
                 document.getElementById('prop4').onclick = function() { placeProp(4) };
-            }, 1500);
+            }, 2000);
 
         }, 1500);
 
@@ -1342,31 +1342,36 @@ function rotationInfoDone() {
     document.getElementById("knob2").style.visibility = "visible";
     document.getElementById("knob3").style.visibility = "visible";
     document.getElementById("knob4").style.visibility = "visible";
-    document.getElementById("knob1").style.top = "286px";
-    document.getElementById("knob2").style.top = "298.5px";
-    document.getElementById("knob3").style.top = "131px";
-    document.getElementById("knob4").style.top = "128px";
-    document.getElementById("knob1").style.transition = "top 2s ease-in-out";
-    document.getElementById("knob2").style.transition = "top 2s ease-in-out";
-    document.getElementById("knob3").style.transition = "top 2s ease-in-out";
-    document.getElementById("knob4").style.transition = "top 2s ease-in-out";
+    setTimeout(function() {
+        document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        document.getElementById("knob1").style.top = "286px";
+        document.getElementById("knob2").style.top = "298.5px";
+        document.getElementById("knob3").style.top = "131px";
+        document.getElementById("knob4").style.top = "128px";
+        document.getElementById("knob1").style.transition = "top 2s ease-in-out";
+        document.getElementById("knob2").style.transition = "top 2s ease-in-out";
+        document.getElementById("knob3").style.transition = "top 2s ease-in-out";
+        document.getElementById("knob4").style.transition = "top 2s ease-in-out";
 
-    document.getElementById("curve_arrow1_1").style.visibility = "visible";
-    document.getElementById("curve_arrow1_2").style.visibility = "visible";
-    document.getElementById("curve_arrow1_3").style.visibility = "visible";
-    document.getElementById("curve_arrow1_4").style.visibility = "visible";
-    myIntv1 = setInterval(function() {
-        animatecurve2arrow(1);
-    }, 500);
-    myIntv2 = setInterval(function() {
-        animatecurve2arrow(2);
-    }, 500);
-    myIntv3 = setInterval(function() {
-        animatecurve2arrow(3);
-    }, 500);
-    myIntv4 = setInterval(function() {
-        animatecurve2arrow(4);
-    }, 500);
+        document.getElementById("curve_arrow1_1").style.visibility = "visible";
+        document.getElementById("curve_arrow1_2").style.visibility = "visible";
+        document.getElementById("curve_arrow1_3").style.visibility = "visible";
+        document.getElementById("curve_arrow1_4").style.visibility = "visible";
+        myIntv1 = setInterval(function() {
+            animatecurve2arrow(1);
+        }, 500);
+        myIntv2 = setInterval(function() {
+            animatecurve2arrow(2);
+        }, 500);
+        myIntv3 = setInterval(function() {
+            animatecurve2arrow(3);
+        }, 500);
+        myIntv4 = setInterval(function() {
+            animatecurve2arrow(4);
+        }, 500);
+
+    }, 2000);
+
     setTimeout(function() {
         clearInterval(myIntv1);
         clearInterval(myIntv2);
@@ -2131,7 +2136,7 @@ function placeBatteryToPcb() {
             document.getElementById("arrow1").style.transform = "rotate(270deg)";
             document.getElementById("move_isometric").style.visibility = "visible";
 
-        }, 3000);
+        }, 6000);
     }, 9000);
 }
 
