@@ -170,7 +170,7 @@
             <img id="armsAndTop" class="" style="visibility: hidden; position: absolute; left: 100px; top: 150px; height: 300px; width: 500px; visibility: hidden; transform:rotate(4deg);z-index: 100;" src="./Images/assembled/frame_mounted.png">
             <!-- ALL MOTORS ARE PLACED -->
             <!-- <img id="allMotors" class="" style="cursor: pointer; position: absolute; left: 107px; top: 123px; height: 250px; width:490px; visibility: block; transform:rotate(3deg); z-index: 100;" src="./Images/assembly_parts/Motor_all.png"> -->
-            <p id="placeMotorInfo" style="visibility: hidden;  position: absolute; left: 120px; top: 50px;">Let us place the motors now!</p>
+            <p id="placeMotorInfo" style="visibility: hidden;  position: absolute; left: 90px; top: 50px;">Let us place the motors now!</p>
             <img id="motor1" onclick="placeMotor(1,'255px');" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 100px; top: 250px; height: 50px; width:80px; visibility: block; transform:rotate(3deg); z-index: 250;opacity: 1;" src="./Images/assembly_parts/Motor_1.png">
             <img id="motor2" onclick="placeMotor(2,'265px');" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 510px; top: 260px; height: 50px; width:80px; visibility: block; transform:rotate(3deg); z-index: 250;opacity: 1;" src="./Images/assembly_parts/Motor_2.png">
             <img id="motor3" onclick="placeMotor(3,'75px');" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 150px; top: 70px; height: 65px; width:100px; visibility: block; transform:rotate(3deg); z-index: 250;opacity: 1;" src="./Images/assembly_parts/Motor_4.png">
@@ -469,6 +469,11 @@
             <img id="prop4" style="position: absolute; visibility: hidden; top: 55px; left: 112px; height: 60px; width: 130px; z-index: 570;cursor: pointer;" src="./Images/Prop3.png" alt="Propeller">
             <!-- position: absolute; visibility: visible; top: 55px; left: 112px; height: 60px; width: 130px; z-index: 570; -->
             <p id="choose_info" style="position: absolute; visibility: visible; top:165px; left: 490px;  z-index: 570; color: red;"></p>
+            <div id="rotation_note" style="position: absolute; visibility: hidden; top: 360px; left: 172px; height: 110px;padding:10px; width: 315px; border: 1px solid black; border-radius: 15px;">
+                <p>The diagonal motors should rotate in the same direction. For example, If Motor 1 has clockwise rotation, then 3 also has clockwise rotation. Similarly,Motor 2 and 4 has anticlockwise rotation. </p>
+                <button style="position: absolute;top: 102px; left: 278px;  color: rgb(255, 255, 255); background-color: black; border-radius: 5px; cursor: pointer;" onclick="rotationInfoDone();">Ok</button>
+
+            </div>
 
             <div id="prop_note" style="position: absolute;visibility: hidden;top: 350px;left: 179px;height: 175px;width: 315px;border: 1px solid black;border-radius: 15px;">
                 <img id="demo_motor1" src="./Images/Motor_1.png" style="  position: absolute; left: 20px; top: 20px; height: 55px; width:90px;  transform:rotate(3deg); z-index: 100;" alt="Motor">
@@ -489,7 +494,17 @@
                 <img id="curve_arrow1" class="" src="./Images/curve_arrow_3d-removebg-preview.png" alt="Curved arrow" style="position: absolute;  top: 85px; left: 35px; height: 30px; width: 30px;z-index:570;">
 
             </div>
+            <!--------------- Knobs -->
+            <img id="knob1" src="./Images/Nut_single.png" style="visibility: hidden;position: absolute;top: 100px;left: 100px;height: 70px;width: 100px;z-index: 580;" alt="Knob">
+            <img id="knob2" src="./Images/Nut_single.png" style="visibility: hidden;position: absolute;top: 100px;left: 100px;height: 70px;width: 100px;z-index: 580;" alt="Knob">
+            <img id="knob3" src="./Images/Nut_single.png" style="visibility: hidden;position: absolute;top: 100px;left: 100px;height: 70px;width: 100px;z-index: 580;" alt="Knob">
+            <img id="knob4" src="./Images/Nut_single.png" style="visibility: hidden;position: absolute;top: 100px;left: 100px;height: 70px;width: 100px;z-index: 580;" alt="Knob">
 
+            <!--------------- curve arrows to show rotate of placing the knob  -->
+            <img id="curve_arrow1_1" class="" src="./Images/curve_arrow_3d-removebg-preview.png" alt="Curved arrow" style="visibility:hidden;position: absolute;  top: 85px; left: 35px; height: 30px; width: 30px;z-index:570;">
+            <img id="curve_arrow1_2" class="" src="./Images/curve_arrow_3d-removebg-preview.png" alt="Curved arrow" style="visibility:hidden;position: absolute;  top: 85px; left: 35px; height: 30px; width: 30px;z-index:570;">
+            <img id="curve_arrow1_3" class="" src="./Images/curve_arrow_3d-removebg-preview.png" alt="Curved arrow" style="visibility:hidden;position: absolute;  top: 85px; left: 35px; height: 30px; width: 30px;z-index:570;">
+            <img id="curve_arrow1_4" class="" src="./Images/curve_arrow_3d-removebg-preview.png" alt="Curved arrow" style="visibility:hidden;position: absolute;  top: 85px; left: 35px; height: 30px; width: 30px;z-index:570;">
 
             <p id="frame-info" style="position: absolute; top: 450px; visibility: hidden; "> The upper layer of the frame is attached to four arms which are used to hold the motors.</p>
             <img id="arr-air" style="visibility: hidden; top: 40%; right: 70%; height: 20%; width:5%; position: absolute;" src="./Images/uav/arrow-aerofoil.png">

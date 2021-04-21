@@ -91,6 +91,15 @@ function animatecurvearrow() {
 
 }
 
+function animatecurve2arrow(id) {
+
+    if (document.getElementById('curve_arrow1_' + id).style.visibility == "hidden")
+        document.getElementById('curve_arrow1_' + id).style.visibility = "visible";
+    else
+        document.getElementById('curve_arrow1_' + id).style.visibility = "hidden";
+
+}
+
 function animatecurve1arrow() {
 
     if (document.getElementById('curve_arrow1').style.visibility == "hidden")
@@ -1232,10 +1241,10 @@ function propInfo() {
 
     setTimeout(function() {
         setTimeout(function() {
-            document.getElementById("placeMotorInfo").innerText = "Based on what we have learnt so far, choose the appropriate Propeller.";
+            document.getElementById("placeMotorInfo").innerText = "Based on what we have learnt so far, choose the appropriate Propeller for the first motor.";
 
         }, 1000);
-        document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        // document.getElementById("placeMotorInfo").style.visibility = "hidden";
         // document.getElementById('prop1').style.visibility = "visible";
         // document.getElementById('prop2').style.visibility = "visible";
         document.getElementById('prop3').style.visibility = "visible";
@@ -1256,17 +1265,17 @@ function propInfo() {
         // document.getElementById('prop4').onclick = function() { placeProp(4) };
 
 
-        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 500px; top: 85px; height: 30px; z-index: 10;";
+        // document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 500px; top: 85px; height: 30px; z-index: 10;";
 
-        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
-        // Code for IE9
-        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
-        // Standard syntax
-        document.getElementById("arrow1").style.transform = "rotate(270deg)";
+        // document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+        // // Code for IE9
+        // document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+        // // Standard syntax
+        // document.getElementById("arrow1").style.transform = "rotate(270deg)";
 
-        myInt = setInterval(function() {
-            animatearrow();
-        }, 500);
+        // myInt = setInterval(function() {
+        //     animatearrow();
+        // }, 500);
         document.getElementById('move_isometric').style.visibility = "hidden";
     }, 5000);
 }
@@ -1282,10 +1291,13 @@ function placeProp3() {
 
 function placeProp(id) {
     myStopFunction();
+
+
     document.getElementById('move_isometric').style.visibility = "hidden";
     document.getElementById('prop' + id).style.visibility = "visible";
     if (id == 1) {
         document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 267px; left: 41px; height: 80px; width: 180px; z-index: 570;transition:all 1s ease-in-out;";
+        document.getElementById('rotation_note').style.visibility = "visible";
     }
     if (id == 2) {
         document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 277px; left: 472px; height: 80px; width: 180px; z-index: 570; transition:all 1s ease-in-out;";
@@ -1295,10 +1307,57 @@ function placeProp(id) {
         document.getElementById('choose_info').innerText = "Correct Choice!";
         document.getElementById('choose_info').style.color = "#32CD32";
         document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 114px; left: 396px; height: 60px; width: 130px; z-index: 570;transition:all 1s ease-in-out;";
+        setTimeout(function() {
+            document.getElementById('choose_info').style.visibility = "hidden";
+            document.getElementById("placeMotorInfo").innerText = "Click on the rest of the Propellers to place them accordingly.";
+            setTimeout(function() {
+                document.getElementById("placeMotorInfo").style.visibility = "hidden";
+                document.getElementById('prop1').style.visibility = "visible";
+                document.getElementById('prop2').style.visibility = "visible";
+                document.getElementById('prop3').style.visibility = "visible";
+                document.getElementById('prop4').style.visibility = "visible";
+                document.getElementById('prop1').onclick = function() { placeProp(1) };
+                document.getElementById('prop2').onclick = function() { placeProp(2) };
+                document.getElementById('prop3').onclick = function() { placeProp(3) };
+                document.getElementById('prop4').onclick = function() { placeProp(4) };
+            }, 1500);
+
+        }, 1500);
+
+
     }
     if (id == 4) {
         document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 112px; left: 112px; height: 60px; width: 130px; z-index: 570;transition:all 1s ease-in-out; ";
+        document.getElementById('rotation_note').style.visibility = "visible";
+
     }
+
+}
+
+function rotationInfoDone() {
+    document.getElementById('rotation_note').style.visibility = "hidden";
+    document.getElementById("placeMotorInfo").style.visibility = "visible";
+    document.getElementById("placeMotorInfo").innerText = "Place the knobs on the Propellers.";
+    document.getElementById("knob1").style.visibility = "visible";
+    document.getElementById("knob2").style.visibility = "visible";
+    document.getElementById("knob3").style.visibility = "visible";
+    document.getElementById("knob4").style.visibility = "visible";
+    document.getElementById("curve_arrow1_1").style.visibility = "visible";
+    document.getElementById("curve_arrow1_2").style.visibility = "visible";
+    document.getElementById("curve_arrow1_3").style.visibility = "visible";
+    document.getElementById("curve_arrow1_4").style.visibility = "visible";
+    myIntv = setInterval(function() {
+        animatecurve2arrow(1);
+    }, 500);
+    myIntv = setInterval(function() {
+        animatecurve2arrow(2);
+    }, 500);
+    myIntv = setInterval(function() {
+        animatecurve2arrow(3);
+    }, 500);
+    myIntv = setInterval(function() {
+        animatecurve2arrow(4);
+    }, 500);
 
 }
 
