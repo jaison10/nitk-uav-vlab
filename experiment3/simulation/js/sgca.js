@@ -1006,15 +1006,15 @@ function connectEscFc(id) {
         document.getElementById("signalNoteInner").style.top = "-1px";
         document.getElementById("signalCloseButton").style.visibility = "visible";
         document.getElementById('signal_note').style.height = "135px";
-        for(let z =1; z<5;z++){
-            document.getElementById("rotationDir"+z).style.visibility = "visible";
+        for (let z = 1; z < 5; z++) {
+            document.getElementById("rotationDir" + z).style.visibility = "visible";
         }
     }
 }
 
-function doneShowingRotationInfo(){
-    for(let z =1; z<5;z++){
-        document.getElementById("rotationDir"+z).style.visibility = "hidden";
+function doneShowingRotationInfo() {
+    for (let z = 1; z < 5; z++) {
+        document.getElementById("rotationDir" + z).style.visibility = "hidden";
     }
     document.getElementById('signal_note').style.visibility = "hidden";
     document.getElementById("signalCloseButton").style.visibility = "hidden";
@@ -1023,7 +1023,7 @@ function doneShowingRotationInfo(){
     document.getElementById("info-about-Rec-signal").style.visibility = "visible";
 }
 
-function revSignalInfoShown(){
+function revSignalInfoShown() {
     document.getElementById("arrow-rec-signal").style.visibility = "hidden";
     document.getElementById("info-about-Rec-signal").style.visibility = "hidden";
     document.getElementById("placeMotorInfo").innerText = "Click on the receiver wire to connect the Receiver to the Flight Controller.";
@@ -1041,6 +1041,7 @@ function revSignalInfoShown(){
         animatearrow();
     }, 500);
 }
+
 function RecToFc() {
     myStopFunction();
     document.getElementById('rec_wire_uc').style.visibility = "hidden";
@@ -1911,6 +1912,17 @@ function solderAllWires() {
         setTimeout(function() {
             document.getElementById('lead_smoke7').style.visibility = "hidden";
             document.getElementById("batteryToPcb").style.visibility = "visible";
+            document.getElementById('arrow1').style = "visibility: hidden; position: absolute; left: 710px; top: 105px; height: 30px; z-index: 10; ";
+            // document.getElementById("solder_wires").style.visibility = "visible";
+
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(0deg)";
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
             document.getElementById("placeMotorInfo").style.visibility = "visible";
             document.getElementById("placeMotorInfo").innerText = "Click on the Battery to PCB connector to place it.";
         }, 1000);
