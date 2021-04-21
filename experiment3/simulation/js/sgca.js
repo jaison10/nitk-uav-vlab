@@ -1377,7 +1377,7 @@ function rotationInfoDone() {
         document.getElementById("curve_arrow1_2").style.visibility = "hidden";
         document.getElementById("curve_arrow1_3").style.visibility = "hidden";
         document.getElementById("curve_arrow1_4").style.visibility = "hidden";
-    }, 500);
+    }, 5000);
 }
 
 function moveTopView() {
