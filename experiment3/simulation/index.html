@@ -363,9 +363,24 @@
             </div>
             <!-- Info about clicking on the signal wire. -->
             <div id="signal_note" style="position: absolute;visibility: hidden;top: 100px;left: 495px;height: 115px;width: 215px;border: 1px solid black;border-radius: 15px;">
-                <span style="position: absolute;top: 5px;left: 7px;height:65px;width:180px;padding:10px;">As we know that this is the first motor, 
+                <span id="signalNoteInner" style="position: absolute;top: 5px;left: 7px;height:65px;width:190px;padding:10px;">As we know that this is the first motor, 
                     click on the first signal wire to connect to the first pin of output of FC. </span>
-                <button style="position: absolute;top: 140px; left: 270px;  color: rgb(255, 255, 255); background-color: black; border-radius: 5px; cursor: pointer;" onclick="fcInfoDone();">Ok</button>
+                <button id="signalCloseButton" style="visibility: hidden; position: absolute;  top: 110px; left: 170px; color: rgb(255, 255, 255); background-color: black; border-radius: 5px; cursor: pointer;" onclick="doneShowingRotationInfo();">Ok</button>
+            </div>
+
+            <!-- Motor direction indication. -->
+            <img id="rotationDir1" style="visibility: hidden; position: absolute; height: 25px; width: 40px; left: 440px; top: 123px; z-index:460;" src="./Images/arr-clockwise.png">
+            <img id="rotationDir2" style="visibility: hidden; position: absolute; height: 35px; width: 60px; left: 535px; top: 295px; z-index:200;" src="./Images/arr-removebg-preview.png">
+            <img id="rotationDir3" style="visibility: hidden; position: absolute; height: 35px; width: 60px; left: 100px; top: 273px; z-index:200;" src="./Images/arr-clockwise.png">
+            <img id="rotationDir4" style="visibility: hidden; position: absolute; height: 25px; width: 40px; left: 158px; top: 125px; z-index:460;" src="./Images/arr-removebg-preview.png">
+            
+            <!-- Info about the signal wire -->
+            <img id="arrow-rec-signal" style="visibility:hidden ;position: absolute;top: 320px; left: 315px; height: 50px; width: 70px; transform: rotate(160deg);z-index:200;" src="./Images/arrow_slim.png" alt="Info">
+            <div id="info-about-Rec-signal" style="position: absolute; visibility: hidden; border-style: solid; border-width: thin; width: 360px; height: 100px; top: 380px; left:160px; border-radius: 6px;">
+                <img src="./Images/receiver wire unconnected.png" style="position: absolute; width: 100px; height: 50px; top: 20px; left: 3px; border-radius: 6px; border-style: solid; border-width: thin; ">
+                <span style="position: absolute; width: 250px; height: 50px; top: 10px; left: 115px;"> This is Receiver to FC signal line through which the information 
+                from transmitter will be received and transferred to the FC.</span>
+                <button style="position: absolute;  top: 70px; left: 320px; color: rgb(255, 255, 255); background-color: black; border-radius: 5px; cursor: pointer;" onclick="revSignalInfoShown();">Ok</button>
             </div>
 
             <!-- Base Layer -->

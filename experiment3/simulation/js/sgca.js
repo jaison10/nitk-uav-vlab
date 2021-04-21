@@ -988,7 +988,7 @@ function connectEscFc(id) {
     }
     document.getElementById('esc_signal' + id).style.visibility = "hidden";
     if (fcConnected == 1) {
-        document.getElementById('signal_note').innerText = "Now follow the order and connect to the curresponding pins."
+        document.getElementById('signalNoteInner').innerText = "Now follow the order and connect to the curresponding pins."
         for (let i = 2; i < 5; i++) {
             document.getElementById("motorNumber" + i).style.visibility = "visible";
             document.getElementById("motorNumber" + i).classList.add("showMotorNumbers");
@@ -1001,29 +1001,46 @@ function connectEscFc(id) {
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
         document.getElementById('fc_top_connection').style.visibility = "hidden";
         document.getElementById('fcZoomSignalCon').style.visibility = "hidden";
-        document.getElementById('signal_note').style.visibility = "hidden";
-        setTimeout(function() {
-            document.getElementById("placeMotorInfo").innerText = "Click on the receiver wire to connect the Receiver to the Flight Controller.";
-            document.getElementById("placeMotorInfo").style.visibility = "visible";
-            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 390px; top: 332px; height: 30px; z-index: 10;;";
-            document.getElementById('rec_wire_uc').onclick = function() { RecToFc(); };
-            document.getElementById('rec_wire_uc').style.cursor = "pointer";
-            document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
-            //         // Code for IE9
-            document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
-            //         // Standard syntax
-            document.getElementById("arrow1").style.transform = "rotate(180deg)";
-
-            myInt = setInterval(function() {
-                animatearrow();
-            }, 500);
-        }, 2000);
-
+        // document.getElementById('signal_note').style.visibility = "hidden";
+        document.getElementById('signalNoteInner').innerText = "Based on CC3D firmware's default configuration, motor 1 and 3 will be rotating clockwise and motor 2 and 4 will be counter clockwise.."
+        document.getElementById("signalNoteInner").style.top = "-1px";
+        document.getElementById("signalCloseButton").style.visibility = "visible";
+        document.getElementById('signal_note').style.height = "135px";
+        for(let z =1; z<5;z++){
+            document.getElementById("rotationDir"+z).style.visibility = "visible";
+        }
     }
-
-
 }
 
+function doneShowingRotationInfo(){
+    for(let z =1; z<5;z++){
+        document.getElementById("rotationDir"+z).style.visibility = "hidden";
+    }
+    document.getElementById('signal_note').style.visibility = "hidden";
+    document.getElementById("signalCloseButton").style.visibility = "hidden";
+
+    document.getElementById("arrow-rec-signal").style.visibility = "visible";
+    document.getElementById("info-about-Rec-signal").style.visibility = "visible";
+}
+
+function revSignalInfoShown(){
+    document.getElementById("arrow-rec-signal").style.visibility = "hidden";
+    document.getElementById("info-about-Rec-signal").style.visibility = "hidden";
+    document.getElementById("placeMotorInfo").innerText = "Click on the receiver wire to connect the Receiver to the Flight Controller.";
+    document.getElementById("placeMotorInfo").style.visibility = "visible";
+    document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 390px; top: 332px; height: 30px; z-index: 10;;";
+    document.getElementById('rec_wire_uc').onclick = function() { RecToFc(); };
+    document.getElementById('rec_wire_uc').style.cursor = "pointer";
+    document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
+    //         // Code for IE9
+    document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
+    //         // Standard syntax
+    document.getElementById("arrow1").style.transform = "rotate(180deg)";
+
+    myInt = setInterval(function() {
+        animatearrow();
+    }, 500);
+}
 function RecToFc() {
     myStopFunction();
     document.getElementById('rec_wire_uc').style.visibility = "hidden";
