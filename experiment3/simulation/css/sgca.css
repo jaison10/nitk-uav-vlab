@@ -848,6 +848,23 @@ html {
         opacity: 1;
     }
 }
+.showMotorNumbers {
+    /* transform: translate(0,350px); */
+    animation: motorN 2s;
+    /* transition: all 10s ease-in-out; */
+}
+
+@keyframes motorN {
+    0% {
+        opacity: 0;
+    }
+    50%  {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 /* 
 .rotate_curve_arrow {
     animation: rotate_arrow 2s 3 linear;
