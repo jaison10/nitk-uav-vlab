@@ -1933,6 +1933,7 @@ function solderAllWires() {
 
 function moveIsometricView() {
     document.getElementById('move_isometric').style.visibility = "hidden";
+
     document.getElementById('batteryToPcb').onclick = "";
 
     myStopFunction();
@@ -2034,7 +2035,9 @@ function moveIsometricView() {
             document.getElementById('esc_wire' + i).style.opacity = 1;
             document.getElementById('esc_wire' + i).style.transition = "all 8s ease-in-out";
 
-
+            document.getElementById('esc_power' + i).style.visibility = "visible";
+            document.getElementById('esc_power' + i).style.opacity = 1;
+            document.getElementById('esc_power' + i).style.transition = "all 8s ease-in-out";
 
 
 
