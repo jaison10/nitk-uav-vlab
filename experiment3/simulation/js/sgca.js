@@ -2112,6 +2112,7 @@ function moveIsometricView() {
 }
 
 function placeBatteryToPcb() {
+    myStopFunction();
     document.getElementById("move_isometric").style.visibility = "hidden";
     document.getElementById('batteryToPcb').onclick = "";
     document.getElementById("batteryToPcb").style.top = "250px";
