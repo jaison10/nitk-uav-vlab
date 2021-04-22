@@ -828,6 +828,7 @@ function connectEscMotor(n) {
     document.getElementById("esc_arm" + n).onclick = "";
 
     if (n == 1) {
+        myStopFunction();
         document.getElementById("placedMotor" + n).style.visibility = "hidden";
         document.getElementById("esc_arm_placed" + n).style.visibility = "hidden";
         connectionsDone++;
@@ -838,6 +839,17 @@ function connectEscMotor(n) {
         document.getElementById('esc_wire1').style.left = "229px";
         document.getElementById('esc_signal1').style.top = "269px";
         document.getElementById('esc_signal1').style.left = "230px";
+        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 545px; top: 340px; height: 30px; width: 30px; z-index: 100; ";
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(270deg)";
+
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
+
 
         // document.getElementById('esc_wire1').style.top= "263px;";
         // document.getElementById('esc_wire1').style.left= "237px";
@@ -858,6 +870,7 @@ function connectEscMotor(n) {
         }
     }
     if (n == 2) {
+        myStopFunction();
         document.getElementById("placedMotor" + n).style.visibility = "hidden";
         document.getElementById("esc_arm_placed" + n).style.visibility = "hidden";
         document.getElementById("esc_arm" + n).style.visibility = "hidden";
@@ -880,8 +893,19 @@ function connectEscMotor(n) {
                 document.getElementById('info-about-signal').style.visibility = "visible";
             }, 1000);
         }
+        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 460px; top: 195px; height: 30px; width: 30px; z-index: 100;";
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(270deg)";
+
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
     }
     if (n == 3) {
+        myStopFunction();
         document.getElementById("placedMotor4").style.visibility = "hidden";
         document.getElementById("esc_arm_placed3").style.visibility = "hidden";
         document.getElementById("esc_arm3").style.visibility = "hidden";
@@ -905,11 +929,21 @@ function connectEscMotor(n) {
             setTimeout(function() {
                 document.getElementById('arrow-fc-signal').style.visibility = "visible";
                 document.getElementById('info-about-signal').style.visibility = "visible";
-            }, 1000);
+            }, 2000);
         }
+        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 260px; top: 195px; height: 30px; width: 30px; z-index: 100; ";
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(270deg)";
 
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
     }
     if (n == 4) {
+        myStopFunction();
         document.getElementById("placedMotor3").style.visibility = "hidden";
         document.getElementById("esc_arm_placed4").style.visibility = "hidden";
         document.getElementById("esc_arm4").style.visibility = "hidden";
@@ -918,7 +952,16 @@ function connectEscMotor(n) {
         document.getElementById('esc_wire4').style.left = "276px";
         document.getElementById('esc_signal4').style.top = "205px";
         document.getElementById('esc_signal4').style.left = "272px";
+        // document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left:215px; top: 330px; height: 30px;width:30px; z-index: 100;";
+        // document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+        // // Code for IE9
+        // document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+        // // Standard syntax
+        // document.getElementById("arrow1").style.transform = "rotate(270deg)";
 
+        // myInt = setInterval(function() {
+        //     animatearrow();
+        // }, 500);
         connectionsDone++;
 
         // document.getElementById("esc_motor_connected4").style.opacity = 1;
