@@ -693,13 +693,8 @@ function placeReceiver() {
     setTimeout(() => {
         document.getElementById("receiver").style.visibility = "hidden";
         document.getElementById("placedReceiver").style.visibility = "visible";
-<<<<<<< HEAD
         // document.getElementById("rec_wire_uc").style.visibility = "visible";
 
-=======
-        document.getElementById("rec_wire_uc").style.visibility = "visible";
-        // document.getElementById("esc_signal1").style.zIndex = 180;
->>>>>>> b6462c34424d8e7371529db1ea99c56a50548c1c
         setTimeout(function() {
             document.getElementById("placeMotorInfo").innerText = "Let us now place the Electronic Speed Controllers (ESC) on the arms of the frame.";
             document.getElementById("placeMotorInfo").style.visibility = "visible";
