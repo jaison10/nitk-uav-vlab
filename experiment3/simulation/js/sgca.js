@@ -1778,11 +1778,7 @@ function solderAllWires() {
         document.getElementById("solder_lead").style.height = "90px";
         document.getElementById("solder_lead").style.width = "104px";
         document.getElementById("solder_lead").style.zIndex = "650";
-<<<<<<< HEAD
-        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
-=======
         document.getElementById("solder_lead").style.transition = "all 1s ease-in-out";
->>>>>>> b6462c34424d8e7371529db1ea99c56a50548c1c
     }, 5000);
 
     setTimeout(() => {
@@ -1864,11 +1860,7 @@ function solderAllWires() {
         document.getElementById("solder_lead").style.height = "90px";
         document.getElementById("solder_lead").style.width = "104px";
         document.getElementById("solder_lead").style.zIndex = "650";
-<<<<<<< HEAD
-        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
-=======
         document.getElementById("solder_lead").style.transition = "all 1s ease-in-out";
->>>>>>> b6462c34424d8e7371529db1ea99c56a50548c1c
     }, 15000);
 
     setTimeout(() => {
@@ -1951,11 +1943,7 @@ function solderAllWires() {
         document.getElementById("solder_lead").style.height = "90px";
         document.getElementById("solder_lead").style.width = "104px";
         document.getElementById("solder_lead").style.zIndex = "650";
-<<<<<<< HEAD
-        document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
-=======
         document.getElementById("solder_lead").style.transition = "all 1s ease-in-out";
->>>>>>> b6462c34424d8e7371529db1ea99c56a50548c1c
     }, 25000);
 
     setTimeout(() => {
@@ -2240,13 +2228,9 @@ function placeBatteryToPcb() {
             document.getElementById("solder_hand").style.left = "225px";
             document.getElementById("solder_hand").style.zIndex = 780;
             document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
-<<<<<<< HEAD
-
-=======
             document.getElementById("lead_smoke9").style.visibility = "hidden";
 
             // visibility: visible; position: absolute; top: 260px; left: 345px; height: 90px; width: 104px; z-index: 750; transition: all 2s ease-in-out 0s;
->>>>>>> b6462c34424d8e7371529db1ea99c56a50548c1c
         }, 4000);
         setTimeout(() => {
             // soldering the second wire
@@ -2256,16 +2240,12 @@ function placeBatteryToPcb() {
             document.getElementById("solder_lead").style.top = "268px";
             document.getElementById("solder_lead").style.left = "341px";
             document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
-<<<<<<< HEAD
-
-=======
             document.getElementById("lead_smoke10").style.visibility = "visible";
             setTimeout(() => {
                 document.getElementById("lead_smoke10").style.visibility = "hidden";
 
             }, 1000);
             // visibility: visible; position: absolute; top: 266px; left: 342px; height: 90px; width: 104px; z-index: 750; transition: all 2s ease-in-out 0s;
->>>>>>> b6462c34424d8e7371529db1ea99c56a50548c1c
             document.getElementById("solder_lead").style.visibility = "hidden";
             document.getElementById("solder_hand").style.visibility = "hidden";
         }, 6000);
