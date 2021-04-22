@@ -999,7 +999,7 @@ function connectEscFc(id) {
         document.getElementById('fc_top_connection').style.visibility = "hidden";
         document.getElementById('fcZoomSignalCon').style.visibility = "hidden";
         // document.getElementById('signal_note').style.visibility = "hidden";
-        document.getElementById('signalNoteInner').innerText = "Based on CC3D firmware's default configuration, motor 1 and 3 will be rotating clockwise and motor 2 and 4 will be counter clockwise.."
+        document.getElementById('signalNoteInner').innerText = "Based on CC3D firmware's default configuration, motor 1 and 3 will be rotating clockwise and motor 2 and 4 will be counter clockwise."
         document.getElementById("signalNoteInner").style.top = "-1px";
         document.getElementById("signalCloseButton").style.visibility = "visible";
         document.getElementById('signal_note').style.height = "135px";
