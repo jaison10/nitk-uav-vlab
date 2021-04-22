@@ -412,9 +412,9 @@ function place_apparatus(apparatus_id, top_px) {
         document.getElementById('receiver1').style.top = "360px";
         document.getElementById('receiver1').style.transition = "top 1s ease-in-out";
 
-        document.getElementById('receiverWire').style.visibility = "visible";
-        document.getElementById('receiverWire').style.top = "380px";
-        document.getElementById('receiverWire').style.transition = "top 1s ease-in-out";
+        // document.getElementById('receiverWire').style.visibility = "visible";
+        // document.getElementById('receiverWire').style.top = "380px";
+        // document.getElementById('receiverWire').style.transition = "top 1s ease-in-out";
 
         document.getElementById('next').style.visibility = "visible";
 
@@ -693,7 +693,7 @@ function placeReceiver() {
     setTimeout(() => {
         document.getElementById("receiver").style.visibility = "hidden";
         document.getElementById("placedReceiver").style.visibility = "visible";
-        document.getElementById("rec_wire_uc").style.visibility = "visible";
+        // document.getElementById("rec_wire_uc").style.visibility = "visible";
 
         setTimeout(function() {
             document.getElementById("placeMotorInfo").innerText = "Let us now place the Electronic Speed Controllers (ESC) on the arms of the frame.";
@@ -953,7 +953,7 @@ function fcSignalInfoShown() {
     document.getElementById("placeMotorInfo").innerText = "Click on the signal wire of the ESC to connect the ESCs to the Flight Controller.";
     document.getElementById("placeMotorInfo").style.visibility = "visible";
 
-    document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 420px; top: 210px; height: 30px; width: 30px; z-index: 150; ";
+    document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 420px; top: 300px; height: 30px; width: 30px; z-index: 150; ";
 
     document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
     // Code for IE9
@@ -975,16 +975,52 @@ var fcConnected = 0;
 
 function connectEscFc(id) {
     myStopFunction();
+    
     if (id == 3) {
         document.getElementById('esc_fc_connected3_1').style.visibility = "visible";
         document.getElementById('esc_fc_connected3_2').style.visibility = "visible";
+        // FC signal
+        document.getElementById("signaltoFCwire4").style.visibility = "visible";
+        document.getElementById("signaltoFCwire4").classList.add("moveFcSignal4");
+        setTimeout(() => {
+            document.getElementById("signaltoFCwire4").style.visibility = "hidden";
+            document.getElementById("signaltoFCwirePlaced4").style.visibility = "visible";
+        }, 2000);
         fcConnected++;
     } else {
         document.getElementById('esc_fc_connected' + id).style.visibility = "visible";
         fcConnected++;
+        if(id == 2){
+            // Which is of first motor after correction of FC
+            document.getElementById("signaltoFCwire1").style.visibility = "visible";
+            document.getElementById("signaltoFCwire1").classList.add("moveFcSignal1");
+            setTimeout(() => {
+                document.getElementById("signaltoFCwire1").style.visibility = "hidden";
+                document.getElementById("signaltoFCwirePlaced1").style.visibility = "visible";
+            }, 2000);
+        }
+        if(id == 1){
+            // Which is of first motor after correction of FC
+            document.getElementById("signaltoFCwire2").style.visibility = "visible";
+            document.getElementById("signaltoFCwire2").classList.add("moveFcSignal2");
+            setTimeout(() => {
+                document.getElementById("signaltoFCwire2").style.visibility = "hidden";
+                document.getElementById("signaltoFCwirePlaced2").style.visibility = "visible";
+            }, 2000);
+        }
+        if(id == 4){
+            // Which is of first motor after correction of FC
+            document.getElementById("signaltoFCwire3").style.visibility = "visible";
+            document.getElementById("signaltoFCwire3").classList.add("moveFcSignal3");
+            setTimeout(() => {
+                document.getElementById("signaltoFCwire3").style.visibility = "hidden";
+                document.getElementById("signaltoFCwirePlaced3").style.visibility = "visible";
+            }, 2000);
+        }
     }
     document.getElementById('esc_signal' + id).style.visibility = "hidden";
     if (fcConnected == 1) {
+        document.getElementById("signal_note").style.top = "185px";
         document.getElementById('signalNoteInner').innerText = "Now follow the order and connect to the curresponding pins."
         for (let i = 2; i < 5; i++) {
             document.getElementById("motorNumber" + i).style.visibility = "visible";
@@ -995,17 +1031,21 @@ function connectEscFc(id) {
         for (let i = 2; i < 5; i++) {
             document.getElementById("motorNumber" + i).style.visibility = "hidden";
         }
-        document.getElementById("placeMotorInfo").style.visibility = "hidden";
-        document.getElementById('fc_top_connection').style.visibility = "hidden";
-        document.getElementById('fcZoomSignalCon').style.visibility = "hidden";
-        // document.getElementById('signal_note').style.visibility = "hidden";
-        document.getElementById('signalNoteInner').innerText = "Based on CC3D firmware's default configuration, motor 1 and 3 will be rotating clockwise and motor 2 and 4 will be counter clockwise."
-        document.getElementById("signalNoteInner").style.top = "-1px";
-        document.getElementById("signalCloseButton").style.visibility = "visible";
-        document.getElementById('signal_note').style.height = "135px";
-        for(let z =1; z<5;z++){
-            document.getElementById("rotationDir"+z).style.visibility = "visible";
-        }
+        setTimeout(() => {
+            document.getElementById("signaltoFCwirePlaced2").style.visibility = "hidden";
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+            document.getElementById('fc_top_connection').style.visibility = "hidden";
+            document.getElementById('fcZoomSignalCon').style.visibility = "hidden";
+            // document.getElementById('signal_note').style.visibility = "hidden";
+            document.getElementById('signalNoteInner').innerText = "Based on CC3D firmware's default configuration, motor 1 and 3 will be rotating clockwise and motor 2 and 4 will be counter clockwise."
+            document.getElementById("signalNoteInner").style.top = "-1px";
+            document.getElementById("signal_note").style.top = "150px";
+            document.getElementById("signalCloseButton").style.visibility = "visible";
+            document.getElementById('signal_note').style.height = "135px";
+            for(let z =1; z<5;z++){
+                document.getElementById("rotationDir"+z).style.visibility = "visible";
+            }
+        }, 1000);
     }
 }
 
@@ -1016,31 +1056,47 @@ function doneShowingRotationInfo(){
     document.getElementById('signal_note').style.visibility = "hidden";
     document.getElementById("signalCloseButton").style.visibility = "hidden";
 
-    document.getElementById("arrow-rec-signal").style.visibility = "visible";
+    // document.getElementById("arrow-rec-signal").style.visibility = "visible";
     document.getElementById("info-about-Rec-signal").style.visibility = "visible";
+    document.getElementById("sbus_notPlaced").style.visibility = "visible";
 }
-
+// This is where
 function revSignalInfoShown(){
-    document.getElementById("arrow-rec-signal").style.visibility = "hidden";
+    // document.getElementById("arrow-rec-signal").style.visibility = "hidden";
     document.getElementById("info-about-Rec-signal").style.visibility = "hidden";
-    document.getElementById("placeMotorInfo").innerText = "Click on the receiver wire to connect the Receiver to the Flight Controller.";
+    document.getElementById("sbus_notPlaced").style.visibility = "hidden";
+    document.getElementById("placeMotorInfo").innerText = "Click on the SBUS connector to make connection between FC and receiver.";
     document.getElementById("placeMotorInfo").style.visibility = "visible";
-    document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 390px; top: 332px; height: 30px; z-index: 10;;";
-    document.getElementById('rec_wire_uc').onclick = function() { RecToFc(); };
-    document.getElementById('rec_wire_uc').style.cursor = "pointer";
-    document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
-    //         // Code for IE9
-    document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
-    //         // Standard syntax
-    document.getElementById("arrow1").style.transform = "rotate(180deg)";
-
-    myInt = setInterval(function() {
-        animatearrow();
-    }, 500);
+    setTimeout(() => {
+        document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        document.getElementById("sbus_notPlaced").style.visibility = "visible";
+        document.getElementById("sbus_notPlaced").style.left = "350px";
+        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 350px; top: 132px; height: 30px; z-index: 10;;";
+        // document.getElementById('rec_wire_uc').onclick = function() { RecToFc(); };
+        // document.getElementById('rec_wire_uc').style.cursor = "pointer";
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
+        //         // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
+        //         // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(180deg)";
+    
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
+        document.getElementById("fc_topForSBUS_connection").style.visibility = "visible";
+        document.getElementById("fcZoomSbusCon").style.visibility = "visible";
+    }, 1500);
 }
+
+function placeSBUScable(){
+    // Connect sbus to Fc top view as well as isometric.
+    document.getElementById("mainPortConnector").style.visibility = "visible";
+    document.getElementById("mainPortConnector").classList.add("moveMainPortSbus");
+}
+
 function RecToFc() {
     myStopFunction();
-    document.getElementById('rec_wire_uc').style.visibility = "hidden";
+    // document.getElementById('rec_wire_uc').style.visibility = "hidden";
     document.getElementById('rec_wire').style.visibility = "visible";
     setTimeout(function() {
         document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame.";
@@ -2403,7 +2459,7 @@ function mount_frame() {
     document.getElementById('electronic_sc').style.visibility = "hidden";
     document.getElementById('lipo_battery').style.visibility = "hidden";
     document.getElementById('receiver1').style.visibility = "hidden";
-    document.getElementById('receiverWire').style.visibility = "hidden";
+    // document.getElementById('receiverWire').style.visibility = "hidden";
     document.getElementById('transmitter1').style.visibility = "hidden";
 
     //remove apparatus buttons
