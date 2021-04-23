@@ -1455,7 +1455,7 @@ function rotationInfoDone() {
     }, 5000);
 
     setTimeout(function() {
-        document.getElementById("pumptext").innerHTML = "The Assembly of the Quadcoptor is thus complete. Proceed to the next experiment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to understand the Calibration of the Quadcopter. ";
+        document.getElementById("pumptext").innerHTML = "The Assembly of the Quadcoptor is thus complete. Proceed to the next experiment to &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;understand the Calibration of the Quadcopter. ";
 
 
     }, 6000);
@@ -2040,9 +2040,9 @@ function moveIsometricView() {
 
 
         }
-        document.getElementById('batteryToPcb').style.visibility = "visible";
-        document.getElementById('batteryToPcb').style.opacity = 0;
-        document.getElementById('batteryToPcb').style.transition = "all 0.1s ease-in-out";
+        // document.getElementById('batteryToPcb').style.visibility = "visible";
+        // document.getElementById('batteryToPcb').style.opacity = 0;
+        // document.getElementById('batteryToPcb').style.transition = "all 0.1s ease-in-out";
 
         document.getElementById('leadAfter11').style.visibility = "visible";
         document.getElementById('leadAfter11').style.opacity = 1;
