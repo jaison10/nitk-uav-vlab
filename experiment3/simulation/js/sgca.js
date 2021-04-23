@@ -1452,6 +1452,7 @@ function rotationInfoDone() {
     document.getElementById("knob2").style.visibility = "visible";
     document.getElementById("knob3").style.visibility = "visible";
     document.getElementById("knob4").style.visibility = "visible";
+    document.getElementById("hand_knob").style.visibility = "visible";
     setTimeout(function() {
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
         document.getElementById("knob1").style.top = "286px";
