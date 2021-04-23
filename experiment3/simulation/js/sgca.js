@@ -1033,8 +1033,8 @@ function connectEscFc(id) {
             document.getElementById("motorNumber" + i).style.visibility = "hidden";
         }
         setTimeout(() => {
-            for(let i=1;i<5;i++){
-                document.getElementById("signaltoFCwirePlaced"+i).style.visibility = "hidden";
+            for (let i = 1; i < 5; i++) {
+                document.getElementById("signaltoFCwirePlaced" + i).style.visibility = "hidden";
             }
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
             document.getElementById('fc_top_connection').style.visibility = "hidden";
@@ -1092,6 +1092,8 @@ function revSignalInfoShown() {
 }
 
 function placeSBUScable() {
+    myStopFunction();
+
     // Connect sbus to Fc top view as well as isometric.
     document.getElementById("mainPortConnector").style.visibility = "visible";
     document.getElementById("mainPortConnector").classList.add("moveMainPortSbus");
@@ -1099,6 +1101,13 @@ function placeSBUScable() {
         document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         setTimeout(function() {
+            document.getElementById("sbus_notPlaced").style.visibility = "hidden";
+            document.getElementById("fc_topForSBUS_connection").style.visibility = "hidden";
+            document.getElementById("fcZoomSbusCon").style.visibility = "hidden";
+            document.getElementById("mainPortConnector").style.visibility = "hidden";
+
+
+
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
             document.getElementById('base_layer').style.visibility = "visible";
 
@@ -1484,7 +1493,7 @@ function rotationInfoDone() {
     }, 5000);
 
     setTimeout(function() {
-        document.getElementById("pumptext").innerHTML = "The Assembly of the Quadcoptor is thus complete. Proceed to the next experiment to &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;understand the Calibration of the Quadcopter. ";
+        document.getElementById("pumptext").innerHTML = "The Assembly of the Quadcoptor is thus complete. Proceed to the next experiment to &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;understand the Calibration of the Quadcopter. ";
 
 
     }, 6000);
@@ -1628,13 +1637,12 @@ function solder() {
     document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
 
     document.getElementById("solder_lead").style.visibility = "visible";
-    document.getElementById("solder_lead").style.top = "244px";
-    document.getElementById("solder_lead").style.left = "267px";
+    document.getElementById("solder_lead").style.top = "239px";
+    document.getElementById("solder_lead").style.left = "262px";
     document.getElementById("solder_lead").style.height = "90px";
     document.getElementById("solder_lead").style.width = "104px";
     document.getElementById("solder_lead").style.zIndex = "650";
     document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
-
 
 
     setTimeout(() => {
@@ -1670,8 +1678,8 @@ function solder() {
 
 
         // soldering the first wire
-        document.getElementById("solder_lead").style.top = "250px";
-        document.getElementById("solder_lead").style.left = "264px";
+        document.getElementById("solder_lead").style.top = "244px";
+        document.getElementById("solder_lead").style.left = "258px";
         document.getElementById("leadAfter3").style.visibility = "visible";
         document.getElementById("leadAfter3").classList.add("solderAfterShow");
         document.getElementById("solder_lead2").style.transition = "all 2s ease-in-out";
@@ -1686,9 +1694,9 @@ function solder() {
     setTimeout(() => {
         // Moves from first wire to the second
 
-        document.getElementById("solder_lead").style.top = "260px";
-        document.getElementById("solder_lead").style.left = "293px";
-        document.getElementById("solder_hand").style.left = "174px";
+        document.getElementById("solder_lead").style.top = "252px";
+        document.getElementById("solder_lead").style.left = "288px";
+        document.getElementById("solder_hand").style.left = "170px";
         document.getElementById("solder_hand").style.top = "252px";
         document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
     }, 4000);
@@ -1696,8 +1704,8 @@ function solder() {
         // soldering the second wire
         document.getElementById("leadAfter4").style.visibility = "visible";
         document.getElementById("leadAfter4").classList.add("solderAfterShow");
-        document.getElementById("solder_lead").style.top = "263px";
-        document.getElementById("solder_lead").style.left = "289px";
+        document.getElementById("solder_lead").style.top = "258px";
+        document.getElementById("solder_lead").style.left = "282px";
         document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
         document.getElementById('lead_smoke2').style.visibility = "visible";
         document.getElementById('lead_smoke2').style.opacity = "1";
@@ -1758,8 +1766,8 @@ function solderAllWires() {
         document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
 
         document.getElementById("solder_lead").style.visibility = "visible";
-        document.getElementById("solder_lead").style.top = "258px";
-        document.getElementById("solder_lead").style.left = "373px";
+        document.getElementById("solder_lead").style.top = "255px";
+        document.getElementById("solder_lead").style.left = "365px";
         document.getElementById("solder_lead").style.height = "90px";
         document.getElementById("solder_lead").style.width = "104px";
         document.getElementById("solder_lead").style.zIndex = "650";
@@ -1769,8 +1777,8 @@ function solderAllWires() {
 
     setTimeout(() => {
 
-        document.getElementById("solder_lead").style.top = "265px";
-        document.getElementById("solder_lead").style.left = "363px";
+        document.getElementById("solder_lead").style.top = "261px";
+        document.getElementById("solder_lead").style.left = "360px";
         document.getElementById("leadAfter5").style.visibility = "visible";
         document.getElementById("leadAfter5").classList.add("solderAfterShow");
         document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
@@ -1795,8 +1803,8 @@ function solderAllWires() {
 
 
         document.getElementById("solder_lead").style.visibility = "visible";
-        document.getElementById("solder_lead").style.top = "245px";
-        document.getElementById("solder_lead").style.left = "394px";
+        document.getElementById("solder_lead").style.top = "243px";
+        document.getElementById("solder_lead").style.left = "387px";
         document.getElementById("solder_lead").style.height = "90px";
         document.getElementById("solder_lead").style.width = "104px";
         document.getElementById("solder_lead").style.zIndex = "650";
@@ -1805,8 +1813,8 @@ function solderAllWires() {
 
     setTimeout(() => {
 
-        document.getElementById("solder_lead").style.top = "255px";
-        document.getElementById("solder_lead").style.left = "389px";
+        document.getElementById("solder_lead").style.top = "248px";
+        document.getElementById("solder_lead").style.left = "383px";
         document.getElementById("leadAfter6").style.visibility = "visible";
         document.getElementById("leadAfter6").classList.add("solderAfterShow");
         document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
@@ -1834,25 +1842,26 @@ function solderAllWires() {
     setTimeout(function() {
         document.getElementById("solder_hand").style.visibility = "visible";
         document.getElementById("solder_hand").style.top = "198px";
-        document.getElementById("solder_hand").style.left = "265px";
+        document.getElementById("solder_hand").style.left = "263px";
         document.getElementById("solder_hand").style.height = "80px";
         document.getElementById("solder_hand").style.width = "120px";
         document.getElementById("solder_hand").style.zIndex = "660";
         document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
 
         document.getElementById("solder_lead").style.visibility = "visible";
-        document.getElementById("solder_lead").style.top = "203px";
-        document.getElementById("solder_lead").style.left = "389px";
+        document.getElementById("solder_lead").style.top = "204px";
+        document.getElementById("solder_lead").style.left = "380px";
+        document.getElementById("solder_lead").style.transform = "rotate(0deg)";
         document.getElementById("solder_lead").style.height = "90px";
         document.getElementById("solder_lead").style.width = "104px";
-        document.getElementById("solder_lead").style.zIndex = "650";
+        document.getElementById("solder_lead").style.zIndex = "640";
         document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
     }, 11000);
 
     setTimeout(() => {
 
         document.getElementById("solder_lead").style.top = "207px";
-        document.getElementById("solder_lead").style.left = "382px";
+        document.getElementById("solder_lead").style.left = "375px";
         document.getElementById("leadAfter7").style.visibility = "visible";
         document.getElementById("leadAfter7").classList.add("solderAfterShow");
         document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
@@ -1877,9 +1886,11 @@ function solderAllWires() {
 
 
         document.getElementById("solder_lead").style.visibility = "visible";
-        document.getElementById("solder_lead").style.top = "198px";
-        document.getElementById("solder_lead").style.left = "365px";
+        document.getElementById("solder_lead").style.top = "188px";
+        document.getElementById("solder_lead").style.left = "353px";
         document.getElementById("solder_lead").style.height = "90px";
+        document.getElementById("solder_lead").style.transform = "rotate(-6deg)";
+
         document.getElementById("solder_lead").style.width = "104px";
         document.getElementById("solder_lead").style.zIndex = "650";
         document.getElementById("solder_lead").style.transition = "all 1s ease-in-out";
@@ -1887,8 +1898,8 @@ function solderAllWires() {
 
     setTimeout(() => {
 
-        document.getElementById("solder_lead").style.top = "200px";
-        document.getElementById("solder_lead").style.left = "358px";
+        document.getElementById("solder_lead").style.top = "193px";
+        document.getElementById("solder_lead").style.left = "352px";
         document.getElementById("leadAfter8").style.visibility = "visible";
         document.getElementById("leadAfter8").classList.add("solderAfterShow");
         document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
@@ -1922,21 +1933,21 @@ function solderAllWires() {
         document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
 
         document.getElementById("solder_lead").style.visibility = "visible";
-        document.getElementById("solder_lead").style.top = "199px";
-        document.getElementById("solder_lead").style.left = "275px";
+        document.getElementById("solder_lead").style.top = "195px";
+        document.getElementById("solder_lead").style.left = "270px";
         document.getElementById("solder_lead").style.height = "90px";
         document.getElementById("solder_lead").style.width = "104px";
         document.getElementById("solder_lead").style.zIndex = "650";
-        document.getElementById("leadAfter7").style.zIndex = "640";
-        document.getElementById("leadAfter8").style.zIndex = "640";
+        document.getElementById("leadAfter7").style.zIndex = "630";
+        document.getElementById("leadAfter8").style.zIndex = "630";
 
         document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
     }, 21000);
 
     setTimeout(() => {
 
-        document.getElementById("solder_lead").style.top = "205px";
-        document.getElementById("solder_lead").style.left = "270px";
+        document.getElementById("solder_lead").style.top = "199.5px";
+        document.getElementById("solder_lead").style.left = "266px";
         document.getElementById("leadAfter10").style.visibility = "visible";
         document.getElementById("leadAfter10").classList.add("solderAfterShow");
         document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
@@ -1960,8 +1971,8 @@ function solderAllWires() {
         document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
 
         document.getElementById("solder_lead").style.visibility = "visible";
-        document.getElementById("solder_lead").style.top = "195px";
-        document.getElementById("solder_lead").style.left = "295px";
+        document.getElementById("solder_lead").style.top = "190px";
+        document.getElementById("solder_lead").style.left = "290px";
         document.getElementById("solder_lead").style.height = "90px";
         document.getElementById("solder_lead").style.width = "104px";
         document.getElementById("solder_lead").style.zIndex = "650";
@@ -1970,8 +1981,8 @@ function solderAllWires() {
 
     setTimeout(() => {
 
-        document.getElementById("solder_lead").style.top = "198px";
-        document.getElementById("solder_lead").style.left = "290px";
+        document.getElementById("solder_lead").style.top = "193.5px";
+        document.getElementById("solder_lead").style.left = "288px";
         document.getElementById("leadAfter9").style.visibility = "visible";
         document.getElementById("leadAfter9").classList.add("solderAfterShow");
         document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
@@ -2020,6 +2031,12 @@ function moveIsometricView() {
             document.getElementById('half_escWireConnected' + i).style.visibility = "visible";
             document.getElementById('half_escWireConnected' + i).style.opacity = 0;
             document.getElementById('half_escWireConnected' + i).style.transition = "all 0.1s ease-in-out";
+
+            document.getElementById('esc_power' + i).style.visibility = "visible";
+            document.getElementById('esc_power' + i).style.opacity = 1;
+            document.getElementById('esc_power' + i).style.transition = "all 0.1s ease-in-out";
+            document.getElementById('esc_motor_connected1').style.zIndex = 120;
+
         }
         document.getElementById('border_box').style.visibility = "visible";
         document.getElementById('border_box').style.opacity = 0;
@@ -2038,6 +2055,7 @@ function moveIsometricView() {
         document.getElementById('leadAfter').style.visibility = "visible";
         document.getElementById('leadAfter').style.opacity = 0;
         document.getElementById('leadAfter').style.transition = "all 0.1s ease-in-out";
+
 
         for (let i = 2; i <= 10; i++) {
             document.getElementById('leadAfter' + i).style.visibility = "visible";
@@ -2220,11 +2238,11 @@ function placeBatteryToPcb() {
         document.getElementById("solder_hand").style.transition = "all 2s ease-in-out";
 
         document.getElementById("solder_lead").style.visibility = "visible";
-        document.getElementById("solder_lead").style.top = "264px";
-        document.getElementById("solder_lead").style.left = "327px";
+        document.getElementById("solder_lead").style.top = "257px";
+        document.getElementById("solder_lead").style.left = "322px";
         document.getElementById("solder_lead").style.height = "90px";
         document.getElementById("solder_lead").style.width = "104px";
-        document.getElementById("solder_lead").style.zIndex = "750";
+        document.getElementById("solder_lead").style.zIndex = "640";
         document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
 
         setTimeout(() => {
@@ -2232,8 +2250,8 @@ function placeBatteryToPcb() {
             document.getElementById("leadAfter").style.visibility = "visible";
             document.getElementById("leadAfter").classList.add("solderAfterShow");
             document.getElementById("solder_lead").style.visibility = "visible";
-            document.getElementById("solder_lead").style.top = "266px";
-            document.getElementById("solder_lead").style.left = "324px";
+            document.getElementById("solder_lead").style.top = "260px";
+            document.getElementById("solder_lead").style.left = "319px";
             document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
             document.getElementById("lead_smoke9").style.visibility = "visible";
 
@@ -2245,8 +2263,8 @@ function placeBatteryToPcb() {
 
             document.getElementById("leadAfter").style.visibility = "visible";
             document.getElementById("leadAfter").classList.add("solderAfterShow");
-            document.getElementById("solder_lead").style.top = "264px";
-            document.getElementById("solder_lead").style.left = "344px";
+            document.getElementById("solder_lead").style.top = "257px";
+            document.getElementById("solder_lead").style.left = "340px";
             document.getElementById("solder_hand").style.left = "225px";
             document.getElementById("solder_hand").style.zIndex = 780;
             document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
@@ -2259,8 +2277,8 @@ function placeBatteryToPcb() {
 
             document.getElementById("leadAfter2").style.visibility = "visible";
             document.getElementById("leadAfter2").classList.add("solderAfterShow");
-            document.getElementById("solder_lead").style.top = "268px";
-            document.getElementById("solder_lead").style.left = "341px";
+            document.getElementById("solder_lead").style.top = "260px";
+            document.getElementById("solder_lead").style.left = "338px";
             document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
             document.getElementById("lead_smoke10").style.visibility = "visible";
             setTimeout(() => {
