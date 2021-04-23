@@ -869,7 +869,76 @@ html {
     }
 }
 
+.moveMainPortSbus {
+    /* transform: translate(0,350px); */
+    animation: sbusMove 2s;
+    /* transition: all 10s ease-in-out; */
+}
 
+@keyframes sbusMove {
+    0% {
+        left: 368px; top: 350px; height: 33px; width: 22px;
+    }
+    100% {
+        left: 368px; top: 350px; height: 53px; width: 27px;
+    }
+}
+.moveFcSignal1 {
+    /* transform: translate(0,350px); */
+    animation: moveSig1 2s;
+    /* transition: all 10s ease-in-out; */
+}
+
+@keyframes moveSig1 {
+    0% {
+        left: 203px;
+    }
+    100% {
+        left: 235px;
+    }
+}
+.moveFcSignal2 {
+    /* transform: translate(0,350px); */
+    animation: moveSig2 2s;
+    /* transition: all 10s ease-in-out; */
+}
+
+@keyframes moveSig2 {
+    0% {
+        left: 178px;
+    }
+    100% {
+        left: 205px;
+    }
+}
+.moveFcSignal3 {
+    /* transform: translate(0,350px); */
+    animation: moveSig3 2s;
+    /* transition: all 10s ease-in-out; */
+}
+
+@keyframes moveSig3 {
+    0% {
+        left: 179px;
+    }
+    100% {
+        left: 205px;
+    }
+}
+.moveFcSignal4 {
+    /* transform: translate(0,350px); */
+    animation: moveSig4 2s;
+    /* transition: all 10s ease-in-out; */
+}
+
+@keyframes moveSig4 {
+    0% {
+        left: 195px;
+    }
+    100% {
+        left: 205px;
+    }
+}
 /* 
 .rotate_curve_arrow {
     animation: rotate_arrow 2s 3 linear;
