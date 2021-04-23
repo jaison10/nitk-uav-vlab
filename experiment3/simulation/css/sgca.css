@@ -650,8 +650,8 @@ html {
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        left: 245px;
-        top: 245px;
+        left: 335px;
+        top: 248px;
         height: 55px;
         width: 150px;
     }
@@ -877,12 +877,19 @@ html {
 
 @keyframes sbusMove {
     0% {
-        left: 368px; top: 350px; height: 33px; width: 22px;
+        left: 368px;
+        top: 350px;
+        height: 33px;
+        width: 22px;
     }
     100% {
-        left: 368px; top: 350px; height: 53px; width: 27px;
+        left: 368px;
+        top: 350px;
+        height: 53px;
+        width: 27px;
     }
 }
+
 .moveFcSignal1 {
     /* transform: translate(0,350px); */
     animation: moveSig1 2s;
@@ -897,6 +904,7 @@ html {
         left: 235px;
     }
 }
+
 .moveFcSignal2 {
     /* transform: translate(0,350px); */
     animation: moveSig2 2s;
@@ -911,6 +919,7 @@ html {
         left: 205px;
     }
 }
+
 .moveFcSignal3 {
     /* transform: translate(0,350px); */
     animation: moveSig3 2s;
@@ -925,6 +934,7 @@ html {
         left: 205px;
     }
 }
+
 .moveFcSignal4 {
     /* transform: translate(0,350px); */
     animation: moveSig4 2s;
@@ -939,6 +949,8 @@ html {
         left: 205px;
     }
 }
+
+
 /* 
 .rotate_curve_arrow {
     animation: rotate_arrow 2s 3 linear;
