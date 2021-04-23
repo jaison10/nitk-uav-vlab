@@ -741,6 +741,7 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
 
             document.getElementById("esc_arm1").style.visibility = "hidden";
             document.getElementById("esc_arm_placed1").style.visibility = "visible";
+            document.getElementById("esc_arm_placed1").onclick = function() { connectEscMotor(1); };
 
             document.getElementById("esc_wire1").style.visibility = "visible";
             document.getElementById("esc_signal1").style.visibility = "visible";
@@ -975,7 +976,7 @@ var fcConnected = 0;
 
 function connectEscFc(id) {
     myStopFunction();
-    
+
     if (id == 3) {
         document.getElementById('esc_fc_connected3_1').style.visibility = "visible";
         document.getElementById('esc_fc_connected3_2').style.visibility = "visible";
@@ -990,7 +991,7 @@ function connectEscFc(id) {
     } else {
         document.getElementById('esc_fc_connected' + id).style.visibility = "visible";
         fcConnected++;
-        if(id == 2){
+        if (id == 2) {
             // Which is of first motor after correction of FC
             document.getElementById("signaltoFCwire1").style.visibility = "visible";
             document.getElementById("signaltoFCwire1").classList.add("moveFcSignal1");
@@ -999,7 +1000,7 @@ function connectEscFc(id) {
                 document.getElementById("signaltoFCwirePlaced1").style.visibility = "visible";
             }, 2000);
         }
-        if(id == 1){
+        if (id == 1) {
             // Which is of first motor after correction of FC
             document.getElementById("signaltoFCwire2").style.visibility = "visible";
             document.getElementById("signaltoFCwire2").classList.add("moveFcSignal2");
@@ -1008,7 +1009,7 @@ function connectEscFc(id) {
                 document.getElementById("signaltoFCwirePlaced2").style.visibility = "visible";
             }, 2000);
         }
-        if(id == 4){
+        if (id == 4) {
             // Which is of first motor after correction of FC
             document.getElementById("signaltoFCwire3").style.visibility = "visible";
             document.getElementById("signaltoFCwire3").classList.add("moveFcSignal3");
@@ -1042,16 +1043,16 @@ function connectEscFc(id) {
             document.getElementById("signal_note").style.top = "150px";
             document.getElementById("signalCloseButton").style.visibility = "visible";
             document.getElementById('signal_note').style.height = "135px";
-            for(let z =1; z<5;z++){
-                document.getElementById("rotationDir"+z).style.visibility = "visible";
+            for (let z = 1; z < 5; z++) {
+                document.getElementById("rotationDir" + z).style.visibility = "visible";
             }
         }, 1000);
     }
 }
 
-function doneShowingRotationInfo(){
-    for(let z =1; z<5;z++){
-        document.getElementById("rotationDir"+z).style.visibility = "hidden";
+function doneShowingRotationInfo() {
+    for (let z = 1; z < 5; z++) {
+        document.getElementById("rotationDir" + z).style.visibility = "hidden";
     }
     document.getElementById('signal_note').style.visibility = "hidden";
     document.getElementById("signalCloseButton").style.visibility = "hidden";
@@ -1061,7 +1062,7 @@ function doneShowingRotationInfo(){
     document.getElementById("sbus_notPlaced").style.visibility = "visible";
 }
 // This is where
-function revSignalInfoShown(){
+function revSignalInfoShown() {
     // document.getElementById("arrow-rec-signal").style.visibility = "hidden";
     document.getElementById("info-about-Rec-signal").style.visibility = "hidden";
     document.getElementById("sbus_notPlaced").style.visibility = "hidden";
@@ -1079,7 +1080,7 @@ function revSignalInfoShown(){
         document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
         //         // Standard syntax
         document.getElementById("arrow1").style.transform = "rotate(180deg)";
-    
+
         myInt = setInterval(function() {
             animatearrow();
         }, 500);
@@ -1088,7 +1089,7 @@ function revSignalInfoShown(){
     }, 1500);
 }
 
-function placeSBUScable(){
+function placeSBUScable() {
     // Connect sbus to Fc top view as well as isometric.
     document.getElementById("mainPortConnector").style.visibility = "visible";
     document.getElementById("mainPortConnector").classList.add("moveMainPortSbus");
