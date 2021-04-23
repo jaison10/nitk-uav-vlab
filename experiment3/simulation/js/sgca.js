@@ -1033,7 +1033,9 @@ function connectEscFc(id) {
             document.getElementById("motorNumber" + i).style.visibility = "hidden";
         }
         setTimeout(() => {
-            document.getElementById("signaltoFCwirePlaced2").style.visibility = "hidden";
+            for(let i=1;i<5;i++){
+                document.getElementById("signaltoFCwirePlaced"+i).style.visibility = "hidden";
+            }
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
             document.getElementById('fc_top_connection').style.visibility = "hidden";
             document.getElementById('fcZoomSignalCon').style.visibility = "hidden";
@@ -1046,7 +1048,7 @@ function connectEscFc(id) {
             for (let z = 1; z < 5; z++) {
                 document.getElementById("rotationDir" + z).style.visibility = "visible";
             }
-        }, 1000);
+        }, 2000);
     }
 }
 
@@ -1553,8 +1555,6 @@ function moveTopView() {
         }, 3000);
 
     }, 0);
-
-
 
 
 }
