@@ -1094,12 +1094,33 @@ function placeSBUScable(){
     // Connect sbus to Fc top view as well as isometric.
     document.getElementById("mainPortConnector").style.visibility = "visible";
     document.getElementById("mainPortConnector").classList.add("moveMainPortSbus");
+    setTimeout(function() {
+        document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame.";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        setTimeout(function() {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+            document.getElementById('base_layer').style.visibility = "visible";
+
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 150px; height: 30px; z-index: 10;";
+
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(0deg)";
+
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
+
+        }, 5000);
+    }, 2000);
 }
 
 function RecToFc() {
     myStopFunction();
     // document.getElementById('rec_wire_uc').style.visibility = "hidden";
-    document.getElementById('rec_wire').style.visibility = "visible";
+    // document.getElementById('rec_wire').style.visibility = "visible";
     setTimeout(function() {
         document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
