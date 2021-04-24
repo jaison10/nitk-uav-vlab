@@ -436,7 +436,6 @@ function step1() {
     myStopFunction();
 
     document.getElementById("a2").classList.add("moveTopCover");
-    document.getElementById("pumptext").innerText = "Let us start the assembly of a Quadcopter by first building the frame of the copter.";
 
     setTimeout(function() {
         document.getElementById("a2").style.visibility = "hidden";
@@ -1113,24 +1112,24 @@ function placeSBUScable() {
         document.getElementById("info-about-RecPartSBUS-signal").style.visibility = "visible";
         document.getElementById("fc_topForSBUS_connectionReceiver").style.visibility = "visible";
         document.getElementById("fcZoomSRecbusCon").style.visibility = "visible";
-        
-            document.getElementById("sbus_notPlaced").style.visibility = "hidden";
-            document.getElementById("fc_topForSBUS_connection").style.visibility = "hidden";
-            document.getElementById("fcZoomSbusCon").style.visibility = "hidden";
-            document.getElementById("mainPortConnector").style.visibility = "hidden";
+
+        document.getElementById("sbus_notPlaced").style.visibility = "hidden";
+        document.getElementById("fc_topForSBUS_connection").style.visibility = "hidden";
+        document.getElementById("fcZoomSbusCon").style.visibility = "hidden";
+        document.getElementById("mainPortConnector").style.visibility = "hidden";
 
 
 
-            // document.getElementById("placeMotorInfo").style.visibility = "hidden";
-            // document.getElementById('base_layer').style.visibility = "visible";
+        // document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        // document.getElementById('base_layer').style.visibility = "visible";
 
-            // document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 150px; height: 30px; z-index: 10;";
+        // document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 150px; height: 30px; z-index: 10;";
 
-            // document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
-            // // Code for IE9
-            // document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
-            // // Standard syntax
-            // document.getElementById("arrow1").style.transform = "rotate(0deg)";
+        // document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+        // // Code for IE9
+        // document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+        // // Standard syntax
+        // document.getElementById("arrow1").style.transform = "rotate(0deg)";
 
         document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 440px; top: 260px; height: 30px; z-index: 100;";
 
@@ -1145,7 +1144,7 @@ function placeSBUScable() {
     }, 3000);
 }
 
-function connectSbusToRec(){
+function connectSbusToRec() {
     myStopFunction();
     console.log("Sbus connected to the Receiver");
 
@@ -1190,7 +1189,7 @@ function connectSbusToRec(){
 //     // document.getElementById('rec_wire_uc').style.visibility = "hidden";
 //     // document.getElementById('rec_wire').style.visibility = "visible";
 //     setTimeout(function() {
-        
+
 //     }, 2000);
 // }
 
@@ -1391,15 +1390,15 @@ function propInfo() {
     setTimeout(function() {
         setTimeout(function() {
             document.getElementById("placeMotorInfo").innerText = "Based on what we have learnt so far, choose the appropriate Propeller for the first motor.";
-            document.getElementById('prop3').style.visibility = "visible";
+            document.getElementById('prop2').style.visibility = "visible";
             document.getElementById('prop3_1').style.visibility = "visible";
         }, 1000);
         // document.getElementById("placeMotorInfo").style.visibility = "hidden";
         // document.getElementById('prop1').style.visibility = "visible";
         // document.getElementById('prop2').style.visibility = "visible";
 
-        document.getElementById('prop3').onclick = function() {
-            placeProp(3);
+        document.getElementById('prop2').onclick = function() {
+            placeProp(2);
             document.getElementById('prop3_1').style.visibility = "hidden";
 
         };
@@ -1437,6 +1436,7 @@ function placeProp3() {
 
 
 }
+var propSelected = 0;
 
 function placeProp(id) {
     myStopFunction();
@@ -1446,16 +1446,16 @@ function placeProp(id) {
     document.getElementById('prop' + id).style.visibility = "visible";
     if (id == 1) {
         document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 267px; left: 41px; height: 80px; width: 180px; z-index: 570;transition:all 1s ease-in-out;";
-        document.getElementById('rotation_note').style.visibility = "visible";
+        propSelected++;
+        // document.getElementById('rotation_note').style.visibility = "visible";
     }
     if (id == 2) {
-        document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 277px; left: 472px; height: 80px; width: 180px; z-index: 570; transition:all 1s ease-in-out;";
-    }
-    if (id == 3) {
+        propSelected++;
         document.getElementById('choose_info').style.visibility = "visible";
         document.getElementById('choose_info').innerText = "Correct Choice!";
         document.getElementById('choose_info').style.color = "#32CD32";
-        document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 114px; left: 396px; height: 60px; width: 130px; z-index: 570;transition:all 1s ease-in-out;";
+        document.getElementById('choose_info').style.top = "175px";
+        document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 277px; left: 472px; height: 80px; width: 180px; z-index: 570; transition:all 1s ease-in-out;";
         setTimeout(function() {
             document.getElementById('choose_info').style.visibility = "hidden";
             document.getElementById("placeMotorInfo").innerText = "Click on the rest of the Propellers to place them accordingly.";
@@ -1466,21 +1466,30 @@ function placeProp(id) {
                 document.getElementById('prop3').style.visibility = "visible";
                 document.getElementById('prop4').style.visibility = "visible";
                 document.getElementById('prop1').onclick = function() { placeProp(1) };
-                document.getElementById('prop2').onclick = function() { placeProp(2) };
+                // document.getElementById('prop2').onclick = function() { placeProp(2) };
                 document.getElementById('prop3').onclick = function() { placeProp(3) };
                 document.getElementById('prop4').onclick = function() { placeProp(4) };
             }, 2000);
 
         }, 1500);
 
+    }
+    if (id == 3) {
+        propSelected++;
+        document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 114px; left: 396px; height: 60px; width: 130px; z-index: 570;transition:all 1s ease-in-out;";
+
 
     }
     if (id == 4) {
+        propSelected++;
         document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 112px; left: 112px; height: 60px; width: 130px; z-index: 570;transition:all 1s ease-in-out; ";
+        // document.getElementById('rotation_note').style.visibility = "visible";
+
+    }
+    if (propSelected >= 4) {
         document.getElementById('rotation_note').style.visibility = "visible";
 
     }
-
 }
 
 function rotationInfoDone() {
@@ -1490,7 +1499,22 @@ function rotationInfoDone() {
     document.getElementById('prop4').onclick = "";
     document.getElementById('rotation_note').style.visibility = "hidden";
     document.getElementById("placeMotorInfo").style.visibility = "visible";
-    document.getElementById("placeMotorInfo").innerText = "Place the knobs on the Propellers.";
+    document.getElementById("placeMotorInfo").innerText = "Turn the knobs to place them on the Propellers.";
+    document.getElementById("hand_knob").style.visibility = "visible";
+    document.getElementById("hand_knob").style.cursor = "pointer";
+    document.getElementById("hand_knob").style.top = "55px";
+
+    document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 550px; top: 130px; height: 30px; z-index: 10; ";
+
+    document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+    // Code for IE9
+    document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+    // Standard syntax
+    document.getElementById("arrow1").style.transform = "rotate(0deg)";
+    document.getElementById("hand_knob").onclick = function() { placeKnob(); };
+    myInt = setInterval(function() {
+        animatearrow();
+    }, 500);
     // document.getElementById("knob1").style.visibility = "visible";
     // document.getElementById("knob2").style.visibility = "visible";
     // document.getElementById("knob4").style.visibility = "visible";
@@ -1513,16 +1537,19 @@ function rotationInfoDone() {
     // document.getElementById("singleScrewFinal").style.zIndex = -1;
     // document.getElementById("screwHand").classList.add("rotateHand");
 
+}
+
+function placeKnob() {
+    myStopFunction();
+
+    document.getElementById("hand_knob").onclick = "";
+
     setTimeout(function() {
         setTimeout(() => {
-            document.getElementById("placeMotorInfo").innerText = "Turn the knob in clockwise direction onto the Propeller.";
 
         }, 500);
+
         setTimeout(function() {
-            document.getElementById("placeMotorInfo").style.visibility = "hidden";
-            // document.getElementById("knob3").style.opacity = 1;
-
-
             // document.getElementById("knob3").style.top = "131px";
             // document.getElementById("knob3").style.visibility = "visible";
             // document.getElementById("knob3").style.transition = "all 3s ease-in-out";
@@ -1536,7 +1563,7 @@ function rotationInfoDone() {
                 animatecurve2arrow(3);
             }, 500);
 
-        }, 2000);
+        }, 3000);
         setTimeout(function() {
             document.getElementById("hand_knob").style.opacity = 0;
             document.getElementById("hand_knob").style.visibility = "visible";
@@ -1545,7 +1572,7 @@ function rotationInfoDone() {
             document.getElementById("knob3").style.top = "131px";
             document.getElementById("knob3").style.visibility = "visible";
             document.getElementById("knob3").style.transition = "all 3s ease-in-out";
-        }, 3000);
+        }, 4000);
         // document.getElementById("knob1").style.top = "286px";
         // document.getElementById("knob2").style.top = "298.5px";
         // document.getElementById("knob4").style.top = "128px";
@@ -1555,7 +1582,7 @@ function rotationInfoDone() {
         // document.getElementById("knob4").style.transition = "top 2s ease-in-out";
 
 
-    }, 3000);
+    }, 500);
 
     setTimeout(function() {
         clearInterval(myIntv1);
@@ -1567,7 +1594,7 @@ function rotationInfoDone() {
         document.getElementById("all_knobs").style.visibility = "visible";
 
 
-    }, 8000);
+    }, 7500);
 
 
 }
@@ -1611,7 +1638,7 @@ function placeAllKnobs() {
         document.getElementById("curve_arrow1_4").style.visibility = "hidden";
     }, 3000);
     setTimeout(function() {
-        document.getElementById("pumptext").innerHTML = "The Assembly of the Quadcoptor is thus complete. Proceed to the next experiment to &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;understand the Calibration of the Quadcopter. ";
+        document.getElementById("pumptext").innerHTML = "The Assembly of the Quadcoptor is thus complete. Proceed to the next experiment to &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;understand the Calibration of the Quadcopter. ";
 
 
     }, 6000);
@@ -1670,6 +1697,7 @@ function moveTopView() {
         document.getElementById('placedDSTRec').style.visibility = "hidden";
         document.getElementById('screw_head').style.visibility = "hidden";
         document.getElementById('screw_head1').style.visibility = "hidden";
+        document.getElementById('sbus_PlacedConnected').style.visibility = "hidden";
         document.getElementById('move_top').style.visibility = "hidden";
         document.getElementById('border_box').style.visibility = "visible";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
@@ -2183,37 +2211,6 @@ function moveIsometricView() {
         // document.getElementById('batteryToPcb').style.opacity = 0;
         // document.getElementById('batteryToPcb').style.transition = "all 0.1s ease-in-out";
 
-        document.getElementById('leadAfter11').style.visibility = "visible";
-        document.getElementById('leadAfter11').style.opacity = 1;
-        document.getElementById('leadAfter11').style.transition = "all 0.1s ease-in-out";
-
-        document.getElementById('leadAfter12').style.visibility = "visible";
-        document.getElementById('leadAfter12').style.opacity = 1;
-        document.getElementById('leadAfter12').style.transition = "all 0.1s ease-in-out";
-
-        document.getElementById('leadAfter13').style.visibility = "visible";
-        document.getElementById('leadAfter13').style.opacity = 1;
-        document.getElementById('leadAfter13').style.transition = "all 0.1s ease-in-out";
-
-        document.getElementById('leadAfter14').style.visibility = "visible";
-        document.getElementById('leadAfter14').style.opacity = 1;
-        document.getElementById('leadAfter14').style.zIndex = 45;
-        document.getElementById('leadAfter14').style.transition = "all 0.1s ease-in-out";
-
-        document.getElementById('leadAfter15').style.visibility = "visible";
-        document.getElementById('leadAfter15').style.opacity = 1;
-        document.getElementById('leadAfter15').style.transition = "all 0.1s ease-in-out";
-
-        document.getElementById('batteryToPcb').style = "visibility: visible; cursor: pointer; position: absolute; top: 237px; left: 171px; height: 80px; width: 180px; z-index: 90;  opacity: 1;";
-        document.getElementById('batteryToPcb').style.transition = "all 0.1s ease-in-out";
-
-        document.getElementById('connected_esc_wire1').style.visibility = "visible";
-        document.getElementById('connected_esc_wire1').style.opacity = 1;
-        document.getElementById('connected_esc_wire1').style.transition = "all 0.1s ease-in-out";
-
-        document.getElementById('connected_esc_wire2').style.visibility = "visible";
-        document.getElementById('connected_esc_wire2').style.opacity = 1;
-        document.getElementById('connected_esc_wire2').style.transition = "all 0.1s ease-in-out";
 
 
     }, 500);
@@ -2277,9 +2274,9 @@ function moveIsometricView() {
         document.getElementById('placedFc').style.opacity = 1;
         document.getElementById('placedFc').style.transition = "all 8s ease-in-out";
 
-        document.getElementById('rec_wire').style.visibility = "visible";
-        document.getElementById('rec_wire').style.opacity = 1;
-        document.getElementById('rec_wire').style.transition = "all 8s ease-in-out";
+        // document.getElementById('rec_wire').style.visibility = "visible";
+        // document.getElementById('rec_wire').style.opacity = 1;
+        // document.getElementById('rec_wire').style.transition = "all 8s ease-in-out";
 
         document.getElementById('placedReceiver').style.visibility = "visible";
         document.getElementById('placedReceiver').style.opacity = 1;
@@ -2301,10 +2298,46 @@ function moveIsometricView() {
         document.getElementById('screw_head1').style.opacity = 1;
         document.getElementById('screw_head1').style.transition = "all 8s ease-in-out";
 
+        document.getElementById('sbus_PlacedConnected').style.visibility = "visible";
+        document.getElementById('sbus_PlacedConnected').style.opacity = 1;
+        document.getElementById('sbus_PlacedConnected').style.transition = "all 8s ease-in-out";
+
+        document.getElementById('leadAfter11').style.visibility = "visible";
+        document.getElementById('leadAfter11').style.opacity = 1;
+        document.getElementById('leadAfter11').style.transition = "all 0.1s ease-in-out";
+
+        document.getElementById('leadAfter12').style.visibility = "visible";
+        document.getElementById('leadAfter12').style.opacity = 1;
+        document.getElementById('leadAfter12').style.transition = "all 0.1s ease-in-out";
+
+        document.getElementById('leadAfter13').style.visibility = "visible";
+        document.getElementById('leadAfter13').style.opacity = 1;
+        document.getElementById('leadAfter13').style.transition = "all 0.1s ease-in-out";
+
+        document.getElementById('leadAfter14').style.visibility = "visible";
+        document.getElementById('leadAfter14').style.opacity = 1;
+        document.getElementById('leadAfter14').style.zIndex = 45;
+        document.getElementById('leadAfter14').style.transition = "all 0.1s ease-in-out";
+
+        document.getElementById('leadAfter15').style.visibility = "visible";
+        document.getElementById('leadAfter15').style.opacity = 1;
+        document.getElementById('leadAfter15').style.transition = "all 0.1s ease-in-out";
+
+        document.getElementById('batteryToPcb').style = "visibility: visible; cursor: pointer; position: absolute; top: 237px; left: 171px; height: 80px; width: 180px; z-index: 90;  opacity: 1;";
+        document.getElementById('batteryToPcb').style.transition = "all 0.1s ease-in-out";
+
+        document.getElementById('connected_esc_wire1').style.visibility = "visible";
+        document.getElementById('connected_esc_wire1').style.opacity = 1;
+        document.getElementById('connected_esc_wire1').style.transition = "all 0.1s ease-in-out";
+
+        document.getElementById('connected_esc_wire2').style.visibility = "visible";
+        document.getElementById('connected_esc_wire2').style.opacity = 1;
+        document.getElementById('connected_esc_wire2').style.transition = "all 0.1s ease-in-out";
 
 
 
-    }, 700);
+
+    }, 600);
     setTimeout(function() {
         document.getElementById("placeMotorInfo").innerText = "Let us now place the Battery on the Base Layer.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";

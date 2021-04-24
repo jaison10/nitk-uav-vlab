@@ -117,7 +117,7 @@
             <p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">Click on the apparatus to learn more about them.</p>
 
             <!-- APPARATUS BUTTONS -->
-            <span class="tool" id="desc_button"><strong><button id="quad" onclick="place_apparatus('quad','50px');" style="visibility: hidden; position: absolute; top: 50px; left: 0px; border-radius: 5px; color: rgb(255, 255, 255);width:185px ; background-color: black;">Quadcopter Frame</button></strong>
+            <span class="tool" id="desc_button"><strong><button id="quad" onclick="place_apparatus('quad','50px');" style="visibility: hidden; position: absolute; top: 50px; left: 0px; border-radius: 5px; color: rgb(255, 255, 255);width:185px ; background-color: black;cursor:pointer;">Quadcopter Frame</button></strong>
                 <span  class="tooltext" id="desc_message"><strong style="color:red;">Frame</strong> is the structure that holds all the components together. It supports motors and other electronics and prevents them from vibrations. They need to be designed to be strong but also lightweight.
                 </span>
             </span>
@@ -155,7 +155,7 @@
             <img id="arm3" src="./Images/assembly_parts/Frame_1.png" alt="Arm" style="visibility: hidden;position: absolute;top: 0px;left: 300px;height: 50px;width: 100px;cursor: pointer;" title="Arm 3">
             <img id="arm4" src="./Images/assembly_parts/Frame_1.png" alt="Arm" style="visibility: hidden;position: absolute;top: 0px;left: 350px;height: 50px;width: 100px;cursor: pointer;" title="Arm 4">
             <img id="motor" src="./Images/assembly_parts/Motor_1.png" alt="Motors" style="visibility: hidden; position: absolute; top: 0px; left: 457px; height: 50px; width: 80px; cursor: pointer; transition: top 1s ease-in-out 0s;" title="Motor">
-            <img id="flight_controller" src="./Images/Flight_controller_v2.png" alt="Flight Controller" style="visibility: hidden; position: absolute; top: 0px; left: 230px; height: 40px; width: 90px;cursor: pointer;" title="Flight Controller">
+            <img id="flight_controller" src="./Images/Flight_controller_v2.png" alt="Flight Controller" style="visibility: hidden; position: absolute; top: 0px; left: 230px; height: 50px; width: 120px;cursor: pointer;" title="Flight Controller">
             <img id="electronic_sc" src="./Images/ESC1.png" alt="Electronic Speed Controllers" style="visibility: hidden; position: absolute; top: 0px; left: 550px; height: 50px; width: 140px;cursor: pointer; " title="Electronic Speed Controller">
             <img id="lipo_battery" src="./Images/Battery.png" alt="LiPO Battery" style="visibility: hidden; position: absolute; top:0px; left: 450px; height: 70px; width: 180px;cursor: pointer;" title="LiPo Battery">
             <img id="receiver1" src="./Images/receiver_iso_v03.png" alt="Receiver" style="visibility: hidden; position: absolute; top: 0px; left: 450px; height: 50px; width: 150px;cursor: pointer;" title="Receiver">
@@ -271,7 +271,7 @@
             <img id="sbus_notPlaced2" onclick="placeSBUScable();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 220px; top: 40px; height: 90px; width: 200px; transform: rotate(0deg); z-index: 100;" src="./Images/Flight_controller_iso_WIREv04.png">
             <img id="sbus_Placed" onclick="connectSbusToRec();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 325px; top: 215px; height: 40px; width: 60px; transform: rotate(0deg); z-index: 200;" src="./Images/Flight_controller_iso_WIREv04.png">
             <img id="sbus_PlacedConnected" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 325px; top: 215px; height: 55px; width: 50px; transform: rotate(0deg); z-index: 200;" src="./Images/Flight_controller_iso_WIREv04.png">
-            
+
             <!-- Info about Sbus to FC -->
             <div id="fc_topForSBUS_connection" style="position: absolute;visibility: hidden;top: 350px;left: 205px; height: 175px;width: 255px;border: 1px solid black;border-radius: 15px;">
                 <img id="fcZoomSbusCon" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 50px; top: 40px; height: 130px; width: 170px; transform: rotate(0deg); z-index: 100;" src="./Images/Flight_controller_top_v3.png">
@@ -528,10 +528,10 @@
             <!-- Propellers -->
             <img id="prop1" style="position: absolute; visibility: hidden; top: 210px; left: 68px; height: 60px; width: 130px; z-index: 570;cursor: pointer;  " src="./Images/Prop2.png" alt="Propeller">
             <!-- position: absolute; visibility: visible; top: 210px; left: 68px; height: 60px; width: 130px; z-index: 570; transform: rotate(0deg); -->
-            <img id="prop2" style="position: absolute; visibility: hidden; top: 220px; left: 500px; height: 60px; width: 130px; z-index: 570;cursor: pointer; " src="./Images/Prop1.png" alt="Propeller">
+            <img id="prop2" style="position: absolute; visibility: hidden; top: 220px; left: 485px; height: 60px; width: 130px; z-index: 570;cursor: pointer; " src="./Images/Prop1.png" alt="Propeller">
             <!--position: absolute; visibility: visible; top: 220px; left: 500px; height: 60px; width: 130px; z-index: 570; transform: rotate(0deg); -->
-            <img id="prop3" style="position: absolute; visibility: hidden; top: 95px; left: 450px; height: 60px; width: 130px; z-index: 570; cursor: pointer;" src="./Images/Prop4.png" alt="Propeller">
-            <img id="prop3_1" style="position: absolute; visibility: hidden; top: 95px; left: 590px; height: 60px; width: 130px; z-index: 570; cursor: pointer;" src="./Images/Prop3.png" alt="Propeller">
+            <img id="prop3" style="position: absolute; visibility: hidden; top: 55px; left: 396px; height: 60px; width: 130px; z-index: 570; cursor: pointer;" src="./Images/Prop4.png" alt="Propeller">
+            <img id="prop3_1" style="position: absolute; visibility: hidden; top: 220px; left: 620px; height: 60px; width: 130px; z-index: 570; cursor: pointer;" src="./Images/Prop4.png" alt="Propeller">
             <!-- position: absolute; visibility: visible; top: 57px; left: 396px; height: 60px; width: 130px; z-index: 570; -->
             <img id="prop4" style="position: absolute; visibility: hidden; top: 55px; left: 112px; height: 60px; width: 130px; z-index: 570;cursor: pointer;" src="./Images/Prop3.png" alt="Propeller">
             <!-- position: absolute; visibility: visible; top: 55px; left: 112px; height: 60px; width: 130px; z-index: 570; -->
@@ -583,7 +583,7 @@
             <img id="connected_esc_wire1" src="./Images/ESC_power_connected_1.1.png" style="visibility: hidden; position: absolute; top: 298px; left: 291px; height: 20px; width: 20px; z-index: 50; opacity: 0;transform:rotate(-6deg); " alt="Hand holding lead wire">
             <img id="connected_esc_wire2" src="./Images/ESC_power_connected_2.1.png" style="visibility: hidden; position: absolute; top: 300px; left: 363px; height: 18px; width: 20px; z-index: 50; opacity: 0; transform: rotate(-3deg);  " alt="Hand holding lead wire">
 
-            <img id="hand_knob" style="visibility: hidden; position: absolute; top: 57px; left: 440px; height: 80px; width: 45px; transition: all 2s ease-in-out 0s; opacity: 1;z-index:750;" src="./Images/hand_nut.png" alt="Hand holding the knob">
+            <img id="hand_knob" style="visibility: hidden; position: absolute; top: 55px; left: 440px; height: 80px; width: 45px; transition: all 2s ease-in-out 0s; opacity: 1;z-index:750;" src="./Images/hand_without_nut_v04.png" alt="Hand holding the knob">
             <button id="all_knobs" onclick="placeAllKnobs();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;cursor: pointer;">Place all other Knobs</button>
 
             <p id="frame-info" style="position: absolute; top: 450px; visibility: hidden; "> The upper layer of the frame is attached to four arms which are used to hold the motors.</p>
