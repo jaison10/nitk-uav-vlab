@@ -155,7 +155,7 @@
             <img id="arm3" src="./Images/assembly_parts/Frame_1.png" alt="Arm" style="visibility: hidden;position: absolute;top: 0px;left: 300px;height: 50px;width: 100px;cursor: pointer;" title="Arm 3">
             <img id="arm4" src="./Images/assembly_parts/Frame_1.png" alt="Arm" style="visibility: hidden;position: absolute;top: 0px;left: 350px;height: 50px;width: 100px;cursor: pointer;" title="Arm 4">
             <img id="motor" src="./Images/assembly_parts/Motor_1.png" alt="Motors" style="visibility: hidden; position: absolute; top: 0px; left: 457px; height: 50px; width: 80px; cursor: pointer; transition: top 1s ease-in-out 0s;" title="Motor">
-            <img id="flight_controller" src="./Images/assembly_parts/cc3d.png" alt="Flight Controller" style="visibility: hidden; position: absolute; top: 0px; left: 230px; height: 40px; width: 90px;cursor: pointer;" title="Flight Controller">
+            <img id="flight_controller" src="./Images/Flight_controller_v2.png" alt="Flight Controller" style="visibility: hidden; position: absolute; top: 0px; left: 230px; height: 40px; width: 90px;cursor: pointer;" title="Flight Controller">
             <img id="electronic_sc" src="./Images/ESC1.png" alt="Electronic Speed Controllers" style="visibility: hidden; position: absolute; top: 0px; left: 550px; height: 50px; width: 140px;cursor: pointer; " title="Electronic Speed Controller">
             <img id="lipo_battery" src="./Images/Battery.png" alt="LiPO Battery" style="visibility: hidden; position: absolute; top:0px; left: 450px; height: 70px; width: 180px;cursor: pointer;" title="LiPo Battery">
             <img id="receiver1" src="./Images/receiver_iso_v03.png" alt="Receiver" style="visibility: hidden; position: absolute; top: 0px; left: 450px; height: 50px; width: 150px;cursor: pointer;" title="Receiver">
@@ -177,7 +177,7 @@
             <img id="motor4" onclick="placeMotor(4,'75px');" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 420px; top: 70px; height: 70px; width:65px; visibility: block; transform:rotate(3deg); z-index: 120; opacity: 1;" src="./Images/assembly_parts/Motor_3.png">
 
             <!-- Hand -->
-            <img id="screwHand" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 351px; top: 101px; height: 95px; width:45px; visibility: block; z-index: 100;" src="./Images/Screwing1.png">
+            <img id="screwHand" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 349.5px; top: 101px; height: 95px; width:45px; visibility: block; z-index: 100;" src="./Images/Screwing1.png">
             <!-- <img id="screwHand2" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 353px; top: 101px; height: 95px; width:45px; visibility: block; z-index: 100;" src="./Images/assembly_parts/Screwing.png"> -->
 
             <!-- curve arrow -->
@@ -255,21 +255,22 @@
 
             <!-- Double sided tape for FC-->
             <img id="doubleST" onclick="placeDST();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 240px; top: 55px; height: 70px; width: 200px; transform: rotate(3deg); z-index: 100;" src="./Images/Tape.png">
-            <img id="placedDST" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 305px; top: 230px; height: 20px; width: 60px; transform: rotate(6deg); z-index: 100;;" src="./Images/tape4.png">
+            <img id="placedDST" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 305px; top: 230px; height: 20px; width: 60px; transform: rotate(2deg); z-index: 100;;" src="./Images/tape_v3.png">
 
             <!-- Double sided tape for Receiver-->
             <img id="doubleSTRec" onclick="placeDSTRec();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 260px; top: 55px; height: 70px; width: 200px; transform: rotate(3deg); z-index: 150;" src="./Images/Tape.png">
-            <img id="placedDSTRec" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 340px; top: 260px; height: 15px; width: 30px; transform: rotate(4deg); z-index: 100;" src="./Images/tape4.png">
+            <img id="placedDSTRec" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 340px; top: 260px; height: 15px; width: 30px; transform: rotate(2deg); z-index: 100;" src="./Images/tape_v3.png">
 
             <!-- FC -->
-            <img id="fc" onclick="placeFC();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 240px; top: 40px; height: 75px; width: 150px; transform: rotate(15deg); z-index: 100;" src="./Images/hand_screw_FC.png">
-            <img id="placedFc" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 307px; top: 222px; height: 30px; width: 55px; visibility: block; transform:rotate(3deg); z-index: 100;" src="./Images/Flight_controllerLatest.png">
+            <img id="fc" onclick="placeFC();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 240px; top: 40px; height: 75px; width: 150px; transform: rotate(0deg); z-index: 100;" src="./Images/Hand_Flight_controller_v2.png">
+            <img id="placedFc" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 307px; top: 222px; height: 30px; width: 55px; visibility: block; transform:rotate(3deg); z-index: 100;" src="./Images/Flight_controller_v2.png">
 
 
             <!-- Sbus image -->
             <img id="sbus_notPlaced" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 220px; top: 40px; height: 90px; width: 200px; transform: rotate(0deg); z-index: 100;" src="./Images/Flight_controller_iso_WIREv04.png">
             <img id="sbus_notPlaced2" onclick="placeSBUScable();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 220px; top: 40px; height: 90px; width: 200px; transform: rotate(0deg); z-index: 100;" src="./Images/Flight_controller_iso_WIREv04.png">
-            <img id="sbus_Placed" onclick="connectSbusToRec();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 332px; top: 215px; height: 40px; width: 50px; transform: rotate(0deg); z-index: 200;" src="./Images/Flight_controller_iso_WIREv04.png">
+            <img id="sbus_Placed" onclick="connectSbusToRec();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 325px; top: 215px; height: 40px; width: 60px; transform: rotate(0deg); z-index: 200;" src="./Images/Flight_controller_iso_WIREv04.png">
+            <img id="sbus_PlacedConnected" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 325px; top: 215px; height: 55px; width: 50px; transform: rotate(0deg); z-index: 200;" src="./Images/Flight_controller_iso_WIREv04.png">
             
             <!-- Info about Sbus to FC -->
             <div id="fc_topForSBUS_connection" style="position: absolute;visibility: hidden;top: 350px;left: 205px; height: 175px;width: 255px;border: 1px solid black;border-radius: 15px;">
@@ -290,7 +291,7 @@
 
             <!-- Info about the FC -->
             <div id="fc_note" style="position: absolute;visibility: hidden;top: 350px;left: 179px;height: 175px;width: 315px;border: 1px solid black;border-radius: 15px;">
-                <img id="fcZoom" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 85px; top: 10px; height: 75px; width: 150px; transform: rotate(1deg); z-index: 100;" src="./Images/Flight_controllerLatest.png">
+                <img id="fcZoom" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 95px; top: 10px; height: 75px; width: 130px; transform: rotate(1deg); z-index: 100;" src="./Images/Flight_controller_v2.png">
                 <span style="position: absolute;top: 75px;left: 7px;height:65px;width:280px;padding:10px;">The arrow on FC indicates the front side of the vehicle. 
                 Motors are numbered based on the direction that the FC points. </span>
                 <button style="position: absolute;top: 140px; left: 270px;  color: rgb(255, 255, 255); background-color: black; border-radius: 5px; cursor: pointer;" onclick="fcInfoDone();">Ok</button>
@@ -310,7 +311,7 @@
             </div>
 
             <!-- RECEIVER -->
-            <img id="receiver" onclick="placeReceiver();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 265px; top: 60px; height: 60px; width: 140px; transform: rotate(3deg); z-index: 100;" src="./Images/hand_receiver.png">
+            <img id="receiver" onclick="placeReceiver();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 302px; top: 60px; height: 60px; width: 145px; transform: rotate(3deg); z-index: 100;" src="./Images/hand_receiver (1).png">
             <img id="placedReceiver" onclick="" class="" style="visibility: hidden; position: absolute; left: 302px; top: 235px; height: 40px; width: 75px; transform: rotate(3deg); z-index: 170;" src="./Images/new_rec.png">
             <!-- RECEIVER WIRE UNCONNECTED -->
             <!-- <img id="rec_wire_uc" src="./Images/receiver wire unconnected.png" style="visibility: hidden; position: absolute; left: 360px; top: 263px; height: 50px; width: 30px; z-index: 100;" alt="Receiver wire unconnected"> -->
@@ -431,7 +432,7 @@
             <!-- Base Layer -->
             <img id="base_layer" onclick="placeBase();" style="visibility: hidden;position:absolute;top: 80px; left: 240px; height: 80px; width: 180px;z-index:90;cursor: pointer;transform: rotate(4deg);" src="./Images/base_layera_v4.png" alt="Base layer of the frame">
             <!-- Battery -->
-            <img id="battery_base" onclick="placeBattery();" style="visibility: hidden;position: absolute;top: 50px;left: 200px;height: 70px; width: 200px;cursor: pointer;z-index: 96;" src="./Images/Battery.png" alt="Battery">
+            <img id="battery_base" onclick="placeBattery();" style="visibility: hidden;position: absolute;top: 50px;left:210px;height: 70px; width: 200px;cursor: pointer;z-index: 96;" src="./Images/Battery.png" alt="Battery">
 
             <!-- Screw hand to screw the base layer to end of arm stand -->
             <img id="screwHand3" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 363px; height: 95px; width: 45px; z-index: 90; top: 367px;" src="./Images/screwing_180ddeg.png">
@@ -483,7 +484,7 @@
             <!-- SOLDERING -->
             <img id="solder" onclick="solder();" style="visibility: hidden;cursor: pointer; position: absolute; top: 38px; left: 230px; height: 90px; width: 190px; transform: rotate(-3deg);" src="./Images/soldering.png" alt="Soldering">
             <img id="solder_hand" src="./Images/soldering2.png" class="" style="visibility: hidden; position: absolute; top: 35px; left: 235px; height: 90px; width: 105px;" alt="Hand holding solder gun">
-            <img id="solder_lead" src="./Images/soldering1.png" style="visibility: hidden; position: absolute; top: 58px; left: 330px; height: 70px; width: 90px;transform:rotate(-6deg);" alt="Hand holding lead wire">
+            <img id="solder_lead" src="./Images/soldering1.png" style="visibility: hidden; position: absolute; top: 61px; left: 337px; height: 70px; width: 90px;transform:rotate(-6deg);" alt="Hand holding lead wire">
             <img id="solder_lead2" src="./Images/soldering1.1.png" style="visibility: hidden; position: absolute; top: 240px; left: 276px;height: 90px; width: 104px; z-index: 650;" alt="Hand holding lead wire">
             <img id="lead_wire" src="./Images/wire2.png" style="visibility: hidden; position: absolute; top: 28px; left: 250px; height: 110px; width: 160px;" alt="Lead wire">
 
@@ -500,11 +501,11 @@
             <!-- <img id="solder_lead3" src="./Images/soldering1.1.png" style="visibility: hidden; position: absolute; top: 265px; left: 330px;height: 90px; width: 104px; z-index: 650;" alt="Hand holding lead wire"> -->
             <img id="solder_lead3" src="./Images/soldering1.1.png" style="visibility: hidden; position: absolute; top: 269px; left: 328px; height: 90px; width: 104px; z-index: 650; " alt="Hand holding lead wire">
             <!-- Lead of battery to pcb connector -->
-            <img id="leadAfter" src="./Images/Lead2.png" style="visibility: hidden; position: absolute; top: 320px; left: 315px; height: 12px; width: 15px; z-index: 760;" alt="Hand holding lead wire">
+            <img id="leadAfter" src="./Images/Lead2.png" style="visibility: hidden; position: absolute; top: 320px; left: 315px; height: 12px; width: 15px; z-index: 650;" alt="Hand holding lead wire">
             <img id="leadAfter2" src="./Images/Lead2.png" style="visibility: hidden; position: absolute; top: 322px; left: 338px;  height: 12px; width: 15px; z-index: 760;" alt="Hand holding lead wire">
             <!-- Lead of first esc solder -->
             <img id="leadAfter3" src="./Images/Lead2.png" style="visibility: hidden; position: absolute; top: 305px; left: 258px; height: 12px; width: 15px; z-index: 650;" alt="Hand holding lead wire">
-            <img id="leadAfter4" src="./Images/Lead2.png" style="visibility: hidden; position: absolute; top: 317px; left: 282px; height: 12px; width: 15px; z-index: 650;" alt="Hand holding lead wire">
+            <img id="leadAfter4" src="./Images/Lead2.png" style="visibility: hidden; position: absolute; top: 319px; left: 280px; height: 12px; width: 15px; z-index: 650;" alt="Hand holding lead wire">
             <img id="leadAfter5" src="./Images/Lead2.png" style="visibility: hidden; position: absolute; top: 323px; left: 360px; height: 12px; width: 15px; z-index: 650;" alt="Hand holding lead wire">
             <img id="leadAfter6" src="./Images/Lead2.png" style="visibility: hidden; position: absolute; top: 310px; left: 383px; height: 12px; width: 15px; z-index: 650;" alt="Hand holding lead wire">
             <img id="leadAfter7" src="./Images/Lead2.png" style="visibility: hidden; position: absolute; top: 265px; left: 375px; height: 12px; width: 15px; z-index: 650;" alt="Hand holding lead wire">
@@ -514,7 +515,7 @@
 
 
             <img id="lead_smoke1" src="./Images/lead_smoke.png" style="visibility: hidden; position: absolute; top: 273px; left: 250px; height: 40px; width: 30px; z-index: 660;" alt="Lead smoke">
-            <img id="lead_smoke2" src="./Images/lead_smoke.png" style="visibility: hidden; position: absolute; top: 279px; left: 277px; height: 40px; width: 30px; z-index: 660;" alt="Lead smoke">
+            <img id="lead_smoke2" src="./Images/lead_smoke.png" style="visibility: hidden; position: absolute; top: 281px; left: 277px; height: 40px; width: 30px; z-index: 660;" alt="Lead smoke">
             <img id="lead_smoke3" src="./Images/lead_smoke.png" style="visibility: hidden; position: absolute; top: 290px; left: 355px; height: 40px; width: 30px; z-index: 660;" alt="Lead smoke">
             <img id="lead_smoke4" src="./Images/lead_smoke.png" style="visibility: hidden; position: absolute; top: 279px; left: 380px; height: 40px; width: 30px; z-index: 660;" alt="Lead smoke">
             <img id="lead_smoke5" src="./Images/lead_smoke.png" style="visibility: hidden; position: absolute; top: 228px; left: 375px;height: 40px; width: 30px; z-index: 660;" alt="Lead smoke">
@@ -564,12 +565,12 @@
             <!--------------- Knobs -->
             <img id="knob1" src="./Images/Nut_single.png" style="visibility: hidden; position: absolute; top:265px ; left: 123px; height: 23px; width: 14.5px; z-index: 580;" alt="Knob">
             <img id="knob2" src="./Images/Nut_single.png" style="visibility: hidden; position: absolute; top:277px ; left:556px; height: 20px; width: 14px; z-index: 580;" alt="Knob">
-            <img id="knob3" src="./Images/Nut_single.png" style="visibility: hidden; position: absolute; top:110px ; left: 455px; height: 15px; width: 10.5px; z-index: 580;" alt="Knob">
+            <img id="knob3" src="./Images/Nut_single.png" style="visibility: hidden; position: absolute; top:129px ; left: 455px; height: 15px; width: 10.5px; z-index: 580;opacity: 0;" alt="Knob">
             <img id="knob4" src="./Images/Nut_single.png" style="visibility: hidden; position: absolute; top:107px ; left: 172.5px; height: 15px; width: 10px; z-index: 580;" alt="Knob">
             <!--------------- curve arrows to show rotate of placing the knob  -->
             <img id="curve_arrow1_1" class="" src="./Images/curve_arrow_3d-removebg-preview.png" alt="Curved arrow" style="visibility: hidden; position: absolute; top: 240px; left: 120px; height: 30px; width: 30px; z-index: 590;">
             <img id="curve_arrow1_2" class="" src="./Images/curve_arrow_3d-removebg-preview.png" alt="Curved arrow" style="visibility: hidden; position: absolute; top: 247px; left: 550px; height: 30px; width: 30px; z-index: 570;">
-            <img id="curve_arrow1_3" class="" src="./Images/curve_arrow_3d-removebg-preview.png" alt="Curved arrow" style="visibility: hidden; position: absolute; top: 80px; left: 450px; height: 30px; width: 30px; z-index: 570;">
+            <img id="curve_arrow1_3" class="" src="./Images/curve_arrow_3d-removebg-preview.png" alt="Curved arrow" style="visibility: hidden; position: absolute; top:  105px; left: 445px;  height: 30px; width: 30px; z-index: 760;">
             <img id="curve_arrow1_4" class="" src="./Images/curve_arrow_3d-removebg-preview.png" alt="Curved arrow" style="visibility: hidden; position: absolute; top: 80px; left: 166px; height: 30px; width: 30px; z-index: 570;">
 
 
@@ -582,7 +583,8 @@
             <img id="connected_esc_wire1" src="./Images/ESC_power_connected_1.1.png" style="visibility: hidden; position: absolute; top: 298px; left: 291px; height: 20px; width: 20px; z-index: 50; opacity: 0;transform:rotate(-6deg); " alt="Hand holding lead wire">
             <img id="connected_esc_wire2" src="./Images/ESC_power_connected_2.1.png" style="visibility: hidden; position: absolute; top: 300px; left: 363px; height: 18px; width: 20px; z-index: 50; opacity: 0; transform: rotate(-3deg);  " alt="Hand holding lead wire">
 
-
+            <img id="hand_knob" style="visibility: hidden; position: absolute; top: 57px; left: 440px; height: 80px; width: 45px; transition: all 2s ease-in-out 0s; opacity: 1;z-index:750;" src="./Images/hand_nut.png" alt="Hand holding the knob">
+            <button id="all_knobs" onclick="placeAllKnobs();" style="visibility:hidden;position:absolute;top:70px;left:450px;border-radius: 5px;color: #fff;background-color: black;cursor: pointer;">Place all other Knobs</button>
 
             <p id="frame-info" style="position: absolute; top: 450px; visibility: hidden; "> The upper layer of the frame is attached to four arms which are used to hold the motors.</p>
             <img id="arr-air" style="visibility: hidden; top: 40%; right: 70%; height: 20%; width:5%; position: absolute;" src="./Images/uav/arrow-aerofoil.png">

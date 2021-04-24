@@ -628,8 +628,8 @@ html {
     } */
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        left: 300px;
-        top: 210px;
+        left: 303px;
+        top: 205px;
         /* height: 50px;
         width: 100px; */
     }
@@ -643,15 +643,15 @@ html {
 
 @keyframes moveRcv {
     0% {
-        left: 245px;
+        left: 302px;
         top: 60px;
-        height: 60px;
-        width: 160px;
+        height: 55px;
+        width: 150px;
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        left: 245px;
-        top: 245px;
+        left: 300px;
+        top: 248px;
         height: 55px;
         width: 150px;
     }
@@ -877,12 +877,19 @@ html {
 
 @keyframes sbusMove {
     0% {
-        left: 368px; top: 350px; height: 33px; width: 22px;
+        left: 368px;
+        top: 350px;
+        height: 33px;
+        width: 22px;
     }
     100% {
-        left: 368px; top: 350px; height: 53px; width: 27px;
+        left: 368px;
+        top: 350px;
+        height: 53px;
+        width: 27px;
     }
 }
+
 .moveFcSignal1 {
     /* transform: translate(0,350px); */
     animation: moveSig1 2s;
@@ -897,6 +904,7 @@ html {
         left: 235px;
     }
 }
+
 .moveFcSignal2 {
     /* transform: translate(0,350px); */
     animation: moveSig2 2s;
@@ -911,6 +919,7 @@ html {
         left: 205px;
     }
 }
+
 .moveFcSignal3 {
     /* transform: translate(0,350px); */
     animation: moveSig3 2s;
@@ -925,6 +934,7 @@ html {
         left: 205px;
     }
 }
+
 .moveFcSignal4 {
     /* transform: translate(0,350px); */
     animation: moveSig4 2s;
@@ -992,9 +1002,24 @@ html {
         left: 220px; top: 40px; height: 90px; width: 200px;
     }
     100% {
-        left: 332px; top: 215px; height: 40px; width: 50px;
+        left: 325px; top: 215px; height: 40px; width: 60px
     }
 }
+.connectRecEndAndSbus {
+    /* transform: translate(0,350px); */
+    animation: movesbusRecEnd 2s;
+    /* transition: all 10s ease-in-out; */
+}
+
+@keyframes movesbusRecEnd {
+    0% {
+        left: 325px; top: 215px; height: 40px; width: 60px;
+    }
+    100% {
+        left: 325px; top: 215px; height: 55px; width: 50px;
+    }
+}
+
 /* 
 .rotate_curve_arrow {
     animation: rotate_arrow 2s 3 linear;
@@ -1092,3 +1117,19 @@ html {
         width: 80px;
     }
 } */
+
+.rotateHandKnob {
+    animation: rotation_knob 1s 2 linear;
+}
+
+@keyframes rotation_knob {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        /* transform: rotate(40deg); */
+        transform: rotateY(-60deg);
+        transform-origin: 60% 40%;
+        /* top: 110px; */
+    }
+}
