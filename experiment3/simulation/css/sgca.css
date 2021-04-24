@@ -645,8 +645,8 @@ html {
     0% {
         left: 302px;
         top: 60px;
-        height: 60px;
-        width: 160px;
+        height: 55px;
+        width: 150px;
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {

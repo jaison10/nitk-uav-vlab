@@ -1482,13 +1482,16 @@ function rotationInfoDone() {
         setTimeout(function() {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
             // document.getElementById("knob3").style.opacity = 1;
+
+
             // document.getElementById("knob3").style.top = "131px";
             // document.getElementById("knob3").style.visibility = "visible";
             // document.getElementById("knob3").style.transition = "all 3s ease-in-out";
             document.getElementById("hand_knob").style.visibility = "visible";
-            document.getElementById("hand_knob").classList.add('rotateHandKnob');
             document.getElementById("hand_knob").style.top = "67px";
+            document.getElementById("hand_knob").classList.add('rotateHandKnob');
             document.getElementById("hand_knob").style.transition = "top 3s ease-in-out";
+
             document.getElementById("curve_arrow1_3").style.visibility = "visible";
             myIntv1 = setInterval(function() {
                 animatecurve2arrow(3);
@@ -1513,7 +1516,7 @@ function rotationInfoDone() {
         // document.getElementById("knob4").style.transition = "top 2s ease-in-out";
 
 
-    }, 2000);
+    }, 3000);
 
     setTimeout(function() {
         clearInterval(myIntv1);
@@ -1525,7 +1528,7 @@ function rotationInfoDone() {
         document.getElementById("all_knobs").style.visibility = "visible";
 
 
-    }, 7000);
+    }, 8000);
 
 
 }
