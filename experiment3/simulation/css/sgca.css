@@ -643,14 +643,14 @@ html {
 
 @keyframes moveRcv {
     0% {
-        left: 245px;
+        left: 302px;
         top: 60px;
         height: 60px;
         width: 160px;
     }
     /* 50%  {left:290px; top:100px; transform:rotate(0deg)} */
     100% {
-        left: 335px;
+        left: 300px;
         top: 248px;
         height: 55px;
         width: 150px;
@@ -1048,3 +1048,19 @@ html {
         width: 80px;
     }
 } */
+
+.rotateHandKnob {
+    animation: rotation_knob 1s 2 linear;
+}
+
+@keyframes rotation_knob {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        /* transform: rotate(40deg); */
+        transform: rotateY(-60deg);
+        transform-origin: 60% 40%;
+        /* top: 110px; */
+    }
+}

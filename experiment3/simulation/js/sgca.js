@@ -473,7 +473,7 @@ function placeSingleScrew() {
         document.getElementById("singleScrewFinal").style.top = "201px";
         // document.getElementById("singleScrewFinal").style.zIndex = -1;
         // document.getElementById("screwHand").classList.add("rotateHand");
-        document.getElementById("screwHand").style.top = (101 + additionalTop) + "px";
+        document.getElementById("screwHand").style.top = "115px";
         // additionalTop += 2;
         document.getElementById("screwHand").style.transition = "top 3s ease-in-out";
         document.getElementById("singleScrewFinal").style.opacity = 0;
@@ -672,7 +672,7 @@ function placeDSTRec() {
         document.getElementById("placeMotorInfo").innerText = "Let us place the receiver now.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         setTimeout(() => {
-            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 470px; top: 130px; height: 30px; z-index: 10;";
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 500px; top: 130px; height: 30px; z-index: 10;";
 
             document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
             // Code for IE9
@@ -1445,61 +1445,135 @@ function placeProp(id) {
 }
 
 function rotationInfoDone() {
+    document.getElementById('prop1').onclick = "";
+    document.getElementById('prop2').onclick = "";
+    document.getElementById('prop3').onclick = "";
+    document.getElementById('prop4').onclick = "";
     document.getElementById('rotation_note').style.visibility = "hidden";
     document.getElementById("placeMotorInfo").style.visibility = "visible";
     document.getElementById("placeMotorInfo").innerText = "Place the knobs on the Propellers.";
-    document.getElementById("knob1").style.visibility = "visible";
-    document.getElementById("knob2").style.visibility = "visible";
-    document.getElementById("knob3").style.visibility = "visible";
-    document.getElementById("knob4").style.visibility = "visible";
-    document.getElementById("hand_knob").style.visibility = "visible";
-    setTimeout(function() {
-        document.getElementById("placeMotorInfo").style.visibility = "hidden";
-        document.getElementById("knob1").style.top = "286px";
-        document.getElementById("knob2").style.top = "298.5px";
-        document.getElementById("knob3").style.top = "131px";
-        document.getElementById("knob4").style.top = "128px";
-        document.getElementById("knob1").style.transition = "top 2s ease-in-out";
-        document.getElementById("knob2").style.transition = "top 2s ease-in-out";
-        document.getElementById("knob3").style.transition = "top 2s ease-in-out";
-        document.getElementById("knob4").style.transition = "top 2s ease-in-out";
+    // document.getElementById("knob1").style.visibility = "visible";
+    // document.getElementById("knob2").style.visibility = "visible";
+    // document.getElementById("knob4").style.visibility = "visible";
 
-        document.getElementById("curve_arrow1_1").style.visibility = "visible";
-        document.getElementById("curve_arrow1_2").style.visibility = "visible";
-        document.getElementById("curve_arrow1_3").style.visibility = "visible";
-        document.getElementById("curve_arrow1_4").style.visibility = "visible";
-        myIntv1 = setInterval(function() {
-            animatecurve2arrow(1);
+    // document.getElementById("curve_arrow1_2").style.visibility = "visible";
+    // document.getElementById("curve_arrow1_3").style.visibility = "visible";
+    // document.getElementById("curve_arrow1_4").style.visibility = "visible";
+
+    // myIntv2 = setInterval(function() {
+    //     animatecurve2arrow(2);
+    // }, 500);
+    // myIntv3 = setInterval(function() {
+    //     animatecurve2arrow(3);
+    // }, 500);
+    // myIntv4 = setInterval(function() {
+    //     animatecurve2arrow(4);
+    // }, 500);
+
+    // document.getElementById("knob3").style.top = "110px";
+    // document.getElementById("singleScrewFinal").style.zIndex = -1;
+    // document.getElementById("screwHand").classList.add("rotateHand");
+
+    setTimeout(function() {
+        setTimeout(() => {
+            document.getElementById("placeMotorInfo").innerText = "Turn the knob in clockwise direction onto the Propeller.";
+
         }, 500);
-        myIntv2 = setInterval(function() {
-            animatecurve2arrow(2);
-        }, 500);
-        myIntv3 = setInterval(function() {
-            animatecurve2arrow(3);
-        }, 500);
-        myIntv4 = setInterval(function() {
-            animatecurve2arrow(4);
-        }, 500);
+        setTimeout(function() {
+            document.getElementById("placeMotorInfo").style.visibility = "hidden";
+            // document.getElementById("knob3").style.opacity = 1;
+            // document.getElementById("knob3").style.top = "131px";
+            // document.getElementById("knob3").style.visibility = "visible";
+            // document.getElementById("knob3").style.transition = "all 3s ease-in-out";
+            document.getElementById("hand_knob").style.visibility = "visible";
+            document.getElementById("hand_knob").classList.add('rotateHandKnob');
+            document.getElementById("hand_knob").style.top = "67px";
+            document.getElementById("hand_knob").style.transition = "top 3s ease-in-out";
+            document.getElementById("curve_arrow1_3").style.visibility = "visible";
+            myIntv1 = setInterval(function() {
+                animatecurve2arrow(3);
+            }, 500);
+
+        }, 2000);
+        setTimeout(function() {
+            document.getElementById("hand_knob").style.opacity = 0;
+            document.getElementById("hand_knob").style.visibility = "visible";
+            document.getElementById("hand_knob").style.transition = "all 2s ease-in-out";
+            document.getElementById("knob3").style.opacity = 1
+            document.getElementById("knob3").style.top = "131px";
+            document.getElementById("knob3").style.visibility = "visible";
+            document.getElementById("knob3").style.transition = "all 3s ease-in-out";
+        }, 3000);
+        // document.getElementById("knob1").style.top = "286px";
+        // document.getElementById("knob2").style.top = "298.5px";
+        // document.getElementById("knob4").style.top = "128px";
+        // document.getElementById("knob1").style.transition = "top 2s ease-in-out";
+        // document.getElementById("knob2").style.transition = "top 2s ease-in-out";
+        // document.getElementById("knob3").style.transition = "top 2s ease-in-out";
+        // document.getElementById("knob4").style.transition = "top 2s ease-in-out";
+
 
     }, 2000);
 
     setTimeout(function() {
         clearInterval(myIntv1);
+        // clearInterval(myIntv2);
+        // clearInterval(myIntv3);
+        // clearInterval(myIntv4);
+        document.getElementById("placeMotorInfo").innerText = "Similarly, Place all other knobs.";
+        document.getElementById("curve_arrow1_3").style.visibility = "hidden";
+        document.getElementById("all_knobs").style.visibility = "visible";
+
+
+    }, 7000);
+
+
+}
+
+function placeAllKnobs() {
+    document.getElementById("placeMotorInfo").style.visibility = "hidden";
+    document.getElementById("all_knobs").style.visibility = "hidden";
+
+    setTimeout(function() {
+        document.getElementById("knob1").style.visibility = "visible";
+        document.getElementById("knob2").style.visibility = "visible";
+        document.getElementById("knob4").style.visibility = "visible";
+        document.getElementById("knob1").style.top = "286px";
+        document.getElementById("knob2").style.top = "298.5px";
+        document.getElementById("knob4").style.top = "128px";
+        document.getElementById("knob1").style.transition = "top 2s ease-in-out";
+        document.getElementById("knob2").style.transition = "top 2s ease-in-out";
+        document.getElementById("knob4").style.transition = "top 2s ease-in-out";
+
+        document.getElementById("curve_arrow1_2").style.visibility = "visible";
+        document.getElementById("curve_arrow1_1").style.visibility = "visible";
+        document.getElementById("curve_arrow1_4").style.visibility = "visible";
+
+        myIntv2 = setInterval(function() {
+            animatecurve2arrow(2);
+        }, 500);
+        myIntv = setInterval(function() {
+            animatecurve2arrow(1);
+        }, 500);
+        myIntv4 = setInterval(function() {
+            animatecurve2arrow(4);
+        }, 500);
+    }, 1000);
+    setTimeout(function() {
         clearInterval(myIntv2);
-        clearInterval(myIntv3);
+        clearInterval(myIntv);
         clearInterval(myIntv4);
 
-        document.getElementById("curve_arrow1_1").style.visibility = "hidden";
         document.getElementById("curve_arrow1_2").style.visibility = "hidden";
-        document.getElementById("curve_arrow1_3").style.visibility = "hidden";
+        document.getElementById("curve_arrow1_1").style.visibility = "hidden";
         document.getElementById("curve_arrow1_4").style.visibility = "hidden";
-    }, 5000);
-
+    }, 3000);
     setTimeout(function() {
         document.getElementById("pumptext").innerHTML = "The Assembly of the Quadcoptor is thus complete. Proceed to the next experiment to &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;understand the Calibration of the Quadcopter. ";
 
 
     }, 6000);
+
 }
 
 function moveTopView() {
@@ -1943,6 +2017,8 @@ function solderAllWires() {
         document.getElementById("solder_lead").style.zIndex = "650";
         document.getElementById("leadAfter7").style.zIndex = "630";
         document.getElementById("leadAfter8").style.zIndex = "630";
+        document.getElementById('lead_smoke5').style.zIndex = "640";
+        document.getElementById('lead_smoke6').style.zIndex = "640";
 
         document.getElementById("solder_lead").style.transition = "all 1s ease-in-out";
     }, 18000);
@@ -2245,8 +2321,9 @@ function placeBatteryToPcb() {
         document.getElementById("solder_lead").style.left = "322px";
         document.getElementById("solder_lead").style.height = "90px";
         document.getElementById("solder_lead").style.width = "104px";
-        document.getElementById("solder_lead").style.zIndex = "640";
+        document.getElementById("solder_lead").style.zIndex = "660";
         document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
+
 
         setTimeout(() => {
             // soldering the first wire
@@ -2255,6 +2332,10 @@ function placeBatteryToPcb() {
             document.getElementById("solder_lead").style.visibility = "visible";
             document.getElementById("solder_lead").style.top = "260px";
             document.getElementById("solder_lead").style.left = "319px";
+            document.getElementById("solder_lead").style.zIndex = "640";
+            document.getElementById("leadAfter5").style.zIndex = "600";
+            document.getElementById("leadAfter6").style.zIndex = "600";
+
             document.getElementById("solder_lead").style.transition = "all 2s ease-in-out";
             document.getElementById("lead_smoke9").style.visibility = "visible";
 
