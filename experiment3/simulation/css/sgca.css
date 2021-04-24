@@ -936,7 +936,63 @@ html {
         left: 195px;
     }
     100% {
-        left: 205px;
+        left: 220px;
+    }
+}
+.moveBeginRecWire {
+    /* transform: translate(0,350px); */
+    animation: moveRec1 1s;
+    /* transition: all 10s ease-in-out; */
+}
+
+@keyframes moveRec1 {
+    0% {
+        left: 170px;
+    }
+    100% {
+        left: 160px;top:100px;
+    }
+}
+.moveintermediateRecWire {
+    /* transform: translate(0,350px); */
+    animation: moveRec2 1s;
+    /* transition: all 10s ease-in-out; */
+}
+
+@keyframes moveRec2 {
+    0% {
+        left: 135px;
+    }
+    100% {
+        left: 130px; top: 70px; 
+    }
+}
+.moveintermediateRecWireNewOne {
+    /* transform: translate(0,350px); */
+    animation: moveRecNew2 2s;
+    /* transition: all 10s ease-in-out; */
+}
+
+@keyframes moveRecNew2 {
+    0% {
+        left: 175px; top: 100px; height: 70px; width: 74px;
+    }
+    100% {
+        left: 135px; top: 80px; height: 100px; width: 114px;
+    }
+}
+.moveFullSbusDown {
+    /* transform: translate(0,350px); */
+    animation: movesbus 2s;
+    /* transition: all 10s ease-in-out; */
+}
+
+@keyframes movesbus {
+    0% {
+        left: 220px; top: 40px; height: 90px; width: 200px;
+    }
+    100% {
+        left: 332px; top: 215px; height: 40px; width: 50px;
     }
 }
 /* 

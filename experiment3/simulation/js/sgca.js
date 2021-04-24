@@ -1072,7 +1072,7 @@ function revSignalInfoShown() {
     document.getElementById("placeMotorInfo").style.visibility = "visible";
     setTimeout(() => {
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
-        document.getElementById("sbus_notPlaced").style.visibility = "visible";
+        document.getElementById("sbus_notPlaced2").style.visibility = "visible";
         document.getElementById("sbus_notPlaced").style.left = "350px";
         document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 350px; top: 132px; height: 30px; z-index: 10;;";
         // document.getElementById('rec_wire_uc').onclick = function() { RecToFc(); };
@@ -1092,44 +1092,73 @@ function revSignalInfoShown() {
 }
 
 function placeSBUScable() {
+    myStopFunction();
     // Connect sbus to Fc top view as well as isometric.
     document.getElementById("mainPortConnector").style.visibility = "visible";
     document.getElementById("mainPortConnector").classList.add("moveMainPortSbus");
-    setTimeout(function() {
-        document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame.";
-        document.getElementById("placeMotorInfo").style.visibility = "visible";
-        setTimeout(function() {
-            document.getElementById("placeMotorInfo").style.visibility = "hidden";
-            document.getElementById('base_layer').style.visibility = "visible";
-
-            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 150px; height: 30px; z-index: 10;";
-
-            document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
-            // Code for IE9
-            document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
-            // Standard syntax
-            document.getElementById("arrow1").style.transform = "rotate(0deg)";
-
-            myInt = setInterval(function() {
-                animatearrow();
-            }, 500);
-
-        }, 5000);
+    document.getElementById("sbus_notPlaced2").classList.add("moveFullSbusDown");
+    setTimeout(() => {
+        document.getElementById("mainPortConnector").style.visibility = "hidden";
+        document.getElementById("sbus_notPlaced2").style.visibility = "hidden";
+        document.getElementById("mainPortConnectorConnected").style.visibility = "visible";
+        document.getElementById("sbus_Placed").style.visibility = "visible";
     }, 2000);
+    setTimeout(function() {
+        document.getElementById("mainPortConnectorConnected").style.visibility = "hidden";
+        document.getElementById("fc_topForSBUS_connection").style.visibility = "hidden";
+        document.getElementById("fcZoomSbusCon").style.visibility = "hidden";
+        document.getElementById("placeMotorInfo").innerText = "Click on the SBUS connector to make connection between FC and receiver.";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        document.getElementById("info-about-RecPartSBUS-signal").style.visibility = "visible";
+        document.getElementById("fc_topForSBUS_connectionReceiver").style.visibility = "visible";
+        document.getElementById("fcZoomSRecbusCon").style.visibility = "visible";
+
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 440px; top: 260px; height: 30px; z-index: 100;";
+
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(0deg)";
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
+    }, 3000);
 }
 
-function RecToFc() {
+function connectSbusToRec(){
     myStopFunction();
-    // document.getElementById('rec_wire_uc').style.visibility = "hidden";
-    // document.getElementById('rec_wire').style.visibility = "visible";
-    setTimeout(function() {
+    console.log("Sbus connected to the Receiver");
+    // document.getElementById("fcZoomSRecbusConnectorBegin").style.visibility = "visible";
+    // document.getElementById("fcZoomSRecbusConnectorBegin").classList.add("moveBeginRecWire");
+    // setTimeout(() => {
+    //     document.getElementById("fcZoomSRecbusConnectorBegin").style.visibility = "hidden";
+    //     document.getElementById("fcZoomSRecbusConnectorOnway").style.visibility = "visible";
+    //     document.getElementById("fcZoomSRecbusConnectorOnway").classList.add("moveBeginRecWire");
+    // }, 1000);
+    // setTimeout(() => {
+    //     document.getElementById("fcZoomSRecbusConnectorOnway").style.visibility = "hidden";
+    //     document.getElementById("fcZoomSRecbusConnectorPlaced").style.visibility = "visible";
+    // }, 2000);
+    document.getElementById("fcZoomSRecbusConnectorOnway").style.visibility = "visible";
+    document.getElementById("fcZoomSRecbusConnectorOnway").classList.add("moveintermediateRecWireNewOne");
+    setTimeout(() => {
+        document.getElementById("fcZoomSRecbusConnectorOnway").style.visibility = "hidden";
+        document.getElementById("fcZoomSRecbusConnectorPlaced").style.visibility = "visible";
+    }, 2000);
+    setTimeout(() => {
+        // hide
+        document.getElementById("info-about-RecPartSBUS-signal").style.visibility = "hidden";
+        document.getElementById("fcZoomSRecbusConnectorPlaced").style.visibility = "hidden";
+        document.getElementById("fc_topForSBUS_connectionReceiver").style.visibility = "hidden";
+        document.getElementById("fcZoomSRecbusCon").style.visibility = "hidden";
         document.getElementById("placeMotorInfo").innerText = "Let us attach a Base Layer to the frame.";
         document.getElementById("placeMotorInfo").style.visibility = "visible";
         setTimeout(function() {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
             document.getElementById('base_layer').style.visibility = "visible";
 
-            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 480px; top: 150px; height: 30px; z-index: 10;";
+            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 485px; top: 170px; height: 30px; z-index: 100;";
 
             document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
             // Code for IE9
@@ -1142,8 +1171,16 @@ function RecToFc() {
             }, 500);
 
         }, 5000);
-    }, 2000);
+    }, 3000);
 }
+// function RecToFc() {
+//     myStopFunction();
+//     // document.getElementById('rec_wire_uc').style.visibility = "hidden";
+//     // document.getElementById('rec_wire').style.visibility = "visible";
+//     setTimeout(function() {
+        
+//     }, 2000);
+// }
 
 function placeSingleScrew_base() {
     myStopFunction();

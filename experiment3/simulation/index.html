@@ -267,15 +267,26 @@
 
 
             <!-- Sbus image -->
-            <img id="sbus_notPlaced" onclick="placeSBUScable();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 260px; top: 40px; height: 75px; width: 200px; transform: rotate(0deg); z-index: 100;" src="./Images/sbus_wire_unconnected.png">
-
+            <img id="sbus_notPlaced" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 220px; top: 40px; height: 90px; width: 200px; transform: rotate(0deg); z-index: 100;" src="./Images/Flight_controller_iso_WIREv04.png">
+            <img id="sbus_notPlaced2" onclick="placeSBUScable();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 220px; top: 40px; height: 90px; width: 200px; transform: rotate(0deg); z-index: 100;" src="./Images/Flight_controller_iso_WIREv04.png">
+            <img id="sbus_Placed" onclick="connectSbusToRec();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 332px; top: 215px; height: 40px; width: 50px; transform: rotate(0deg); z-index: 200;" src="./Images/Flight_controller_iso_WIREv04.png">
+            
             <!-- Info about Sbus to FC -->
             <div id="fc_topForSBUS_connection" style="position: absolute;visibility: hidden;top: 350px;left: 205px; height: 175px;width: 255px;border: 1px solid black;border-radius: 15px;">
                 <img id="fcZoomSbusCon" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 50px; top: 40px; height: 130px; width: 170px; transform: rotate(0deg); z-index: 100;" src="./Images/Flight_controller_top_v3.png">
             </div>
 
+            <!-- Top connection of SBUS to Receiver -->
+            <div id="fc_topForSBUS_connectionReceiver" style="position: absolute;visibility: hidden;top: 350px;left: 205px; height: 175px;width: 255px;border: 1px solid black;border-radius: 15px;">
+                <img id="fcZoomSRecbusCon" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 5px; top: 10px; height: 150px; width: 180px; transform: rotate(0deg); z-index: 100;" src="./Images/Receiver_v2.png">
+                <img id="fcZoomSRecbusConnectorBegin" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 170px; top: 110px; height: 70px; width: 84px; transform: rotate(0deg); z-index: 100;" src="./Images/Receiver_v2_wiresBegin.png">
+                <img id="fcZoomSRecbusConnectorOnway" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 135px; top: 80px; height: 100px; width: 114px; transform: rotate(-5deg); z-index: 100;" src="./Images/Receiver_v2_wires.png">
+                <img id="fcZoomSRecbusConnectorPlaced" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 135px; top: 81px; height: 100px; width: 104px; transform: rotate(-4deg); z-index: 100;" src="./Images/Receiver iso_connected_v02.png">
+            </div>
+
             <!-- Main port wire of FC -->
             <img id="mainPortConnector" onclick="" class="" style="visibility: hidden; position: absolute; left: 368px; top: 350px; height: 33px; width: 22px; transform: rotate(0deg); z-index: 100;" src="./Images/Main_port_wire.png">
+            <img id="mainPortConnectorConnected" onclick="" class="" style="visibility: hidden; position: absolute; left: 368px; top: 350px; height: 53px; width: 27px; transform: rotate(0deg); z-index: 100;" src="./Images/Main_port_wire.png">
 
             <!-- Info about the FC -->
             <div id="fc_note" style="position: absolute;visibility: hidden;top: 350px;left: 179px;height: 175px;width: 315px;border: 1px solid black;border-radius: 15px;">
@@ -401,12 +412,22 @@
             <!-- Info about the signal wire -->
             <!-- <img id="arrow-rec-signal" style="visibility:hidden ;position: absolute;top: 320px; left: 315px; height: 50px; width: 70px; transform: rotate(160deg);z-index:200;" src="./Images/arrow_slim.png" alt="Info"> -->
             <div id="info-about-Rec-signal" style="position: absolute; visibility: hidden; border-style: solid; border-width: thin; width: 220px; height: 200px; top: 100px; left: 500px; border-radius: 6px;">
-                <img src="./Images/receiver wire unconnected.png" style="position: absolute; width: 200px; height: 50px; top: 16px; left: 9px; border-radius: 6px; border-style: solid; border-width: thin; ">
+                <div style="position: absolute; width: 200px; height: 50px; top: 16px; left: 9px; border-radius: 6px; border-style: solid; border-width: thin;">
+                    <img src="./Images/Flight_controller_iso_WIREv04.png" style="position: absolute; width: 120px; height: 40px; top: 6px; left: 39px; border-radius: 6px;">
+                </div>
                 <span style="position: absolute; width: 200px; height: 50px; top: 75px; left: 15px;"> This is Receiver to FC signal line through which the information 
                 from transmitter will be received and transferred to the FC.</span>
                 <button style="position: absolute;  top: 170px; left: 175px; color: rgb(255, 255, 255); background-color: black; border-radius: 5px; cursor: pointer;" onclick="revSignalInfoShown();">Ok</button>
             </div>
 
+            <!-- Info about the receiver part -->
+            <div id="info-about-RecPartSBUS-signal" style="position: absolute; visibility: hidden; border-style: solid; border-width: thin; width: 220px; height: 200px; top: 100px; left: 500px; border-radius: 6px;">
+                <div style="position: absolute; width: 200px; height: 50px; top: 16px; left: 9px; border-radius: 6px; border-style: solid; border-width: thin; ">
+                    <img src="./Images/sbus_wire_unconnected.png" style="position: absolute; width: 170px; height: 50px; top: 0px; left: 11px;">
+                </div>
+                <span style="position: absolute; width: 200px; height: 50px; top: 75px; left: 15px;">This is Receiver end of Sbus connector. This has wires including 
+                Ground, 5V and Sbus signal wire. This is connected to Sbus part of Receiver. </span>
+            </div>
             <!-- Base Layer -->
             <img id="base_layer" onclick="placeBase();" style="visibility: hidden;position:absolute;top: 80px; left: 240px; height: 80px; width: 180px;z-index:90;cursor: pointer;transform: rotate(4deg);" src="./Images/base_layera_v4.png" alt="Base layer of the frame">
             <!-- Battery -->
