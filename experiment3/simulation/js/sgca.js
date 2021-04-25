@@ -864,16 +864,14 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
 
     console.log(escSelected);
     if (escSelected >= 4) {
-        document.getElementById("esc_arm_placed1").onclick = function() { connectEscMotor(1); };
         document.getElementById("esc_arm_placed2").onclick = function() { connectEscMotor(2); };
-        document.getElementById("esc_arm_placed3").onclick = function() { connectEscMotor(3); };
-        document.getElementById("esc_arm_placed4").onclick = function() { connectEscMotor(4); };
+
 
         setTimeout(function() {
             document.getElementById("pumptext").innerText = "Click on the ESC wires to connect the ESCs to the Motors.";
             // document.getElementById("placeMotorInfo").style.visibility = "visible";
 
-            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left:215px; top: 330px; height: 30px;width:30px; z-index: 100;";
+            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 535px; top: 340px; height: 30px; width: 30px;z-index: 550;";
             document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
             // Code for IE9
             document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
@@ -892,7 +890,9 @@ var connectionsDone = 0;
 function connectEscMotor(n) {
     myStopFunction();
     myStopFunction();
-
+    document.getElementById("esc_arm_placed1").onclick = function() { connectEscMotor(1); };
+    document.getElementById("esc_arm_placed3").onclick = function() { connectEscMotor(3); };
+    document.getElementById("esc_arm_placed4").onclick = function() { connectEscMotor(4); };
     document.getElementById("esc_arm_placed" + n).onclick = "";
     document.getElementById("esc_arm" + n).onclick = "";
 
@@ -907,6 +907,9 @@ function connectEscMotor(n) {
         document.getElementById('esc_wire1').style.left = "229px";
         document.getElementById('esc_signal1').style.top = "269px";
         document.getElementById('esc_signal1').style.left = "230px";
+        document.getElementById("esc_motor_pointer").style = "visibility: visible; position: absolute; top: 100px; left: 220px; height: 80px; width: 70px; transform: rotate(160deg); z-index: 750;";
+        document.getElementById("esc_motor_info").style = "position: absolute; visibility: visible; top: 60px; left: 250px; ";
+        document.getElementById("esc_motor_info").innerText = "Third ESC";
 
         // document.getElementById('esc_wire1').style.top= "263px;";
         // document.getElementById('esc_wire1').style.left= "237px";
@@ -936,6 +939,10 @@ function connectEscMotor(n) {
         document.getElementById('esc_wire2').style.left = "397px";
         document.getElementById('esc_signal2').style.top = "263px";
         document.getElementById('esc_signal2').style.left = "357px";
+        document.getElementById("esc_motor_pointer").style = "visibility: visible; position: absolute; top: 250px; left: 140px; height: 50px; width: 70px; transform: rotate(90deg); z-index: 750;";
+        document.getElementById("esc_motor_info").style = "position: absolute; visibility: visible; top: 210px; left: 100px;";
+        document.getElementById("esc_motor_info").innerText = "Second ESC";
+
 
         if (connectionsDone == 1) {
             document.getElementById("placeMotorInfo").innerText = "Click on the rest of the ESCs to connect to the Motor."
@@ -962,7 +969,8 @@ function connectEscMotor(n) {
         document.getElementById('esc_signal3').style.left = "341px";
         document.getElementById('esc_wire3').style.top = "199px";
         document.getElementById('esc_signal3').style.top = "199px";
-
+        document.getElementById("esc_motor_pointer").style.visibility = "hidden";
+        document.getElementById("esc_motor_info").style.visibility = "hidden";
         if (connectionsDone == 1) {
             document.getElementById("placeMotorInfo").innerText = "Click on the rest of the ESCs to connect to the Motor."
         }
@@ -987,6 +995,9 @@ function connectEscMotor(n) {
         document.getElementById('esc_wire4').style.left = "276px";
         document.getElementById('esc_signal4').style.top = "205px";
         document.getElementById('esc_signal4').style.left = "272px";
+        document.getElementById("esc_motor_pointer").style = "visibility: visible; position: absolute; top: 112px; left: 405px; height: 60px; width: 70px; transform: rotate(160deg); z-index: 750;";
+        document.getElementById("esc_motor_info").style = "position: absolute; visibility: visible; top: 70px; left: 420px;";
+        document.getElementById("esc_motor_info").innerText = "Fourth ESC";
 
         connectionsDone++;
 
@@ -1033,10 +1044,9 @@ function fcSignalInfoShown() {
     // Standard syntax
     document.getElementById("arrow1").style.transform = "rotate(270deg)";
 
-    document.getElementById('esc_signal1').onclick = function() { connectEscFc(1); };
+
     document.getElementById('esc_signal2').onclick = function() { connectEscFc(2); };
-    document.getElementById('esc_signal3').onclick = function() { connectEscFc(3); };
-    document.getElementById('esc_signal4').onclick = function() { connectEscFc(4); };
+
 
     myInt = setInterval(function() {
         animatearrow();
@@ -1051,9 +1061,14 @@ var clickCountOfESCSignalToFC4 = 0;
 
 function connectEscFc(id) {
     myStopFunction();
-
+    document.getElementById('esc_signal1').onclick = function() { connectEscFc(1); };
+    document.getElementById('esc_signal3').onclick = function() { connectEscFc(3); };
+    document.getElementById('esc_signal4').onclick = function() { connectEscFc(4); };
     if (id == 3) {
         clickCountOfESCSignalToFC3 += 1;
+        document.getElementById("esc_motor_pointer").style.visibility = "hidden";
+        document.getElementById("esc_motor_info").style.visibility = "hidden";
+
         if (clickCountOfESCSignalToFC3 == 1) {
             document.getElementById('esc_fc_connected3_1').style.visibility = "visible";
             document.getElementById('esc_fc_connected3_2').style.visibility = "visible";
@@ -1071,8 +1086,12 @@ function connectEscFc(id) {
 
         if (id == 2) {
             clickCountOfESCSignalToFC2 += 1;
+            document.getElementById("esc_motor_pointer").style = "visibility: visible; position: absolute; top: 230px; left: 220px; height: 60px; width: 70px; transform: rotate(70deg); z-index: 750;";
+            document.getElementById("esc_motor_info").style = "position: absolute; visibility: visible; top: 208px; left: 100px; ";
+            document.getElementById("esc_motor_info").innerText = "Second Signal Wire";
             if (clickCountOfESCSignalToFC2 == 1) {
                 fcConnected++;
+
                 // Which is of first motor after correction of FC
                 document.getElementById("signaltoFCwire1").style.visibility = "visible";
                 document.getElementById("signaltoFCwire1").classList.add("moveFcSignal1");
@@ -1084,6 +1103,9 @@ function connectEscFc(id) {
         }
         if (id == 1) {
             clickCountOfESCSignalToFC1 += 1;
+            document.getElementById("esc_motor_pointer").style = "visibility: visible; position: absolute; top: 140px; left: 255px; height: 60px; width: 70px; transform: rotate(110deg); z-index: 750;";
+            document.getElementById("esc_motor_info").style = "position: absolute; visibility: visible; top: 90px; left: 200px;";
+            document.getElementById("esc_motor_info").innerText = "Third Signal Wire";
             if (clickCountOfESCSignalToFC1 == 1) {
                 fcConnected++;
                 // Which is of first motor after correction of FC
@@ -1097,6 +1119,10 @@ function connectEscFc(id) {
         }
         if (id == 4) {
             clickCountOfESCSignalToFC4 += 1;
+            document.getElementById("esc_motor_pointer").style = "visibility: visible; position: absolute; top: 140px; left: 350px; height: 60px; width: 70px; transform: rotate(160deg); z-index: 750;";
+            document.getElementById("esc_motor_info").style = "position: absolute; visibility: visible; top: 90px; left: 350px;";
+            document.getElementById("esc_motor_info").innerText = "Fourth Signal Wire";
+
             if (clickCountOfESCSignalToFC4 == 1) {
                 fcConnected++;
                 // Which is of first motor after correction of FC
