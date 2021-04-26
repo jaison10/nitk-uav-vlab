@@ -1776,6 +1776,7 @@ function placeAllKnobs() {
 function moveTopView() {
     myStopFunction();
     document.getElementById('base_layer').style.top = "240px";
+    document.getElementById('base_layer').style.cursor = "none";
     document.getElementById('base_layer').style.left = "143px";
     document.getElementById('base_layer').src = "./Images/base_layera_v4.png";
     document.getElementById('base_layer').style.height = "130px";
