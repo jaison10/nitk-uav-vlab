@@ -666,6 +666,8 @@ var clickCountOfFcPlace = 0;
 function placeFC() {
     clickCountOfFcPlace += 1;
     myStopFunction();
+    myStopFunction();
+
     if (clickCountOfFcPlace == 1) {
         document.getElementById("fc").classList.add("moveFc");
         setTimeout(() => {
