@@ -270,6 +270,7 @@ function magic() {
         document.getElementById('flight_c').style.visibility = "visible";
         document.getElementById('esc').style.visibility = "visible";
         document.getElementById('lipo').style.visibility = "visible";
+        document.getElementById('skip').style.visibility = "visible";
 
 
         // document.getElementById('a2').onclick = function() { step1(); };
@@ -1472,6 +1473,18 @@ function placeBase() {
 
 function placeBattery() {
     myStopFunction();
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById('half_esc' + i).style.visibility = "hidden";
+        document.getElementById('esc_wire' + i).style.visibility = "hidden";
+        document.getElementById('half_esc_signal' + i).style.visibility = "hidden";
+        document.getElementById('half_escWire' + i).style.visibility = "hidden";
+        document.getElementById('half_escWireConnected' + i).style.visibility = "hidden";
+    }
+    document.getElementById('solder_hand').style.visibility = "hidden";
+    document.getElementById('solder_lead').style.visibility = "hidden";
+    document.getElementById('border_box').style.visibility = "hidden";
+
+
     document.getElementById('move_isometric').style.visibility = "hidden";
     document.getElementById('battery_base').style.visibility = "visible";
     document.getElementById('battery_base').style.top = "225px";
@@ -1519,6 +1532,14 @@ function propInfo() {
             document.getElementById("placeMotorInfo").innerText = "Based on what we have learnt so far, choose the appropriate Propeller for the first motor.";
             document.getElementById('prop2').style.visibility = "visible";
             document.getElementById('prop3_1').style.visibility = "visible";
+            document.getElementById('motorNumber1').style.visibility = "visible";
+            document.getElementById('motorNumber1').style.top = "360px";
+            document.getElementById('motorNumber2').style.top = "350px";
+            document.getElementById('motorNumber2').style.visibility = "visible";
+            document.getElementById('motorNumber3').style.visibility = "visible";
+            document.getElementById('motorNumber4').style.visibility = "visible";
+
+
         }, 1000);
         // document.getElementById("placeMotorInfo").style.visibility = "hidden";
         // document.getElementById('prop1').style.visibility = "visible";
@@ -1618,6 +1639,10 @@ function placeProp(id) {
     }
     if (propSelected >= 4) {
         document.getElementById('rotation_note').style.visibility = "visible";
+        document.getElementById('motorNumber1').style.visibility = "hidden";
+        document.getElementById('motorNumber2').style.visibility = "hidden";
+        document.getElementById('motorNumber3').style.visibility = "hidden";
+        document.getElementById('motorNumber4').style.visibility = "hidden";
 
     }
 }
