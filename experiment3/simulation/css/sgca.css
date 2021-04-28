@@ -1137,7 +1137,7 @@ html {
 
 #preview{
     background-repeat: no-repeat;
-    border:5px solid black;
+    border:1px solid black;
     margin-left: auto;
 	margin-right: auto;
 }
