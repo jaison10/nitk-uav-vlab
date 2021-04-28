@@ -271,7 +271,7 @@ function magic() {
         document.getElementById('esc').style.visibility = "visible";
         document.getElementById('lipo').style.visibility = "visible";
         document.getElementById('skip').style.visibility = "visible";
-
+        document.getElementById('skip').onclick = function() { placeAllParts(); };
 
         // document.getElementById('a2').onclick = function() { step1(); };
 
@@ -661,7 +661,52 @@ function placeSingleScrew_motor() {
     }
 }
 
+function placeAllParts() {
+    document.getElementById('top').style.visibility = "visible";
+    document.getElementById('top').style.top = "50px";
+    document.getElementById('top').style.transition = "top 1s ease-in-out";
+    document.getElementById('base').style.visibility = "visible";
+    document.getElementById('base').style.top = "50px";
+    document.getElementById('base').style.transition = "top 1s ease-in-out";
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById('arm' + i).style.visibility = "visible";
+        document.getElementById('arm' + i).style.top = "140px";
+        document.getElementById('arm' + i).style.transition = "top 1s ease-in-out";
 
+    }
+    document.getElementById('transmitter1').style.visibility = "visible";
+    document.getElementById('transmitter1').style.top = "350px";
+    document.getElementById('transmitter1').style.transition = "top 1s ease-in-out";
+
+    document.getElementById('receiver1').style.visibility = "visible";
+    document.getElementById('receiver1').style.top = "360px";
+    document.getElementById('receiver1').style.transition = "top 1s ease-in-out";
+
+    document.getElementById('motor').style.visibility = "visible";
+    document.getElementById('motor').style.top = "140px";
+    document.getElementById('motor').style.transition = "top 1s ease-in-out";
+
+    document.getElementById('flight_controller').style.visibility = "visible";
+    document.getElementById('flight_controller').style.top = "240px";
+    document.getElementById('flight_controller').style.transition = "top 1s ease-in-out";
+
+    document.getElementById('electronic_sc').style.visibility = "visible";
+    document.getElementById('electronic_sc').style.top = "140px";
+    document.getElementById('electronic_sc').style.transition = "top 1s ease-in-out";
+
+    document.getElementById('lipo_battery').style.visibility = "visible";
+    document.getElementById('lipo_battery').style.top = "220px";
+    document.getElementById('lipo_battery').style.transition = "top 1s ease-in-out";
+
+
+    // document.getElementById('receiverWire').style.visibility = "visible";
+    // document.getElementById('receiverWire').style.top = "380px";
+    // document.getElementById('receiverWire').style.transition = "top 1s ease-in-out";
+    document.getElementById('skip').style.visibility = "hidden";
+    document.getElementById('next').style.visibility = "visible";
+
+
+}
 var clickCountOfFcPlace = 0;
 
 function placeFC() {
