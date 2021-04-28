@@ -1769,8 +1769,7 @@ function placeAllKnobs() {
     }, 3000);
     setTimeout(function() {
         document.getElementById("pumptext").innerHTML = "The Assembly of the Quadcoptor is thus complete. Proceed to the next experiment to &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;understand the Calibration of the Quadcopter. ";
-
-
+        document.getElementById("zoom").style.visibility = "visible";
     }, 6000);
 
 }
@@ -2889,3 +2888,26 @@ function mount_frame() {
     document.getElementById('pumptext').innerText = "Place the top layer of the frame on the arms of the Quadcopter.";
     document.getElementById('a2').onclick = function() { step1(); };
 }
+
+
+
+// Zoom try- Author: Jaison
+function zoomIn(event) {
+    var pre = document.getElementById("preview");
+    pre.style.visibility = "visible";
+    var img = document.getElementById("zoom");
+	pre.style.backgroundImage = "url('./Images/all_together.png')";
+    var posX = event.offsetX;
+    var posY = event.offsetY;
+    pre.style.backgroundPosition=(-posX*0.5)+"px "+(-posY*0.5)+"px";
+    // if ($('#preview').is(':hover')){
+    //     pre.style.backgroundPosition=(-posX*1.5)+"px "+(-posY*0.5)+"px";
+    // }
+    if ($('#preview').is(':hover')){
+        pre.style.backgroundPosition=(-posX*1.5)+"px "+(-posY*5.5)+"px";
+    }
+}
+function zoomOut() {
+    var pre = document.getElementById("preview");
+    pre.style.visibility = "hidden";
+  }
