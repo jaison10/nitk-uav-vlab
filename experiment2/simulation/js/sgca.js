@@ -1186,6 +1186,8 @@ function verifyLift(l) {
 
 
 // EXPERIMENT 2
+
+// Author: Jaison
 function animatearrowForEscDcConnection() {
     if (document.getElementById('arrow1').style.visibility == "hidden")
         document.getElementById('arrow1').style.visibility = "visible";
@@ -1420,7 +1422,7 @@ function makeConnection3() {
                     document.getElementById("motorWire" + absent).style.opacity = 100;
             }, 500);
         } else {
-            alert("You have already chosen this, move forward!(STEP 3)");
+            alert("You have already chosen this, move forward!");
         }
     }
 }
@@ -1526,7 +1528,7 @@ function motorConnection1() {
                         document.getElementById("motorWire" + i).style.opacity = 100;
                     }
                 } else {
-                    alert("You have already chosen(step 2)-wire 1");
+                    alert("You have already chosen!");
                 }
             }
 
@@ -1588,7 +1590,7 @@ function motorConnection1() {
                     }
                 }
             } else {
-                alert("You have already chosen(step 3)-wire 1");
+                alert("You have already chosen!");
             }
 
         }
@@ -1694,7 +1696,7 @@ function motorConnection2() {
                         document.getElementById("motorWire" + i).style.opacity = 100;
                     }
                 } else {
-                    alert("You have already chosen(step 2)-wire 2");
+                    alert("You have already chosen!");
                 }
 
             }
@@ -1755,7 +1757,8 @@ function motorConnection2() {
                         }
                     }
                 } else {
-                    alert("You have already chosen(step 2)-wire 2");
+                    // alert("You have already chosen(step 2)-wire 2");
+                    alert("You have already chosen!");
                 }
 
             }
@@ -1857,7 +1860,8 @@ function motorConnection3() {
 
 
                 } else {
-                    alert("You have already chosen(step 2)-wire 3");
+                    // alert("You have already chosen(step 2)-wire 3");
+                    alert("You have already chosen!");
                 }
 
             }
@@ -1917,12 +1921,15 @@ function motorConnection3() {
                         }
                     }
                 } else {
-                    alert("You have already chosen(step 3)-wire 2");
+                    // alert("You have already chosen(step 3)-wire 2");
+                    alert("You have already chosen!");
                 }
             }
         }
     }
 }
+// Author Jaison End
+
 //-------------- SHOW THE APPARATUS----------
 function appear(id_name, top_px) {
     var part = document.getElementById(id_name);
@@ -1932,8 +1939,6 @@ function appear(id_name, top_px) {
     if (id_name == 'motor_iso') {
         document.getElementById("select_mp").style.visibility = "visible";
     }
-
-
 }
 
 
