@@ -267,10 +267,11 @@
 
 
             <!-- Sbus image -->
-            <img id="sbus_notPlaced" title="SBUS Connector" class="" style="visibility: hidden; position: absolute; left: 220px; top: 40px; height: 90px; width: 200px; transform: rotate(0deg); z-index: 100;" src="./Images/Flight_controller_iso_WIREv04.png">
-            <img id="sbus_notPlaced2" title="SBUS Connector" onclick="placeSBUScable();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 220px; top: 40px; height: 90px; width: 200px; transform: rotate(0deg); z-index: 100;" src="./Images/Flight_controller_iso_WIREv04.png">
-            <img id="sbus_Placed" title="SBUS Connector" onclick="connectSbusToRec();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 325px; top: 215px; height: 40px; width: 60px; transform: rotate(0deg); z-index: 200;" src="./Images/Flight_controller_iso_WIREv04.png">
-            <img id="sbus_PlacedConnected" title="SBUS Connector" onclick="" class="" style="visibility: hidden;  position: absolute; left: 325px; top: 215px; height: 55px; width: 50px; transform: rotate(0deg); z-index: 200;" src="./Images/Flight_controller_iso_WIREv04.png">
+
+            <img id="sbus_notPlaced" title="SBUS Connector" class="" style="visibility: hidden; position: absolute; left: 220px; top: 40px; height: 90px; width: 200px; transform: rotate(0deg); z-index: 100;" src="./Images/Flight_controller_iso_WIREv08.png">
+            <img id="sbus_notPlaced2" title="SBUS Connector" onclick="placeSBUScable();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 220px; top: 40px; height: 90px; width: 200px; transform: rotate(0deg); z-index: 100;" src="./Images/Flight_controller_iso_WIREv08.png">
+            <img id="sbus_Placed" title="SBUS Connector" onclick="connectSbusToRec();" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 325px; top: 215px; height: 40px; width: 60px; transform: rotate(0deg); z-index: 200;" src="./Images/Flight_controller_iso_WIREv08.png">
+            <img id="sbus_PlacedConnected" title="SBUS Connector" onclick="" class="" style="visibility: hidden; cursor: pointer; position: absolute; left: 325px; top: 215px; height: 55px; width: 50px; transform: rotate(0deg); z-index: 200;" src="./Images/Flight_controller_iso_WIREv08.png">
 
             <!-- Info about Sbus to FC -->
             <div id="fc_topForSBUS_connection" style="position: absolute;visibility: hidden;top: 350px;left: 205px; height: 175px;width: 255px;border: 1px solid black;border-radius: 15px;">
@@ -422,12 +423,14 @@
             <!-- Info about the signal wire -->
             <!-- <img id="arrow-rec-signal" style="visibility:hidden ;position: absolute;top: 320px; left: 315px; height: 50px; width: 70px; transform: rotate(160deg);z-index:200;" src="./Images/arrow_slim.png" alt="Info"> -->
             <div id="info-about-Rec-signal" style="position: absolute; visibility: hidden; border-style: solid; border-width: thin; width: 220px; height: 200px; top: 100px; left: 500px; border-radius: 6px;">
-                <div style="position: absolute; width: 200px; height: 50px; top: 16px; left: 9px; border-radius: 6px; border-style: solid; border-width: thin;">
-                    <img title="SBUS Connector" src="./Images/Flight_controller_iso_WIREv04.png" style="position: absolute; width: 120px; height: 40px; top: 6px; left: 39px; border-radius: 6px;">
+                <!-- <div style="position: absolute; width: 200px; height: 50px; top: 16px; left: 9px; border-radius: 6px; border-style: solid; border-width: thin;">
+                    <img title="SBUS Connector" src="./Images/Flight_controller_iso_WIREv04.png" style="position: absolute; width: 120px; height: 40px; top: 6px; left: 39px; border-radius: 6px;"> -->
+                <div style="position: absolute; width: 200px; height: 50px; top: 3px; left: 9px; border-radius: 6px; border-style: solid; border-width: thin;">
+                    <img title="SBUS Connector" src="./Images/Flight_controller_iso_WIREv08.png" style="position: absolute; width: 120px; height: 40px; top: 6px; left: 39px; border-radius: 6px;">
                 </div>
-                <span style="position: absolute; width: 200px; height: 50px; top: 75px; left: 15px;"> This is Receiver to FC signal line through which the information 
-                from transmitter will be received and transferred to the FC.</span>
-                <button style="position: absolute;  top: 170px; left: 175px; color: rgb(255, 255, 255); background-color: black; border-radius: 5px; cursor: pointer;" onclick="revSignalInfoShown();">Ok</button>
+                <span style="position: absolute; width: 200px; height: 50px; top: 54px; left: 15px;"> SBUS- This is a digital communication protocol used in R/C receivers.
+                Used to transmit control signals between receiver and servos. It transmits channels digitally.</span>
+                <button style="position: absolute;  top: 175px; left: 175px; color: rgb(255, 255, 255); background-color: black; border-radius: 5px; cursor: pointer;" onclick="revSignalInfoShown();">Ok</button>
             </div>
 
             <!-- Info about the receiver part -->
