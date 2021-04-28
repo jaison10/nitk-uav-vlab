@@ -270,6 +270,7 @@ function magic() {
         document.getElementById('flight_c').style.visibility = "visible";
         document.getElementById('esc').style.visibility = "visible";
         document.getElementById('lipo').style.visibility = "visible";
+        document.getElementById('skip').style.visibility = "visible";
 
 
         // document.getElementById('a2').onclick = function() { step1(); };
