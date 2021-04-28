@@ -718,6 +718,7 @@ function placeDSTRec() {
         document.getElementById("doubleSTRec").classList.add("moveDSTRec");
         setTimeout(() => {
             document.getElementById("doubleSTRec").style.visibility = "hidden";
+
             document.getElementById("placedDSTRec").style.visibility = "visible";
             document.getElementById("pumptext").innerText = "Let us place the receiver now.";
             // document.getElementById("placeMotorInfo").style.visibility = "visible";
@@ -760,13 +761,13 @@ function placeReceiver() {
                 }
 
                 document.getElementById("placeMotorInfo").style.visibility = "hidden";
-                document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 150px; top: 280px; height: 30px; z-index: 10;";
+                document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 585px; top: 270px; height: 30px; z-index: 10; ";
 
-                document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
+                document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
                 // Code for IE9
-                document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
+                document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
                 // Standard syntax
-                document.getElementById("arrow1").style.transform = "rotate(180deg)";
+                document.getElementById("arrow1").style.transform = "rotate(270deg)";
 
                 myInt = setInterval(function() {
                     animatearrow();
@@ -898,6 +899,7 @@ function connectEscMotor(n) {
     if (n == 1) {
         document.getElementById("placedMotor" + n).style.visibility = "hidden";
         document.getElementById("esc_arm_placed" + n).style.visibility = "hidden";
+
         connectionsDone++;
         document.getElementById("esc_motor_connected" + n).style.visibility = "visible";
         // document.getElementById("esc_motor_connected" + n).style.opacity = 1;
@@ -1250,7 +1252,7 @@ function placeSBUScable() {
             document.getElementById("fcZoomSbusCon").style.visibility = "hidden";
             document.getElementById("mainPortConnector").style.visibility = "hidden";
 
-            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 440px; top: 260px; height: 30px; z-index: 100;";
+            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 435px; top: 275px; height: 30px; z-index: 100; ";
 
             document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
             // Code for IE9
@@ -1295,7 +1297,7 @@ function connectSbusToRec() {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
             document.getElementById('base_layer').style.visibility = "visible";
 
-            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 485px; top: 120px; height: 30px; z-index: 100;";
+            document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 485px; top: 145px; height: 30px; z-index: 100;";
 
             document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
             // Code for IE9
@@ -1350,6 +1352,8 @@ function placeSingleScrew_base() {
             document.getElementById("singleScrewFinal2").style.top = "328px";
             document.getElementById("singleScrewFinal2").style.opacity = 0;
             document.getElementById("singleScrewFinal2").style.transition = "all 3s ease-in-out";
+            document.getElementById("screw_head3").style.opacity = 1;
+            document.getElementById("screw_head3").style.transition = "all 3s ease-in-out";
             // document.getElementById("screw_head2").style.visibility = "visible";
             // document.getElementById("screw_head2").style.opacity = 1;
             // document.getElementById("screw_head2").style.transition = "opacity 4s ease-in-out";
@@ -1628,7 +1632,6 @@ function rotationInfoDone() {
     document.getElementById("pumptext").innerText = "Turn the knobs to place them on the Propellers.";
     document.getElementById("hand_knob").style.visibility = "visible";
     document.getElementById("hand_knob").style.cursor = "pointer";
-    document.getElementById("hand_knob").style.top = "67px";
 
     document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 550px; top: 130px; height: 30px; z-index: 10; ";
 
@@ -1669,6 +1672,7 @@ function placeKnob() {
     myStopFunction();
 
     document.getElementById("hand_knob").onclick = "";
+    document.getElementById("hand_knob").style.cursor = "none";
 
     setTimeout(function() {
 
@@ -1774,6 +1778,7 @@ function placeAllKnobs() {
 function moveTopView() {
     myStopFunction();
     document.getElementById('base_layer').style.top = "240px";
+    document.getElementById('base_layer').style.cursor = "none";
     document.getElementById('base_layer').style.left = "143px";
     document.getElementById('base_layer').src = "./Images/base_layera_v4.png";
     document.getElementById('base_layer').style.height = "130px";
@@ -2316,7 +2321,7 @@ function moveIsometricView() {
 
             document.getElementById('esc_power' + i).style.visibility = "visible";
             document.getElementById('esc_power' + i).style.opacity = 1;
-            document.getElementById('esc_power' + i).style.transition = "all 0.1s ease-in-out";
+            document.getElementById('esc_power' + i).style.transition = "all 1s ease-in-out";
             document.getElementById('esc_motor_connected1').style.zIndex = 120;
 
         }
@@ -2510,6 +2515,7 @@ function placeBatteryToPcb() {
         document.getElementById('batteryToPcb').onclick = "";
         document.getElementById("batteryToPcb").style.top = "250px";
         document.getElementById("batteryToPcb").style.left = "165px";
+        document.getElementById("leadAfter3").style.zIndex = 640;
         document.getElementById("batteryToPcb").style.transition = "all 2s ease-in-out";
         setTimeout(() => {
             document.getElementById("solder_hand").style.visibility = "visible";
