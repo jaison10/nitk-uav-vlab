@@ -3247,9 +3247,7 @@ function placeBatteryToPcb() {
 
             // document.getElementById("placeMotorInfo").style.visibility = "visible";
             document.getElementById("pumptext").innerText = "The connections are complete. Move back to isometric view.";
-
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
-
             document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 370px; top: 85px; height: 30px; z-index: 10; ";
 
             document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
