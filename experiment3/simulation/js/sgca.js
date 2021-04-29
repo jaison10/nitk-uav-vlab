@@ -1692,6 +1692,8 @@ function revSignalInfoShown() {
     // document.getElementById("arrow-rec-signal").style.visibility = "hidden";
     document.getElementById("info-about-Rec-signal").style.visibility = "hidden";
     document.getElementById("placeMotorInfo").style.visibility = "hidden";
+    document.getElementById("placedMotor3").style.visibility = "hidden";
+    document.getElementById("placedMotor4").style.visibility = "hidden";
 
     document.getElementById("sbus_notPlaced").style.visibility = "hidden";
     document.getElementById("pumptext").innerText = "Click on the SBUS connector to make connection between FC and receiver.";
@@ -1782,6 +1784,9 @@ function connectSbusToRec() {
             document.getElementById("fcZoomSRecbusConnectorPlaced").style.visibility = "visible";
             document.getElementById("sbus_Placed").style.visibility = "hidden";
             document.getElementById("sbus_PlacedConnected").style.visibility = "visible";
+            document.getElementById("placedFc").style.zIndex = 110;
+            document.getElementById("sbus_PlacedConnected").style.zIndex = 105;
+
         }, 2000);
         setTimeout(() => {
             // hide
@@ -1794,6 +1799,9 @@ function connectSbusToRec() {
 
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
             document.getElementById('base_layer').style.visibility = "visible";
+            document.getElementById("skip").style.visibility = "visible";
+            document.getElementById("skip").onclick = function() { placeAllScrewsBase(); };
+
 
             document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 485px; top: 145px; height: 30px; z-index: 100;";
 
@@ -1914,6 +1922,7 @@ function all_screws2() {
     setTimeout(function() {
         document.getElementById("pumptext").innerText = "Let us now solder the ESC Power wires to the PCB Board. Move to the top view.";
         // document.getElementById("placeMotorInfo").style.visibility = "visible";
+        document.getElementById("placedMotor4").style.visibility = "hidden";
 
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
         document.getElementById('move_top').style.visibility = "visible";
@@ -1939,6 +1948,7 @@ var clickCountOfBaseLayer = 0;
 function placeBase() {
     myStopFunction();
     myStopFunction();
+    document.getElementById('skip').style.visibility = "hidden";
 
     clickCountOfBaseLayer += 1;
     if (clickCountOfBaseLayer == 1) {
@@ -1956,8 +1966,7 @@ function placeBase() {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
             document.getElementById("singleScrew_2").style.visibility = "visible";
             document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 660px; top: 120px; height: 30px; z-index: 10;";
-            document.getElementById("skip").style.visibility = "visible";
-            document.getElementById("skip").onclick = function() { placeAllScrewsBase(); };
+
             document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
             // Code for IE9
             document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
@@ -1974,23 +1983,32 @@ function placeBase() {
 function placeAllScrewsBase() {
     myStopFunction();
     document.getElementById("skip").style.visibility = "hidden";
-    document.getElementById("singleScrew_2").style.visibility = "hidden";
-    document.getElementById("singleScrewFinal2").style.visibility = "visible";
-    document.getElementById("singleScrewFinal2").style.top = "328px";
-    document.getElementById("singleScrewFinal2").style.opacity = 0;
-    document.getElementById("singleScrewFinal2").style.transition = "all 2s ease-in-out";
-    document.getElementById('screwHand3').style.visibility = "hidden";
-    document.getElementById("singleScrew_base2").style.top = "320px";
-    document.getElementById("singleScrew_base3").style.top = "300px";
-    document.getElementById("singleScrew_base4").style.top = "308px";
+    document.getElementById('base_layer').style.visibility = "visible";
+    document.getElementById('base_layer').style.top = "248px";
+    document.getElementById('base_layer').style.left = "210px";
+    document.getElementById('base_layer').style.height = "100px";
+    document.getElementById('base_layer').style.width = "260px";
+    document.getElementById('base_layer').style.transition = "all 2s ease-in-out";
+    setTimeout(function() {
+        document.getElementById("singleScrew_2").style.visibility = "hidden";
+        document.getElementById("singleScrewFinal2").style.visibility = "visible";
+        document.getElementById("singleScrewFinal2").style.top = "328px";
+        document.getElementById("singleScrewFinal2").style.opacity = 0;
+        document.getElementById("singleScrewFinal2").style.transition = "all 2s ease-in-out";
+        document.getElementById('screwHand3').style.visibility = "hidden";
+        document.getElementById("singleScrew_base2").style.top = "320px";
+        document.getElementById("singleScrew_base3").style.top = "300px";
+        document.getElementById("singleScrew_base4").style.top = "308px";
 
 
-    for (let i = 2; i <= 4; i++) {
-        document.getElementById("singleScrew_base" + i).style.visibility = "visible";
-        document.getElementById("singleScrew_base" + i).style.opacity = 0;
-        document.getElementById("singleScrew_base" + i).style.transition = "all 2s ease-in-out";
+        for (let i = 2; i <= 4; i++) {
+            document.getElementById("singleScrew_base" + i).style.visibility = "visible";
+            document.getElementById("singleScrew_base" + i).style.opacity = 0;
+            document.getElementById("singleScrew_base" + i).style.transition = "all 2s ease-in-out";
 
-    }
+        }
+    }, 2000);
+
 
     setTimeout(function() {
         for (let i = 2; i <= 4; i++) {
@@ -1998,12 +2016,13 @@ function placeAllScrewsBase() {
 
         }
 
-    }, 3000);
+    }, 5000);
 
 
     setTimeout(function() {
         document.getElementById("pumptext").innerText = "Let us now solder the ESC Power wires to the PCB Board. Move to the top view.";
         // document.getElementById("placeMotorInfo").style.visibility = "visible";
+        document.getElementById("placedMotor4").style.visibility = "hidden";
 
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
         document.getElementById('move_top').style.visibility = "visible";
@@ -2470,13 +2489,16 @@ function solderEverything() {
 
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
 
-        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 370px; top: 85px; height: 30px; z-index: 10; ";
+        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 370px; top: 85px; height: 30px; z-index: 10;";
 
         document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
         // Code for IE9
         document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
         // Standard syntax
         document.getElementById("arrow1").style.transform = "rotate(270deg)";
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
         document.getElementById("move_isometric").style.visibility = "visible";
 
 
@@ -2905,6 +2927,17 @@ function solderAllWires() {
             document.getElementById("batteryToPcb").style.visibility = "visible";
             // document.getElementById("placeMotorInfo").style.visibility = "visible";
             document.getElementById("pumptext").innerText = "Click on the Battery to PCB connector to place it.";
+            document.getElementById('arrow1').style = "visibility: hidden; position: absolute; left: 710px; top: 105px; height: 30px; z-index: 10; ";
+
+
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(0deg)";
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
         }, 1000);
     }, 24000);
 
@@ -3133,6 +3166,8 @@ function moveIsometricView() {
 var clickCountOfPowerToPcb = 0;
 
 function placeBatteryToPcb() {
+    myStopFunction();
+    myStopFunction();
     clickCountOfPowerToPcb += 1;
     if (clickCountOfPowerToPcb == 1) {
         document.getElementById("move_isometric").style.visibility = "hidden";
@@ -3222,6 +3257,9 @@ function placeBatteryToPcb() {
             document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
             // Standard syntax
             document.getElementById("arrow1").style.transform = "rotate(270deg)";
+            myInt = setInterval(function() {
+                animatearrow();
+            }, 500);
             document.getElementById("move_isometric").style.visibility = "visible";
 
 
