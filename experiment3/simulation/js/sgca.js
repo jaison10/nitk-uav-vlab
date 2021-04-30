@@ -1762,8 +1762,6 @@ function sbusConnected() {
         document.getElementById("sbus_PlacedConnected").style.zIndex = 105;
 
     }, 2000);
-
-
     setTimeout(function() {
         document.getElementById("sbus_notPlaced").style.visibility = "hidden";
         document.getElementById("fc_topForSBUS_connection").style.visibility = "hidden";
