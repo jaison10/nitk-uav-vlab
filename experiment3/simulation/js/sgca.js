@@ -1549,7 +1549,7 @@ function ConnectAllSignals() {
             for (let z = 1; z < 5; z++) {
                 document.getElementById("rotationDir" + z).style.visibility = "visible";
             }
-        }, 2000);
+        }, 1000);
     }, 3000);
 }
 var fcConnected = 0;
@@ -1701,6 +1701,8 @@ function revSignalInfoShown() {
 
     document.getElementById("placeMotorInfo").style.visibility = "hidden";
     document.getElementById("sbus_notPlaced2").style.visibility = "visible";
+    document.getElementById("skip").style.visibility = "visible";
+    document.getElementById("skip").onclick = function() { sbusConnected(); };
     document.getElementById("sbus_notPlaced").style.left = "350px";
     document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 350px; top: 132px; height: 30px; z-index: 10;;";
     // document.getElementById('rec_wire_uc').onclick = function() { RecToFc(); };
@@ -1719,11 +1721,92 @@ function revSignalInfoShown() {
 
 }
 
+function sbusConnected() {
+    myStopFunction();
+    document.getElementById("skip").style.visibility = "hidden";
+    document.getElementById("sbus_notPlaced2").style.visibility = "hidden";
+    document.getElementById("fc_topForSBUS_connectionReceiver").style.visibility = "visible";
+    document.getElementById("fcZoomSRecbusCon").style.visibility = "visible";
+    document.getElementById("sbus_notPlaced").style.visibility = "hidden";
+    document.getElementById("fc_topForSBUS_connection").style.visibility = "hidden";
+    document.getElementById("fcZoomSbusCon").style.visibility = "hidden";
+    document.getElementById("mainPortConnector").style.visibility = "hidden";
+
+
+    setTimeout(() => {
+        document.getElementById("fcZoomSRecbusConnectorOnway").style.visibility = "visible";
+        document.getElementById("fcZoomSRecbusConnectorOnway").classList.add("moveintermediateRecWireNewOne");
+        document.getElementById("sbus_Placed").classList.add("connectRecEndAndSbus");
+        setTimeout(() => {
+            document.getElementById("fcZoomSRecbusConnectorOnway").style.visibility = "hidden";
+            document.getElementById("fcZoomSRecbusConnectorPlaced").style.visibility = "visible";
+            document.getElementById("sbus_Placed").style.visibility = "hidden";
+            document.getElementById("sbus_PlacedConnected").style.visibility = "visible";
+            document.getElementById("placedFc").style.zIndex = 110;
+            document.getElementById("sbus_PlacedConnected").style.zIndex = 105;
+
+        }, 2000);
+
+
+    }, 1000);
+
+
+    setTimeout(() => {
+        // hide
+        document.getElementById("info-about-RecPartSBUS-signal").style.visibility = "hidden";
+        document.getElementById("fcZoomSRecbusConnectorPlaced").style.visibility = "hidden";
+        document.getElementById("fc_topForSBUS_connectionReceiver").style.visibility = "hidden";
+
+        document.getElementById("sbus_Placed").style.visibility = "visible";
+        document.getElementById("sbus_Placed").style.visibility = "hidden";
+        document.getElementById("sbus_PlacedConnected").style.visibility = "visible";
+        document.getElementById("placedFc").style.zIndex = 110;
+        document.getElementById("sbus_PlacedConnected").style.zIndex = 105;
+
+    }, 2000);
+
+
+    setTimeout(function() {
+        document.getElementById("sbus_notPlaced").style.visibility = "hidden";
+        document.getElementById("fc_topForSBUS_connection").style.visibility = "hidden";
+        document.getElementById("fcZoomSbusCon").style.visibility = "hidden";
+        document.getElementById("mainPortConnector").style.visibility = "hidden";
+
+        // hide
+        document.getElementById("info-about-RecPartSBUS-signal").style.visibility = "hidden";
+        document.getElementById("fcZoomSRecbusConnectorPlaced").style.visibility = "hidden";
+        document.getElementById("fc_topForSBUS_connectionReceiver").style.visibility = "hidden";
+        document.getElementById("fcZoomSRecbusCon").style.visibility = "hidden";
+
+        document.getElementById("pumptext").innerText = "Let us attach a Base Layer with PDB board to the frame.";
+        document.getElementById("placeMotorInfo").style.visibility = "hidden";
+        document.getElementById('base_layer').style.visibility = "visible";
+        document.getElementById("skip").style.visibility = "visible";
+        document.getElementById("skip").onclick = function() { placeAllScrewsBase(); };
+
+
+        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 485px; top: 145px; height: 30px; z-index: 100;";
+
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(0deg)";
+
+        myInt = setInterval(function() {
+            animatearrow();
+        }, 500);
+
+
+    }, 5000);
+}
+
 var clickCountOfSbusFullWire = 0;
 
 function placeSBUScable() {
     myStopFunction();
     myStopFunction();
+    document.getElementById("skip").style.visibility = "hidden";
 
     clickCountOfSbusFullWire += 1;
     if (clickCountOfSbusFullWire == 1) {
@@ -2152,7 +2235,7 @@ function propInfo() {
         //     animatearrow();
         // }, 500);
         document.getElementById('move_isometric').style.visibility = "hidden";
-    }, 5000);
+    }, 3000);
 }
 
 function placeProp3() {
