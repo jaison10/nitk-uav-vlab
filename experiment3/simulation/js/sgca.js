@@ -2186,14 +2186,11 @@ function propInfo() {
             document.getElementById('prop2').style.visibility = "visible";
             document.getElementById('prop3_1').style.visibility = "visible";
             document.getElementById('rotationDir1').style.visibility = "visible";
-
-
             document.getElementById('motorNumber1').style.visibility = "visible";
             document.getElementById('motorNumber1').style.top = "360px";
-            document.getElementById('motorNumber2').style.top = "350px";
-            document.getElementById('motorNumber2').style.visibility = "visible";
-            document.getElementById('motorNumber3').style.visibility = "visible";
-            document.getElementById('motorNumber4').style.visibility = "visible";
+
+
+
 
 
         }, 1000);
@@ -2253,6 +2250,7 @@ function placeProp(id) {
         propSelected++;
         // document.getElementById('rotation_note').style.visibility = "visible";
         document.getElementById('rotationDir2').style.visibility = "hidden";
+        document.getElementById('motorNumber2').style.visibility = "hidden";
 
     }
     if (id == 2) {
@@ -2264,6 +2262,7 @@ function placeProp(id) {
         document.getElementById('choose_info').style.top = "175px";
         document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 277px; left: 474px; height: 80px; width: 180px; z-index: 570; transition:all 1s ease-in-out;";
         document.getElementById('rotationDir1').style.visibility = "hidden";
+        document.getElementById('motorNumber1').style.visibility = "hidden";
 
         setTimeout(function() {
             document.getElementById('choose_info').style.visibility = "hidden";
@@ -2282,6 +2281,10 @@ function placeProp(id) {
             document.getElementById('rotationDir2').style.visibility = "visible";
             document.getElementById('rotationDir3').style.visibility = "visible";
             document.getElementById('rotationDir4').style.visibility = "visible";
+            document.getElementById('motorNumber2').style.top = "350px";
+            document.getElementById('motorNumber2').style.visibility = "visible";
+            document.getElementById('motorNumber3').style.visibility = "visible";
+            document.getElementById('motorNumber4').style.visibility = "visible";
 
         }, 1500);
 
@@ -2290,6 +2293,7 @@ function placeProp(id) {
         propSelected++;
         document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 114px; left: 394px; height: 60px; width: 130px; z-index: 570;transition:all 1s ease-in-out;";
         document.getElementById('rotationDir4').style.visibility = "hidden";
+        document.getElementById('motorNumber4').style.visibility = "hidden";
 
     }
     if (id == 4) {
@@ -2297,14 +2301,11 @@ function placeProp(id) {
         document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 112px; left: 113.5px; height: 60px; width: 130px; z-index: 570;transition:all 1s ease-in-out; ";
         // document.getElementById('rotation_note').style.visibility = "visible";
         document.getElementById('rotationDir3').style.visibility = "hidden";
+        document.getElementById('motorNumber3').style.visibility = "hidden";
 
     }
     if (propSelected >= 4) {
         document.getElementById('rotation_note').style.visibility = "visible";
-        document.getElementById('motorNumber1').style.visibility = "hidden";
-        document.getElementById('motorNumber2').style.visibility = "hidden";
-        document.getElementById('motorNumber3').style.visibility = "hidden";
-        document.getElementById('motorNumber4').style.visibility = "hidden";
 
     }
 }
