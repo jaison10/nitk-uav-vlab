@@ -1794,7 +1794,7 @@ function connectSbusToRec() {
             document.getElementById("fcZoomSRecbusConnectorPlaced").style.visibility = "hidden";
             document.getElementById("fc_topForSBUS_connectionReceiver").style.visibility = "hidden";
             document.getElementById("fcZoomSRecbusCon").style.visibility = "hidden";
-            document.getElementById("pumptext").innerText = "Let us attach a Base Layer to the frame.";
+            document.getElementById("pumptext").innerText = "Let us attach a Base Layer with PDB board to the frame.";
             // document.getElementById("placeMotorInfo").style.visibility = "visible";
 
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
@@ -1920,7 +1920,7 @@ function all_screws2() {
     //     document.getElementById("battery_base").style.visibility = "visible";
     // }, 5500);
     setTimeout(function() {
-        document.getElementById("pumptext").innerText = "Let us now solder the ESC Power wires to the PCB Board. Move to the top view.";
+        document.getElementById("pumptext").innerText = "Let us now solder the ESC Power wires to the PDB Board. Move to the top view.";
         // document.getElementById("placeMotorInfo").style.visibility = "visible";
         document.getElementById("placedMotor4").style.visibility = "hidden";
 
