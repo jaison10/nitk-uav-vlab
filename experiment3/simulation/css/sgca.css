@@ -877,13 +877,13 @@ html {
 
 @keyframes sbusMove {
     0% {
-        left: 368px;
+        left: 318px;
         top: 350px;
         height: 33px;
         width: 22px;
     }
     100% {
-        left: 368px;
+        left: 316px;
         top: 350px;
         height: 53px;
         width: 27px;
