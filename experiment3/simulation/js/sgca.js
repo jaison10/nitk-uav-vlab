@@ -1586,8 +1586,8 @@ function connectEscFc(id) {
             clickCountOfESCSignalToFC2 += 1;
             document.getElementById('esc_signal1').onclick = function() { connectEscFc(1); };
             document.getElementById('esc_signal1').style.cursor = "pointer";
-            document.getElementById("esc_motor_pointer").style = "visibility: visible; position: absolute; top: 230px; left: 220px; height: 60px; width: 70px; transform: rotate(70deg); z-index: 750;";
-            document.getElementById("esc_motor_info").style = "position: absolute; visibility: visible; top: 208px; left: 100px; ";
+            document.getElementById("esc_motor_pointer").style = "visibility: visible; position: absolute; top: 225px; left: 230px; height: 60px; width: 60px; transform: rotate(85deg); z-index: 750;";
+            document.getElementById("esc_motor_info").style = "position: absolute; visibility: visible; top: 205px; left: 120px;transform:rotate(-3deg);";
             document.getElementById("esc_motor_info").innerText = "Second Signal Wire";
 
             if (clickCountOfESCSignalToFC2 == 1) {
@@ -1920,7 +1920,7 @@ function all_screws2() {
     //     document.getElementById("battery_base").style.visibility = "visible";
     // }, 5500);
     setTimeout(function() {
-        document.getElementById("pumptext").innerText = "Let us now solder the ESC Power wires to the PCB Board. Move to the top view.";
+        document.getElementById("pumptext").innerText = "Let us now solder the ESC Power wires to the PCB Board. Move to the Base layer.";
         // document.getElementById("placeMotorInfo").style.visibility = "visible";
         document.getElementById("placedMotor4").style.visibility = "hidden";
 
@@ -2106,6 +2106,11 @@ function propInfo() {
             document.getElementById("placeMotorInfo").innerText = "Based on what we have learnt so far, choose the appropriate Propeller for the first motor.";
             document.getElementById('prop2').style.visibility = "visible";
             document.getElementById('prop3_1').style.visibility = "visible";
+            document.getElementById('rotationDir1').style.visibility = "visible";
+            document.getElementById('rotationDir2').style.visibility = "visible";
+            document.getElementById('rotationDir3').style.visibility = "visible";
+            document.getElementById('rotationDir4').style.visibility = "visible";
+
             document.getElementById('motorNumber1').style.visibility = "visible";
             document.getElementById('motorNumber1').style.top = "360px";
             document.getElementById('motorNumber2').style.top = "350px";
@@ -2164,7 +2169,6 @@ var propSelected = 0;
 function placeProp(id) {
     myStopFunction();
 
-
     document.getElementById('move_isometric').style.visibility = "hidden";
     document.getElementById('prop' + id).style.visibility = "visible";
     if (id == 1) {
@@ -2222,6 +2226,11 @@ function placeProp(id) {
 }
 
 function rotationInfoDone() {
+    document.getElementById('rotationDir1').style.visibility = "hidden";
+    document.getElementById('rotationDir2').style.visibility = "hidden";
+    document.getElementById('rotationDir3').style.visibility = "hidden";
+    document.getElementById('rotationDir4').style.visibility = "hidden";
+
     document.getElementById('prop1').onclick = "";
     document.getElementById('prop2').onclick = "";
     document.getElementById('prop3').onclick = "";
