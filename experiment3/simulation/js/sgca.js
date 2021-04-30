@@ -1753,9 +1753,7 @@ function sbusConnected() {
 
     setTimeout(() => {
         // hide
-        document.getElementById("info-about-RecPartSBUS-signal").style.visibility = "hidden";
-        document.getElementById("fcZoomSRecbusConnectorPlaced").style.visibility = "hidden";
-        document.getElementById("fc_topForSBUS_connectionReceiver").style.visibility = "hidden";
+
 
         document.getElementById("sbus_Placed").style.visibility = "visible";
         document.getElementById("sbus_Placed").style.visibility = "hidden";
@@ -2190,9 +2188,7 @@ function propInfo() {
             document.getElementById('prop2').style.visibility = "visible";
             document.getElementById('prop3_1').style.visibility = "visible";
             document.getElementById('rotationDir1').style.visibility = "visible";
-            document.getElementById('rotationDir2').style.visibility = "visible";
-            document.getElementById('rotationDir3').style.visibility = "visible";
-            document.getElementById('rotationDir4').style.visibility = "visible";
+
 
             document.getElementById('motorNumber1').style.visibility = "visible";
             document.getElementById('motorNumber1').style.top = "360px";
@@ -2258,6 +2254,8 @@ function placeProp(id) {
         document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 267px; left: 39px; height: 80px; width: 180px; z-index: 570;transition:all 1s ease-in-out;";
         propSelected++;
         // document.getElementById('rotation_note').style.visibility = "visible";
+        document.getElementById('rotationDir2').style.visibility = "hidden";
+
     }
     if (id == 2) {
         propSelected++;
@@ -2267,6 +2265,8 @@ function placeProp(id) {
         document.getElementById('choose_info').style.color = "#32CD32";
         document.getElementById('choose_info').style.top = "175px";
         document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 277px; left: 474px; height: 80px; width: 180px; z-index: 570; transition:all 1s ease-in-out;";
+        document.getElementById('rotationDir1').style.visibility = "hidden";
+
         setTimeout(function() {
             document.getElementById('choose_info').style.visibility = "hidden";
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
@@ -2281,7 +2281,9 @@ function placeProp(id) {
             // document.getElementById('prop2').onclick = function() { placeProp(2) };
             document.getElementById('prop3').onclick = function() { placeProp(3) };
             document.getElementById('prop4').onclick = function() { placeProp(4) };
-
+            document.getElementById('rotationDir2').style.visibility = "visible";
+            document.getElementById('rotationDir3').style.visibility = "visible";
+            document.getElementById('rotationDir4').style.visibility = "visible";
 
         }, 1500);
 
@@ -2289,13 +2291,14 @@ function placeProp(id) {
     if (id == 3) {
         propSelected++;
         document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 114px; left: 394px; height: 60px; width: 130px; z-index: 570;transition:all 1s ease-in-out;";
-
+        document.getElementById('rotationDir4').style.visibility = "hidden";
 
     }
     if (id == 4) {
         propSelected++;
         document.getElementById('prop' + id).style = "position: absolute; visibility: visible; top: 112px; left: 113.5px; height: 60px; width: 130px; z-index: 570;transition:all 1s ease-in-out; ";
         // document.getElementById('rotation_note').style.visibility = "visible";
+        document.getElementById('rotationDir3').style.visibility = "hidden";
 
     }
     if (propSelected >= 4) {
@@ -2309,10 +2312,7 @@ function placeProp(id) {
 }
 
 function rotationInfoDone() {
-    document.getElementById('rotationDir1').style.visibility = "hidden";
-    document.getElementById('rotationDir2').style.visibility = "hidden";
-    document.getElementById('rotationDir3').style.visibility = "hidden";
-    document.getElementById('rotationDir4').style.visibility = "hidden";
+
 
     document.getElementById('prop1').onclick = "";
     document.getElementById('prop2').onclick = "";
