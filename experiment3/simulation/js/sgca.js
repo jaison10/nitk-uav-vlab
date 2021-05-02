@@ -120,8 +120,8 @@ var arrowCount = 1;
 
 function animateNewarrow() {
 
-    console.log("Im here and count is: ", arrowCount);
-    console.log("The image is: new_arrow" + arrowCount);
+    // console.log("Im here and count is: ", arrowCount);
+    // console.log("The image is: new_arrow" + arrowCount);
 
     new_arrow = document.getElementById("new_arrow" + arrowCount);
     below_arrow = document.getElementById("below_arrow" + arrowCount);
@@ -181,8 +181,8 @@ function animateNewarrow() {
 var arrCountAOT = 1;
 
 function animateNewAngleOfAttackarrow() {
-    console.log("Im here and count is: ", arrCountAOT);
-    console.log("The image is: new_Arrow" + arrCountAOT);
+    // console.log("Im here and count is: ", arrCountAOT);
+    // console.log("The image is: new_Arrow" + arrCountAOT);
 
     new_arrow = document.getElementById("new_Arrow" + arrCountAOT);
     below_arrow = document.getElementById("below_Arrow" + arrCountAOT);
@@ -828,7 +828,7 @@ function placeAllESC() {
     document.getElementById("skip").style.visibility = "hidden";
     document.getElementById("esc_arm1").classList.add("moveHoverEsc1");
 
-    console.log("hiding the hovering esc")
+    // console.log("hiding the hovering esc")
 
     document.getElementById("esc_arm1").style.visibility = "hidden";
     document.getElementById("esc_arm_placed1").style.visibility = "visible";
@@ -838,7 +838,7 @@ function placeAllESC() {
 
     document.getElementById("esc_arm2").classList.add("moveHoverEsc2");
 
-    console.log("hiding the hovering esc")
+    // console.log("hiding the hovering esc")
 
     document.getElementById("esc_arm2").style.visibility = "hidden";
     document.getElementById("esc_arm_placed2").style.visibility = "visible";
@@ -848,7 +848,7 @@ function placeAllESC() {
 
     document.getElementById("esc_arm3").classList.add("moveHoverEsc3");
 
-    console.log("hiding the hovering esc")
+    // console.log("hiding the hovering esc")
 
     document.getElementById("esc_arm3").style.visibility = "hidden";
     document.getElementById("esc_arm_placed3").style.visibility = "visible";
@@ -858,7 +858,7 @@ function placeAllESC() {
 
     document.getElementById("esc_arm4").classList.add("moveHoverEsc4");
 
-    console.log("hiding the hovering esc")
+    // console.log("hiding the hovering esc")
 
     document.getElementById("esc_arm4").style.visibility = "hidden";
     document.getElementById("esc_arm_placed4").style.visibility = "visible";
@@ -867,7 +867,7 @@ function placeAllESC() {
     document.getElementById("esc_signal4").style.visibility = "visible";
 
 
-    console.log(escSelected);
+    // console.log(escSelected);
 
     document.getElementById("esc_arm_placed2").onclick = function() { connectEscMotor(2); };
 
@@ -1232,7 +1232,7 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
         document.getElementById("esc_arm1").classList.add("moveHoverEsc1");
         // Author: Jaison
         setTimeout(() => {
-            console.log("hiding the hovering esc")
+            // console.log("hiding the hovering esc")
 
             document.getElementById("esc_arm1").style.visibility = "hidden";
             document.getElementById("esc_arm_placed1").style.visibility = "visible";
@@ -1249,7 +1249,7 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
         document.getElementById("esc_arm2").classList.add("moveHoverEsc2");
         // Author: Jaison
         setTimeout(() => {
-            console.log("hiding the hovering esc")
+            // console.log("hiding the hovering esc")
 
             document.getElementById("esc_arm2").style.visibility = "hidden";
             document.getElementById("esc_arm_placed2").style.visibility = "visible";
@@ -1267,7 +1267,7 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
         document.getElementById("esc_arm3").classList.add("moveHoverEsc3");
         // Author: Jaison
         setTimeout(() => {
-            console.log("hiding the hovering esc")
+            // console.log("hiding the hovering esc")
 
             document.getElementById("esc_arm3").style.visibility = "hidden";
             document.getElementById("esc_arm_placed3").style.visibility = "visible";
@@ -1285,7 +1285,7 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
         document.getElementById("esc_arm4").classList.add("moveHoverEsc4");
         // Author: Jaison
         setTimeout(() => {
-            console.log("hiding the hovering esc")
+            // console.log("hiding the hovering esc")
 
             document.getElementById("esc_arm4").style.visibility = "hidden";
             document.getElementById("esc_arm_placed4").style.visibility = "visible";
@@ -1298,7 +1298,7 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
         }
     }
 
-    console.log(escSelected);
+    // console.log(escSelected);
     if (escSelected >= 4) {
         document.getElementById("esc_arm_placed2").onclick = function() { connectEscMotor(2); };
 
@@ -1459,7 +1459,7 @@ function connectEscMotor(n) {
 
         // Checking if all are placed
         if (connectionsDone >= 4) {
-            console.log("Inside the signal info function.");
+            // console.log("Inside the signal info function.");
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
 
             setTimeout(function() {
@@ -1472,7 +1472,7 @@ function connectEscMotor(n) {
 }
 
 function fcSignalInfoShown() {
-    console.log("Button has been clicked");
+    // console.log("Button has been clicked");
     document.getElementById('arrow-fc-signal').style.visibility = "hidden";
     document.getElementById('info-about-signal').style.visibility = "hidden";
     document.getElementById('fc_top_connection').style.visibility = "visible";
@@ -1884,7 +1884,7 @@ function connectSbusToRec() {
 
     clickCountOfSbusRecPart += 1;
     if (clickCountOfSbusRecPart == 1) {
-        console.log("Sbus connected to the Receiver");
+        // console.log("Sbus connected to the Receiver");
 
         document.getElementById("fcZoomSRecbusConnectorOnway").style.visibility = "visible";
         document.getElementById("fcZoomSRecbusConnectorOnway").classList.add("moveintermediateRecWireNewOne");
@@ -2683,7 +2683,7 @@ function placeWireSolder(id) {
     }
 
     if (powerConnected >= 4) {
-        console.log("All esc wires are placed to solder");
+        // console.log("All esc wires are placed to solder");
     }
 }
 
