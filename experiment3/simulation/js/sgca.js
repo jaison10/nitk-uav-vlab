@@ -873,7 +873,7 @@ function placeAllESC() {
 
 
     setTimeout(function() {
-        document.getElementById("pumptext").innerText = "Click on the Electronic Speed Controller (ESC) wires to connect the ESC to the Motors.";
+        document.getElementById("pumptext").innerText = "Click on the Electronic Speed Controller (ESC) wires as pointed by the arrows to connect the ESC to the Motors.";
         document.getElementById('stepnumber').innerHTML = "&nbsp;6&nbsp;";
 
         // document.getElementById("placeMotorInfo").style.visibility = "visible";
@@ -1304,7 +1304,7 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
 
 
         setTimeout(function() {
-            document.getElementById("pumptext").innerText = "Click on the Electronic Speed Controller (ESC) wires to connect the ESCs to the Motors.";
+            document.getElementById("pumptext").innerText = "Click on the Electronic Speed Controller (ESC) wires as pointed by the arrows to connect the ESCs to the Motors.";
             document.getElementById('stepnumber').innerHTML = "&nbsp;6&nbsp;";
 
             // document.getElementById("placeMotorInfo").style.visibility = "visible";
@@ -1478,7 +1478,7 @@ function fcSignalInfoShown() {
     document.getElementById('fc_top_connection').style.visibility = "visible";
     document.getElementById('fcZoomSignalCon').style.visibility = "visible";
     document.getElementById('signal_note').style.visibility = "visible";
-    document.getElementById("pumptext").innerText = "Click on the signal wire of the Electronic Speed Controller (ESC) to connect the ESCs to the Flight Controller.";
+    document.getElementById("pumptext").innerText = "Click on the signal wire of the Electronic Speed Controller (ESC) as pointed by the arrows to connect the ESCs to the Flight Controller.";
     document.getElementById('stepnumber').innerHTML = "&nbsp;7&nbsp;";
 
     // document.getElementById("placeMotorInfo").style.visibility = "visible";
@@ -1667,7 +1667,7 @@ function connectEscFc(id) {
     document.getElementById('esc_signal' + id).style.visibility = "hidden";
     if (fcConnected == 1) {
         document.getElementById("signal_note").style.top = "185px";
-        document.getElementById('signalNoteInner').innerText = "Now follow the order and connect to the corresponding pins."
+        document.getElementById('signalNoteInner').innerText = "Now follow the order of the motors and connect the corresponding pins similarly."
         for (let i = 2; i < 5; i++) {
             document.getElementById("motorNumber" + i).style.visibility = "visible";
             document.getElementById("motorNumber" + i).classList.add("showMotorNumbers");
@@ -1688,7 +1688,7 @@ function connectEscFc(id) {
             document.getElementById('stepnumber').innerHTML = "&nbsp;8&nbsp;";
 
             // document.getElementById('signal_note').style.visibility = "hidden";
-            document.getElementById('signalNoteInner').innerText = "Based on CC3D firmware's default configuration, motor 1 and 3 will be rotating clockwise and motor 2 and 4 will be counter clockwise."
+            document.getElementById('signalNoteInner').innerText = "Based on the default configuration of CC3D firmware, motor 1 and 3 will be rotating clockwise and motor 2 and 4 will be counter clockwise."
             document.getElementById("signalNoteInner").style.top = "-1px";
             document.getElementById("signal_note").style.top = "150px";
             document.getElementById("signalCloseButton").style.visibility = "visible";
@@ -2040,7 +2040,7 @@ function all_screws2() {
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
         document.getElementById('move_top').style.visibility = "visible";
 
-        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 370px; top: 85px; height: 30px; z-index: 10; ";
+        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 370px; top: 105px; height: 30px; z-index: 10; ";
 
         document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
         // Code for IE9
@@ -2142,7 +2142,7 @@ function placeAllScrewsBase() {
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
         document.getElementById('move_top').style.visibility = "visible";
 
-        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 370px; top: 85px; height: 30px; z-index: 10; ";
+        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 370px; top: 105px; height: 30px; z-index: 10; ";
 
         document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
         // Code for IE9
@@ -2501,12 +2501,19 @@ function placeAllKnobs() {
         document.getElementById("curve_arrow1_4").style.visibility = "hidden";
     }, 3000);
     setTimeout(function() {
-        document.getElementById("pumptext").innerHTML = "The Assembly of the Quadcoptor is thus complete. Proceed to the next experiment to &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;understand the Calibration of the Quadcopter. ";
+        document.getElementById("pumptext").innerHTML = "The Assembly of the Quadcoptor is thus complete. Proceed to the next experiment to &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;understand the Calibration of the Quadcopter. ";
         document.getElementById('stepnumber').innerHTML = "&nbsp;20&nbsp;";
+        document.getElementById("placeMotorInfo").style.visibility = "visible";
+        document.getElementById("placeMotorInfo").style.top = "62px";
+        document.getElementById("placeMotorInfo").style.left = "150px";
 
+        document.getElementById("placeMotorInfo").innerText = "Move over the Quadcopter to zoom in and view the connections.";
         document.getElementById("zoom").style.visibility = "visible";
     }, 6000);
+    setTimeout(function() {
+        document.getElementById("placeMotorInfo").style.visibility = "hidden";
 
+    }, 10000);
 }
 
 function moveTopView() {
