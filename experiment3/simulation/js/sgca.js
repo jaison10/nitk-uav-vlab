@@ -765,7 +765,7 @@ function placeAllScrewsMotor() {
     // document.getElementById("all_screws_on").style.opacity = 1;
     // document.getElementById("all_screws_on").style.transition = "opacity 5.5s ease-in-out";
     setTimeout(function() {
-        document.getElementById("pumptext").innerText = "Let us stick double sided tape to place FC.";
+        document.getElementById("pumptext").innerText = "Let us stick double sided tape to place Flight Controller (FC).";
         document.getElementById('stepnumber').innerHTML = "&nbsp;4&nbsp;";
 
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
@@ -873,7 +873,7 @@ function placeAllESC() {
 
 
     setTimeout(function() {
-        document.getElementById("pumptext").innerText = "Click on the ESC wires to connect the ESCs to the Motors.";
+        document.getElementById("pumptext").innerText = "Click on the Electronic Speed Controller (ESC) wires to connect the ESC to the Motors.";
         document.getElementById('stepnumber').innerHTML = "&nbsp;6&nbsp;";
 
         // document.getElementById("placeMotorInfo").style.visibility = "visible";
@@ -1304,7 +1304,7 @@ function placeEsc(id, top_px, left_px, height_px, width_px) {
 
 
         setTimeout(function() {
-            document.getElementById("pumptext").innerText = "Click on the ESC wires to connect the ESCs to the Motors.";
+            document.getElementById("pumptext").innerText = "Click on the Electronic Speed Controller (ESC) wires to connect the ESCs to the Motors.";
             document.getElementById('stepnumber').innerHTML = "&nbsp;6&nbsp;";
 
             // document.getElementById("placeMotorInfo").style.visibility = "visible";
@@ -1358,7 +1358,7 @@ function connectEscMotor(n) {
 
         // Checking if all are placed
         if (connectionsDone == 1) {
-            document.getElementById("placeMotorInfo").innerText = "Click on the rest of the ESCs to connect to the Motor."
+            document.getElementById("placeMotorInfo").innerText = "Click on the rest of the Electronic Speed Controllers (ESC) to connect to the Motor."
         }
         if (connectionsDone >= 4) {
             document.getElementById("placeMotorInfo").style.visibility = "hidden";
@@ -1388,7 +1388,7 @@ function connectEscMotor(n) {
 
 
         if (connectionsDone == 1) {
-            document.getElementById("placeMotorInfo").innerText = "Click on the rest of the ESCs to connect to the Motor."
+            document.getElementById("placeMotorInfo").innerText = "Click on the rest of the Electronic Speed Controllers (ESC) to connect to the Motor."
         }
         // Checking if all are placed
         if (connectionsDone >= 4) {
@@ -1415,7 +1415,7 @@ function connectEscMotor(n) {
         document.getElementById("esc_motor_pointer").style.visibility = "hidden";
         document.getElementById("esc_motor_info").style.visibility = "hidden";
         if (connectionsDone == 1) {
-            document.getElementById("placeMotorInfo").innerText = "Click on the rest of the ESCs to connect to the Motor."
+            document.getElementById("placeMotorInfo").innerText = "Click on the rest of the Electronic Speed Controllers (ESC) to connect to the Motor."
         }
 
         // Checking if all are placed
@@ -1454,7 +1454,7 @@ function connectEscMotor(n) {
         // document.getElementById('esc_signal4').style.top = "205px";
 
         if (connectionsDone == 1) {
-            document.getElementById("placeMotorInfo").innerText = "Click on the rest of the ESCs to connect to the Motor."
+            document.getElementById("placeMotorInfo").innerText = "Click on the rest of the Electronic Speed Controllers (ESC) to connect to the Motor."
         }
 
         // Checking if all are placed
@@ -1478,7 +1478,7 @@ function fcSignalInfoShown() {
     document.getElementById('fc_top_connection').style.visibility = "visible";
     document.getElementById('fcZoomSignalCon').style.visibility = "visible";
     document.getElementById('signal_note').style.visibility = "visible";
-    document.getElementById("pumptext").innerText = "Click on the signal wire of the ESC to connect the ESCs to the Flight Controller.";
+    document.getElementById("pumptext").innerText = "Click on the signal wire of the Electronic Speed Controller (ESC) to connect the ESCs to the Flight Controller.";
     document.getElementById('stepnumber').innerHTML = "&nbsp;7&nbsp;";
 
     // document.getElementById("placeMotorInfo").style.visibility = "visible";
@@ -1706,7 +1706,7 @@ function doneShowingRotationInfo() {
     }
     document.getElementById('signal_note').style.visibility = "hidden";
     document.getElementById("signalCloseButton").style.visibility = "hidden";
-    document.getElementById('pumptext').innerText = "Read the note to understand the connection between FC and Receiver."
+    document.getElementById('pumptext').innerText = "Read the note to understand the connection between Flight Controller and Receiver."
     document.getElementById('stepnumber').innerHTML = "&nbsp;9&nbsp;";
 
 
@@ -1723,7 +1723,7 @@ function revSignalInfoShown() {
     document.getElementById("placedMotor4").style.visibility = "hidden";
 
     document.getElementById("sbus_notPlaced").style.visibility = "hidden";
-    document.getElementById("pumptext").innerText = "Click on the SBUS connector to make connection between FC and receiver.";
+    document.getElementById("pumptext").innerText = "Click on the SBUS connector to make connection between Flight Controller and receiver.";
     document.getElementById('stepnumber').innerHTML = "&nbsp;10&nbsp;";
 
     // document.getElementById("placeMotorInfo").style.visibility = "visible";
@@ -1803,7 +1803,7 @@ function sbusConnected() {
         document.getElementById("fc_topForSBUS_connectionReceiver").style.visibility = "hidden";
         document.getElementById("fcZoomSRecbusCon").style.visibility = "hidden";
 
-        document.getElementById("pumptext").innerText = "Let us attach a Base Layer with PDB board to the frame.";
+        document.getElementById("pumptext").innerText = "Let us attach a Base Layer with Power Distribution Board (PDB) to the frame.";
         document.getElementById('stepnumber').innerHTML = "&nbsp;11&nbsp;";
 
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
@@ -1904,7 +1904,7 @@ function connectSbusToRec() {
             document.getElementById("fcZoomSRecbusConnectorPlaced").style.visibility = "hidden";
             document.getElementById("fc_topForSBUS_connectionReceiver").style.visibility = "hidden";
             document.getElementById("fcZoomSRecbusCon").style.visibility = "hidden";
-            document.getElementById("pumptext").innerText = "Let us attach a Base Layer with PDB board to the frame.";
+            document.getElementById("pumptext").innerText = "Let us attach a Base Layer with Power Distribution Board (PDB) board to the frame.";
             document.getElementById('stepnumber').innerHTML = "&nbsp;11&nbsp;";
 
             // document.getElementById("placeMotorInfo").style.visibility = "visible";
@@ -2032,7 +2032,7 @@ function all_screws2() {
     //     document.getElementById("battery_base").style.visibility = "visible";
     // }, 5500);
     setTimeout(function() {
-        document.getElementById("pumptext").innerText = "Let us now solder the ESC Power wires to the PDB Board. Move to the Base layer.";
+        document.getElementById("pumptext").innerText = "Let us now solder the Electronic Speed Controller (ESC) Power wires to the Power Distribution Board (PDB). Move to the Base layer.";
         document.getElementById('stepnumber').innerHTML = "&nbsp;12&nbsp;";
 
         document.getElementById("placedMotor4").style.visibility = "hidden";
@@ -2133,7 +2133,7 @@ function placeAllScrewsBase() {
 
 
     setTimeout(function() {
-        document.getElementById("pumptext").innerText = "Let us now solder the ESC Power wires to the PCB Board. Move to the Base Layer.";
+        document.getElementById("pumptext").innerText = "Let us now solder the Electronic Speed Controller (ESC) Power wires to the Power Distribution Board (PDB). Move to the Base Layer.";
         document.getElementById('stepnumber').innerHTML = "&nbsp;12&nbsp;";
 
         // document.getElementById("placeMotorInfo").style.visibility = "visible";
@@ -2566,7 +2566,7 @@ function moveTopView() {
         document.getElementById('move_top').style.visibility = "hidden";
         document.getElementById('border_box').style.visibility = "visible";
         // document.getElementById("placeMotorInfo").style.visibility = "visible";
-        document.getElementById("pumptext").innerText = "Place the ESC Power Wires on the PCB Board and solder them."
+        document.getElementById("pumptext").innerText = "Place the Electronic Speed Controller (ESC) Power Wires on the Power Distribution Board (PDB) and solder them."
         document.getElementById('stepnumber').innerHTML = "&nbsp;12&nbsp;";
 
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
@@ -2663,7 +2663,7 @@ function placeWireSolder(id) {
         document.getElementById('half_escWireConnected' + id).style.transition = "all 0.1s ease-in-out";
 
         // document.getElementById("placeMotorInfo").style.visibility = "visible";
-        document.getElementById("pumptext").innerText = "Solder the ESC Power Wire as shown."
+        document.getElementById("pumptext").innerText = "Solder the Electronic Speed Controller (ESC) Power Wire as shown."
         document.getElementById('stepnumber').innerHTML = "&nbsp;13&nbsp;";
 
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
@@ -2789,7 +2789,7 @@ function solder() {
             // document.getElementById("solder_lead").style.visibility = "hidden";
             // document.getElementById("solder_lead2").style.visibility = "hidden";
             // document.getElementById("placeMotorInfo").style.visibility = "visible";
-            document.getElementById("pumptext").innerText = "Similarly, Solder all other Esc wires to the PCB Board."
+            document.getElementById("pumptext").innerText = "Similarly, Solder all other Electronic Speed Controller (ESC) wires to the Power Distribution Board (PDB)."
             document.getElementById('stepnumber').innerHTML = "&nbsp;14&nbsp;";
 
             document.getElementById('arrow1').style = "visibility: hidden; position: absolute; left: 710px; top: 105px; height: 30px; z-index: 10; ";
@@ -3066,7 +3066,7 @@ function solderAllWires() {
             document.getElementById('lead_smoke7').style.visibility = "hidden";
             document.getElementById("batteryToPcb").style.visibility = "visible";
             // document.getElementById("placeMotorInfo").style.visibility = "visible";
-            document.getElementById("pumptext").innerText = "Click on the Battery to PCB connector to place it.";
+            document.getElementById("pumptext").innerText = "Click on the Battery to Power Distribution Board connector to place it.";
             document.getElementById('stepnumber').innerHTML = "&nbsp;15&nbsp;";
 
             document.getElementById('arrow1').style = "visibility: hidden; position: absolute; left: 710px; top: 105px; height: 30px; z-index: 10; ";
@@ -3504,7 +3504,7 @@ function all_screws1() {
     // document.getElementById("all_screws_on").style.opacity = 1;
     // document.getElementById("all_screws_on").style.transition = "opacity 5.5s ease-in-out";
     setTimeout(function() {
-        document.getElementById("pumptext").innerText = "Let us stick double sided tape to place FC.";
+        document.getElementById("pumptext").innerText = "Let us stick double sided tape to place Flight Controller.";
         document.getElementById('stepnumber').innerHTML = "&nbsp;4&nbsp;";
 
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
@@ -3544,7 +3544,7 @@ function placeDST() {
         setTimeout(() => {
             document.getElementById("doubleST").style.visibility = "hidden";
             document.getElementById("placedDST").style.visibility = "visible";
-            document.getElementById("pumptext").innerText = "Let us place the FC (Flight Controller) now.";
+            document.getElementById("pumptext").innerText = "Let us place the Flight Controller (FC) now.";
             // document.getElementById("placeMotorInfo").style.visibility = "visible";
 
             document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 450px; top: 130px; height: 30px; z-index: 10;";
@@ -3690,7 +3690,8 @@ function mount_frame() {
     document.getElementById('trial').innerHTML = "";
     // Positioning the arrow
     document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 280px; top: 110px; height: 30px; z-index: 10;";
-
+    document.getElementById("skip").style.visibility = "visible";
+    document.getElementById("skip").onclick = function() { placeAllScrews(); };
     document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
     // Code for IE9
     document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
