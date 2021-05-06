@@ -97,18 +97,18 @@
             <h4 class="incanvas" style="font-family:verdana; ">Apparatus used:</h4>
             <p class="incanvas" style="font-family:verdana; font-size:14px;">Frame, Motors, Propellers, Electronic Speed Controllers, Flight Controller, LiPO Battery, Receiver, Wires and Transmitter.</p>
             &nbsp;
-            <span class="tooltip" id="desc_button" style="border-bottom:1px dotted ; color:red; position:absolute; top:130px;"><strong>Description</strong>
+            <span class="tooltip" id="desc_button" style="border-bottom:1px dotted ; color:red; position:absolute; top:140px;"><strong>Description</strong>
   
   
-  <span  class="tooltiptext" style="text-align:justify;"><strong style="color:red;">Quadcopter</strong> A Quadcopter or quadrotor is a type of helicopter with four motors.Quadcopters generally have two rotors spinning clockwise (CW) and two counterclockwise (CCW). Flight control is provided by independent variation of the speed and hence lift and torque of each rotor. Pitch and roll are controlled by varying the net centre of thrust, with yaw controlled by varying the net torque. 
-  </span>
+            <span  class="tooltiptext" style="text-align: justify;"><strong style="color:red;">Quadcopter</strong> A Quadcopter or quadrotor is a type of helicopter with four motors. Quadcopters generally have two rotors spinning clockwise (CW) and two counterclockwise (CCW). Flight control is provided by independent variation of the speed and hence lift and torque of each rotor. Pitch and roll are controlled by varying the net centre of thrust, with yaw controlled by varying the net torque. 
+            </span>
             </span>
             <!-- <img id="" style="position: absolute; left: 259.5px; top: 355px; width:15px;" title="Le-Chatelier flask" src="Images/1.2.png"/> -->
             <img id="" style="position: absolute; left: 250px; top: 300px; width:450px; height:200px; transform: rotate(1deg);" title="Quadcopter" src="./Images/all_together.png" />
 
             <!-- <div id="preview" style="position: absolute; left: 250px; top: 200px; width:450px; height:200px;" onmousemove="zoomIn(event)"></div> -->
             <!-- <img id="" style="position: absolute; left: 370px; top: 395px; width:150px;" title="Weighing scale" src="Images/ewm.png"/> -->
-            <img style="position:absolute; left:50px; top:150px; height: 380px; width: 150px;" title="Human" src="./Images/human.png" />
+            <img style="position:absolute; left:70px; top:150px; height: 380px; width: 130px;" title="Human" src="./Images/h1.2.png" />
 
         </div>
         <!--Step1	-->
@@ -119,30 +119,28 @@
 
             <!-- APPARATUS BUTTONS -->
             <span class="tool" id="desc_button"><strong><button id="quad" onclick="place_apparatus('quad','50px');" style="visibility: hidden; position: absolute; top: 50px; left: 0px; border-radius: 5px; color: rgb(255, 255, 255);width:185px ; background-color: black;cursor:pointer;">Quadcopter Frame</button></strong>
-                <span  class="tooltext" id="desc_message"><strong style="color:red;">Frame</strong> is the structure that holds all the components together. It supports motors and other electronics and prevents them from vibrations. They need to be designed to be strong but also lightweight.
+                <span  class="tooltext" id="desc_message" style="text-align: justify;left: -10px;"><strong style="color:red;">Frame</strong> is the structure that holds all the components together. It supports the motors and other electronics and prevents them from vibrations. The frames are designed to be strong and lightweight.
                 </span>
             </span>
 
-            <!--<button id="base_layer" onclick="place_apparatus('base','50px');" style="visibility: hidden; position: absolute; top: 90px; left: 0px; border-radius: 5px; color: rgb(255, 255, 255);width:185px ; background-color: black;">Base layer Frame</button>
-            <button id="4arms" onclick="place_apparatus('arm','140px');" style="visibility:hidden;position:absolute;top:130px;left:0px;border-radius: 5px;color: #fff;width:185px ;background-color: black;">Arms</button> -->
             <span class="tool" id="desc_button"><strong></strong><button id="motors" onclick="place_apparatus('motor','140px');" style="visibility:hidden;position:absolute;top:90px;left:0px;border-radius: 5px;color: #fff;width:185px ;background-color: black;cursor: pointer;">Brushless Motors</button></strong>
-                <span  class="tooltext" id="desc_message"><strong style="color:red;">Motor</strong> A motor converts supplied electrical energy into mechanical energy. Among these, brushless DC motors (BLDC) feature high efficiency and excellent controllability. 
+                <span  class="tooltext" id="desc_message" style="text-align: justify;left: -10px;"><strong style="color:red;">Motor</strong> An electric motor is an electrical machine that converts electrical energy into mechanical energy. Among these, brushless DC motors (BLDC) feature high efficiency and excellent controllability. 
                 </span>
             </span>
             <span class="tool" id="desc_button"><strong><button id="flight_c" onclick="place_apparatus('flight_controller','240px');" style="visibility:hidden;position:absolute;top:130px;left:0px;border-radius: 5px;color: #fff;width:185px ;background-color: black;cursor: pointer;">Flight Controller</button></strong>
-                <span  class="tooltext" id="desc_message" ><strong style="color:red;">Flight Controller</strong> is the brains of a UAV. The flight controller reads all of the sensor data and calculates the best commands to send to your drone in order for it to fly. This is the central unit that runs the autopilot firmware and performs all the calculations.
+                <span  class="tooltext" id="desc_message" style="text-align: justify;left: -10px;"><strong style="color:red;">Flight Controller</strong> a.k.a FC is the brain of the aircraft. It's a circuit board with a range of sensors that detect movement of the drone, as well as the user commands. Using this data, it then controls the speed of the motors to make the craft move as instructed.
                 </span>
             </span>
             <span class="tool" id="desc_button"><strong><button id="esc" onclick="place_apparatus('electronic_sc','140px');" style="visibility:hidden;width:185px ;position:absolute;top:170px;left:0px;border-radius: 5px;color: #fff;background-color: black;cursor: pointer;">Electronic Speed Controllers</button></strong>
-                <span  class="tooltext" id="desc_message"><strong style="color:red;">Electronic speed control (ESC)</strong>  is an electronic circuit that controls and regulates the speed of an electric motor. It may also provide reversing of the motor and dynamic braking. 
+                <span  class="tooltext" id="desc_message" style="text-align: justify;left: -10px;"><strong style="color:red;">Electronic Speed Controller (ESC)</strong> is an electronic circuit that controls and regulates the speed of an electric motor. It may also provide reversing of the motor and dynamic braking. 
                 </span>
             </span>
             <span class="tool" id="desc_button"><strong><button id="lipo" onclick="place_apparatus('lipo_battery','220px');" style="visibility:hidden;position:absolute;top:210px;left:0px;border-radius: 5px;color: #fff;width:185px ;background-color: black;cursor: pointer;">LiPo Battery</button></strong>
-                <span  class="tooltext" id="desc_message" ><strong style="color:red;">Lithium polymer battery</strong>  or more correctly lithium-ion polymer battery is a rechargeable battery of lithium-ion technology using a polymer electrolyte instead of a liquid electrolyte.
+                <span  class="tooltext" id="desc_message" style="text-align: justify; left: -10px;"><strong style="color:red;">Lithium Polymer Battery</strong> or lithium-ion polymer battery is a rechargeable battery of lithium-ion technology which uses a polymer electrolyte instead of a liquid electrolyte.
                 </span>
             </span>
             <span class="tool" id="desc_button"><strong><button id="tran_rec" onclick="place_apparatus('tran_rec','360px');" style="visibility:hidden;position:absolute;top:250px;left:0px;border-radius: 5px;color: #fff;width:185px ;background-color: black;cursor: pointer;">Transmitter and Receiver</button></strong>
-                <span  class="tooltext" id="desc_message"><strong style="color:red;">Transmitter and Receiver</strong>  The device used to transmit signal from one place to the other is known as transmitter. The device which decodes the transmitted information from the received signal is known as receiver.
+                <span  class="tooltext" id="desc_message" style="text-align: justify;left: -10px;"><strong style="color:red;">Transmitter and Receiver</strong> The device used to transmit signal from one place to the other is known as transmitter. The device which decodes the transmitted information from the received signal is known as receiver.
                 </span>
             </span>
             <!-- <button id="tran" onclick="place_apparatus('transmitter1','350px');" style="visibility:hidden;position:absolute;top:370px;left:0px;border-radius: 5px;color: #fff;width:185px ;background-color: black;">Transmitter</button>
@@ -387,7 +385,7 @@
             <img id="arrow-fc-signal" style="visibility:hidden ;position: absolute;top: 300px;left: 230px;height: 70px;width: 70px; transform: rotate(160deg);z-index:200;" src="./Images/arrow_slim.png" alt="Info">
             <div id="info-about-signal" style="position: absolute; visibility: hidden; border-style: solid; border-width: thin; width: 360px; height: 100px; top: 380px; left:160px; border-radius: 6px;">
                 <img title="Signal Wire" src="./Images/Esc_Flight_controller_wire_1.png" style="position: absolute; width: 100px; height: 50px; top: 20px; left: 3px; border-radius: 6px; border-style: solid; border-width: thin; ">
-                <span style="position: absolute; width: 250px; height: 50px; top: 10px; left: 115px;"> This is ESC to FC signal line through which the information 
+                <span style="position: absolute; width: 220px; height: 50px; top: 10px; left: 115px;text-align: justify;"> This is ESC to FC signal line through which the information 
                 from  FC will be transferred to the ESC.</span>
                 <button style="position: absolute;  top: 70px; left: 320px; color: rgb(255, 255, 255); background-color: black; border-radius: 5px; cursor: pointer;z-index: 150;" onclick="fcSignalInfoShown();">Ok</button>
             </div>
@@ -410,7 +408,7 @@
 
             <!-- Info about clicking on the signal wire. -->
             <div id="signal_note" style="position: absolute; visibility: hidden; top: 180px; left: 495px; height: 115px; width: 215px; border: 1px solid black; border-radius: 15px;">
-                <span id="signalNoteInner" style="position: absolute;top: 5px;left: 7px;height:65px;width:190px;padding:10px;">As we know that this is the first motor, 
+                <span id="signalNoteInner" style="position: absolute;top: 5px;left: 7px;height:65px;width:180px;padding:10px;text-align:justify;">As we know that this is the first motor, 
                     click on the first signal wire to connect to the first pin of output of FC. </span>
                 <button id="signalCloseButton" style="visibility: hidden; position: absolute;  top: 110px; left: 170px; color: rgb(255, 255, 255); background-color: black; border-radius: 5px; cursor: pointer;" onclick="doneShowingRotationInfo();">Ok</button>
             </div>
@@ -429,7 +427,7 @@
                 <div style="position: absolute; width: 200px; height: 50px; top: 3px; left: 9px; border-radius: 6px; border-style: solid; border-width: thin;">
                     <img title="SBUS Connector" src="./Images/Flight_controller_iso_WIREv08.png" style="position: absolute; width: 120px; height: 40px; top: 6px; left: 39px; border-radius: 6px;">
                 </div>
-                <span style="position: absolute; width: 200px; height: 50px; top: 54px; left: 15px;"> SBUS- This is a digital communication protocol used in R/C receivers.
+                <span style="position: absolute; width: 190px; height: 50px; top: 57px; left: 15px;text-align:justify;"> SBUS- This is a digital communication protocol used in R/C receivers.
                 Used to transmit control signals between receiver and servos. It transmits channels digitally.</span>
                 <button style="position: absolute;  top: 175px; left: 175px; color: rgb(255, 255, 255); background-color: black; border-radius: 5px; cursor: pointer;" onclick="revSignalInfoShown();">Ok</button>
             </div>
@@ -439,7 +437,7 @@
                 <div style="position: absolute; width: 200px; height: 50px; top: 16px; left: 9px; border-radius: 6px; border-style: solid; border-width: thin; ">
                     <img title="SBUS Connector" src="./Images/sbus_wire_unconnected.png" style="position: absolute; width: 170px; height: 50px; top: 0px; left: 11px;">
                 </div>
-                <span style="position: absolute; width: 200px; height: 50px; top: 75px; left: 15px;">This is Receiver end of Sbus connector. This has wires including 
+                <span style="position: absolute; width: 190px; height: 50px; top: 75px; left: 15px;text-align:justify;">This is Receiver end of Sbus connector. This has wires including 
                 Ground, 5V and Sbus signal wire. This is connected to Sbus part of Receiver. </span>
             </div>
             <!-- Base Layer -->
@@ -469,7 +467,7 @@
             <img id="screw_head6" class="" style="visibility: hidden; position: absolute; left: 382px; top: 345px; height: 4px; width: 6px; z-index: 120; opacity: 0;" src="./Images/Screw_head.png">
 
             <!-- BUTTON TO MOVE TO TOP VIEW OF BASE LAYER -->
-            <button id="move_top" onclick="moveTopView();" style="visibility:hidden;position:absolute;top:70px;left:270px;border-radius: 5px;color: #fff;background-color: black;cursor: pointer;">Move to the Base Layer</button>
+            <button id="move_top" onclick="moveTopView();" style="visibility:hidden;position:absolute;top:90px;left:270px;border-radius: 5px;color: #fff;background-color: black;cursor: pointer;">Move to the Base Layer</button>
             <!-- BORDER BOX  -->
             <div id="border_box" style="visibility: hidden; position: absolute; top: 136px; left: 20px; border: 1px solid black; height: 350px; width: 620px;"></div>
             <!-- HALF ESCS  -->
@@ -553,7 +551,7 @@
             <img id="prop4" style="position: absolute; visibility: hidden; top: 55px; left: 112px; height: 60px; width: 130px; z-index: 570;cursor: pointer;" src="./Images/Prop4.png" alt="Propeller">
             <!-- position: absolute; visibility: visible; top: 55px; left: 112px; height: 60px; width: 130px; z-index: 570; -->
             <p id="choose_info" style="position: absolute; visibility: visible; top:166px; left: 490px;  z-index: 570; color: red;"></p>
-            <div id="rotation_note" style="position: absolute; visibility: hidden; top: 360px; left: 172px; height: 110px;padding:10px; width: 315px; border: 1px solid black; border-radius: 15px;">
+            <div id="rotation_note" style="position: absolute; visibility: hidden; top: 360px; left: 172px; height: 120px; padding: 10px; width: 315px; border: 1px solid black; border-radius: 15px;text-align:justify;">
                 <p>The diagonal motors should rotate in the same direction. For example, If Motor 1 has clockwise rotation, then 3 also has clockwise rotation. Similarly, Motor 2 and 4 has anticlockwise rotation. </p>
                 <button style="position: absolute;top: 102px; left: 278px;  color: rgb(255, 255, 255); background-color: black; border-radius: 5px; cursor: pointer;" onclick="rotationInfoDone();">Ok</button>
 

@@ -236,23 +236,23 @@ function magic()
 	{
 		// this is for STEP1
 		refresh1();
-		document.getElementById('nextButton').style.visibility="hidden";
+		document.getElementById('nextButton').style.visibility="visible";
 		// document.getElementById("arrow1").style = "position: absolute; top:230px;";
-		myInt = setInterval(function()	{
-			 animatearrow(); 
-		}, 500);
+		// myInt = setInterval(function()	{
+		// 	 animatearrow(); 
+		// }, 500);
 		
-		document.getElementById('trial').style="visibility:visible ;left: 700px; top: 100px;position: absolute;font-weight: bold;text-transform: uppercase;";
-		document.getElementById('trial').innerHTML="";
+		// document.getElementById('trial').style="visibility:visible ;left: 700px; top: 100px;position: absolute;font-weight: bold;text-transform: uppercase;";
+		// document.getElementById('trial').innerHTML="";
 		// Positioning the arrow
-		document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 180px; top: 200px; height: 40px; z-index: 10;";
+		// document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 180px; top: 200px; height: 40px; z-index: 10;";
 			
-		document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
-		// Code for IE9
-		document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
-		// Standard syntax
-		document.getElementById("arrow1").style.transform = "rotate(180deg)";
-		document.getElementById('a2').onclick=function() { step1(); };
+		// document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
+		// // Code for IE9
+		// document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
+		// // Standard syntax
+		// document.getElementById("arrow1").style.transform = "rotate(180deg)";
+		// document.getElementById('a2').onclick=function() { step1(); };
 		
 	}
 	
@@ -412,7 +412,7 @@ function refresh1()
 	document.getElementById("arrow1").style.animation = "";
 
 	 
-	 document.getElementById('v1').innerHTML="";
+	//  document.getElementById('v1').innerHTML="";
 	 document.getElementById('v2').innerHTML="";
 	 document.getElementById('v3').innerHTML="";
 	 document.getElementById('v4').innerHTML="";
