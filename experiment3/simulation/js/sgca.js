@@ -765,7 +765,7 @@ function placeAllScrewsMotor() {
     // document.getElementById("all_screws_on").style.opacity = 1;
     // document.getElementById("all_screws_on").style.transition = "opacity 5.5s ease-in-out";
     setTimeout(function() {
-        document.getElementById("pumptext").innerText = "Let us stick double sided tape to place Flight Controller (FC).";
+        document.getElementById("pumptext").innerText = "Let us stick 3M Tape (Double Sided Tape) to place Flight Controller (FC).";
         document.getElementById('stepnumber').innerHTML = "&nbsp;4&nbsp;";
 
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
@@ -1119,7 +1119,7 @@ function fcInfoDone() {
     for (let i = 1; i < 5; i++) {
         document.getElementById("motorNumber" + i).style.visibility = "hidden";
     }
-    document.getElementById("pumptext").innerText = "Let us stick double sided tape to place Receiver.";
+    document.getElementById("pumptext").innerText = "Let us stick 3M Tape (Double Sided Tape) to place Receiver.";
     document.getElementById('stepnumber').innerHTML = "&nbsp;4&nbsp;";
 
     // document.getElementById("placeMotorInfo").style.visibility = "visible";
@@ -3511,7 +3511,7 @@ function all_screws1() {
     // document.getElementById("all_screws_on").style.opacity = 1;
     // document.getElementById("all_screws_on").style.transition = "opacity 5.5s ease-in-out";
     setTimeout(function() {
-        document.getElementById("pumptext").innerText = "Let us stick double sided tape to place Flight Controller.";
+        document.getElementById("pumptext").innerText = "Let us stick 3M Tape (Double Sided Tape) to place Flight Controller.";
         document.getElementById('stepnumber').innerHTML = "&nbsp;4&nbsp;";
 
         document.getElementById("placeMotorInfo").style.visibility = "hidden";
