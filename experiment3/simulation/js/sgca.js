@@ -1564,7 +1564,7 @@ function ConnectAllSignals() {
             document.getElementById('stepnumber').innerHTML = "&nbsp;8&nbsp;";
 
             // document.getElementById('signal_note').style.visibility = "hidden";
-            document.getElementById('signalNoteInner').innerText = "Based on CC3D firmware's default configuration, motor 1 and 3 will be rotating clockwise and motor 2 and 4 will be counter clockwise."
+            document.getElementById('signalNoteInner').innerText = "Based on the default configuration of CC3D Firmware, motor 1 and 3 will be rotating clockwise and motor 2 and 4 will be counter clockwise."
             document.getElementById("signalNoteInner").style.top = "-1px";
             document.getElementById("signal_note").style.top = "150px";
             document.getElementById("signalCloseButton").style.visibility = "visible";
@@ -1688,7 +1688,7 @@ function connectEscFc(id) {
             document.getElementById('stepnumber').innerHTML = "&nbsp;8&nbsp;";
 
             // document.getElementById('signal_note').style.visibility = "hidden";
-            document.getElementById('signalNoteInner').innerText = "Based on the default configuration of CC3D firmware, motor 1 and 3 will be rotating clockwise and motor 2 and 4 will be counter clockwise."
+            document.getElementById('signalNoteInner').innerText = "Based on the default configuration of CC3D Firmware, motor 1 and 3 will be rotating clockwise and motor 2 and 4 will be counter clockwise."
             document.getElementById("signalNoteInner").style.top = "-1px";
             document.getElementById("signal_note").style.top = "150px";
             document.getElementById("signalCloseButton").style.visibility = "visible";
