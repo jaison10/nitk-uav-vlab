@@ -136,12 +136,35 @@
 
             <strong id="titlestep" class="incanvas">STEP &nbsp;</strong>
             <span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
-            <p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Let us see how the air flows through an airfoil, producing the lift.</p>
+            <p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Let us remove the Propellers before calibrating the Flight Controller.</p>
 
-            <img id="hand" style="position: absolute; left: 275px; top: 125px; visibility:hidden;cursor:pointer;" src="Images/hn.png" />
+            <img id="hand" style="position: absolute; left: 275px; top: 125px; visibility:hidden;">
+            <img id="quad" style="position: absolute; left: 120px; top: 160px; visibility: hidden;  height: 250px; width: 470px;transform:rotate(2deg);" src="./Images/all_without nut_v02.png">
 
-            <p id="can2" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;">Here the lift is upwards.</p>
-            <p id="v2" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
+            <!-- Propellers -->
+            <img id="prop1" style="position: absolute; left: 72px; top: 265px; visibility: hidden;  height: 68px; width: 150px;" src="./Images/Prop1.png">
+            <img id="prop2" style="position: absolute; left: 481.5px; top: 264px; visibility: hidden; height: 68px; width: 150px;transform:rotate(-2deg);" src="./Images/Prop2.png">
+            <img id="prop3" style="position: absolute; left: 401px; top: 139px; visibility: hidden;  height: 58px; width: 105px;" src="./Images/Prop3.png">
+            <img id="prop4" style="position: absolute; left: 133px; top: 146px; visibility: hidden;  height: 58px; width: 105px;transform:rotate(-2deg);" src="./Images/Prop4.png">
+
+            <!-- Knobs on propellers -->
+            <img id="knob1" style="position: absolute; left: 141px; top: 280px; visibility:hidden;height:21px;width:14px;" src="./Images/Nut_single.png">
+            <img id="knob2" style="position: absolute;cursor: pointer; left: 549.5px; top: 277px; visibility:hidden;height:22px;width:13.5px;transform:rotate(1deg);" src="./Images/Nut_single.png">
+            <img id="knob3" style="position: absolute; left: 449.5px; top: 155px; visibility:hidden;height:14px;width:9px;" src="./Images/Nut_single.png">
+            <img id="knob4" style="position: absolute; left: 181px; top: 163px; visibility:hidden;height:14px;width:9px;" src="./Images/Nut_single.png">
+
+            <!-- Hand holding knob -->
+            <img id="handKnob" style="position: absolute; left: 534px; top:205px; visibility: hidden; height: 90px; width: 45px; opacity: 0;" src="./Images/hand_nut.png">
+
+            <!-- Button removing all other knobs -->
+            <button id="removeKnob" onclick="" style="cursor: pointer;;visibility: hidden;position: absolute;top: 100px;left: 500px;color: #fff;background-color: black;border-radius: 5px;">Remove all other Knobs</button>
+
+            <!-- Instruction note -->
+            <p id="inst_note" style="position: absolute;top: 70px; left: 110px;visibility: hidden;">Remove the knobs first.</p>
+
+            <p id="can2" style="visibility: hidden;position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;">Here the lift is upwards.</p>
+            <p id="v2" style="visibility: hidden;position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
+
 
         </div>
 
