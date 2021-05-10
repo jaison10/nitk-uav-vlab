@@ -262,12 +262,12 @@ function magic() {
         // Standard syntax
         document.getElementById("arrow1").style.transform = "rotate(0deg)";
         document.getElementById('knob2').onclick = function() { removeKnobs(); };
-        document.getElementById("nextButton").style.visibility = "visible";
         // myInt = setInterval(function(){ animateNewarrow(); }, 300);
 
     } else if (simsubscreennum == 3) {
         myInt = setInterval(function() { animateNewarrow(); }, 1000);
 
+        document.getElementById('quad').style.visibility = "hidden";
 
         document.getElementById('arrow1').style = "visibility:hidden ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
 
@@ -368,7 +368,7 @@ function magic() {
 function removeKnobs() {
     myStopFunction();
     document.getElementById("knob2").onclick = "";
-    document.getElementById("knob2").style.cursor = "none";
+    document.getElementById("knob2").style.cursor = "";
     document.getElementById('inst_note').style.visibility = "hidden";
     document.getElementById('knob2').style.opacity = 0;
     document.getElementById('knob2').style.transition = "opacity 1s ease-in-out";
@@ -430,11 +430,73 @@ function removeAllKnobs() {
         document.getElementById('knob3').style.visibility = "hidden";
         document.getElementById('knob4').style.visibility = "hidden";
 
+        document.getElementById('inst_note').style.visibility = "visible";
+        document.getElementById('inst_note').innerText = "Now, remove the propellers."
+        myInt = setInterval(function() { animatearrow(); }, 500);
+        document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 635px; top: 330px; height: 30px; z-index: 10;";
+
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(0deg)";
+        document.getElementById('prop2').style.cursor = "pointer";
+        document.getElementById('prop2').onclick = function() { removeProp(); };
+    }, 3000);
+}
+
+function removeProp() {
+    myStopFunction();
+    document.getElementById('inst_note').style.visibility = "hidden";
+    document.getElementById('prop2').style.cursor = "";
+    document.getElementById('prop2').onclick = "";
+    document.getElementById('prop2').style.opacity = 0;
+    document.getElementById('prop2').style.transition = "opacity 1s ease-in-out";
+    document.getElementById('handProp').style.visibility = "visible";
+    document.getElementById('handProp').style.opacity = 1;
+    document.getElementById('handProp').style.top = "175px";
+    // document.getElementById("handProp").classList.add('rotateHandKnob');
+    document.getElementById('handProp').style.transition = "all 1s ease-in-out";
+    setTimeout(function() {
+        document.getElementById('removeProp').style.visibility = "visible";
+        document.getElementById('removeProp').onclick = function() { removeAllProps(); };
+
+
+    }, 2200);
+}
+
+function removeAllProps() {
+    document.getElementById('handProp').style.visibility = "hidden";
+    document.getElementById('removeProp').style.visibility = "hidden";
+    setTimeout(function() {
+        document.getElementById('prop1').style.top = "235px";
+        document.getElementById('prop3').style.top = "115px";
+        document.getElementById('prop4').style.top = "116px";
+        document.getElementById('prop1').style.transition = "top 2s ease-in-out";
+        document.getElementById('prop3').style.transition = "top 2s ease-in-out";
+        document.getElementById('prop4').style.transition = "top 2s ease-in-out";
+
+    }, 1000);
+    setTimeout(function() {
+        document.getElementById('prop1').style.visibility = "hidden";
+        document.getElementById('prop2').style.visibility = "hidden";
+        document.getElementById('prop3').style.visibility = "hidden";
+        document.getElementById('prop4').style.visibility = "hidden";
+        document.getElementById("nextButton").style.visibility = "visible";
+
         // document.getElementById('inst_note').style.visibility = "visible";
         // document.getElementById('inst_note').innerText = "Now, remove the propellers."
+        // myInt = setInterval(function() { animatearrow(); }, 500);
+        // document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 635px; top: 330px; height: 30px; z-index: 10;";
 
-
-    }, 2500);
+        // document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+        // // Code for IE9
+        // document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+        // // Standard syntax
+        // document.getElementById("arrow1").style.transform = "rotate(0deg)";
+        // document.getElementById('prop2').style.cursor = "pointer";
+        // document.getElementById('prop2').onclick = function() { removeProp(); };
+    }, 3000);
 }
 
 function step1() {
