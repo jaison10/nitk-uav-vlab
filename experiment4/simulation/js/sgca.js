@@ -371,17 +371,22 @@ function removeKnobs() {
     document.getElementById("knob2").style.cursor = "";
     document.getElementById('inst_note').style.visibility = "hidden";
     document.getElementById('knob2').style.opacity = 0;
-    document.getElementById('knob2').style.transition = "opacity 1s ease-in-out";
+    document.getElementById('knob2').style.top = "275px";
+    document.getElementById('knob2').style.transition = "opacity 2s ease-in-out";
     document.getElementById('handKnob').style.visibility = "visible";
     document.getElementById('handKnob').style.opacity = 1;
-    document.getElementById('handKnob').style.top = "195px";
+    document.getElementById('handKnob').style.top = "200px";
     document.getElementById("handKnob").classList.add('rotateHandKnob');
-    document.getElementById('handKnob').style.transition = "all 3s ease-in-out";
+    document.getElementById('handKnob').style.transition = "all 2s ease-in-out";
+    setTimeout(function() {
+        document.getElementById('handKnob').style.top = "195px";
+
+    }, 1200);
+
     setTimeout(function() {
         document.getElementById('removeKnob').style.visibility = "visible";
         document.getElementById('removeKnob').onclick = function() { removeAllKnobs(); };
         document.getElementById('handKnob').style.visibility = "hidden";
-
 
     }, 2200);
 
