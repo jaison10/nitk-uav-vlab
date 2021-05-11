@@ -178,10 +178,17 @@
             <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span>
             <p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Connect the Flight Controller to the Computer using Micro USB Cable </p>
 
-            <p style="top:40%;">
-                <img id="wg" style="position: absolute; left: 100px; top: 80px; width: 70%; height: 30%;" src="Images/uav/airfoil.jpeg" />
-                <!-- UPPER LAYER AIRFLOW -->
-                <img id="new_arrow1" style="position: absolute; height: 7%; width: 5%; top:23%; left: 5%; visibility: hidden;" src="./Images/uav/arrow.png">
+            <p id="zoomIn" style="position: absolute; visibility: hidden; top: 280px; left:100px; height: 230px; width: 500px; border: 1px solid black; border-radius: 5px;">
+                <img src="./Images/FC_USB.png" style="position: absolute;height: 70px;width: 120px;top: 70px;left: 50px;" title="Flight Controller" alt="Flight Controller">
+                <img src="./Images/pc.png" style="position: absolute;height: 90px;width: 100px;top: 50px;left: 370px;" alt="Computer">
+                <img src="./Images/CPU.png" style="position: absolute;height: 90px;width: 50px;top: 50px;left:300px;" alt="CPU">
+            </p>
+
+
+            <!-- <p style="top:40%;"> -->
+            <!-- <img id="wg" style="position: absolute; left: 100px; top: 80px; width: 70%; height: 30%;" src="Images/uav/airfoil.jpeg" /> -->
+            <!-- UPPER LAYER AIRFLOW -->
+            <!-- <img id="new_arrow1" style="position: absolute; height: 7%; width: 5%; top:23%; left: 5%; visibility: hidden;" src="./Images/uav/arrow.png">
                 <img id="new_arrow2" style="position: absolute; height: 7%; width: 5%; top:23%; left: 12%; visibility: hidden;" src="./Images/uav/arrow.png">
                 <img id="new_arrow3" style="position: absolute; height: 7%; width: 5%; top:23%; left: 18%; visibility: hidden;" src="./Images/uav/arrow.png">
                 <img id="new_arrow4" style="position: absolute; height: 7%; width: 5%; top:19%; left: 24%; visibility: hidden;" src="./Images/uav/arrow.png">
@@ -193,9 +200,9 @@
                 <img id="new_arrow10" style="position: absolute; height: 7%; width: 5%; top:20%; left: 68%; visibility:hidden;" src="./Images/uav/arrow.png">
                 <img id="new_arrow11" style="position: absolute; height: 7%; width: 5%; top:21%; left: 75%; visibility:hidden;" src="./Images/uav/arrow.png">
                 <img id="new_arrow12" style="position: absolute; height: 7%; width: 5%; top:21%; left: 82%; visibility:hidden;" src="./Images/uav/arrow.png">
-                <p id="new_arrow13" style="position: absolute; height: 7%; width: 5%; top:21%; left: 83%; visibility:hidden;"> </p>
-                <!-- BOTTOM LAYER AIRFLOW -->
-                <img id="below_arrow1" style="position: absolute; height: 7%; width: 5%; top:32%; left: 5%; visibility: hidden;" src="./Images/uav/arrow.png">
+                <p id="new_arrow13" style="position: absolute; height: 7%; width: 5%; top:21%; left: 83%; visibility:hidden;"> </p> -->
+            <!-- BOTTOM LAYER AIRFLOW -->
+            <!-- <img id="below_arrow1" style="position: absolute; height: 7%; width: 5%; top:32%; left: 5%; visibility: hidden;" src="./Images/uav/arrow.png">
                 <img id="below_arrow2" style="position: absolute; height: 7%; width: 5%; top:32%; left: 12%; visibility: hidden;" src="./Images/uav/arrow.png">
                 <img id="below_arrow3" style="position: absolute; height: 7%; width: 5%; top:32%; left: 18%; visibility: hidden;" src="./Images/uav/arrow.png">
                 <img id="below_arrow4" style="position: absolute; height: 7%; width: 5%; top:34%; left: 24%; visibility: hidden;" src="./Images/uav/arrow.png">
@@ -207,34 +214,34 @@
                 <img id="below_arrow10" style="position: absolute; height: 7%; width: 5%; top:32%; left: 68%; visibility: hidden;" src="./Images/uav/arrow.png">
                 <img id="below_arrow11" style="position: absolute; height: 7%; width: 5%; top:32%; left: 75%; visibility: hidden;" src="./Images/uav/arrow.png">
                 <img id="below_arrow12" style="position: absolute; height: 7%; width: 5%; top:32%; left: 82%; visibility: hidden;" src="./Images/uav/arrow.png">
-                <p id="below_arrow13" style="position: absolute; height: 7%; width: 5%; top:32%; left: 83%; visibility: hidden;"></p>
+                <p id="below_arrow13" style="position: absolute; height: 7%; width: 5%; top:32%; left: 83%; visibility: hidden;"></p> -->
 
-                <!-- LIFT arrows -->
-                <div id="up-arrow-div" style="visibility: hidden;">
+            <!-- LIFT arrows -->
+            <!-- <div id="up-arrow-div" style="visibility: hidden;">
                     <img class="up-arrow1" style="position: absolute; height: 7%; width: 3%; top:43%; left: 32%; visibility: hidden;" src="./Images/uav/arrow-up.png">
                     <img class="up-arrow2" style="position: absolute; height: 7%; width: 3%; top:44%; left: 41%; visibility: hidden;" src="./Images/uav/arrow-up.png">
                     <img class="up-arrow3" style="position: absolute; height: 7%; width: 3%; top:43%; left: 50%; visibility: hidden;" src="./Images/uav/arrow-up.png">
                     <p id="lift" style="position: absolute; visibility: block; height: 7%; width: 4%; top:50%; left: 40%;"><b>LIFT</b></p>
-                </div>
+                </div> -->
 
-                <!-- VELOCIY - PRESSURE INFO -->
-                <div id="v-p-info" style="position: absolute; top:35%; left: 70%; visibility: hidden;">
+            <!-- VELOCIY - PRESSURE INFO -->
+            <!-- <div id="v-p-info" style="position: absolute; top:35%; left: 70%; visibility: hidden;">
                     <p> Decrease in Velocity(V) <br/> Increase in Pressure(P).</p>
-                </div>
+                </div> -->
 
-                <!-- Lift calculation display -->
-                <div id="calc-lift-part1" style="visibility: block; position: absolute; top: 60%;">
+            <!-- Lift calculation display -->
+            <!-- <div id="calc-lift-part1" style="visibility: block; position: absolute; top: 60%;">
                     <p> Let us calculate the lift now: <button class="verificationButton" onclick="calculateLift(1);">Calculate</button></p>
-                </div>
+                </div> -->
 
 
-                <!-- explanation and comparison part. -->
-                <div id="solve-equation1" style="visibility: hidden;">
+            <!-- explanation and comparison part. -->
+            <!-- <div id="solve-equation1" style="visibility: hidden;">
                     <div id="" style="position: absolute; visibility: block; top:56%; left: 0%;">
                         <h4>Let us find out the lift:</h4>
                         <img src="/experiment/simulation/cement/Images/PhysicsEquation4-600x148.png" />
-                    </div>
-                    <div id="show-eqn1" style="position: absolute; visibility: block; top:60%; left: 50%;">
+                    </div> -->
+            <!-- <div id="show-eqn1" style="position: absolute; visibility: block; top:60%; left: 50%;">
                         <p>Value 1</p>
                         <p>Value 2</p>
                         <p>Value 3</p>
@@ -245,14 +252,14 @@
                         <input class="lift-verify" type="text" id="lift-input1" />
                         <button class="verificationButton" onclick="verifyLift(1);">Verify</button>
                         <p id="outputLift1" class=""></p>
-                    </div>
-                </div>
+                    </div> -->
+            <!-- </div> -->
 
 
-                <img id="hand3" style="position: absolute; left: 275px; top: 125px; visibility:hidden; cursor:pointer;" src="Images/hn.png" />
+            <img id="hand3" style="position: absolute; left: 275px; top: 125px; visibility:hidden; cursor:pointer;" src="Images/hn.png" />
 
-                <p id="can3" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
-                <p id="v3" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
+            <p id="can3" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>
+            <p id="v3" style="position:absolute;left: 530.5px; top:342px;font-family:verdana; font-size:14px;"></p>
         </div>
 
 

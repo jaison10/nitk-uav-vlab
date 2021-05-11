@@ -265,17 +265,23 @@ function magic() {
         // myInt = setInterval(function(){ animateNewarrow(); }, 300);
 
     } else if (simsubscreennum == 3) {
-        myInt = setInterval(function() { animateNewarrow(); }, 1000);
+        // myInt = setInterval(function() { animateNewarrow(); }, 1000);
 
-        document.getElementById('quad').style.visibility = "hidden";
+        document.getElementById('quad').style.visibility = "visible";
+        document.getElementById('quad').style.left = "120px";
+        document.getElementById('quad').style.top = "40px";
+        document.getElementById('quad').style.height = "250px";
+        document.getElementById('quad').style.width = "390px";
+        document.getElementById('zoomIn').style.visibility = "visible";
 
-        document.getElementById('arrow1').style = "visibility:hidden ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
 
-        document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
-        // Code for IE9
-        document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
-        // Standard syntax
-        document.getElementById("arrow1").style.transform = "rotate(180deg)";
+        // document.getElementById('arrow1').style = "visibility:hidden ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
+
+        // document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
+        // // Code for IE9
+        // document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
+        // // Standard syntax
+        // document.getElementById("arrow1").style.transform = "rotate(180deg)";
 
     } else if (simsubscreennum == 4) {
         //stopping the blink.
