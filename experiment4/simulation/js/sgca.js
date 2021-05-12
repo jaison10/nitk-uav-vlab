@@ -273,19 +273,34 @@ function magic() {
         document.getElementById('quad').style.height = "250px";
         document.getElementById('quad').style.width = "390px";
         document.getElementById('zoomIn').style.visibility = "visible";
+        document.getElementById('usb_cable').style.cursor = "pointer";
 
+        setTimeout(function() {
+            document.getElementById('usbNote').style.visibility = "visible";
 
-        // document.getElementById('arrow1').style = "visibility:hidden ;position:absolute; left: 190px; top: 190px; height: 40px; z-index: 10;";
+            document.getElementById('usb_cable').onclick = function() { connectUSB(); };
+            myInt = setInterval(function() { animatearrow(); }, 500);
 
-        // document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)";
-        // // Code for IE9
-        // document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
-        // // Standard syntax
-        // document.getElementById("arrow1").style.transform = "rotate(180deg)";
+            document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 410px; top: 500px; height: 30px;z-index: 10;";
+
+            document.getElementById("arrow1").style.WebkitTransform = "rotate(0deg)";
+            // Code for IE9
+            document.getElementById("arrow1").style.msTransform = "rotate(0deg)";
+            // Standard syntax
+            document.getElementById("arrow1").style.transform = "rotate(0deg)";
+        }, 1000);
+
 
     } else if (simsubscreennum == 4) {
         //stopping the blink.
         clearInterval(myInt);
+        document.getElementById('quad').style.visibility = "hidden";
+        document.getElementById('zoomIn').style.visibility = "hidden";
+        document.getElementById('fc_usb').style.visibility = "hidden";
+        document.getElementById('pc_usb').style.visibility = "hidden";
+        document.getElementById('usb_wire').style.visibility = "hidden";
+
+
         document.getElementById("below_arrow" + arrowCount).style.visibility = "hidden";
         // hiding the 14 wind flow direction arrows.
         var x = 1;
@@ -369,6 +384,22 @@ function magic() {
     } else if (simsubscreennum == 7) {
 
     }
+}
+
+function connectUSB() {
+    myStopFunction();
+    document.getElementById('usb_cable').style.visibility = "hidden";
+    document.getElementById('usbNote').style.visibility = "hidden";
+    document.getElementById('usb_cable').style.cursor = "";
+    document.getElementById('usb_cable').onclick = "";
+    document.getElementById('fc_usb').style.visibility = "visible";
+    document.getElementById('pc_usb').style.visibility = "visible";
+    document.getElementById('usb_wire').style.visibility = "visible";
+    document.getElementById('fc').style = "position: absolute;height: 70px;width: 120px;top: 117px;left: 88.5px;";
+    document.getElementById("nextButton").style.visibility = "visible";
+
+
+
 }
 
 function removeKnobs() {
