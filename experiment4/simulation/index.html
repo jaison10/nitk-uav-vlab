@@ -153,6 +153,9 @@
             <img id="knob3" style="position: absolute; left: 449.5px; top: 155px; visibility:hidden;height:14px;width:9px;" src="./Images/Nut_single.png">
             <img id="knob4" style="position: absolute; left: 181px; top: 163px; visibility:hidden;height:14px;width:9px;" src="./Images/Nut_single.png">
 
+            <!-- Skip button  -->
+            <button id="remove_skip" style="cursor: pointer;;position: absolute;visibility: hidden;top: 400px;left: 600px;color: #fff;background-color: black;border-radius: 5px;">Skip</button>
+
             <!-- Hand holding knob -->
             <img id="handKnob" style="position: absolute; left: 534px; top:207px; visibility: hidden; height: 90px; width: 45px; opacity: 0;" src="./Images/hand_nut.png">
             <!-- Hand holding Propeller -->
@@ -274,21 +277,22 @@
             <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
             <p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Open the LibrePilot software and click on Vehicle Setup Wizard.</p>
 
-            <img id="vehicle_setup" src="./Images/Base_v02.png" style="position: absolute; width: 50%; height: 30%; left: 15%; top: 13%; " />
+            <img id="vehicle_setup" src="./Images/Base_v02.png" style="position: absolute; width: 530px; height: 350px; left: 80px; top: 13%; " />
+            <img id="vehicleButton" src="./Images/vehicle_setup.png" style="cursor: pointer; visibility: hidden; position: absolute; width: 95px; height: 80px; left: 388px; top: 128px;" alt="Vehicle setup wizard button">
             <!-- Line  -->
-            <img id="line" src="./Images/uav/line2.png" style="position: absolute; top: 33%; left: 10%; width: 60%; height: auto; visibility: hidden;" />
+            <!-- <img id="line" src="./Images/uav/line2.png" style="position: absolute; top: 33%; left: 10%; width: 60%; height: auto; visibility: hidden;" /> -->
             <!-- Curve : angle of attack image -->
-            <img id="angle-curve" src="./Images/uav/curve.png" style="position: absolute; width: 4%; height: 5%; top: 28%; left: 28%; visibility: hidden;" />
+            <!-- <img id="angle-curve" src="./Images/uav/curve.png" style="position: absolute; width: 4%; height: 5%; top: 28%; left: 28%; visibility: hidden;" /> -->
 
             <!-- Angle of attck info -->
-            <div id="angle-of-attck-info" style="visibility: hidden;">
+            <!-- <div id="angle-of-attck-info" style="visibility: hidden;">
                 <img src="./Images/uav/arrow-up.png" style="position: absolute; width: 2%; height: 6%; left: 29%; top:35%;">
                 <p style="position: absolute; width: 20%; height: 10%; left: 33%; top:35%;">Angle of attack.</p>
-            </div>
+            </div> -->
 
             <!-- Arrows -->
             <!-- UPPER LAYER AIRFLOW -->
-            <img id="new_Arrow1" style="position: absolute; height: 4%; width: 5%; top:19%; left: 5%; visibility:  hidden;" src="./Images/uav/arrow.png">
+            <!-- <img id="new_Arrow1" style="position: absolute; height: 4%; width: 5%; top:19%; left: 5%; visibility:  hidden;" src="./Images/uav/arrow.png">
             <img id="new_Arrow2" style="position: absolute; height: 4%; width: 5%; top:19%; left: 12%; visibility: hidden;" src="./Images/uav/arrow.png">
             <img id="new_Arrow3" style="position: absolute; height: 4%; width: 5%; top:18%; left: 18%; visibility: hidden;" src="./Images/uav/arrow.png">
             <img id="new_Arrow4" style="position: absolute; height: 4%; width: 5%; top:14%; left: 24%; visibility: hidden;" src="./Images/uav/arrow.png">
@@ -300,9 +304,9 @@
             <img id="new_Arrow10" style="position: absolute; height:4%; width: 5%; top:23%; left: 68%; visibility:hidden;" src="./Images/uav/arrow.png">
             <img id="new_Arrow11" style="position: absolute; height:4%; width: 5%; top:23%; left: 75%; visibility:hidden;" src="./Images/uav/arrow.png">
             <img id="new_Arrow12" style="position: absolute; height:4%; width: 5%; top:23%; left: 82%; visibility:hidden;" src="./Images/uav/arrow.png">
-            <p id="new_Arrow13" style="position: absolute; height: 4%; width: 5%; top:23%; left: 83%; visibility:hidden;"> </p>
+            <p id="new_Arrow13" style="position: absolute; height: 4%; width: 5%; top:23%; left: 83%; visibility:hidden;"> </p> -->
             <!-- BOTTOM LAYER AIRFLOW -->
-            <img id="below_Arrow1" style="position: absolute; height: 4%; width: 5%; top:24%; left: 5%; visibility:  hidden;" src="./Images/uav/arrow.png">
+            <!-- <img id="below_Arrow1" style="position: absolute; height: 4%; width: 5%; top:24%; left: 5%; visibility:  hidden;" src="./Images/uav/arrow.png">
             <img id="below_Arrow2" style="position: absolute; height: 4%; width: 5%; top:24%; left: 12%; visibility: hidden;" src="./Images/uav/arrow.png">
             <img id="below_Arrow3" style="position: absolute; height: 4%; width: 5%; top:26%; left: 18%; visibility: hidden;" src="./Images/uav/arrow.png">
             <img id="below_Arrow4" style="position: absolute; height: 4%; width: 5%; top:30%; left: 24%; visibility: hidden;" src="./Images/uav/arrow.png">
@@ -314,29 +318,29 @@
             <img id="below_Arrow10" style="position: absolute; height: 4%; width: 5%; top:32%; left: 68%; visibility:hidden;" src="./Images/uav/arrow.png">
             <img id="below_Arrow11" style="position: absolute; height: 4%; width: 5%; top:32%; left: 75%; visibility:hidden;" src="./Images/uav/arrow.png">
             <img id="below_Arrow12" style="position: absolute; height: 4%; width: 5%; top:32%; left: 82%; visibility:hidden;" src="./Images/uav/arrow.png">
-            <p id="below_Arrow13" style="position: absolute; height: 4%; width: 5%; top:32%; left: 83%; visibility: hidden;"></p>
+            <p id="below_Arrow13" style="position: absolute; height: 4%; width: 5%; top:32%; left: 83%; visibility: hidden;"></p> -->
 
             <!-- LIFT arrows -->
-            <div id="up-Arrow-div" style="visibility: hidden;">
+            <!-- <div id="up-Arrow-div" style="visibility: hidden;">
                 <img class="up-Arrow1" style="position: absolute; height: 6%; width: 2%; top:38%; left: 24%; visibility: hidden;" src="./Images/uav/arrow-up.png">
                 <img class="up-Arrow2" style="position: absolute; height: 6%; width: 2%; top:39%; left: 29%; visibility: hidden;" src="./Images/uav/arrow-up.png">
                 <img class="up-Arrow3" style="position: absolute; height: 6%; width: 2%; top:38%; left: 34%; visibility: hidden;" src="./Images/uav/arrow-up.png">
                 <p id="lift" style="position: absolute; visibility: block; height: 7%; width: 4%; top:43%; left: 27%;"><b>LIFT</b></p>
-            </div>
+            </div> -->
             <!-- Velo - Pressure -->
-            <div id="V-P-info" style="position: absolute; top:35%; left: 70%; visibility: hidden;">
+            <!-- <div id="V-P-info" style="position: absolute; top:35%; left: 70%; visibility: hidden;">
                 <p> Decrease in Velocity(V) <br/> Increase in Pressure(P).</p>
-            </div>
+            </div> -->
 
 
             <!-- Lift calculation display -->
-            <div id="calc-lift-part2" style="visibility: block; position: absolute; top: 60%;">
+            <!-- <div id="calc-lift-part2" style="visibility: block; position: absolute; top: 60%;">
                 <p> Let us calculate the lift now: <button class="verificationButton" onclick="calculateLift(2);">Calculate</button></p>
-            </div>
+            </div> -->
 
 
             <!-- explanation and comparison part. -->
-            <div id="solve-equation2" style="visibility: hidden;">
+            <!-- <div id="solve-equation2" style="visibility: hidden;">
                 <div id="" style="position: absolute; visibility: block; top:50%; left: 0%;">
                     <h4>Let us find out the lift:</h4>
                     <img src="/experiment/simulation/cement/Images/PhysicsEquation4-600x148.png" />
@@ -353,10 +357,10 @@
                     <button class="verificationButton" onclick="verifyLift(2);">Verify</button>
                     <p id="outputLift2" class=""></p>
                 </div>
-            </div>
+            </div> -->
 
 
-            <img id="hand4" style="position: absolute; left: 275px; top: 125px; visibility:hidden;cursor:pointer;" src="Images/hn.png" />
+            <img id="hand4" style="position: absolute; left: 275px; top: 125px; visibility:hidden;cursor:pointer;" src="" />
 
 
             <p id="can4" style="position:absolute;top: 450px; left:28px;font-family:verdana; font-size:14px;"></p>

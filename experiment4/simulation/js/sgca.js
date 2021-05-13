@@ -253,6 +253,9 @@ function magic() {
         document.getElementById('knob3').style.visibility = "visible";
         document.getElementById('knob4').style.visibility = "visible";
         document.getElementById('inst_note').style.visibility = "visible";
+        document.getElementById('remove_skip').style.visibility = "visible";
+        document.getElementById('remove_skip').onclick = function() { removeAllKnobsAndProps(); };
+
         myInt = setInterval(function() { animatearrow(); }, 500);
         document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 620px; top: 320px; height: 30px; z-index: 10;";
 
@@ -299,53 +302,54 @@ function magic() {
         document.getElementById('fc_usb').style.visibility = "hidden";
         document.getElementById('pc_usb').style.visibility = "hidden";
         document.getElementById('usb_wire').style.visibility = "hidden";
+        document.getElementById('vehicleButton').style.visibility = "visible";
+        document.getElementById('vehicleButton').onclick = function() { setup(); };
 
-
-        document.getElementById("below_arrow" + arrowCount).style.visibility = "hidden";
+        // document.getElementById("below_arrow" + arrowCount).style.visibility = "hidden";
         // hiding the 14 wind flow direction arrows.
-        var x = 1;
-        while (x < 14) {
-            document.getElementById("new_arrow" + x).style.visibility = 'hidden';
-            document.getElementById("below_arrow" + x).style.visibility = 'hidden';
-            document.getElementById("below_arrow" + x).style.zIndex = -100;
-            x++;
-        }
+        // var x = 1;
+        // while (x < 14) {
+        //     document.getElementById("new_arrow" + x).style.visibility = 'hidden';
+        //     document.getElementById("below_arrow" + x).style.visibility = 'hidden';
+        //     document.getElementById("below_arrow" + x).style.zIndex = -100;
+        //     x++;
+        // }
         // hiding the lift direction arrows.
-        var i = 1;
-        while (i < 4) {
-            document.querySelector(".up-arrow" + (i++)).style.visibility = "hidden";
-        }
-        document.getElementById("lift").style.visibility = "hidden";
-        // hiding the velocity pressure info
-        document.getElementById("v-p-info").style.visibility = "hidden";
-        // calculation part.
-        document.getElementById("calc-lift-part1").style.visibility = "hidden";
-        document.getElementById("solve-equation1").style.visibility = "hidden";
-        document.getElementById("calculate-lift1").style.visibility = "hidden";
+        // var i = 1;
+        // while (i < 4) {
+        //     document.querySelector(".up-arrow" + (i++)).style.visibility = "hidden";
+        // }
+        // document.getElementById("lift").style.visibility = "hidden";
+        // // hiding the velocity pressure info
+        // document.getElementById("v-p-info").style.visibility = "hidden";
+        // // calculation part.
+        // document.getElementById("calc-lift-part1").style.visibility = "hidden";
+        // document.getElementById("solve-equation1").style.visibility = "hidden";
+        // document.getElementById("calculate-lift1").style.visibility = "hidden";
 
         // new angle image
         // document.getElementById('airfoil-zero').style.animation = "valveturn-5 1.5s forwards ";
-        document.getElementById("line").style.visibility = "visible";
-        document.getElementById("line").style.animation = "fadeIn 2.5s forwards";
+        // document.getElementById("line").style.visibility = "visible";
+        // document.getElementById("line").style.animation = "fadeIn 2.5s forwards";
 
-        setTimeout(function() {
-            document.getElementById("angle-curve").style.visibility = "visible";
-            document.getElementById("angle-curve").style.transform = "rotate(-35deg)";
-            // document.getElementById("line").style.animation = "fadeIn 2.5s forwards";
-        }, 500)
+        // setTimeout(function() {
+        //     document.getElementById("angle-curve").style.visibility = "visible";
+        //     document.getElementById("angle-curve").style.transform = "rotate(-35deg)";
+        //     // document.getElementById("line").style.animation = "fadeIn 2.5s forwards";
+        // }, 500)
 
-        setTimeout(() => {
-            document.getElementById("angle-of-attck-info").style.visibility = "visible";
-            document.getElementById("angle-of-attck-info").style.animation = "fadeIn 2.5s forwards";
-        }, 1000);
+        // setTimeout(() => {
+        //     document.getElementById("angle-of-attck-info").style.visibility = "visible";
+        //     document.getElementById("angle-of-attck-info").style.animation = "fadeIn 2.5s forwards";
+        // }, 1000);
 
-        setTimeout(() => {
-            // document.getElementById("angle-of-attck-info").style.visibility = "hidden";
-            document.getElementById("angle-of-attck-info").style.animation = "fadeOut 1.5s forwards";
-            myInt = setInterval(function() { animateNewAngleOfAttackarrow(); }, 1000);
-        }, 3500);
+        // setTimeout(() => {
+        //     // document.getElementById("angle-of-attck-info").style.visibility = "hidden";
+        //     document.getElementById("angle-of-attck-info").style.animation = "fadeOut 1.5s forwards";
+        //     myInt = setInterval(function() { animateNewAngleOfAttackarrow(); }, 1000);
+        // }, 3500);
 
-        refresh1();
+        // refresh1();
 
 
         // myInt = setInterval(function(){ animatearrow(); }, 500);
@@ -356,11 +360,12 @@ function magic() {
         document.getElementById("arrow1").style.msTransform = "rotate(180deg)";
         // Standard syntax
         document.getElementById("arrow1").style.transform = "rotate(180deg)";
+        document.getElementById('nextButton').style.visibility = "hidden";
 
 
     } else if (simsubscreennum == 5) {
         refresh1();
-
+        document.getElementById('vehicleButton').style.visibility = "hidden";
         document.getElementById('flask5').style.visibility = "visible";
         document.getElementById('nob5-1').style.visibility = "visible";
         document.getElementById('a7').style.visibility = "hidden";
@@ -386,6 +391,24 @@ function magic() {
     }
 }
 
+function setup() {
+    document.getElementById('nextButton').style.visibility = "visible";
+
+}
+
+function removeAllKnobsAndProps() {
+    myStopFunction();
+    document.getElementById('handKnob').style.visibility = "hidden";
+    document.getElementById('remove_skip').style.visibility = "hidden";
+    for (let i = 1; i <= 4; i++) {
+        document.getElementById('prop' + i).style.visibility = "hidden";
+        document.getElementById('knob' + i).style.visibility = "hidden";
+    }
+    document.getElementById('nextButton').style.visibility = "visible";
+    document.getElementById('inst_note').style.visibility = "hidden";
+
+}
+
 function connectUSB() {
     myStopFunction();
     document.getElementById('usb_cable').style.visibility = "hidden";
@@ -404,6 +427,7 @@ function connectUSB() {
 
 function removeKnobs() {
     myStopFunction();
+    document.getElementById('remove_skip').style.visibility = "hidden";
     document.getElementById("knob2").onclick = "";
     document.getElementById("knob2").style.cursor = "";
     document.getElementById('inst_note').style.visibility = "hidden";
