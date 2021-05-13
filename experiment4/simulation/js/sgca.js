@@ -324,7 +324,7 @@ function magic() {
         document.getElementById("calculate-lift1").style.visibility = "hidden";
 
         // new angle image
-        document.getElementById('airfoil-zero').style.animation = "valveturn-5 1.5s forwards ";
+        // document.getElementById('airfoil-zero').style.animation = "valveturn-5 1.5s forwards ";
         document.getElementById("line").style.visibility = "visible";
         document.getElementById("line").style.animation = "fadeIn 2.5s forwards";
 
