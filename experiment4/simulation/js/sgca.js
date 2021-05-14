@@ -273,7 +273,7 @@ function magic() {
         document.getElementById('quad').style.visibility = "visible";
         document.getElementById('quad').style.left = "120px";
         document.getElementById('quad').style.top = "40px";
-        document.getElementById('quad').style.height = "250px";
+        document.getElementById('quad').style.height = "220px";
         document.getElementById('quad').style.width = "390px";
         document.getElementById('zoomIn').style.visibility = "visible";
         document.getElementById('usb_cable').style.cursor = "pointer";
@@ -303,6 +303,7 @@ function magic() {
         document.getElementById('pc_usb').style.visibility = "hidden";
         document.getElementById('usb_wire').style.visibility = "hidden";
         document.getElementById('vehicleButton').style.visibility = "visible";
+        document.getElementById('monitor').style.visibility = "visible";
         document.getElementById('vehicleButton').onclick = function() { setup(); };
 
         // document.getElementById("below_arrow" + arrowCount).style.visibility = "hidden";
