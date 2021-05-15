@@ -393,7 +393,33 @@ function magic() {
 }
 
 function setup() {
-    document.getElementById('nextButton').style.visibility = "visible";
+
+    document.getElementById('top_text').innerText = "Read the instructions and click on the Next button";
+    document.getElementById('setup_wizard').style.visibility = "visible";
+    document.getElementById('empty_space').style.visibility = "visible";
+    document.getElementById('next_button').style.visibility = "visible";
+    document.getElementById('cancel_button').style.visibility = "visible";
+    document.getElementById('title_logo').style.visibility = "visible";
+    document.getElementById('setupContent').style.visibility = "visible";
+    document.getElementById('nextButton').style.visibility = "hidden";
+    document.getElementById('next_button').style.cursor = "pointer";
+    document.getElementById('cancel_button').style.cursor = "pointer";
+    document.getElementById('next_button').onclick = function() { upgrade(); };
+    document.getElementById('cancel_button').onclick = function() { cancel_setup(); };
+
+}
+
+function cancel_setup() {
+    document.getElementById('setup_wizard').style.visibility = "hidden";
+    document.getElementById('empty_space').style.visibility = "hidden";
+    document.getElementById('next_button').style.visibility = "hidden";
+    document.getElementById('cancel_button').style.visibility = "hidden";
+    document.getElementById('title_logo').style.visibility = "hidden";
+    document.getElementById('setupContent').style.visibility = "hidden";
+}
+
+function upgrade() {
+    document.getElementById('setupContent').style.visibility = "hidden";
 
 }
 

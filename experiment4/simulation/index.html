@@ -275,11 +275,37 @@
         <!--Step4	-->
         <div class="simsubscreen" id="canvas4" style="visibility:hidden">
             <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
-            <p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Open the LibrePilot software and click on Vehicle Setup Wizard.</p>
-
+            <p class="steptext" id="top_text" style="font-family:verdana; font-size:14px;">&nbsp;Open the LibrePilot software and click on Vehicle Setup Wizard.</p>
+            <!-- Monitor screen -->
             <img id="monitor" style="visibility: hidden; position: absolute; top: -210px; left: -60px; height: 1080px; width: 800px;" src="./Images/Computer.png" alt="Monitor">
+
+            <!-- ------------------------Set up wizard tab and the images on it------------------------- -->
+            <!-- The whole vehicle setup wizard tab -->
             <img id="vehicle_setup" src="./Images/Base_v02.png" style="position: absolute; width: 530px; height: 300px; left: 74px; top: 80px; " />
+            <!-- Vehicle setup wizard image button -->
             <img id="vehicleButton" src="./Images/vehicle_setup.png" style="cursor: pointer; visibility: hidden; position: absolute; width: 95px; height: 80px; left: 383px; top: 125px;" alt="Vehicle setup wizard button">
+            <!-- LibrePilot logo on the tab -->
+            <img id="logo" style="position: absolute;  width: 95px; height: 80px; left: 185px; top: 123px;" src="./Images/Liibre_pilot_Grey.png" alt="LibrePilot logo">
+            <!-- Setup wizard tab -->
+            <img id="setup_wizard" style="visibility: hidden; position: absolute; width: 330px; height: 250px; left: 150px; top: 110px;" src="./Images/setup_wizard.png" alt="Set up wizard">
+            <!-- Empty space to cover the back button -->
+            <img id="empty_space" style="visibility: hidden; position: absolute; top: 342px; left: 353px; height: 15px; width: 100px;" src="./Images/empty_space.png" alt="Empty space">
+            <!-- Next button -->
+            <img id="next_button" style="visibility: hidden; position: absolute; top: 342px; left: 375px; height: 15px; width: 49px;z-index:50;" src="./Images/Setup wizard Next.png" alt="Next button">
+            <!-- Cancel button -->
+            <img id="cancel_button" style="visibility: hidden; position: absolute; top: 342px; left: 428px; height: 15px; width: 49px;z-index:50;" src="./Images/Setup wizard Cancel.png" alt="Cancel button">
+            <!-- Title bar logo in setup wizard tab -->
+            <img id="title_logo" style="visibility: hidden; position: absolute; width: 8px; height: 8px; left: 152px; top: 112px;" src="./Images/Liibre_pilot_Grey.png" alt="LibrePilot logo">
+
+            <!-- --------------------------Wordings on the Setup wizard tab------------------------------- -->
+            <div id="setupContent" style="visibility: hidden; position: absolute; top: 110px; left: 143px; height: 300px; width: 340px;">
+                <p id="welcome_note" style="font-size:12px;position:absolute;top:10px;left:70px;"><b>Welcome to the Setup Wizard</b></p>
+                <p style="position: absolute;top: 35px;left: 10px;font-size:6px;">This wizard will guide you through the basic steps required to setup your flight controller for the first time. You will be asked questions about your platform (multirotor/heli/fixed-wing) which this wizard will use to configure your controller
+                    for its first flight.<br><br>This wizard does not configure all of the advanced settings available in the GCS Configuration. All basic and advanced configuration parameters can be modified later by using the GCS Configuration plugin.
+                </p>
+                <p style="position: absolute;top: 110px;left: 40px;color: red;font-size:10px;"><b>WARNING: YOU MUST REMOVE ALL PROPELLERS FROM THE VEHICLE BEFORE PROCEEDING! </b></p>
+                <p style="position: absolute;top: 160px;left: 10px;font-size:6px;">Disregarding this warning puts you at risk of injury!<br><br>Now that your props are removed we can get started. Ready?</p>
+            </div>
 
 
             <!-- Line  -->
