@@ -298,12 +298,18 @@
             <img id="title_logo" style="visibility: hidden; position: absolute; width: 8px; height: 8px; left: 152px; top: 112px;" src="./Images/Liibre_pilot_Grey.png" alt="LibrePilot logo">
 
             <!-- --------------------------Wordings on the Setup wizard tab------------------------------- -->
-            <div id="setupContent" style="visibility: hidden; position: absolute; top: 110px; left: 143px; height: 300px; width: 340px;">
-                <p id="welcome_note" style="font-size:12px;position:absolute;top:10px;left:70px;"><b>Welcome to the Setup Wizard</b></p>
-                <p style="position: absolute;top: 35px;left: 10px;font-size:6px;">This wizard will guide you through the basic steps required to setup your flight controller for the first time. You will be asked questions about your platform (multirotor/heli/fixed-wing) which this wizard will use to configure your controller
-                    for its first flight.<br><br>This wizard does not configure all of the advanced settings available in the GCS Configuration. All basic and advanced configuration parameters can be modified later by using the GCS Configuration plugin.
-                </p>
-                <p style="position: absolute;top: 110px;left: 40px;color: red;font-size:10px;"><b>WARNING: YOU MUST REMOVE ALL PROPELLERS FROM THE VEHICLE BEFORE PROCEEDING! </b></p>
+            <div id="setupContent" style="visibility: hidden; position: absolute; top: 110px; left: 144px; height: 300px; width: 340px;">
+                <p id="welcome_note" style="font-size:11px;position:absolute;top:10px;left:70px;"><b>Welcome to the Setup Wizard</b></p>
+                <div style="position:absolute;top:40px;left:10px;height:70px;width:280px;font-size:6px;">
+                    <p>This wizard will guide you through the basic steps required to setup your flight controller for the first time. You will be asked questions about your platform (multirotor/heli/fixed-wing) which this wizard will use to configure your
+                        controller for its first flight.<br><br>This wizard does not configure all of the advanced settings available in the GCS Configuration. All basic and advanced configuration parameters can be modified later by using the GCS Configuration
+                        plugin.
+                    </p>
+                </div>
+
+                <!-- The owl image in the setup wizard -->
+                <img style="position: absolute;top: 35px;left: 280px;height: 60px;width: 45px;" src="./Images/owl-removebg-preview.png" alt="Owl icon">
+                <p style="position: absolute;top: 110px;left: 40px;color:grey;font-size:10px;"><b>WARNING: YOU MUST REMOVE ALL PROPELLERS FROM THE VEHICLE BEFORE PROCEEDING! </b></p>
                 <p style="position: absolute;top: 160px;left: 10px;font-size:6px;">Disregarding this warning puts you at risk of injury!<br><br>Now that your props are removed we can get started. Ready?</p>
             </div>
 
