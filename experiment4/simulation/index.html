@@ -294,10 +294,12 @@
             <img id="next_button" style="visibility: hidden; position: absolute; top: 342px; left: 375px; height: 15px; width: 49px;z-index:50;" src="./Images/Setup wizard Next.png" alt="Next button">
             <!-- Cancel button -->
             <img id="cancel_button" style="visibility: hidden; position: absolute; top: 342px; left: 428px; height: 15px; width: 49px;z-index:50;" src="./Images/Setup wizard Cancel.png" alt="Cancel button">
+            <!-- Back button -->
+            <img id="back_button" src="./Images/Setup wizard Back.png" style="visibility:hidden;position: absolute; top: 342px; left: 322px; height: 15px; width: 49px;z-index:50;" alt="Back button">
             <!-- Title bar logo in setup wizard tab -->
             <img id="title_logo" style="visibility: hidden; position: absolute; width: 8px; height: 8px; left: 152px; top: 112px;" src="./Images/Liibre_pilot_Grey.png" alt="LibrePilot logo">
 
-            <!-- --------------------------Wordings on the Setup wizard tab------------------------------- -->
+            <!-- --------------------------Wordings on the Setup wizard tab - Welcome------------------------------- -->
             <div id="setupContent" style="visibility: hidden; position: absolute; top: 110px; left: 144px; height: 300px; width: 340px;">
                 <p id="welcome_note" style="font-size:11px;position:absolute;top:10px;left:70px;"><b>Welcome to the Setup Wizard</b></p>
                 <div style="position:absolute;top:40px;left:10px;height:70px;width:280px;font-size:6px;">
@@ -312,6 +314,23 @@
                 <p style="position: absolute;top: 110px;left: 40px;color:grey;font-size:10px;"><b>WARNING: YOU MUST REMOVE ALL PROPELLERS FROM THE VEHICLE BEFORE PROCEEDING! </b></p>
                 <p style="position: absolute;top: 160px;left: 10px;font-size:6px;">Disregarding this warning puts you at risk of injury!<br><br>Now that your props are removed we can get started. Ready?</p>
             </div>
+
+            <!-- ---------------------------Wordings on Setup wizard tab - Firmware update--------------------------- -->
+            <div id="firware_update" style="visibility: hidden; position: absolute; top: 110px; left: 144px; height: 300px; width: 340px;">
+                <p style="font-size:11px;position:absolute;top:10px;left:110px;"><b>Firmware Update</b></p>
+                <div style="position:absolute;top:40px;left:10px;height:70px;width:321px;font-size:6px;">
+                    <p>It is necessary that your firmware and ground control software are the same version.<br><br>When you are ready you can start the upgrade below by pushing the button. It is critical that nothing disturbs the board while the firmware
+                        is being written.<br><br>It is recommended that you erase all settings on the board when upgrading firmware. Using saved settings for a previous version of the firmware <b>may result in undefined behaviour</b>and in worst case
+                        danger. It is possible to suppress the erase by deselecting the check box below.
+                    </p>
+                </div>
+                <img id="check_box" src="./Images/checkbox.png" style="height:10px;width: 10px;position: absolute;top: 143px;left: 110px;" onclick="uncheck();" alt="Checkbox">
+                <p style="position: absolute;top: 140px;left: 120px;font-size:6px;">Erase all settings</p>
+                <img id="upgrade_button" src="./Images/upgrade.png" style="position: absolute;top: 155px;left: 100px;height: 30px;width: 90px;" alt="Upgrade button">
+                <p style="position: absolute;top: 180px;left: 10px;font-size:6px;">Ready...</p>
+                <img src="./Images/upgrade_status.png" style="height: 20px;width: 327px;position: absolute;top: 193px;left: 7px;" alt="Upgrade Status bar">
+            </div>
+
 
 
             <!-- Line  -->

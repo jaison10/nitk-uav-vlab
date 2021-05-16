@@ -416,10 +416,45 @@ function cancel_setup() {
     document.getElementById('cancel_button').style.visibility = "hidden";
     document.getElementById('title_logo').style.visibility = "hidden";
     document.getElementById('setupContent').style.visibility = "hidden";
+    document.getElementById('firware_update').style.visibility = "hidden";
+    document.getElementById('back_button').style.visibility = "hidden";
+
 }
 
 function upgrade() {
+    document.getElementById('top_text').innerText = "Update the firmware by clicking on Upgrade and then wait for the firmware to upload on the flight controller";
+    document.getElementById('firware_update').style.visibility = "visible";
+    document.getElementById('back_button').style.visibility = "visible";
+    document.getElementById('back_button').style.cursor = "pointer";
+    document.getElementById('upgrade_button').style.cursor = "pointer";
     document.getElementById('setupContent').style.visibility = "hidden";
+    document.getElementById('upgrade_button').onclick = function() { clickUpgrade(); };
+    document.getElementById('back_button').onclick = function() { backToSetup(); };
+}
+
+function backToSetup() {
+    document.getElementById('setupContent').style.visibility = "visible";
+    document.getElementById('firware_update').style.visibility = "hidden";
+    document.getElementById('back_button').style.visibility = "hidden";
+
+}
+
+function clickUpgrade() {
+
+}
+var box_click = 0;
+
+function uncheck() {
+    if (box_click == 0) {
+        document.getElementById('check_box').src = "./Images/unchecked_checkbox.png";
+        box_click = 1;
+    } else {
+        document.getElementById('check_box').src = "./Images/checkbox.png";
+        box_click = 0;
+
+    }
+
+
 
 }
 
