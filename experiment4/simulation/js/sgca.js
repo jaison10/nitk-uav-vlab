@@ -418,11 +418,12 @@ function cancel_setup() {
     document.getElementById('setupContent').style.visibility = "hidden";
     document.getElementById('firware_update').style.visibility = "hidden";
     document.getElementById('back_button').style.visibility = "hidden";
+    document.getElementById('full_status').style.visibility = "hidden";
 
 }
 
 function upgrade() {
-    document.getElementById('top_text').innerText = "Update the firmware by clicking on Upgrade and then wait for the firmware to upload on the flight controller";
+    document.getElementById('top_text').innerText = "Update the firmware by clicking on Upgrade and then wait for the firmware to upload on the flight controller.";
     document.getElementById('firware_update').style.visibility = "visible";
     document.getElementById('back_button').style.visibility = "visible";
     document.getElementById('back_button').style.cursor = "pointer";
@@ -436,10 +437,20 @@ function backToSetup() {
     document.getElementById('setupContent').style.visibility = "visible";
     document.getElementById('firware_update').style.visibility = "hidden";
     document.getElementById('back_button').style.visibility = "hidden";
+    document.getElementById('full_status').style.visibility = "hidden";
 
 }
 
 function clickUpgrade() {
+    document.getElementById('full_status').style.visibility = "visible";
+    document.getElementById('full_status').style.width = "318px";
+    document.getElementById('full_status').style.transition = "all 1s ease-in-out";
+
+    setTimeout(() => {
+        document.getElementById('full_status').style.transition = "none";
+        document.getElementById('upgrade_inst').innerText = "Board updated, please press 'Next' to continue.";
+
+    }, 1000);
 
 }
 var box_click = 0;
