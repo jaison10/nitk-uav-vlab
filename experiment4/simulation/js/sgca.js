@@ -406,7 +406,8 @@ function setup() {
     document.getElementById('cancel_button').style.cursor = "pointer";
     document.getElementById('next_button').onclick = function() { upgrade(); };
     document.getElementById('cancel_button').onclick = function() { cancel_setup(); };
-
+    document.getElementById('board_identification').style.visibility = "hidden";
+    cccc
 }
 
 function cancel_setup() {
@@ -419,6 +420,9 @@ function cancel_setup() {
     document.getElementById('firware_update').style.visibility = "hidden";
     document.getElementById('back_button').style.visibility = "hidden";
     document.getElementById('full_status').style.visibility = "hidden";
+    document.getElementById('board_identification').style.visibility = "hidden";
+
+
 
 }
 
@@ -431,6 +435,47 @@ function upgrade() {
     document.getElementById('setupContent').style.visibility = "hidden";
     document.getElementById('upgrade_button').onclick = function() { clickUpgrade(); };
     document.getElementById('back_button').onclick = function() { backToSetup(); };
+    document.getElementById('next_button').onclick = function() { boardIdentification(); };
+    document.getElementById('board_identification').style.visibility = "hidden";
+    if (document.getElementById('setupContent').style.visibility == "visible") {
+        document.getElementById('next_button').onclick = function() { upgrade(); };
+        document.getElementById('board_identification').style.visibility = "hidden";
+
+    }
+}
+
+function boardIdentification() {
+    document.getElementById('top_text').innerText = "The firmware detects the board and connects to it. Make sure the Connection device and board type are correct and click Next.";
+    document.getElementById('firware_update').style.visibility = "hidden";
+    document.getElementById('board_identification').style.visibility = "visible";
+    document.getElementById('full_status').style.visibility = "hidden";
+    document.getElementById('back_button').onclick = function() { backToUpgrade(); };
+    document.getElementById('next_button').onclick = function() { InputSignalConfig(); };
+    document.getElementById('setupContent').style.visibility = "hidden";
+    if (document.getElementById('setupContent').style.visibility == "visible") {
+        document.getElementById('next_button').onclick = function() { upgrade(); };
+        document.getElementById('board_identification').style.visibility = "hidden";
+
+    }
+}
+
+function InputSignalConfig() {
+    document.getElementById('board_identification').style.visibility = "hidden";
+
+}
+
+function backToUpgrade() {
+    document.getElementById('firware_update').style.visibility = "visible";
+    document.getElementById('board_identification').style.visibility = "hidden";
+    document.getElementById('back_button').onclick = function() { backToSetup(); };
+    document.getElementById('next_button').onclick = function() { boardIdentification(); };
+    document.getElementById('setupContent').style.visibility = "hidden";
+    if (document.getElementById('setupContent').style.visibility == "visible") {
+        document.getElementById('next_button').onclick = function() { upgrade(); };
+        document.getElementById('board_identification').style.visibility = "hidden";
+
+    }
+
 }
 
 function backToSetup() {
@@ -438,7 +483,12 @@ function backToSetup() {
     document.getElementById('firware_update').style.visibility = "hidden";
     document.getElementById('back_button').style.visibility = "hidden";
     document.getElementById('full_status').style.visibility = "hidden";
+    document.getElementById('board_identification').style.visibility = "hidden";
+    if (document.getElementById('setupContent').style.visibility == "visible") {
+        document.getElementById('next_button').onclick = function() { upgrade(); };
+        document.getElementById('board_identification').style.visibility = "hidden";
 
+    }
 }
 
 function clickUpgrade() {
@@ -468,6 +518,7 @@ function uncheck() {
 
 
 }
+
 
 function removeAllKnobsAndProps() {
     myStopFunction();

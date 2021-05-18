@@ -337,6 +337,33 @@
             <img id="third_status" style="visibility: hidden;position: absolute;top: 194px;left: 8px;height: 20px;" src="./Images/third-ConvertImage.png" alt="Upgrade Status"> -->
             <img id="full_status" style="visibility: hidden; position: absolute; top: 308px; left: 155px; height: 11px; width: 50px;" src="./Images/full_status-ConvertImage.png" alt="Upgrade Status">
 
+            <!-- ---------------------------Wordings on Setup wizard tab - Board Identification--------------------------- -->
+            <div id="board_identification" style="visibility: hidden; position: absolute; top: 110px; left: 144px; height: 300px; width: 340px;">
+                <p style="font-size:11px;position:absolute;top:10px;left:110px;"><b>Board Identification</b></p>
+                <div style="position:absolute;top:35px;left:10px;height:70px;width:321px;font-size:6px;">
+                    <p>To continue, the wizard needs to determine the configuration required for the type of flight controller you have. When connected, the wizard will attempt to automatically detect the type of board.<br><br>If the board is already connected
+                        and successfully detected, the board type will already be displayed. You can <b>Disconnect</b> and select another device if you need to detect another board.<br><br>If your board is not connected, please connect the board to a
+                        USB port on your computer and select the device from the list below. Then press <b>Connect</b>.
+                    </p>
+                </div>
+                <img id="cc3d" src="./Images/cc3d.png" style="height:90px;width: 90px;position: absolute;top: 100px;left: 120px;transform:rotate(91deg);" alt="CC3D">
+
+                <div style="position:absolute;top:185px;left:10px;font-size:6px;">
+                    <p>Connection device:</p>
+                    <form style="position:absolute;top:4px;left:85px;"><select style="width:236px;height:11px;font-size:6px;color:gray;border:1px solid gray;border-radius:2px;background-color:#ececec;" disabled="true">
+                        <option value="USB: CopterControl">USB: CopterControl</option>
+                        </select>
+                    </form>
+                </div>
+                <br>
+
+                <div style="position:absolute;top:198px;left:10px;font-size:6px;">
+                    <p>Detected board type:</p>
+                    <form style="position:absolute;top:5px;left:85px;"><select style="width:236px;height:11px;font-size:6px;color:gray;border:1px solid gray;border-radius:2px;background-color:#ececec;" disabled="true"><option value="OpenPilot CopterControl 3D">OpenPilot CopterControl 3D</option></select></form>
+                </div>
+                <p style="position: absolute;top: 208.5px;left: 280px;border: 1px solid gray;border-radius: 2px;font-size:6.5px;padding:1px;width:50px;text-align:center;background-color:#ececec;">Disconnect</p>
+            </div>
+
             <!-- Line  -->
             <!-- <img id="line" src="./Images/uav/line2.png" style="position: absolute; top: 33%; left: 10%; width: 60%; height: auto; visibility: hidden;" /> -->
             <!-- Curve : angle of attack image -->
