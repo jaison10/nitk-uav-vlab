@@ -304,6 +304,7 @@ function magic() {
         document.getElementById('usb_wire').style.visibility = "hidden";
         document.getElementById('vehicleButton').style.visibility = "visible";
         document.getElementById('monitor').style.visibility = "visible";
+        document.getElementById('recentSection').style.visibility = "visible";
         document.getElementById('vehicleButton').onclick = function() { setup(); };
 
         // document.getElementById("below_arrow" + arrowCount).style.visibility = "hidden";
@@ -461,6 +462,12 @@ function boardIdentification() {
 
 function InputSignalConfig() {
     document.getElementById('board_identification').style.visibility = "hidden";
+    document.getElementById('back_button').onclick = function() { backToBoard(); };
+
+}
+
+function backToBoard() {
+    document.getElementById('board_identification').style.visibility = "visible";
 
 }
 
