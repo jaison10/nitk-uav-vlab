@@ -458,16 +458,69 @@ function boardIdentification() {
         document.getElementById('board_identification').style.visibility = "hidden";
 
     }
+    if (document.getElementById('board_identification').style.visibility == "visible") {
+
+        document.getElementById('back_button').onclick = function() { backToUpgrade(); };
+
+    }
 }
 
 function InputSignalConfig() {
     document.getElementById('board_identification').style.visibility = "hidden";
+    document.getElementById('ip_signal_config').style.visibility = "visible";
+
     document.getElementById('back_button').onclick = function() { backToBoard(); };
+
+}
+
+function selectInput(id) {
+
+    if (id == 1) {
+        document.getElementById('ip1').src = "./Images/PWM.png";
+        document.getElementById('ip2').src = "./Images/PPM_S.png";
+        document.getElementById('ip3').src = "./Images/SBUS_S.png";
+        document.getElementById('ip4').src = "./Images/SAT_S.png";
+        document.getElementById('ip5').src = "./Images/SRXL_S.png";
+
+    } else if (id == 2) {
+        document.getElementById('ip1').src = "./Images/PWM_S.png";
+        document.getElementById('ip2').src = "./Images/PPM.png";
+        document.getElementById('ip3').src = "./Images/SBUS_S.png";
+        document.getElementById('ip4').src = "./Images/SAT_S.png";
+        document.getElementById('ip5').src = "./Images/SRXL_S.png";
+
+    } else if (id == 3) {
+        document.getElementById('ip1').src = "./Images/PWM_S.png";
+        document.getElementById('ip2').src = "./Images/PPM_S.png";
+        document.getElementById('ip3').src = "./Images/SBUS.png";
+        document.getElementById('ip4').src = "./Images/SAT_S.png";
+        document.getElementById('ip5').src = "./Images/SRXL_S.png";
+    } else if (id == 4) {
+        document.getElementById('ip1').src = "./Images/PWM_S.png";
+        document.getElementById('ip2').src = "./Images/PPM_S.png";
+        document.getElementById('ip3').src = "./Images/SBUS_S.png";
+        document.getElementById('ip4').src = "./Images/SAT.png";
+        document.getElementById('ip5').src = "./Images/SRXL_S.png";
+    } else if (id == 5) {
+        document.getElementById('ip1').src = "./Images/PWM_S.png";
+        document.getElementById('ip2').src = "./Images/PPM_S.png";
+        document.getElementById('ip3').src = "./Images/SBUS_S.png";
+        document.getElementById('ip4').src = "./Images/SAT_S.png";
+        document.getElementById('ip5').src = "./Images/SRXL.png";
+
+    }
+
+
 
 }
 
 function backToBoard() {
     document.getElementById('board_identification').style.visibility = "visible";
+    if (document.getElementById('board_identification').style.visibility == "visible") {
+
+        document.getElementById('back_button').onclick = function() { backToUpgrade(); };
+
+    }
 
 }
 

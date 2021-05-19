@@ -366,6 +366,26 @@
                 <p style="position: absolute;top: 208.5px;left: 280px;border: 1px solid gray;border-radius: 2px;font-size:6.5px;padding:1px;width:50px;text-align:center;background-color:#ececec;">Disconnect</p>
             </div>
 
+            <!-- ---------------------------Wordings on Setup wizard tab - Input Signal Configuration--------------------------- -->
+            <div id="ip_signal_config" style="visibility: hidden; position: absolute; top: 110px; left: 144px; height: 300px; width: 340px;">
+                <p style="font-size:11px;position:absolute;top:10px;left:110px;"><b>Input Signal Configuration</b></p>
+                <div style="position:absolute;top:40px;left:10px;height:70px;width:321px;font-size:6px;text-align: justify;">
+                    <p>The flight controller supports many different types of input signals. Please select the type of input that matches your receiver configuration. If you are unsure, just leave the default option selected and continue the wizard.<br><br>Some
+                        input options require the flight controller to be rebooted before the changes can take place. If an option that requires a reboot is selected, you will be instructed to do so on the next page of this wizard.<br><br>
+                    </p>
+                </div>
+                <img id="ip1" src="./Images/PWM_S.png" onclick="selectInput(1);" style="height:45px;width: 50px;position: absolute;top: 160px;left: 18px;border-radius:5px;box-shadow: 0 2px 2px rgba(0,0,0,0.6);cursor: pointer;" alt="PWM">
+                <img id="ip2" src="./Images/PPM_S.png" onclick="selectInput(2);" style="height:45px;width: 50px;position: absolute;top: 160px;left: 80px;border-radius:5px;box-shadow: 0 2px 2px rgba(0,0,0,0.6);cursor: pointer;" alt="PPM">
+                <img id="ip3" src="./Images/SBUS_S.png" onclick="selectInput(3);" style="height:45px;width: 50px;position: absolute;top: 160px;left: 145px;border-radius:5px;box-shadow: 0 2px 2px rgba(0,0,0,0.6);cursor: pointer;" alt="SBUS">
+                <img id="ip4" src="./Images/SAT_S.png" onclick="selectInput(4);" style="height:45px;width: 50px;position: absolute;top: 160px;left:210px;border-radius:5px;box-shadow: 0 2px 2px rgba(0,0,0,0.6);cursor: pointer;" alt="DSM SAT">
+                <img id="ip5" src="./Images/SRXL_S.png" onclick="selectInput(5);" style="height:45px;width: 50px;position: absolute;top: 160px;left: 275px;border-radius:5px;box-shadow: 0 2px 2px rgba(0,0,0,0.6);cursor: pointer;" alt="SRXL">
+                <p style="position: absolute;top: 205px;left: 32px;font-size:7px;">PWM</p>
+                <p style="position: absolute;top: 205px;left: 100px;font-size:7px;">PPM</p>
+                <p style="position: absolute;top: 205px;left: 160px;font-size:7px;">S.Bus</p>
+                <p style="position: absolute;top: 205px;left: 220px;font-size:7px;">DSM Sat</p>
+                <p style="position: absolute;top: 205px;left: 290px;font-size:7px;">SRXL</p>
+
+            </div>
             <!-- Line  -->
             <!-- <img id="line" src="./Images/uav/line2.png" style="position: absolute; top: 33%; left: 10%; width: 60%; height: auto; visibility: hidden;" /> -->
             <!-- Curve : angle of attack image -->
