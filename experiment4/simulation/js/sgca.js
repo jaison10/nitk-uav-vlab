@@ -422,6 +422,7 @@ function cancel_setup() {
     document.getElementById('back_button').style.visibility = "hidden";
     document.getElementById('full_status').style.visibility = "hidden";
     document.getElementById('board_identification').style.visibility = "hidden";
+    document.getElementById('ip_signal_config').style.visibility = "hidden";
 
 
 
@@ -468,8 +469,21 @@ function boardIdentification() {
 function InputSignalConfig() {
     document.getElementById('board_identification').style.visibility = "hidden";
     document.getElementById('ip_signal_config').style.visibility = "visible";
-
+    document.getElementById('next_button').onclick = function() { vehicleType(); };
     document.getElementById('back_button').onclick = function() { backToBoard(); };
+
+}
+
+function vehicleType() {
+    document.getElementById('ip_signal_config').style.visibility = "hidden";
+    document.getElementById('back_button').onclick = function() { backToInput(); };
+
+}
+
+function backToInput() {
+    document.getElementById('ip_signal_config').style.visibility = "visible";
+    document.getElementById('back_button').onclick = function() { backToBoard(); };
+
 
 }
 
@@ -521,6 +535,7 @@ function backToBoard() {
         document.getElementById('back_button').onclick = function() { backToUpgrade(); };
 
     }
+    document.getElementById('ip_signal_config').style.visibility = "hidden";
 
 }
 
