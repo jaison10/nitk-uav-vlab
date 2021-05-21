@@ -386,6 +386,30 @@
                 <p style="position: absolute;top: 205px;left: 290px;font-size:7px;">SRXL</p>
 
             </div>
+
+            <!-- ---------------------------Wordings on Setup wizard tab - Vehicle Type Selection--------------------------- -->
+            <div id="vehicle_type" style="visibility: hidden; position: absolute; top: 110px; left: 144px; height: 300px; width: 340px;">
+                <p style="font-size:11px;position:absolute;top:10px;left:110px;"><b>Vehicle Type Selection</b></p>
+                <div style="position:absolute;top:40px;left:10px;height:70px;width:321px;font-size:6px;text-align: justify;">
+                    <p>To continue, the wizard needs to know what type of vehicle the flight controller board is going to be used with. This step is crucial since much of the following configuration is unique per vehicle type.<br><br>Go ahead and select
+                        the type of vehicle for which you want to create a configuration.<br><br>The current version only provides functionality for Multirotors, Fixed-wing aircraft and Ground vehicle.
+                    </p>
+                </div>
+                <img id="vt1" src="./Images/MR.png" onclick="selectVehicle(1);" style="height:45px;width: 50px;position: absolute;top: 160px;left: 35px;box-shadow: 0 2px 2px rgba(0,0,0,0.6);cursor: pointer;border-radius:5px;" alt="Multirotor">
+                <img id="vt2" src="./Images/Wing.png" onclick="selectVehicle(2);" style="height:45px;width: 50px;position: absolute;top: 160px;left: 110px;box-shadow: 0 2px 2px rgba(0,0,0,0.6);cursor: pointer;border-radius:5px;" alt="Fixed Wing">
+                <img id="vt3" src="./Images/Heli.png" onclick="selectVehicle(3);" style="height:45px;width: 50px;position: absolute;top: 160px;left: 185px;box-shadow: 0 2px 2px rgba(0,0,0,0.6);cursor: pointer;border-radius:5px;" alt="Helicopter">
+                <img id="vt4" src="./Images/surface.png" onclick="selectVehicle(4);" style="height:45px;width: 50px;position: absolute;top: 160px;left:260px;box-shadow: 0 2px 2px rgba(0,0,0,0.6);cursor: pointer;border-radius:5px;" alt="Surface">
+
+                <p style="position: absolute;top: 205px;left: 42px;font-size:7px;">Multirotor</p>
+                <p style="position: absolute;top: 205px;left: 115px;font-size:7px;">Fixed Wing</p>
+                <p style="position: absolute;top: 205px;left: 190px;font-size:7px;">Helicopter</p>
+                <p style="position: absolute;top: 205px;left: 270px;font-size:7px;">Surface</p>
+
+
+            </div>
+
+
+
             <!-- Line  -->
             <!-- <img id="line" src="./Images/uav/line2.png" style="position: absolute; top: 33%; left: 10%; width: 60%; height: auto; visibility: hidden;" /> -->
             <!-- Curve : angle of attack image -->

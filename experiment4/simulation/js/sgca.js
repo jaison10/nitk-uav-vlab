@@ -408,7 +408,7 @@ function setup() {
     document.getElementById('next_button').onclick = function() { upgrade(); };
     document.getElementById('cancel_button').onclick = function() { cancel_setup(); };
     document.getElementById('board_identification').style.visibility = "hidden";
-    cccc
+
 }
 
 function cancel_setup() {
@@ -423,6 +423,7 @@ function cancel_setup() {
     document.getElementById('full_status').style.visibility = "hidden";
     document.getElementById('board_identification').style.visibility = "hidden";
     document.getElementById('ip_signal_config').style.visibility = "hidden";
+    document.getElementById('vehicle_type').style.visibility = "hidden";
 
 
 
@@ -467,6 +468,8 @@ function boardIdentification() {
 }
 
 function InputSignalConfig() {
+
+    document.getElementById('top_text').innerText = "Select the type of input based on how you have connected the Receiver and the Flight Controller. In our case, it is the Sbus Connecter as in the earlier Assembly of the Quadcopter experiment. ";
     document.getElementById('board_identification').style.visibility = "hidden";
     document.getElementById('ip_signal_config').style.visibility = "visible";
     document.getElementById('next_button').onclick = function() { vehicleType(); };
@@ -475,13 +478,60 @@ function InputSignalConfig() {
 }
 
 function vehicleType() {
+    document.getElementById('top_text').innerText = "Select the type of vehicle. This helps the Flight Controller to understand the orientation of the motors. ";
+    document.getElementById('vehicle_type').style.visibility = "visible";
     document.getElementById('ip_signal_config').style.visibility = "hidden";
+    document.getElementById('next_button').onclick = function() { multirotorConfig(); };
     document.getElementById('back_button').onclick = function() { backToInput(); };
 
 }
 
+function multirotorConfig() {
+    document.getElementById('vehicle_type').style.visibility = "hidden";
+    document.getElementById('back_button').onclick = function() { backToVehicle(); };
+
+
+}
+
+function backToVehicle() {
+    document.getElementById('vehicle_type').style.visibility = "visible";
+    document.getElementById('back_button').onclick = function() { backToInput(); };
+
+
+}
+
+function selectVehicle(id) {
+
+    if (id == 1) {
+        document.getElementById('vt1').src = "./Images/MR_S.png";
+        document.getElementById('vt2').src = "./Images/Wing.png";
+        document.getElementById('vt3').src = "./Images/Heli.png";
+        document.getElementById('vt4').src = "./Images/surface.png";
+
+
+    } else if (id == 2) {
+        document.getElementById('vt1').src = "./Images/MR.png";
+        document.getElementById('vt2').src = "./Images/Wing_S.png";
+        document.getElementById('vt3').src = "./Images/Heli.png";
+        document.getElementById('vt4').src = "./Images/surface.png";
+
+    } else if (id == 3) {
+        document.getElementById('vt1').src = "./Images/MR.png";
+        document.getElementById('vt2').src = "./Images/Wing.png";
+        document.getElementById('vt3').src = "./Images/Heli_S.png";
+        document.getElementById('vt4').src = "./Images/surface.png";
+
+    } else if (id == 4) {
+        document.getElementById('vt1').src = "./Images/MR.png";
+        document.getElementById('vt2').src = "./Images/Wing.png";
+        document.getElementById('vt3').src = "./Images/Heli.png";
+        document.getElementById('vt4').src = "./Images/Surface_S.png";
+    }
+}
+
 function backToInput() {
     document.getElementById('ip_signal_config').style.visibility = "visible";
+    document.getElementById('vehicle_type').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { backToBoard(); };
 
 
