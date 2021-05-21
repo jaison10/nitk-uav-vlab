@@ -424,6 +424,7 @@ function cancel_setup() {
     document.getElementById('board_identification').style.visibility = "hidden";
     document.getElementById('ip_signal_config').style.visibility = "hidden";
     document.getElementById('vehicle_type').style.visibility = "hidden";
+    document.getElementById('multirotor_config').style.visibility = "hidden";
 
 
 
@@ -468,7 +469,7 @@ function boardIdentification() {
 }
 
 function InputSignalConfig() {
-
+    document.getElementById('multirotor_config').style.visibility = "hidden";
     document.getElementById('top_text').innerText = "Select the type of input based on how you have connected the Receiver and the Flight Controller. In our case, it is the Sbus Connecter as in the earlier Assembly of the Quadcopter experiment. ";
     document.getElementById('board_identification').style.visibility = "hidden";
     document.getElementById('ip_signal_config').style.visibility = "visible";
@@ -487,13 +488,28 @@ function vehicleType() {
 }
 
 function multirotorConfig() {
+    document.getElementById('multirotor_config').style.visibility = "visible";
     document.getElementById('vehicle_type').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { backToVehicle(); };
+    document.getElementById('next_button').onclick = function() { OutputSignalConfig(); };
 
 
 }
 
+function OutputSignalConfig() {
+    document.getElementById('multirotor_config').style.visibility = "hidden";
+    document.getElementById('back_button').onclick = function() { backToMultirotor(); };
+
+}
+
+function backToMultirotor() {
+    document.getElementById('multirotor_config').style.visibility = "visible";
+    document.getElementById('back_button').onclick = function() { backToVehicle(); };
+
+}
+
 function backToVehicle() {
+    document.getElementById('multirotor_config').style.visibility = "hidden";
     document.getElementById('vehicle_type').style.visibility = "visible";
     document.getElementById('back_button').onclick = function() { backToInput(); };
 

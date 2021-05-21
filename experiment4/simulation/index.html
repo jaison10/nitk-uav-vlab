@@ -408,6 +408,32 @@
 
             </div>
 
+            <!-- ---------------------------Wordings on Setup wizard tab - Mulirotor Configuration--------------------------- -->
+            <div id="multirotor_config" style="visibility: hidden; position: absolute; top: 110px; left: 144px; height: 300px; width: 340px;">
+                <p style="font-size:11px;position:absolute;top:10px;left:110px;"><b>Mulirotor Configuration</b></p>
+                <div style="position:absolute;top:32px;left:10px;height:70px;width:321px;font-size:6px;text-align: justify;">
+                    <p>This part of the wizard will set up the flight controller for use with a flying platform utilizing multiple rotors. The wizard supports the most commomn types of multirotors. Other variants of multirotors can be configured by using
+                        custom configuration options in the Configuration plugin in the GCS.<br><br>Please select the type of multirotor you want to create a configuration for below:<br><br>Select:
+                    </p>
+                </div>
+                <img src="./Images/multirotorSignal.png" style="position: absolute;height: 120px;width: 145px;top: 95px;left: 185px;" alt="Multirotor">
+                <form style="position:absolute;top:77px;left:35px;"><select style="width:150px;height:11px;font-size:6px;color:black;border:1px solid gray;border-radius:2px;background-color:#ececec;border:1px solid #d3d3d3;">
+                    <option value="Quadcopter X">Quadcopter X</option>
+                    <option value="Quadcopter +">Quadcopter +</option>
+                    <option value="Hexacopter">Hexacopter</option>
+                    <option value="Hexacopter X">Hexacopter X</option>
+                    <option value="Hexacopter H">Hexacopter H</option>
+                    <option value="Hexacopter Coax(Y6)">Hexacopter Coax(Y6)</option>
+                    
+                    </select>
+                </form>
+                <div style="border: 1px solid #d3d3d3;height:120px;width: 171px;position: absolute;top: 100px;left: 10px;padding: 1px;text-align:justify;font-size:6px;border-radius:1px;">
+                    <p>The X Quadcopter uses four motors and is the most common multi rotor configuration. Two of the motors rotate clockwise and two counter clockwise. The motors positioned diagonal to each other rotate in the same direction. This setup
+                        is perfect for sport flying and is also commonly used for FPV platforms.</p>
+                </div>
+
+            </div>
+
 
 
             <!-- Line  -->
