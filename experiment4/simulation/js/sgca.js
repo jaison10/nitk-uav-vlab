@@ -453,6 +453,7 @@ function boardIdentification() {
     document.getElementById('firware_update').style.visibility = "hidden";
     document.getElementById('board_identification').style.visibility = "visible";
     document.getElementById('full_status').style.visibility = "hidden";
+    document.getElementById('multirotor_config').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { backToUpgrade(); };
     document.getElementById('next_button').onclick = function() { InputSignalConfig(); };
     document.getElementById('setupContent').style.visibility = "hidden";
@@ -462,7 +463,7 @@ function boardIdentification() {
 
     }
     if (document.getElementById('board_identification').style.visibility == "visible") {
-
+        document.getElementById('multirotor_config').style.visibility = "hidden";
         document.getElementById('back_button').onclick = function() { backToUpgrade(); };
 
     }
@@ -481,6 +482,7 @@ function InputSignalConfig() {
 function vehicleType() {
     document.getElementById('top_text').innerText = "Select the type of vehicle. This helps the Flight Controller to understand the orientation of the motors. ";
     document.getElementById('vehicle_type').style.visibility = "visible";
+    document.getElementById('multirotor_config').style.visibility = "hidden";
     document.getElementById('ip_signal_config').style.visibility = "hidden";
     document.getElementById('next_button').onclick = function() { multirotorConfig(); };
     document.getElementById('back_button').onclick = function() { backToInput(); };
@@ -488,6 +490,7 @@ function vehicleType() {
 }
 
 function multirotorConfig() {
+    document.getElementById('top_text').innerText = "Select the type of Multirotor. Based on the type, motor's direction is configured. ";
     document.getElementById('multirotor_config').style.visibility = "visible";
     document.getElementById('vehicle_type').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { backToVehicle(); };
@@ -505,6 +508,7 @@ function OutputSignalConfig() {
 function backToMultirotor() {
     document.getElementById('multirotor_config').style.visibility = "visible";
     document.getElementById('back_button').onclick = function() { backToVehicle(); };
+    document.getElementById('next_button').onclick = function() { OutputSignalConfig(); };
 
 }
 
@@ -512,6 +516,7 @@ function backToVehicle() {
     document.getElementById('multirotor_config').style.visibility = "hidden";
     document.getElementById('vehicle_type').style.visibility = "visible";
     document.getElementById('back_button').onclick = function() { backToInput(); };
+    document.getElementById('next_button').onclick = function() { multirotorConfig(); };
 
 
 }
@@ -549,6 +554,8 @@ function backToInput() {
     document.getElementById('ip_signal_config').style.visibility = "visible";
     document.getElementById('vehicle_type').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { backToBoard(); };
+    document.getElementById('multirotor_config').style.visibility = "hidden";
+    document.getElementById('next_button').onclick = function() { vehicleType(); };
 
 
 }
@@ -595,6 +602,7 @@ function selectInput(id) {
 }
 
 function backToBoard() {
+    document.getElementById('multirotor_config').style.visibility = "hidden";
     document.getElementById('board_identification').style.visibility = "visible";
     if (document.getElementById('board_identification').style.visibility == "visible") {
 
@@ -602,10 +610,13 @@ function backToBoard() {
 
     }
     document.getElementById('ip_signal_config').style.visibility = "hidden";
+    document.getElementById('next_button').onclick = function() { InputSignalConfig(); };
+
 
 }
 
 function backToUpgrade() {
+    document.getElementById('multirotor_config').style.visibility = "hidden";
     document.getElementById('firware_update').style.visibility = "visible";
     document.getElementById('board_identification').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { backToSetup(); };
@@ -630,6 +641,8 @@ function backToSetup() {
         document.getElementById('board_identification').style.visibility = "hidden";
 
     }
+    document.getElementById('multirotor_config').style.visibility = "hidden";
+
 }
 
 function clickUpgrade() {
