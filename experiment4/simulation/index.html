@@ -434,6 +434,24 @@
 
             </div>
 
+            <!-- ---------------------------Wordings on Setup wizard tab - Output Signal Configuration--------------------------- -->
+            <div id="op_signal_config" style="visibility: hidden; position: absolute; top: 110px; left: 144px; height: 300px; width: 340px;">
+                <p style="font-size:11px;position:absolute;top:10px;left:110px;"><b>Output Signal Configuration</b></p>
+                <div style="position:absolute;top:40px;left:10px;height:70px;width:321px;font-size:6px;text-align: justify;">
+                    <p>To set an optimal configuration of the output signals powering your motors, the wizard needs to know what type of Electronc Speed Controllers(ESCs) you will use and what their capabilities are.<br><br>Please select one of the options
+                        below. If you are unsure about the capabilities of your ESCs, just leave the default option selected and continue the wizard. <br><br>
+                    </p>
+                </div>
+                <img id="op1" src="./Images/standard.png" onclick="selectOutput(1);" style="height:45px;width: 80px;position: absolute;top: 160px;left: 30px;border-radius:5px;box-shadow: 0 2px 2px rgba(0,0,0,0.6);cursor: pointer;" alt="Standard ESC">
+                <img id="op2" src="./Images/rapid.png" onclick="selectOutput(2);" style="height:45px;width: 80px;position: absolute;top: 160px;left: 130px;border-radius:5px;box-shadow: 0 2px 2px rgba(0,0,0,0.6);cursor: pointer;" alt="Rapid ESC">
+                <img id="op3" src="./Images/oneshot.png" onclick="selectOutput(3);" style="height:45px;width: 80px;position: absolute;top: 160px;left: 230px;border-radius:5px;box-shadow: 0 2px 2px rgba(0,0,0,0.6);cursor: pointer;" alt="OneShot ESC">
+
+                <p style="position: absolute;top: 205px;left: 42px;font-size:7px;">Standard ESC</p>
+                <p style="position: absolute;top: 205px;left: 150px;font-size:7px;">Rapid ESC</p>
+                <p style="position: absolute;top: 205px;left: 250px;font-size:7px;color:#949494;">OneShot ESC</p>
+
+
+            </div>
 
 
             <!-- Line  -->

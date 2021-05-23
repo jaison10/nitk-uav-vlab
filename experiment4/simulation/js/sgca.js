@@ -500,12 +500,23 @@ function multirotorConfig() {
 }
 
 function OutputSignalConfig() {
+    document.getElementById('top_text').innerText = "Select the type of Electronic Speed Controllers(ESCs) used. ";
+    document.getElementById('op_signal_config').style.visibility = "visible";
     document.getElementById('multirotor_config').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { backToMultirotor(); };
+    document.getElementById('next_button').onclick = function() { ConfigSummary(); };
+
+}
+
+function ConfigSummary() {
+    document.getElementById('op_signal_config').style.visibility = "hidden";
+    document.getElementById('back_button').onclick = function() { OutputSignalConfig(); };
+
 
 }
 
 function backToMultirotor() {
+    document.getElementById('op_signal_config').style.visibility = "hidden";
     document.getElementById('multirotor_config').style.visibility = "visible";
     document.getElementById('back_button').onclick = function() { backToVehicle(); };
     document.getElementById('next_button').onclick = function() { OutputSignalConfig(); };
