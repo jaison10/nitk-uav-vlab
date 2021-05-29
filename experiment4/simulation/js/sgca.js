@@ -393,6 +393,7 @@ function magic() {
     }
 }
 
+
 function setup() {
 
     document.getElementById('top_text').innerText = "Read the instructions and click on the Next button";
@@ -408,7 +409,14 @@ function setup() {
     document.getElementById('next_button').onclick = function() { upgrade(); };
     document.getElementById('cancel_button').onclick = function() { cancel_setup(); };
     document.getElementById('board_identification').style.visibility = "hidden";
+    document.getElementById('firware_update').style.visibility = "hidden";
+    document.getElementById('back_button').style.visibility = "hidden";
+    document.getElementById('full_status').style.visibility = "hidden";
+    document.getElementById('board_identification').style.visibility = "hidden";
+    document.getElementById('multirotor_config').style.visibility = "hidden";
+    document.getElementById('upgrade_text').style.visibility = "hidden";
 
+    console.log(1);
 }
 
 function cancel_setup() {
@@ -425,6 +433,7 @@ function cancel_setup() {
     document.getElementById('ip_signal_config').style.visibility = "hidden";
     document.getElementById('vehicle_type').style.visibility = "hidden";
     document.getElementById('multirotor_config').style.visibility = "hidden";
+    document.getElementById('upgrade_text').style.visibility = "hidden";
 
 
 
@@ -438,35 +447,36 @@ function upgrade() {
     document.getElementById('upgrade_button').style.cursor = "pointer";
     document.getElementById('setupContent').style.visibility = "hidden";
     document.getElementById('upgrade_button').onclick = function() { clickUpgrade(); };
-    document.getElementById('back_button').onclick = function() { backToSetup(); };
-    document.getElementById('next_button').onclick = function() { boardIdentification(); };
-    document.getElementById('board_identification').style.visibility = "hidden";
-    if (document.getElementById('setupContent').style.visibility == "visible") {
-        document.getElementById('next_button').onclick = function() { upgrade(); };
-        document.getElementById('board_identification').style.visibility = "hidden";
+    document.getElementById('back_button').onclick = function() { setup(); };
+    document.getElementById('next_button').onclick = function() {
+        if (upgradeClicked == 1) {
+            document.getElementById('next_button').onclick = function() { boardIdentification(); };
+            document.getElementById('upgrade_text').style.visibility = "hidden";
+            upgradeClicked = 0;
+        } else {
+            document.getElementById('upgrade_text').style.visibility = "visible";
+        }
+    };
 
-    }
+    document.getElementById('board_identification').style.visibility = "hidden";
+    document.getElementById('multirotor_config').style.visibility = "hidden";
+
+    console.log(2);
 }
 
 function boardIdentification() {
+
     document.getElementById('top_text').innerText = "The firmware detects the board and connects to it. Make sure the Connection device and board type are correct and click Next.";
     document.getElementById('firware_update').style.visibility = "hidden";
     document.getElementById('board_identification').style.visibility = "visible";
     document.getElementById('full_status').style.visibility = "hidden";
     document.getElementById('multirotor_config').style.visibility = "hidden";
-    document.getElementById('back_button').onclick = function() { backToUpgrade(); };
+    document.getElementById('back_button').onclick = function() { upgrade(); };
     document.getElementById('next_button').onclick = function() { InputSignalConfig(); };
     document.getElementById('setupContent').style.visibility = "hidden";
-    if (document.getElementById('setupContent').style.visibility == "visible") {
-        document.getElementById('next_button').onclick = function() { upgrade(); };
-        document.getElementById('board_identification').style.visibility = "hidden";
+    document.getElementById('ip_signal_config').style.visibility = "hidden";
 
-    }
-    if (document.getElementById('board_identification').style.visibility == "visible") {
-        document.getElementById('multirotor_config').style.visibility = "hidden";
-        document.getElementById('back_button').onclick = function() { backToUpgrade(); };
-
-    }
+    console.log(3);
 }
 
 function InputSignalConfig() {
@@ -475,7 +485,10 @@ function InputSignalConfig() {
     document.getElementById('board_identification').style.visibility = "hidden";
     document.getElementById('ip_signal_config').style.visibility = "visible";
     document.getElementById('next_button').onclick = function() { vehicleType(); };
-    document.getElementById('back_button').onclick = function() { backToBoard(); };
+    document.getElementById('back_button').onclick = function() { boardIdentification(); };
+    document.getElementById('vehicle_type').style.visibility = "hidden";
+
+    console.log(4);
 
 }
 
@@ -485,7 +498,8 @@ function vehicleType() {
     document.getElementById('multirotor_config').style.visibility = "hidden";
     document.getElementById('ip_signal_config').style.visibility = "hidden";
     document.getElementById('next_button').onclick = function() { multirotorConfig(); };
-    document.getElementById('back_button').onclick = function() { backToInput(); };
+    document.getElementById('back_button').onclick = function() { InputSignalConfig(); };
+    console.log(5);
 
 }
 
@@ -493,9 +507,10 @@ function multirotorConfig() {
     document.getElementById('top_text').innerText = "Select the type of Multirotor. Based on the type, motor's direction is configured. ";
     document.getElementById('multirotor_config').style.visibility = "visible";
     document.getElementById('vehicle_type').style.visibility = "hidden";
-    document.getElementById('back_button').onclick = function() { backToVehicle(); };
+    document.getElementById('op_signal_config').style.visibility = "hidden";
+    document.getElementById('back_button').onclick = function() { vehicleType(); };
     document.getElementById('next_button').onclick = function() { OutputSignalConfig(); };
-
+    console.log(6);
 
 }
 
@@ -503,15 +518,15 @@ function OutputSignalConfig() {
     document.getElementById('top_text').innerText = "Select the type of Electronic Speed Controllers(ESCs) used. ";
     document.getElementById('op_signal_config').style.visibility = "visible";
     document.getElementById('multirotor_config').style.visibility = "hidden";
-    document.getElementById('back_button').onclick = function() { backToMultirotor(); };
+    document.getElementById('back_button').onclick = function() { multirotorConfig(); };
     document.getElementById('next_button').onclick = function() { ConfigSummary(); };
-
+    console.log(7);
 }
 
 function ConfigSummary() {
     document.getElementById('op_signal_config').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { OutputSignalConfig(); };
-
+    console.log(8);
 
 }
 
@@ -615,11 +630,6 @@ function selectInput(id) {
 function backToBoard() {
     document.getElementById('multirotor_config').style.visibility = "hidden";
     document.getElementById('board_identification').style.visibility = "visible";
-    if (document.getElementById('board_identification').style.visibility == "visible") {
-
-        document.getElementById('back_button').onclick = function() { backToUpgrade(); };
-
-    }
     document.getElementById('ip_signal_config').style.visibility = "hidden";
     document.getElementById('next_button').onclick = function() { InputSignalConfig(); };
 
@@ -655,8 +665,11 @@ function backToSetup() {
     document.getElementById('multirotor_config').style.visibility = "hidden";
 
 }
+var upgradeClicked = 0;
 
 function clickUpgrade() {
+    upgradeClicked = 1;
+    document.getElementById('upgrade_text').style.visibility = "hidden";
     document.getElementById('full_status').style.visibility = "visible";
     document.getElementById('full_status').style.width = "318px";
     document.getElementById('full_status').style.transition = "all 1s ease-in-out";
