@@ -530,22 +530,8 @@ function ConfigSummary() {
 
 }
 
-function backToMultirotor() {
-    document.getElementById('op_signal_config').style.visibility = "hidden";
-    document.getElementById('multirotor_config').style.visibility = "visible";
-    document.getElementById('back_button').onclick = function() { backToVehicle(); };
-    document.getElementById('next_button').onclick = function() { OutputSignalConfig(); };
-
-}
-
-function backToVehicle() {
-    document.getElementById('multirotor_config').style.visibility = "hidden";
-    document.getElementById('vehicle_type').style.visibility = "visible";
-    document.getElementById('back_button').onclick = function() { backToInput(); };
-    document.getElementById('next_button').onclick = function() { multirotorConfig(); };
 
 
-}
 
 function selectVehicle(id) {
 
@@ -576,15 +562,6 @@ function selectVehicle(id) {
     }
 }
 
-function backToInput() {
-    document.getElementById('ip_signal_config').style.visibility = "visible";
-    document.getElementById('vehicle_type').style.visibility = "hidden";
-    document.getElementById('back_button').onclick = function() { backToBoard(); };
-    document.getElementById('multirotor_config').style.visibility = "hidden";
-    document.getElementById('next_button').onclick = function() { vehicleType(); };
-
-
-}
 
 function selectInput(id) {
 
@@ -627,48 +604,13 @@ function selectInput(id) {
 
 }
 
-function backToBoard() {
-    document.getElementById('multirotor_config').style.visibility = "hidden";
-    document.getElementById('board_identification').style.visibility = "visible";
-    document.getElementById('ip_signal_config').style.visibility = "hidden";
-    document.getElementById('next_button').onclick = function() { InputSignalConfig(); };
 
 
-}
-
-function backToUpgrade() {
-    document.getElementById('multirotor_config').style.visibility = "hidden";
-    document.getElementById('firware_update').style.visibility = "visible";
-    document.getElementById('board_identification').style.visibility = "hidden";
-    document.getElementById('back_button').onclick = function() { backToSetup(); };
-    document.getElementById('next_button').onclick = function() { boardIdentification(); };
-    document.getElementById('setupContent').style.visibility = "hidden";
-    if (document.getElementById('setupContent').style.visibility == "visible") {
-        document.getElementById('next_button').onclick = function() { upgrade(); };
-        document.getElementById('board_identification').style.visibility = "hidden";
-
-    }
-
-}
-
-function backToSetup() {
-    document.getElementById('setupContent').style.visibility = "visible";
-    document.getElementById('firware_update').style.visibility = "hidden";
-    document.getElementById('back_button').style.visibility = "hidden";
-    document.getElementById('full_status').style.visibility = "hidden";
-    document.getElementById('board_identification').style.visibility = "hidden";
-    if (document.getElementById('setupContent').style.visibility == "visible") {
-        document.getElementById('next_button').onclick = function() { upgrade(); };
-        document.getElementById('board_identification').style.visibility = "hidden";
-
-    }
-    document.getElementById('multirotor_config').style.visibility = "hidden";
-
-}
 var upgradeClicked = 0;
 
 function clickUpgrade() {
     upgradeClicked = 1;
+
     document.getElementById('upgrade_text').style.visibility = "hidden";
     document.getElementById('full_status').style.visibility = "visible";
     document.getElementById('full_status').style.width = "318px";
