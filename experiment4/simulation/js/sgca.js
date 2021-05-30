@@ -455,6 +455,8 @@ function upgrade() {
             upgradeClicked = 0;
         } else {
             document.getElementById('upgrade_text').style.visibility = "visible";
+
+
         }
     };
 
@@ -493,7 +495,7 @@ function InputSignalConfig() {
 }
 
 function vehicleType() {
-    document.getElementById('top_text').innerText = "Select the type of vehicle. This helps the Flight Controller to understand the orientation of the motors. ";
+    document.getElementById('top_text').innerText = "Select the type of vehicle. This helps the Flight Controller to understand the orientation of the motors. In our case, it is Multirotor as in the earlier Assembly of the Quadcopter experiment. ";
     document.getElementById('vehicle_type').style.visibility = "visible";
     document.getElementById('multirotor_config').style.visibility = "hidden";
     document.getElementById('ip_signal_config').style.visibility = "hidden";
@@ -504,7 +506,7 @@ function vehicleType() {
 }
 
 function multirotorConfig() {
-    document.getElementById('top_text').innerText = "Select the type of Multirotor. Based on the type, motor's direction is configured. ";
+    document.getElementById('top_text').innerText = "Select the type of Multirotor. Based on the type, motor's direction is configured. In our case, it is Quadcopter X as in the earlier Assembly of the Quadcopter experiment.  ";
     document.getElementById('multirotor_config').style.visibility = "visible";
     document.getElementById('vehicle_type').style.visibility = "hidden";
     document.getElementById('op_signal_config').style.visibility = "hidden";
@@ -515,9 +517,10 @@ function multirotorConfig() {
 }
 
 function OutputSignalConfig() {
-    document.getElementById('top_text').innerText = "Select the type of Electronic Speed Controllers(ESCs) used. ";
+    document.getElementById('top_text').innerText = "Select the type of Electronic Speed Controllers(ESCs) used. Let us choose the Standard ESC for this experiment. ";
     document.getElementById('op_signal_config').style.visibility = "visible";
     document.getElementById('multirotor_config').style.visibility = "hidden";
+    document.getElementById('config_summary').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { multirotorConfig(); };
     document.getElementById('next_button').onclick = function() { ConfigSummary(); };
     console.log(7);
@@ -525,11 +528,18 @@ function OutputSignalConfig() {
 
 function ConfigSummary() {
     document.getElementById('op_signal_config').style.visibility = "hidden";
+    document.getElementById('config_summary').style.visibility = "visible";
+    document.getElementById('next_button').onclick = function() { SensorCalibProc(); };
     document.getElementById('back_button').onclick = function() { OutputSignalConfig(); };
     console.log(8);
 
 }
 
+function SensorCalibProc() {
+    document.getElementById('config_summary').style.visibility = "hidden";
+    console.log(9);
+
+}
 
 
 
@@ -610,6 +620,7 @@ var upgradeClicked = 0;
 
 function clickUpgrade() {
     upgradeClicked = 1;
+    document.getElementById('next_button').onclick = function() { boardIdentification(); };
 
     document.getElementById('upgrade_text').style.visibility = "hidden";
     document.getElementById('full_status').style.visibility = "visible";
