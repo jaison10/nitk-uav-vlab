@@ -469,7 +469,12 @@
                     <p><b>Input type:</b> S.Bus</p>
                     <p><b>Speed Controller (ESC) type: </b> Standard ESC</p>
                 </div>
-                <img style="position: absolute;top: 135px;left: 250px;height: 80px;width: 80px;" src="./Images/diagram.png" alt="Diagram button">
+                <img onclick="showDiagram();" style="cursor:pointer;position: absolute;top: 135px;left: 250px;height: 80px;width: 80px;" src="./Images/diagram.png" alt="Diagram button">
+                <img id="circuit_diagram" style="box-shadow:0 0 5px rgba(0,0,0,0.8);cursor: pointer; visibility: hidden; position: absolute; top: 80px; left: 8px; height: 180px; width: 340px;" src="./Images/circuit_diagram.png" alt="Circuit diagram">
+                <img id="close_button" style="cursor: pointer; visibility: hidden; position: absolute; top: 248px; left: 308px; height: 10px; width: 40px;z-index:100;" src="./Images/close_button.png" alt="Close button">
+                <a href="/Images/downloadDiagram.png" download><img id="save_button" style="cursor:pointer;visibility: hidden; position: absolute; top: 248px; left: 271px; height: 10px; width: 40px;" src="./Images/save_button.png" alt="Save button"></a>
+                <img id="tab_logo" style="visibility: hidden; position: absolute; width: 9px; height: 9px; left: 10px; top: 82px;" src="./Images/Liibre_pilot_Grey.png" alt="LibrePilot logo">
+                <p id="tab_head" style="visibility: hidden; position: absolute; font-size: 8px; left:22px; top: 72.5px;">Connection Diagram</p>
             </div>
 
             <!-- Line  -->

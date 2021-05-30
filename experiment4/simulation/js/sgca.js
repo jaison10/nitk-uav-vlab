@@ -541,6 +541,28 @@ function SensorCalibProc() {
 
 }
 
+function showDiagram() {
+    document.getElementById('circuit_diagram').style.visibility = "visible";
+    document.getElementById('tab_logo').style.visibility = "visible";
+    document.getElementById('tab_head').style.visibility = "visible";
+    document.getElementById('close_button').style.visibility = "visible";
+    document.getElementById('save_button').style.visibility = "visible";
+    document.getElementById('next_button').style.visibility = "hidden";
+    document.getElementById('back_button').style.visibility = "hidden";
+    document.getElementById('cancel_button').style.visibility = "hidden";
+    document.getElementById('close_button').onclick = function() {
+        document.getElementById('circuit_diagram').style.visibility = "hidden";
+        document.getElementById('close_button').style.visibility = "hidden";
+        document.getElementById('save_button').style.visibility = "hidden";
+        document.getElementById('tab_head').style.visibility = "hidden";
+        document.getElementById('tab_logo').style.visibility = "hidden";
+        document.getElementById('next_button').style.visibility = "visible";
+        document.getElementById('back_button').style.visibility = "visible";
+        document.getElementById('cancel_button').style.visibility = "visible";
+    }
+
+}
+
 
 
 function selectVehicle(id) {
@@ -620,7 +642,7 @@ var upgradeClicked = 0;
 
 function clickUpgrade() {
     upgradeClicked = 1;
-    document.getElementById('next_button').onclick = function() { boardIdentification(); };
+
 
     document.getElementById('upgrade_text').style.visibility = "hidden";
     document.getElementById('full_status').style.visibility = "visible";
@@ -630,6 +652,7 @@ function clickUpgrade() {
     setTimeout(() => {
         document.getElementById('full_status').style.transition = "none";
         document.getElementById('upgrade_inst').innerText = "Board updated, please press 'Next' to continue.";
+        document.getElementById('next_button').onclick = function() { boardIdentification(); };
 
     }, 1000);
 
