@@ -523,7 +523,7 @@ function multirotorConfig() {
 }
 
 function OutputSignalConfig() {
-    document.getElementById('top_text').innerText = "Select the type of Electronic Speed Controllers(ESCs) used. Let us choose the Standard ESC for this experiment. ";
+    document.getElementById('top_text').innerText = "Select the type of Electronic Speed Controllers(ESCs) used. Let us choose the Rapid ESC for this experiment. ";
     document.getElementById('op_signal_config').style.visibility = "visible";
     document.getElementById('multirotor_config').style.visibility = "hidden";
     document.getElementById('config_summary').style.visibility = "hidden";
@@ -538,6 +538,8 @@ function ConfigSummary() {
     document.getElementById('config_summary').style.visibility = "visible";
     document.getElementById('next_button').onclick = function() { SensorCalibProc(); };
     document.getElementById('back_button').onclick = function() { OutputSignalConfig(); };
+    document.getElementById('sensor_calib').style.visibility = "hidden";
+
     console.log(8);
 
 }
@@ -548,11 +550,24 @@ function SensorCalibProc() {
     document.getElementById('config_summary').style.visibility = "hidden";
     document.getElementById('calculate_button').onclick = function() { clickUpgrade(2); };
     document.getElementById('back_button').onclick = function() { ConfigSummary(); };
+    document.getElementById('next_button').onclick = function() { EscCalib(); };
+    document.getElementById('esc_calib').style.visibility = "hidden";
+
 
     console.log(9);
 
 }
-// document.getElementById('cal_status').style.visibility = "visible";
+
+function EscCalib() {
+    document.getElementById('top_text').innerText = "Read the guidelines and tick the three options.";
+    document.getElementById('esc_calib').style.visibility = "visible";
+    document.getElementById('sensor_calib').style.visibility = "hidden";
+    document.getElementById('cal_status').style.visibility = "hidden";
+    document.getElementById('back_button').onclick = function() { SensorCalibProc(); };
+
+    console.log(10);
+
+}
 
 function showDiagram() {
     document.getElementById('circuit_diagram').style.visibility = "visible";
@@ -698,6 +713,7 @@ function clickUpgrade(id) {
         setTimeout(() => {
             document.getElementById('cal_status').style.transition = "none";
             document.getElementById('calculate_inst').innerText = "Done!";
+            document.getElementById('next_button').onclick = function() { EscCalib(); };
 
 
         }, 1000);

@@ -496,6 +496,37 @@
                 <img src="./Images/upgrade_status.png" style="height: 20px;width: 327px;position: absolute;top: 204px;left: 7px;" alt="Calculate Status bar">
             </div>
 
+            <!-- ---------------------------Wordings on Setup wizard tab - ESC Calibration Procedure--------------------------- -->
+            <div id="esc_calib" style="visibility: hidden; position: absolute; top: 110px; left: 144px; height: 300px; width: 340px;">
+                <p style="font-size:11px;position:absolute;top:10px;left:110px;"><b>ESC Calibration Procedure</b></p>
+                <div style="position:absolute;top:33px;left:10px;height:70px;width:321px;font-size:5.5px;">
+                    <p>As you have selected to use a MultiRotor and Fast/Flashed ESCs, we need to calibrate the endpoints of these ESCs so they can see the full throttle range sent from the flight controller.
+                        <br><br>This part of the wizard will tell you to connect the battery to your aircraft, before doing so you absolutely <b style="color:red;">must remove the propellers from all motors</b>.<br><br> The steps to perform this calibration
+                        are as follows:<br><br>
+                        <b>1.</b>&nbsp;Confirm all safety questions.<br>
+                        <b>2.</b>&nbsp;Press the Start button when it becomes enabled, <b>battery not connected</b>.<br>
+                        <b>3.</b>&nbsp;Connect the battery to your airframe.<br>
+                        <b>4.</b>&nbsp;Wait for the ESC calibration beep(s).<br>
+                        <b>5.</b>&nbsp;Press the Stop button.<br>
+                        <b>6.</b>&nbsp;Wait for the ESC confirmation beep(s).<br>
+                        <b>7.</b>&nbsp;Disconnect battery.<br>
+
+                    </p>
+                </div>
+                <img id="check_box" src="./Images/checkbox.png" style="height:10px;width: 10px;position: absolute;top: 135px;left: 110px;" onclick="uncheck();" alt="Checkbox">
+                <img id="check_box" src="./Images/checkbox.png" style="height:10px;width: 10px;position: absolute;top: 145px;left: 110px;" onclick="uncheck();" alt="Checkbox">
+                <img id="check_box" src="./Images/checkbox.png" style="height:10px;width: 10px;position: absolute;top: 155px;left: 110px;" onclick="uncheck();" alt="Checkbox">
+                <p style="position: absolute;top: 133px;left: 120px;font-size:5.5px;">I have removed ALL propellers from ALL motors of my vehicle</p>
+                <p style="position: absolute;top: 143px;left: 120px;font-size:5.5px;">The vehicle is NOT powered by any external power source but USB</p>
+                <p style="position: absolute;top: 153px;left: 120px;font-size:5.5px;">I confirm I have read and understood the above instruction in full</p>
+                <img style="position: absolute;top: 167px;left:80px;height:35px;width: 60px;" src="./Images/open_colour.png" alt="Battery connection open">
+                <img style="position: absolute;top: 167px;left:200px;height:35px;width: 60px;" src="./Images/close_bw.png" alt="Battery connection close">
+                <!-- <p style="border-radius:10px;height:25px;width:100px;background-color: blue;">Low/Off</p> -->
+
+
+
+            </div>
+
 
             <!-- Line  -->
             <!-- <img id="line" src="./Images/uav/line2.png" style="position: absolute; top: 33%; left: 10%; width: 60%; height: auto; visibility: hidden;" /> -->
