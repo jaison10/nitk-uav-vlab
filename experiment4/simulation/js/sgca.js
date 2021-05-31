@@ -434,7 +434,13 @@ function cancel_setup() {
     document.getElementById('vehicle_type').style.visibility = "hidden";
     document.getElementById('multirotor_config').style.visibility = "hidden";
     document.getElementById('upgrade_text').style.visibility = "hidden";
-
+    document.getElementById('circuit_diagram').style.visibility = "hidden";
+    document.getElementById('close_button').style.visibility = "hidden";
+    document.getElementById('save_button').style.visibility = "hidden";
+    document.getElementById('tab_head').style.visibility = "hidden";
+    document.getElementById('tab_logo').style.visibility = "hidden";
+    document.getElementById('op_signal_config').style.visibility = "hidden";
+    document.getElementById('config_summary').style.visibility = "hidden";
 
 
 }
@@ -636,7 +642,27 @@ function selectInput(id) {
 
 }
 
+function selectOutput(id) {
+    if (id == 1) {
+        document.getElementById('op1').src = "./Images/standard esc_selected.PNG";
+        document.getElementById('op2').src = "./Images/rapid escUnselected.PNG";
+        document.getElementById('op3').src = "./Images/one shot esc_selected.PNG";
 
+
+
+    } else if (id == 2) {
+        document.getElementById('op1').src = "./Images/standard esc_unselected.PNG";
+        document.getElementById('op2').src = "./Images/rapid esc_selected.PNG";
+        document.getElementById('op3').src = "./Images/one shot esc_selected.PNG";
+
+
+    } else if (id == 3) {
+        document.getElementById('op1').src = "./Images/standard esc_unselected.PNG";
+        document.getElementById('op2').src = "./Images/rapid escUnselected.PNG";
+        document.getElementById('op3').src = "./Images/one shot esc_uselected.PNG";
+
+    }
+}
 
 var upgradeClicked = 0;
 
