@@ -452,7 +452,7 @@ function upgrade() {
     document.getElementById('back_button').style.cursor = "pointer";
     document.getElementById('upgrade_button').style.cursor = "pointer";
     document.getElementById('setupContent').style.visibility = "hidden";
-    document.getElementById('upgrade_button').onclick = function() { clickUpgrade(); };
+    document.getElementById('upgrade_button').onclick = function() { clickUpgrade(1); };
     document.getElementById('back_button').onclick = function() { setup(); };
     document.getElementById('next_button').onclick = function() {
         if (upgradeClicked == 1) {
@@ -533,6 +533,7 @@ function OutputSignalConfig() {
 }
 
 function ConfigSummary() {
+    document.getElementById('top_text').innerText = "This step summarizes all the options chosen so far. Click on the Connection Diagram to view the connections between the ESCs, Flight Controller and Receiver.";
     document.getElementById('op_signal_config').style.visibility = "hidden";
     document.getElementById('config_summary').style.visibility = "visible";
     document.getElementById('next_button').onclick = function() { SensorCalibProc(); };
@@ -542,10 +543,16 @@ function ConfigSummary() {
 }
 
 function SensorCalibProc() {
+    document.getElementById('top_text').innerText = "Click on the Calculate button.This step configures the internal sensors of the CC3D to understand the orientation of the Quadcopter. Make sure the Flight Controller is placed on the frame of the Quadcopter.";
+    document.getElementById('sensor_calib').style.visibility = "visible";
     document.getElementById('config_summary').style.visibility = "hidden";
+    document.getElementById('calculate_button').onclick = function() { clickUpgrade(2); };
+    document.getElementById('back_button').onclick = function() { ConfigSummary(); };
+
     console.log(9);
 
 }
+// document.getElementById('cal_status').style.visibility = "visible";
 
 function showDiagram() {
     document.getElementById('circuit_diagram').style.visibility = "visible";
@@ -666,21 +673,35 @@ function selectOutput(id) {
 
 var upgradeClicked = 0;
 
-function clickUpgrade() {
+function clickUpgrade(id) {
     upgradeClicked = 1;
 
 
-    document.getElementById('upgrade_text').style.visibility = "hidden";
-    document.getElementById('full_status').style.visibility = "visible";
-    document.getElementById('full_status').style.width = "318px";
-    document.getElementById('full_status').style.transition = "all 1s ease-in-out";
+    if (id == 1) {
+        document.getElementById('upgrade_text').style.visibility = "hidden";
+        document.getElementById('full_status').style.visibility = "visible";
+        document.getElementById('full_status').style.width = "318px";
+        document.getElementById('full_status').style.transition = "all 1s ease-in-out";
+        setTimeout(() => {
+            document.getElementById('full_status').style.transition = "none";
+            document.getElementById('upgrade_inst').innerText = "Board updated, please press 'Next' to continue.";
+            document.getElementById('next_button').onclick = function() { boardIdentification(); };
 
-    setTimeout(() => {
-        document.getElementById('full_status').style.transition = "none";
-        document.getElementById('upgrade_inst').innerText = "Board updated, please press 'Next' to continue.";
-        document.getElementById('next_button').onclick = function() { boardIdentification(); };
+        }, 1000);
+    }
 
-    }, 1000);
+    if (id == 2) {
+
+        document.getElementById('cal_status').style.visibility = "visible";
+        document.getElementById('cal_status').style.width = "318px";
+        document.getElementById('cal_status').style.transition = "all 1s ease-in-out";
+        setTimeout(() => {
+            document.getElementById('cal_status').style.transition = "none";
+            document.getElementById('calculate_inst').innerText = "Done!";
+
+
+        }, 1000);
+    }
 
 }
 var box_click = 0;

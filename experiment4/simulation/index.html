@@ -338,7 +338,10 @@
             <img id="second_status" style="visibility: hidden;position: absolute;top: 194px;left: 8px;height: 20px;" src="./Images/second-ConvertImage.png" alt="Upgrade Status">
             <img id="third_status" style="visibility: hidden;position: absolute;top: 194px;left: 8px;height: 20px;" src="./Images/third-ConvertImage.png" alt="Upgrade Status"> -->
             <img id="full_status" style="visibility: hidden; position: absolute; top: 308px; left: 155px; height: 11px; width: 50px;" src="./Images/full_status-ConvertImage.png" alt="Upgrade Status">
+            <img id="cal_status" style="visibility: hidden; position: absolute; top: 319px; left: 155px; height: 11px; width: 50px;z-index: 100;" src="./Images/full_status-ConvertImage.png" alt="Calculate Status">
             <p id="upgrade_text" style="visibility: hidden; font-size: 10px; position: absolute; top: 225px; left: 170px; color: red;">Click on Upgrade first before proceeding to the next step!</p>
+
+
             <!-- ---------------------------Wordings on Setup wizard tab - Board Identification--------------------------- -->
             <div id="board_identification" style="visibility: hidden; position: absolute; top: 110px; left: 144px; height: 300px; width: 340px;">
                 <p style="font-size:11px;position:absolute;top:10px;left:110px;"><b>Board Identification</b></p>
@@ -476,6 +479,23 @@
                 <img id="tab_logo" style="visibility: hidden; position: absolute; width: 9px; height: 9px; left: 10px; top: 82px;" src="./Images/Liibre_pilot_Grey.png" alt="LibrePilot logo">
                 <p id="tab_head" style="visibility: hidden; position: absolute; font-size: 8px; left:22px; top: 72.5px;">Connection Diagram</p>
             </div>
+
+
+            <!-- ---------------------------Wordings on Setup wizard tab - Sensor Calibration Procedure--------------------------- -->
+            <div id="sensor_calib" style="visibility: hidden; position: absolute; top: 110px; left: 144px; height: 300px; width: 340px;">
+                <p style="font-size:11px;position:absolute;top:10px;left:110px;"><b>Sensor Calibration Procedure</b></p>
+                <div style="position:absolute;top:40px;left:10px;height:70px;width:321px;font-size:6px;">
+                    <p>The wizard needs to get information from the controller to determine in which position the vehicle is normally considered to be level. To be able to successfully perform these measurements, you need to place the vehicle on a surface
+                        that is as flat and level as possible. Examples of such surfaces could be a table top or the floor. Be careful to ensure that the vehicle really is level, since this step will affect the accelerometer and gyro bias in the computer
+                        software.
+                        <br><br>To perform the calibration, please push the Calculate button and wait for the process to finish.
+                    </p>
+                </div>
+                <p id="calculate_inst" style="position: absolute;top: 190px;left: 10px;font-size:6px;">Retrieving data...</p>
+                <img id="calculate_button" src="./Images/calculate.png" style="cursor: pointer;position: absolute;top: 165px;left: 130px;height: 30px;width: 90px;" alt="Calculate button">
+                <img src="./Images/upgrade_status.png" style="height: 20px;width: 327px;position: absolute;top: 204px;left: 7px;" alt="Calculate Status bar">
+            </div>
+
 
             <!-- Line  -->
             <!-- <img id="line" src="./Images/uav/line2.png" style="position: absolute; top: 33%; left: 10%; width: 60%; height: auto; visibility: hidden;" /> -->
