@@ -539,7 +539,8 @@ function ConfigSummary() {
     document.getElementById('next_button').onclick = function() { SensorCalibProc(); };
     document.getElementById('back_button').onclick = function() { OutputSignalConfig(); };
     document.getElementById('sensor_calib').style.visibility = "hidden";
-
+    document.getElementById('calculate_inst').style.visibility = "hidden";
+    document.getElementById('cal_status').style.visibility = "hidden";
     console.log(8);
 
 }
@@ -559,14 +560,40 @@ function SensorCalibProc() {
 }
 
 function EscCalib() {
-    document.getElementById('top_text').innerText = "Read the guidelines and tick the three options.";
+    document.getElementById('calculate_inst').style.visibility = "hidden";
+    document.getElementById('cal_status').style.visibility = "hidden";
+    document.getElementById('top_text').innerText = "Read the guidelines and tick the three options and then Click the Start button to start calibrating the ESCs.";
+    document.getElementById('start_button').style.cursor = "visible";
+    document.getElementById('start_button').onclick = function() {
+        // document.getElementById('back_button').style.visibility = "hidden";
+        // document.getElementById('next_button').style.visibility = "hidden";
+        // document.getElementById('cancel_button').style.visibility = "hidden";
+        document.getElementById('high').style = "border-radius: 3px; height: 7px; width: 35px; background-color: red; position: absolute; top: 193px; left: 294px; text-align: center; font-size: 6px; padding: 2px; color: white;";
+        document.getElementById('low').style = "position: absolute;top: 194px; left: 20px;color: #949494;font-size:6px;";
+        document.getElementById('microSec').innerText = "1900 µs";
+        document.getElementById('stop_button').style = "position: absolute;top: 205px;left: 180px;border: 1px solid black;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;cursor:pointer;color:black;";
+        document.getElementById('top_text').innerText = "Now, Connect the battery. Wait for 2-3 beeps. ";
+        document.getElementById('start_button').style = "position: absolute;top: 205px;left: 130px;border: 1px solid #d3d3d3;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;color: gray;cursor:default;";
+    }
+    document.getElementById('stop_button').onclick = function() {
+        document.getElementById('low').style = "position: absolute;top: 194px; left: 20px;color: #949494;font-size:6px;";
+        document.getElementById('high').style = " position: absolute;top: 193px;left: 300px;color: #949494;font-size:6px;";
+        document.getElementById('stop_button').style = "position: absolute;top: 205px;left: 180px;border: 1px solid #d3d3d3;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;color: gray;cursor:default;";
+
+    }
     document.getElementById('esc_calib').style.visibility = "visible";
     document.getElementById('sensor_calib').style.visibility = "hidden";
     document.getElementById('cal_status').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { SensorCalibProc(); };
-
+    document.getElementById('next_button').onclick = function() { OutputCalib(); };
     console.log(10);
 
+}
+
+function OutputCalib() {
+    document.getElementById('esc_calib').style.visibility = "hidden";
+    document.getElementById('output_calib').style.visibility = "visible";
+    document.getElementById('back_button').onclick = function() { EscCalib(); };
 }
 
 function showDiagram() {
@@ -706,10 +733,12 @@ function clickUpgrade(id) {
     }
 
     if (id == 2) {
-
+        document.getElementById('calculate_inst').style.visibility = "visible";
         document.getElementById('cal_status').style.visibility = "visible";
         document.getElementById('cal_status').style.width = "318px";
         document.getElementById('cal_status').style.transition = "all 1s ease-in-out";
+        document.getElementById('calculate_inst').innerText = "Retrieving data...";
+
         setTimeout(() => {
             document.getElementById('cal_status').style.transition = "none";
             document.getElementById('calculate_inst').innerText = "Done!";

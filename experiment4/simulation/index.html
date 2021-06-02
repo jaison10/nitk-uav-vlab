@@ -491,7 +491,7 @@
                         <br><br>To perform the calibration, please push the Calculate button and wait for the process to finish.
                     </p>
                 </div>
-                <p id="calculate_inst" style="position: absolute;top: 190px;left: 10px;font-size:6px;">Retrieving data...</p>
+                <p id="calculate_inst" style="visibility: hidden;position: absolute;top: 190px;left: 10px;font-size:6px;"></p>
                 <img id="calculate_button" src="./Images/calculate.png" style="cursor: pointer;position: absolute;top: 165px;left: 130px;height: 30px;width: 90px;" alt="Calculate button">
                 <img src="./Images/upgrade_status.png" style="height: 20px;width: 327px;position: absolute;top: 204px;left: 7px;" alt="Calculate Status bar">
             </div>
@@ -521,9 +521,35 @@
                 <p style="position: absolute;top: 153px;left: 120px;font-size:5.5px;">I confirm I have read and understood the above instruction in full</p>
                 <img style="position: absolute;top: 167px;left:80px;height:35px;width: 60px;" src="./Images/open_colour.png" alt="Battery connection open">
                 <img style="position: absolute;top: 167px;left:200px;height:35px;width: 60px;" src="./Images/close_bw.png" alt="Battery connection close">
-                <!-- <p style="border-radius:10px;height:25px;width:100px;background-color: blue;">Low/Off</p> -->
+                <p id="low" style="border-radius:3px;height:8px;width:50px;background-color:#075fb6 ;position: absolute;top: 192px;left: 10px;text-align: center;font-size:6px;padding:2px;">Low/Off</p>
+                <p id="high" style="position: absolute;top: 193px;left: 300px;color: #949494;font-size:6px;">High</p>
+                <hr style="position: absolute;width: 100px;top: 196px;left: 66px;border-top:1px solid #d3d3d3;background-color:#ececec;border-radius:3px;">
+                <hr style="position: absolute;width: 98px;top: 196px;left:194px;border-top:1px solid #d3d3d3;background-color:#ececec;border-radius:3px;">
+                <p id="microSec" style="position: absolute;top: 194px;left: 169px;font-size:6px;">900 µs</p>
+                <p id="start_button" style="position: absolute;top: 205px;left: 130px;border: 1px solid black;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;">Start</p>
+                <p id="stop_button" style="position: absolute;top: 205px;left: 180px;border: 1px solid #d3d3d3;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;color: gray;">Stop</p>
+
+            </div>
 
 
+            <!-------------------------------- Disabled next, back and cancel buttons for the esc calibration procedure --------------------------->
+            <p id="dis_next" style="visibility: hidden;position: absolute;top: 205px;left: 180px;border: 1px solid #d3d3d3;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;color: gray;">Next</p>
+            <p id="dis_back" style="visibility: hidden;position: absolute;top: 205px;left: 180px;border: 1px solid #d3d3d3;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;color: gray;">Back</p>
+            <p id="dis_cancel" style="visibility: hidden;position: absolute;top: 205px;left: 180px;border: 1px solid #d3d3d3;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;color: gray;">Cancel</p>
+
+
+            <!-- ---------------------------Wordings on Setup wizard tab - Output Calibration--------------------------- -->
+            <div id="output_calib" style="visibility: hidden; position: absolute; top: 110px; left: 144px; height: 300px; width: 340px;">
+                <p style="font-size:10px;position:absolute;top:10px;left:70px;"><b>Output Calibration</b></p>
+                <div style="position:absolute;top:33px;left:12px;height:70px;width:200px;font-size:6px;">
+                    <p>It is now time to calibrate the output levels for the signals controlling your vehicle.
+                    </p>
+                    <p style="color:gray;font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VERY IMPORTANT!&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>REMOVE
+                        ALL PROPELLERS FROM THE VEHICLE BEFORE<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PROCEEDING!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <p>Connect all components according to the ilustration on the summary page, and provide power using an external power supply such as a battery before continuing.<br><br>Depending on what vehicle you have selected, both the motors controlled
+                        by ESCs and/or servos controlled directly by the flight controller may have to be calibrated. The following steps will guide you safely through this process.</p>
+                </div>
+                <img id="quad_diag" src="./Images/OutputCalib (2).png" style="position: absolute;top: 60px;left: 205px;height: 120px;width: 130px;" alt="Quadcopter Diagram">
 
             </div>
 
