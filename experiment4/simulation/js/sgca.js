@@ -563,18 +563,42 @@ function EscCalib() {
     document.getElementById('calculate_inst').style.visibility = "hidden";
     document.getElementById('cal_status').style.visibility = "hidden";
     document.getElementById('top_text').innerText = "Read the guidelines and tick the three options and then Click the Start button to start calibrating the ESCs.";
-    document.getElementById('start_button').style.cursor = "visible";
+    document.getElementById('start_button').style.cursor = "pointer";
     document.getElementById('start_button').onclick = function() {
         // document.getElementById('back_button').style.visibility = "hidden";
         // document.getElementById('next_button').style.visibility = "hidden";
         // document.getElementById('cancel_button').style.visibility = "hidden";
+        document.getElementById('top_text').innerText = "Connect the Battery to the Battery Connector that is soldered to the Power Distribution Board(PDB).";
         document.getElementById('high').style = "border-radius: 3px; height: 7px; width: 35px; background-color: red; position: absolute; top: 193px; left: 294px; text-align: center; font-size: 6px; padding: 2px; color: white;";
         document.getElementById('low').style = "position: absolute;top: 194px; left: 20px;color: #949494;font-size:6px;";
         document.getElementById('microSec').innerText = "1900 µs";
         document.getElementById('stop_button').style = "position: absolute;top: 205px;left: 180px;border: 1px solid black;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;cursor:pointer;color:black;";
         document.getElementById('top_text').innerText = "Now, Connect the battery. Wait for 2-3 beeps. ";
         document.getElementById('start_button').style = "position: absolute;top: 205px;left: 130px;border: 1px solid #d3d3d3;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;color: gray;cursor:default;";
+        document.getElementById('connect_battery').style.visibility = "visible";
+        document.getElementById('battery_connector').style.cursor = "pointer";
+        myInt = setInterval(function() { animatearrow(); }, 500);
+
+        document.getElementById('arrow1').style = "visibility: visible; position: absolute; left: 545px; top: 455px; height: 30px; z-index:10;";
+
+        document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)";
+        // Code for IE9
+        document.getElementById("arrow1").style.msTransform = "rotate(270deg)";
+        // Standard syntax
+        document.getElementById("arrow1").style.transform = "rotate(270deg)";
     }
+    document.getElementById('battery_connector').onclick = function() {
+        myStopFunction();
+        document.getElementById('battery_connector').style = "position: absolute;top: 42px;left:90px;height: 90px;width:110px;transform:rotate(2deg);";
+        document.getElementById('battery').style = "position: absolute;top: 37px;left:102px;height: 70px;width: 170px;transform:rotate(2deg);";
+        document.getElementById('close_icon').style.visibility = "visible";
+    }
+    document.getElementById('close_icon').onclick = function() {
+        document.getElementById('connect_battery').style.visibility = "hidden";
+        document.getElementById('close_icon').style.visibility = "hidden";
+
+    }
+
     document.getElementById('stop_button').onclick = function() {
         document.getElementById('low').style = "position: absolute;top: 194px; left: 20px;color: #949494;font-size:6px;";
         document.getElementById('high').style = " position: absolute;top: 193px;left: 300px;color: #949494;font-size:6px;";
@@ -586,6 +610,8 @@ function EscCalib() {
     document.getElementById('cal_status').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { SensorCalibProc(); };
     document.getElementById('next_button').onclick = function() { OutputCalib(); };
+    document.getElementById('output_calib').style.visibility = "hidden";
+
     console.log(10);
 
 }
