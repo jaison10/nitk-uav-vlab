@@ -542,6 +542,7 @@ function ConfigSummary() {
     document.getElementById('calculate_inst').style.visibility = "hidden";
     document.getElementById('cal_status').style.visibility = "hidden";
     console.log(8);
+    document.getElementById('start_button').style = "position: absolute;top: 205px;left: 130px;border: 1px solid black;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;";
 
 }
 
@@ -558,6 +559,8 @@ function SensorCalibProc() {
     console.log(9);
 
 }
+// var myMusic;
+// myMusic = new sound("./sound/beep.mp3");
 
 function EscCalib() {
     document.getElementById('calculate_inst').style.visibility = "hidden";
@@ -565,15 +568,21 @@ function EscCalib() {
     document.getElementById('top_text').innerText = "Read the guidelines and tick the three options and then Click the Start button to start calibrating the ESCs.";
     document.getElementById('start_button').style.cursor = "pointer";
     document.getElementById('start_button').onclick = function() {
-        // document.getElementById('back_button').style.visibility = "hidden";
-        // document.getElementById('next_button').style.visibility = "hidden";
-        // document.getElementById('cancel_button').style.visibility = "hidden";
+        document.getElementById('back_button').style.visibility = "hidden";
+        document.getElementById('next_button').style.visibility = "hidden";
+        document.getElementById('cancel_button').style.visibility = "hidden";
+
+        document.getElementById('dis_next').style.visibility = "visible";
+        document.getElementById('dis_back').style.visibility = "visible";
+        document.getElementById('dis_cancel').style.visibility = "visible";
+        document.getElementById('dis_back').innerText = "< Back";
+
         document.getElementById('top_text').innerText = "Connect the Battery to the Battery Connector that is soldered to the Power Distribution Board(PDB).";
         document.getElementById('high').style = "border-radius: 3px; height: 7px; width: 35px; background-color: red; position: absolute; top: 193px; left: 294px; text-align: center; font-size: 6px; padding: 2px; color: white;";
         document.getElementById('low').style = "position: absolute;top: 194px; left: 20px;color: #949494;font-size:6px;";
         document.getElementById('microSec').innerText = "1900 µs";
-        document.getElementById('stop_button').style = "position: absolute;top: 205px;left: 180px;border: 1px solid black;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;cursor:pointer;color:black;";
-        document.getElementById('top_text').innerText = "Now, Connect the battery. Wait for 2-3 beeps. ";
+        document.getElementById('stop_button').style = "position: absolute;top: 205px;left: 180px;border: 1px solid black;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;color:black;";
+        document.getElementById('top_text').innerText = "Now, Connect the battery. Wait for 2-3 beeps. Then click the stop button.";
         document.getElementById('start_button').style = "position: absolute;top: 205px;left: 130px;border: 1px solid #d3d3d3;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;color: gray;cursor:default;";
         document.getElementById('connect_battery').style.visibility = "visible";
         document.getElementById('battery_connector').style.cursor = "pointer";
@@ -588,23 +597,61 @@ function EscCalib() {
         document.getElementById("arrow1").style.transform = "rotate(270deg)";
     }
     document.getElementById('battery_connector').onclick = function() {
+
+        // myMusic.play();
         myStopFunction();
         document.getElementById('battery_connector').style = "position: absolute;top: 42px;left:90px;height: 90px;width:110px;transform:rotate(2deg);";
         document.getElementById('battery').style = "position: absolute;top: 37px;left:102px;height: 70px;width: 170px;transform:rotate(2deg);";
         document.getElementById('close_icon').style.visibility = "visible";
     }
     document.getElementById('close_icon').onclick = function() {
+        myStopFunction();
+        myStopFunction();
+        document.getElementById('battery_connector').style = "position: absolute;top: 43px;left:40px;height: 90px;width:110px;";
+        document.getElementById('battery').style = "position: absolute;top: 30px;left:110px;height: 70px;width: 170px;";
         document.getElementById('connect_battery').style.visibility = "hidden";
         document.getElementById('close_icon').style.visibility = "hidden";
+        document.getElementById('stop_button').style.cursor = "pointer";
+        document.getElementById('stop_button').onclick = function() {
+            document.getElementById('top_text').innerText = "Wait for the ESC Confirmation beeps. Then disconnect the battery and move to the next step.";
+            document.getElementById('low').style = "position: absolute;top: 194px; left: 20px;color: #949494;font-size:6px;";
+            document.getElementById('high').style = " position: absolute;top: 193px;left: 300px;color: #949494;font-size:6px;";
+            document.getElementById('stop_button').style = "position: absolute;top: 205px;left: 180px;border: 1px solid #d3d3d3;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;color: gray;cursor:default;";
+            setTimeout(function() {
+                document.getElementById('microSec').innerText = "1050 µs";
+            }, 500);
+            setTimeout(function() {
+                document.getElementById('microSec').innerText = "1040 µs";
+            }, 600);
+            setTimeout(function() {
+                document.getElementById('microSec').innerText = "1030 µs";
+            }, 1000);
+            setTimeout(function() {
+                document.getElementById('microSec').innerText = "1020 µs";
+            }, 1300);
+            setTimeout(function() {
+                document.getElementById('microSec').innerText = "1000 µs";
+            }, 1600);
+            setTimeout(function() {
+                document.getElementById('low').style = "border-radius:3px;height:8px;width:50px;background-color:#075fb6 ;position: absolute;top: 192px;left: 10px;text-align: center;font-size:6px;padding:2px;";
+
+                document.getElementById('microSec').innerText = "900 µs";
+                document.getElementById('back_button').style.visibility = "visible";
+                document.getElementById('next_button').style.visibility = "visible";
+                document.getElementById('cancel_button').style.visibility = "visible";
+                document.getElementById('stop_button').onclick = "";
+                document.getElementById('start_button').onclick = "";
+
+                document.getElementById('dis_next').style.visibility = "hidden";
+                document.getElementById('dis_back').style.visibility = "hidden";
+                document.getElementById('dis_cancel').style.visibility = "hidden";
+            }, 1900);
+
+        }
 
     }
 
-    document.getElementById('stop_button').onclick = function() {
-        document.getElementById('low').style = "position: absolute;top: 194px; left: 20px;color: #949494;font-size:6px;";
-        document.getElementById('high').style = " position: absolute;top: 193px;left: 300px;color: #949494;font-size:6px;";
-        document.getElementById('stop_button').style = "position: absolute;top: 205px;left: 180px;border: 1px solid #d3d3d3;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;color: gray;cursor:default;";
 
-    }
     document.getElementById('esc_calib').style.visibility = "visible";
     document.getElementById('sensor_calib').style.visibility = "hidden";
     document.getElementById('cal_status').style.visibility = "hidden";
@@ -617,6 +664,7 @@ function EscCalib() {
 }
 
 function OutputCalib() {
+    document.getElementById('start_button').style = "position: absolute;top: 205px;left: 130px;border: 1px solid black;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;";
     document.getElementById('esc_calib').style.visibility = "hidden";
     document.getElementById('output_calib').style.visibility = "visible";
     document.getElementById('back_button').onclick = function() { EscCalib(); };
