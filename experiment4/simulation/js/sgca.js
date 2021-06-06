@@ -441,6 +441,9 @@ function cancel_setup() {
     document.getElementById('tab_logo').style.visibility = "hidden";
     document.getElementById('op_signal_config').style.visibility = "hidden";
     document.getElementById('config_summary').style.visibility = "hidden";
+    document.getElementById('output_calib').style.visibility = "hidden";
+    document.getElementById('sensor_calib').style.visibility = "hidden";
+    document.getElementById('esc_calib').style.visibility = "hidden";
 
 
 }
@@ -613,7 +616,7 @@ function EscCalib() {
         document.getElementById('close_icon').style.visibility = "hidden";
         document.getElementById('stop_button').style.cursor = "pointer";
         document.getElementById('stop_button').onclick = function() {
-            document.getElementById('top_text').innerText = "Wait for the ESC Confirmation beeps. Then disconnect the battery and move to the next step.";
+            document.getElementById('top_text').innerText = "Wait for the ESC Confirmation beeps. Then move to the next step.";
             document.getElementById('low').style = "position: absolute;top: 194px; left: 20px;color: #949494;font-size:6px;";
             document.getElementById('high').style = " position: absolute;top: 193px;left: 300px;color: #949494;font-size:6px;";
             document.getElementById('stop_button').style = "position: absolute;top: 205px;left: 180px;border: 1px solid #d3d3d3;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;color: gray;cursor:default;";
@@ -664,10 +667,93 @@ function EscCalib() {
 }
 
 function OutputCalib() {
+    document.getElementById('top_text').innerText = "Let us calibrate the output levels for the signals.Keep the battery connected and make sure all the propellers are removed.";
     document.getElementById('start_button').style = "position: absolute;top: 205px;left: 130px;border: 1px solid black;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;";
     document.getElementById('esc_calib').style.visibility = "hidden";
     document.getElementById('output_calib').style.visibility = "visible";
+    document.getElementById('next_button').onclick = function() { OutputCalib2(); };
     document.getElementById('back_button').onclick = function() { EscCalib(); };
+    console.log(11);
+
+}
+
+function OutputCalib2() {
+    document.getElementById('outputCalib2').style.visibility = "visible";
+    document.getElementById('opCalibContent').innerHTML = "In this step we will set the neutral rate for the motor highlighted in the illustration to the right.<br>Please pay attention to the details and in particular the motors position and its rotation direction. Ensure the motors are spinning in the correct direction as shown in the diagram. Swap any 2 motor wires to change the direction of a motor.<br><br>To find <b>the neutral rate for this motor</b>, press the Start button below and slide the slider to the right until the motor just starts to spin stable.<br><br>When done press button again to stop."
+    document.getElementById('quad_diag').src = "./Images/motor1im-removebg-preview.png";
+    const slider = document.getElementById("range_slider");
+    // const min = slider.min
+    // const max = slider.max
+    // const value = slider.value
+
+    // // slider.style.background = `linear-gradient(to right, white 0%, white ${(value-min)/(max-min)*100}%, #DEE2E6 ${(value-min)/(max-min)*100}%, #DEE2E6 100%)`
+
+    // slider.oninput = function() {
+    //     this.style.background = `linear-gradient(to right, blue 0%, blue ${(this.value-this.min)/(this.max-this.min)*100}%, #DEE2E6 ${(this.value-this.min)/(this.max-this.min)*100}%, #DEE2E6 100%)`;
+
+    // };
+
+
+    //for older browsers 
+    function isOlderEdgeOrIE() {
+        return (
+            window.navigator.userAgent.indexOf("MSIE ") > -1 ||
+            !!navigator.userAgent.match(/Trident.*rv\:11\./) ||
+            window.navigator.userAgent.indexOf("Edge") > -1
+        );
+    }
+
+    function valueTotalRatio(value, min, max) {
+        return ((value - min) / (max - min)).toFixed(2);
+    }
+
+    function getLinearGradientCSS(ratio, leftColor, rightColor) {
+        return [
+            '-webkit-gradient(',
+            'linear, ',
+            'left top, ',
+            'right top, ',
+            'color-stop(' + ratio + ', ' + leftColor + '), ',
+            'color-stop(' + ratio + ', ' + rightColor + ')',
+            ')'
+        ].join('');
+    }
+
+    function updateRangeEl(rangeEl) {
+        var ratio = valueTotalRatio(rangeEl.value, rangeEl.min, rangeEl.max);
+
+        rangeEl.style.backgroundImage = getLinearGradientCSS(ratio, 'blue', '#c5c5c5');
+    }
+
+    function initRangeEl() {
+        var rangeEl = document.querySelector('input[type=range]');
+        var textEl = document.querySelector('input[type=text]');
+
+        if (isOlderEdgeOrIE()) {
+            rangeEl.style.height = "20px";
+
+            rangeEl.addEventListener("change", function(e) {
+                textEl.value = e.target.value;
+            });
+            rangeEl.addEventListener("input", function(e) {
+                textEl.value = e.target.value;
+            });
+        } else {
+            updateRangeEl(rangeEl);
+            rangeEl.addEventListener("input", function(e) {
+                updateRangeEl(e.target);
+                textEl.value = e.target.value;
+            });
+        }
+    }
+
+    initRangeEl();
+    var output = document.getElementById("opValue");
+    output.innerHTML = slider.value;
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+
+    }
 }
 
 function showDiagram() {
@@ -834,11 +920,32 @@ function uncheck() {
         box_click = 0;
 
     }
+}
+var box_unclick = 0;
 
+function check() {
+    if (box_unclick == 0) {
+        document.getElementById('OPCcheck_box').src = "./Images/checkbox.png";
+        box_unclick = 1;
+    } else {
+        document.getElementById('OPCcheck_box').src = "./Images/unchecked_checkbox.png";
+        box_unclick = 0;
 
-
+    }
 }
 
+// var check_box = 1;
+
+// function uncheck() {
+//     if (box_click == 0) {
+//         document.getElementById('check_box').src = "./Images/unchecked_checkbox.png";
+//         box_click = 1;
+//     } else {
+//         document.getElementById('check_box').src = "./Images/checkbox.png";
+//         box_click = 0;
+
+//     }
+// }
 
 function removeAllKnobsAndProps() {
     myStopFunction();

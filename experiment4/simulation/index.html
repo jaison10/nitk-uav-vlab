@@ -547,15 +547,26 @@
             <!-- ---------------------------Wordings on Setup wizard tab - Output Calibration--------------------------- -->
             <div id="output_calib" style="visibility: hidden; position: absolute; top: 110px; left: 144px; height: 300px; width: 340px;">
                 <p style="font-size:10px;position:absolute;top:10px;left:70px;"><b>Output Calibration</b></p>
-                <div style="position:absolute;top:33px;left:12px;height:70px;width:200px;font-size:6px;">
+                <div id="opCalibContent" style="position:absolute;top:38px;left:12px;height:70px;width:200px;font-size:6px;">
                     <p>It is now time to calibrate the output levels for the signals controlling your vehicle.
                     </p>
                     <p style="color:gray;font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VERY IMPORTANT!&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>REMOVE
                         ALL PROPELLERS FROM THE VEHICLE BEFORE<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PROCEEDING!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                     <p>Connect all components according to the ilustration on the summary page, and provide power using an external power supply such as a battery before continuing.<br><br>Depending on what vehicle you have selected, both the motors controlled
                         by ESCs and/or servos controlled directly by the flight controller may have to be calibrated. The following steps will guide you safely through this process.</p>
+
                 </div>
                 <img id="quad_diag" src="./Images/OutputCalib (2).png" style="position: absolute;top: 60px;left: 205px;height: 120px;width: 130px;" alt="Quadcopter Diagram">
+
+                <div id="outputCalib2" style="visibility:hidden;">
+                    <img id="OPCcheck_box" src="./Images/unchecked_checkbox.png" style="height: 10px; width: 10px; position: absolute; top: 134px; left: 10px;" onclick="check();" alt="Checkbox">
+                    <p style=" font-size: 5.5px; position: absolute; top: 132px; left: 20px;">Calibrate all motor outputs at the same time.</p>
+                    <p style="font-size: 5.5px; position: absolute; top: 180px; left: 10px;">Output value:</p>
+                    <p style="font-size: 5.5px; position: absolute; top: 180px; left: 50px;"><b id="opValue">1000</b> µs</p>
+                    <input id="range_slider" class="range_slider" style="position:absolute;width:185px;top:195px;height:3px;left: 8px;" type="range" min="1000" max="2000" value="0">
+                    <p id="startButtonOpCalib" style="position: absolute;top: 200px;left: 10px;border: 1px solid #d3d3d3;border-radius: 2px;font-size:6.5px;padding:1px;width:185px;text-align:center;background-color:#ececec;">Start</p>
+                </div>
+
 
             </div>
 

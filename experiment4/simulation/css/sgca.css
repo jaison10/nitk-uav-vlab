@@ -41,6 +41,107 @@ html {
     margin: 0px;
 }
 
+input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 185px;
+    height: 3px;
+    padding: 0;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    background: #d3d3d3;
+    border: 1px solid gray;
+    border-radius: 15px;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+
+/*Chrome thumb*/
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 15px;
+    width: 16px;
+    height: 7.5px;
+    border: 1px solid gray;
+    background: #d3d3d3;
+    cursor: pointer;
+}
+
+
+/*Mozilla thumb*/
+
+input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 15px;
+    width: 16px;
+    height: 7.5px;
+    border: 1px solid gray;
+    background: #d3d3d3;
+    cursor: pointer;
+}
+
+
+/*IE & Edge input*/
+
+input[type=range]::-ms-track {
+    width: 300px;
+    height: 6px;
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 2px 0;
+    /*remove default tick marks*/
+    color: transparent;
+}
+
+
+/*IE & Edge thumb*/
+
+input[type=range]::-ms-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 15px;
+    width: 16px;
+    height: 7.5px;
+    border: 1px solid gray;
+    background: #d3d3d3;
+    cursor: pointer;
+}
+
+
+/*IE & Edge left side*/
+
+input[type=range]::-ms-fill-lower {
+    background: blue;
+    border-radius: 2px;
+}
+
+
+/*IE & Edge right side*/
+
+input[type=range]::-ms-fill-upper {
+    background: #c5c5c5;
+    border-radius: 2px;
+}
+
+
+/*IE disable tooltip*/
+
+input[type=range]::-ms-tooltip {
+    display: none;
+}
+
+input[type="text"] {
+    border: none;
+}
+
 #question-div {
     position: absolute;
     left: 300px;
