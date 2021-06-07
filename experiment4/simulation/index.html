@@ -560,11 +560,12 @@
 
                 <div id="outputCalib2" style="visibility:hidden;">
                     <img id="OPCcheck_box" src="./Images/unchecked_checkbox.png" style="height: 10px; width: 10px; position: absolute; top: 134px; left: 10px;" onclick="check();" alt="Checkbox">
-                    <p style=" font-size: 5.5px; position: absolute; top: 132px; left: 20px;">Calibrate all motor outputs at the same time.</p>
+                    <p id="calibrateAll" style=" font-size: 5.5px; position: absolute; top: 132px; left: 20px;">Calibrate all motor outputs at the same time.</p>
                     <p style="font-size: 5.5px; position: absolute; top: 180px; left: 10px;">Output value:</p>
                     <p style="font-size: 5.5px; position: absolute; top: 180px; left: 50px;"><b id="opValue">1000</b> µs</p>
                     <input id="range_slider" class="range_slider" style="position:absolute;width:185px;top:195px;height:3px;left: 8px;" type="range" min="1000" max="2000" value="0">
-                    <p id="startButtonOpCalib" style="position: absolute;top: 200px;left: 10px;border: 1px solid #d3d3d3;border-radius: 2px;font-size:6.5px;padding:1px;width:185px;text-align:center;background-color:#ececec;">Start</p>
+                    <p id="startButtonOpCalib" style="cursor: pointer;position: absolute;top: 200px;left: 10px;border: 1px solid #d3d3d3;border-radius: 2px;font-size:6.5px;padding:1px;width:185px;text-align:center;background-color:#ececec;">Start</p>
+                    <!-- <img id="DisabledButtons" style="visibility: hidden;; position: absolute; top: 380px; left: 300px;height: 30px;width: 150px;" src="./Images/diabledButtons.png" alt="Disabled buttons"> -->
                 </div>
 
 

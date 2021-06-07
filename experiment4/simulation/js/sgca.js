@@ -667,32 +667,31 @@ function EscCalib() {
 }
 
 function OutputCalib() {
-    document.getElementById('top_text').innerText = "Let us calibrate the output levels for the signals.Keep the battery connected and make sure all the propellers are removed.";
+    document.getElementById('top_text').innerText = "Let us calibrate the output levels for the signals. Keep the battery connected and make sure all the propellers are removed.";
     document.getElementById('start_button').style = "position: absolute;top: 205px;left: 130px;border: 1px solid black;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;";
     document.getElementById('esc_calib').style.visibility = "hidden";
     document.getElementById('output_calib').style.visibility = "visible";
+    document.getElementById('outputCalib2').style.visibility = "hidden";
     document.getElementById('next_button').onclick = function() { OutputCalib2(); };
     document.getElementById('back_button').onclick = function() { EscCalib(); };
     console.log(11);
 
 }
+var startClicked = 0;
 
 function OutputCalib2() {
+    document.getElementById('top_text').innerText = "Click on the Start button to start Motor Calibration.";
     document.getElementById('outputCalib2').style.visibility = "visible";
+    document.getElementById('range_slider').disabled = true;
     document.getElementById('opCalibContent').innerHTML = "In this step we will set the neutral rate for the motor highlighted in the illustration to the right.<br>Please pay attention to the details and in particular the motors position and its rotation direction. Ensure the motors are spinning in the correct direction as shown in the diagram. Swap any 2 motor wires to change the direction of a motor.<br><br>To find <b>the neutral rate for this motor</b>, press the Start button below and slide the slider to the right until the motor just starts to spin stable.<br><br>When done press button again to stop."
     document.getElementById('quad_diag').src = "./Images/motor1im-removebg-preview.png";
+    document.getElementById('next_button').onclick = function() { InitialTuning(); };
+    document.getElementById('back_button').onclick = function() { OutputCalib(); };
+    document.getElementById('startButtonOpCalib').onclick = function() {
+        startOrStop();
+    };
+
     const slider = document.getElementById("range_slider");
-    // const min = slider.min
-    // const max = slider.max
-    // const value = slider.value
-
-    // // slider.style.background = `linear-gradient(to right, white 0%, white ${(value-min)/(max-min)*100}%, #DEE2E6 ${(value-min)/(max-min)*100}%, #DEE2E6 100%)`
-
-    // slider.oninput = function() {
-    //     this.style.background = `linear-gradient(to right, blue 0%, blue ${(this.value-this.min)/(this.max-this.min)*100}%, #DEE2E6 ${(this.value-this.min)/(this.max-this.min)*100}%, #DEE2E6 100%)`;
-
-    // };
-
 
     //for older browsers 
     function isOlderEdgeOrIE() {
@@ -753,6 +752,57 @@ function OutputCalib2() {
     slider.oninput = function() {
         output.innerHTML = this.value;
 
+    }
+}
+
+function InitialTuning() {
+    document.getElementById('outputCalib2').style.visibility = "hidden";
+    document.getElementById('output_calib').style.visibility = "hidden";
+
+
+}
+
+function startOrStop() {
+
+    console.log("clicked button")
+    if (startClicked == 0) {
+        // document.getElementById('DisabledButtons').style.visibility = "visible";
+
+        document.getElementById('dis_next').style.visibility = "visible";
+        document.getElementById('dis_back').style.visibility = "visible";
+        document.getElementById('dis_cancel').style.visibility = "visible";
+        document.getElementById('startButtonOpCalib').innerText = "Stop";
+        document.getElementById('startButtonOpCalib').style.backgroundColor = "#d3d3d3";
+        document.getElementById('calibrateAll').style.color = "gray";
+        document.getElementById('range_slider').disabled = false;
+        document.getElementById('back_button').style.visibility = "hidden";
+        document.getElementById('next_button').style.visibility = "hidden";
+        document.getElementById('cancel_button').style.visibility = "hidden";
+
+        startClicked = 1;
+        console.log(startClicked);
+    }
+
+    if (startClicked == 1) {
+        document.getElementById('top_text').innerText = "Drag the slider to the value to which the motor starts spinning. Once the motors spins, Click the stop button. Do the same procedure for the rest of the motors by clicking the next button.";
+
+
+        document.getElementById('startButtonOpCalib').onclick = function() {
+            document.getElementById('dis_next').style.visibility = "hidden";
+            document.getElementById('dis_back').style.visibility = "hidden";
+            document.getElementById('dis_cancel').style.visibility = "hidden";
+            document.getElementById('back_button').style.visibility = "visible";
+            document.getElementById('next_button').style.visibility = "visible";
+            document.getElementById('cancel_button').style.visibility = "visible";
+            document.getElementById('startButtonOpCalib').innerText = "Start";
+            // document.getElementById('DisabledButtons').style.visibility = "hidden";
+            document.getElementById('startButtonOpCalib').style.backgroundColor = "#ececec";
+            document.getElementById('calibrateAll').style.color = "black";
+            document.getElementById('range_slider').disabled = true;
+            startClicked = 0;
+            console.log(startClicked);
+
+        }
     }
 }
 
