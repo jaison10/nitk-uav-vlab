@@ -437,14 +437,17 @@ function cancel_setup() {
     document.getElementById('circuit_diagram').style.visibility = "hidden";
     document.getElementById('close_button').style.visibility = "hidden";
     document.getElementById('save_button').style.visibility = "hidden";
-    document.getElementById('tab_head').style.visibility = "hidden";
+    document.getElementById('tabHeadDiag').style.visibility = "hidden";
     document.getElementById('tab_logo').style.visibility = "hidden";
     document.getElementById('op_signal_config').style.visibility = "hidden";
     document.getElementById('config_summary').style.visibility = "hidden";
     document.getElementById('output_calib').style.visibility = "hidden";
     document.getElementById('sensor_calib').style.visibility = "hidden";
     document.getElementById('esc_calib').style.visibility = "hidden";
-
+    document.getElementById('tab_head').style.visibility = "hidden";
+    document.getElementById('opCalibContent').style.visibility = "hidden";
+    document.getElementById('outputCalib2').style.visibility = "hidden";
+    document.getElementById('output_calib').style.visibility = "hidden";
 
 }
 
@@ -661,6 +664,11 @@ function EscCalib() {
     document.getElementById('back_button').onclick = function() { SensorCalibProc(); };
     document.getElementById('next_button').onclick = function() { OutputCalib(); };
     document.getElementById('output_calib').style.visibility = "hidden";
+    document.getElementById('tab_head').style.visibility = "hidden";
+    document.getElementById('opCalibContent').style.visibility = "hidden";
+    document.getElementById('outputCalib2').style.visibility = "hidden";
+    document.getElementById('output_calib').style.visibility = "hidden";
+    document.getElementById('quad_diag').style.visibility = "hidden";
 
     console.log(10);
 
@@ -670,6 +678,9 @@ function OutputCalib() {
     document.getElementById('top_text').innerText = "Let us calibrate the output levels for the signals. Keep the battery connected and make sure all the propellers are removed.";
     document.getElementById('start_button').style = "position: absolute;top: 205px;left: 130px;border: 1px solid black;border-radius: 2px;font-size:6.5px;padding:1px;width:40px;text-align:center;background-color:#ececec;";
     document.getElementById('esc_calib').style.visibility = "hidden";
+    document.getElementById('opCalibContent').style.visibility = "visible";
+    document.getElementById('quad_diag').style.visibility = "visible";
+    document.getElementById('tab_head').style.visibility = "visible";
     document.getElementById('output_calib').style.visibility = "visible";
     document.getElementById('opCalibContent').innerHTML = "It is now time to calibrate the output levels for the signals controlling your vehicle.<br><br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VERY IMPORTANT!&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>REMOVE ALL PROPELLERS FROM THE VEHICLE BEFORE<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  PROCEEDING! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</b><br><br>Connect all components according to the ilustration on the summary page, and provide power using an external power supply such as a battery before continuing.<br><br>Depending on what vehicle you have selected, both the motors controlled by ESCs and/or servos controlled directly by the flight controller may have to be calibrated. The following steps will guide you safely through this process.";
     document.getElementById('outputCalib2').style.visibility = "hidden";
@@ -684,6 +695,9 @@ var startClicked = 0;
 function OutputCalib2() {
     document.getElementById('top_text').innerText = "Click on the Start button to start Motor Calibration.";
     document.getElementById('outputCalib2').style.visibility = "visible";
+    document.getElementById('opCalibContent').style.visibility = "visible";
+    document.getElementById('tab_head').style.visibility = "visible";
+    document.getElementById('quad_diag').style.visibility = "visible";
     document.getElementById('range_slider').disabled = true;
     document.getElementById('opCalibContent').innerHTML = "In this step we will set the neutral rate for the motor highlighted in the illustration to the right.<br>Please pay attention to the details and in particular the motors position and its rotation direction. Ensure the motors are spinning in the correct direction as shown in the diagram. Swap any 2 motor wires to change the direction of a motor.<br><br>To find <b>the neutral rate for this motor</b>, press the Start button below and slide the slider to the right until the motor just starts to spin stable.<br><br>When done press button again to stop.";
     document.getElementById('quad_diag').src = "./Images/motor1im-removebg-preview.png";
@@ -758,6 +772,9 @@ function OutputCalib2() {
 }
 
 function InitialTuning() {
+    document.getElementById('quad_diag').style.visibility = "hidden";
+    document.getElementById('tab_head').style.visibility = "hidden";
+    document.getElementById('opCalibContent').style.visibility = "hidden";
     document.getElementById('outputCalib2').style.visibility = "hidden";
     document.getElementById('output_calib').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { OutputCalib2(); };
@@ -812,7 +829,7 @@ function startOrStop() {
 function showDiagram() {
     document.getElementById('circuit_diagram').style.visibility = "visible";
     document.getElementById('tab_logo').style.visibility = "visible";
-    document.getElementById('tab_head').style.visibility = "visible";
+    document.getElementById('tabHeadDiag').style.visibility = "visible";
     document.getElementById('close_button').style.visibility = "visible";
     document.getElementById('save_button').style.visibility = "visible";
     document.getElementById('next_button').style.visibility = "hidden";
@@ -822,7 +839,7 @@ function showDiagram() {
         document.getElementById('circuit_diagram').style.visibility = "hidden";
         document.getElementById('close_button').style.visibility = "hidden";
         document.getElementById('save_button').style.visibility = "hidden";
-        document.getElementById('tab_head').style.visibility = "hidden";
+        document.getElementById('tabHeadDiag').style.visibility = "hidden";
         document.getElementById('tab_logo').style.visibility = "hidden";
         document.getElementById('next_button').style.visibility = "visible";
         document.getElementById('back_button').style.visibility = "visible";
