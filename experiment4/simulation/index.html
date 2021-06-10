@@ -569,6 +569,54 @@
                 </div>
             </div>
 
+            <!-- ---------------------------Wordings on Setup wizard tab - Initial Tuning--------------------------- -->
+            <div id="initial_tune" style="visibility: hidden; position: absolute; top: 110px; left: 144px; height: 300px; width: 340px;">
+                <p style="font-size:11px;position:absolute;top:10px;left:110px;"><b>Initial Tuning</b></p>
+                <div style="position:absolute;top:34px;left:10px;height:50px;width:321px;font-size:6px;">
+                    <p>This section of the Wizard allows you to select a set of initial tuning parameters for your airframe. Presented below is a list of common airframe types, select the one that matches your airfarme the closest, if unsure select the generic
+                        variant.
+
+                    </p>
+                </div>
+                <select id="copter_types" size="5" style="width:200px;height:90px;font-size:6px;position:absolute;top:66px;left:10px;width:200px;height:100px;font-size:6px;color:black;border:1px solid #d3d3d3;overflow-y:scroll ;">
+                    <option>Current Tuning</option>
+                    <option>(RACE) FPV 260 HobbyKing</option>
+                    <option>(STOCK) HobbyKing FPV 260 UpSwept Arms RTF</option>
+                    <option>BlackOut B330</option>
+                    <option>BlackOut Mini H</option>
+                    <option>DJI F450</option>
+                    <option>Droneframes DRQ250CF</option>
+                    <option>Droneframes DRQ430G</option>
+                    <option>Eachine ER250</option>
+                    <option>Emax Nighthawk</option>
+                    <option>Flaying Cinema Cinetank MK2</option>
+                    <option>Flip Fpv Pro</option>
+                    <option>Flip FPV Pro</option>
+                    <option>Flip Sport</option>
+                    <option>Flying Cinema Tankito "MINI TANK"</option>
+                    <option>Generic Quad X</option>
+                    <option>Guerrilla Drones Toad Quad 240/260</option>
+                    <option>H King DYS 250 Carbon Fiber</option>
+                    <option>H King DYS 320 Carbon Fiber</option>
+                    <option>HoverThings FLIP FPV</option>
+                    <option>Inventors Sparrow Race quad</option>
+                    <option>QAV250</option>
+                    <option>QAV400</option>
+                    <option>QAV500</option>
+                    <option>QUADI 250</option>
+                    <option>Xhover MXP230 Elite</option>
+                    <option>ZMR 250</option>
+                    <option>ZMR250</option>
+                    <option>ZMR250 - Chinese QAV250 clone</option>
+
+</select>
+                <img id="copter_image" src="./Images/Libre_pilot.png" style="height: 100px;width: 100px;position: absolute;top: 65px;left: 220px;" alt="Librepilot image">
+                <div id="down_content" style="border: 1px solid #d3d3d3;height:54px;width:315px;position: absolute;top: 169px;left: 10px;padding: 0.5px;text-align:justify;padding: 0px 2px 0px 2px;font-size:6px;border-radius:1px;">
+                    <p>This option will use the current tuning settings saved on the controller, if your controller is currently unconfigured, then the pre-configured firmware defaults will be used.</p>
+                    <p>It is suggested that if this is a first time configuration of your controller, rather than use this option, instead select a tuning set that matches your own airframe as close as possible from the list above or if you are not able
+                        to find one, then select the generic item from the list.</p>
+                </div>
+            </div>
 
             <!-- Line  -->
             <!-- <img id="line" src="./Images/uav/line2.png" style="position: absolute; top: 33%; left: 10%; width: 60%; height: auto; visibility: hidden;" /> -->

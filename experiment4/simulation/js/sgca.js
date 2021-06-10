@@ -448,6 +448,7 @@ function cancel_setup() {
     document.getElementById('opCalibContent').style.visibility = "hidden";
     document.getElementById('outputCalib2').style.visibility = "hidden";
     document.getElementById('output_calib').style.visibility = "hidden";
+    document.getElementById('initial_tune').style.visibility = "hidden";
 
 }
 
@@ -687,6 +688,8 @@ function OutputCalib() {
     document.getElementById('quad_diag').src = "./Images/OutputCalib (2).png";
     document.getElementById('next_button').onclick = function() { OutputCalib2(); };
     document.getElementById('back_button').onclick = function() { EscCalib(); };
+    document.getElementById('initial_tune').style.visibility = "hidden";
+
     console.log(11);
 
 }
@@ -694,6 +697,7 @@ var startClicked = 0;
 
 function OutputCalib2() {
     document.getElementById('top_text').innerText = "Click on the Start button to start Motor Calibration.";
+    document.getElementById('initial_tune').style.visibility = "hidden";
     document.getElementById('outputCalib2').style.visibility = "visible";
     document.getElementById('opCalibContent').style.visibility = "visible";
     document.getElementById('tab_head').style.visibility = "visible";
@@ -775,11 +779,19 @@ function InitialTuning() {
     document.getElementById('quad_diag').style.visibility = "hidden";
     document.getElementById('tab_head').style.visibility = "hidden";
     document.getElementById('opCalibContent').style.visibility = "hidden";
+    document.getElementById('initial_tune').style.visibility = "visible";
     document.getElementById('outputCalib2').style.visibility = "hidden";
     document.getElementById('output_calib').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { OutputCalib2(); };
+    document.getElementById('next_button').onclick = function() { ConfigSave(); };
 
+    // document.getElementsByTagName('SELECT').onclick = function() { document.getElementById('copter_types').style.border = "1px solid #d3d3d3"; };
 
+}
+
+function ConfigSave() {
+    document.getElementById('initial_tune').style.visibility = "hidden";
+    document.getElementById('back_button').onclick = function() { InitialTuning(); };
 }
 
 function startOrStop() {
