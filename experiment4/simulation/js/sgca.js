@@ -449,6 +449,9 @@ function cancel_setup() {
     document.getElementById('outputCalib2').style.visibility = "hidden";
     document.getElementById('output_calib').style.visibility = "hidden";
     document.getElementById('initial_tune').style.visibility = "hidden";
+    document.getElementById('configSave').style.visibility = "hidden";
+    document.getElementById('saveStatus').style.visibility = "hidden";
+    document.getElementById('save_inst').style.visibility = "hidden";
 
 }
 
@@ -783,6 +786,8 @@ function InitialTuning() {
     document.getElementById('initial_tune').style.visibility = "visible";
     document.getElementById('outputCalib2').style.visibility = "hidden";
     document.getElementById('output_calib').style.visibility = "hidden";
+    document.getElementById('configSave').style.visibility = "hidden";
+
     document.getElementById('back_button').onclick = function() { OutputCalib2(); };
     document.getElementById('next_button').onclick = function() { ConfigSave(); };
     document.getElementById('gen_quad').onclick = function() {
@@ -797,8 +802,12 @@ function InitialTuning() {
 }
 
 function ConfigSave() {
+    document.getElementById('top_text').innerText = "Sace all the configurations done so far to the Flight Controller by clicking the Save Button.";
+    document.getElementById('configSave').style.visibility = "visible";
     document.getElementById('initial_tune').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { InitialTuning(); };
+    document.getElementById('saveButton').onclick = function() { clickUpgrade(3); };
+
 }
 
 function startOrStop() {
@@ -996,7 +1005,78 @@ function clickUpgrade(id) {
 
         }, 1000);
     }
+    if (id == 3) {
+        document.getElementById('save_inst').style.visibility = "visible";
+        document.getElementById('saveButton').src = "./Images/saveButton2.png";
+        document.getElementById('saveStatus').style.visibility = "visible";
+        document.getElementById('saveStatus').style.width = "318px";
+        document.getElementById('saveStatus').style.transition = "all 1s ease-in-out";
+        document.getElementById('save_inst').innerText = "Preparing vehicle settings";
 
+        setTimeout(() => {
+
+            document.getElementById('save_inst').innerText = "Preparing mixer settings";
+
+
+        }, 0);
+        setTimeout(() => {
+
+            document.getElementById('save_inst').innerText = "Preparing vehicle settings";
+
+
+        }, 200);
+        setTimeout(() => {
+
+            document.getElementById('save_inst').innerText = "Preparing mixer settings";
+
+
+        }, 250);
+        setTimeout(() => {
+
+            document.getElementById('save_inst').innerText = "Writing hardware settings";
+
+
+        }, 350);
+        setTimeout(() => {
+
+            document.getElementById('save_inst').innerText = "Writing vehicle settings";
+
+
+        }, 480);
+        setTimeout(() => {
+
+            document.getElementById('save_inst').innerText = "Writing mixer settings";
+
+
+        }, 590);
+        setTimeout(() => {
+
+            document.getElementById('save_inst').innerText = "Writing actuator settings";
+
+
+        }, 710);
+        setTimeout(() => {
+
+            document.getElementById('save_inst').innerText = "Writing stabilization settings";
+
+
+        }, 880);
+        setTimeout(() => {
+
+            document.getElementById('save_inst').innerText = "Writing template settings for MixerSettings";
+            cancel_setup();
+            document.getElementById('saveStatus').style.transition = "none";
+
+
+        }, 980);
+
+
+
+
+
+
+
+    }
 }
 var box_click = 0;
 
