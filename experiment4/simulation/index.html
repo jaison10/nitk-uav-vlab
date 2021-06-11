@@ -594,7 +594,7 @@
                     <option>Flip FPV Pro</option>
                     <option>Flip Sport</option>
                     <option>Flying Cinema Tankito "MINI TANK"</option>
-                    <option>Generic Quad X</option>
+                    <option id="gen_quad">Generic Quad X</option>
                     <option>Guerrilla Drones Toad Quad 240/260</option>
                     <option>H King DYS 250 Carbon Fiber</option>
                     <option>H King DYS 320 Carbon Fiber</option>
@@ -609,7 +609,7 @@
                     <option>ZMR250</option>
                     <option>ZMR250 - Chinese QAV250 clone</option>
 
-</select>
+                </select>
                 <img id="copter_image" src="./Images/Libre_pilot.png" style="height: 100px;width: 100px;position: absolute;top: 65px;left: 220px;" alt="Librepilot image">
                 <div id="down_content" style="border: 1px solid #d3d3d3;height:54px;width:315px;position: absolute;top: 169px;left: 10px;padding: 0.5px;text-align:justify;padding: 0px 2px 0px 2px;font-size:6px;border-radius:1px;">
                     <p>This option will use the current tuning settings saved on the controller, if your controller is currently unconfigured, then the pre-configured firmware defaults will be used.</p>
@@ -618,6 +618,19 @@
                 </div>
             </div>
 
+            <!-- ---------------------------Wordings on Setup wizard tab - Configuration ready to save--------------------------- -->
+            <div id="sensor_calib" style="visibility: hidden; position: absolute; top: 110px; left: 144px; height: 300px; width: 340px;">
+                <p style="font-size:11px;position:absolute;top:10px;left:110px;"><b>Configuration ready to save</b></p>
+                <div style="position:absolute;top:40px;left:10px;height:70px;width:321px;font-size:6px;">
+                    <p>The wizard is now ready to save the configuration directly to your flight controller.
+                        <br><br>If any of the selections made in this wizard require a reboot of the controller, then power cyling the flight controller board will have to be performed after you save in this step.<br><br> Press the Save button to save
+                        the configuration.
+                    </p>
+                </div>
+                <p id="calculate_inst" style="visibility: hidden;position: absolute;top: 190px;left: 10px;font-size:6px;"></p>
+                <img id="calculate_button" src="./Images/calculate.png" style="cursor: pointer;position: absolute;top: 165px;left: 130px;height: 30px;width: 90px;" alt="Calculate button">
+                <img src="./Images/upgrade_status.png" style="height: 20px;width: 327px;position: absolute;top: 204px;left: 7px;" alt="Calculate Status bar">
+            </div>
             <!-- Line  -->
             <!-- <img id="line" src="./Images/uav/line2.png" style="position: absolute; top: 33%; left: 10%; width: 60%; height: auto; visibility: hidden;" /> -->
             <!-- Curve : angle of attack image -->

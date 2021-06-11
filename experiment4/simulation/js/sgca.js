@@ -776,6 +776,7 @@ function OutputCalib2() {
 }
 
 function InitialTuning() {
+    document.getElementById('top_text').innerText = "In this step, the initial tuning parameters for the airframe is set. Let us select the Generic Quad X as our airframe type for now.";
     document.getElementById('quad_diag').style.visibility = "hidden";
     document.getElementById('tab_head').style.visibility = "hidden";
     document.getElementById('opCalibContent').style.visibility = "hidden";
@@ -784,6 +785,12 @@ function InitialTuning() {
     document.getElementById('output_calib').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { OutputCalib2(); };
     document.getElementById('next_button').onclick = function() { ConfigSave(); };
+    document.getElementById('gen_quad').onclick = function() {
+        document.getElementById('copter_image').src = "./Images/genQuadX.png";
+        document.getElementById('down_content').innerHTML = "<p><b>Name of Vehicle:</b> Generic Quad X<br><b>Name of Owner:</b> OpenPilot (OpenPilot)<br><b>Size:</b> Generic<br><b>Weight:</b> Generic<br><b>Motor(s):</b> Generic<br><b>ESC(s)</b> Generic<br><b>Servo(s):</b> <br><b>Battery:</b> Generic<br><b>Propeller(s):</b> Generic</p>";
+        document.getElementById('down_content').style.overflowY = "scroll";
+    };
+
 
     // document.getElementsByTagName('SELECT').onclick = function() { document.getElementById('copter_types').style.border = "1px solid #d3d3d3"; };
 
