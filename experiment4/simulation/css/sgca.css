@@ -209,11 +209,34 @@ input[type="text"] {
     background: #000
 }
 
+.rebootStatus {
+    animation: move 1s linear infinite 3s;
+    animation-timing-function: ease-in-out;
+}
+
 
 /* -------------------------------------- water ---------------------------------------- */
 
 
 /* Chrome, Safari, Opera */
+
+@-webkit-keyframes move {
+    from {
+        left: 88px;
+    }
+    to {
+        left: 202px;
+    }
+}
+
+@keyframes move {
+    from {
+        left: 88px;
+    }
+    to {
+        left: 202px;
+    }
+}
 
 @-webkit-keyframes water-4 {
     0% {

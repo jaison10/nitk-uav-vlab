@@ -452,8 +452,21 @@ function cancel_setup() {
     document.getElementById('configSave').style.visibility = "hidden";
     document.getElementById('saveStatus').style.visibility = "hidden";
     document.getElementById('save_inst').style.visibility = "hidden";
+    if (finalTab == 1) {
+        setTimeout(function() {
+            document.getElementById('rebootTab').style.visibility = "visible";
+            document.getElementById('rebootStatus').style.transition = "left 1s ease-in-out";
+            finalTab = 0;
+            document.getElementById('rebootStatus').classList.add("rebootStatus");
 
+
+
+
+
+        }, 1000);
+    }
 }
+
 
 function upgrade() {
     document.getElementById('top_text').innerText = "Update the firmware by clicking on Upgrade and then wait for the firmware to upload on the flight controller.";
@@ -787,6 +800,7 @@ function InitialTuning() {
     document.getElementById('outputCalib2').style.visibility = "hidden";
     document.getElementById('output_calib').style.visibility = "hidden";
     document.getElementById('configSave').style.visibility = "hidden";
+    document.getElementById('copter_image').src = "./Images/Libre_pilot.png";
 
     document.getElementById('back_button').onclick = function() { OutputCalib2(); };
     document.getElementById('next_button').onclick = function() { ConfigSave(); };
@@ -972,6 +986,7 @@ function selectOutput(id) {
 }
 
 var upgradeClicked = 0;
+var finalTab;
 
 function clickUpgrade(id) {
     upgradeClicked = 1;
@@ -1064,18 +1079,12 @@ function clickUpgrade(id) {
         setTimeout(() => {
 
             document.getElementById('save_inst').innerText = "Writing template settings for MixerSettings";
+            finalTab = 1;
             cancel_setup();
             document.getElementById('saveStatus').style.transition = "none";
 
 
         }, 980);
-
-
-
-
-
-
-
     }
 }
 var box_click = 0;
