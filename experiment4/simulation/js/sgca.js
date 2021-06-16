@@ -457,19 +457,24 @@ function cancel_setup() {
 
     if (finalTab == 1) {
         setTimeout(function() {
+            document.getElementById('top_text').innerText = "Wait till the flight controller reboots.";
+
             document.getElementById('rebootTab').style.visibility = "visible";
             document.getElementById('rebootStatus').style.transition = "left 1s ease-in-out";
             finalTab = 0;
             document.getElementById('rebootStatus').classList.add("rebootStatus")
         }, 1000);
         setTimeout(function() {
+            document.getElementById('top_text').innerText = "The setup procedure is now complete. Click on the Transmitter Setup Wizard button to setup the Transmitter and Receiver. ";
+
             document.getElementById('rebootTab').style.visibility = "hidden";
             document.getElementById('transmitterSetup').style.visibility = "visible";
             document.getElementById('backButton').innerText = "<Back";
             document.getElementById('backButton').onclick = function() { cancel_setup(); };
             document.getElementById('finishButton').onclick = function() { cancel_setup(); };
-
-        }, 4000);
+            document.getElementById('trasmitButton').onclick = function() {};
+            document.getElementById('trasmitButton').style.cursor = "pointer";
+        }, 5000);
     }
 }
 
@@ -822,7 +827,7 @@ function InitialTuning() {
 }
 
 function ConfigSave() {
-    document.getElementById('top_text').innerText = "Sace all the configurations done so far to the Flight Controller by clicking the Save Button.";
+    document.getElementById('top_text').innerText = "Save all the configurations done so far to the Flight Controller by clicking the Save Button.";
     document.getElementById('configSave').style.visibility = "visible";
     document.getElementById('initial_tune').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { InitialTuning(); };
