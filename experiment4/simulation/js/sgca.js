@@ -452,18 +452,24 @@ function cancel_setup() {
     document.getElementById('configSave').style.visibility = "hidden";
     document.getElementById('saveStatus').style.visibility = "hidden";
     document.getElementById('save_inst').style.visibility = "hidden";
+    document.getElementById('transmitterSetup').style.visibility = "hidden";
+    document.getElementById('rebootTab').style.visibility = "hidden";
+
     if (finalTab == 1) {
         setTimeout(function() {
             document.getElementById('rebootTab').style.visibility = "visible";
             document.getElementById('rebootStatus').style.transition = "left 1s ease-in-out";
             finalTab = 0;
-            document.getElementById('rebootStatus').classList.add("rebootStatus");
-
-
-
-
-
+            document.getElementById('rebootStatus').classList.add("rebootStatus")
         }, 1000);
+        setTimeout(function() {
+            document.getElementById('rebootTab').style.visibility = "hidden";
+            document.getElementById('transmitterSetup').style.visibility = "visible";
+            document.getElementById('backButton').innerText = "<Back";
+            document.getElementById('backButton').onclick = function() { cancel_setup(); };
+            document.getElementById('finishButton').onclick = function() { cancel_setup(); };
+
+        }, 4000);
     }
 }
 
