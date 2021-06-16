@@ -832,6 +832,7 @@ function ConfigSave() {
     document.getElementById('initial_tune').style.visibility = "hidden";
     document.getElementById('back_button').onclick = function() { InitialTuning(); };
     document.getElementById('saveButton').onclick = function() { clickUpgrade(3); };
+    document.getElementById('saveButton').src = "./Images/saveButton.png";
 
 }
 
