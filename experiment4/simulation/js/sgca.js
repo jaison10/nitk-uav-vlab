@@ -465,7 +465,7 @@ function cancel_setup() {
             document.getElementById('rebootStatus').classList.add("rebootStatus")
         }, 1000);
         setTimeout(function() {
-            document.getElementById('top_text').innerText = "The setup procedure is now complete. Click on the Transmitter Setup Wizard button to setup the Transmitter and Receiver. ";
+            document.getElementById('top_text').innerText = "The setup procedure for the flight controller is now complete. Click on the Transmitter Setup Wizard button to setup the Transmitter and Receiver. ";
 
             document.getElementById('rebootTab').style.visibility = "hidden";
             document.getElementById('transmitterSetup').style.visibility = "visible";
