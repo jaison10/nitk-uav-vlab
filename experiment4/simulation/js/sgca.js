@@ -472,12 +472,23 @@ function cancel_setup() {
             document.getElementById('backButton').innerText = "<Back";
             document.getElementById('backButton').onclick = function() { cancel_setup(); };
             document.getElementById('finishButton').onclick = function() { cancel_setup(); };
-            document.getElementById('trasmitButton').onclick = function() {};
+            document.getElementById('trasmitButton').onclick = function() {
+                transmitterTabSettings();
+            };
             document.getElementById('trasmitButton').style.cursor = "pointer";
         }, 5000);
     }
 }
 
+function transmitterTabSettings() {
+    document.getElementById('vehicle_setup').style.visibility = "hidden";
+    document.getElementById('transmitterSetup').style.visibility = "hidden";
+    document.getElementById('ArmingSetup').style.visibility = "visible";
+    setTimeout(function() {
+        document.getElementById('ArmingPopup').style.visibility = "visible";
+
+    }, 2000);
+}
 
 function upgrade() {
     document.getElementById('top_text').innerText = "Update the firmware by clicking on Upgrade and then wait for the firmware to upload on the flight controller.";
