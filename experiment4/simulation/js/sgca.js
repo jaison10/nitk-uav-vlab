@@ -485,9 +485,17 @@ function transmitterTabSettings() {
     document.getElementById('transmitterSetup').style.visibility = "hidden";
     document.getElementById('ArmingSetup').style.visibility = "visible";
     setTimeout(function() {
+        document.getElementById('top_text').innerText = "Click OK to disarm the Flight controller.";
         document.getElementById('ArmingPopup').style.visibility = "visible";
+        document.getElementById('okButton').onclick = function() { TRWelcome(); };
 
     }, 2000);
+}
+
+function TRWelcome() {
+    document.getElementById('tr').src = "./Images/trans2.png";
+    document.getElementById('ArmingPopup').style.visibility = "hidden";
+
 }
 
 function upgrade() {
