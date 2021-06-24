@@ -493,7 +493,7 @@ function transmitterTabSettings() {
 }
 
 function TRWelcome() {
-    document.getElementById('tr').src = "./Images/trans2.png";
+    document.getElementById('tr').src = "./Images/tr2.png";
     document.getElementById('ArmingPopup').style.visibility = "hidden";
     document.getElementById('t_next').style.visibility = "visible";
     document.getElementById('t_back').style.visibility = "visible";
