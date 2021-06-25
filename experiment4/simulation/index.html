@@ -688,9 +688,9 @@
             <div id="TRSetup" style="visibility: hidden; position: absolute; top: 110px; left: 150px; z-index: 310;">
 
                 <div style="position:absolute;top:50px;left:-10px;height:70px;width:300px;font-size:6px;z-index:320;">
-                    <p>Please choose your transmitter type:<br> <input id="acr" type="radio" name="TransmitterMode" checked>&nbsp;Acro: normal transmitter for fixed wing or quad<br> <input id="sur" type="radio" name="TransmitterMode">&nbsp;Surface: has reversible
-                        motor controlled by throttle stick, plus yaw control (2 channels)<br> <input id="hel" type="radio" name="TransmitterMode">&nbsp;Helicopter: has collective pitch and throttle input<br><br> If selecting the Helicopter option, please
-                        engage throttle hold now.<br><br> If selecting the Surface option, the <b>Flight Mode Count</b> will be set to 1.</p>
+                    <p>Please choose your transmitter type:<br> <input id="acr" class="mode_select" type="radio" name="TransmitterMode" checked>&nbsp;Acro: normal transmitter for fixed wing or quad<br> <input id="sur" class="mode_select" type="radio" name="TransmitterMode">&nbsp;Surface:
+                        has reversible motor controlled by throttle stick, plus yaw control (2 channels)<br> <input id="hel" class="mode_select" type="radio" name="TransmitterMode">&nbsp;Helicopter: has collective pitch and throttle input<br><br> If selecting
+                        the Helicopter option, please engage throttle hold now.<br><br> If selecting the Surface option, the <b>Flight Mode Count</b> will be set to 1.</p>
                 </div>
                 <img src="./Images/transmitterPic.png" style="height: 80px;width: 433px;position: absolute;top: 140px;left: -10px;border-radius:5px;" alt="Transmitter image">
 
@@ -700,9 +700,10 @@
             <div id="TRMode" style="visibility: hidden; position: absolute; top: 110px; left: 150px; z-index: 310;">
 
                 <div style="position:absolute;top:50px;left:-10px;height:70px;width:300px;font-size:6px;z-index:320;">
-                    <p>Please choose your transmitter mode:<br> <input id="acr" type="radio" name="TransmitterMode" checked>&nbsp;Mode 1: Elevator and Rudder on the left, Throttle and Ailerons on the right <br> <input id="sur" type="radio" name="TransmitterMode">&nbsp;Mode
-                        2: Throttle and Rudder on the left, Elevator and Ailerons on the right<br> <input id="hel" type="radio" name="TransmitterMode">&nbsp;Mode 3: Elevator and Ailerons on the left, Throttle and Rudder on the right<br><input id="sur"
-                            type="radio" name="TransmitterMode">&nbsp;Mode 4: Throttle and Ailerons on the left, Elevator and Rudder on the right<br><br> For a Quad: Elevator is Pitch, Ailerons are Roll, and Rudder is Yaw.</p>
+                    <p>Please choose your transmitter mode:<br> <input type="radio" class="mode_select" name="TransmitterMode" checked>&nbsp;Mode 1: Elevator and Rudder on the left, Throttle and Ailerons on the right <br> <input type="radio" class="mode_select"
+                            name="TransmitterMode">&nbsp;Mode 2: Throttle and Rudder on the left, Elevator and Ailerons on the right<br> <input type="radio" class="mode_select" name="TransmitterMode">&nbsp;Mode 3: Elevator and Ailerons on the left, Throttle
+                        and Rudder on the right<br><input type="radio" class="mode_select" name="TransmitterMode">&nbsp;Mode 4: Throttle and Ailerons on the left, Elevator and Rudder on the right<br><br> For a Quad: Elevator is Pitch, Ailerons are Roll,
+                        and Rudder is Yaw.</p>
                 </div>
                 <img src="./Images/transmitterPic.png" style="height: 80px;width: 433px;position: absolute;top: 140px;left: -10px;border-radius:5px;" alt="Transmitter image">
 

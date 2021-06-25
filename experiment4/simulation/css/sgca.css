@@ -6,7 +6,7 @@ html {
     user-select: none;
 }
 
-#acr {
+.mode_select {
     border: 2px solid white;
     box-shadow: 0 0 0 1px gray;
     appearance: none;
@@ -16,35 +16,7 @@ html {
     background-color: #fff;
 }
 
-#acr:checked {
-    background-color: black;
-}
-
-#sur {
-    border: 2px solid white;
-    box-shadow: 0 0 0 1px gray;
-    appearance: none;
-    border-radius: 50%;
-    width: 8px;
-    height: 8px;
-    background-color: #fff;
-}
-
-#sur:checked {
-    background-color: black;
-}
-
-#hel {
-    border: 2px solid white;
-    box-shadow: 0 0 0 1px gray;
-    appearance: none;
-    border-radius: 50%;
-    width: 8px;
-    height: 8px;
-    background-color: #fff;
-}
-
-#hel:checked {
+.mode_select:checked {
     background-color: black;
 }
 
