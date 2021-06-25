@@ -493,12 +493,23 @@ function transmitterTabSettings() {
 }
 
 function TRWelcome() {
+    document.getElementById('top_text').innerText = "Click Next to start input channel configuration.";
     document.getElementById('tr').src = "./Images/tr2.png";
     document.getElementById('ArmingPopup').style.visibility = "hidden";
     document.getElementById('t_next').style.visibility = "visible";
+    document.getElementById('t_next').style.cursor = "pointer";
+    document.getElementById('t_back').style.color = "gray";
     document.getElementById('t_back').style.visibility = "visible";
     document.getElementById('t_cancel').style.visibility = "visible";
+    document.getElementById('t_next').onclick = function() { SelectMode(); };
 
+}
+
+function SelectMode() {
+    document.getElementById('top_text').innerText = "Select 'Acro' as its the standard Flight Mode. Click Next to proceed.";
+    document.getElementById('tr').src = "./Images/tr3.png";
+    document.getElementById('TRSetup').style.visibility = "visible";
+    document.getElementById('t_back').style.color = "black";
 }
 
 function upgrade() {

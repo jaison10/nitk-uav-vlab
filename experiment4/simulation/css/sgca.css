@@ -6,6 +6,51 @@ html {
     user-select: none;
 }
 
+#acr {
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px gray;
+    appearance: none;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    transition: all ease-in 0.2s;
+}
+
+#acr:checked {
+    background-color: black;
+}
+
+#sur {
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px gray;
+    appearance: none;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    transition: all ease-in 0.2s;
+}
+
+#sur:checked {
+    background-color: black;
+}
+
+#hel {
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px gray;
+    appearance: none;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    transition: all ease-in 0.2s;
+}
+
+#hel:checked {
+    background-color: black;
+}
+
 #simscreen {
     position: relative;
     left: 0px;
