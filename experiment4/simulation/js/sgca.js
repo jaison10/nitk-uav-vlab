@@ -498,18 +498,33 @@ function TRWelcome() {
     document.getElementById('ArmingPopup').style.visibility = "hidden";
     document.getElementById('t_next').style.visibility = "visible";
     document.getElementById('t_next').style.cursor = "pointer";
+    document.getElementById('t_back').style.cursor = "pointer";
+    document.getElementById('t_cancel').style.cursor = "pointer";
     document.getElementById('t_back').style.color = "gray";
     document.getElementById('t_back').style.visibility = "visible";
     document.getElementById('t_cancel').style.visibility = "visible";
-    document.getElementById('t_next').onclick = function() { SelectMode(); };
+    document.getElementById('TRSetup').style.visibility = "hidden";
+
+    document.getElementById('t_next').onclick = function() { SelectFlightMode(); };
 
 }
 
-function SelectMode() {
-    document.getElementById('top_text').innerText = "Select 'Acro' as its the standard Flight Mode. Click Next to proceed.";
+function SelectFlightMode() {
+    document.getElementById('top_text').innerText = "Select 'Acro' as its the standard Transmitter Type. Click Next to proceed.";
     document.getElementById('tr').src = "./Images/tr3.png";
     document.getElementById('TRSetup').style.visibility = "visible";
     document.getElementById('t_back').style.color = "black";
+    document.getElementById('TRMode').style.visibility = "hidden";
+    document.getElementById('t_back').onclick = function() { TRWelcome(); };
+    document.getElementById('t_next').onclick = function() { SelectTransmitterMode(); };
+}
+
+function SelectTransmitterMode() {
+    document.getElementById('top_text').innerText = "Based on how you prefer to fly the Quad, Set Transmitter Mode. Select 'Mode 2' as its the common practice. Click Next to proceed.";
+    document.getElementById('TRSetup').style.visibility = "hidden";
+    document.getElementById('t_back').onclick = function() { SelectFlightMode(); };
+    document.getElementById('TRMode').style.visibility = "visible";
+
 }
 
 function upgrade() {

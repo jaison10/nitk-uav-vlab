@@ -14,7 +14,6 @@ html {
     width: 8px;
     height: 8px;
     background-color: #fff;
-    transition: all ease-in 0.2s;
 }
 
 #acr:checked {
@@ -29,7 +28,6 @@ html {
     width: 8px;
     height: 8px;
     background-color: #fff;
-    transition: all ease-in 0.2s;
 }
 
 #sur:checked {
@@ -44,7 +42,6 @@ html {
     width: 8px;
     height: 8px;
     background-color: #fff;
-    transition: all ease-in 0.2s;
 }
 
 #hel:checked {
