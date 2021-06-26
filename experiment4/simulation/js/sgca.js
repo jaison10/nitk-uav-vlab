@@ -532,6 +532,7 @@ function testTransmitter() {
     document.getElementById('TRMode').style.visibility = "hidden";
     document.getElementById('TRTest').style.visibility = "visible";
     document.getElementById('t_back').onclick = function() { SelectTransmitterMode(); };
+    document.getElementById('t_next').style.color = "gray";
 }
 
 function upgrade() {
