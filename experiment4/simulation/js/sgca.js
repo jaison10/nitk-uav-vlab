@@ -524,7 +524,14 @@ function SelectTransmitterMode() {
     document.getElementById('TRSetup').style.visibility = "hidden";
     document.getElementById('t_back').onclick = function() { SelectFlightMode(); };
     document.getElementById('TRMode').style.visibility = "visible";
+    document.getElementById('t_next').onclick = function() { testTransmitter(); };
 
+}
+
+function testTransmitter() {
+    document.getElementById('TRMode').style.visibility = "hidden";
+    document.getElementById('TRTest').style.visibility = "visible";
+    document.getElementById('t_back').onclick = function() { SelectTransmitterMode(); };
 }
 
 function upgrade() {
