@@ -1090,7 +1090,7 @@ function clickUpgrade(id) {
     }
     if (id == 3) {
         document.getElementById('save_inst').style.visibility = "visible";
-        document.getElementById('saveButton').src = "./Images/saveButton2.png";
+        // document.getElementById('saveButton').src = "./Images/saveButton2.png";
         document.getElementById('saveStatus').style.visibility = "visible";
         document.getElementById('saveStatus').style.width = "318px";
         document.getElementById('saveStatus').style.transition = "all 1s ease-in-out";
