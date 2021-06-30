@@ -21,7 +21,7 @@ html {
 }
 
 .moveThrottle {
-    animation: throttle 3s ease-in-out;
+    animation: throttle 3s ease-in-out infinite;
 }
 
 @keyframes throttle {

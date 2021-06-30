@@ -534,13 +534,24 @@ function testTransmitter() {
     document.getElementById('TRTest').style.visibility = "visible";
     document.getElementById('t_back').onclick = function() { SelectTransmitterMode(); };
     document.getElementById('t_next').style.color = "gray";
-    document.getElementById('toggleSwitch1').onclick = function() { switchToggle(1); };
+
     document.getElementById('toggleSwitch2').onclick = function() { switchToggle(2); };
-    document.getElementById('toggleSwitch3').onclick = function() { switchToggle(3); };
     document.getElementById('toggleSwitch4').onclick = function() { switchToggle(4); };
     setTimeout(() => {
         document.getElementById('toggleButton1').classList.add('moveThrottle');
+        document.getElementById('toggleSwitch1').onclick = function() { switchToggle(1); };
+        document.getElementById('toggleSwitch3').onclick = function() { switchToggle(3); };
     }, 800);
+    // setTimeout(() => {
+    //     document.getElementById('switch_inst').innerText = "Click on the Roll switch as demonstrated";
+    //     document.getElementById('toggleButton1').classList.remove('moveThrottle');
+    //     document.getElementById('toggleButton1').classList.add('moveThrottle');
+    //     document.getElementById('toggleSwitch1').onclick = "";
+    //     document.getElementById('toggleSwitch3').onclick = "";
+
+    // }, 1500);
+
+
 
 }
 
