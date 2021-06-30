@@ -39,6 +39,25 @@ html {
     }
 }
 
+.moveRoll {
+    animation: roll 3s ease-in-out infinite;
+}
+
+@keyframes roll {
+    0% {
+        left: 235px;
+    }
+    25% {
+        left: 249px;
+    }
+    75% {
+        left: 220px;
+    }
+    100% {
+        left: 235px;
+    }
+}
+
 #simscreen {
     position: relative;
     left: 0px;
