@@ -689,9 +689,11 @@
             <div id="TRSetup" style="visibility: hidden; position: absolute; top: 110px; left: 150px; z-index: 310;">
 
                 <div style="position:absolute;top:50px;left:-10px;height:70px;width:300px;font-size:6px;z-index:320;">
-                    <p>Please choose your transmitter type:<br> <input id="acr" class="mode_select" type="radio" name="TransmitterMode" checked>&nbsp;Acro: normal transmitter for fixed wing or quad<br> <input id="sur" class="mode_select" type="radio" name="TransmitterMode">&nbsp;Surface:
-                        has reversible motor controlled by throttle stick, plus yaw control (2 channels)<br> <input id="hel" class="mode_select" type="radio" name="TransmitterMode">&nbsp;Helicopter: has collective pitch and throttle input<br><br> If selecting
-                        the Helicopter option, please engage throttle hold now.<br><br> If selecting the Surface option, the <b>Flight Mode Count</b> will be set to 1.</p>
+                    <p>Please choose your transmitter type:<br>
+                        <input id="acr" class="mode_select" type="radio" name="TransmitterType" checked>&nbsp;Acro: normal transmitter for fixed wing or quad<br>
+                        <input id="sur" class="mode_select" type="radio" name="TransmitterType">&nbsp;Surface: has reversible motor controlled by throttle stick, plus yaw control (2 channels)<br>
+                        <input id="hel" class="mode_select" type="radio" name="TransmitterType">&nbsp;Helicopter: has collective pitch and throttle input<br><br> If selecting the Helicopter option, please engage throttle hold now.<br><br> If selecting
+                        the Surface option, the <b>Flight Mode Count</b> will be set to 1.</p>
                 </div>
                 <img src="./Images/transmitterPic.png" style="height: 80px;width: 433px;position: absolute;top: 140px;left: -10px;border-radius:5px;" alt="Transmitter image">
 
@@ -701,10 +703,11 @@
             <div id="TRMode" style="visibility: hidden; position: absolute; top: 110px; left: 150px; z-index: 310;">
 
                 <div style="position:absolute;top:50px;left:-10px;height:70px;width:300px;font-size:6px;z-index:320;">
-                    <p>Please choose your transmitter mode:<br> <input type="radio" class="mode_select" name="TransmitterMode" checked>&nbsp;Mode 1: Elevator and Rudder on the left, Throttle and Ailerons on the right <br> <input type="radio" class="mode_select"
-                            name="TransmitterMode">&nbsp;Mode 2: Throttle and Rudder on the left, Elevator and Ailerons on the right<br> <input type="radio" class="mode_select" name="TransmitterMode">&nbsp;Mode 3: Elevator and Ailerons on the left, Throttle
-                        and Rudder on the right<br><input type="radio" class="mode_select" name="TransmitterMode">&nbsp;Mode 4: Throttle and Ailerons on the left, Elevator and Rudder on the right<br><br> For a Quad: Elevator is Pitch, Ailerons are Roll,
-                        and Rudder is Yaw.</p>
+                    <p>Please choose your transmitter mode:<br>
+                        <input type="radio" class="mode_select" name="TransmitterMode" checked>&nbsp;Mode 1: Elevator and Rudder on the left, Throttle and Ailerons on the right <br>
+                        <input type="radio" class="mode_select" name="TransmitterMode">&nbsp;Mode 2: Throttle and Rudder on the left, Elevator and Ailerons on the right<br>
+                        <input type="radio" class="mode_select" name="TransmitterMode">&nbsp;Mode 3: Elevator and Ailerons on the left, Throttle and Rudder on the right<br>
+                        <input type="radio" class="mode_select" name="TransmitterMode">&nbsp;Mode 4: Throttle and Ailerons on the left, Elevator and Rudder on the right<br><br> For a Quad: Elevator is Pitch, Ailerons are Roll, and Rudder is Yaw.</p>
                 </div>
                 <img src="./Images/transmitterPic.png" style="height: 80px;width: 433px;position: absolute;top: 140px;left: -10px;border-radius:5px;" alt="Transmitter image">
 
@@ -717,10 +720,13 @@
                     <p>Please move each control one at a time according to the instructions and picture below.<br><br> Move the Throttle stick.</p>
                 </div>
                 <img src="./Images/transmitterPic.png" style="height: 130px;width: 433px;position: absolute;top: 90px;left: -10px;border-radius:5px;" alt="Transmitter image">
-                <img src="./Images/newTransmitter.png" style="height: 125px;width: 170px;position: absolute;top: 95px;left: 110px;" alt="Transmitter image">
+                <img src="./Images/newTrasmitter.png" style="height: 125px;width: 170px;position: absolute;top: 95px;left: 110px;" alt="Transmitter image">
                 <div id="TransmitterSim" style="height: 130px;width:280px;position: absolute;top: 287px;left: 310px;border:2px solid black;border-radius:10px;">
-                    <img src="./Images/transmitterWithoutStick.png" style="height: 100px;width:280px;position: absolute;top: 15px;left: 20px;" alt="Transmitter">
-
+                    <img src="./Images/transmitterWithoutStick.png" style="height: 110px;width:250px;position: absolute;top: 10px;left: 35px;" alt="Transmitter">
+                    <img id="toggleSwitch1" src="./Images/stickDown.png" style="height: 20px;width:20px;position: absolute;top: 62px;left: 66px;" alt="Transmitter toggle switch">
+                    <img id="toggleSwitch2" src="./Images/stickDown.png" style="height: 20px; width: 20px; position: absolute; top: 62px; left: 198px;" alt="Transmitter toggle switch">
+                    <img id="toggleSwitch3" src="./Images/stickUp.png" style="visibility: hidden; height: 20px; width: 20px; position: absolute; top: 50px; left:66.5px;" alt="Transmitter toggle switch">
+                    <img id="toggleSwitch4" src="./Images/stickUp.png" style="visibility: hidden; height: 20px; width: 20px; position: absolute; top: 50px; left: 198px;" alt="Transmitter toggle switch">
                 </div>
 
             </div>

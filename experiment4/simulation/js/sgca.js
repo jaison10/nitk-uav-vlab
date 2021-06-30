@@ -525,14 +525,39 @@ function SelectTransmitterMode() {
     document.getElementById('t_back').onclick = function() { SelectFlightMode(); };
     document.getElementById('TRMode').style.visibility = "visible";
     document.getElementById('t_next').onclick = function() { testTransmitter(); };
-
+    document.getElementById('TRTest').style.visibility = "hidden";
 }
 
 function testTransmitter() {
+    document.getElementById('top_text').innerText = "Turn on the Transmitter. Make sure the receiver is connected to Transmitter. Try out the controls as indicated by the demonstration.";
     document.getElementById('TRMode').style.visibility = "hidden";
     document.getElementById('TRTest').style.visibility = "visible";
     document.getElementById('t_back').onclick = function() { SelectTransmitterMode(); };
     document.getElementById('t_next').style.color = "gray";
+    document.getElementById('toggleSwitch1').onclick = function() { switchToggle(1); };
+    document.getElementById('toggleSwitch2').onclick = function() { switchToggle(2); };
+    document.getElementById('toggleSwitch3').onclick = function() { switchToggle(3); };
+    document.getElementById('toggleSwitch4').onclick = function() { switchToggle(4); };
+
+}
+
+function switchToggle(id) {
+    if (id == 1) {
+        document.getElementById('toggleSwitch3').style.visibility = "visible";
+        document.getElementById('toggleSwitch1').style.visibility = "hidden";
+    }
+    if (id == 2) {
+        document.getElementById('toggleSwitch4').style.visibility = "visible";
+        document.getElementById('toggleSwitch2').style.visibility = "hidden";
+    }
+    if (id == 3) {
+        document.getElementById('toggleSwitch1').style.visibility = "visible";
+        document.getElementById('toggleSwitch3').style.visibility = "hidden";
+    }
+    if (id == 4) {
+        document.getElementById('toggleSwitch2').style.visibility = "visible";
+        document.getElementById('toggleSwitch4').style.visibility = "hidden";
+    }
 }
 
 function upgrade() {
