@@ -20,6 +20,25 @@ html {
     background-color: black;
 }
 
+.moveThrottle {
+    animation: throttle 3s ease-in-out;
+}
+
+@keyframes throttle {
+    0% {
+        top: 155px;
+    }
+    25% {
+        top: 146px;
+    }
+    75% {
+        top: 163px;
+    }
+    100% {
+        top: 155px;
+    }
+}
+
 #simscreen {
     position: relative;
     left: 0px;

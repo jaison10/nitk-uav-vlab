@@ -538,6 +538,9 @@ function testTransmitter() {
     document.getElementById('toggleSwitch2').onclick = function() { switchToggle(2); };
     document.getElementById('toggleSwitch3').onclick = function() { switchToggle(3); };
     document.getElementById('toggleSwitch4').onclick = function() { switchToggle(4); };
+    setTimeout(() => {
+        document.getElementById('toggleButton1').classList.add('moveThrottle');
+    }, 800);
 
 }
 
