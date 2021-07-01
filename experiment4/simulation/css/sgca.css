@@ -58,6 +58,44 @@ html {
     }
 }
 
+.moveYaw {
+    animation: yaw 3s ease-in-out infinite;
+}
+
+@keyframes yaw {
+    0% {
+        left: 147px;
+    }
+    25% {
+        left: 160px;
+    }
+    75% {
+        left: 132px;
+    }
+    100% {
+        left: 147px;
+    }
+}
+
+.movePitch {
+    animation: pitch 3s ease-in-out infinite;
+}
+
+@keyframes pitch {
+    0% {
+        top: 155px;
+    }
+    25% {
+        top: 162px;
+    }
+    75% {
+        top: 145px;
+    }
+    100% {
+        top: 155px;
+    }
+}
+
 #simscreen {
     position: relative;
     left: 0px;

@@ -540,8 +540,9 @@ function testTransmitter() {
         document.getElementById('toggleButton1').classList.add('moveThrottle');
         document.getElementById('toggleSwitch1').onclick = function() { switchToggle(1); };
         document.getElementById('toggleSwitch3').onclick = function() { switchToggle(3); };
-    }, 800);
+    }, 1000);
     setTimeout(() => {
+        document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Roll stick.";
         document.getElementById('switch_inst').innerText = "Click on the Roll switch as demonstrated";
         document.getElementById('toggleButton1').classList.remove('moveThrottle');
         document.getElementById('toggleButton2').classList.add('moveRoll');
@@ -554,9 +555,33 @@ function testTransmitter() {
         document.getElementById('toggleSwitch2').onclick = function() { switchToggle(2); };
         document.getElementById('toggleSwitch4').onclick = function() { switchToggle(4); };
 
-    }, 3500);
+    }, 6500);
+    setTimeout(() => {
+        document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Pitch stick.";
+        document.getElementById('switch_inst').innerText = "Click on the Pitch switch as demonstrated";
+        document.getElementById('toggleButton2').classList.remove('moveRoll');
+        document.getElementById('toggleButton2').classList.add('movePitch');
+        document.getElementById('toggleSwitch2').style.transform = "";
+        document.getElementById('toggleSwitch4').style.transform = "";
+        document.getElementById('toggleSwitch2').style = "height: 20px; width: 20px; position: absolute; top: 68px; left: 199px; "
+        document.getElementById('toggleSwitch4').style = "visibility: hidden; height: 20px; width: 20px; position: absolute; top: 55px; left: 198px;"
+        document.getElementById('toggleSwitch2').onclick = function() { switchToggle(2); };
+        document.getElementById('toggleSwitch4').onclick = function() { switchToggle(4); };
 
+    }, 10500);
+    setTimeout(() => {
+        document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Yaw stick.";
+        document.getElementById('switch_inst').innerText = "Click on the Yaw switch as demonstrated";
+        // document.getElementById('toggleButton2').classList.remove('movePitch');
+        document.getElementById('toggleButton1').classList.add('moveYaw');
+        document.getElementById('toggleSwitch1').onclick = function() { switchToggle(1); };
+        document.getElementById('toggleSwitch3').onclick = function() { switchToggle(3); };
+        document.getElementById('toggleSwitch1').style = "height: 25px; width: 20px; position: absolute; top: 60.5px; left: 75px; transform: rotate(-90deg); "
+        document.getElementById('toggleSwitch3').style = "visibility: hidden; height: 25px; width: 20px; position: absolute; top: 60px; left: 60px; transform: rotate(270deg);"
+        document.getElementById('toggleSwitch2').onclick = "";
+        document.getElementById('toggleSwitch4').onclick = "";
 
+    }, 18500);
 
 }
 
