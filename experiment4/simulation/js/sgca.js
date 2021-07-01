@@ -529,19 +529,25 @@ function SelectTransmitterMode() {
 }
 
 function testTransmitter() {
-    document.getElementById('top_text').innerText = "Turn on the Transmitter. Make sure the receiver is connected to Transmitter. Try out the controls as indicated by the demonstration.";
+    document.getElementById('top_text').innerText = "Turn on the Transmitter. Make sure the receiver is connected to Transmitter. Click on the indicated buttons to practice the controls.";
     document.getElementById('TRMode').style.visibility = "hidden";
     document.getElementById('TRTest').style.visibility = "visible";
     document.getElementById('t_back').onclick = function() { SelectTransmitterMode(); };
     document.getElementById('t_next').style.color = "gray";
+    document.getElementById('throttle_btn').onclick = function() { switchMovement(1); };
+    document.getElementById('roll_btn').onclick = function() { switchMovement(2); };
+    document.getElementById('pitch_btn').onclick = function() { switchMovement(3); };
+    document.getElementById('yaw_btn').onclick = function() { switchMovement(4); };
 
+}
 
-    setTimeout(() => {
+function switchMovement(id) {
+    if (id == 1) {
         document.getElementById('toggleButton1').classList.add('moveThrottle');
         document.getElementById('toggleSwitch1').onclick = function() { switchToggle(1); };
         document.getElementById('toggleSwitch3').onclick = function() { switchToggle(3); };
-    }, 1000);
-    setTimeout(() => {
+    }
+    if (id == 2) {
         document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Roll stick.";
         document.getElementById('switch_inst').innerText = "Click on the Roll switch as demonstrated";
         document.getElementById('toggleButton1').classList.remove('moveThrottle');
@@ -554,9 +560,8 @@ function testTransmitter() {
         document.getElementById('toggleSwitch4').style = "visibility: hidden; height: 25px; width: 20px; position: absolute; top: 60px; left: 190px; transform: rotate(270deg);"
         document.getElementById('toggleSwitch2').onclick = function() { switchToggle(2); };
         document.getElementById('toggleSwitch4').onclick = function() { switchToggle(4); };
-
-    }, 6500);
-    setTimeout(() => {
+    }
+    if (id == 3) {
         document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Pitch stick.";
         document.getElementById('switch_inst').innerText = "Click on the Pitch switch as demonstrated";
         document.getElementById('toggleButton2').classList.remove('moveRoll');
@@ -567,12 +572,11 @@ function testTransmitter() {
         document.getElementById('toggleSwitch4').style = "visibility: hidden; height: 20px; width: 20px; position: absolute; top: 55px; left: 198px;"
         document.getElementById('toggleSwitch2').onclick = function() { switchToggle(2); };
         document.getElementById('toggleSwitch4').onclick = function() { switchToggle(4); };
-
-    }, 10500);
-    setTimeout(() => {
+    }
+    if (id == 4) {
         document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Yaw stick.";
         document.getElementById('switch_inst').innerText = "Click on the Yaw switch as demonstrated";
-        // document.getElementById('toggleButton2').classList.remove('movePitch');
+        document.getElementById('toggleButton2').classList.remove('movePitch');
         document.getElementById('toggleButton1').classList.add('moveYaw');
         document.getElementById('toggleSwitch1').onclick = function() { switchToggle(1); };
         document.getElementById('toggleSwitch3').onclick = function() { switchToggle(3); };
@@ -580,9 +584,9 @@ function testTransmitter() {
         document.getElementById('toggleSwitch3').style = "visibility: hidden; height: 25px; width: 20px; position: absolute; top: 60px; left: 60px; transform: rotate(270deg);"
         document.getElementById('toggleSwitch2').onclick = "";
         document.getElementById('toggleSwitch4').onclick = "";
+        document.getElementById('t_next').style.color = "black";
 
-    }, 18500);
-
+    }
 }
 
 function switchToggle(id) {
