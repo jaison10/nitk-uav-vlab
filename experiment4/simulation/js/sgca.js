@@ -574,6 +574,7 @@ function switchMovement(id) {
         document.getElementById('toggleSwitch4').onclick = function() { switchToggle(4); };
     }
     if (id == 4) {
+        document.getElementById('top_text').innerText = "Click Next to proceed.";
         document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Yaw stick.";
         document.getElementById('switch_inst').innerText = "Click on the Yaw switch as demonstrated";
         document.getElementById('toggleButton2').classList.remove('movePitch');
