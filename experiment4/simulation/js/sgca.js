@@ -468,7 +468,8 @@ function cancel_setup() {
             document.getElementById('top_text').innerText = "The setup procedure for the flight controller is now complete. Click on the Transmitter Setup Wizard button to setup the Transmitter and Receiver. ";
 
             document.getElementById('rebootTab').style.visibility = "hidden";
-            document.getElementById('transmitterSetup').style.visibility = "visible";
+            document.getElementById('transmitterSetup').style.visibility = "visible"
+            document.getElementById('vehicleButton').onclick = "";
             document.getElementById('backButton').innerText = "<Back";
             document.getElementById('backButton').onclick = function() { cancel_setup(); };
             document.getElementById('finishButton').onclick = function() { cancel_setup(); };
@@ -538,7 +539,8 @@ function testTransmitter() {
     document.getElementById('roll_btn').onclick = function() { switchMovement(2); };
     document.getElementById('pitch_btn').onclick = function() { switchMovement(3); };
     document.getElementById('yaw_btn').onclick = function() { switchMovement(4); };
-
+    document.getElementById('indicateBox').classList.add('buttonBlink');
+    document.getElementById('throttle_btn').style.cursor = "pointer";
 }
 
 function switchMovement(id) {
@@ -546,6 +548,10 @@ function switchMovement(id) {
         document.getElementById('toggleButton1').classList.add('moveThrottle');
         document.getElementById('toggleSwitch1').onclick = function() { switchToggle(1); };
         document.getElementById('toggleSwitch3').onclick = function() { switchToggle(3); };
+        document.getElementById('indicateBox').style.visibility = "hidden";
+        document.getElementById('indicateBox').style.top = "3px";
+        document.getElementById('throttle_btn').style.cursor = "";
+        document.getElementById('roll_btn').style.cursor = "pointer";
     }
     if (id == 2) {
         document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Roll stick.";
@@ -560,6 +566,10 @@ function switchMovement(id) {
         document.getElementById('toggleSwitch4').style = "visibility: hidden; height: 25px; width: 20px; position: absolute; top: 60px; left: 190px; transform: rotate(270deg);"
         document.getElementById('toggleSwitch2').onclick = function() { switchToggle(2); };
         document.getElementById('toggleSwitch4').onclick = function() { switchToggle(4); };
+        document.getElementById('indicateBox').style.visibility = "hidden";
+        document.getElementById('indicateBox').style.top = "43px";
+        document.getElementById('roll_btn').style.cursor = "";
+        document.getElementById('pitch_btn').style.cursor = "pointer";
     }
     if (id == 3) {
         document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Pitch stick.";
@@ -572,6 +582,10 @@ function switchMovement(id) {
         document.getElementById('toggleSwitch4').style = "visibility: hidden; height: 20px; width: 20px; position: absolute; top: 55px; left: 198px;"
         document.getElementById('toggleSwitch2').onclick = function() { switchToggle(2); };
         document.getElementById('toggleSwitch4').onclick = function() { switchToggle(4); };
+        document.getElementById('indicateBox').style.visibility = "hidden";
+        document.getElementById('indicateBox').style.top = "83px";
+        document.getElementById('pitch_btn').style.cursor = "";
+        document.getElementById('yaw_btn').style.cursor = "pointer";
     }
     if (id == 4) {
         document.getElementById('top_text').innerText = "Click Next to proceed.";
@@ -586,26 +600,50 @@ function switchMovement(id) {
         document.getElementById('toggleSwitch2').onclick = "";
         document.getElementById('toggleSwitch4').onclick = "";
         document.getElementById('t_next').style.color = "black";
+        document.getElementById('indicateBox').style.visibility = "hidden";
+        document.getElementById('indicateBox').classList.remove('buttonBlink');
+        document.getElementById('yaw_btn').style.cursor = "";
 
     }
 }
 
 function switchToggle(id) {
+
+
     if (id == 1) {
         document.getElementById('toggleSwitch3').style.visibility = "visible";
         document.getElementById('toggleSwitch1').style.visibility = "hidden";
+        setTimeout(function() {
+            document.getElementById('indicateBox').style.visibility = "visible";
+
+        }, 2000);
     }
     if (id == 2) {
         document.getElementById('toggleSwitch4').style.visibility = "visible";
         document.getElementById('toggleSwitch2').style.visibility = "hidden";
+        setTimeout(function() {
+            document.getElementById('indicateBox').style.visibility = "visible";
+
+        }, 2000);
     }
     if (id == 3) {
         document.getElementById('toggleSwitch1').style.visibility = "visible";
         document.getElementById('toggleSwitch3').style.visibility = "hidden";
+        setTimeout(function() {
+            document.getElementById('indicateBox').style.visibility = "visible";
+
+        }, 2000);
     }
     if (id == 4) {
         document.getElementById('toggleSwitch2').style.visibility = "visible";
         document.getElementById('toggleSwitch4').style.visibility = "hidden";
+        document.getElementById('yaw_btn').style.cursor = "";
+        setTimeout(function() {
+            document.getElementById('indicateBox').style.visibility = "hidden";
+            document.getElementById('indicateBox').classList.remove('buttonBlink');
+
+        }, 2000);
+
     }
 }
 

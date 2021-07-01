@@ -96,6 +96,19 @@ html {
     }
 }
 
+.buttonBlink {
+    animation: buttonBlink 0.75s ease-in-out infinite;
+}
+
+@keyframes buttonBlink {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 #simscreen {
     position: relative;
     left: 0px;
