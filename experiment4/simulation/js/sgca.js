@@ -624,9 +624,14 @@ function switchMovement(id) {
         document.getElementById('indicateBox').style.visibility = "hidden";
         document.getElementById('indicateBox').classList.remove('buttonBlink');
         document.getElementById('yaw_btn').style.cursor = "";
+        document.getElementById('t_next').onclick = function() { FlightModeTest(); };
 
 
     }
+}
+
+function FlightModeTest() {
+
 }
 
 function switchToggle(id) {
