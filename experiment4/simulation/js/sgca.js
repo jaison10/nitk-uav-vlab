@@ -460,6 +460,7 @@ function cancel_setup() {
             document.getElementById('top_text').innerText = "Wait till the flight controller reboots.";
 
             document.getElementById('rebootTab').style.visibility = "visible";
+            document.getElementById('vehicleButton').onclick = "";
             document.getElementById('rebootStatus').style.transition = "left 1s ease-in-out";
             finalTab = 0;
             document.getElementById('rebootStatus').classList.add("rebootStatus")
