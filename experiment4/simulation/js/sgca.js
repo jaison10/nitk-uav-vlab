@@ -537,9 +537,7 @@ function testTransmitter() {
     document.getElementById('t_back').onclick = function() { SelectTransmitterMode(); };
     document.getElementById('t_next').style.color = "gray";
     document.getElementById('throttle_btn').onclick = function() { switchMovement(1); };
-    document.getElementById('roll_btn').onclick = function() { switchMovement(2); };
-    document.getElementById('pitch_btn').onclick = function() { switchMovement(3); };
-    document.getElementById('yaw_btn').onclick = function() { switchMovement(4); };
+
     document.getElementById('indicateBox').classList.add('buttonBlink');
     document.getElementById('throttle_btn').style.cursor = "pointer";
 }
@@ -555,6 +553,7 @@ function switchMovement(id) {
         document.getElementById('indicateBox').style.top = "3px";
         document.getElementById('throttle_btn').style.cursor = "";
         document.getElementById('roll_btn').style.cursor = "pointer";
+        document.getElementById('roll_btn').onclick = function() { switchMovement(2); };
         setTimeout(function() {
             document.getElementById('indicateBox').style.visibility = "visible";
 
@@ -579,6 +578,8 @@ function switchMovement(id) {
         document.getElementById('indicateBox').style.top = "43px";
         document.getElementById('roll_btn').style.cursor = "";
         document.getElementById('pitch_btn').style.cursor = "pointer";
+        document.getElementById('pitch_btn').onclick = function() { switchMovement(3); };
+
         setTimeout(function() {
             document.getElementById('indicateBox').style.visibility = "visible";
 
@@ -601,6 +602,8 @@ function switchMovement(id) {
         document.getElementById('indicateBox').style.top = "83px";
         document.getElementById('pitch_btn').style.cursor = "";
         document.getElementById('yaw_btn').style.cursor = "pointer";
+        document.getElementById('yaw_btn').onclick = function() { switchMovement(4); };
+
         setTimeout(function() {
             document.getElementById('indicateBox').style.visibility = "visible";
 
@@ -631,6 +634,32 @@ function switchMovement(id) {
 }
 
 function FlightModeTest() {
+    document.getElementById('move_inst').innerHTML = "Please toggle the Flight Mode switch.<br><br> For switches you may have to repeat this rapidly.<br><br>Alternatively, you can click Next to skip this channel, but you will get only <b>ONE</b> Flight Mode.";
+    document.getElementById('t_next').innerText = "Next/Skip";
+    document.getElementById('t_next').style.color = "black";
+    document.getElementById('toggleButton1').classList.remove('moveYaw');
+    document.getElementById('toggleButton2').classList.remove('movePitch');
+    document.getElementById('toggleButton2').classList.remove('moveRoll');
+    document.getElementById('toggleButton1').classList.remove('moveThrottle');
+
+
+    document.getElementById('toggleSwitch1').onclick = "";
+    document.getElementById('toggleSwitch2').onclick = "";
+    document.getElementById('toggleSwitch3').onclick = "";
+    document.getElementById('toggleSwitch4').onclick = "";
+    document.getElementById('throttle_btn').style.visibility = "hidden";
+    document.getElementById('roll_btn').style.visibility = "hidden";
+    document.getElementById('pitch_btn').style.visibility = "hidden";
+    document.getElementById('yaw_btn').style.visibility = "hidden";
+    document.getElementById('indicateBox').style.visibility = "hidden";
+    document.getElementById('tr_inst').style = "position:absolute;top:50px;left:-10px;height:70px;width:300px;font-size:6px;z-index:320;";
+    document.getElementById('switch_inst').style.visibility = "hidden";
+
+
+    setTimeout(function() {
+        document.getElementById('flightModeSwitch').classList.add('moveFlightMode');
+
+    }, 800);
 
 }
 

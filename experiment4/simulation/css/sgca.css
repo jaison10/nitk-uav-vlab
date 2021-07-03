@@ -109,6 +109,21 @@ html {
     }
 }
 
+.moveFlightMode {
+    animation: flightMode 1s ease-in-out infinite;
+}
+
+@keyframes flightMode {
+    0% {
+        left: 262px;
+        transform: rotate(6deg);
+    }
+    100% {
+        left: 263px;
+        transform: rotate(20deg);
+    }
+}
+
 #simscreen {
     position: relative;
     left: 0px;
