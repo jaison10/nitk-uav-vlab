@@ -653,7 +653,7 @@ function FlightModeTest() {
     document.getElementById('yaw_btn').style.visibility = "hidden";
     document.getElementById('indicateBox').style.visibility = "hidden";
     document.getElementById('tr_inst').style = "position:absolute;top:50px;left:-10px;height:70px;width:300px;font-size:6px;z-index:320;";
-    document.getElementById('switch_inst').style.visibility = "hidden";
+    document.getElementById('switch_inst').innerText = "Click on the Flight Mode switch as demonstrated";
 
 
     setTimeout(function() {
