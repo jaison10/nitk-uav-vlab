@@ -654,6 +654,14 @@ function FlightModeTest() {
     document.getElementById('indicateBox').style.visibility = "hidden";
     document.getElementById('tr_inst').style = "position:absolute;top:50px;left:-10px;height:70px;width:300px;font-size:6px;z-index:320;";
     document.getElementById('switch_inst').innerText = "Click on the Flight Mode switch as demonstrated";
+    document.getElementById('flightModeSwitch2').onclick = function() {
+        if (document.getElementById('flightModeSwitch2').style.transform == "rotate(40deg)") {
+            document.getElementById('flightModeSwitch2').style.transform = "rotate(50deg)";
+        }
+        if (document.getElementById('flightModeSwitch2').style.transform == "rotate(50deg)") {
+            document.getElementById('flightModeSwitch2').style.transform = "rotate(40deg)";
+        }
+    };
 
 
     setTimeout(function() {
