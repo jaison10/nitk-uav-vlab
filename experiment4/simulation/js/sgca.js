@@ -659,8 +659,7 @@ function FlightModeTest() {
 
     document.getElementById('tr_inst').style = "position:absolute;top:50px;left:-10px;height:70px;width:300px;font-size:6px;z-index:320;";
     document.getElementById('switch_inst').innerText = "Click on the Flight Mode switch as demonstrated";
-    document.getElementById('flightModeSwitch2').onclick = function() { flightSwitch();
-        flightMode = 1; };
+    document.getElementById('flightModeSwitch2').onclick = function() { flightSwitch(); };
 
 
     setTimeout(function() {
@@ -669,7 +668,7 @@ function FlightModeTest() {
     }, 800);
 
 }
-var flightMode;
+var flightMode = 0;
 
 function flightSwitch() {
     document.getElementById('indicateBox').style.visibility = "hidden";
@@ -677,14 +676,13 @@ function flightSwitch() {
     console.log(flightMode);
 
     if (flightMode == 1) {
-        document.getElementById('flightModeSwitch2').style.transform = "rotateY(180deg)";
-        flightMode = 2;
-        console.log(flightMode);
-    }
-    if (flightMode == 2) {
         document.getElementById('flightModeSwitch2').style.transform = "rotateY(0deg)";
-        flightMode = 1;
         console.log(flightMode);
+        flightMode = 2;
+    } else {
+        document.getElementById('flightModeSwitch2').style.transform = "rotateY(180deg)";
+        console.log(flightMode);
+        flightMode = 1;
 
     };
 }
