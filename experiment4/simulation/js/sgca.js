@@ -454,6 +454,9 @@ function cancel_setup() {
     document.getElementById('save_inst').style.visibility = "hidden";
     document.getElementById('transmitterSetup').style.visibility = "hidden";
     document.getElementById('rebootTab').style.visibility = "hidden";
+    document.getElementById('cal_status').style.visibility = "hidden";
+    document.getElementById('calculate_inst').style.visibility = "hidden";
+
 
     if (finalTab == 1) {
         setTimeout(function() {
@@ -552,11 +555,11 @@ function switchMovement(id) {
         document.getElementById('indicateBox').style.visibility = "hidden";
         document.getElementById('indicateBox').style.top = "3px";
         document.getElementById('throttle_btn').style.cursor = "";
-        document.getElementById('roll_btn').style.cursor = "pointer";
-        document.getElementById('roll_btn').onclick = function() { switchMovement(2); };
+
         setTimeout(function() {
             document.getElementById('indicateBox').style.visibility = "visible";
-
+            document.getElementById('roll_btn').style.cursor = "pointer";
+            document.getElementById('roll_btn').onclick = function() { switchMovement(2); };
         }, 5000);
     }
     if (id == 2) {
@@ -570,18 +573,18 @@ function switchMovement(id) {
         document.getElementById('toggleSwitch4').style.transform = "rotate(90deg)";
         document.getElementById('toggleSwitch1').onclick = "";
         document.getElementById('toggleSwitch3').onclick = "";
-        document.getElementById('toggleSwitch2').style = "height: 25px; width: 20px; position: absolute; top: 60px; left: 206px; transform: rotate(-90deg); "
-        document.getElementById('toggleSwitch4').style = "visibility: hidden; height: 25px; width: 20px; position: absolute; top: 60px; left: 190px; transform: rotate(270deg);"
+        document.getElementById('toggleSwitch2').style = "height: 25px; width: 20px; position: absolute; top: 60px; left: 206px; transform: rotate(-90deg);z-index:150; "
+        document.getElementById('toggleSwitch4').style = "visibility: hidden; height: 25px; width: 20px; position: absolute; top: 60px; left: 190px; transform: rotate(270deg);z-index:150;"
         document.getElementById('toggleSwitch2').onclick = function() { switchToggle(2); };
         document.getElementById('toggleSwitch4').onclick = function() { switchToggle(4); };
         document.getElementById('indicateBox').style.visibility = "hidden";
         document.getElementById('indicateBox').style.top = "43px";
         document.getElementById('roll_btn').style.cursor = "";
-        document.getElementById('pitch_btn').style.cursor = "pointer";
-        document.getElementById('pitch_btn').onclick = function() { switchMovement(3); };
 
         setTimeout(function() {
             document.getElementById('indicateBox').style.visibility = "visible";
+            document.getElementById('pitch_btn').onclick = function() { switchMovement(3); };
+            document.getElementById('pitch_btn').style.cursor = "pointer";
 
         }, 5000);
     }
@@ -594,18 +597,18 @@ function switchMovement(id) {
         document.getElementById('toggleButton2').classList.add('movePitch');
         document.getElementById('toggleSwitch2').style.transform = "";
         document.getElementById('toggleSwitch4').style.transform = "";
-        document.getElementById('toggleSwitch2').style = "height: 20px; width: 20px; position: absolute; top: 68px; left: 199px; "
-        document.getElementById('toggleSwitch4').style = "visibility: hidden; height: 20px; width: 20px; position: absolute; top: 55px; left: 198px;"
+        document.getElementById('toggleSwitch2').style = "height: 20px; width: 20px; position: absolute; top: 68px; left: 199px;z-index:150; "
+        document.getElementById('toggleSwitch4').style = "visibility: hidden; height: 20px; width: 20px; position: absolute; top: 55px; left: 198px;z-index:150;"
         document.getElementById('toggleSwitch2').onclick = function() { switchToggle(2); };
         document.getElementById('toggleSwitch4').onclick = function() { switchToggle(4); };
         document.getElementById('indicateBox').style.visibility = "hidden";
         document.getElementById('indicateBox').style.top = "83px";
         document.getElementById('pitch_btn').style.cursor = "";
-        document.getElementById('yaw_btn').style.cursor = "pointer";
-        document.getElementById('yaw_btn').onclick = function() { switchMovement(4); };
 
         setTimeout(function() {
             document.getElementById('indicateBox').style.visibility = "visible";
+            document.getElementById('yaw_btn').onclick = function() { switchMovement(4); };
+            document.getElementById('yaw_btn').style.cursor = "pointer";
 
         }, 5000);
     }
@@ -619,8 +622,8 @@ function switchMovement(id) {
         document.getElementById('toggleButton1').classList.add('moveYaw');
         document.getElementById('toggleSwitch1').onclick = function() { switchToggle(1); };
         document.getElementById('toggleSwitch3').onclick = function() { switchToggle(3); };
-        document.getElementById('toggleSwitch1').style = "height: 25px; width: 20px; position: absolute; top: 60.5px; left: 75px; transform: rotate(-90deg); "
-        document.getElementById('toggleSwitch3').style = "visibility: hidden; height: 25px; width: 20px; position: absolute; top: 60px; left: 60px; transform: rotate(270deg);"
+        document.getElementById('toggleSwitch1').style = "height: 25px; width: 20px; position: absolute; top: 60.5px; left: 75px; transform: rotate(-90deg);z-index:150; "
+        document.getElementById('toggleSwitch3').style = "visibility: hidden; height: 25px; width: 20px; position: absolute; top: 60px; left: 60px; transform: rotate(270deg);z-index:150;"
         document.getElementById('toggleSwitch2').onclick = "";
         document.getElementById('toggleSwitch4').onclick = "";
         document.getElementById('t_next').style.color = "black";
@@ -634,6 +637,8 @@ function switchMovement(id) {
 }
 
 function FlightModeTest() {
+    document.getElementById('indicateBox').style.visibility = "hidden";
+    document.getElementById('indicateBox').style.display = "none";
     document.getElementById('move_inst').innerHTML = "Please toggle the Flight Mode switch.<br><br> For switches you may have to repeat this rapidly.<br><br>Alternatively, you can click Next to skip this channel, but you will get only <b>ONE</b> Flight Mode.";
     document.getElementById('t_next').innerText = "Next/Skip";
     document.getElementById('t_next').style.color = "black";
@@ -651,17 +656,11 @@ function FlightModeTest() {
     document.getElementById('roll_btn').style.visibility = "hidden";
     document.getElementById('pitch_btn').style.visibility = "hidden";
     document.getElementById('yaw_btn').style.visibility = "hidden";
-    document.getElementById('indicateBox').style.visibility = "hidden";
+
     document.getElementById('tr_inst').style = "position:absolute;top:50px;left:-10px;height:70px;width:300px;font-size:6px;z-index:320;";
     document.getElementById('switch_inst').innerText = "Click on the Flight Mode switch as demonstrated";
-    document.getElementById('flightModeSwitch2').onclick = function() {
-        if (document.getElementById('flightModeSwitch2').style.transform == "rotate(40deg)") {
-            document.getElementById('flightModeSwitch2').style.transform = "rotate(50deg)";
-        }
-        if (document.getElementById('flightModeSwitch2').style.transform == "rotate(50deg)") {
-            document.getElementById('flightModeSwitch2').style.transform = "rotate(40deg)";
-        }
-    };
+    document.getElementById('flightModeSwitch2').onclick = function() { flightSwitch();
+        flightMode = 1; };
 
 
     setTimeout(function() {
@@ -669,6 +668,25 @@ function FlightModeTest() {
 
     }, 800);
 
+}
+var flightMode;
+
+function flightSwitch() {
+    document.getElementById('indicateBox').style.visibility = "hidden";
+    console.log('entered flight mode test');
+    console.log(flightMode);
+
+    if (flightMode == 1) {
+        document.getElementById('flightModeSwitch2').style.transform = "rotateY(180deg)";
+        flightMode = 2;
+        console.log(flightMode);
+    }
+    if (flightMode == 2) {
+        document.getElementById('flightModeSwitch2').style.transform = "rotateY(0deg)";
+        flightMode = 1;
+        console.log(flightMode);
+
+    };
 }
 
 function switchToggle(id) {
