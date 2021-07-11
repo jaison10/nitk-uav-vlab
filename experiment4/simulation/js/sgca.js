@@ -637,6 +637,7 @@ function switchMovement(id) {
 }
 
 function FlightModeTest() {
+    document.getElementById('top_text').innerText = "Try the Flight Mode Control as indicated in the Simulation. Click Next/Skip to proceed.";
     document.getElementById('indicateBox').style.visibility = "hidden";
     document.getElementById('indicateBox').style.display = "none";
     document.getElementById('move_inst').innerHTML = "Please toggle the Flight Mode switch.<br><br> For switches you may have to repeat this rapidly.<br><br>Alternatively, you can click Next to skip this channel, but you will get only <b>ONE</b> Flight Mode.";
@@ -660,7 +661,7 @@ function FlightModeTest() {
     document.getElementById('tr_inst').style = "position:absolute;top:50px;left:-10px;height:70px;width:300px;font-size:6px;z-index:320;";
     document.getElementById('switch_inst').innerText = "Click on the Flight Mode switch as demonstrated";
     document.getElementById('flightModeSwitch2').onclick = function() { flightSwitch(); };
-    document.getElementById('t_next').onclick = function() { accesorySim(); };
+    document.getElementById('t_next').onclick = function() { accesorySim1(); };
 
 
     setTimeout(function() {
@@ -688,9 +689,48 @@ function flightSwitch() {
     };
 }
 
-function accesorySim() {
+function accesorySim1() {
+    document.getElementById('flightModeSwitch2').onclick = "";
+    document.getElementById('switch_inst').innerText = "Click on the Accessory0 stick as demonstrated";
+    document.getElementById('top_text').innerText = "Try the Accesory Stick controls as indicated. Click Next/Skip to proceed.";
     document.getElementById('flightModeSwitch').classList.remove('moveFlightMode');
     document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below..<br><br> Move the Accessory0 stick.<br><br>Alternatively, click Next to skip this channel.";
+    document.getElementById('knobBar1').classList.add('moveKnobBar1');
+    document.getElementById('t_next').onclick = function() { accesorySim2(); };
+
+}
+
+function accesorySim2() {
+    document.getElementById('knobBar1').classList.remove('moveKnobBar1');
+    document.getElementById('knobBar2').classList.add('moveKnobBar2');
+    document.getElementById('switch_inst').innerText = "Click on the Accessory1 stick as demonstrated";
+    document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below..<br><br> Move the Accessory1 stick.<br><br>Alternatively, click Next to skip this channel.";
+    document.getElementById('t_next').onclick = function() { accesorySim3(); };
+
+}
+
+function accesorySim3() {
+    document.getElementById('knobBar2').classList.remove('moveKnobBar2');
+    document.getElementById('knobBar3').classList.add('moveKnobBar3');
+    document.getElementById('switch_inst').innerText = "Click on the Accessory2 stick as demonstrated";
+    document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below..<br><br> Move the Accessory2 stick.<br><br>Alternatively, click Next to skip this channel.";
+    document.getElementById('t_next').onclick = function() { accesorySim4(); };
+
+}
+
+function accesorySim4() {
+    document.getElementById('knobBar3').classList.remove('moveKnobBar3');
+    document.getElementById('knobBar4').classList.add('moveKnobBar4');
+    document.getElementById('switch_inst').innerText = "Click on the Accessory3 stick as demonstrated";
+    document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below..<br><br> Move the Accessory3 stick.<br><br>Alternatively, click Next to skip this channel.";
+    document.getElementById('t_next').onclick = function() { centreEverything() };
+
+}
+
+function centreEverything() {
+    document.getElementById('knobBar4').classList.remove('moveKnobBar4');
+
+    document.getElementById('t_next').innerText = "Next";
 
 }
 

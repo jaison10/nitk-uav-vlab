@@ -124,6 +124,58 @@ html {
     }
 }
 
+.moveKnobBar1 {
+    animation: moveKnob1 0.7s linear infinite alternate;
+}
+
+@keyframes moveKnob1 {
+    0% {
+        left: 129px;
+    }
+    100% {
+        left: 138px;
+    }
+}
+
+.moveKnobBar2 {
+    animation: moveKnob2 0.7s linear infinite alternate;
+}
+
+@keyframes moveKnob2 {
+    0% {
+        left: 150px;
+    }
+    100% {
+        left: 158.5px;
+    }
+}
+
+.moveKnobBar3 {
+    animation: moveKnob3 0.7s linear infinite alternate;
+}
+
+@keyframes moveKnob3 {
+    0% {
+        left: 227.5px;
+    }
+    100% {
+        left: 235.5px;
+    }
+}
+
+.moveKnobBar4 {
+    animation: moveKnob4 0.7s linear infinite alternate;
+}
+
+@keyframes moveKnob4 {
+    0% {
+        left: 249px;
+    }
+    100% {
+        left: 257px;
+    }
+}
+
 #simscreen {
     position: relative;
     left: 0px;
