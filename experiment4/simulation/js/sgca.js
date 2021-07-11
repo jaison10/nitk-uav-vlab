@@ -694,7 +694,7 @@ function accesorySim1() {
     document.getElementById('switch_inst').innerText = "Click on the Accessory0 stick as demonstrated";
     document.getElementById('top_text').innerText = "Try the Accesory Stick controls as indicated. Click Next/Skip to proceed.";
     document.getElementById('flightModeSwitch').classList.remove('moveFlightMode');
-    document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below..<br><br> Move the Accessory0 stick.<br><br>Alternatively, click Next to skip this channel.";
+    document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Accessory0 stick.<br><br>Alternatively, click Next to skip this channel.";
     document.getElementById('knobBar1').classList.add('moveKnobBar1');
     document.getElementById('t_next').onclick = function() { accesorySim2(); };
     document.getElementById('Accesory0').onclick = function() { moveAccessory(0, 324); };
@@ -707,7 +707,7 @@ function accesorySim2() {
     document.getElementById('knobBar1').classList.remove('moveKnobBar1');
     document.getElementById('knobBar2').classList.add('moveKnobBar2');
     document.getElementById('switch_inst').innerText = "Click on the Accessory1 stick as demonstrated";
-    document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below..<br><br> Move the Accessory1 stick.<br><br>Alternatively, click Next to skip this channel.";
+    document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Accessory1 stick.<br><br>Alternatively, click Next to skip this channel.";
     document.getElementById('t_next').onclick = function() { accesorySim3(); };
     document.getElementById('Accesory1').onclick = function() { moveAccessory(1, 323); };
 }
@@ -718,7 +718,7 @@ function accesorySim3() {
     document.getElementById('knobBar2').classList.remove('moveKnobBar2');
     document.getElementById('knobBar3').classList.add('moveKnobBar3');
     document.getElementById('switch_inst').innerText = "Click on the Accessory2 stick as demonstrated";
-    document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below..<br><br> Move the Accessory2 stick.<br><br>Alternatively, click Next to skip this channel.";
+    document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Accessory2 stick.<br><br>Alternatively, click Next to skip this channel.";
     document.getElementById('t_next').onclick = function() { accesorySim4(); };
     document.getElementById('Accesory2').onclick = function() { moveAccessory(2, 323); };
 
@@ -730,7 +730,7 @@ function accesorySim4() {
     document.getElementById('knobBar3').classList.remove('moveKnobBar3');
     document.getElementById('knobBar4').classList.add('moveKnobBar4');
     document.getElementById('switch_inst').innerText = "Click on the Accessory3 stick as demonstrated";
-    document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below..<br><br> Move the Accessory3 stick.<br><br>Alternatively, click Next to skip this channel.";
+    document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Accessory3 stick.<br><br>Alternatively, click Next to skip this channel.";
     document.getElementById('t_next').onclick = function() { centreEverything() };
     document.getElementById('Accesory3').onclick = function() { moveAccessory(3, 324); };
 
@@ -751,6 +751,8 @@ function moveAccessory(id, topUnit) {
 }
 
 function centreEverything() {
+    document.getElementById('top_text').innerText = "Center all the Controls. Click Next to proceed.";
+    document.getElementById('move_inst').innerHTML = "Please center all controls and trims and press Next when ready.<br><br> If your FlightMode switch has only two positions, leave it in either position.";
     document.getElementById('Accesory3').style.top = "324px";
     document.getElementById('Accesory3').onclick = "";
     document.getElementById('knobBar4').classList.remove('moveKnobBar4');
