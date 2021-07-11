@@ -660,6 +660,7 @@ function FlightModeTest() {
     document.getElementById('tr_inst').style = "position:absolute;top:50px;left:-10px;height:70px;width:300px;font-size:6px;z-index:320;";
     document.getElementById('switch_inst').innerText = "Click on the Flight Mode switch as demonstrated";
     document.getElementById('flightModeSwitch2').onclick = function() { flightSwitch(); };
+    document.getElementById('t_next').onclick = function() { accesorySim(); };
 
 
     setTimeout(function() {
@@ -685,6 +686,12 @@ function flightSwitch() {
         flightMode = 1;
 
     };
+}
+
+function accesorySim() {
+    document.getElementById('flightModeSwitch').classList.remove('moveFlightMode');
+    document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below..<br><br> Move the Accessory0 stick.<br><br>Alternatively, click Next to skip this channel.";
+
 }
 
 function switchToggle(id) {
