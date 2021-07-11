@@ -670,7 +670,7 @@ function FlightModeTest() {
     }, 800);
 
 }
-var flightMode = 0;
+var flightMode = 1;
 
 function flightSwitch() {
     document.getElementById('indicateBox').style.visibility = "hidden";
@@ -697,39 +697,63 @@ function accesorySim1() {
     document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below..<br><br> Move the Accessory0 stick.<br><br>Alternatively, click Next to skip this channel.";
     document.getElementById('knobBar1').classList.add('moveKnobBar1');
     document.getElementById('t_next').onclick = function() { accesorySim2(); };
+    document.getElementById('Accesory0').onclick = function() { moveAccessory(0, 324); };
 
 }
 
 function accesorySim2() {
+    document.getElementById('Accesory0').onclick = "";
+    document.getElementById('Accesory0').style.top = "324px";
     document.getElementById('knobBar1').classList.remove('moveKnobBar1');
     document.getElementById('knobBar2').classList.add('moveKnobBar2');
     document.getElementById('switch_inst').innerText = "Click on the Accessory1 stick as demonstrated";
     document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below..<br><br> Move the Accessory1 stick.<br><br>Alternatively, click Next to skip this channel.";
     document.getElementById('t_next').onclick = function() { accesorySim3(); };
-
+    document.getElementById('Accesory1').onclick = function() { moveAccessory(1, 323); };
 }
 
 function accesorySim3() {
+    document.getElementById('Accesory1').style.top = "323px";
+    document.getElementById('Accesory1').onclick = "";
     document.getElementById('knobBar2').classList.remove('moveKnobBar2');
     document.getElementById('knobBar3').classList.add('moveKnobBar3');
     document.getElementById('switch_inst').innerText = "Click on the Accessory2 stick as demonstrated";
     document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below..<br><br> Move the Accessory2 stick.<br><br>Alternatively, click Next to skip this channel.";
     document.getElementById('t_next').onclick = function() { accesorySim4(); };
+    document.getElementById('Accesory2').onclick = function() { moveAccessory(2, 323); };
 
 }
 
 function accesorySim4() {
+    document.getElementById('Accesory2').style.top = "323px";
+    document.getElementById('Accesory2').onclick = "";
     document.getElementById('knobBar3').classList.remove('moveKnobBar3');
     document.getElementById('knobBar4').classList.add('moveKnobBar4');
     document.getElementById('switch_inst').innerText = "Click on the Accessory3 stick as demonstrated";
     document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below..<br><br> Move the Accessory3 stick.<br><br>Alternatively, click Next to skip this channel.";
     document.getElementById('t_next').onclick = function() { centreEverything() };
+    document.getElementById('Accesory3').onclick = function() { moveAccessory(3, 324); };
 
+}
+var accessoryMode = 0;
+
+function moveAccessory(id, topUnit) {
+    if (accessoryMode == 0) {
+        document.getElementById('Accesory' + id).style.transform = "rotate(180deg)";
+        document.getElementById('Accesory' + id).style.top = topUnit + 13 + "px";
+
+        accessoryMode = 1;
+    } else {
+        document.getElementById('Accesory' + id).style.transform = "rotate(0deg)";
+        document.getElementById('Accesory' + id).style.top = topUnit + "px";
+        accessoryMode = 0;
+    }
 }
 
 function centreEverything() {
+    document.getElementById('Accesory3').style.top = "324px";
+    document.getElementById('Accesory3').onclick = "";
     document.getElementById('knobBar4').classList.remove('moveKnobBar4');
-
     document.getElementById('t_next').innerText = "Next";
 
 }
