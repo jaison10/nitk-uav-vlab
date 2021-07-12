@@ -532,6 +532,9 @@ function SelectTransmitterMode() {
     document.getElementById('t_next').onclick = function() { testTransmitter(); };
     document.getElementById('TRTest').style.visibility = "hidden";
     document.getElementById('t_next').style.color = "black";
+    document.getElementById('indicateBox').style.visibility = "hidden";
+    document.getElementById('indicateBox').classList.remove('buttonBlink');
+
 }
 
 function testTransmitter() {
@@ -552,6 +555,10 @@ function testTransmitter() {
     document.getElementById('pitch_btn').style.visibility = "visible";
     document.getElementById('yaw_btn').style.visibility = "visible";
     document.getElementById('indicateBox').style.visibility = "visible";
+    for (let i = 0; i <= 3; i++) {
+        document.getElementById('Accesory0').onclick = "";
+
+    }
 
 }
 
@@ -652,7 +659,7 @@ function FlightModeTest() {
     document.getElementById('toggleSwitch1').style = "height: 20px; width: 20px; position: absolute; top: 68px; left: 66px;z-index: 150;";
     document.getElementById('top_text').innerText = "Try the Flight Mode Control as indicated in the Simulation. Click Next/Skip to proceed.";
     document.getElementById('indicateBox').style.visibility = "hidden";
-    document.getElementById('indicateBox').style.display = "none";
+
     document.getElementById('move_inst').innerHTML = "Please toggle the Flight Mode switch.<br><br> For switches you may have to repeat this rapidly.<br><br>Alternatively, you can click Next to skip this channel, but you will get only <b>ONE</b> Flight Mode.";
     document.getElementById('t_next').innerText = "Next/Skip";
     document.getElementById('t_next').style.color = "black";
