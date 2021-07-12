@@ -544,6 +544,8 @@ function testTransmitter() {
 
     document.getElementById('indicateBox').classList.add('buttonBlink');
     document.getElementById('throttle_btn').style.cursor = "pointer";
+    document.getElementById('flightModeSwitch').classList.remove('moveFlightMode');
+
 }
 
 function switchMovement(id) {
@@ -634,10 +636,13 @@ function switchMovement(id) {
         document.getElementById('t_next').onclick = function() { FlightModeTest(); };
 
 
+
     }
 }
 
 function FlightModeTest() {
+    document.getElementById('toggleSwitch1').style.visibility = "visible";
+    document.getElementById('toggleSwitch1').style.transform = "rotate(180deg)";
     document.getElementById('top_text').innerText = "Try the Flight Mode Control as indicated in the Simulation. Click Next/Skip to proceed.";
     document.getElementById('indicateBox').style.visibility = "hidden";
     document.getElementById('indicateBox').style.display = "none";
@@ -658,12 +663,16 @@ function FlightModeTest() {
     document.getElementById('roll_btn').style.visibility = "hidden";
     document.getElementById('pitch_btn').style.visibility = "hidden";
     document.getElementById('yaw_btn').style.visibility = "hidden";
-
+    document.getElementById('flightModeSwitch2').style.transform = "rotateY(0deg)";
     document.getElementById('tr_inst').style = "position:absolute;top:50px;left:-10px;height:70px;width:300px;font-size:6px;z-index:320;";
     document.getElementById('switch_inst').innerText = "Click on the Flight Mode switch as demonstrated";
     document.getElementById('flightModeSwitch2').onclick = function() { flightSwitch(); };
     document.getElementById('t_next').onclick = function() { accesorySim1(); };
     document.getElementById('t_back').onclick = function() { testTransmitter(); };
+    document.getElementById('knobBar1').classList.remove('moveKnobBar1');
+    document.getElementById('knobBar2').classList.remove('moveKnobBar2');
+    document.getElementById('knobBar3').classList.remove('moveKnobBar3');
+    document.getElementById('knobBar4').classList.remove('moveKnobBar4');
 
 
     setTimeout(function() {
@@ -696,6 +705,8 @@ function accesorySim1() {
         document.getElementById('Accesory' + i).style.transform = "rotate(0deg)";
 
     }
+    document.getElementById('flightModeSwitch2').style.transform = "rotateY(0deg)";
+
     document.getElementById('flightModeSwitch2').onclick = "";
     document.getElementById('switch_inst').innerText = "Click on the Accessory0 stick as demonstrated";
     document.getElementById('top_text').innerText = "Try the Accesory Stick controls as indicated. Click Next/Skip to proceed.";
@@ -763,7 +774,8 @@ function accesorySim4() {
     document.getElementById('Accesory3').onclick = function() { moveAccessory(3, 324); };
     document.getElementById('t_next').innerText = "Next/Skip";
     document.getElementById('t_back').onclick = function() { accesorySim3(); };
-
+    for (let i = 1; i <= 18; i++)
+        document.getElementById('orangeArrow' + i).style.visibility = "hidden";
 
 }
 var accessoryMode = 0;
@@ -782,14 +794,18 @@ function moveAccessory(id, topUnit) {
 }
 
 function centreEverything() {
-    document.getElementById('top_text').innerText = "Center all the Controls. Click Next to proceed.";
+    document.getElementById('flightModeSwitch').classList.remove('moveFlightMode');
+    document.getElementById('switch_inst').innerText = "";
+    document.getElementById('top_text').innerText = "Center all the Controls. Since all the control sticks are centered, Click Next to proceed.";
     document.getElementById('move_inst').innerHTML = "Please center all controls and trims and press Next when ready.<br><br> If your FlightMode switch has only two positions, leave it in either position.";
     document.getElementById('Accesory3').style.top = "324px";
     document.getElementById('Accesory3').onclick = "";
     document.getElementById('knobBar4').classList.remove('moveKnobBar4');
     document.getElementById('t_next').innerText = "Next";
-    for (let i = 1; i <= 18; i++)
+    for (let i = 1; i <= 18; i++) {
         document.getElementById('orangeArrow' + i).style.visibility = "visible";
+        document.getElementById('orangeArrow' + i).classList.add('blinkOrangeArrows');
+    }
     document.getElementById('t_back').onclick = function() { accesorySim4(); };
 
 

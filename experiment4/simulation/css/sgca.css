@@ -176,6 +176,19 @@ html {
     }
 }
 
+.blinkOrangeArrows {
+    animation: blinkOrange 0.7s linear infinite;
+}
+
+@keyframes blinkOrange {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 #simscreen {
     position: relative;
     left: 0px;
