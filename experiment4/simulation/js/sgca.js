@@ -536,15 +536,22 @@ function SelectTransmitterMode() {
 
 function testTransmitter() {
     document.getElementById('top_text').innerText = "Turn on the Transmitter. Make sure the receiver is connected to Transmitter. Click on the indicated buttons to practice the controls.";
+    document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Throttle stick.";
+    document.getElementById('switch_inst').innerText = "Click on the Throttle switch as demonstrated";
     document.getElementById('TRMode').style.visibility = "hidden";
     document.getElementById('TRTest').style.visibility = "visible";
     document.getElementById('t_back').onclick = function() { SelectTransmitterMode(); };
     document.getElementById('t_next').style.color = "gray";
     document.getElementById('throttle_btn').onclick = function() { switchMovement(1); };
-
+    document.getElementById('t_next').onclick = "";
     document.getElementById('indicateBox').classList.add('buttonBlink');
     document.getElementById('throttle_btn').style.cursor = "pointer";
     document.getElementById('flightModeSwitch').classList.remove('moveFlightMode');
+    document.getElementById('throttle_btn').style.visibility = "visible";
+    document.getElementById('roll_btn').style.visibility = "visible";
+    document.getElementById('pitch_btn').style.visibility = "visible";
+    document.getElementById('yaw_btn').style.visibility = "visible";
+    document.getElementById('indicateBox').style.visibility = "visible";
 
 }
 
@@ -642,7 +649,7 @@ function switchMovement(id) {
 
 function FlightModeTest() {
     document.getElementById('toggleSwitch1').style.visibility = "visible";
-    document.getElementById('toggleSwitch1').style.transform = "rotate(180deg)";
+    document.getElementById('toggleSwitch1').style = "height: 20px; width: 20px; position: absolute; top: 68px; left: 66px;z-index: 150;";
     document.getElementById('top_text').innerText = "Try the Flight Mode Control as indicated in the Simulation. Click Next/Skip to proceed.";
     document.getElementById('indicateBox').style.visibility = "hidden";
     document.getElementById('indicateBox').style.display = "none";
@@ -717,6 +724,7 @@ function accesorySim1() {
     document.getElementById('Accesory0').onclick = function() { moveAccessory(0, 324); };
     document.getElementById('t_next').innerText = "Next/Skip";
     document.getElementById('t_back').onclick = function() { FlightModeTest(); };
+    document.getElementById('knobBar2').classList.remove('moveKnobBar2');
 
 
 }
@@ -736,6 +744,7 @@ function accesorySim2() {
     document.getElementById('Accesory1').onclick = function() { moveAccessory(1, 323); };
     document.getElementById('t_next').innerText = "Next/Skip";
     document.getElementById('t_back').onclick = function() { accesorySim1(); };
+    document.getElementById('knobBar3').classList.remove('moveKnobBar3');
 
 
 }
@@ -755,6 +764,7 @@ function accesorySim3() {
     document.getElementById('Accesory2').onclick = function() { moveAccessory(2, 323); };
     document.getElementById('t_next').innerText = "Next/Skip";
     document.getElementById('t_back').onclick = function() { accesorySim2(); };
+    document.getElementById('knobBar4').classList.remove('moveKnobBar4');
 
 
 }
@@ -794,6 +804,7 @@ function moveAccessory(id, topUnit) {
 }
 
 function centreEverything() {
+    document.getElementById('Accesory3').style.transform = "rotate(0deg)";
     document.getElementById('flightModeSwitch').classList.remove('moveFlightMode');
     document.getElementById('switch_inst').innerText = "";
     document.getElementById('top_text').innerText = "Center all the Controls. Since all the control sticks are centered, Click Next to proceed.";
@@ -802,12 +813,14 @@ function centreEverything() {
     document.getElementById('Accesory3').onclick = "";
     document.getElementById('knobBar4').classList.remove('moveKnobBar4');
     document.getElementById('t_next').innerText = "Next";
-    for (let i = 1; i <= 18; i++) {
-        document.getElementById('orangeArrow' + i).style.visibility = "visible";
-        document.getElementById('orangeArrow' + i).classList.add('blinkOrangeArrows');
-    }
-    document.getElementById('t_back').onclick = function() { accesorySim4(); };
 
+    document.getElementById('t_back').onclick = function() { accesorySim4(); };
+    setTimeout(function() {
+        for (let i = 1; i <= 18; i++) {
+            document.getElementById('orangeArrow' + i).style.visibility = "visible";
+            document.getElementById('orangeArrow' + i).classList.add('blinkOrangeArrows');
+        }
+    }, 1000);
 
 }
 
