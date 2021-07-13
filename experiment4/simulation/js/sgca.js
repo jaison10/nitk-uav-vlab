@@ -831,7 +831,7 @@ function centreEverything() {
     document.getElementById('Accesory3').onclick = "";
     document.getElementById('knobBar4').classList.remove('moveKnobBar4');
     document.getElementById('t_next').innerText = "Next";
-
+    document.getElementById('t_next').onclick = function() { moveToMax(); };
     document.getElementById('t_back').onclick = function() { accesorySim4(); };
     setTimeout(function() {
         for (let i = 1; i <= 18; i++) {
@@ -842,8 +842,19 @@ function centreEverything() {
 
 }
 
+function moveToMax() {
+    document.getElementById('move_inst').innerHTML = "Please move all controls to their maximum extents on both directions.<br><br> Press Next when ready.";
+    document.getElementById('top_text').innerText = "Move all the Controls to its maximum on both sides. Try to move the control sticks to maximum as indicated. Click Next to proceed.";
+    document.getElementById('switch_inst').innerText = "Click on the Control sticks to move them to maximum";
+
+    document.getElementById('t_back').onclick = function() { centreEverything(); };
+
+}
+
 function centreStick(id) {
     document.getElementById('centered' + id).style.visibility = "visible";
+    document.getElementById('toggleSwitch' + id).onclick = "";
+
 }
 
 function switchToggle(id) {
