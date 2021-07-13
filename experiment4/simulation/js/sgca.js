@@ -555,11 +555,18 @@ function testTransmitter() {
     document.getElementById('pitch_btn').style.visibility = "visible";
     document.getElementById('yaw_btn').style.visibility = "visible";
     document.getElementById('indicateBox').style.visibility = "visible";
+    document.getElementById('indicateBox').style.top = "3px";
+    document.getElementById('toggleButton1').classList.remove('moveYaw');
+    document.getElementById('toggleButton2').classList.remove('movePitch');
+    document.getElementById('toggleButton2').classList.remove('moveRoll');
+    document.getElementById('toggleButton1').classList.remove('moveThrottle');
     for (let i = 0; i <= 3; i++) {
         document.getElementById('Accesory0').onclick = "";
 
     }
-
+    document.getElementById('roll_btn').onclick = "";
+    document.getElementById('yaw_btn').onclick = "";
+    document.getElementById('pitch_btn').onclick = "";
 }
 
 function switchMovement(id) {
