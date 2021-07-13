@@ -820,8 +820,12 @@ function moveAccessory(id, topUnit) {
 function centreEverything() {
     document.getElementById('Accesory3').style.transform = "rotate(0deg)";
     document.getElementById('flightModeSwitch').classList.remove('moveFlightMode');
-    document.getElementById('switch_inst').innerText = "";
-    document.getElementById('top_text').innerText = "Center all the Controls. Since all the control sticks are centered, Click Next to proceed.";
+    document.getElementById('switch_inst').innerText = "Click on the Control sticks to center them";
+    document.getElementById('toggleSwitch1').style.cursor = "pointer";
+    document.getElementById('toggleSwitch2').style.cursor = "pointer";
+    document.getElementById('toggleSwitch1').onclick = function() { centreStick(1) };
+    document.getElementById('toggleSwitch2').onclick = function() { centreStick(2) };
+    document.getElementById('top_text').innerText = "Center all the Controls. Try to center the control sticks as indicated. Click Next to proceed.";
     document.getElementById('move_inst').innerHTML = "Please center all controls and trims and press Next when ready.<br><br> If your FlightMode switch has only two positions, leave it in either position.";
     document.getElementById('Accesory3').style.top = "324px";
     document.getElementById('Accesory3').onclick = "";
@@ -836,6 +840,10 @@ function centreEverything() {
         }
     }, 1000);
 
+}
+
+function centreStick(id) {
+    document.getElementById('centered' + id).style.visibility = "visible";
 }
 
 function switchToggle(id) {
