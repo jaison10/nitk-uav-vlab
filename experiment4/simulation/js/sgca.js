@@ -675,6 +675,9 @@ function FlightModeTest() {
     document.getElementById('toggleButton2').classList.remove('moveRoll');
     document.getElementById('toggleButton1').classList.remove('moveThrottle');
 
+    document.getElementById('toggleSwitch3').style.visibility = "hidden";
+    document.getElementById('toggleSwitch4').style.visibility = "hidden";
+
 
     document.getElementById('toggleSwitch1').onclick = "";
     document.getElementById('toggleSwitch2').onclick = "";
@@ -797,6 +800,9 @@ function accesorySim4() {
     document.getElementById('t_next').onclick = function() { centreEverything() };
     document.getElementById('Accesory3').onclick = function() { moveAccessory(3, 324); };
     document.getElementById('t_next').innerText = "Next/Skip";
+    document.getElementById('centered2').style.visibility = "hidden";
+    document.getElementById('centered1').style.visibility = "hidden";
+
     document.getElementById('t_back').onclick = function() { accesorySim3(); };
     for (let i = 1; i <= 18; i++)
         document.getElementById('orangeArrow' + i).style.visibility = "hidden";
@@ -818,11 +824,15 @@ function moveAccessory(id, topUnit) {
 }
 
 function centreEverything() {
+    document.getElementById('centered2').style.visibility = "hidden";
+    document.getElementById('centered1').style.visibility = "hidden";
     document.getElementById('Accesory3').style.transform = "rotate(0deg)";
     document.getElementById('flightModeSwitch').classList.remove('moveFlightMode');
     document.getElementById('switch_inst').innerText = "Click on the Control sticks to center them";
     document.getElementById('toggleSwitch1').style.cursor = "pointer";
     document.getElementById('toggleSwitch2').style.cursor = "pointer";
+    document.getElementById('toggleSwitch1').style.visibility = "visible";
+    document.getElementById('toggleSwitch2').style.visibility = "visible";
     document.getElementById('toggleSwitch1').onclick = function() { centreStick(1) };
     document.getElementById('toggleSwitch2').onclick = function() { centreStick(2) };
     document.getElementById('top_text').innerText = "Center all the Controls. Try to center the control sticks as indicated. Click Next to proceed.";
@@ -843,17 +853,25 @@ function centreEverything() {
 }
 
 function moveToMax() {
+    for (let i = 1; i <= 18; i++) {
+        document.getElementById('orangeArrow' + i).style.visibility = "hidden";
+        document.getElementById('orangeArrow' + i).classList.remove('blinkOrangeArrows');
+    }
     document.getElementById('move_inst').innerHTML = "Please move all controls to their maximum extents on both directions.<br><br> Press Next when ready.";
     document.getElementById('top_text').innerText = "Move all the Controls to its maximum on both sides. Try to move the control sticks to maximum as indicated. Click Next to proceed.";
     document.getElementById('switch_inst').innerText = "Click on the Control sticks to move them to maximum";
-
+    document.getElementById('switch_inst').style.fontSize = "9px";
+    document.getElementById('switch_inst').style.left = "22px";
     document.getElementById('t_back').onclick = function() { centreEverything(); };
-
+    document.getElementById('toggleSwitch1').onclick = "";
+    document.getElementById('toggleSwitch2').onclick = "";
 }
 
 function centreStick(id) {
     document.getElementById('centered' + id).style.visibility = "visible";
     document.getElementById('toggleSwitch' + id).onclick = "";
+    document.getElementById('toggleSwitch' + id).style.visibility = "hidden";
+
 
 }
 
