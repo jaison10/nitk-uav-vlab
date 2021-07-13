@@ -555,7 +555,7 @@ function testTransmitter() {
     document.getElementById('pitch_btn').style.visibility = "visible";
     document.getElementById('yaw_btn').style.visibility = "visible";
     document.getElementById('indicateBox').style.visibility = "visible";
-    document.getElementById('indicateBox').style.top = "3px";
+    document.getElementById('indicateBox').style.top = "-37px";
     document.getElementById('toggleButton1').classList.remove('moveYaw');
     document.getElementById('toggleButton2').classList.remove('movePitch');
     document.getElementById('toggleButton2').classList.remove('moveRoll');
