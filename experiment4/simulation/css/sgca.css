@@ -189,6 +189,116 @@ html {
     }
 }
 
+.moveMax1 {
+    animation: moveMax1 5s ease-in-out infinite;
+}
+
+.moveMax2 {
+    animation: moveMax2 5s ease-in-out infinite;
+}
+
+@keyframes moveMax1 {
+    0% {
+        top: 155px;
+        left: 147px;
+    }
+    10% {
+        top: 144px;
+        left: 147px;
+    }
+    20% {
+        top: 165px;
+        left: 147px;
+    }
+    30% {
+        top: 155px;
+        left: 147px;
+    }
+    40% {
+        top: 155px;
+        left: 130px;
+    }
+    50% {
+        top: 155px;
+        left: 164px;
+    }
+    60% {
+        top: 144px;
+        left: 164px;
+    }
+    70% {
+        top: 144px;
+        left: 130px;
+    }
+    80% {
+        top: 165px;
+        left: 130px;
+    }
+    90% {
+        top: 165px;
+        left: 164px;
+    }
+    97% {
+        top: 155px;
+        left: 164px;
+    }
+    100% {
+        top: 155px;
+        left: 147px;
+    }
+}
+
+@keyframes moveMax2 {
+    0% {
+        top: 155px;
+        left: 235px;
+    }
+    10% {
+        top: 144px;
+        left: 235px;
+    }
+    20% {
+        top: 165px;
+        left: 235px;
+    }
+    30% {
+        top: 155px;
+        left: 235px;
+    }
+    40% {
+        top: 155px;
+        left: 217px;
+    }
+    50% {
+        top: 155px;
+        left: 251px;
+    }
+    60% {
+        top: 144px;
+        left: 251px;
+    }
+    70% {
+        top: 144px;
+        left: 217px;
+    }
+    80% {
+        top: 165px;
+        left: 217px;
+    }
+    90% {
+        top: 165px;
+        left: 251px;
+    }
+    97% {
+        top: 155px;
+        left: 251px;
+    }
+    100% {
+        top: 155px;
+        left: 235px;
+    }
+}
+
 #simscreen {
     position: relative;
     left: 0px;

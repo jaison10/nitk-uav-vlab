@@ -865,6 +865,8 @@ function moveToMax() {
     document.getElementById('t_back').onclick = function() { centreEverything(); };
     document.getElementById('toggleSwitch1').onclick = "";
     document.getElementById('toggleSwitch2').onclick = "";
+    document.getElementById('toggleButton1').classList.add('moveMax1');
+    document.getElementById('toggleButton2').classList.add('moveMax2');
 }
 
 function centreStick(id) {
