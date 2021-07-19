@@ -906,10 +906,54 @@ function moveToMax() {
     // }, 10000);
     document.getElementById('toggleButton1').classList.add('moveMax1');
     document.getElementById('toggleButton2').classList.add('moveMax2');
-    document.getElementById('toggleButton1').title = "Throttle";
-    document.getElementById('toggleButton2').title = "Roll";
-    document.getElementById('toggleButton3').title = "Throttle";
-    document.getElementById('toggleButton4').title = "Roll";
+    // document.getElementById('toggleButton1').title = "Throttle";
+    // document.getElementById('toggleButton2').title = "Roll";
+    // document.getElementById('toggleButton3').title = "Throttle";
+    // document.getElementById('toggleButton4').title = "Roll";
+    document.getElementById('t_next').onclick = function() { reversedOrNot(); };
+
+}
+
+function reversedOrNot() {
+    document.getElementById('toggleButton1').classList.remove('moveMax1');
+    document.getElementById('toggleButton2').classList.remove('moveMax2');
+    document.getElementById('toggleSwitch1').onclick = "";
+    document.getElementById('toggleSwitch2').onclick = "";
+    document.getElementById('toggleSwitch3').onclick = "";
+    document.getElementById('toggleSwitch4').onclick = "";
+    document.getElementById('top_text').innerText = "Center the controls before checking if the controls are reversed by pressing 'Back' button twice. Try moving the controls and Check the respective box if it is reversed else uncheck it. Click 'Next' to proceed. ";
+    document.getElementById('move_inst').innerHTML = "<p id='move_inst' style='position:absolute;left:5px;'><input type='checkbox' name='throttle' style='height:10px;width:10px;border:1px solid white;'><label for='throttle' style='position:relative;top:-2px;left:-3px;'> Throttle</label>&emsp;&emsp;<input type='checkbox' name='roll' style='height:10px;width:10px;border:1px solid white;position:relative;left:60px;'><label for='roll' style='position:relative;top:-2px;left:58px;'> Roll</label>&emsp;&emsp;<input type='checkbox' name='pitch' style='height:10px;width:10px;border:1px solid white;position:relative;left:130px;'><label for='pitch' style='position:relative;top:-2px;left:128px;'> Pitch</label>&emsp;&emsp;<input type='checkbox' name='yaw' style='height:10px;width:10px;border:1px solid white;position:relative;left:185px;'><label for='yaw' style='position:relative;top:-2px;left:183px;'> Yaw</label>&emsp;&emsp;<br><br> Please check the picture below and correct all the sticks which show an inverted movemement. Press Next when ready.</p>";
+    document.getElementById('switch_inst').innerText = "Click on the Throttle switch and check if it is reversed.";
+    document.getElementById('centered1').onclick = function() { switchReversedOrNot(1); };
+    document.getElementById('centered2').onclick = function() { switchReversedOrNot(2); };
+    document.getElementById('toggleSwitch1').style = "visibility: hidden;height: 20px; width: 20px; position: absolute; top: 68px; left: 66px;z-index: 150;";
+    document.getElementById('toggleSwitch2').style = "visibility: hidden;height: 20px; width: 20px; position: absolute; top: 68px; left: 199px;z-index: 150;";
+    document.getElementById('toggleSwitch3').style = "visibility: hidden; height: 20px; width: 20px; position: absolute; top: 55px; left:67px;z-index: 150;";
+    document.getElementById('toggleSwitch4').style = "visibility: hidden; height: 20px; width: 20px; position: absolute; top: 55px; left: 198px;z-index: 150;";
+
+}
+
+function switchReversedOrNot(id) {
+
+    if (id == 1) {
+        document.getElementById('centered1').style.visibility = "hidden";
+        document.getElementById('toggleSwitch1').style.visibility = "visible";
+        document.getElementById('toggleSwitch1').onclick = function() { switchToggle(1); };
+        document.getElementById('toggleButton1').style = "height:5px;width:5px;border-radius:50%;border:2.5px solid green;background:#fff;position:absolute;top:162px;left:147px;transition:top 1s ease-in-out;"
+        document.getElementById('rev_inst').style.visibility = "visible";
+        document.getElementById('rev_inst').innerText = "Throttle is moving in the correct direction. Hence, <b>Leave the box unchecked.</b>";
+        document.getElementById('rev_inst').style.color = "green";
+    }
+    if (id == 2) {
+        document.getElementById('centered2').style.visibility = "hidden";
+        document.getElementById('toggleSwitch2').style.visibility = "visible";
+        document.getElementById('toggleSwitch2').onclick = function() { switchToggle(2); };
+        document.getElementById('toggleButton2').style = "height:5px;width:5px;border-radius:50%;border:2.5px solid green;background:#fff;position:absolute;top:145px;left:235px;";
+        document.getElementById('rev_inst').style.visibility = "visible";
+        document.getElementById('rev_inst').innerText = "Pitch is moving in the opposite direction. Hence, <b>Check the box.</b>";
+        document.getElementById('rev_inst').style.color = "red";
+    }
+
 }
 var max1 = 0;
 
@@ -941,10 +985,10 @@ function moveMax(id) {
 
         }
 
-        // document.getElementById('toggleButton1').title = "Yaw";
-        // document.getElementById('toggleButton2').title = "Pitch";
-        // document.getElementById('toggleButton3').title = "Yaw";
-        // document.getElementById('toggleButton4').title = "Pitch";
+        document.getElementById('toggleSwitch1').title = "Yaw";
+        document.getElementById('toggleSwitch2').title = "Pitch";
+        document.getElementById('toggleSwitch3').title = "Yaw";
+        document.getElementById('toggleSwitch4').title = "Pitch";
         // document.getElementById('toggleSwitch1').style = "height: 25px; width: 20px; position: absolute; top: 62px; left: 58px; z-index: 150; cursor: pointer; visibility: visible;transform:rotate(90deg);";
         // document.getElementById('toggleSwitch2').style = "height: 25px; width: 20px; position: absolute; top: 60px; left: 190px; z-index: 150; visibility: visible; cursor: pointer;transform:rotate(90deg);";
     }
@@ -977,10 +1021,10 @@ function moveMax(id) {
 
         }
 
-        // document.getElementById('toggleButton1').title = "Throttle";
-        // document.getElementById('toggleButton2').title = "Roll";
-        // document.getElementById('toggleButton3').title = "Throttle";
-        // document.getElementById('toggleButton4').title = "Roll";
+        document.getElementById('toggleSwitch1').title = "Throttle";
+        document.getElementById('toggleSwitch2').title = "Roll";
+        document.getElementById('toggleSwitch3').title = "Throttle";
+        document.getElementById('toggleSwitch4').title = "Roll";
         // document.getElementById('toggleSwitch1').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 67px; left: 66px; transform: rotate(180deg); z-index: 150;";
         // document.getElementById('toggleSwitch2').style = "height: 20px; width: 20px; position: absolute; top: 68px; left: 199px; z-index: 150; visibility: hidden; cursor: pointer;";
 
