@@ -939,6 +939,7 @@ function reversedOrNot() {
     document.getElementById('toggleSwitch2').style = "visibility: hidden;height: 20px; width: 20px; position: absolute; top: 68px; left: 199px;z-index: 150;";
     document.getElementById('toggleSwitch3').style = "visibility: hidden; height: 20px; width: 20px; position: absolute; top: 55px; left:67px;z-index: 150;";
     document.getElementById('toggleSwitch4').style = "visibility: hidden; height: 20px; width: 20px; position: absolute; top: 55px; left: 198px;z-index: 150;";
+    document.getElementById('t_back').onclick = function() { moveToMax(); };
 
 }
 
@@ -964,7 +965,13 @@ function switchReversedOrNot(id) {
         document.getElementById('rev_inst').style.color = "red";
 
     }
+    document.getElementById('t_next').onclick = function() { finalCheck(); };
 
+
+}
+
+function finalCheck() {
+    document.getElementById('move_inst').innerText = "You have completed this wizard, please check below if the picture mimics your sticks movement.<br><br>IMPORTANT: These new settings have not been saved to the board yet. After pressing Next you will go to the Arming Settings tab where you can set your desired arming sequence and save the configuration.";
 }
 var max1 = 0;
 
