@@ -901,10 +901,7 @@ function moveToMax() {
     document.getElementById('switch_inst').style.fontSize = "9px";
     document.getElementById('switch_inst').style.left = "22px";
     document.getElementById('t_back').onclick = function() { centreEverything(); };
-    document.getElementById('toggleSwitch1').onclick = function() { moveMax(1); };
-    document.getElementById('toggleSwitch2').onclick = function() { moveMax(2); };
-    document.getElementById('toggleSwitch3').onclick = function() { moveMax(3); };
-    document.getElementById('toggleSwitch4').onclick = function() { moveMax(4); };
+
     // setTimeout(function() {
     //     max1 = 1;
     //     document.getElementById('toggleButton1').title = "Yaw";
@@ -921,7 +918,14 @@ function moveToMax() {
     // document.getElementById('toggleButton3').title = "Throttle";
     // document.getElementById('toggleButton4').title = "Roll";
     document.getElementById('t_next').onclick = function() { reversedOrNot(); };
-
+    document.getElementById('toggleSwitch1').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 67px; left: 66px; transform: rotate(0deg); z-index: 150;";
+    document.getElementById('toggleSwitch2').style = "visibility: visible; height: 20px; width: 20px; position: absolute; top: 68px; left: 199px; z-index: 150; ";
+    document.getElementById('toggleSwitch3').style = "height: 25px; width: 20px; position: absolute; top: 61px; left: 76px; z-index: 150; visibility: hidden;transform:rotate(90deg);";
+    document.getElementById('toggleSwitch4').style = "height: 25px; width: 20px; position: absolute; top: 60px; left: 208px; z-index: 150; visibility: hidden;transform:rotate(90deg);";
+    document.getElementById('toggleSwitch1').onclick = function() { moveMax(1); };
+    document.getElementById('toggleSwitch2').onclick = function() { moveMax(2); };
+    document.getElementById('toggleSwitch3').onclick = function() { moveMax(3); };
+    document.getElementById('toggleSwitch4').onclick = function() { moveMax(4); };
 }
 
 function reversedOrNot() {
@@ -990,31 +994,54 @@ function finalCheck() {
     document.getElementById('move_inst').style = "position: absolute; left: 0px; top: -1px; width: 450px;";
     document.getElementById('move_inst').innerHTML = "You have completed this wizard, please check below if the picture mimics your sticks movement.<br><br>IMPORTANT: These new settings have not been saved to the board yet. After pressing Next you will go to the Arming Settings tab where you can set your desired arming sequence and save the configuration.";
 }
-var max1 = 0;
+var max1 = 0,
+    max2 = 0;
 
 function moveMax(id) {
 
     if (max1 == 0) {
+        // document.getElementById('toggleSwitch1').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 67px; left: 66px; transform: rotate(0deg); z-index: 150;";
+
         if (id == 1) {
-            document.getElementById('toggleSwitch3').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 52px; left: 66px; transform: rotate(0deg); z-index: 150;";
-            document.getElementById('toggleSwitch1').style.visibility = "hidden";
-            max1 = 1;
+            document.getElementById('toggleSwitch1').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 52px; left: 67px; transform: rotate(180deg); z-index: 150;";
+            document.getElementById('toggleSwitch3').style.visibility = "hidden";
+            document.getElementById('toggleSwitch1').onclick = function() { moveMax(3); };
+            console.log("switch:1" + "max" + max1 + " " + "id:" + id);
+
+            if (max2 == 1) {
+                document.getElementById('toggleSwitch1').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 67px; left: 66px; transform: rotate(0deg); z-index: 150;";
+                document.getElementById('toggleSwitch3').style.visibility = "hidden";
+                document.getElementById('toggleSwitch1').onclick = function() { moveMax(1); };
+                console.log("switch:1" + "max" + max1 + " " + "id:" + id);
+
+                // max1 = 1;
+                // max2 = 0;
+            }
+
+
 
         }
         if (id == 2) {
             document.getElementById('toggleSwitch4').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 55px; left: 198px; z-index: 150;";
             document.getElementById('toggleSwitch2').style.visibility = "hidden";
+            console.log("switch:4" + "max" + max1 + " " + "id:" + id);
 
         }
         if (id == 3) {
             document.getElementById('toggleSwitch1').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 67px; left: 66px; transform: rotate(0deg); z-index: 150;";
             document.getElementById('toggleSwitch3').style.visibility = "hidden";
+            document.getElementById('toggleSwitch1').onclick = function() { moveMax(1); };
+            console.log("switch:1" + "max" + max1 + " " + "id:" + id);
+
+            max1 = 1;
+
 
         }
         if (id == 4) {
             document.getElementById('toggleSwitch2').style = "height: 25px; width: 20px; position: absolute; top: 68px; left: 199px; z-index: 150; visibility: visible; ";
             document.getElementById('toggleSwitch4').style.visibility = "hidden";
-            max1 = 1;
+            console.log("switch:2" + "max" + max1 + " " + "id:" + id);
+
 
 
         }
@@ -1028,26 +1055,43 @@ function moveMax(id) {
     }
     if (max1 == 1) {
         if (id == 1) {
-            document.getElementById('toggleSwitch3').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 62px; left: 76px; transform: rotate(90deg); z-index: 150;";
-            document.getElementById('toggleSwitch1').style.visibility = "hidden";;
+            document.getElementById('toggleSwitch3').style = "height: 25px; width: 20px; position: absolute; top: 60px; left: 76px; z-index: 150; visibility: visible;transform:rotate(90deg);";
+            document.getElementById('toggleSwitch1').style.visibility = "hidden";
+            console.log("switch:3" + "max" + max1 + " " + "id:" + id);
+
+            // document.getElementById('toggleSwitch3').onclick = function() { moveMax(3); };
+            max2 = 1;
+
+            max1 = 0;
+
 
         }
         if (id == 2) {
             document.getElementById('toggleSwitch4').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 60px; left: 208px; z-index: 150;transform:rotate(90deg);";
             document.getElementById('toggleSwitch2').style.visibility = "hidden";
-            max1 = 0;
+            console.log("switch:4" + "max" + max1 + " " + "id:" + id);
+
+
 
         }
         if (id == 3) {
-            document.getElementById('toggleSwitch1').style = "height: 25px; width: 20px; position: absolute; top: 62px; left: 58px; z-index: 150; visibility: visible;transform:rotate(90deg);";
-            document.getElementById('toggleSwitch3').style.visibility = "hidden";
-            max1 = 0;
+            document.getElementById('toggleSwitch3').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 60px; left: 58px; transform: rotate(-90deg); z-index: 150;";
+            document.getElementById('toggleSwitch1').style.visibility = "hidden";
+            document.getElementById('toggleSwitch3').onclick = function() { moveMax(1); };
+            console.log("switch:3" + "max" + max1 + " " + "id:" + id);
+
+
+
+
+
 
 
         }
         if (id == 4) {
             document.getElementById('toggleSwitch2').style = "height: 25px; width: 20px; position: absolute; top: 60px; left: 190px; z-index: 150; visibility: visible; transform:rotate(90deg);";
             document.getElementById('toggleSwitch4').style.visibility = "hidden";
+
+            console.log("switch:2" + "max" + max1 + " " + "id:" + id);
 
 
         }
