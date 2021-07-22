@@ -979,6 +979,9 @@ function switchReversedOrNot(id) {
 }
 
 function finalCheck() {
+    document.getElementById('top_text').innerText = "Check all the controls for the final check. Click 'Next' to proceed. ";
+    document.getElementById('switch_inst').innerText = "Check all the controls";
+
     document.getElementById('rev_inst').style.visibility = "hidden";
     document.getElementById('toggleButton1').style.top = "155px";
     document.getElementById('toggleButton2').style.top = "155px";
