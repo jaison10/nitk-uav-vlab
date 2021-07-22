@@ -561,6 +561,8 @@ function testTransmitter() {
     document.getElementById('toggleButton2').classList.remove('movePitch');
     document.getElementById('toggleButton2').classList.remove('moveRoll');
     document.getElementById('toggleButton1').classList.remove('moveThrottle');
+    document.getElementById('flightModeSwitch2').style.cursor = "";
+
     for (let i = 0; i <= 3; i++) {
         document.getElementById('Accesory0').onclick = "";
 
@@ -585,6 +587,7 @@ function switchMovement(id) {
 
         setTimeout(function() {
             document.getElementById('indicateBox').style.visibility = "visible";
+            document.getElementById('switch_inst').innerText = "Click on the Roll switch as demonstrated";
             document.getElementById('roll_btn').style.cursor = "pointer";
             document.getElementById('roll_btn').onclick = function() { switchMovement(2); };
         }, 5000);
@@ -593,7 +596,6 @@ function switchMovement(id) {
         console.log('move2');
 
         document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Roll stick.";
-        document.getElementById('switch_inst').innerText = "Click on the Roll switch as demonstrated";
         document.getElementById('toggleButton1').classList.remove('moveThrottle');
         document.getElementById('toggleButton2').classList.add('moveRoll');
         document.getElementById('toggleSwitch2').style.transform = "rotate(-90deg)";
@@ -614,6 +616,7 @@ function switchMovement(id) {
             document.getElementById('indicateBox').style.visibility = "visible";
             document.getElementById('pitch_btn').onclick = function() { switchMovement(3); };
             document.getElementById('pitch_btn').style.cursor = "pointer";
+            document.getElementById('switch_inst').innerText = "Click on the Pitch switch as demonstrated";
 
         }, 5000);
     }
@@ -621,7 +624,6 @@ function switchMovement(id) {
         console.log('move3');
 
         document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Pitch stick.";
-        document.getElementById('switch_inst').innerText = "Click on the Pitch switch as demonstrated";
         document.getElementById('toggleButton2').classList.remove('moveRoll');
         document.getElementById('toggleButton2').classList.add('movePitch');
         document.getElementById('toggleSwitch2').style.transform = "";
@@ -643,6 +645,7 @@ function switchMovement(id) {
             document.getElementById('yaw_btn').style.cursor = "pointer";
             document.getElementById('toggleSwitch1').style = "height: 25px; width: 20px; position: absolute; top: 60.5px; left: 75px; transform: rotate(-90deg);z-index:150; "
             document.getElementById('toggleSwitch3').style.visibility = "hidden";
+            document.getElementById('switch_inst').innerText = "Click on the Yaw switch as demonstrated";
 
         }, 5000);
     }
@@ -651,7 +654,6 @@ function switchMovement(id) {
 
         document.getElementById('top_text').innerText = "Click Next to proceed.";
         document.getElementById('move_inst').innerHTML = "Please move each control one at a time according to the instructions and picture below.<br><br> Move the Yaw stick.";
-        document.getElementById('switch_inst').innerText = "Click on the Yaw switch as demonstrated";
         document.getElementById('toggleButton2').classList.remove('movePitch');
         document.getElementById('toggleButton1').classList.add('moveYaw');
         document.getElementById('toggleSwitch1').onclick = function() { switchToggle(1); };
@@ -667,6 +669,7 @@ function switchMovement(id) {
         document.getElementById('t_next').onclick = function() { FlightModeTest(); };
         document.getElementById('toggleSwitch1').title = "Yaw";
         document.getElementById('toggleSwitch3').title = "Yaw";
+
 
 
 
@@ -711,6 +714,7 @@ function FlightModeTest() {
     document.getElementById('flightModeSwitch2').style.transform = "rotateY(0deg)";
     document.getElementById('tr_inst').style = "position:absolute;top:50px;left:-10px;height:70px;width:300px;font-size:6px;z-index:320;";
     document.getElementById('switch_inst').innerText = "Click on the Flight Mode switch as demonstrated";
+    document.getElementById('flightModeSwitch2').style.cursor = "pointer";
     document.getElementById('flightModeSwitch2').onclick = function() { flightSwitch(); };
     document.getElementById('t_next').onclick = function() { accesorySim1(); };
     document.getElementById('t_back').onclick = function() { testTransmitter(); };
@@ -747,6 +751,8 @@ function flightSwitch() {
 }
 
 function accesorySim1() {
+    document.getElementById('flightModeSwitch2').style.cursor = "";
+
     for (let i = 0; i <= 3; i++) {
         document.getElementById('Accesory' + i).style.transform = "rotate(0deg)";
 
@@ -784,6 +790,7 @@ function accesorySim2() {
     document.getElementById('t_next').innerText = "Next/Skip";
     document.getElementById('t_back').onclick = function() { accesorySim1(); };
     document.getElementById('knobBar3').classList.remove('moveKnobBar3');
+    document.getElementById('flightModeSwitch').classList.remove('moveFlightMode');
 
 
 }
@@ -824,6 +831,7 @@ function accesorySim4() {
     document.getElementById('t_next').innerText = "Next/Skip";
     document.getElementById('centered2').style.visibility = "hidden";
     document.getElementById('centered1').style.visibility = "hidden";
+    document.getElementById('flightModeSwitch').classList.remove('moveFlightMode');
 
     document.getElementById('t_back').onclick = function() { accesorySim3(); };
     for (let i = 1; i <= 18; i++) {
@@ -971,11 +979,18 @@ function switchReversedOrNot(id) {
 }
 
 function finalCheck() {
-    document.getElementById('move_inst').innerText = "You have completed this wizard, please check below if the picture mimics your sticks movement.<br><br>IMPORTANT: These new settings have not been saved to the board yet. After pressing Next you will go to the Arming Settings tab where you can set your desired arming sequence and save the configuration.";
+    document.getElementById('rev_inst').style.visibility = "hidden";
+    document.getElementById('toggleButton1').style.top = "155px";
+    document.getElementById('toggleButton2').style.top = "155px";
+    document.getElementById('toggleButton1').style.transition = "none";
+    document.getElementById('toggleButton2').style.transition = "none";
+    document.getElementById('move_inst').style = "position: absolute; left: 0px; top: -1px; width: 450px;";
+    document.getElementById('move_inst').innerHTML = "You have completed this wizard, please check below if the picture mimics your sticks movement.<br><br>IMPORTANT: These new settings have not been saved to the board yet. After pressing Next you will go to the Arming Settings tab where you can set your desired arming sequence and save the configuration.";
 }
 var max1 = 0;
 
 function moveMax(id) {
+
     if (max1 == 0) {
         if (id == 1) {
             document.getElementById('toggleSwitch3').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 52px; left: 66px; transform: rotate(0deg); z-index: 150;";
@@ -998,44 +1013,46 @@ function moveMax(id) {
             document.getElementById('toggleSwitch4').style.visibility = "hidden";
             max1 = 1;
 
+
         }
 
-        document.getElementById('toggleSwitch1').title = "Yaw";
-        document.getElementById('toggleSwitch2').title = "Pitch";
-        document.getElementById('toggleSwitch3').title = "Yaw";
-        document.getElementById('toggleSwitch4').title = "Pitch";
+        // document.getElementById('toggleSwitch1').title = "Yaw";
+        // document.getElementById('toggleSwitch2').title = "Pitch";
+        // document.getElementById('toggleSwitch3').title = "Yaw";
+        // document.getElementById('toggleSwitch4').title = "Pitch";
         // document.getElementById('toggleSwitch1').style = "height: 25px; width: 20px; position: absolute; top: 62px; left: 58px; z-index: 150; cursor: pointer; visibility: visible;transform:rotate(90deg);";
         // document.getElementById('toggleSwitch2').style = "height: 25px; width: 20px; position: absolute; top: 60px; left: 190px; z-index: 150; visibility: visible; cursor: pointer;transform:rotate(90deg);";
     }
     if (max1 == 1) {
         if (id == 1) {
             document.getElementById('toggleSwitch3').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 62px; left: 76px; transform: rotate(90deg); z-index: 150;";
-            document.getElementById('toggleSwitch1').style.visibility = "hidden";
-            max1 = 0;
+            document.getElementById('toggleSwitch1').style.visibility = "hidden";;
 
         }
         if (id == 2) {
             document.getElementById('toggleSwitch4').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 60px; left: 208px; z-index: 150;transform:rotate(90deg);";
             document.getElementById('toggleSwitch2').style.visibility = "hidden";
-
+            max1 = 0;
 
         }
         if (id == 3) {
             document.getElementById('toggleSwitch1').style = "height: 25px; width: 20px; position: absolute; top: 62px; left: 58px; z-index: 150; visibility: visible;transform:rotate(90deg);";
             document.getElementById('toggleSwitch3').style.visibility = "hidden";
+            max1 = 0;
+
 
         }
         if (id == 4) {
             document.getElementById('toggleSwitch2').style = "height: 25px; width: 20px; position: absolute; top: 60px; left: 190px; z-index: 150; visibility: visible; transform:rotate(90deg);";
             document.getElementById('toggleSwitch4').style.visibility = "hidden";
-            max1 = 0;
+
 
         }
 
-        document.getElementById('toggleSwitch1').title = "Throttle";
-        document.getElementById('toggleSwitch2').title = "Roll";
-        document.getElementById('toggleSwitch3').title = "Throttle";
-        document.getElementById('toggleSwitch4').title = "Roll";
+        // document.getElementById('toggleSwitch1').title = "Throttle";
+        // document.getElementById('toggleSwitch2').title = "Roll";
+        // document.getElementById('toggleSwitch3').title = "Throttle";
+        // document.getElementById('toggleSwitch4').title = "Roll";
         // document.getElementById('toggleSwitch1').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 67px; left: 66px; transform: rotate(180deg); z-index: 150;";
         // document.getElementById('toggleSwitch2').style = "height: 20px; width: 20px; position: absolute; top: 68px; left: 199px; z-index: 150; visibility: hidden; cursor: pointer;";
 
