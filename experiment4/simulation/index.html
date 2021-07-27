@@ -719,13 +719,13 @@
                 <div id="tr_inst" style="position:absolute;top:60px;left:-10px;height:70px;width:300px;font-size:6px;z-index:320;">
                     <p id="move_inst">Please move each control one at a time according to the instructions and picture below.<br><br> Move the Throttle stick.</p>
                 </div>
-                <img src="./Images/transmitterPic.png" style="height: 130px;width: 433px;position: absolute;top: 90px;left: -10px;border-radius:5px;" alt="Transmitter image">
-                <img src="./Images/newTransmitter (2).png" style="height: 125px;width: 170px;position: absolute;top: 95px;left: 110px;" alt="Transmitter image">
+                <img id="transm_pic" src="./Images/transmitterPic.png" style="height: 130px;width: 433px;position: absolute;top: 90px;left: -10px;border-radius:5px;" alt="Transmitter image">
+                <img id="newtransm_pic" src="./Images/newTransmitter (2).png" style="height: 125px;width: 170px;position: absolute;top: 95px;left: 110px;" alt="Transmitter image">
                 <div id="toggleButton1" style="height:5px;width:5px;border-radius:50%;border:2.5px solid green;background:#fff;position:absolute;top:155px;left:147px;"></div>
                 <div id="toggleButton2" style="height:5px;width:5px;border-radius:50%;border:2.5px solid green;background:#fff;position:absolute;top:155px;left:235px;"></div>
                 <div id="TransmitterSim" style="height: 130px;width:280px;position: absolute;top: 287px;left: 310px;border:2px solid black;border-radius:10px;">
                     <p id="switch_inst" style="color:red;position:absolute;top:-7px;left:25px;font-size:10px;">Click on the Throttle switch as demonstrated</p>
-                    <img src="./Images/transmitterWithoutStick.png" title="Transmitter" style="height: 110px;width:250px;position: absolute;top: 17px;left: 35px;z-index: 100;" alt="Transmitter">
+                    <img id="userTransm" src="./Images/transmitterWithoutStick.png" title="Transmitter" style="height: 110px;width:250px;position: absolute;top: 17px;left: 35px;z-index: 100;" alt="Transmitter">
                     <img id="toggleSwitch1" src="./Images/stickDown.png" style="height: 20px; width: 20px; position: absolute; top: 68px; left: 66px;z-index: 150;" alt="Transmitter toggle switch">
                     <img id="toggleSwitch2" src="./Images/stickDown.png" style="height: 20px; width: 20px; position: absolute; top: 68px; left: 199px;z-index: 150;" alt="Transmitter toggle switch">
                     <img id="toggleSwitch3" src="./Images/stickUp.png" style="visibility: hidden; height: 20px; width: 20px; position: absolute; top: 55px; left:67px;z-index: 150;" alt="Transmitter toggle switch">
@@ -778,6 +778,12 @@
                 <div id="centered2" style="visibility: hidden; position: absolute; top: 357px; left: 514px; height: 6.5px; width: 11px; border-radius:60%; background-color: rgb(211, 211, 211);z-index:150;border:1px solid black;"></div>
                 <!-- Instructions to show whether controls are reversed/not -->
                 <p id="rev_inst" style="position: absolute; top: 257px; left: 0px; font-size: 8px; visibility: hidden; color: red; height: 20px; width: 500px;"></p>
+
+                <!-- Arming settings -->
+                <div id="arming_set" style="position: absolute; top: 27px; left: -20px; font-size: 8px; visibility: hidden; border: 1px solid #d3d3d3; height:60px; width: 455px;z-index:150;background:-webkit-linear-gradient(top, #ececec, #dedede);border-radius:1px;"></div>
+                <img id="title_arm" src="./Images/titleArm.png" style="visibility: hidden; position: absolute; top: -1px; left: -28.7px; height: 12px; width: 185px; z-index: 150;" alt="Arming settings tab">
+                <img id="newtrans2" src="./Images/tr4.png" style="visibility: hidden; position: absolute; top: 0.07px; left: -28.7px; height: 11px; width: 185px; z-index: 150;" alt="Transmitter tab">
+                <p id="arm_inst" style="position: absolute; top: 257px; left: 0px; font-size: 8px; visibility: hidden; height: 20px; width: 500px;">Arming Settings</p>
             </div>
 
             <!-- ------------------------------------------- Arming Settings Popup tab ----------------------------------- -->
