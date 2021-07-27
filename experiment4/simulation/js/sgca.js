@@ -995,7 +995,8 @@ function finalCheck() {
     document.getElementById('move_inst').innerHTML = "You have completed this wizard, please check below if the picture mimics your sticks movement.<br><br>IMPORTANT: These new settings have not been saved to the board yet. After pressing Next you will go to the Arming Settings tab where you can set your desired arming sequence and save the configuration.";
 }
 var max1 = 0,
-    max2 = 0;
+    max2 = 0,
+    max3 = 0;
 
 function moveMax(id) {
 
@@ -1024,10 +1025,17 @@ function moveMax(id) {
 
         }
         if (id == 2) {
-            document.getElementById('toggleSwitch4').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 55px; left: 198px; z-index: 150;";
-            document.getElementById('toggleSwitch2').style.visibility = "hidden";
-            console.log("switch:4" + "max" + max1 + " " + "id:" + id);
-
+            if (max3 == 1) {
+                document.getElementById('toggleSwitch4').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 55px; left: 198px; z-index: 150;";
+                document.getElementById('toggleSwitch2').style.visibility = "hidden";
+                console.log("switch:4" + "max" + max1 + " " + "id:" + id);
+                max3 = 0;
+            } else {
+                document.getElementById('toggleSwitch4').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 55px; left: 198px; z-index: 150;";
+                document.getElementById('toggleSwitch2').style.visibility = "hidden";
+                console.log("switch:4" + "max" + max1 + " " + "id:" + id);
+                max1 = 1;
+            }
         }
         if (id == 3) {
             document.getElementById('toggleSwitch1').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 67px; left: 66px; transform: rotate(0deg); z-index: 150;";
@@ -1040,9 +1048,13 @@ function moveMax(id) {
 
         }
         if (id == 4) {
+
             document.getElementById('toggleSwitch2').style = "height: 25px; width: 20px; position: absolute; top: 68px; left: 199px; z-index: 150; visibility: visible; ";
             document.getElementById('toggleSwitch4').style.visibility = "hidden";
             console.log("switch:2" + "max" + max1 + " " + "id:" + id);
+
+
+
 
 
 
@@ -1074,7 +1086,6 @@ function moveMax(id) {
             console.log("switch:4" + "max" + max1 + " " + "id:" + id);
 
 
-
         }
         if (id == 3) {
             document.getElementById('toggleSwitch3').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 60px; left: 58px; transform: rotate(-90deg); z-index: 150;";
@@ -1094,6 +1105,8 @@ function moveMax(id) {
             document.getElementById('toggleSwitch4').style.visibility = "hidden";
 
             console.log("switch:2" + "max" + max1 + " " + "id:" + id);
+            max3 = 1;
+            max1 = 0;
 
 
         }
