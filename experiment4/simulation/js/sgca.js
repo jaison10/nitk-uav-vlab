@@ -1003,19 +1003,21 @@ function moveMax(id) {
         // document.getElementById('toggleSwitch1').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 67px; left: 66px; transform: rotate(0deg); z-index: 150;";
 
         if (id == 1) {
-            document.getElementById('toggleSwitch1').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 52px; left: 67px; transform: rotate(180deg); z-index: 150;";
-            document.getElementById('toggleSwitch3').style.visibility = "hidden";
-            document.getElementById('toggleSwitch1').onclick = function() { moveMax(3); };
-            console.log("switch:1" + "max" + max1 + " " + "id:" + id);
+
 
             if (max2 == 1) {
                 document.getElementById('toggleSwitch1').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 67px; left: 66px; transform: rotate(0deg); z-index: 150;";
                 document.getElementById('toggleSwitch3').style.visibility = "hidden";
-                document.getElementById('toggleSwitch1').onclick = function() { moveMax(1); };
+                // document.getElementById('toggleSwitch1').onclick = function() { moveMax(1); };
                 console.log("switch:1" + "max" + max1 + " " + "id:" + id);
 
                 // max1 = 1;
-                // max2 = 0;
+                max2 = 0;
+            } else {
+                document.getElementById('toggleSwitch1').style = "visibility: visible; height: 25px; width: 20px; position: absolute; top: 52px; left: 67px; transform: rotate(180deg); z-index: 150;";
+                document.getElementById('toggleSwitch3').style.visibility = "hidden";
+                document.getElementById('toggleSwitch1').onclick = function() { moveMax(3); };
+                console.log("switch:1" + "max" + max1 + " " + "id:" + id);
             }
 
 
